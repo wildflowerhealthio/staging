@@ -1,1 +1,0 @@
-import{t as e,v as t}from"./config-4DvsBb0l.js";var n=new URL(`.`,window.location.href).href;t({...e,redirectUri:n}).catch(e=>{document.body.textContent=`SMART launch failed: ${e instanceof Error?e.message:String(e)}`});
