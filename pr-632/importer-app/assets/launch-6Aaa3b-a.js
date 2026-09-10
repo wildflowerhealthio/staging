@@ -1,1 +1,0 @@
-import{H as e,t}from"./config-D6l-FY30.js";var n=new URL(`.`,window.location.href).href;e({...t,redirectUri:n}).catch(e=>{document.body.textContent=`SMART launch failed: ${e instanceof Error?e.message:String(e)}`});
