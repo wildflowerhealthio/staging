@@ -18,22 +18,43 @@
     loopback = scriptUrl.hostname === 'localhost' || scriptUrl.hostname === '127.0.0.1'
   }
 
+  // SPA redirect: if we arrived via a 404.html redirect (the site's own or
+  // ohif-viewer-dist's), restore the original route so the router picks it up.
+  var params = new URLSearchParams(window.location.search)
+  var redirectPath = params.get('redirect')
+  if (redirectPath) {
+    params.delete('redirect')
+    if (redirectPath.indexOf(basename) === 0) {
+      redirectPath = redirectPath.slice(basename.length)
+    }
+    redirectPath = redirectPath.replace(/^\/+/, '/')
+    var remaining = params.toString()
+    var target = basename + redirectPath.replace(/^\//, '')
+    window.history.replaceState(
+      null,
+      '',
+      target + (remaining ? '?' + remaining : '') + window.location.hash
+    )
+  }
+
   // Which SMART client this build is, decided by how it is served — the same
   // rule the other first-party apps apply through `import.meta.env.DEV`
   // (`apps/*/src/config.ts`), expressed at runtime here since nothing is
   // compiled. Served from the published site it is the `ohif-viewer` client
   // (gatekeeper migration `0009_seed_ohif_viewer_client`); served from a
   // loopback origin (`vp run -F ohif-viewer dev`) it is the debug-only
-  // `ohif-viewer-dev` client (`gatekeeper-rust/src/seeding.rs`), whose id must
-  // equal the `ohif-viewer-dev` app row's id for the app-relative redirect to
-  // resolve. A `?client_id=` on the launch URL or a value saved from the SMART
-  // Preferences panel still overrides this.
+  // `ohif-viewer-dev` client (`gatekeeper-rust/src/seeding.rs`), which is the
+  // only client registering an absolute `http://localhost:<port>/fhir-viewer`
+  // redirect — the one the dev launch can match, since the dev app row is a
+  // cloud row and so resolves no app-relative entry. A `?client_id=` on the
+  // launch URL or a value saved from the SMART Preferences panel still
+  // overrides this.
   var smartClientId = loopback ? 'ohif-viewer-dev' : 'ohif-viewer'
 
   window.config = {
     name: 'wildflower/app-config.js',
     routerBasename: basename,
-    extensions: [],
+    extensions: ['@ohif/extension-dicom-pdf', '@ohif/fhir-viewer'],
     modes: [],
     customizationService: {},
     // The worklist at the basename is the SMART launch entry point: an EHR
