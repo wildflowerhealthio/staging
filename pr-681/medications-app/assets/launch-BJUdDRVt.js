@@ -1,0 +1,1 @@
+import{c as e,t}from"./config-C_KvIbFs.js";var n=new URL(`.`,window.location.href).href;e({...t,redirectUri:n}).catch(e=>{document.body.textContent=`SMART launch failed: ${e instanceof Error?e.message:String(e)}`});
