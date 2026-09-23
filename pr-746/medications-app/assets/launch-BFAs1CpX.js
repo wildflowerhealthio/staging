@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-D9PfbmQS.js";e({launch:t,loadingMessage:`Launching Medications…`});
