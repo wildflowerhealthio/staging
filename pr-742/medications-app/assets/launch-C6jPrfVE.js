@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-Gce_H8Rm.js";e({launch:t,loadingMessage:`Launching Medications…`});
