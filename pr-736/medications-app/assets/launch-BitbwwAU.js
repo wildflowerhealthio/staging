@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-BcK_3eOW.js";e({launch:t,loadingMessage:`Launching Medications…`});
