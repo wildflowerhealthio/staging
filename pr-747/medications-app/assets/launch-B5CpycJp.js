@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-6-HvB_Jq.js";e({launch:t,loadingMessage:`Launching Medications…`});
