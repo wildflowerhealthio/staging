@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-BkTU8lWt.js";e({launch:t,loadingMessage:`Launching Medications…`});
