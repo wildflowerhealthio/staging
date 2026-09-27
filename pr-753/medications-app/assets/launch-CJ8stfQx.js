@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-DxfI4NI0.js";e({launch:t,loadingMessage:`Launching Medications…`});
