@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-9Lfi75wi.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
