@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-DYeMLFM4.js";e({launch:t,loadingMessage:`Launching Medications…`});
