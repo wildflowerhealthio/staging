@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-Co2SSNh1.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
