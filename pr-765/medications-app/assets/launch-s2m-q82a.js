@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-Bc6o20Jv.js";e({launch:t,loadingMessage:`Launching Medications…`});
