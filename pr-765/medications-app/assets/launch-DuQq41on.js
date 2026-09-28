@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-BYOOf4ft.js";e({launch:t,loadingMessage:`Launching Medications…`});
