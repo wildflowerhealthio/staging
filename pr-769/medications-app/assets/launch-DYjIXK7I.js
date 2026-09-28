@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-aZwLIB7z.js";e({launch:t,loadingMessage:`Launching Medications…`});
