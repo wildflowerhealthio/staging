@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-BF_D2x3c.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
