@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-BSZ8fjIL.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
