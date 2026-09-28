@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-DR8OSN9F.js";e({launch:t,loadingMessage:`Launching Medications…`});
