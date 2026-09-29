@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-DD_gYehN.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
