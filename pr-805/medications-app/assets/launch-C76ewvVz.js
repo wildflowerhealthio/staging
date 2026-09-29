@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-CSo3zaK0.js";e({launch:t,loadingMessage:`Launching Medications…`});

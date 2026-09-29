@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-weEi8pn0.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
