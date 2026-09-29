@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-DYWJj1Gg.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
