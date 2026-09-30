@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-CSYdt1K9.js";e({launch:t,loadingMessage:`Launching Medications…`});
