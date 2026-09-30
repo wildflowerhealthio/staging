@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-DTgHkg5f.js";e({launch:t,loadingMessage:`Launching Medications…`});
