@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-CU9GMMKe.js";e({launch:t,loadingMessage:`Launching Medications…`});
