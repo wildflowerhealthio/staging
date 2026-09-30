@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-CE32nTvu.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
