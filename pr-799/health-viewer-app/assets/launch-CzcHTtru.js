@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-C8v3sbF0.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
