@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-bzlQHLi_.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});

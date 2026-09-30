@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-DI9RSS4-.js";e({launch:t,loadingMessage:`Launching Medications…`});
