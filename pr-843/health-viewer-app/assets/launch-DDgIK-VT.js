@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-Bh2JG_Oh.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
