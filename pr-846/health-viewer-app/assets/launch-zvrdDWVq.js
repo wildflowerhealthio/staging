@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-Dtpu3oLG.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
