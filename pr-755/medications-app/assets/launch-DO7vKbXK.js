@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-Bl2KCEbK.js";e({launch:t,loadingMessage:`Launching Medications…`});

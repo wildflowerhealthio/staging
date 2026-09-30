@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-DPLQ_Bpo.js";e({launch:t,loadingMessage:`Launching Medications…`});
