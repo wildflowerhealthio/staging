@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-CT4vZ2Na.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
