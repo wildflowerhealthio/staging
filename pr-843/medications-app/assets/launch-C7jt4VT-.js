@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-BeSi1KWm.js";e({launch:t,loadingMessage:`Launching Medications…`});
