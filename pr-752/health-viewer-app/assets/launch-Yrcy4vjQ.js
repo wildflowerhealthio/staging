@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-BFhZ_Nun.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});

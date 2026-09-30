@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-CUHXkEz2.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
