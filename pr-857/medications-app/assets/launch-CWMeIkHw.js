@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-Db_HPE_J.js";e({launch:t,loadingMessage:`Launching Medications…`});
