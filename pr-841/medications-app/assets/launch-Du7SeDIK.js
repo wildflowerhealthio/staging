@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-Dz7iug3V.js";e({launch:t,loadingMessage:`Launching Medications…`});
