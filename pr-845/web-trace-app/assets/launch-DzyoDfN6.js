@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-BGbH0_gH.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
