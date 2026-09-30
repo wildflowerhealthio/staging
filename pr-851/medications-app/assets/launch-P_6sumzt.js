@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-fdOU7ls5.js";e({launch:t,loadingMessage:`Launching Medications…`});
