@@ -1,0 +1,1 @@
+import{r as e,t}from"./config-DMK1q-uG.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
