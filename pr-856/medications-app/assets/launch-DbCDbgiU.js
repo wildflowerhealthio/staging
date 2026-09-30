@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DY0P-l6E.js";e({launch:t,loadingMessage:`Launching Medications…`});
