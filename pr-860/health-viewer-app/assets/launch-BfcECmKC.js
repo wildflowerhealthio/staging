@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-Cs1S3Kec.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
