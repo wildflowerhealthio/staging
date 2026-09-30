@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-CmZo-5n0.js";e({launch:t,loadingMessage:`Launching Medications…`});
