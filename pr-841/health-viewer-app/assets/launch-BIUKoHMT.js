@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-BHOfVz6j.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
