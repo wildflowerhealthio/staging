@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-CWuHiA3D.js";e({launch:t,loadingMessage:`Launching Medications…`});
