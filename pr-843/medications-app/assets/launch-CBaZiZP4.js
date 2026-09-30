@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-WdcgNh7p.js";e({launch:t,loadingMessage:`Launching Medications…`});

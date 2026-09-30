@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-B_ZtCK4-.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
