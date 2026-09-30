@@ -1,1 +1,0 @@
-import{r as e,t}from"./config-D4dHLz6H.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});
