@@ -1,0 +1,1 @@
+import{a as e,r as t}from"./config-hKG6FxzG.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});
