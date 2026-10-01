@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-BnX-_S-f.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});

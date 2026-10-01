@@ -1,1 +1,0 @@
-import{a as e,r as t}from"./config-CyesTqhN.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});
