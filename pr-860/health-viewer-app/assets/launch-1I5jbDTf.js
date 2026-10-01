@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-Dz-swbCy.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
