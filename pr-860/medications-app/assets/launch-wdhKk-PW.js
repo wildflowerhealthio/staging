@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-BuRHteyx.js";e({launch:t,loadingMessage:`Launching Medications…`});
