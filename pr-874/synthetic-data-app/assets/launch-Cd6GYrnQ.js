@@ -1,1 +1,0 @@
-import{a as e,r as t}from"./config-BUnxwgPn.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});
