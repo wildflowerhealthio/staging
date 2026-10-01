@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DA47Zfb6.js";e({launch:t,loadingMessage:`Launching Medications…`});
