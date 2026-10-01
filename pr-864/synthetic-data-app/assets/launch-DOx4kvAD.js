@@ -1,1 +1,0 @@
-import{a as e,r as t}from"./config-C-Ti2I1p.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});

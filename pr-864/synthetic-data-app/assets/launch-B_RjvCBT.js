@@ -1,0 +1,1 @@
+import{a as e,r as t}from"./config-iQN633Z5.js";e({launch:t,loadingMessage:`Launching Synthetic Data Loader…`});

@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-CpYp89qw.js";e({launch:t,loadingMessage:`Launching Medications…`});
