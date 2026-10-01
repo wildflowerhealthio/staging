@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-C4bbIsgh.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
