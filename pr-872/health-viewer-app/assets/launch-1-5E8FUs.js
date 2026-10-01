@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DwC1fEH_.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
