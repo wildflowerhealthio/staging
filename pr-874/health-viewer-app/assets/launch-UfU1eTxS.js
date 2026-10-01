@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DS6FP1TA.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});

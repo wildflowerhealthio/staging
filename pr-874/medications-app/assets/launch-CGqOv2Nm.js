@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-C2M8SUur.js";e({launch:t,loadingMessage:`Launching Medications…`});
