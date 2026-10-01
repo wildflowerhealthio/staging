@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DWnk_viv.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
