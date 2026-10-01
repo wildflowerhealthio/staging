@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DL4U7UDn.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
