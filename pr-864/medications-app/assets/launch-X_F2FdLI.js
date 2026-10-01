@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-Bsz9f_RG.js";e({launch:t,loadingMessage:`Launching Medications…`});
