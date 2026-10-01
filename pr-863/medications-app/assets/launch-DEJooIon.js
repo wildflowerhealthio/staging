@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-W8PrenD8.js";e({launch:t,loadingMessage:`Launching Medications…`});
