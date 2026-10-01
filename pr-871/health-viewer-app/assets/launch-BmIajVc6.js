@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-Bzr46Zjr.js";e({launch:t,loadingMessage:`Launching Health Viewer…`});
