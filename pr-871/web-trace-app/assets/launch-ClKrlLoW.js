@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DID1a0Sp.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
