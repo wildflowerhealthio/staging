@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-HxGv2IAB.js";e({launch:t,loadingMessage:`Launching Medications…`});
