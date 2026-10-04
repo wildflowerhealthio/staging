@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-Zw4ZUzwa.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
