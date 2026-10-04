@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-B4j8g4bg.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
