@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-CHx3yLzs.js";e({launch:t,loadingMessage:`Launching Lifting…`});
