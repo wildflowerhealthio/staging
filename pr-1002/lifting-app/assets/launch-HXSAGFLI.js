@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-uCBl7IHd.js";e({launch:t,loadingMessage:`Launching Lifting…`});
