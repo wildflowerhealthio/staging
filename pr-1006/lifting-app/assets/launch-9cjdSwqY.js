@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-1oZea7VK.js";e({launch:t,loadingMessage:`Launching Lifting…`});
