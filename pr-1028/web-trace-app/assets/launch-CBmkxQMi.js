@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-c29BYo9f.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
