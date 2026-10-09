@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-DJGz0Ln1.js";e({launch:t,loadingMessage:`Launching Lifting…`});
