@@ -1,1 +1,0 @@
-import{i as e,n as t}from"./config-BNZOf1iL.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
