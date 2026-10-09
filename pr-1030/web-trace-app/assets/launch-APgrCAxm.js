@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./config-BFZ-IuXv.js";e({launch:t,loadingMessage:`Launching Web Trace…`});
