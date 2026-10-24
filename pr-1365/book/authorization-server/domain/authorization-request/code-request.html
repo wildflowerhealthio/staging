@@ -1,0 +1,1036 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Code Request - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-c9130fb8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="code-request"><a class="header" href="#code-request">Code Request</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code></a></p>
+
+<p>A <strong>code request</strong> is an app’s request for an authorization code (RFC 6749 §4.1), parked by <code>/oauth/authorize</code> until it is decided. It is always made in a <a href="../browser-session.html">browser session</a>: <code>/oauth/authorize</code> sends a browser without one to sign in or pair first. <strong>The code it earns is issued under that session, not the approver’s</strong>, and carries only what that session also covers.</p>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; AwaitingLimitedPage: new, the session falls short
+    [*] --&gt; Pending: new
+    AwaitingLimitedPage --&gt; Pending: acknowledge_session_shortfall (Continue)
+    AwaitingLimitedPage --&gt; Denied: deny_on_limited_page (Cancel)
+    Pending --&gt; Pending: raise_for_owner
+    Pending --&gt; Approved: approve
+    Pending --&gt; Denied: deny
+</code></pre>
+<h2 id="the-limited-page"><a class="header" href="#the-limited-page">The limited page</a></h2>
+<p>Suppose the browser’s session lacks a scope the app asks for: a laptop paired read-only, an app that wants write. The request starts <strong>awaiting the limited page</strong>, and the browser is sent there. The page says what’s missing and offers <strong>Continue</strong> or <strong>Cancel</strong>. Until the browser goes on, the Owner isn’t asked about the request and nothing decides it. Continue makes it pending with a fresh lifetime; Cancel denies it. Once a browser has pressed Continue for an app, its later requests for that app start pending: the page is shown once per browser per app. Both buttons are transitions read from the same status, so of two tabs pressing them at once only the first lands (<a href="../authorization-request.html#transitions-and-the-guarded-replace">the guarded replace</a>).</p>
+<h2 id="who-decides"><a class="header" href="#who-decides">Who decides</a></h2>
+<p>A pending request is decided by the Owner, or by the browser that made it when that browser’s session may decide consents and holds what approving takes: then the browser shows the consent card itself. A browser that can read the request but not approve it can <strong>raise</strong> it for the Owner, after which the host notifies the Owner about it. When a <a href="../grant.html#when-a-grant-skips-the-owner">standing grant</a> covers the request, nobody decides: the request is parked and approved at once.</p>
+<h2 id="resolving-against-the-registration"><a class="header" href="#resolving-against-the-registration">Resolving against the registration</a></h2>
+<p>Every step that judges a code request, <code>/oauth/authorize</code>, the limited page’s Continue, and the consent read and approval, learns what the app’s <a href="../client.html">client</a> row says about it in one place: a <strong>resolved code request</strong>. It is worked out from the row as it stands on every read, never stored, so a consent prompt opened after the row moved shows the move. The most an approval may grant comes from <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L134-L156"><code>ApprovableScopes::for_code</code></a>, which caps a fixed registration at itself.</p>
+<h2 id="domainauthorization_requestcode"><a class="header" href="#domainauthorization_requestcode"><code>domain::authorization_request::code</code></a></h2>
+<p>The tests start a request at minute 0 that lives until minute 5, from the <a href="../test-fixtures.html#code-request">code request fixtures</a>.</p>
+<h3 id="coderequest"><a class="header" href="#coderequest"><code>CodeRequest</code></a></h3>
+<div id="item-CodeRequest" class="item-anchor"></div>
+
+<p>An authorization-code request, from <code>/oauth/authorize</code> to its decision.
+Started by <a href="#item-CodeRequest--new"><code>new</code></a> and changed only by its transitions, each of
+which answers with the changed request for the store’s guarded replace.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct CodeRequest {
+    /// An internal UUID: the `$id` of the wait page, the consent card and the
+    /// limited page.
+    pub id: String,
+    /// The client that made the request.
+    pub client_id: String,
+    /// The scopes the client asked for.
+    pub requested_scopes: Vec&lt;String&gt;,
+    /// When the request started.
+    pub requested_at: DateTime&lt;Utc&gt;,
+    /// The instant the request stops waiting for a decision. Going on past
+    /// the limited page restarts it.
+    pub expires_at: DateTime&lt;Utc&gt;,
+    /// Where the request stands.
+    pub state: CodeRequestState,
+    /// The redirect the client presented; its code or error goes back there.
+    pub redirect_uri: Url,
+    /// The PKCE S256 challenge (RFC 7636); `plain` is refused at the
+    /// boundary, so the method is always S256.
+    pub code_challenge: String,
+    /// The `state` the client sent, which its callback carries back.
+    pub client_state: String,
+    /// The browser session the request was made in, which the code it earns
+    /// is issued under: this session, not the approver's. `/oauth/authorize`
+    /// sends a browser without one to pairing first.
+    pub sid: String,
+    /// The SMART App Launch `launch` value the request consumed, or `None`
+    /// for a plain OAuth request.
+    pub launch: Option&lt;String&gt;,
+    /// The patient the consumed launch binds, if any. An approval must name
+    /// this patient ([`CodeRequest::admits_patient`]).
+    pub launch_bound_patient: Option&lt;String&gt;,
+    /// The requested scopes a standing grant already covered when it parked;
+    /// the consent card shows them ticked.
+    pub pre_approved_scopes: Vec&lt;String&gt;,
+    /// Whether the request can be decided in the browser that made it: that
+    /// browser's session can decide consents and holds the request's approval
+    /// scopes, so it shows the consent card itself. Raising the request for
+    /// the Owner clears it.
+    pub decidable_in_requesting_browser: bool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L21-L61"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 21–61</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="new"><a class="header" href="#new"><code>new</code></a></h4>
+<div id="item-CodeRequest--new" class="item-anchor"></div>
+
+<p>A request started at <code>now</code>, expiring <code>ttl</code> later: waiting on its
+browser’s limited page when
+<a href="#item-NewCodeRequestArgs"><code>awaits_limited_page</code></a>,
+otherwise pending.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn new(args: NewCodeRequestArgs, now: DateTime&lt;Utc&gt;) -&gt; Self {
+    let NewCodeRequestArgs {
+        id,
+        client_id,
+        requested_scopes,
+        ttl,
+        redirect_uri,
+        code_challenge,
+        client_state,
+        sid,
+        launch,
+        launch_bound_patient,
+        pre_approved_scopes,
+        decidable_in_requesting_browser,
+        awaits_limited_page,
+    } = args;
+    CodeRequest {
+        id,
+        client_id,
+        requested_scopes,
+        requested_at: now,
+        expires_at: now + ttl,
+        state: if awaits_limited_page {
+            CodeRequestState::AwaitingLimitedPage
+        } else {
+            CodeRequestState::Pending
+        },
+        redirect_uri,
+        code_challenge,
+        client_state,
+        sid,
+        launch,
+        launch_bound_patient,
+        pre_approved_scopes,
+        decidable_in_requesting_browser,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L148-L184"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 148–184</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A new request is pending, or on its limited page, until its expiry.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_new_request_starts_pending_or_on_its_limited_page() {
+    let pending = started(false);
+    assert_eq!(pending.state, CodeRequestState::Pending);
+    assert_eq!(pending.expires_at, at(5));
+    assert!(pending.is_pending_at(at(4)));
+    assert!(!pending.is_pending_at(at(5)));
+    let waiting = started(true);
+    assert_eq!(waiting.state, CodeRequestState::AwaitingLimitedPage);
+    assert!(waiting.is_awaiting_limited_page_at(at(4)));
+    assert!(!waiting.is_pending_at(at(4)));
+    assert!(!waiting.is_awaiting_limited_page_at(at(5)));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L353-L364"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 353–364</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_expired_at-is_pending_at-and-is_awaiting_limited_page_at"><a class="header" href="#is_expired_at-is_pending_at-and-is_awaiting_limited_page_at"><code>is_expired_at</code>, <code>is_pending_at</code> and <code>is_awaiting_limited_page_at</code></a></h4>
+<div id="item-CodeRequest--is_expired_at" class="item-anchor"></div>
+
+<p>Whether the request is past its expiry at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_expired_at(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; bool {
+    self.expires_at &lt;= now
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L188-L190"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 188–190</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-CodeRequest--is_pending_at" class="item-anchor"></div>
+
+<p>Whether the request waits for the Owner’s decision at <code>now</code>: pending
+and unexpired.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_pending_at(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; bool {
+    self.state == CodeRequestState::Pending &amp;&amp; !self.is_expired_at(now)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L195-L197"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 195–197</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-CodeRequest--is_awaiting_limited_page_at" class="item-anchor"></div>
+
+<p>Whether the request waits on its browser’s limited page at <code>now</code>, and
+is unexpired.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_awaiting_limited_page_at(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; bool {
+    self.state == CodeRequestState::AwaitingLimitedPage &amp;&amp; !self.is_expired_at(now)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L202-L204"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 202–204</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="admits_patient"><a class="header" href="#admits_patient"><code>admits_patient</code></a></h4>
+<p><strong>The person approving can’t bind a patient other than the one the <a href="../launch-context.html">launch</a> bound.</strong> The decision checks this before it approves, and the standing-grant fast path checks it against the grant’s patient.</p>
+<div id="item-CodeRequest--admits_patient" class="item-anchor"></div>
+
+<p>Whether an approval may bind <code>patient</code> to this request: any patient (or
+none) when its launch bound no patient, otherwise exactly the launch’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn admits_patient(&amp;self, patient: Option&lt;&amp;str&gt;) -&gt; bool {
+    match self.launch_bound_patient.as_deref() {
+        None =&gt; true,
+        Some(launch_bound_patient) =&gt; patient == Some(launch_bound_patient),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L209-L214"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 209–214</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An approval names any patient when the launch bound none, and only
+the launch’s patient otherwise.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn admits_patient_holds_an_approval_to_the_launch_s_patient() {
+    let unbound = started(false);
+    assert!(unbound.admits_patient(None));
+    assert!(unbound.admits_patient(Some("Patient/2")));
+    let bound = CodeRequest {
+        launch_bound_patient: Some("Patient/1".to_owned()),
+        ..started(false)
+    };
+    assert!(bound.admits_patient(Some("Patient/1")));
+    assert!(!bound.admits_patient(Some("Patient/2")));
+    assert!(!bound.admits_patient(None));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L448-L459"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 448–459</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="approve"><a class="header" href="#approve"><code>approve</code></a></h4>
+<p>The request records what was approved. The code issued for it carries less, only what the requesting browser’s session also covers: that bound lives in the writer, <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/request_approver.rs#L113-L167"><code>RequestApprover::approve_for_code</code></a>, not on this entity.</p>
+<div id="item-CodeRequest--approve" class="item-anchor"></div>
+
+<p>Approve the request at <code>now</code> with <code>approval</code>. The request records the
+approval as made; the code issued for it carries only what the
+requesting browser’s session also covers, a bound
+<code>RequestApprover::approve_for_code</code> applies.</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p><a href="../authorization-request.html#item-NotPending"><code>NotPending</code></a> for a request not pending at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn approve(&amp;self, approval: Approval, now: DateTime&lt;Utc&gt;) -&gt; Result&lt;Self, NotPending&gt; {
+    self.require_pending(now)?;
+    Ok(CodeRequest {
+        state: CodeRequestState::Approved(approval),
+        ..self.clone()
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L224-L230"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 224–230</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Approving records the approval; past expiry, once decided, or while
+on the limited page, it is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_records_the_approval_only_while_pending() {
+    let request = started(false);
+    let approved = request.approve(approval(), at(1)).expect("approves");
+    assert_eq!(approved.state, CodeRequestState::Approved(approval()));
+    assert_eq!(approved.state.approval(), Some(&amp;approval()));
+    assert_eq!(approved.state.status(), RequestStatus::Approved);
+    assert_eq!(request.approve(approval(), at(5)), Err(NotPending));
+    assert_eq!(approved.approve(approval(), at(1)), Err(NotPending));
+    assert_eq!(started(true).approve(approval(), at(1)), Err(NotPending));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L369-L378"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 369–378</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="deny"><a class="header" href="#deny"><code>deny</code></a></h4>
+<p>The same transition denies a request whose browser session ended before the approval could land, so the app hears <code>access_denied</code> instead of earning a code no live session bounds.</p>
+<div id="item-CodeRequest--deny" class="item-anchor"></div>
+
+<p>Deny the request at <code>now</code>: the Owner’s or the requesting browser’s
+no, or a request whose browser session ended before the approval
+could land.</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p><a href="../authorization-request.html#item-NotPending"><code>NotPending</code></a> for a request not pending at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn deny(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; Result&lt;Self, NotPending&gt; {
+    self.require_pending(now)?;
+    Ok(CodeRequest {
+        state: CodeRequestState::Denied,
+        ..self.clone()
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L239-L245"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 239–245</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Denying a pending request decides it, with no approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn deny_decides_a_pending_request() {
+    let denied = started(false).deny(at(1)).expect("denies");
+    assert_eq!(denied.state, CodeRequestState::Denied);
+    assert_eq!(denied.state.approval(), None);
+    assert_eq!(denied.deny(at(1)), Err(NotPending));
+    assert_eq!(started(true).deny(at(1)), Err(NotPending));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L382-L388"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 382–388</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="raise_for_owner"><a class="header" href="#raise_for_owner"><code>raise_for_owner</code></a></h4>
+<div id="item-CodeRequest--raise_for_owner" class="item-anchor"></div>
+
+<p>Raise the request for the Owner at <code>now</code>: it stops being decidable in
+the browser that made it, so the host notifies for it. Decides
+nothing.</p>
+<h5 id="errors-2"><a class="header" href="#errors-2">Errors</a></h5>
+<p><a href="../authorization-request.html#item-NotPending"><code>NotPending</code></a> for a request not pending at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn raise_for_owner(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; Result&lt;Self, NotPending&gt; {
+    self.require_pending(now)?;
+    Ok(CodeRequest {
+        decidable_in_requesting_browser: false,
+        ..self.clone()
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L254-L260"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 254–260</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Raising the request for the Owner clears only whether it is decidable
+in the requesting browser.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn raise_for_owner_stops_the_request_counting_as_decidable_where_it_was_made() {
+    let decidable = CodeRequest {
+        decidable_in_requesting_browser: true,
+        ..started(false)
+    };
+    let raised = decidable.raise_for_owner(at(1)).expect("raises");
+    assert_eq!(
+        raised,
+        CodeRequest {
+            decidable_in_requesting_browser: false,
+            ..decidable
+        }
+    );
+    assert_eq!(started(true).raise_for_owner(at(1)), Err(NotPending));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L393-L407"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 393–407</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="acknowledge_session_shortfall"><a class="header" href="#acknowledge_session_shortfall"><code>acknowledge_session_shortfall</code></a></h4>
+<p>The limited page’s Continue.</p>
+<div id="item-CodeRequest--acknowledge_session_shortfall" class="item-anchor"></div>
+
+<p>Go on past the limited page at <code>now</code>: the browser that made the
+request says to go on although its session holds less than the
+request asks for. The request becomes pending, with <code>ttl</code> more from
+<code>now</code>. Decides nothing.</p>
+<h5 id="errors-3"><a class="header" href="#errors-3">Errors</a></h5>
+<p><a href="#item-NotAwaitingLimitedPage"><code>NotAwaitingLimitedPage</code></a> for a request not waiting there at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn acknowledge_session_shortfall(
+    &amp;self,
+    ttl: Duration,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Self, NotAwaitingLimitedPage&gt; {
+    self.require_awaiting_limited_page(now)?;
+    Ok(CodeRequest {
+        state: CodeRequestState::Pending,
+        expires_at: now + ttl,
+        ..self.clone()
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L270-L281"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 270–281</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Going on past the limited page makes the request pending and restarts
+its expiry; it applies once, and only while the request waits there.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn acknowledge_session_shortfall_goes_on_past_the_limited_page_once() {
+    let waiting = started(true);
+    let continued = waiting
+        .acknowledge_session_shortfall(Duration::minutes(5), at(3))
+        .expect("goes on");
+    assert_eq!(continued.state, CodeRequestState::Pending);
+    assert_eq!(continued.expires_at, at(8));
+    assert_eq!(
+        continued.acknowledge_session_shortfall(Duration::minutes(5), at(4)),
+        Err(NotAwaitingLimitedPage)
+    );
+    assert_eq!(
+        waiting.acknowledge_session_shortfall(Duration::minutes(5), at(5)),
+        Err(NotAwaitingLimitedPage)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L412-L427"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 412–427</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="deny_on_limited_page"><a class="header" href="#deny_on_limited_page"><code>deny_on_limited_page</code></a></h4>
+<div id="item-CodeRequest--deny_on_limited_page" class="item-anchor"></div>
+
+<p>Deny the request at <code>now</code> while it waits on its browser’s limited
+page: the page’s Cancel, or a client disabled before the browser went
+on.</p>
+<h5 id="errors-4"><a class="header" href="#errors-4">Errors</a></h5>
+<p><a href="#item-NotAwaitingLimitedPage"><code>NotAwaitingLimitedPage</code></a> for a request not waiting there at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn deny_on_limited_page(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; Result&lt;Self, NotAwaitingLimitedPage&gt; {
+    self.require_awaiting_limited_page(now)?;
+    Ok(CodeRequest {
+        state: CodeRequestState::Denied,
+        ..self.clone()
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L290-L296"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 290–296</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Denying on the limited page applies only while the request waits
+there.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn deny_on_limited_page_applies_only_while_the_request_waits_there() {
+    let cancelled = started(true).deny_on_limited_page(at(1)).expect("cancels");
+    assert_eq!(cancelled.state, CodeRequestState::Denied);
+    assert_eq!(
+        started(false).deny_on_limited_page(at(1)),
+        Err(NotAwaitingLimitedPage)
+    );
+    assert_eq!(
+        started(true).deny_on_limited_page(at(5)),
+        Err(NotAwaitingLimitedPage)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L432-L443"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 432–443</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="require_pending-and-require_awaiting_limited_page"><a class="header" href="#require_pending-and-require_awaiting_limited_page"><code>require_pending</code> and <code>require_awaiting_limited_page</code></a></h4>
+<div id="item-CodeRequest--require_pending" class="item-anchor"></div>
+
+<p>Refuse a transition on a request not pending at <code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn require_pending(&amp;self, now: DateTime&lt;Utc&gt;) -&gt; Result&lt;(), NotPending&gt; {
+    if self.is_pending_at(now) {
+        Ok(())
+    } else {
+        Err(NotPending)
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L299-L305"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 299–305</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-CodeRequest--require_awaiting_limited_page" class="item-anchor"></div>
+
+<p>Refuse a limited-page transition on a request not waiting there at
+<code>now</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn require_awaiting_limited_page(
+    &amp;self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), NotAwaitingLimitedPage&gt; {
+    if self.is_awaiting_limited_page_at(now) {
+        Ok(())
+    } else {
+        Err(NotAwaitingLimitedPage)
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L309-L318"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 309–318</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="coderequeststate"><a class="header" href="#coderequeststate"><code>CodeRequestState</code></a></h3>
+<div id="item-CodeRequestState" class="item-anchor"></div>
+
+<p>Where a code request stands.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum CodeRequestState {
+    /// Its browser's session holds less than it asks for, and that browser
+    /// hasn't said to go on: it waits on the browser's limited page. The
+    /// Owner isn't asked about it, and nothing decides it.
+    AwaitingLimitedPage,
+    /// Waiting for the Owner's decision, until it expires.
+    Pending,
+    /// The Owner, or a standing grant, approved it, and its code was issued.
+    Approved(Approval),
+    /// The Owner, or the browser that made it, declined it.
+    Denied,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L65-L76"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 65–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="status-and-approval"><a class="header" href="#status-and-approval"><code>status</code> and <code>approval</code></a></h4>
+<div id="item-CodeRequestState--status" class="item-anchor"></div>
+
+<p>The state as stored, without its approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn status(&amp;self) -&gt; RequestStatus {
+    match self {
+        CodeRequestState::AwaitingLimitedPage =&gt; RequestStatus::AwaitingLimitedPage,
+        CodeRequestState::Pending =&gt; RequestStatus::Pending,
+        CodeRequestState::Approved(_) =&gt; RequestStatus::Approved,
+        CodeRequestState::Denied =&gt; RequestStatus::Denied,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L81-L88"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 81–88</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-CodeRequestState--approval" class="item-anchor"></div>
+
+<p>The approval the request carries: present exactly when it is approved.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn approval(&amp;self) -&gt; Option&lt;&amp;Approval&gt; {
+    match self {
+        CodeRequestState::Approved(approval) =&gt; Some(approval),
+        CodeRequestState::AwaitingLimitedPage
+        | CodeRequestState::Pending
+        | CodeRequestState::Denied =&gt; None,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L92-L99"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 92–99</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="newcoderequestargs"><a class="header" href="#newcoderequestargs"><code>NewCodeRequestArgs</code></a></h3>
+<div id="item-NewCodeRequestArgs" class="item-anchor"></div>
+
+<p>How a code request starts: its key, its client, what it asks for and how
+long it waits, what the client presented, the launch it consumed, and
+whether it waits on its browser’s limited page first.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct NewCodeRequestArgs {
+    /// The request's internal UUID.
+    pub id: String,
+    /// The client that makes the request.
+    pub client_id: String,
+    /// The scopes the client asks for.
+    pub requested_scopes: Vec&lt;String&gt;,
+    /// How long the request waits for a decision.
+    pub ttl: Duration,
+    /// The redirect the client presented.
+    pub redirect_uri: Url,
+    /// The PKCE S256 challenge.
+    pub code_challenge: String,
+    /// The client's `state`.
+    pub client_state: String,
+    /// The browser session the request is made in.
+    pub sid: String,
+    /// The SMART App Launch `launch` the request consumed, if any.
+    pub launch: Option&lt;String&gt;,
+    /// The patient that launch binds, if any.
+    pub launch_bound_patient: Option&lt;String&gt;,
+    /// The requested scopes a standing grant already covers.
+    pub pre_approved_scopes: Vec&lt;String&gt;,
+    /// Whether the request can be decided in the browser that makes it.
+    pub decidable_in_requesting_browser: bool,
+    /// Whether the request waits on its browser's limited page first: its
+    /// browser's session holds less than it asks for, and hasn't gone on for
+    /// this client before.
+    pub awaits_limited_page: bool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L105-L134"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> lines 105–134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="notawaitinglimitedpage"><a class="header" href="#notawaitinglimitedpage"><code>NotAwaitingLimitedPage</code></a></h3>
+<div id="item-NotAwaitingLimitedPage" class="item-anchor"></div>
+
+<p>A limited-page transition refused: the request isn’t waiting on its
+browser’s limited page at <code>now</code> (its browser went on, it was decided, or
+it expired).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct NotAwaitingLimitedPage;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/mod.rs#L140"><code>authorization-server-rust/src/domain/authorization_request/code/mod.rs</code> line 140</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainauthorization_requestcoderesolved"><a class="header" href="#domainauthorization_requestcoderesolved"><code>domain::authorization_request::code::resolved</code></a></h2>
+<p>The tests resolve a request from <code>app</code> at the <a href="../test-fixtures.html#code-request">fixture redirect</a>.</p>
+<h3 id="resolvedcoderequest"><a class="header" href="#resolvedcoderequest"><code>ResolvedCodeRequest</code></a></h3>
+<div id="item-ResolvedCodeRequest" class="item-anchor"></div>
+
+<p>A code request against its client’s registration as it stands now: built
+once per request, by <a href="#item-ResolvedCodeRequest--resolve"><code>resolve</code></a>, from what the request
+presents and the client’s row (<code>None</code> for a <code>client_id</code> with no
+registration).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct ResolvedCodeRequest {
+    /// What the prompt calls the app: its registered name, or its
+    /// `client_id` while it has no registration.
+    client_name: String,
+    /// Whether the Owner has disabled the client: such a request is refused
+    /// at `/oauth/authorize` and the Continue, and denied on approval.
+    client_disabled: bool,
+    /// Whether the registration is server-defined, so the request is held to
+    /// it rather than carried to the Owner as a change.
+    registration_is_fixed: bool,
+    /// Whether the presented redirect is on the registration, which makes it
+    /// trusted enough to send an error back to.
+    redirect_is_registered: bool,
+    /// What approving the request would change in the registration: the
+    /// warning the Owner sees, and what keeps it off the fast path.
+    presented_client_change: PresentedClientChange,
+    /// The most an approval of the request may grant, given the
+    /// registration.
+    approvable_scopes: ApprovableScopes,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L24-L43"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 24–43</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="resolve"><a class="header" href="#resolve"><code>resolve</code></a></h4>
+<div id="item-ResolvedCodeRequest--resolve" class="item-anchor"></div>
+
+<p>Resolve a request from <code>client_id</code> presenting <code>redirect_uri</code> and
+<code>requested_scopes</code> against the client’s row <code>maybe_existing_client</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn resolve(
+    client_id: &amp;str,
+    redirect_uri: &amp;Url,
+    requested_scopes: &amp;[String],
+    maybe_existing_client: Option&lt;&amp;Client&gt;,
+) -&gt; Self {
+    match maybe_existing_client {
+        // Trusted on first use: an unknown client is named by its
+        // `client_id`, and approving its request would create its row.
+        None =&gt; ResolvedCodeRequest {
+            client_name: client_id.to_owned(),
+            client_disabled: false,
+            registration_is_fixed: false,
+            redirect_is_registered: false,
+            presented_client_change: PresentedClientChange::WouldCreate,
+            approvable_scopes: ApprovableScopes::for_code(requested_scopes, None, false),
+        },
+        Some(existing_client) =&gt; {
+            let registration_is_fixed = existing_client.is_registration_fixed();
+            ResolvedCodeRequest {
+                client_name: existing_client.name.clone(),
+                client_disabled: existing_client.disabled_at.is_some(),
+                registration_is_fixed,
+                redirect_is_registered: existing_client.allows_redirect_uri(redirect_uri),
+                presented_client_change: PresentedClientChange::from_presented_registration(
+                    &amp;PresentedClientRegistration {
+                        maybe_existing_client: Some(existing_client),
+                        redirect_uri,
+                        scopes: requested_scopes,
+                    },
+                ),
+                approvable_scopes: ApprovableScopes::for_code(
+                    requested_scopes,
+                    Some(existing_client),
+                    registration_is_fixed,
+                ),
+            }
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L48-L87"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 48–87</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A client with no row is named by its <code>client_id</code>, neither disabled nor
+fixed, and its redirect untrusted.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_unknown_client_resolves_as_new_under_its_id() {
+    let resolved = resolve(None, &amp;["read"]);
+    assert_eq!(resolved.client_name(), "app");
+    assert!(!resolved.is_client_disabled());
+    assert!(!resolved.is_registration_fixed());
+    assert!(!resolved.is_redirect_registered());
+    assert!(!resolved.are_scopes_registered());
+    assert_eq!(
+        resolved.presented_client_change(),
+        &amp;PresentedClientChange::WouldCreate
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L158-L169"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 158–169</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A server-defined registration is fixed: its ceiling is itself, so a
+request beyond it may grant nothing outside it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_server_defined_registration_is_fixed() {
+    let fixed = Client {
+        registration_source: RegistrationSource::ServerDefined,
+        ..client("app", &amp;["read"])
+    };
+    let resolved = resolve(Some(&amp;fixed), &amp;["read", "write"]);
+    assert_eq!(resolved.client_name(), "app display name");
+    assert!(resolved.is_registration_fixed());
+    assert!(resolved.is_redirect_registered());
+    assert!(!resolved.are_scopes_registered());
+    assert_eq!(
+        resolved
+            .approvable_scopes()
+            .grantable_subset(vec!["read".to_owned(), "write".to_owned()]),
+        ["read"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L174-L190"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 174–190</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A disabled client says so; nothing else about the resolution changes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_disabled_client_resolves_disabled() {
+    let disabled = Client {
+        disabled_at: Some(chrono::Utc::now()),
+        ..client("app", &amp;["read"])
+    };
+    let resolved = resolve(Some(&amp;disabled), &amp;["read"]);
+    assert!(resolved.is_client_disabled());
+    assert!(resolved.are_scopes_registered());
+    assert_eq!(
+        resolved.presented_client_change(),
+        &amp;PresentedClientChange::NoChange
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L194-L206"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 194–206</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="getters"><a class="header" href="#getters">Getters</a></h4>
+<div id="item-ResolvedCodeRequest--client_name" class="item-anchor"></div>
+
+<p>The client’s registered name, or its <code>client_id</code> while it has no
+registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client_name(&amp;self) -&gt; &amp;str {
+    &amp;self.client_name
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L91-L93"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 91–93</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ResolvedCodeRequest--is_client_disabled" class="item-anchor"></div>
+
+<p>Whether the client is disabled: no request of its goes on.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn is_client_disabled(&amp;self) -&gt; bool {
+    self.client_disabled
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L96-L98"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 96–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ResolvedCodeRequest--is_registration_fixed" class="item-anchor"></div>
+
+<p>Whether the client’s registration is fixed (server-defined): the
+request is held to it, and approving it writes none.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn is_registration_fixed(&amp;self) -&gt; bool {
+    self.registration_is_fixed
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L102-L104"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 102–104</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ResolvedCodeRequest--is_redirect_registered" class="item-anchor"></div>
+
+<p>Whether the client’s registration already lists the redirect: the one
+case the redirect is trusted with an error.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn is_redirect_registered(&amp;self) -&gt; bool {
+    self.redirect_is_registered
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L108-L110"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 108–110</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><code>/oauth/authorize</code> refuses a fixed registration’s request with <code>invalid_scope</code> when this is false, since an approval could never widen the registration.</p>
+<div id="item-ResolvedCodeRequest--are_scopes_registered" class="item-anchor"></div>
+
+<p>Whether every requested scope is inside the client’s registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn are_scopes_registered(&amp;self) -&gt; bool {
+    match &amp;self.presented_client_change {
+        PresentedClientChange::NoChange =&gt; true,
+        PresentedClientChange::WouldCreate =&gt; false,
+        PresentedClientChange::WouldWiden {
+            unregistered_requested_scopes,
+            ..
+        } =&gt; unregistered_requested_scopes.is_empty(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L113-L122"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 113–122</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ResolvedCodeRequest--presented_client_change" class="item-anchor"></div>
+
+<p>What approving the request would change in its client’s registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn presented_client_change(&amp;self) -&gt; &amp;PresentedClientChange {
+    &amp;self.presented_client_change
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L125-L127"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 125–127</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ResolvedCodeRequest--approvable_scopes" class="item-anchor"></div>
+
+<p>The scopes an approval of the request may grant, and its approval
+scopes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn approvable_scopes(&amp;self) -&gt; &amp;ApprovableScopes {
+    &amp;self.approvable_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_request/code/resolved.rs#L131-L133"><code>authorization-server-rust/src/domain/authorization_request/code/resolved.rs</code> lines 131–133</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/domain/authorization-request.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/domain/authorization-request/polled-requests.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/domain/authorization-request.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/domain/authorization-request/polled-requests.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1129 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Test Fake - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-3f033314.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="test-fake"><a class="header" href="#test-fake">Test Fake</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code></a></p>
+
+<p>Every unit test in <code>src/domain/</code> runs against <code>FakeGrantStore</code>: the <a href="../grant-store.html">grant store port</a> kept in memory, one map per table, with no diesel and no database. It exists so a test of a rule (a code redeems once, a decision lands once, a revoked session fails closed) reads as the rule, and runs in microseconds. <strong>It models the guarantees the domain relies on, not the SQL</strong>: each primitive does what its port promises, in plain Rust over the maps. The SQL that keeps the same promises, with real locks and real constraints, is tested in the <a href="../persistence.html">Persistence</a> part.</p>
+<p>This page is also the appendix of the fixtures the crate’s unit tests share, the second half below.</p>
+<h2 id="domaintest_fake"><a class="header" href="#domaintest_fake"><code>domain::test_fake</code></a></h2>
+<h3 id="fakegrantstore"><a class="header" href="#fakegrantstore"><code>FakeGrantStore</code></a></h3>
+<div id="item-FakeGrantStore" class="item-anchor"></div>
+
+<p>An in-memory <a href="../grant-store.html#item-GrantStore"><code>GrantStore</code></a> modelling the primitive port semantics with
+no diesel and no database. Cloning it shares the tables, so a test can hand
+one clone to a capability and arrange and observe rows through another.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct FakeGrantStore {
+    /// The tables, shared by every clone.
+    tables: Rc&lt;FakeTables&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L42-L45"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 42–45</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="the-scopes"><a class="header" href="#the-scopes">The scopes</a></h4>
+<p><strong>A write scope rolls back on <code>Err</code>, as SQLite’s would</strong>: it snapshots every map before running the closure and restores them when the closure fails, so a test never sees half of a failed operation. That is the one property of a write scope the fake models. It takes no lock, as the fake is single-threaded, so a race is tested by ordering: read a request, move it with another transition, then write the first.</p>
+<div id="item-FakeGrantStore--write" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn write&lt;T, E: From&lt;AuthorizationServerError&gt;&gt;(
+    &amp;self,
+    f: impl FnOnce(&amp;mut Self::Tx&lt;'_&gt;) -&gt; Result&lt;T, E&gt;,
+) -&gt; Result&lt;T, E&gt; {
+    // No real locking (the fake is single-threaded); the snapshot models
+    // the one property the flows rely on, rollback on error, so a
+    // partially applied scope never leaks into a later assertion.
+    let snapshot = self.tables.snapshot();
+    let result = f(&amp;mut FakeGrantTx {
+        store: &amp;self.tables,
+    });
+    if result.is_err() {
+        self.tables.restore(snapshot);
+    }
+    result
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L158-L173"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 158–173</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-FakeGrantStore--read" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn read&lt;T, E: From&lt;AuthorizationServerError&gt;&gt;(
+    &amp;self,
+    f: impl FnOnce(&amp;mut Self::Tx&lt;'_&gt;) -&gt; Result&lt;T, E&gt;,
+) -&gt; Result&lt;T, E&gt; {
+    f(&amp;mut FakeGrantTx {
+        store: &amp;self.tables,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L149-L156"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 149–156</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="tx"><a class="header" href="#tx"><code>tx</code></a></h4>
+<p>It writes straight through, with no rollback.</p>
+<div id="item-FakeGrantStore--tx" class="item-anchor"></div>
+
+<p>A handle on the maps outside any scope, for a test to arrange rows
+and observe them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn tx(&amp;self) -&gt; FakeGrantTx&lt;'_&gt; {
+    FakeGrantTx {
+        store: &amp;self.tables,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L179-L183"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 179–183</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="faketables"><a class="header" href="#faketables"><code>FakeTables</code></a></h3>
+<div id="item-FakeTables" class="item-anchor"></div>
+
+<p>The fake’s tables, one map per table.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct FakeTables {
+    /// The `clients` table, by `client_id`.
+    clients: RefCell&lt;HashMap&lt;String, Client&gt;&gt;,
+    /// The `signing_keys` table, in insertion order.
+    signing_keys: RefCell&lt;Vec&lt;SigningKey&gt;&gt;,
+    /// The `code_authorization_requests` table, by request id.
+    code_authorization_requests: RefCell&lt;HashMap&lt;String, CodeRequest&gt;&gt;,
+    /// The device requests and browser pairings, by id: the `user_code_requests` table.
+    user_code_requests: RefCell&lt;HashMap&lt;String, PolledRequest&gt;&gt;,
+    /// The `authorization_codes` table, by code.
+    authorization_codes: RefCell&lt;HashMap&lt;String, AuthorizationCode&gt;&gt;,
+    /// The `refresh_token_families` table, by family id.
+    families: RefCell&lt;HashMap&lt;String, RefreshTokenFamily&gt;&gt;,
+    /// The `refresh_tokens` table, by token hash.
+    tokens: RefCell&lt;HashMap&lt;String, RefreshToken&gt;&gt;,
+    /// The `authorization_code_grants` table, by grant id.
+    code_grants: RefCell&lt;HashMap&lt;String, AuthorizationCodeGrant&gt;&gt;,
+    /// The `device_grants` table, by grant id.
+    device_grants: RefCell&lt;HashMap&lt;String, DeviceGrant&gt;&gt;,
+    /// The `launch_contexts` table, by nonce.
+    launch_contexts: RefCell&lt;HashMap&lt;String, LaunchContext&gt;&gt;,
+    /// The `browser_sessions` table, by `sid`.
+    browser_sessions: RefCell&lt;HashMap&lt;String, BrowserSession&gt;&gt;,
+    /// The `session_shortfall_acknowledgements` table: the (`sid`, `client_id`) pairs gone on past
+    /// the limited page.
+    session_shortfall_acknowledgements: RefCell&lt;HashSet&lt;(String, String)&gt;&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L49-L75"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 49–75</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="fakegranttx"><a class="header" href="#fakegranttx"><code>FakeGrantTx</code></a></h3>
+<div id="item-FakeGrantTx" class="item-anchor"></div>
+
+<p>The fake’s <a href="../grant-store.html#item-GrantTx"><code>GrantTx</code></a> — a borrow of the store’s maps. Interior
+mutability (<code>RefCell</code>) does the real work; <code>&amp;mut self</code> is only the trait’s
+shape.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct FakeGrantTx&lt;'a&gt; {
+    /// The store's tables, which every trait method reads and writes.
+    store: &amp;'a FakeTables,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/mod.rs#L189-L192"><code>authorization-server-rust/src/domain/test_fake/mod.rs</code> lines 189–192</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domaintest_faketx"><a class="header" href="#domaintest_faketx"><code>domain::test_fake::tx</code></a></h2>
+<p>Every primitive is implemented on <a href="#item-FakeGrantTx"><code>FakeGrantTx</code></a>, one <code>impl</code> per table trait. Those a domain rule rests on are written to the promise the port makes.</p>
+<h3 id="a-decision-lands-once"><a class="header" href="#a-decision-lands-once">A decision lands once</a></h3>
+<p>A replace writes only while the stored request still has the status the transition read it with (<a href="../domain/authorization-request.html#transitions-and-the-guarded-replace">the guarded replace</a>).</p>
+<div id="item-FakeGrantTx--replace_code_request" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn replace_code_request(
+    &amp;mut self,
+    read: &amp;CodeRequest,
+    changed: &amp;CodeRequest,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    if changed.id != read.id {
+        return Err(replaced_by_another(&amp;read.id, &amp;changed.id));
+    }
+    let mut requests = self.store.code_authorization_requests.borrow_mut();
+    let Some(stored) = requests.get_mut(&amp;read.id) else {
+        return Ok(false);
+    };
+    if stored.state.status() != read.state.status() {
+        return Ok(false);
+    }
+    *stored = changed.clone();
+    Ok(true)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L348-L365"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 348–365</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-FakeGrantTx--replace_user_code_request" class="item-anchor"></div>
+
+<p>The guarded replace of a device request or pairing: write <code>changed</code>
+over the entry of <code>read_id</code> while it is still of <code>changed</code>’s flow and
+has <code>read_status</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn replace_user_code_request(
+    &amp;self,
+    read_id: &amp;str,
+    read_status: RequestStatus,
+    changed: PolledRequest,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    if changed.id() != read_id {
+        return Err(replaced_by_another(read_id, changed.id()));
+    }
+    let mut requests = self.store.user_code_requests.borrow_mut();
+    let Some(stored) = requests.get_mut(read_id) else {
+        return Ok(false);
+    };
+    let stored_as_read = match (&amp;*stored, &amp;changed) {
+        (PolledRequest::Device(stored), PolledRequest::Device(_)) =&gt; {
+            stored.state.status() == read_status
+        }
+        (PolledRequest::Pairing(stored), PolledRequest::Pairing(_)) =&gt; {
+            stored.state.status() == read_status
+        }
+        _ =&gt; false,
+    };
+    if stored_as_read {
+        *stored = changed;
+    }
+    Ok(stored_as_read)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L135-L161"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 135–161</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="a-code-redeems-once"><a class="header" href="#a-code-redeems-once">A code redeems once</a></h3>
+<p>Removing it from the map hands the row to the first caller and <code>None</code> to every later one.</p>
+<div id="item-FakeGrantTx--redeem_authorization_code" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn redeem_authorization_code(
+    &amp;mut self,
+    code: &amp;str,
+) -&gt; Result&lt;Option&lt;AuthorizationCode&gt;, AuthorizationServerError&gt; {
+    Ok(self.store.authorization_codes.borrow_mut().remove(code))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L415-L420"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 415–420</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="a-launch-is-spent-once-by-its-own-app"><a class="header" href="#a-launch-is-spent-once-by-its-own-app">A launch is spent once, by its own app</a></h3>
+<div id="item-FakeGrantTx--consume_launch_context" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn consume_launch_context(
+    &amp;mut self,
+    nonce: &amp;str,
+    client_id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;LaunchContext&gt;, AuthorizationServerError&gt; {
+    let mut contexts = self.store.launch_contexts.borrow_mut();
+    let Some(context) = contexts.get_mut(nonce).filter(|context| {
+        context.admits_client(client_id)
+            &amp;&amp; context.consumed_at.is_none()
+            &amp;&amp; context.expires_at &gt; now
+    }) else {
+        return Ok(None);
+    };
+    context.consumed_at = Some(now);
+    Ok(Some(context.clone()))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L469-L485"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 469–485</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="a-refresh-token-is-consumed-once"><a class="header" href="#a-refresh-token-is-consumed-once">A refresh token is consumed once</a></h3>
+<div id="item-FakeGrantTx--stamp_refresh_token_consumed_if_live" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn stamp_refresh_token_consumed_if_live(
+    &amp;mut self,
+    token_hash: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let mut tokens = self.store.tokens.borrow_mut();
+    match tokens.get_mut(token_hash) {
+        Some(token) if token.consumed_at.is_none() =&gt; {
+            token.consumed_at = Some(now);
+            Ok(true)
+        }
+        _ =&gt; Ok(false),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L712-L725"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 712–725</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="a-missing-session-counts-as-revoked"><a class="header" href="#a-missing-session-counts-as-revoked">A missing session counts as revoked</a></h3>
+<div id="item-FakeGrantTx--is_browser_session_revoked" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_browser_session_revoked(&amp;mut self, sid: &amp;str) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    Ok(self
+        .store
+        .browser_sessions
+        .borrow()
+        .get(sid)
+        .is_none_or(|session| session.revoked_at.is_some()))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L540-L547"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 540–547</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="the-owner-is-asked-about-the-newest-request-still-waiting"><a class="header" href="#the-owner-is-asked-about-the-newest-request-still-waiting">The Owner is asked about the newest request still waiting</a></h3>
+<p>A disabled app’s request is skipped, and an app with no registration is kept with no registered name, as the SQL’s left join to <code>clients</code> does.</p>
+<div id="item-FakeGrantTx--owner_prompt" class="item-anchor"></div>
+
+<p>Mirrors the adapter’s two reads: the newest candidate from each map
+(of two started at once, the greater id), keeping the later by
+<code>requested_at</code>, and on a tie the code request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt(
+    &amp;mut self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;OwnerPrompt&gt;, AuthorizationServerError&gt; {
+    let clients = self.store.clients.borrow();
+    // Mirrors the SQL: a disabled client's request is skipped, a client
+    // with no row's kept.
+    let is_candidate = |request: &amp;AuthorizationRequest| {
+        request.is_pending_at(now)
+            &amp;&amp; clients
+                .get(request.client_id())
+                .is_none_or(|client| client.disabled_at.is_none())
+    };
+    let newest = |requests: Vec&lt;AuthorizationRequest&gt;| {
+        requests
+            .into_iter()
+            .filter(is_candidate)
+            .max_by(|a, b| (a.requested_at(), a.id()).cmp(&amp;(b.requested_at(), b.id())))
+    };
+    let code = newest(
+        self.store
+            .code_authorization_requests
+            .borrow()
+            .values()
+            .cloned()
+            .map(AuthorizationRequest::Code)
+            .collect(),
+    );
+    let polled = newest(
+        self.store
+            .user_code_requests
+            .borrow()
+            .values()
+            .cloned()
+            .map(AuthorizationRequest::from)
+            .collect(),
+    );
+    let later = match (code, polled) {
+        (Some(code), Some(polled)) if polled.requested_at() &gt; code.requested_at() =&gt; {
+            Some(polled)
+        }
+        (Some(code), _) =&gt; Some(code),
+        (None, polled) =&gt; polled,
+    };
+    Ok(later.map(|request| {
+        // Mirrors the SQL left join: a client with no registration has no
+        // registered name.
+        let registered_client_name = clients
+            .get(request.client_id())
+            .map(|client| client.name.clone());
+        OwnerPrompt::for_request(&amp;request, registered_client_name)
+    }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L240-L292"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 240–292</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="a-session-outlives-its-end-while-a-live-family-names-it"><a class="header" href="#a-session-outlives-its-end-while-a-live-family-names-it">A session outlives its end while a live family names it</a></h3>
+<p>Its limited-page acknowledgements go with it.</p>
+<div id="item-FakeGrantTx--delete_browser_sessions_ended_before" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_browser_sessions_ended_before(
+    &amp;mut self,
+    cutoff: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;usize, AuthorizationServerError&gt; {
+    let named_by_a_family_alive_at_cutoff: Vec&lt;String&gt; = self
+        .store
+        .families
+        .borrow()
+        .values()
+        .filter(|family| family.expires_at &gt;= cutoff)
+        .filter_map(|family| family.sid.clone())
+        .collect();
+    let mut sessions = self.store.browser_sessions.borrow_mut();
+    let before = sessions.len();
+    sessions.retain(|sid, session| {
+        let ended_before_cutoff = session.expires_at &lt; cutoff
+            || session
+                .revoked_at
+                .is_some_and(|revoked_at| revoked_at &lt; cutoff);
+        !ended_before_cutoff || named_by_a_family_alive_at_cutoff.contains(sid)
+    });
+    self.store
+        .session_shortfall_acknowledgements
+        .borrow_mut()
+        .retain(|(sid, _)| sessions.contains_key(sid));
+    Ok(before - sessions.len())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/tx.rs#L646-L672"><code>authorization-server-rust/src/domain/test_fake/tx.rs</code> lines 646–672</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="where-the-fake-is-looser-than-sqlite"><a class="header" href="#where-the-fake-is-looser-than-sqlite">Where the fake is looser than SQLite</a></h3>
+<p>The fake leaves out what no domain rule rests on, so a test can’t lean on these:</p>
+<ul>
+<li><strong>No unique constraints.</strong> An insert of a repeated key (a <code>sid</code>, a code, a second pending request with the same <code>user_code</code>) overwrites the old entry instead of failing, and the signing-key insert appends.</li>
+<li><strong>Updates insert.</strong> <code>update_authorization_code_grant</code> and <code>update_device_grant</code> write the grant whether or not it was there.</li>
+<li><strong>Orderings differ.</strong> <code>all_grants</code> sorts by grant id, where SQLite orders by <code>granted_at</code>; <code>all_signing_keys</code> keeps insertion order, where SQLite puts the active key first, then orders by <code>kid</code>.</li>
+<li><strong>No locks.</strong> Concurrency is tested in SQLite; the fake only sequences.</li>
+</ul>
+<h2 id="domaintest_fakefixtures"><a class="header" href="#domaintest_fakefixtures"><code>domain::test_fake::fixtures</code></a></h2>
+<p>The request fixtures are made by the entities’ own constructors and transitions, so a fixture in any status is one the domain could have reached.</p>
+<h3 id="requests"><a class="header" href="#requests">Requests</a></h3>
+<div id="item-code_request" class="item-anchor"></div>
+
+<p>A code request fixture from client <code>client</code> asking for <code>read</code>, carrying
+<a href="../domain/test-fixtures.html#item-fixture_code_args"><code>fixture_code_args</code></a>, expiring at <code>expires_at</code>, moved to <code>status</code> (see
+<a href="#item-code_with_status"><code>code_with_status</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn code_request(
+    id: &amp;str,
+    status: RequestStatus,
+    expires_at: DateTime&lt;Utc&gt;,
+) -&gt; CodeRequest {
+    let now = Utc::now();
+    code_with_status(
+        CodeRequest::new(
+            NewCodeRequestArgs {
+                ttl: expires_at - now,
+                ..fixture_code_args(id, "client", owned_scopes(&amp;["read"]))
+            },
+            now,
+        ),
+        status,
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L233-L249"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 233–249</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-code_request_for" class="item-anchor"></div>
+
+<p>A pending code request fixture <code>id</code> from <code>client_id</code>, asking for
+<code>requested_scopes</code>, carrying <a href="../domain/test-fixtures.html#item-fixture_code_args"><code>fixture_code_args</code></a>, live for five minutes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn code_request_for(
+    id: &amp;str,
+    client_id: &amp;str,
+    requested_scopes: Vec&lt;String&gt;,
+) -&gt; CodeRequest {
+    CodeRequest::new(
+        fixture_code_args(id, client_id, requested_scopes),
+        Utc::now(),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L72-L81"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 72–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-fixture_code_args" class="item-anchor"></div>
+
+<p>How the code request fixtures start: <code>id</code> from <code>client_id</code>, asking for
+<code>requested_scopes</code>, live for five minutes, with the <code>https://example.com/cb</code>
+redirect, a PKCE challenge, the client <code>state</code>, and browser session
+<a href="#item-FIXTURE_SID"><code>FIXTURE_SID</code></a>; no launch, pending (not on its limited page), and not
+decidable in the requesting browser.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn fixture_code_args(
+    id: &amp;str,
+    client_id: &amp;str,
+    requested_scopes: Vec&lt;String&gt;,
+) -&gt; NewCodeRequestArgs {
+    NewCodeRequestArgs {
+        id: id.to_owned(),
+        client_id: client_id.to_owned(),
+        requested_scopes,
+        ttl: Duration::minutes(5),
+        redirect_uri: Url::parse("https://example.com/cb").unwrap(),
+        code_challenge: "c".repeat(43),
+        client_state: "state".to_owned(),
+        sid: FIXTURE_SID.to_owned(),
+        launch: None,
+        launch_bound_patient: None,
+        pre_approved_scopes: Vec::new(),
+        decidable_in_requesting_browser: false,
+        awaits_limited_page: false,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L208-L228"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 208–228</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-code_with_status" class="item-anchor"></div>
+
+<p><code>request</code>, a pending code request, moved to <code>status</code> by its own
+transitions, taken just before it expires: an approval grants what it
+asked for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn code_with_status(request: CodeRequest, status: RequestStatus) -&gt; CodeRequest {
+    let decided_at = request.expires_at - Duration::milliseconds(1);
+    match status {
+        RequestStatus::Pending =&gt; request,
+        RequestStatus::AwaitingLimitedPage =&gt; CodeRequest {
+            state:
+                crate::domain::authorization_request::code::CodeRequestState::AwaitingLimitedPage,
+            ..request
+        },
+        RequestStatus::Approved =&gt; request
+            .approve(fixture_approval(&amp;request.requested_scopes), decided_at)
+            .expect("a pending fixture approves"),
+        RequestStatus::Denied =&gt; request.deny(decided_at).expect("a pending fixture denies"),
+        RequestStatus::Claimed =&gt; panic!("a code request is never claimed"),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L111-L126"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 111–126</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-device_request" class="item-anchor"></div>
+
+<p>A device-code request fixture from client <code>client</code> asking for <code>openid</code>,
+started now and pending for five minutes, then moved to <code>status</code> (see
+<a href="#item-device_with_status"><code>device_with_status</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn device_request(id: &amp;str, user_code: &amp;str, status: RequestStatus) -&gt; DeviceRequest {
+    device_with_status(
+        DeviceRequest::new(
+            NewDeviceRequestArgs {
+                id: id.to_owned(),
+                client_id: "client".to_owned(),
+                requested_scopes: owned_scopes(&amp;["openid"]),
+                ttl: Duration::minutes(5),
+                user_code: user_code.to_owned(),
+                device_name: None,
+            },
+            Utc::now(),
+        ),
+        status,
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L36-L51"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 36–51</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-device_with_status" class="item-anchor"></div>
+
+<p><code>request</code>, a pending device request, moved to <code>status</code> by its own
+transitions, taken just before it expires: an approval grants what it
+asked for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn device_with_status(request: DeviceRequest, status: RequestStatus) -&gt; DeviceRequest {
+    let decided_at = request.expires_at - Duration::milliseconds(1);
+    let approve = |request: &amp;DeviceRequest| {
+        request
+            .approve(
+                fixture_approval(&amp;request.requested_scopes),
+                None,
+                decided_at,
+            )
+            .expect("a pending fixture approves")
+    };
+    match status {
+        RequestStatus::Pending =&gt; request,
+        RequestStatus::Approved =&gt; approve(&amp;request),
+        RequestStatus::Denied =&gt; request.deny(decided_at).expect("a pending fixture denies"),
+        RequestStatus::Claimed =&gt; approve(&amp;request)
+            .claim(decided_at)
+            .expect("an approved fixture is claimed"),
+        RequestStatus::AwaitingLimitedPage =&gt; panic!("a device request has no limited page"),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L86-L106"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 86–106</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-fixture_approval" class="item-anchor"></div>
+
+<p>An approval of <code>requested_scopes</code>, binding no patient.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn fixture_approval(requested_scopes: &amp;[String]) -&gt; Approval {
+    Approval {
+        granted_scopes: requested_scopes.to_vec(),
+        patient: None,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L129-L134"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 129–134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-pairing_request" class="item-anchor"></div>
+
+<p>A pending browser pairing fixture <code>id</code> from the browser-session client,
+asking for the Owner’s scopes, keyed by <code>user_code</code>, named <code>browser_name</code>,
+live for five minutes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn pairing_request(id: &amp;str, user_code: &amp;str, browser_name: &amp;str) -&gt; PairingRequest {
+    PairingRequest::new(
+        NewPairingRequestArgs {
+            id: id.to_owned(),
+            client_id: crate::BROWSER_SESSION_CLIENT_ID.to_owned(),
+            requested_scopes: crate::owner_scopes(),
+            ttl: Duration::minutes(5),
+            user_code: user_code.to_owned(),
+            browser_name: browser_name.to_owned(),
+        },
+        Utc::now(),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L56-L68"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 56–68</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-approve_stored" class="item-anchor"></div>
+
+<p>Approve the request <code>id</code> stored in <code>store</code> now, granting <code>granted_scopes</code>
+and naming its device or browser <code>requester_name</code> (<code>None</code> keeps its own),
+as an approval through the consent surfaces would.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn approve_stored(
+    store: &amp;FakeGrantStore,
+    id: &amp;str,
+    granted_scopes: &amp;[&amp;str],
+    requester_name: Option&lt;&amp;str&gt;,
+) {
+    let mut tx = store.tx();
+    let request = tx
+        .authorization_request_by_id(id)
+        .unwrap()
+        .expect("the request is stored");
+    let approval = Approval {
+        granted_scopes: owned_scopes(granted_scopes),
+        patient: None,
+    };
+    let now = Utc::now();
+    let requester_name = requester_name.map(str::to_owned);
+    let landed = match request {
+        AuthorizationRequest::Code(read) =&gt; {
+            let approved = read.approve(approval, now).expect("pending");
+            tx.replace_code_request(&amp;read, &amp;approved)
+        }
+        AuthorizationRequest::Device(read) =&gt; {
+            let approved = read
+                .approve(approval, requester_name, now)
+                .expect("pending");
+            tx.replace_device_request(&amp;read, &amp;approved)
+        }
+        AuthorizationRequest::Pairing(read) =&gt; {
+            let approval = PairingApproval {
+                granted_scopes: approval.granted_scopes,
+            };
+            let approved = read
+                .approve(approval, requester_name, now)
+                .expect("pending");
+            tx.replace_pairing_request(&amp;read, &amp;approved)
+        }
+    };
+    assert!(landed.unwrap());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L162-L201"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 162–201</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="the-browser-session"><a class="header" href="#the-browser-session">The browser session</a></h3>
+<div id="item-FIXTURE_SID" class="item-anchor"></div>
+
+<p>The browser session the code-flow fixtures (<a href="../domain/test-fixtures.html#item-code_request"><code>code_request</code></a>,
+<a href="#item-redeemed_code"><code>redeemed_code</code></a>) are made in. It names no session until
+<a href="#item-seed_fixture_browser_session"><code>seed_fixture_browser_session</code></a> starts it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) const FIXTURE_SID: &amp;str = "sid-1";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L139"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> line 139</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-seed_fixture_browser_session" class="item-anchor"></div>
+
+<p>Start <a href="#item-FIXTURE_SID"><code>FIXTURE_SID</code></a>’s browser session in <code>store</code>, standing, so a fixture
+request can be approved and the code and refresh family it earns are
+honoured.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn seed_fixture_browser_session(store: &amp;FakeGrantStore) {
+    store
+        .tx()
+        .insert_browser_session(&amp;BrowserSession {
+            sid: FIXTURE_SID.to_owned(),
+            ..BrowserSession::new_paired_session(
+                "Firefox on Linux".to_owned(),
+                vec!["wildflower/launch".to_owned()],
+                Duration::hours(24),
+                Utc::now(),
+            )
+        })
+        .unwrap();
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L144-L157"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 144–157</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="clients-grants-and-keys"><a class="header" href="#clients-grants-and-keys">Clients, grants and keys</a></h3>
+<div id="item-client" class="item-anchor"></div>
+
+<p>A public-client fixture with a caller-chosen <code>allowed_scopes</code> set and the
+<code>https://example.com/cb</code> redirect the request fixtures use.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client(client_id: &amp;str, registered_client_scopes: &amp;[&amp;str]) -&gt; Client {
+    Client {
+        client_id: client_id.to_owned(),
+        name: format!("{client_id} display name"),
+        kind: ClientKind::Public,
+        redirect_uris: vec![Url::parse("https://example.com/cb").unwrap()],
+        allowed_scopes: registered_client_scopes
+            .iter()
+            .map(|s| (*s).to_owned())
+            .collect(),
+        allowed_grant_types: AllowedGrantType::ALL.to_vec(),
+        secret_hash: None,
+        registered_at: Utc::now(),
+        disabled_at: None,
+        registration_source: RegistrationSource::TrustedOnFirstUse,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L253-L269"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 253–269</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-owned_scopes" class="item-anchor"></div>
+
+<p>Owned scope strings from literals.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn owned_scopes(scopes: &amp;[&amp;str]) -&gt; Vec&lt;String&gt; {
+    scopes.iter().map(|s| (*s).to_owned()).collect()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L285-L287"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 285–287</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-authenticated_public_client" class="item-anchor"></div>
+
+<p>Register <code>client</code> (which must be public) and authenticate as it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn authenticated_public_client(
+    store: &amp;FakeGrantStore,
+    client: Client,
+) -&gt; AuthenticatedClient {
+    let client_id = client.client_id.clone();
+    store.tx().upsert_client(&amp;client).unwrap();
+    AuthenticatedClient::authenticate(
+        &amp;mut store.tx(),
+        &amp;ClientCredentials {
+            client_id,
+            client_secret: None,
+        },
+    )
+    .expect("a public client authenticates")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L298-L312"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 298–312</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-code_grant" class="item-anchor"></div>
+
+<p>An authorization-code grant fixture.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn code_grant(id: &amp;str, client_id: &amp;str) -&gt; AuthorizationCodeGrant {
+    AuthorizationCodeGrant {
+        id: id.to_owned(),
+        client_id: client_id.to_owned(),
+        scopes: vec!["read".to_owned()],
+        granted_at: Utc::now(),
+        last_used_at: None,
+        patient: None,
+        redirect_uri: Url::parse("https://example.com/cb").unwrap(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L272-L282"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 272–282</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-seed_active_signing_key" class="item-anchor"></div>
+
+<p>Seed a freshly generated signing key as the active one, and return it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn seed_active_signing_key(store: &amp;FakeGrantStore) -&gt; SigningKey {
+    let mut key = SigningKey::generate().expect("key");
+    key.is_active = true;
+    store.tx().insert_signing_key(&amp;key).unwrap();
+    key
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L290-L295"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 290–295</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="proofs"><a class="header" href="#proofs">Proofs</a></h3>
+<div id="item-redeemed_code" class="item-anchor"></div>
+
+<p>A code issued to <code>client_id</code> (registered here as a public client) for
+<code>granted_scopes</code>, bound to patient <code>pat-1</code> and <code>https://example.com/cb</code>, then
+redeemed through the real <a href="../authority/redemption.html#item-RedeemedAuthorizationCode--redeem"><code>RedeemedAuthorizationCode::redeem</code></a> — for a test
+that needs the proof rather than the redemption rule. A standing grant the
+test planted for that client and redirect is picked up.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn redeemed_code(
+    store: &amp;FakeGrantStore,
+    client_id: &amp;str,
+    granted_scopes: &amp;[&amp;str],
+) -&gt; RedeemedAuthorizationCode {
+    const VERIFIER: &amp;str = "verifier-verifier-verifier-verifier-verifier-1";
+    let redirect_uri = Url::parse("https://example.com/cb").unwrap();
+    let authenticated = authenticated_public_client(store, client(client_id, granted_scopes));
+    let now = Utc::now();
+    let code = generate_authorization_code();
+    store
+        .tx()
+        .issue_authorization_code(&amp;AuthorizationCode {
+            code: code.clone(),
+            request_id: "req".to_owned(),
+            client_id: client_id.to_owned(),
+            redirect_uri: redirect_uri.clone(),
+            code_challenge: compute_code_challenge(VERIFIER),
+            granted_scopes: owned_scopes(granted_scopes),
+            patient: Some("pat-1".to_owned()),
+            issued_at: now,
+            expires_at: now + AUTHORIZATION_CODE_TTL,
+            sid: FIXTURE_SID.to_owned(),
+        })
+        .unwrap();
+    RedeemedAuthorizationCode::redeem(
+        &amp;mut store.tx(),
+        &amp;authenticated,
+        &amp;PresentedAuthorizationCode {
+            code: &amp;code,
+            code_verifier: VERIFIER,
+            redirect_uri: redirect_uri.as_str(),
+        },
+        now,
+    )
+    .expect("the fake store does not fail")
+    .expect("a freshly issued code redeems")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L319-L356"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 319–356</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-delegated_scopes" class="item-anchor"></div>
+
+<p><code>scopes</code> as delegated by an owner-equivalent approver, with nothing clamped
+away.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn delegated_scopes(scopes: &amp;[&amp;str]) -&gt; DelegatedScopes {
+    DelegatedScopes::clamp(
+        &amp;Grant::parse(["system/*.cruds", "wildflower/*.cruds"]),
+        owned_scopes(scopes),
+        &amp;ApprovableScopes::for_device(&amp;owned_scopes(scopes)),
+    )
+    .expect("the owner covers everything")
+    .expect("non-empty")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L360-L368"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 360–368</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-registering_delegated_scopes" class="item-anchor"></div>
+
+<p><code>scopes</code> as delegated by an owner-equivalent approver to a code-flow client
+trusted on first use, so recording them writes its registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn registering_delegated_scopes(scopes: &amp;[&amp;str]) -&gt; DelegatedScopes {
+    DelegatedScopes::clamp(
+        &amp;Grant::parse(["system/*.cruds", "wildflower/*.cruds"]),
+        owned_scopes(scopes),
+        &amp;ApprovableScopes::for_code(&amp;owned_scopes(scopes), None, false),
+    )
+    .expect("the owner covers everything")
+    .expect("non-empty")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L372-L380"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 372–380</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="doubles-for-the-hosts-ports"><a class="header" href="#doubles-for-the-hosts-ports">Doubles for the host’s ports</a></h3>
+<div id="item-RecordingOwnerApproval" class="item-anchor"></div>
+
+<p>A <a href="../assembly/ports-and-adapters.html#item-OwnerApproval"><code>OwnerApproval</code></a> that counts republish calls. Atomic (not a
+<code>Cell</code>) so it satisfies the port’s <code>Send + Sync</code> bound.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct RecordingOwnerApproval {
+    /// How many times the Owner prompt has been republished.
+    republishes: AtomicU32,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L385-L388"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 385–388</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RecordingOwnerApproval--count" class="item-anchor"></div>
+
+<p>How many times the Owner prompt has been republished.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn count(&amp;self) -&gt; u32 {
+    self.republishes.load(Ordering::SeqCst)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L392-L394"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> lines 392–394</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-NothingRevoked" class="item-anchor"></div>
+
+<p>A <a href="../assembly/ports-and-adapters.html#item-RevocationCheck"><code>RevocationCheck</code></a> under which nothing is revoked: no denylisted <code>jti</code>
+and no subject epoch.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct NothingRevoked;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/804b2af2cb9156a9742140c54acb531d0e27d2de/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L405"><code>authorization-server-rust/src/domain/test_fake/fixtures.rs</code> line 405</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/grant-store/signing-keys.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/authority.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/grant-store/signing-keys.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/authority.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

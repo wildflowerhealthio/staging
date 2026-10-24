@@ -1,0 +1,778 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Errors - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-f16b3b8a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="errors"><a class="header" href="#errors">Errors</a></h1>
+<!-- markdownlint-disable-file link-fragments -- the item-… anchors are added when the book is built. -->
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_server_error.rs"><code>authorization-server-rust/src/domain/authorization_server_error.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/oauth_error_code.rs"><code>authorization-server-rust/src/domain/oauth_error_code.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorize_refusal.rs"><code>authorization-server-rust/src/domain/authorize_refusal.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/token_exchange_error.rs"><code>authorization-server-rust/src/domain/token_exchange_error.rs</code></a></p>
+
+<p>The server says no in four vocabularies, one per audience:</p>
+<ul>
+<li><a href="#item-AuthorizationServerError"><code>AuthorizationServerError</code></a> to the Owner’s UI on the <code>/authorization</code> surface, and from every operation when the store fails;</li>
+<li><a href="#item-OAuthErrorCode"><code>OAuthErrorCode</code></a> to an app, as the <code>error</code> of an OAuth response;</li>
+<li><a href="#item-AuthorizeRefusal"><code>AuthorizeRefusal</code></a> to the person at the browser, or the app, when <code>/oauth/authorize</code> refuses a request;</li>
+<li><a href="#item-TokenExchangeError"><code>TokenExchangeError</code></a> to an app at <code>/oauth/token</code>, with the specific reason kept for the operator’s log.</li>
+</ul>
+<p><strong>None of them knows about HTTP.</strong> Each is a domain fact, and the HTTP layer decides the status and the body (<a href="../http/errors-and-wire-shapes.html">Errors and Wire Shapes</a>). The two that reach an app are built so that nothing from the request is echoed back: a code is one of a closed set, and a description is one of the server’s fixed sentences.</p>
+<h2 id="domainauthorization_server_error"><a class="header" href="#domainauthorization_server_error"><code>domain::authorization_server_error</code></a></h2>
+<h3 id="authorizationservererror"><a class="header" href="#authorizationservererror"><code>AuthorizationServerError</code></a></h3>
+<p>The semantic variants are decided one layer up from the store, in the capabilities, so the SQLite adapter and the in-memory test fake speak only the port’s primitive contract, and the store produces nothing but <code>Infrastructure</code>. <code>Display</code> gives each variant a sentence for the logs.</p>
+<div id="item-AuthorizationServerError" class="item-anchor"></div>
+
+<p>The ways an authorization server domain operation can fail. The <code>*NotFound</code> variants
+are semantic, client-facing outcomes that are part of the wire contract
+(each renders as a structured JSON 404 keyed by the resource’s identifying
+field); <a href="#item-AuthorizationServerError"><code>Infrastructure</code></a> is an opaque
+infrastructure failure rendered as a logged, empty 500. Its audience is the
+Owner’s UI on the <code>/authorization</code> surface, which acts on the semantic
+variants, and every operation when the store fails. Each semantic 4xx
+renders as JSON naming the variant in <code>error</code>, with the identifying field
+beside it, so the Owner’s UI can tell which thing went missing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum AuthorizationServerError {
+    /// No pending, unexpired authorization-code consent has this id — the
+    /// Owner-facing `/authorization/oauth-consents/{id}` surface's 404.
+    OAuthConsentNotFound {
+        /// The authorization request id the Owner's UI asked for.
+        id: String,
+    },
+    /// No pending, unexpired device-code consent has this user code — the
+    /// Owner-facing `/authorization/devices/{userCode}` surface's 404.
+    DeviceConsentNotFound {
+        /// The user code the Owner's UI asked for.
+        user_code: String,
+    },
+    /// No standing grant has this id — the `/authorization/grants/{id}` 404.
+    GrantNotFound {
+        /// The grant id the Owner's UI asked for.
+        id: String,
+    },
+    /// No standing browser session has this `sid` — the
+    /// `DELETE /authorization/browser-sessions/{sid}` 404.
+    BrowserSessionNotFound {
+        /// The session id the Owner's UI asked to revoke.
+        sid: String,
+    },
+    /// No registered client has this `client_id` — the
+    /// `PATCH /authorization/clients/{clientId}` 404.
+    ClientNotFound {
+        /// The client the Owner's UI asked to change.
+        client_id: String,
+    },
+    /// The Owner tried to disable an essential client — the
+    /// `PATCH /authorization/clients/{clientId}` **409**. Disabling it would
+    /// leave the Owner no way in (see
+    /// `is_essential_client`).
+    /// Nothing is written when it is raised.
+    EssentialClient {
+        /// The essential client the Owner tried to disable.
+        client_id: String,
+    },
+    /// No authorization request has this id — the `/oauth/authorize/{id}`
+    /// polling endpoint's 404, which the wait page's poll hears.
+    AuthorizationRequestNotFound {
+        /// The authorization request id the wait page polled.
+        id: String,
+    },
+    /// The caller authenticated, but their token doesn't cover the scope(s) the
+    /// `/authorization` operation requires — the surface's **403**. `missing_scopes`
+    /// are the rendered scopes the caller must additionally hold. Raised when the
+    /// [`Scoped`](wildflowerhealthio_scope_capabilities::Scoped) extractor rejects (via
+    /// `From&lt;MissingScopes&gt;`), and when a consent approval's approver lacks one
+    /// of the request's approval scopes (`wildflower/Grant.c` for a standing
+    /// grant, `wildflower/Client.c` and `wildflower/Client.u` for a
+    /// registration trusted on first use, a code request's resource scopes),
+    /// which depend on the request and so are checked per call. Nothing is
+    /// written when an approval raises it.
+    InsufficientScope {
+        /// The rendered scopes the caller lacks.
+        missing_scopes: Vec&lt;String&gt;,
+    },
+    /// An approver tried to grant a client more than they themselves hold —
+    /// the consent approve surfaces' **403**. `approver_missing_scopes` are the rendered
+    /// scopes the approval would grant that the approver's own token does not
+    /// cover ("you can't delegate more permission than you have"). Semantic and
+    /// client-facing: the approver must step up (or narrow their approval).
+    /// It renders as the same 403 body as
+    /// [`InsufficientScope`](AuthorizationServerError::InsufficientScope).
+    InsufficientApproverScope {
+        /// The rendered scopes the approval would grant beyond the approver's
+        /// own token.
+        approver_missing_scopes: Vec&lt;String&gt;,
+    },
+    /// The Owner approved an authorization-code consent whose client is new to
+    /// this authorization server (or whose redirect / scopes step outside its
+    /// registration) without acknowledging that warning — the consent approve
+    /// surface's **409**. Semantic and client-facing: the launcher must show the
+    /// registration warning and send
+    /// `acknowledgedRegistrationChange: true`. Nothing is written when it is raised.
+    RegistrationNotAcknowledged {
+        /// The authorization request the Owner approved.
+        id: String,
+    },
+    /// The Owner approved an authorization-code consent whose SMART launch
+    /// bound a patient, naming a different patient (or none) — the consent
+    /// approve surface's **409**. Nothing is written when it is raised.
+    LaunchPatientMismatch {
+        /// The authorization request the Owner approved.
+        id: String,
+    },
+    /// An infrastructure failure in the backing store (a lock, query, or
+    /// mapping error) — opaque to clients: the HTTP layer logs `context` +
+    /// `source` and answers an empty 500. The cause is captured as text so
+    /// this type stays free of the store's database error types.
+    Infrastructure {
+        /// A fixed phrase saying what the store was doing when it failed.
+        context: &amp;'static str,
+        /// The cause's `Display` text. Kept as text, not an error source, so
+        /// no database error type reaches the routes.
+        source: String,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_server_error.rs#L23-L122"><code>authorization-server-rust/src/domain/authorization_server_error.rs</code> lines 23–122</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="infrastructure"><a class="header" href="#infrastructure"><code>infrastructure</code></a></h4>
+<div id="item-AuthorizationServerError--infrastructure" class="item-anchor"></div>
+
+<p>Wrap an infrastructure failure (a store lock, query, or row-mapping
+error) as an opaque
+<a href="#item-AuthorizationServerError"><code>Infrastructure</code></a>, capturing <code>context</code>
+and the cause’s <code>Display</code> text. The store calls this so its database
+error types never reach the HTTP layer.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn infrastructure(context: &amp;'static str, source: impl std::fmt::Display) -&gt; Self {
+    AuthorizationServerError::Infrastructure {
+        context,
+        source: source.to_string(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_server_error.rs#L195-L200"><code>authorization-server-rust/src/domain/authorization_server_error.rs</code> lines 195–200</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from-missingscopes"><a class="header" href="#from-missingscopes">From <code>MissingScopes</code></a></h4>
+<p>The scope gate’s own rejection becomes <code>InsufficientScope</code>, so it reaches the wire through the same rendering as any other failure.</p>
+<div id="item-AuthorizationServerError--from" class="item-anchor"></div>
+
+<p>The <code>Scoped</code> extractor’s
+rejection — the caller’s token doesn’t cover the capability’s required
+scopes — becomes
+<a href="#item-AuthorizationServerError"><code>InsufficientScope</code></a>, naming
+the <code>missing</code> scopes, so it reaches the wire through this error’s
+rendering like any other failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn from(missing: MissingScopes) -&gt; Self {
+    AuthorizationServerError::InsufficientScope {
+        missing_scopes: missing.into_rendered(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorization_server_error.rs#L211-L215"><code>authorization-server-rust/src/domain/authorization_server_error.rs</code> lines 211–215</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainoauth_error_code"><a class="header" href="#domainoauth_error_code"><code>domain::oauth_error_code</code></a></h2>
+<h3 id="oautherrorcode"><a class="header" href="#oautherrorcode"><code>OAuthErrorCode</code></a></h3>
+<div id="item-OAuthErrorCode" class="item-anchor"></div>
+
+<p>A code from the closed set of OAuth error codes the authorization server’s JSON error
+surface may emit. Its <code>AsRef&lt;str&gt;</code>/<code>Display</code> impls (derived by <code>strum</code>
+from the <code>snake_case</code> variant names) yield the exact RFC wire value. Its
+audience is an app, as the <code>error</code> of an OAuth response: from
+<code>/oauth/token</code>, or on its callback redirect.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum OAuthErrorCode {
+    /// RFC 6749 §5.2 — the request is missing a required parameter, malformed,
+    /// or otherwise invalid.
+    InvalidRequest,
+    /// RFC 6749 §5.2 — client authentication failed.
+    InvalidClient,
+    /// RFC 6749 §5.2 — the provided grant (authorization code, refresh token,
+    /// device code) is invalid, expired, revoked, or does not match.
+    InvalidGrant,
+    /// RFC 6749 §5.2 — the authenticated client is not authorized to use this
+    /// grant type.
+    UnauthorizedClient,
+    /// RFC 6749 §5.2 — the requested scope is invalid, unknown, or exceeds what
+    /// the client may hold.
+    InvalidScope,
+    /// RFC 6749 §4.1.2.1 — the authorization server does not support obtaining an
+    /// authorization code using this `response_type`. Surfaced on the
+    /// authorization-endpoint redirect, never the JSON token surface.
+    UnsupportedResponseType,
+    /// RFC 6749 §5.2 — the server encountered an unexpected condition.
+    ServerError,
+    /// RFC 6749 §4.1.2.1 — the resource owner (or authorization server) denied
+    /// the request, or it ended before it could be approved (its browser
+    /// session ended, or its browser cancelled on the limited page).
+    AccessDenied,
+    /// RFC 8628 §3.5 — the device authorization is still pending the user's
+    /// action; the client should keep polling.
+    AuthorizationPending,
+    /// RFC 8628 §3.5 — the client is polling faster than the permitted interval
+    /// and must back off.
+    SlowDown,
+    /// RFC 8628 §3.5 — the `device_code` has expired and the device-flow
+    /// authorization session is no longer valid.
+    ExpiredToken,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/oauth_error_code.rs#L25-L59"><code>authorization-server-rust/src/domain/oauth_error_code.rs</code> lines 25–59</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each variant’s wire value must match its exact RFC string — this guards
+the <code>strum</code> <code>serialize_all</code> rule (and any variant rename) from silently
+changing what ships on the wire.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn as_ref_matches_rfc_wire_values() {
+    assert_eq!(OAuthErrorCode::InvalidRequest.as_ref(), "invalid_request");
+    assert_eq!(OAuthErrorCode::InvalidClient.as_ref(), "invalid_client");
+    assert_eq!(OAuthErrorCode::InvalidGrant.as_ref(), "invalid_grant");
+    assert_eq!(
+        OAuthErrorCode::UnauthorizedClient.as_ref(),
+        "unauthorized_client"
+    );
+    assert_eq!(OAuthErrorCode::InvalidScope.as_ref(), "invalid_scope");
+    assert_eq!(
+        OAuthErrorCode::UnsupportedResponseType.as_ref(),
+        "unsupported_response_type"
+    );
+    assert_eq!(OAuthErrorCode::ServerError.as_ref(), "server_error");
+    assert_eq!(OAuthErrorCode::AccessDenied.as_ref(), "access_denied");
+    assert_eq!(
+        OAuthErrorCode::AuthorizationPending.as_ref(),
+        "authorization_pending"
+    );
+    assert_eq!(OAuthErrorCode::SlowDown.as_ref(), "slow_down");
+    assert_eq!(OAuthErrorCode::ExpiredToken.as_ref(), "expired_token");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/oauth_error_code.rs#L69-L90"><code>authorization-server-rust/src/domain/oauth_error_code.rs</code> lines 69–90</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><code>Display</code> must match <code>AsRef&lt;str&gt;</code> byte-for-byte — both are <code>strum</code>-derived
+from the same rule, and callers use each interchangeably.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn display_matches_as_ref() {
+    for code in [
+        OAuthErrorCode::InvalidRequest,
+        OAuthErrorCode::InvalidClient,
+        OAuthErrorCode::InvalidGrant,
+        OAuthErrorCode::UnauthorizedClient,
+        OAuthErrorCode::InvalidScope,
+        OAuthErrorCode::UnsupportedResponseType,
+        OAuthErrorCode::ServerError,
+        OAuthErrorCode::AccessDenied,
+        OAuthErrorCode::AuthorizationPending,
+        OAuthErrorCode::SlowDown,
+        OAuthErrorCode::ExpiredToken,
+    ] {
+        assert_eq!(code.to_string(), code.as_ref());
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/oauth_error_code.rs#L95-L111"><code>authorization-server-rust/src/domain/oauth_error_code.rs</code> lines 95–111</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainauthorize_refusal"><a class="header" href="#domainauthorize_refusal"><code>domain::authorize_refusal</code></a></h2>
+<p>RFC 6749 §4.1.2.1 lets a refusal go back to the app only once its <code>redirect_uri</code> is trusted. Before that point, or for a redirect nobody has vouched for, the refusal is a local page in the browser. Either way the reason is the same sentence.</p>
+<h3 id="authorizerefusal"><a class="header" href="#authorizerefusal"><code>AuthorizeRefusal</code></a></h3>
+<div id="item-AuthorizeRefusal" class="item-anchor"></div>
+
+<p>Why <code>/oauth/authorize</code> refused a request: shown on the local page, or sent
+back to a trusted redirect as the <code>error_description</code>. Its audience is the
+person at the browser, or the app once its redirect is trusted. The local
+page is titled for the refusal, with <a href="#item-AuthorizeRefusal--description"><code>Self::description</code></a> as its body.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum AuthorizeRefusal {
+    /// The `redirect_uri` is not a well-formed URL, so there is nowhere
+    /// trusted to send the refusal.
+    InvalidRedirectUri,
+    /// The `redirect_uri` is not `http` or `https`.
+    InvalidScheme,
+    /// The request comes from a client the Owner has disabled.
+    DisabledClient,
+    /// The `redirect_uri` is not on a server-defined registration. A client
+    /// trusted on first use is never refused for this: its new redirect goes
+    /// to the Owner instead.
+    RedirectUriNotAllowed,
+    /// `response_type` is not `code`.
+    UnsupportedResponseType,
+    /// `code_challenge_method` is not `S256`.
+    UnsupportedCodeChallengeMethod,
+    /// `code_challenge` is not a well-formed S256 challenge.
+    InvalidCodeChallenge,
+    /// `launch` names no launch this client may see: never minted, pruned
+    /// after expiring, or another app's, which reads exactly like one that
+    /// doesn't exist.
+    LaunchUnknown,
+    /// `launch` names this client's launch, which was consumed already.
+    LaunchAlreadyUsed,
+    /// `launch` names this client's launch, which is past its expiry.
+    LaunchExpired,
+    /// `aud` does not name this server's origin, its FHIR base.
+    InvalidAudience,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorize_refusal.rs#L15-L43"><code>authorization-server-rust/src/domain/authorize_refusal.rs</code> lines 15–43</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="description"><a class="header" href="#description"><code>description</code></a></h4>
+<p><strong>Every sentence is a fixed string, never request input, and valid <code>error_description</code> text</strong>, so nothing an attacker sends is echoed back and no sentence breaks the redirect’s grammar. The tests check every sentence against the RFC’s grammar with a <a href="test-fixtures.html#errors">small predicate</a>, including the three fixed sentences of the <a href="authorization-code.html#domainclient_redirect">client callback</a>.</p>
+<div id="item-AuthorizeRefusal--description" class="item-anchor"></div>
+
+<p>The sentence saying why: the local page’s body, and the
+<code>error_description</code> when the refusal goes back to the client. Plain
+ASCII without <code>"</code> or <code>\</code>, as RFC 6749 §4.1.2.1 requires of an
+<code>error_description</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn description(self) -&gt; &amp;'static str {
+    match self {
+        AuthorizeRefusal::InvalidRedirectUri =&gt; {
+            "The supplied redirect_uri is not a well-formed URL."
+        }
+        AuthorizeRefusal::InvalidScheme =&gt; "The supplied redirect_uri must use http or https.",
+        AuthorizeRefusal::DisabledClient =&gt; "The supplied client_id has been disabled.",
+        AuthorizeRefusal::RedirectUriNotAllowed =&gt; {
+            "The supplied redirect_uri is not registered for this client."
+        }
+        AuthorizeRefusal::UnsupportedResponseType =&gt; {
+            "The app asked for a kind of sign-in this server doesn't support."
+        }
+        AuthorizeRefusal::UnsupportedCodeChallengeMethod =&gt; {
+            "The app's sign-in request uses a security method this server doesn't support."
+        }
+        AuthorizeRefusal::InvalidCodeChallenge =&gt; {
+            "The app's sign-in request has a malformed security check."
+        }
+        AuthorizeRefusal::LaunchUnknown =&gt; "This launch isn't recognized. Open the app again.",
+        AuthorizeRefusal::LaunchAlreadyUsed =&gt; {
+            "This launch was already used. Open the app again."
+        }
+        AuthorizeRefusal::LaunchExpired =&gt; "This launch has expired. Open the app again.",
+        AuthorizeRefusal::InvalidAudience =&gt; {
+            "The app asked for a different server than this one."
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorize_refusal.rs#L51-L79"><code>authorization-server-rust/src/domain/authorize_refusal.rs</code> lines 51–79</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Every reason <code>/oauth/authorize</code> sends or shows is a valid
+<code>error_description</code>, and so are the three fixed sentences of the client
+callback.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn every_description_is_a_valid_error_description() {
+    for kind in AuthorizeRefusal::iter() {
+        assert!(
+            is_error_description(kind.description()),
+            "{kind:?}: {:?}",
+            kind.description()
+        );
+    }
+    for description in [
+        SCOPES_NOT_REGISTERED_DESCRIPTION,
+        BROWSER_SIGNED_OUT_DESCRIPTION,
+        REQUEST_DECLINED_DESCRIPTION,
+    ] {
+        assert!(is_error_description(description), "{description:?}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorize_refusal.rs#L106-L121"><code>authorization-server-rust/src/domain/authorize_refusal.rs</code> lines 106–121</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The check refuses the two characters RFC 6749 leaves out, and
+anything outside printable ASCII.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_quote_backslash_or_non_ascii_is_not_an_error_description() {
+    for text in ["say \"hi\"", "a\\b", "caf\u{e9}", "tab\there", ""] {
+        assert!(!is_error_description(text), "{text:?}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/authorize_refusal.rs#L126-L130"><code>authorization-server-rust/src/domain/authorize_refusal.rs</code> lines 126–130</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domaintoken_exchange_error"><a class="header" href="#domaintoken_exchange_error"><code>domain::token_exchange_error</code></a></h2>
+<p><strong>The app hears less than the log.</strong> The HTTP layer collapses the specific reasons a grant was refused onto a few generic descriptions (<a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L211-L228"><code>invalid_grant_description</code></a>), so a response doesn’t say which check a code failed, and a refresh token presented by the wrong app reads exactly like an unknown one. Two reasons record what was done as well as what was found: a code that is unknown or already redeemed has revoked any refresh family minted from it, and a consumed refresh token presented again has revoked its whole family.</p>
+<p>The <a href="../capabilities/oauth/token-exchanger.html">token exchanger</a> and the <a href="../authority/redemption.html">redemption proofs</a> raise each variant, and their tests show them.</p>
+<h3 id="invalidgrantreason"><a class="header" href="#invalidgrantreason"><code>InvalidGrantReason</code></a></h3>
+<div id="item-InvalidGrantReason" class="item-anchor"></div>
+
+<p>Why a grant presented at <code>/oauth/token</code> was refused as <code>invalid_grant</code>.
+The specific reason goes to the operator’s log; the app hears one generic
+description per family of reasons. The fields carry only what an operator
+needs to tell the cases apart — never the code, verifier, challenge, or
+token.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum InvalidGrantReason {
+    /// The authorization code is unknown or already redeemed — a possible
+    /// replay; any refresh family minted from the code has been revoked.
+    CodeNotFoundOrRedeemed,
+    /// The code was issued to a different client.
+    CodeClientMismatch {
+        /// The client the code was issued to.
+        code_client_id: String,
+        /// The client that presented it.
+        presented_client_id: String,
+    },
+    /// The presented `redirect_uri` is not the one the code was issued for.
+    CodeRedirectMismatch {
+        /// The redirect the code was issued for.
+        code_redirect_uri: String,
+        /// The redirect the redeemer named.
+        presented_redirect_uri: String,
+    },
+    /// The code's lifetime has passed.
+    CodeExpired {
+        /// When the code stopped being redeemable.
+        expires_at: DateTime&lt;Utc&gt;,
+    },
+    /// The PKCE `code_verifier` does not hash to the parked challenge.
+    PkceMismatch {
+        /// The client that presented the code.
+        client_id: String,
+    },
+    /// No device request matches the `device_code` for this client: none
+    /// exists, or it belongs to another client, which reads the same.
+    DeviceRequestNotFound {
+        /// The client that presented the `device_code`.
+        presented_client_id: String,
+    },
+    /// Two polls raced for one approved device request; this one lost.
+    DeviceCodeAlreadyRedeemed {
+        /// The client the device request belongs to.
+        client_id: String,
+    },
+    /// No live refresh token has this value.
+    RefreshTokenNotFound,
+    /// The refresh token belongs to a different client — answered exactly like
+    /// not-found so a stranger can't probe validity.
+    RefreshTokenClientMismatch {
+        /// The client the family was issued to.
+        family_client_id: String,
+        /// The client that presented the token.
+        presented_client_id: String,
+    },
+    /// The family's absolute deadline passed, or it was ended (revoked or
+    /// replayed), which moves the deadline to that moment.
+    RefreshTokenExpired,
+    /// The browser session the family was minted under has been revoked, or
+    /// no longer exists.
+    RefreshTokenSessionRevoked {
+        /// The family whose browser session ended.
+        family_id: String,
+    },
+    /// The family began before its client's revocation epoch: bumping the
+    /// epoch revoked every token the client held then.
+    RefreshTokenClientRevoked {
+        /// The family issued before the client's tokens were revoked.
+        family_id: String,
+    },
+    /// A consumed refresh token was presented again — theft signal; the whole
+    /// family has been revoked.
+    RefreshTokenReplayed {
+        /// The family that has been revoked.
+        family_id: String,
+        /// The client the family was issued to.
+        client_id: String,
+    },
+    /// The token vanished between lookup and rotation.
+    RefreshTokenVanished {
+        /// The family the token was looked up in.
+        family_id: String,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/token_exchange_error.rs#L20-L97"><code>authorization-server-rust/src/domain/token_exchange_error.rs</code> lines 20–97</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="tokenexchangeerror"><a class="header" href="#tokenexchangeerror"><code>TokenExchangeError</code></a></h3>
+<div id="item-TokenExchangeError" class="item-anchor"></div>
+
+<p>The ways a token exchange can fail. All but <a href="#item-TokenExchangeError"><code>Issuance</code></a> and
+<a href="#item-TokenExchangeError"><code>Store</code></a> are the caller’s fault and render as <code>400</code> with the
+matching RFC 6749 §5.2 / RFC 8628 §3.5 error code; those two are
+server-side. Its audience is an app at <code>/oauth/token</code>, and the operator’s
+log, which gets the specific reason. An <a href="#item-AuthorizationServerError"><code>AuthorizationServerError</code></a> from
+the store becomes <a href="#item-TokenExchangeError"><code>Store</code></a> and a signing failure becomes
+<a href="#item-TokenExchangeError"><code>Issuance</code></a>, so the exchange flows can use <code>?</code> on either.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum TokenExchangeError {
+    /// The authenticated client's registration does not allow this grant type
+    /// (`unauthorized_client`).
+    UnauthorizedGrantType,
+    /// The PKCE `code_verifier` is not 43–128 characters (RFC 7636 §4.1) — an
+    /// `invalid_grant`, not a malformed request.
+    InvalidCodeVerifier,
+    /// The presented `redirect_uri` does not parse (`invalid_request`).
+    InvalidRedirectUri,
+    /// The grant itself was refused (`invalid_grant`), for the given reason.
+    InvalidGrant(InvalidGrantReason),
+    /// RFC 8628 §3.5 `expired_token`: the device request is past its expiry,
+    /// or was already claimed by an earlier poll that minted its token.
+    ExpiredToken,
+    /// RFC 8628 §3.5 `authorization_pending`: the device request still waits
+    /// for the Owner; the device keeps polling.
+    AuthorizationPending,
+    /// RFC 8628 §3.5 `access_denied`: the Owner denied the device request.
+    AccessDenied,
+    /// RFC 8628 §3.5 `slow_down`: the device polled a pending request sooner
+    /// than the advertised interval allows.
+    SlowDown,
+    /// The token could not be minted after the grant was accepted; the
+    /// exchange's scope was rolled back with it, so nothing was consumed. A
+    /// `server_error` 500.
+    Issuance(AccessTokenIssuanceError),
+    /// A store read or write failed: an empty 500, logged.
+    Store(AuthorizationServerError),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/eaba5daa7630e0352a988fa7f38d966d907215ad/apps/host/wildflower-server/authorization-server-rust/src/domain/token_exchange_error.rs#L107-L135"><code>authorization-server-rust/src/domain/token_exchange_error.rs</code> lines 107–135</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/domain/authorization-request/polled-requests.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/domain/authorization-code.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/domain/authorization-request/polled-requests.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/domain/authorization-code.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

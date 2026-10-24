@@ -1,0 +1,1295 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OAuth Endpoints - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-6b0bf3bc.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-077bd25a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="oauth-endpoints"><a class="header" href="#oauth-endpoints">OAuth Endpoints</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code></a></p>
+
+<p>These tests hold the server’s three OAuth doors to their contract with apps: <code>/oauth/authorize</code>, where a browser starts an app’s request, <code>/oauth/device_authorization</code>, where a device starts one, and <code>/oauth/token</code>, where an app collects what it was granted. They are about what each door accepts, refuses and reports, more than about what happens once the Owner decides; <a href="grant-flows.html">Grant Flows</a> follows the flows end to end.</p>
+<p>Most of the file is <code>/oauth/authorize</code>, and most of that is one rule from RFC 6749: <strong>an error may be sent back to an app’s redirect only once that redirect is trusted.</strong> A redirect is trusted when a client the server already knows has it registered (<a href="../domain/client.html#item-Client--allows_redirect_uri"><code>Client::allows_redirect_uri</code></a>). Until then, a failure renders a local error page (<a href="../domain/errors.html#item-AuthorizeRefusal"><code>AuthorizeRefusal</code></a>), because redirecting to an address nobody vouched for would be an open redirect. Clients without a server-defined registration are trusted on first use: an unknown client, a new redirect or a new scope is carried to the Owner’s prompt as a <a href="../domain/client.html#item-PresentedClientChange">presented client change</a> instead of refused.</p>
+<p>The tests run in this order: what <code>/oauth/authorize</code> checks and how it fails, a request’s scopes against its client’s registration, telling the Owner about a parked request, SMART App Launch (<a href="../domain/launch-context.html">launch context</a>), the device door, and the token door.</p>
+<p>This file’s own helpers are on the <a href="test-fixtures.html#integrationoauth_endpoints">Test Fixtures</a> page, with the shared ones.</p>
+<h2 id="integrationoauth_endpoints"><a class="header" href="#integrationoauth_endpoints"><code>integration::oauth_endpoints</code></a></h2>
+<h3 id="authorize_unknown_client_parks_a_pending_request"><a class="header" href="#authorize_unknown_client_parks_a_pending_request"><code>authorize_unknown_client_parks_a_pending_request</code></a></h3>
+<div id="item-authorize_unknown_client_parks_a_pending_request" class="item-anchor"></div>
+
+<p>Trust on first use: a <code>client_id</code> this authorization server has never seen
+isn’t rejected at the door. Its request is parked like any other and the
+browser is sent to wait for the Owner, and <strong>nothing</strong> is written to the
+<code>clients</code> table, so a request nobody approves leaves no trace of the app.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_unknown_client_parks_a_pending_request() {
+    let (g, _owner_token, db) = spin_up();
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("ghost", "read"),
+    )
+    .await;
+    let request_id = parked_request_id(&amp;res);
+
+    let res = get_authorization_status(&amp;g.router, &amp;db.paired_browser_token, &amp;request_id).await;
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(body_json(res.into_body()).await["status"], "pending");
+    assert!(
+        store_handle(&amp;db)
+            .read(|tx| tx.client_by_id("ghost"))
+            .expect("client query")
+            .is_none(),
+        "/authorize must not register an unknown client",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L15-L35"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 15–35</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/code-request.html#item-ResolvedCodeRequest--resolve"><code>ResolvedCodeRequest::resolve</code></a> and <a href="../domain/authorization-request/code-request.html#item-CodeRequest--new"><code>CodeRequest::new</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-spin_up"><code>spin_up</code></a>, <a href="test-fixtures.html#item-get_authorize"><code>get_authorize</code></a>, <a href="test-fixtures.html#item-authorize_query"><code>authorize_query</code></a>, <a href="test-fixtures.html#item-parked_request_id"><code>parked_request_id</code></a>, <a href="test-fixtures.html#item-get_authorization_status"><code>get_authorization_status</code></a>, <a href="test-fixtures.html#item-body_json"><code>body_json</code></a> and <a href="test-fixtures.html#item-store_handle"><code>store_handle</code></a>.</p>
+<h3 id="authorize_unknown_client_renders_later_failures_locally"><a class="header" href="#authorize_unknown_client_renders_later_failures_locally"><code>authorize_unknown_client_renders_later_failures_locally</code></a></h3>
+<div id="item-authorize_unknown_client_renders_later_failures_locally" class="item-anchor"></div>
+
+<p>The redirect of an unknown client is untrusted, so a later validation failure
+may NOT be 302’d to it (RFC 6749 §4.1.2.1’s open-redirect rule): a malformed
+PKCE challenge and a non-<code>code</code> <code>response_type</code> both render the local HTML
+page instead.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_unknown_client_renders_later_failures_locally() {
+    let (g, _owner_token, db) = spin_up();
+    let challenge = compute_code_challenge(CODE_VERIFIER);
+    for (query, expected) in [
+        (
+            "response_type=code&amp;code_challenge_method=S256&amp;client_id=ghost&amp;scope=read&amp;\
+             code_challenge=abc&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz"
+                .to_string(),
+            "Invalid PKCE code challenge",
+        ),
+        (
+            "response_type=code&amp;code_challenge_method=plain&amp;client_id=ghost&amp;scope=read&amp;\
+             code_challenge=abc&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz"
+                .to_string(),
+            "Unsupported PKCE method",
+        ),
+        (
+            format!(
+                "response_type=token&amp;code_challenge_method=S256&amp;client_id=ghost&amp;scope=read&amp;\
+                 code_challenge={challenge}&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz"
+            ),
+            "Unsupported response type",
+        ),
+    ] {
+        let res = get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await;
+        assert_eq!(res.status(), StatusCode::BAD_REQUEST, "query = {query}");
+        let body = body_string(res.into_body()).await;
+        assert!(body.contains(expected), "body = {body}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L42-L71"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 42–71</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../capabilities/oauth/code-authorization-starter.html#item-start_error"><code>start_error</code></a>, which picks between the local page and the redirect. Fixtures first used here: <a href="test-fixtures.html#item-CODE_VERIFIER"><code>CODE_VERIFIER</code></a> and <a href="test-fixtures.html#item-body_string"><code>body_string</code></a>.</p>
+<h3 id="authorize_unregistered_redirect_parks_and_keeps_the_redirect_untrusted"><a class="header" href="#authorize_unregistered_redirect_parks_and_keeps_the_redirect_untrusted"><code>authorize_unregistered_redirect_parks_and_keeps_the_redirect_untrusted</code></a></h3>
+<div id="item-authorize_unregistered_redirect_parks_and_keeps_the_redirect_untrusted" class="item-anchor"></div>
+
+<p>A <strong>known</strong> client presenting a redirect it never registered is treated the
+same way: the request is parked for the Owner, and until they approve that
+redirect is untrusted, so a bad PKCE challenge renders locally rather than
+302ing to it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_unregistered_redirect_parks_and_keeps_the_redirect_untrusted() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://elsewhere.example/cb", &amp;["read"]);
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("test-app", "read"),
+    )
+    .await;
+    parked_request_id(&amp;res);
+
+    let query = "response_type=code&amp;code_challenge_method=S256&amp;client_id=test-app&amp;scope=read&amp;\
+                 code_challenge=abc&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz";
+    let res = get_authorize(&amp;g.router, &amp;db.paired_browser_token, query).await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    let body = body_string(res.into_body()).await;
+    assert!(
+        body.contains("Invalid PKCE code challenge"),
+        "body = {body}"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L78-L98"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 78–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-Client--allows_redirect_uri"><code>Client::allows_redirect_uri</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-seed_client_with_redirect"><code>seed_client_with_redirect</code></a>.</p>
+<h3 id="authorize_disabled_client_is_still_rejected"><a class="header" href="#authorize_disabled_client_is_still_rejected"><code>authorize_disabled_client_is_still_rejected</code></a></h3>
+<div id="item-authorize_disabled_client_is_still_rejected" class="item-anchor"></div>
+
+<p>A disabled client, even one registered by trust on first use, is rejected at
+<code>/oauth/authorize</code> with the local “Disabled client” page — the one
+client-level rejection trust-on-first-use does not relax.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_disabled_client_is_still_rejected() {
+    let (g, _owner_token, db) = spin_up();
+    // Inserted disabled: `upsert_client` deliberately preserves `disabled_at`,
+    // so the flag has to be set on the row's first write.
+    store_handle(&amp;db)
+        .write(|tx| {
+            tx.upsert_client(&amp;Client {
+                client_id: "test-app".to_string(),
+                name: "Disabled Test Client".to_string(),
+                kind: ClientKind::Public,
+                redirect_uris: vec![Url::parse("https://app.example/cb").unwrap()],
+                allowed_scopes: vec!["read".to_string()],
+                allowed_grant_types: AllowedGrantType::ALL.to_vec(),
+                secret_hash: None,
+                registered_at: Utc::now(),
+                disabled_at: Some(Utc::now()),
+                registration_source: RegistrationSource::TrustedOnFirstUse,
+            })
+        })
+        .expect("register a disabled client");
+
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("test-app", "read"),
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    let body = body_string(res.into_body()).await;
+    assert!(body.contains("Disabled client"), "body = {body}");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L104-L134"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 104–134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/code-request.html#item-ResolvedCodeRequest--is_client_disabled"><code>ResolvedCodeRequest::is_client_disabled</code></a>.</p>
+<h3 id="authorize_validates_redirect_uri_before_pkce_method"><a class="header" href="#authorize_validates_redirect_uri_before_pkce_method"><code>authorize_validates_redirect_uri_before_pkce_method</code></a></h3>
+<div id="item-authorize_validates_redirect_uri_before_pkce_method" class="item-anchor"></div>
+
+<p>RFC 6749 §4.1.2.1: the client and its redirect are validated before any
+redirectable error (scope, PKCE method), since those failures are 302’d back
+to the validated redirect. The host app’s client has a fixed registration
+with no allowed redirects, so even with an unsupported
+<code>code_challenge_method=plain</code> the request fails at the redirect check and
+renders the local “Redirect URI not allowed” page rather than redirecting.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_validates_redirect_uri_before_pkce_method() {
+    let (g, _owner_token, db) = spin_up();
+    let query = format!(
+        "response_type=code&amp;code_challenge_method=plain&amp;client_id={WILDFLOWER_HOST_APP_CLIENT_ID}&amp;\
+         scope=owner&amp;code_challenge=abc&amp;redirect_uri=http%3A%2F%2Fexample.com%2Fcb&amp;state=xyz"
+    );
+    let req = build_request(
+        Request::get(format!("/oauth/authorize?{query}"))
+            .header("cookie", browser_session_cookie(&amp;db.paired_browser_token)),
+        Body::empty(),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    let body = body_string(res.into_body()).await;
+    assert!(body.contains("Redirect URI not allowed"), "body = {body}");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L143-L158"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 143–158</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-Client--is_registration_fixed"><code>Client::is_registration_fixed</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-build_request"><code>build_request</code></a> and <a href="test-fixtures.html#item-common--browser_session_cookie"><code>browser_session_cookie</code></a>.</p>
+<h3 id="authorize_unsupported_response_type_redirects_back"><a class="header" href="#authorize_unsupported_response_type_redirects_back"><code>authorize_unsupported_response_type_redirects_back</code></a></h3>
+<div id="item-authorize_unsupported_response_type_redirects_back" class="item-anchor"></div>
+
+<p><code>unsupported_response_type</code> is a redirectable error (RFC 6749 §4.1.2.1):
+once the client and its redirect validate, the failure goes back to the
+client as <code>error</code> and <code>state</code> query parameters, not a local page.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_unsupported_response_type_redirects_back() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let query = "response_type=token&amp;code_challenge_method=S256&amp;client_id=test-app&amp;scope=read&amp;\
+                 code_challenge=abc&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz";
+    let req = build_request(
+        Request::get(format!("/oauth/authorize?{query}"))
+            .header("cookie", browser_session_cookie(&amp;db.paired_browser_token)),
+        Body::empty(),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::FOUND);
+    let location = res.headers().get("location").expect("location header");
+    assert_eq!(
+        location,
+        "https://app.example/cb?error=unsupported_response_type&amp;error_description=\
+         The+app+asked+for+a+kind+of+sign-in+this+server+doesn%27t+support.&amp;state=xyz"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L164-L182"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 164–182</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../capabilities/oauth/code-authorization-starter.html#item-validate_code_params"><code>validate_code_params</code></a> and <a href="../domain/authorization-code.html#item-build_client_error_redirect_url"><code>build_client_error_redirect_url</code></a>.</p>
+<h3 id="authorize_unsupported_pkce_method_redirects_invalid_request"><a class="header" href="#authorize_unsupported_pkce_method_redirects_invalid_request"><code>authorize_unsupported_pkce_method_redirects_invalid_request</code></a></h3>
+<div id="item-authorize_unsupported_pkce_method_redirects_invalid_request" class="item-anchor"></div>
+
+<p>Once the client and its redirect validate, an unsupported PKCE method
+(<code>plain</code>) goes back to the client as <code>invalid_request</code> with its <code>state</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_unsupported_pkce_method_redirects_invalid_request() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let query = "response_type=code&amp;code_challenge_method=plain&amp;client_id=test-app&amp;scope=read&amp;\
+                 code_challenge=abc&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz";
+    let req = build_request(
+        Request::get(format!("/oauth/authorize?{query}"))
+            .header("cookie", browser_session_cookie(&amp;db.paired_browser_token)),
+        Body::empty(),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::FOUND);
+    let location = res.headers().get("location").expect("location header");
+    assert_eq!(
+        location,
+        "https://app.example/cb?error=invalid_request&amp;error_description=\
+         The+app%27s+sign-in+request+uses+a+security+method+this+server+doesn%27t+support.\
+         &amp;state=xyz"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L187-L206"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 187–206</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../capabilities/oauth/code-authorization-starter.html#item-validate_code_params"><code>validate_code_params</code></a>.</p>
+<h3 id="authorize_disallowed_scope_parks_a_pending_request"><a class="header" href="#authorize_disallowed_scope_parks_a_pending_request"><code>authorize_disallowed_scope_parks_a_pending_request</code></a></h3>
+<div id="item-authorize_disallowed_scope_parks_a_pending_request" class="item-anchor"></div>
+
+<p>A scope outside a client’s registration (one not fixed) doesn’t fail the
+request: it is carried to the Owner’s prompt as a <code>changed</code> registration
+naming exactly the scopes that stepped outside. The registered redirect stays
+trusted, so a <em>different</em> failure on the same request still 302s back (see
+<code>authorize_unsupported_pkce_method_redirects_invalid_request</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_disallowed_scope_parks_a_pending_request() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("test-app", "read%20write"),
+    )
+    .await;
+    let request_id = parked_request_id(&amp;res);
+
+    let consent = get_oauth_consent(&amp;g, &amp;owner_token, &amp;request_id).await;
+    assert_eq!(
+        consent["registration"],
+        serde_json::json!({
+            "status": "changed",
+            "redirectUriIsNew": false,
+            "newScopes": ["write"],
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L214-L234"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 214–234</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-uncovered_scopes"><code>uncovered_scopes</code></a> and <a href="../domain/client.html#item-PresentedClientChange"><code>PresentedClientChange</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-get_oauth_consent"><code>get_oauth_consent</code></a>.</p>
+<h3 id="authorize_publishes_the_parked_request_as_the_owner_prompt"><a class="header" href="#authorize_publishes_the_parked_request_as_the_owner_prompt"><code>authorize_publishes_the_parked_request_as_the_owner_prompt</code></a></h3>
+<div id="item-authorize_publishes_the_parked_request_as_the_owner_prompt" class="item-anchor"></div>
+
+<p>A parked <code>/authorize</code> request must reach the host, not only the wait page.
+The wait page tells its viewer to “approve this request on your device”; if
+the request is never published as the Owner prompt, the host
+never notifies it and the flow hangs until the 5-minute TTL.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_publishes_the_parked_request_as_the_owner_prompt() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    assert_eq!(owner_prompt(&amp;db), None, "no request has been parked yet");
+
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("test-app", "read"),
+    )
+    .await;
+    let request_id = parked_request_id(&amp;res);
+
+    assert_eq!(
+        owner_prompt(&amp;db),
+        Some(OwnerPrompt::AuthorizationCode {
+            id: request_id.clone(),
+            client_name: "Integration Test Client".to_owned(),
+            decidable_in_requesting_browser: false,
+        }),
+        "the newest must be the request the browser was just parked on, named for its client",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L241-L263"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 241–263</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/owner-prompt.html#item-OwnerPrompt--for_request"><code>OwnerPrompt::for_request</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-owner_prompt"><code>owner_prompt</code></a>.</p>
+<h3 id="deciding_an_oauth_consent_clears_the_owner_prompt"><a class="header" href="#deciding_an_oauth_consent_clears_the_owner_prompt"><code>deciding_an_oauth_consent_clears_the_owner_prompt</code></a></h3>
+<div id="item-deciding_an_oauth_consent_clears_the_owner_prompt" class="item-anchor"></div>
+
+<p>Deciding a parked request clears it from the host: the Owner answered it,
+so it must not linger as the Owner prompt. Covers approve
+and deny separately — they take different paths to the same republish.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn deciding_an_oauth_consent_clears_the_owner_prompt() {
+    for decision in ["approve", "deny"] {
+        let (g, owner_token, db) = spin_up();
+        seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+        let res = get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;authorize_query("test-app", "read"),
+        )
+        .await;
+        let request_id = parked_request_id(&amp;res);
+        assert!(
+            owner_prompt(&amp;db).is_some(),
+            "{decision}: the request should be pending before it is decided",
+        );
+
+        let res = g
+            .router
+            .clone()
+            .oneshot(build_request(
+                Request::post(format!(
+                    "/authorization/oauth-consents/{request_id}/{decision}"
+                ))
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}"))
+                .header("content-type", "application/json"),
+                Body::from(r#"{"approvedScopes":["read"],"acknowledgedRegistrationChange":true}"#),
+            ))
+            .await
+            .expect("oneshot");
+        assert_eq!(res.status(), StatusCode::OK, "{decision} should succeed");
+
+        assert_eq!(
+            owner_prompt(&amp;db),
+            None,
+            "{decision}: the request must clear once it is decided",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L269-L307"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 269–307</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/code-request.html#item-CodeRequest--approve"><code>CodeRequest::approve</code></a>, <a href="../domain/authorization-request/code-request.html#item-CodeRequest--deny"><code>CodeRequest::deny</code></a> and <a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>.</p>
+<h3 id="the_pending_consent_watcher_sees_an_older_request_decided_under_a_newer_one"><a class="header" href="#the_pending_consent_watcher_sees_an_older_request_decided_under_a_newer_one"><code>the_pending_consent_watcher_sees_an_older_request_decided_under_a_newer_one</code></a></h3>
+<div id="item-the_pending_consent_watcher_sees_an_older_request_decided_under_a_newer_one" class="item-anchor"></div>
+
+<p>The host’s <code>PendingConsentWatcher</code> sees a request settle even when it
+isn’t the newest: denying an older request while a newer one waits leaves
+the Owner prompt unchanged, so nothing reaches the host through
+that.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_pending_consent_watcher_sees_an_older_request_decided_under_a_newer_one() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let older_id = parked_request_id(
+        &amp;get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;authorize_query("test-app", "read"),
+        )
+        .await,
+    );
+    let newer_id = parked_request_id(
+        &amp;get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;authorize_query("test-app", "read"),
+        )
+        .await,
+    );
+    let watcher = g.pending_consent_watcher.clone();
+    let older_key = ConsentKey::AuthorizationCode {
+        id: older_id.clone(),
+    };
+    let older_settled = tokio::spawn(async move { watcher.until_settled(older_key).await });
+    tokio::time::sleep(std::time::Duration::from_millis(50)).await;
+    assert!(
+        !older_settled.is_finished(),
+        "the older request still waits"
+    );
+
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post(format!("/authorization/oauth-consents/{older_id}/deny"))
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}"))
+                .header("content-type", "application/json"),
+            Body::from(r#"{"approvedScopes":["read"],"acknowledgedRegistrationChange":true}"#),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+
+    tokio::time::timeout(std::time::Duration::from_secs(5), older_settled)
+        .await
+        .expect("the watcher sees the older request settle")
+        .expect("the watcher's task")
+        .expect("the watcher's reads");
+    assert_eq!(
+        owner_prompt(&amp;db),
+        Some(OwnerPrompt::AuthorizationCode {
+            id: newer_id,
+            client_name: "Integration Test Client".to_owned(),
+            decidable_in_requesting_browser: false,
+        }),
+        "the newer request is still the newest",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L314-L372"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 314–372</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../assembly/oauth-bindings.html#item-PendingConsentWatcher--until_settled"><code>PendingConsentWatcher::until_settled</code></a>, which rereads the request through <a href="../persistence/authorization-requests.html#item-SqliteGrantTx--is_awaiting_owner"><code>AuthorizationRequestsTx::is_awaiting_owner</code></a> each time the Owner prompt is recomputed, whether or not it changed.</p>
+<h3 id="a_fast_pathed_authorize_never_becomes_the_owner_prompt"><a class="header" href="#a_fast_pathed_authorize_never_becomes_the_owner_prompt"><code>a_fast_pathed_authorize_never_becomes_the_owner_prompt</code></a></h3>
+<div id="item-a_fast_pathed_authorize_never_becomes_the_owner_prompt" class="item-anchor"></div>
+
+<p>The grant fast path approves inside <code>/authorize</code> itself, so its request is
+never awaiting a human — it must not be published on its way through
+<code>pending</code>. A spurious notification here would ask the Owner to re-approve something
+they already consented to, on a request that is already <code>approved</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn a_fast_pathed_authorize_never_becomes_the_owner_prompt() {
+    let (g, owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    // First pass: park, approve, and so establish the standing grant.
+    authorize_and_approve(
+        &amp;g,
+        &amp;owner_token,
+        &amp;db.paired_browser_token,
+        "test-app",
+        "read",
+        r#"{"approvedScopes":["read"],"acknowledgedRegistrationChange":true}"#,
+    )
+    .await;
+    assert_eq!(
+        owner_prompt(&amp;db),
+        None,
+        "the approved first request left nothing pending"
+    );
+
+    // Second pass: the grant now pre-approves every requested scope, so
+    // /authorize issues a code and 302s straight back to the client.
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query("test-app", "read"),
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::FOUND);
+    let location = location_of(&amp;res);
+    assert!(
+        location.starts_with("https://app.example/cb?code="),
+        "expected the fast path's client redirect, got {location}"
+    );
+    assert_eq!(
+        owner_prompt(&amp;db),
+        None,
+        "a fully pre-approved request must never be published as pending",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L379-L418"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 379–418</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../authority/standing-grant.html#item-GrantCoverage--resolve"><code>GrantCoverage::resolve</code></a> and <a href="../domain/authorization-request/code-request.html#item-CodeRequest--approve"><code>CodeRequest::approve</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-seed_test_client"><code>seed_test_client</code></a>, <a href="test-fixtures.html#item-authorize_and_approve"><code>authorize_and_approve</code></a> and <a href="test-fixtures.html#item-location_of"><code>location_of</code></a>.</p>
+<h3 id="authorize_host_app_disallowed_scope_still_redirects_invalid_scope"><a class="header" href="#authorize_host_app_disallowed_scope_still_redirects_invalid_scope"><code>authorize_host_app_disallowed_scope_still_redirects_invalid_scope</code></a></h3>
+<div id="item-authorize_host_app_disallowed_scope_still_redirects_invalid_scope" class="item-anchor"></div>
+
+<p>The host app’s client is NOT trusted on first use: its registration is
+fixed, so an unregistered scope for it is the <code>invalid_scope</code> redirect back
+to its registered redirect_uri, not a request parked for the Owner.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_host_app_disallowed_scope_still_redirects_invalid_scope() {
+    let (g, _owner_token, db) = spin_up();
+    // Give the host client a redirect so the request reaches the scope check.
+    let store = store_handle(&amp;db);
+    let mut host = store
+        .read(|tx| tx.client_by_id(WILDFLOWER_HOST_APP_CLIENT_ID))
+        .unwrap()
+        .expect("the seeded host app's client");
+    host.redirect_uris = vec![Url::parse("https://app.example/cb").unwrap()];
+    store
+        .write(|tx| tx.upsert_client(&amp;host))
+        .expect("allowlist a redirect");
+
+    let res = get_authorize(
+        &amp;g.router,
+        &amp;db.paired_browser_token,
+        &amp;authorize_query(WILDFLOWER_HOST_APP_CLIENT_ID, "definitely_not_granted"),
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::FOUND);
+    assert_eq!(
+        location_of(&amp;res),
+        "https://app.example/cb?error=invalid_scope&amp;error_description=\
+         The+app+asked+for+access+it+isn%27t+registered+for.&amp;state=xyz"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L424-L449"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 424–449</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-Client--is_registration_fixed"><code>Client::is_registration_fixed</code></a>.</p>
+<h3 id="authorize_allows_scope_covered_by_a_broader_allowed_scope"><a class="header" href="#authorize_allows_scope_covered_by_a_broader_allowed_scope"><code>authorize_allows_scope_covered_by_a_broader_allowed_scope</code></a></h3>
+<div id="item-authorize_allows_scope_covered_by_a_broader_allowed_scope" class="item-anchor"></div>
+
+<p>The registration check is by coverage, not exact string membership: a
+client allowed <code>patient/Observation.rs</code> also admits a request for the
+narrower <code>patient/Observation.r</code> it covers, which parks like any allowed
+scope rather than redirecting back with an <code>error</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_allows_scope_covered_by_a_broader_allowed_scope() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "test-app",
+        "https://app.example/cb",
+        &amp;["patient/Observation.rs"],
+    );
+    let challenge = compute_code_challenge(CODE_VERIFIER);
+    let query = format!(
+        "response_type=code&amp;code_challenge_method=S256&amp;client_id=test-app&amp;\
+         scope=patient%2FObservation.r&amp;code_challenge={challenge}&amp;\
+         redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz"
+    );
+    let res = g
+        .router
+        .oneshot(build_request(
+            Request::get(format!("/oauth/authorize?{query}"))
+                .header("cookie", browser_session_cookie(&amp;db.paired_browser_token)),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::FOUND);
+    let location = res
+        .headers()
+        .get("location")
+        .and_then(|v| v.to_str().ok())
+        .expect("location");
+    assert!(
+        !location.contains("error="),
+        "a covered scope must not trigger an error redirect, got {location}"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L456-L489"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 456–489</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-uncovered_scopes"><code>uncovered_scopes</code></a> and <a href="../domain/scopes.html#item-allowed_scope_covers"><code>allowed_scope_covers</code></a>.</p>
+<h3 id="authorize_treats_a_cross_grammar_scope_request_as_new"><a class="header" href="#authorize_treats_a_cross_grammar_scope_request_as_new"><code>authorize_treats_a_cross_grammar_scope_request_as_new</code></a></h3>
+<div id="item-authorize_treats_a_cross_grammar_scope_request_as_new" class="item-anchor"></div>
+
+<p>Coverage never bridges the SMART v1 word and v2 letter grammars, as in
+scopes-core: a client registered with the v1 <code>patient/Observation.read</code>
+doesn’t cover a request for the letter-equivalent <code>patient/Observation.rs</code>,
+because v1 apps request v1 scopes. The request is parked for the Owner as a
+registration change naming the uncovered spelling.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_treats_a_cross_grammar_scope_request_as_new() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "test-app",
+        "https://app.example/cb",
+        &amp;["patient/Observation.read"],
+    );
+    let challenge = compute_code_challenge(CODE_VERIFIER);
+    let query = format!(
+        "response_type=code&amp;code_challenge_method=S256&amp;client_id=test-app&amp;\
+         scope=patient%2FObservation.rs&amp;code_challenge={challenge}&amp;\
+         redirect_uri=https%3A%2F%2Fapp.example%2Fcb&amp;state=xyz"
+    );
+    let res = get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await;
+    // Not covered → not `registered`; the request is parked for the Owner rather
+    // than rejected, and the prompt names the uncovered spelling.
+    let request_id = parked_request_id(&amp;res);
+    let consent = get_oauth_consent(&amp;g, &amp;owner_token, &amp;request_id).await;
+    assert_eq!(
+        consent["registration"]["newScopes"],
+        serde_json::json!(["patient/Observation.rs"]),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L497-L520"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 497–520</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-uncovered_scopes"><code>uncovered_scopes</code></a>.</p>
+<h3 id="authorize_consumes_a_smart_launch_once"><a class="header" href="#authorize_consumes_a_smart_launch_once"><code>authorize_consumes_a_smart_launch_once</code></a></h3>
+<div id="item-authorize_consumes_a_smart_launch_once" class="item-anchor"></div>
+
+<p>A SMART App Launch round trip: a <code>launch</code> minted for the client and the FHIR
+base (the server’s origin) as <code>aud</code> park a pending request the Owner can approve, and the request
+carries the consumed launch. The same <code>launch</code> is refused the second time.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_consumes_a_smart_launch_once() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let launch = g
+        .launch_context_minter
+        .mint("test-app")
+        .expect("mint a launch");
+    let query = smart_launch_query(&amp;format!(
+        "launch={launch}&amp;aud=https%3A%2F%2Fruth.relay.example"
+    ));
+
+    let request_id =
+        parked_request_id(&amp;get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await);
+    let parked = store_handle(&amp;db)
+        .read(|tx| tx.code_request_by_id(&amp;request_id))
+        .expect("query")
+        .expect("parked");
+    assert_eq!(parked.launch.as_deref(), Some(launch.as_str()));
+    assert_eq!(parked.launch_bound_patient, None);
+    let res = approve_oauth_consent(
+        &amp;g,
+        &amp;owner_token,
+        &amp;request_id,
+        r#"{"approvedScopes":["read"],"patient":null,"acknowledgedRegistrationChange":true}"#
+            .to_owned(),
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::OK);
+
+    let replay = get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await;
+    assert_eq!(replay.status(), StatusCode::FOUND);
+    assert_eq!(
+        location_of(&amp;replay),
+        ALREADY_USED_LOCATION,
+        "a consumed launch is refused"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L537-L573"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 537–573</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/launch-context.html#item-LaunchContext--for_client"><code>LaunchContext::for_client</code></a> and <a href="../capabilities/oauth/launch-contexts.html#item-consume_launch"><code>consume_launch</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-smart_launch_query"><code>smart_launch_query</code></a>, <a href="test-fixtures.html#item-approve_oauth_consent"><code>approve_oauth_consent</code></a> and <a href="test-fixtures.html#item-ALREADY_USED_LOCATION"><code>ALREADY_USED_LOCATION</code></a>.</p>
+<h3 id="authorize_consumes_a_server_launcher_launch_once"><a class="header" href="#authorize_consumes_a_server_launcher_launch_once"><code>authorize_consumes_a_server_launcher_launch_once</code></a></h3>
+<div id="item-authorize_consumes_a_server_launcher_launch_once" class="item-anchor"></div>
+
+<p>A launch minted for the server launcher, which names no client, is consumed
+by the first client to present it at <code>/oauth/authorize</code>; a replay redirects
+to the client’s callback with <code>invalid_request</code>, “This launch was already
+used.”</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_consumes_a_server_launcher_launch_once() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let launch = g
+        .launch_context_minter
+        .mint_for_server_launcher()
+        .expect("mint a launch");
+    let query = smart_launch_query(&amp;format!("launch={launch}"));
+
+    let request_id =
+        parked_request_id(&amp;get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await);
+    let parked = store_handle(&amp;db)
+        .read(|tx| tx.code_request_by_id(&amp;request_id))
+        .expect("query")
+        .expect("parked");
+    assert_eq!(parked.launch.as_deref(), Some(launch.as_str()));
+
+    let replay = get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await;
+    assert_eq!(
+        location_of(&amp;replay),
+        ALREADY_USED_LOCATION,
+        "a consumed launch is refused"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L580-L603"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 580–603</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/launch-context.html#item-LaunchContext--for_server_launcher"><code>LaunchContext::for_server_launcher</code></a> and <a href="../domain/launch-context.html#item-LaunchContext--admits_client"><code>LaunchContext::admits_client</code></a>.</p>
+<h3 id="authorize_refuses_a_bad_smart_launch_or_aud"><a class="header" href="#authorize_refuses_a_bad_smart_launch_or_aud"><code>authorize_refuses_a_bad_smart_launch_or_aud</code></a></h3>
+<div id="item-authorize_refuses_a_bad_smart_launch_or_aud" class="item-anchor"></div>
+
+<p>A forged <code>launch</code>, one minted for another client, and an <code>aud</code> naming
+another server are each <code>invalid_request</code> back to the trusted redirect; a
+request with neither param is plain OAuth, as is one with just the server’s
+origin as <code>aud</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_refuses_a_bad_smart_launch_or_aud() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "test-app", "https://app.example/cb", &amp;["read"]);
+    let other_clients_launch = g
+        .launch_context_minter
+        .mint("other-app")
+        .expect("mint a launch");
+    // The forged launch and the other client's read the same, so the redirect
+    // tells the two apart no more than it says anything about the other
+    // client's launch.
+    let not_recognized = "https://app.example/cb?error=invalid_request&amp;error_description=\
+                          This+launch+isn%27t+recognized.+Open+the+app+again.&amp;state=xyz";
+    let wrong_server = "https://app.example/cb?error=invalid_request&amp;error_description=\
+                        The+app+asked+for+a+different+server+than+this+one.&amp;state=xyz";
+    for (smart_params, expected_location) in [
+        ("launch=forged-launch".to_owned(), not_recognized),
+        (format!("launch={other_clients_launch}"), not_recognized),
+        (
+            "aud=https%3A%2F%2Fapp.example%2Ffhir-r4".to_owned(),
+            wrong_server,
+        ),
+    ] {
+        let res = get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;smart_launch_query(&amp;smart_params),
+        )
+        .await;
+        assert_eq!(res.status(), StatusCode::FOUND);
+        assert_eq!(
+            location_of(&amp;res),
+            expected_location,
+            "{smart_params} is refused"
+        );
+    }
+
+    parked_request_id(
+        &amp;get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;authorize_query("test-app", "read"),
+        )
+        .await,
+    );
+    parked_request_id(
+        &amp;get_authorize(
+            &amp;g.router,
+            &amp;db.paired_browser_token,
+            &amp;smart_launch_query("aud=https%3A%2F%2Fruth.relay.example"),
+        )
+        .await,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L610-L662"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 610–662</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/launch-context.html#item-LaunchRefusal"><code>LaunchRefusal</code></a> and <a href="../capabilities/oauth/code-authorization-starter.html#item-launch_refusal_kind"><code>launch_refusal_kind</code></a>.</p>
+<h3 id="authorize_renders_a_bad_smart_launch_locally_for_an_untrusted_redirect"><a class="header" href="#authorize_renders_a_bad_smart_launch_locally_for_an_untrusted_redirect"><code>authorize_renders_a_bad_smart_launch_locally_for_an_untrusted_redirect</code></a></h3>
+<div id="item-authorize_renders_a_bad_smart_launch_locally_for_an_untrusted_redirect" class="item-anchor"></div>
+
+<p>An unknown client’s redirect is untrusted, so a bad <code>launch</code> or <code>aud</code>
+renders the local error page rather than redirecting.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn authorize_renders_a_bad_smart_launch_locally_for_an_untrusted_redirect() {
+    let (g, _owner_token, db) = spin_up();
+    for (smart_params, title) in [
+        ("launch=forged-launch", "Launch not recognized"),
+        ("aud=https%3A%2F%2Fapp.example%2Ffhir-r4", "Wrong server"),
+    ] {
+        let query = format!("{}&amp;{smart_params}", authorize_query("ghost", "read"));
+        let res = get_authorize(&amp;g.router, &amp;db.paired_browser_token, &amp;query).await;
+        assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+        assert!(
+            body_string(res.into_body()).await.contains(title),
+            "{smart_params} renders {title}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L667-L681"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 667–681</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../capabilities/oauth/code-authorization-starter.html#item-start_error"><code>start_error</code></a>.</p>
+<h3 id="device_authorization_happy_path"><a class="header" href="#device_authorization_happy_path"><code>device_authorization_happy_path</code></a></h3>
+<div id="item-device_authorization_happy_path" class="item-anchor"></div>
+
+<p>A device-authorization start for a registered client answers the RFC 8628
+§3.2 body: random device and user codes, this server’s own device page as
+<code>verification_uri</code> (and with the user code in <code>verification_uri_complete</code>),
+a five-minute expiry and a five-second poll interval. The user code is
+human-typeable.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_happy_path() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "client_id=integration-test-app&amp;scope=system%2F*.cruds";
+    let req = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let body = body_json(res.into_body()).await;
+    // device_code/user_code are random, so thread them through; the rest of
+    // the RFC 8628 §3.2 body (verification_uri, verification_uri_complete,
+    // expires_in, interval) is pinned by the whole-value comparison.
+    let device_code = body["device_code"].clone();
+    let user_code = body["user_code"].as_str().expect("user_code").to_string();
+    assert_eq!(
+        body,
+        serde_json::json!({
+            "device_code": device_code,
+            "user_code": user_code,
+            // This server's own device page, on its origin.
+            "verification_uri": "https://ruth.relay.example/oauth/device",
+            "verification_uri_complete": format!(
+                "https://ruth.relay.example/oauth/device?user_code={user_code}"
+            ),
+            "expires_in": 300,
+            "interval": 5,
+        })
+    );
+    // The user_code is also a well-formed, human-typeable pairing code — a
+    // relationship the opaque whole-value comparison above can't express.
+    assert!(
+        wildflowerhealthio_authorization_server::crypto_util::oauth_user_code::is_valid_oauth_user_code(
+            &amp;user_code
+        )
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L689-L727"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 689–727</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--new"><code>DeviceRequest::new</code></a> and <a href="../capabilities/oauth/device-authorizer.html#item-DeviceAuthorizer--start"><code>DeviceAuthorizer::start</code></a>.</p>
+<h3 id="device_authorization_allows_scope_covered_by_client_wildcard"><a class="header" href="#device_authorization_allows_scope_covered_by_client_wildcard"><code>device_authorization_allows_scope_covered_by_client_wildcard</code></a></h3>
+<div id="item-device_authorization_allows_scope_covered_by_client_wildcard" class="item-anchor"></div>
+
+<p>The device flow’s registration check is by coverage too: the test client
+is allowed <code>system/*.cruds</code>, which covers a request for the narrower
+<code>system/Observation.rs</code>, so it is issued a device and user code like any
+allowed scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_allows_scope_covered_by_client_wildcard() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "client_id=integration-test-app&amp;scope=system%2FObservation.rs";
+    let req = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L734-L745"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 734–745</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-Client--allows_scopes"><code>Client::allows_scopes</code></a>.</p>
+<h3 id="device_authorization_unknown_client_returns_401"><a class="header" href="#device_authorization_unknown_client_returns_401"><code>device_authorization_unknown_client_returns_401</code></a></h3>
+<div id="item-device_authorization_unknown_client_returns_401" class="item-anchor"></div>
+
+<p>A device-authorization start from a client that isn’t registered is
+<code>401 invalid_client</code>: the device flow has no trust on first use.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_unknown_client_returns_401() {
+    let (g, _owner_token, _db) = spin_up();
+    let body = "client_id=ghost&amp;scope=system%2F*.cruds";
+    let req = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::UNAUTHORIZED);
+    let body = body_json(res.into_body()).await;
+    assert_eq!(body["error"], "invalid_client");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L750-L762"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 750–762</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../authority/authenticated-client.html#item-AuthenticatedClient--authenticate"><code>AuthenticatedClient::authenticate</code></a>.</p>
+<h3 id="token_exchange_unknown_code_returns_400_invalid_grant"><a class="header" href="#token_exchange_unknown_code_returns_400_invalid_grant"><code>token_exchange_unknown_code_returns_400_invalid_grant</code></a></h3>
+<div id="item-token_exchange_unknown_code_returns_400_invalid_grant" class="item-anchor"></div>
+
+<p>Redeeming a code the server never issued is <code>400 invalid_grant</code>, not a
+malformed request (RFC 6749 §5.2).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_exchange_unknown_code_returns_400_invalid_grant() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "grant_type=authorization_code&amp;client_id=integration-test-app&amp;\
+                code=missing&amp;code_verifier=verifierverifierverifierverifierverifierverifierverifier&amp;\
+                redirect_uri=http%3A%2F%2Fexample.com%2Fcb";
+    let req = build_request(
+        Request::post("/oauth/token").header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    // RFC 6749 §5.2: an unknown/unredeemable code is an `invalid_grant`, not a
+    // malformed request.
+    let body = body_json(res.into_body()).await;
+    assert_eq!(body["error"], "invalid_grant");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L767-L783"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 767–783</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../authority/redemption.html#item-RedeemedAuthorizationCode--redeem"><code>RedeemedAuthorizationCode::redeem</code></a>.</p>
+<h3 id="token_exchange_short_code_verifier_returns_400_invalid_grant"><a class="header" href="#token_exchange_short_code_verifier_returns_400_invalid_grant"><code>token_exchange_short_code_verifier_returns_400_invalid_grant</code></a></h3>
+<div id="item-token_exchange_short_code_verifier_returns_400_invalid_grant" class="item-anchor"></div>
+
+<p>RFC 7636 §4.1 caps the <code>code_verifier</code> at 43–128 chars. A too-short
+verifier is rejected as <code>invalid_grant</code> before the code is even looked up.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_exchange_short_code_verifier_returns_400_invalid_grant() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "grant_type=authorization_code&amp;client_id=integration-test-app&amp;\
+                code=missing&amp;code_verifier=tooshort&amp;\
+                redirect_uri=http%3A%2F%2Fexample.com%2Fcb";
+    let req = build_request(
+        Request::post("/oauth/token").header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    let body = body_json(res.into_body()).await;
+    assert_eq!(body["error"], "invalid_grant");
+    assert_eq!(body["error_description"], "Invalid code_verifier parameter");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L788-L803"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 788–803</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../authority/redemption.html#item-RedeemedAuthorizationCode--redeem"><code>RedeemedAuthorizationCode::redeem</code></a>.</p>
+<h3 id="token_exchange_error_sets_cache_suppression_headers"><a class="header" href="#token_exchange_error_sets_cache_suppression_headers"><code>token_exchange_error_sets_cache_suppression_headers</code></a></h3>
+<div id="item-token_exchange_error_sets_cache_suppression_headers" class="item-anchor"></div>
+
+<p>RFC 6749 §5.1/§5.2 require <code>Cache-Control: no-store</code> and <code>Pragma: no-cache</code>
+on every <code>/oauth/token</code> response, including errors.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_exchange_error_sets_cache_suppression_headers() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "grant_type=authorization_code&amp;client_id=integration-test-app&amp;\
+                code=missing&amp;code_verifier=verifierverifierverifierverifierverifierverifierverifier&amp;\
+                redirect_uri=http%3A%2F%2Fexample.com%2Fcb";
+    let req = build_request(
+        Request::post("/oauth/token").header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(
+        res.headers()
+            .get("cache-control")
+            .map(|v| v.to_str().unwrap()),
+        Some("no-store")
+    );
+    assert_eq!(
+        res.headers().get("pragma").map(|v| v.to_str().unwrap()),
+        Some("no-cache")
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L808-L829"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 808–829</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/errors-and-wire-shapes.html#item-CacheSuppressed"><code>CacheSuppressed</code></a>. <a href="cache-suppression.html">Cache Suppression</a> holds the <code>/authorization</code> responses to the same rule.</p>
+<h3 id="token_exchange_rejects_non_form_content_type"><a class="header" href="#token_exchange_rejects_non_form_content_type"><code>token_exchange_rejects_non_form_content_type</code></a></h3>
+<div id="item-token_exchange_rejects_non_form_content_type" class="item-anchor"></div>
+
+<p>RFC 6749 §3.2: the token endpoint requires a form-urlencoded body. The
+<code>TokenRequest</code> extractor rejects any other <code>Content-Type</code> with a
+cache-suppressed 400 <code>invalid_request</code> before any grant work happens.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_exchange_rejects_non_form_content_type() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "grant_type=refresh_token&amp;client_id=integration-test-app&amp;refresh_token=whatever";
+    let req = build_request(
+        Request::post("/oauth/token").header("content-type", "application/json"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    // The rejection path must still be cache-suppressed (RFC 6749 §5.1).
+    assert_eq!(
+        res.headers()
+            .get("cache-control")
+            .map(|v| v.to_str().unwrap()),
+        Some("no-store")
+    );
+    let body = body_json(res.into_body()).await;
+    assert_eq!(body["error"], "invalid_request");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L835-L854"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 835–854</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/token-endpoint.html#item-require_form_urlencoded_content_type"><code>require_form_urlencoded_content_type</code></a>.</p>
+<h3 id="token_exchange_unknown_device_code_returns_400_invalid_grant"><a class="header" href="#token_exchange_unknown_device_code_returns_400_invalid_grant"><code>token_exchange_unknown_device_code_returns_400_invalid_grant</code></a></h3>
+<div id="item-token_exchange_unknown_device_code_returns_400_invalid_grant" class="item-anchor"></div>
+
+<p>The device-code grant’s <code>grant_type</code> tag is the RFC 8628 URN, which
+arrives percent-encoded (<code>urn%3Aietf%3A...</code>) — pins that the
+form-urlencoded parse decodes it into the right enum variant (a
+<code>Malformed payload</code> here would mean the parse, not the lookup,
+failed; the TS client’s wire format is pinned by
+authorization-core’s oauth.test.ts).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_exchange_unknown_device_code_returns_400_invalid_grant() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=integration-test-app&amp;device_code=missing";
+    let req = build_request(
+        Request::post("/oauth/token").header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(body),
+    );
+    let res = g.router.oneshot(req).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    let body = body_json(res.into_body()).await;
+    assert_eq!(body["error"], "invalid_grant");
+    assert_eq!(body["error_description"], "Unknown device_code");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/tests/integration/oauth_endpoints.rs#L863-L877"><code>authorization-server-rust/tests/integration/oauth_endpoints.rs</code> lines 863–877</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../authority/redemption.html#item-ConsumedDeviceRequest--consume"><code>ConsumedDeviceRequest::consume</code></a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/integration-tests/grant-flows.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/integration-tests/session-required.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/integration-tests/grant-flows.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/integration-tests/session-required.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1405 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Redemption - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-6b0bf3bc.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-077bd25a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="redemption"><a class="header" href="#redemption">Redemption</a></h1>
+<!-- markdownlint-disable-file link-fragments -- the item-… anchors are added when the book is built. -->
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs"><code>authorization-server-rust/src/domain/authority/redemption.rs</code></a></p>
+
+<p>An app’s back end comes to <code>/oauth/token</code> holding something it was given earlier: an <a href="../domain/authorization-code.html">authorization code</a>, a device code, or a <a href="../domain/refresh-token.html">refresh token</a>. It has already proved who it is with an <a href="authenticated-client.html">authenticated client</a>. <strong>Before an access token is minted for it, the thing it holds is redeemed into a proof</strong>, one per grant type. Each proof has one constructor, and that constructor is the whole redemption rule for its grant type: the single-use claim, the bindings to the app and redirect, the expiry, the PKCE check.</p>
+<p><strong>A proof’s scopes are copied from the record it redeemed</strong>, never from the request. The code carries the scopes its approval recorded; the device request carries the scopes the Owner granted; the refresh family carries the scopes it was started with. So a token can hold only what the consent behind it recorded.</p>
+<p>Some refusals come after a write: a code is spent before its bindings are checked, a pending device poll is stamped before it is answered. Those refusals are the inner <code>Err</code> of a nested result, so the token exchange’s scope commits what it wrote rather than rolling it back. Only a store failure is the outer <code>Err</code>, and the <a href="../domain/errors.html#item-TokenExchangeError">token-exchange errors</a> are the inner one’s vocabulary.</p>
+<h2 id="domainauthorityredemption"><a class="header" href="#domainauthorityredemption"><code>domain::authority::redemption</code></a></h2>
+<p>The tests issue codes, store refresh families and read refusals with the <a href="test-fixtures.html#redemption">redemption fixtures</a>.</p>
+<h3 id="presentedauthorizationcode"><a class="header" href="#presentedauthorizationcode"><code>PresentedAuthorizationCode</code></a></h3>
+<div id="item-PresentedAuthorizationCode" class="item-anchor"></div>
+
+<p>The presented halves of an <code>authorization_code</code> grant request (RFC 6749
+§4.1.3), as the client sent them: the three values redemption checks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct PresentedAuthorizationCode&lt;'a&gt; {
+    /// The authorization code, as issued at `/oauth/authorize`; taken out of
+    /// the store before its bindings are checked.
+    pub(crate) code: &amp;'a str,
+    /// The PKCE verifier (RFC 7636 §4.5), whose S256 hash must equal the
+    /// challenge the code was bound to.
+    pub(crate) code_verifier: &amp;'a str,
+    /// The redirect URI named again, which must equal the one the code was
+    /// issued for.
+    pub(crate) redirect_uri: &amp;'a str,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L50-L60"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 50–60</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="redeemedauthorizationcode"><a class="header" href="#redeemedauthorizationcode"><code>RedeemedAuthorizationCode</code></a></h3>
+<p>It keeps the <a href="../domain/authorization-code.html#item-AuthorizationCode">issued code</a> whole.</p>
+<div id="item-RedeemedAuthorizationCode" class="item-anchor"></div>
+
+<p>An authorization code that has been atomically consumed and verified: bound
+to the redeeming client and <code>redirect_uri</code>, unexpired, and matching the
+PKCE verifier. Carries the code’s granted scopes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct RedeemedAuthorizationCode {
+    /// The issued code, whole, as taken out of the store: the client, scopes,
+    /// patient and browser session the token is minted with.
+    code: AuthorizationCode,
+    /// The code's granted scopes with each SMART scope's alternate spelling
+    /// added: the token's `scope` claim.
+    token_scopes: Vec&lt;String&gt;,
+    /// The standing code grant for this client and redirect, recorded on the
+    /// refresh family the code starts; `None` when none stands, as for a grant
+    /// revoked between approval and redemption.
+    grant_id: Option&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L147-L158"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 147–158</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="redeem"><a class="header" href="#redeem"><code>redeem</code></a></h4>
+<p>The code is taken out of the store in one step (<a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/grant_store/authorization_codes.rs#L21-L24"><code>AuthorizationCodesTx::redeem_authorization_code</code></a>), so of two redemptions racing for one code, only one gets it back. A code that comes back missing may be a replay, so every refresh family started from it is expired (<a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/grant_store/refresh_tokens.rs#L116-L120"><code>RefreshTokensTx::expire_refresh_token_families_for_authorization_code</code></a>) before the refusal. A standing grant revoked between approval and redemption just leaves the proof’s <code>grant_id</code> empty.</p>
+<div id="item-RedeemedAuthorizationCode--redeem" class="item-anchor"></div>
+
+<p>Check the presented request is well formed, then atomically
+read-and-consume the code and verify every binding. A code is spent the
+moment it is presented, and only then checked, so of two redemptions
+racing for one code only one gets it, and a code that fails a binding
+can’t be retried into a token. A malformed request
+is refused before the code is touched. A code that is gone (redeemed or
+never issued) is a possible replay: any refresh family minted from it is
+revoked before the refusal (RFC 6749 §4.1.2). The binding failures all
+collapse to <code>invalid_grant</code> on the wire (the reason is logged), so a
+response never reveals which check failed.</p>
+<p>The refusals, as the inner <code>Err</code>:
+<a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::InvalidCodeVerifier</code></a> (RFC 7636 §4.1 length) or
+<a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::InvalidRedirectUri</code></a> for a malformed request, and
+<a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::InvalidGrant</code></a> with the specific reason.</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p><a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> on a store failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn redeem(
+    tx: &amp;mut (impl AuthorizationCodesTx + RefreshTokensTx + GrantsTx),
+    authenticated_client: &amp;AuthenticatedClient,
+    presented: &amp;PresentedAuthorizationCode&lt;'_&gt;,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Result&lt;Self, TokenExchangeError&gt;, AuthorizationServerError&gt; {
+    if !is_valid_code_verifier_length(presented.code_verifier) {
+        return Ok(Err(TokenExchangeError::InvalidCodeVerifier));
+    }
+    let Ok(redirect_uri) = Url::parse(presented.redirect_uri) else {
+        return Ok(Err(TokenExchangeError::InvalidRedirectUri));
+    };
+    // A concurrent redemption of the same code can only succeed once, so
+    // any racer past this point sees `None` (RFC 6749 §10.5).
+    let Some(code) = tx.redeem_authorization_code(presented.code)? else {
+        tx.expire_refresh_token_families_for_authorization_code(
+            &amp;token_storage_hash(presented.code),
+            now,
+        )?;
+        return Ok(Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::CodeNotFoundOrRedeemed,
+        )));
+    };
+    if let Err(reason) =
+        check_code_bindings(&amp;code, authenticated_client, &amp;redirect_uri, presented, now)
+    {
+        return Ok(Err(TokenExchangeError::InvalidGrant(reason)));
+    }
+    // The standing grant behind this exchange, recorded on the family; a
+    // grant revoked between approval and redemption just leaves it `None`.
+    let grant_id = tx
+        .grant_by_client_and_redirect(authenticated_client.client_id(), &amp;redirect_uri)?
+        .map(|grant| grant.id);
+    Ok(Ok(RedeemedAuthorizationCode {
+        token_scopes: token_scope_spellings(&amp;code.granted_scopes),
+        code,
+        grant_id,
+    }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L180-L218"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 180–218</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A bound, unexpired code with the right verifier redeems once: the proof
+carries the code’s client, patient, and scopes (twinned for the token,
+verbatim for the response), and a second redemption is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_code_redeems_once_with_its_recorded_claims() {
+    let store = FakeGrantStore::default();
+    let now = Utc::now();
+    let client = authenticated(&amp;store, "app");
+    let code = issued_code(&amp;store, "app", now);
+    let redemption = PresentedAuthorizationCode {
+        code: &amp;code,
+        code_verifier: VERIFIER,
+        redirect_uri: REDIRECT,
+    };
+    let proof = RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;client, &amp;redemption, now)
+        .unwrap()
+        .expect("redeems");
+    assert_eq!(proof.client_id(), "app");
+    assert_eq!(proof.patient(), Some("pat-1"));
+    assert_eq!(proof.granted_scopes(), ["patient/Patient.read"]);
+    assert_eq!(
+        proof.token_scopes(),
+        ["patient/Patient.read", "patient/Patient.rs"]
+    );
+    assert_eq!(proof.authorization_code(), code);
+    assert_eq!(
+        GrantRedemption::AuthorizationCode(&amp;proof).authorization_code(),
+        Some(code.as_str())
+    );
+    assert_eq!(
+        reason(
+            RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;client, &amp;redemption, now)
+                .unwrap()
+        ),
+        InvalidGrantReason::CodeNotFoundOrRedeemed
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L717-L749"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 717–749</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each binding refuses with its own reason: wrong client, wrong redirect,
+expired, bad verifier, each on a freshly issued code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_code_is_refused_for_each_broken_binding() {
+    let store = FakeGrantStore::default();
+    let now = Utc::now();
+    let app = authenticated(&amp;store, "app");
+    let other = authenticated(&amp;store, "other");
+
+    let code = issued_code(&amp;store, "app", now);
+    let wrong_client = PresentedAuthorizationCode {
+        code: &amp;code,
+        code_verifier: VERIFIER,
+        redirect_uri: REDIRECT,
+    };
+    assert!(matches!(
+        reason(
+            RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;other, &amp;wrong_client, now)
+                .unwrap()
+        ),
+        InvalidGrantReason::CodeClientMismatch { .. }
+    ));
+
+    let code = issued_code(&amp;store, "app", now);
+    let wrong_redirect = PresentedAuthorizationCode {
+        code: &amp;code,
+        code_verifier: VERIFIER,
+        redirect_uri: "https://elsewhere.example/cb",
+    };
+    assert!(matches!(
+        reason(
+            RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;app, &amp;wrong_redirect, now)
+                .unwrap()
+        ),
+        InvalidGrantReason::CodeRedirectMismatch { .. }
+    ));
+
+    let code = issued_code(
+        &amp;store,
+        "app",
+        now - AUTHORIZATION_CODE_TTL - Duration::seconds(1),
+    );
+    let expired = PresentedAuthorizationCode {
+        code: &amp;code,
+        code_verifier: VERIFIER,
+        redirect_uri: REDIRECT,
+    };
+    assert!(matches!(
+        reason(
+            RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;app, &amp;expired, now).unwrap()
+        ),
+        InvalidGrantReason::CodeExpired { .. }
+    ));
+
+    let code = issued_code(&amp;store, "app", now);
+    let bad_verifier = PresentedAuthorizationCode {
+        code: &amp;code,
+        code_verifier: "not-the-verifier-not-the-verifier-not-the-verif",
+        redirect_uri: REDIRECT,
+    };
+    assert!(matches!(
+        reason(
+            RedeemedAuthorizationCode::redeem(&amp;mut store.tx(), &amp;app, &amp;bad_verifier, now)
+                .unwrap()
+        ),
+        InvalidGrantReason::PkceMismatch { .. }
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L754-L818"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 754–818</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/grant-flows.html">Grant Flows</a> and <a href="../integration-tests/oauth-endpoints.html">OAuth Endpoints</a> tests hold each refusal at <code>/oauth/token</code>, and that a replayed code ends the refresh family it started.</p>
+<h4 id="getters"><a class="header" href="#getters">Getters</a></h4>
+<div id="item-RedeemedAuthorizationCode--client_id" class="item-anchor"></div>
+
+<p>The redeeming client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client_id(&amp;self) -&gt; &amp;str {
+    &amp;self.code.client_id
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L221-L223"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 221–223</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--token_scopes" class="item-anchor"></div>
+
+<p>The code’s scopes with each SMART scope’s alternate spelling added —
+the token’s <code>scope</code> claim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn token_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.token_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L227-L229"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 227–229</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--granted_scopes" class="item-anchor"></div>
+
+<p>The scopes the code was issued with.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn granted_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.code.granted_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L232-L234"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 232–234</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--patient" class="item-anchor"></div>
+
+<p>The patient context the code was bound to, if any.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn patient(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.code.patient.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L237-L239"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 237–239</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--authorization_code" class="item-anchor"></div>
+
+<p>The consumed code itself.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn authorization_code(&amp;self) -&gt; &amp;str {
+    &amp;self.code.code
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L242-L244"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 242–244</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--sid" class="item-anchor"></div>
+
+<p>The browser session the code was issued under.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn sid(&amp;self) -&gt; &amp;str {
+    &amp;self.code.sid
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L247-L249"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 247–249</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-RedeemedAuthorizationCode--grant_id" class="item-anchor"></div>
+
+<p>The standing grant behind the code, if one was resolved.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn grant_id(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.grant_id.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L252-L254"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 252–254</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="check_code_bindings"><a class="header" href="#check_code_bindings"><code>check_code_bindings</code></a></h3>
+<p>Each failure is its own <code>invalid_grant</code> reason, for the log; the wire answer is <code>invalid_grant</code> whichever failed. The code is already spent, so none of them can be retried into a token.</p>
+<div id="item-check_code_bindings" class="item-anchor"></div>
+
+<p>Why the consumed <code>code</code> may not be redeemed by <code>authenticated_client</code>
+with <code>redirect_uri</code> and the presented verifier at <code>now</code>, if anything: it
+must be the client’s, for that redirect, unexpired, and its PKCE challenge
+must match the verifier. Each failure is its own <code>InvalidGrantReason</code>, for
+the log; the code is already spent, so none can be retried into a token.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn check_code_bindings(
+    code: &amp;AuthorizationCode,
+    authenticated_client: &amp;AuthenticatedClient,
+    redirect_uri: &amp;Url,
+    presented: &amp;PresentedAuthorizationCode&lt;'_&gt;,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), InvalidGrantReason&gt; {
+    if code.client_id != authenticated_client.client_id() {
+        return Err(InvalidGrantReason::CodeClientMismatch {
+            code_client_id: code.client_id.clone(),
+            presented_client_id: authenticated_client.client_id().to_owned(),
+        });
+    }
+    if code.redirect_uri != *redirect_uri {
+        return Err(InvalidGrantReason::CodeRedirectMismatch {
+            code_redirect_uri: code.redirect_uri.to_string(),
+            presented_redirect_uri: redirect_uri.to_string(),
+        });
+    }
+    if code.expires_at &lt; now {
+        return Err(InvalidGrantReason::CodeExpired {
+            expires_at: code.expires_at,
+        });
+    }
+    let computed = compute_code_challenge(presented.code_verifier);
+    if !bool::from(code.code_challenge.as_bytes().ct_eq(computed.as_bytes())) {
+        return Err(InvalidGrantReason::PkceMismatch {
+            client_id: authenticated_client.client_id().to_owned(),
+        });
+    }
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L603-L634"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 603–634</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="token_scope_spellings"><a class="header" href="#token_scope_spellings"><code>token_scope_spellings</code></a></h3>
+<p>All three proofs build their token scopes with it.</p>
+<div id="item-token_scope_spellings" class="item-anchor"></div>
+
+<p>The scopes a token carries: each granted scope alongside its alternate
+canonical form, so a v1-worded grant also carries its v2 letter spelling
+(see <code>wildflowerhealthio_scopes::with_alternate_canonical_forms</code>). The response’s
+<code>scope</code> stays the granted set as-is.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn token_scope_spellings(granted: &amp;[String]) -&gt; Vec&lt;String&gt; {
+    wildflowerhealthio_scopes::with_alternate_canonical_forms(granted)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L640-L642"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 640–642</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="consumeddevicerequest"><a class="header" href="#consumeddevicerequest"><code>ConsumedDeviceRequest</code></a></h3>
+<p>It carries the Owner’s <a href="../domain/authorization-request.html#item-Approval">approval</a>.</p>
+<div id="item-ConsumedDeviceRequest" class="item-anchor"></div>
+
+<p>An approved device request that this poll has atomically claimed (RFC 8628
+§3.4 single use), bound to the polling client. Carries the scopes the Owner
+granted at approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct ConsumedDeviceRequest {
+    /// The polling client, which the request was made by and is claimed for.
+    client_id: String,
+    /// What the Owner approved: the granted scopes and the patient context,
+    /// if any.
+    approval: Approval,
+    /// The granted scopes with each SMART scope's alternate spelling added:
+    /// the token's `scope` claim.
+    token_scopes: Vec&lt;String&gt;,
+    /// The standing device grant for this client and the device's grant
+    /// name, recorded on the refresh family the claim starts; each rotation of
+    /// that family stamps the grant used. `None` when none stands.
+    grant_id: Option&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L260-L273"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 260–273</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="consume"><a class="header" href="#consume"><code>consume</code></a></h4>
+<p><strong>A device request is claimed once.</strong> The claim is the request’s own <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--claim"><code>claim</code></a> transition, written with the guarded replace under the scope’s write lock, so of two polls racing for one approval, one wins. The standing grant is found by the device’s <a href="../domain/authorization-request/polled-requests.html#item-device_grant_name">grant name</a>.</p>
+<div id="item-ConsumedDeviceRequest--consume" class="item-anchor"></div>
+
+<p>Resolve the device request for <code>device_code</code>, require it to be this
+client’s, unexpired, and approved (stamping the poll and throttling a
+still-pending one per §3.5), then claim it, single use, under the
+scope’s write lock, so two concurrent polls can’t both mint. Once
+claimed, the standing device grant is looked up by the client and the
+device’s grant name (<a href="../domain/authorization-request/polled-requests.html#item-device_grant_name"><code>device_grant_name</code></a>) and recorded on the proof.</p>
+<p>Each poll is answered by the request’s state:</p>
+<ul>
+<li>unknown, another client’s, or not a device request: <code>invalid_grant</code>,
+the three alike;</li>
+<li>past its expiry, whatever its status: <code>expired_token</code>;</li>
+<li>pending, polled again within <a href="../domain/authorization-request.html#item-DEVICE_CODE_POLL_INTERVAL"><code>DEVICE_CODE_POLL_INTERVAL</code></a> of the
+last poll: <code>slow_down</code>, and the poll is not stamped;</li>
+<li>pending otherwise: <code>authorization_pending</code>, and the poll is stamped;</li>
+<li>denied: <code>access_denied</code>;</li>
+<li>already claimed: <code>expired_token</code>, since the device code has done its
+work;</li>
+<li>approved: claimed, and the proof returned; a poll that loses the
+claim to a concurrent one is <code>invalid_grant</code>.</li>
+</ul>
+<p>The refusals, as the inner <code>Err</code>: the §3.5 poll outcomes
+(<a href="../domain/errors.html#item-TokenExchangeError"><code>ExpiredToken</code></a>,
+<a href="../domain/errors.html#item-TokenExchangeError"><code>AuthorizationPending</code></a>,
+<a href="../domain/errors.html#item-TokenExchangeError"><code>AccessDenied</code></a>,
+<a href="../domain/errors.html#item-TokenExchangeError"><code>SlowDown</code></a>), with an already-claimed
+request answering <code>ExpiredToken</code>;
+<a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::InvalidGrant</code></a> for an unknown request, or one
+whose guarded claim loses a race to a concurrent poll.</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p><a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> on a store failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn consume(
+    tx: &amp;mut (impl AuthorizationRequestsTx + GrantsTx),
+    authenticated_client: &amp;AuthenticatedClient,
+    device_code: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Result&lt;Self, TokenExchangeError&gt;, AuthorizationServerError&gt; {
+    // One outcome collapses "no such device_code", "wrong client", and
+    // "not a device request".
+    let Some(request) = tx
+        .device_request_by_id(device_code)?
+        .filter(|request| request.client_id == authenticated_client.client_id())
+    else {
+        return Ok(Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::DeviceRequestNotFound {
+                presented_client_id: authenticated_client.client_id().to_owned(),
+            },
+        )));
+    };
+    if request.is_expired_at(now) {
+        return Ok(Err(TokenExchangeError::ExpiredToken));
+    }
+    let approval = match &amp;request.state {
+        PolledState::Pending =&gt; {
+            if request.is_polled_too_soon_at(now) {
+                return Ok(Err(TokenExchangeError::SlowDown));
+            }
+            if let Ok(stamped) = request.stamp_poll(now) {
+                tx.replace_device_request(&amp;request, &amp;stamped)?;
+            }
+            return Ok(Err(TokenExchangeError::AuthorizationPending));
+        }
+        PolledState::Denied =&gt; return Ok(Err(TokenExchangeError::AccessDenied)),
+        // A claimed request already minted its token: as RFC 8628 §3.5
+        // has it, the device code has expired.
+        PolledState::Claimed(_) =&gt; return Ok(Err(TokenExchangeError::ExpiredToken)),
+        PolledState::Approved(approval) =&gt; approval.clone(),
+    };
+    let claimed = request.claim(now).map_err(|_| {
+        AuthorizationServerError::infrastructure(
+            "claiming a device request",
+            "an approved, unexpired request is not claimable",
+        )
+    })?;
+    if !tx.replace_device_request(&amp;request, &amp;claimed)? {
+        return Ok(Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::DeviceCodeAlreadyRedeemed {
+                client_id: request.client_id.clone(),
+            },
+        )));
+    }
+    let grant_name =
+        device_grant_name(request.device_name.as_deref(), authenticated_client.name());
+    let grant_id = tx
+        .device_grant_by_client_and_device_name(&amp;request.client_id, grant_name)?
+        .map(|grant| grant.id);
+    Ok(Ok(ConsumedDeviceRequest {
+        token_scopes: token_scope_spellings(&amp;approval.granted_scopes),
+        client_id: request.client_id.clone(),
+        approval,
+        grant_id,
+    }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L311-L372"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 311–372</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The device poll outcomes: a pending request is <code>authorization_pending</code>
+(and stamps the poll), a fast second poll is <code>slow_down</code>, an approved one
+is claimed exactly once with the granted scopes, and another client’s
+request is unknown.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_device_request_reports_its_status_and_is_claimed_once() {
+    let store = FakeGrantStore::default();
+    let now = Utc::now();
+    let client = authenticated(&amp;store, "client");
+    let stranger = authenticated(&amp;store, "stranger");
+    store
+        .tx()
+        .insert_device_request(&amp;device_request("dev", "CODE", RequestStatus::Pending))
+        .unwrap();
+
+    assert!(matches!(
+        ConsumedDeviceRequest::consume(&amp;mut store.tx(), &amp;client, "dev", now).unwrap(),
+        Err(TokenExchangeError::AuthorizationPending)
+    ));
+    assert!(matches!(
+        ConsumedDeviceRequest::consume(
+            &amp;mut store.tx(),
+            &amp;client,
+            "dev",
+            now + Duration::seconds(1)
+        )
+        .unwrap(),
+        Err(TokenExchangeError::SlowDown)
+    ));
+    assert!(matches!(
+        reason(ConsumedDeviceRequest::consume(&amp;mut store.tx(), &amp;stranger, "dev", now).unwrap()),
+        InvalidGrantReason::DeviceRequestNotFound { .. }
+    ));
+
+    approve_stored(&amp;store, "dev", &amp;["openid"], None);
+    let later = now + DEVICE_CODE_POLL_INTERVAL;
+    let proof = ConsumedDeviceRequest::consume(&amp;mut store.tx(), &amp;client, "dev", later)
+        .unwrap()
+        .expect("claimed");
+    assert_eq!(proof.client_id(), "client");
+    assert_eq!(proof.granted_scopes(), ["openid"]);
+    assert_eq!(
+        GrantRedemption::DeviceCode(&amp;proof).authorization_code(),
+        None
+    );
+    assert!(matches!(
+        ConsumedDeviceRequest::consume(&amp;mut store.tx(), &amp;client, "dev", later).unwrap(),
+        Err(TokenExchangeError::ExpiredToken)
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L825-L869"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 825–869</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/device-code.html">Device Code</a> tests hold the poll answers at <code>/oauth/token</code>: <code>device_grant_pending_then_slow_down</code> and <code>device_grant_single_use_then_expired_token</code>.</p>
+<h4 id="getters-1"><a class="header" href="#getters-1">Getters</a></h4>
+<div id="item-ConsumedDeviceRequest--client_id" class="item-anchor"></div>
+
+<p>The polling client the request was claimed by.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client_id(&amp;self) -&gt; &amp;str {
+    &amp;self.client_id
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L375-L377"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 375–377</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ConsumedDeviceRequest--token_scopes" class="item-anchor"></div>
+
+<p>The granted scopes with each SMART scope’s alternate spelling added —
+the token’s <code>scope</code> claim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn token_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.token_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L381-L383"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 381–383</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ConsumedDeviceRequest--granted_scopes" class="item-anchor"></div>
+
+<p>The scopes the Owner granted at approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn granted_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.approval.granted_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L386-L388"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 386–388</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ConsumedDeviceRequest--patient" class="item-anchor"></div>
+
+<p>The patient context bound at approval, if any.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn patient(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.approval.patient.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L391-L393"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 391–393</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ConsumedDeviceRequest--grant_id" class="item-anchor"></div>
+
+<p>The standing device grant behind the request, if one was resolved.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn grant_id(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.grant_id.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L396-L398"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 396–398</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="validatedrefreshtoken"><a class="header" href="#validatedrefreshtoken"><code>ValidatedRefreshToken</code></a></h3>
+<p>It reads its <a href="../domain/refresh-token.html#item-RefreshTokenFamily">refresh token family</a>. <strong>It is not consumed yet</strong>: the refresh-family writer consumes it, by the hash it carries, when it rotates the token into its successor.</p>
+<div id="item-ValidatedRefreshToken" class="item-anchor"></div>
+
+<p>A refresh token that resolved to a live family owned by the presenting
+client (RFC 6749 §6). Not yet consumed: the refresh-family writer rotates
+it.</p>
+<p>Built in two scopes. <a href="#item-ValidatedRefreshToken--validate"><code>validate</code></a> runs the whole
+validation in a <code>read</code> scope, the client’s revocation epoch included: the
+epoch lives on the revocation store, another connection to the same file,
+so it can’t be read under the exchange’s write lock without risking a
+lock-order stall. <a href="#item-ValidatedRefreshToken--revalidate"><code>revalidate</code></a> then re-runs the
+store-only half inside the <code>write</code> scope that rotates, because the family
+may have ended between the two.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct ValidatedRefreshToken {
+    /// The live family the token belongs to, this client's: the scopes,
+    /// patient and browser session every token rotated under it carries.
+    family: RefreshTokenFamily,
+    /// The storage hash of the token as presented, by which the refresh-family
+    /// writer consumes it when it rotates the token into its successor.
+    presented_hash: String,
+    /// The family's scopes with each SMART scope's alternate spelling added:
+    /// the token's `scope` claim.
+    token_scopes: Vec&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L412-L422"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 412–422</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="validate"><a class="header" href="#validate"><code>validate</code></a></h4>
+<p>The epoch is the app’s revocation epoch: bumping it revokes every token the app held at that instant, so a family begun before it is refused like an access token issued before it.</p>
+<div id="item-ValidatedRefreshToken--validate" class="item-anchor"></div>
+
+<p>Resolve the presented token’s family and require it to be this client’s,
+unexpired, not minted under a revoked browser session, and begun no
+earlier than its client’s revocation epoch. A valid token presented by
+the wrong client is answered exactly like an unknown one so a stranger
+can’t probe validity, and is refused before any consume so it can’t
+burn the rightful client’s token. A family begun at the epoch itself
+still validates. Bumping a client’s revocation epoch revokes every
+token it held at that instant, so a family begun before it is refused
+like an access token issued before it. Runs in a <code>read</code> scope, outside
+the write lock (see the type’s doc).</p>
+<h5 id="errors-2"><a class="header" href="#errors-2">Errors</a></h5>
+<p><a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::InvalidGrant</code></a> with the specific reason;
+<a href="../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError::Store</code></a> on a store failure, the revocation
+store’s included, so an unreadable epoch never admits a family.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn validate(
+    tx: &amp;mut (impl RefreshTokensTx + BrowserSessionsTx),
+    revocation: &amp;dyn RevocationCheck,
+    authenticated_client: &amp;AuthenticatedClient,
+    presented_refresh_token: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Self, TokenExchangeError&gt; {
+    let validated = Self::live_family(
+        tx,
+        authenticated_client,
+        token_storage_hash(presented_refresh_token),
+        now,
+    )?;
+    // Bumping a client's revocation epoch revokes every token it held at
+    // that instant, refresh families included: a family begun before the
+    // epoch is refused like an access token issued before it. The family
+    // has no `jti` of its own, so only the epoch applies.
+    let family_predates_client_epoch = revocation
+        .is_revoked(
+            None,
+            Some(validated.family.issued_at),
+            &amp;validated.family.client_id,
+        )
+        .map_err(|error| {
+            AuthorizationServerError::infrastructure(
+                "refresh-token revocation epoch check failed",
+                error,
+            )
+        })?;
+    if family_predates_client_epoch {
+        return Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::RefreshTokenClientRevoked {
+                family_id: validated.family.family_id,
+            },
+        ));
+    }
+    Ok(validated)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L441-L478"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 441–478</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A live token validates for its own client (carrying the family’s scopes
+and hash) and is refused, with distinct reasons, when unknown, presented
+by another client, or past the family deadline.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_refresh_token_validates_for_its_client_while_the_family_lives() {
+    let store = FakeGrantStore::default();
+    let now = Utc::now();
+    let client = authenticated(&amp;store, "client");
+    let stranger = authenticated(&amp;store, "stranger");
+    live_family(&amp;store, "client", now);
+
+    let proof =
+        ValidatedRefreshToken::validate(&amp;mut store.tx(), &amp;NothingRevoked, &amp;client, "live", now)
+            .expect("validates");
+    assert_eq!(proof.family_id(), "fam");
+    assert_eq!(proof.presented_hash(), token_storage_hash("live"));
+    assert_eq!(proof.granted_scopes(), ["openid", "offline_access"]);
+    assert_eq!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;NothingRevoked,
+            &amp;client,
+            "ghost",
+            now
+        )),
+        InvalidGrantReason::RefreshTokenNotFound
+    );
+    assert!(matches!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;NothingRevoked,
+            &amp;stranger,
+            "live",
+            now
+        )),
+        InvalidGrantReason::RefreshTokenClientMismatch { .. }
+    ));
+    assert_eq!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;NothingRevoked,
+            &amp;client,
+            "live",
+            now + Duration::days(2)
+        )),
+        InvalidGrantReason::RefreshTokenExpired
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L914-L957"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 914–957</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A family minted under a browser session validates while the session
+stands and carries its <code>sid</code>; once the session is revoked, or when the
+<code>sid</code> names no session, the family is refused. A family with no
+session (the device flow) has none to check, which the test above
+covers.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_refresh_token_is_refused_once_its_session_is_revoked() {
+    let now = Utc::now();
+    let session = BrowserSession::new_same_device_session(vec![], Duration::hours(8), now);
+
+    let store = FakeGrantStore::default();
+    let client = authenticated(&amp;store, "client");
+    store.tx().insert_browser_session(&amp;session).unwrap();
+    live_family_under(&amp;store, "client", Some(&amp;session.sid), now);
+    let proof =
+        ValidatedRefreshToken::validate(&amp;mut store.tx(), &amp;NothingRevoked, &amp;client, "live", now)
+            .expect("validates");
+    assert_eq!(proof.sid(), Some(session.sid.as_str()));
+    assert!(store
+        .tx()
+        .revoke_browser_session(&amp;session.sid, now)
+        .unwrap());
+    assert_eq!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;NothingRevoked,
+            &amp;client,
+            "live",
+            now
+        )),
+        InvalidGrantReason::RefreshTokenSessionRevoked {
+            family_id: "fam".to_owned()
+        }
+    );
+
+    let store = FakeGrantStore::default();
+    let client = authenticated(&amp;store, "client");
+    live_family_under(&amp;store, "client", Some("no-such-sid"), now);
+    assert_eq!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;NothingRevoked,
+            &amp;client,
+            "live",
+            now
+        )),
+        InvalidGrantReason::RefreshTokenSessionRevoked {
+            family_id: "fam".to_owned()
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L965-L1009"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 965–1009</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A family begun before its client’s revocation epoch is refused; one
+begun at or after it, or belonging to another client, still validates.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_refresh_token_is_refused_once_its_client_epoch_passes_the_family() {
+    let now = Utc::now();
+    let store = FakeGrantStore::default();
+    let client = authenticated(&amp;store, "client");
+    live_family(&amp;store, "client", now);
+    let revocation_store = RevocationStore::open_in_memory().expect("revocation store");
+
+    revocation_store
+        .bump_subject_epoch("client", now)
+        .expect("bump to the family's start");
+    ValidatedRefreshToken::validate(&amp;mut store.tx(), &amp;revocation_store, &amp;client, "live", now)
+        .expect("a family begun at the epoch validates");
+    revocation_store
+        .bump_subject_epoch("other-client", now + Duration::seconds(1))
+        .expect("bump another client");
+    ValidatedRefreshToken::validate(&amp;mut store.tx(), &amp;revocation_store, &amp;client, "live", now)
+        .expect("another client's epoch doesn't touch this family");
+
+    revocation_store
+        .bump_subject_epoch("client", now + Duration::seconds(1))
+        .expect("bump past the family's start");
+    assert_eq!(
+        reason(ValidatedRefreshToken::validate(
+            &amp;mut store.tx(),
+            &amp;revocation_store,
+            &amp;client,
+            "live",
+            now
+        )),
+        InvalidGrantReason::RefreshTokenClientRevoked {
+            family_id: "fam".to_owned()
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L1014-L1047"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 1014–1047</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/device-code.html">Device Code</a>, <a href="../integration-tests/browser-sessions.html">Browser Sessions</a> and <a href="../integration-tests/token-revocation.html">Token Revocation</a> tests hold each refusal at <code>/oauth/token</code>: an expired family, another app’s token, a revoked browser session, and a bumped epoch.</p>
+<h4 id="revalidate"><a class="header" href="#revalidate"><code>revalidate</code></a></h4>
+<p>It runs the store checks <code>validate</code>’s tests exercise.</p>
+<div id="item-ValidatedRefreshToken--revalidate" class="item-anchor"></div>
+
+<p>Re-load this token’s family inside the rotating <code>write</code> scope <code>tx</code> and
+re-check the store-only facts — this client’s, unexpired, its browser
+session not revoked — since the family may have ended after
+<a href="#item-ValidatedRefreshToken--validate"><code>validate</code></a>’s scope closed. The epoch was checked
+there and is not re-read here (see the type’s doc).</p>
+<h5 id="errors-3"><a class="header" href="#errors-3">Errors</a></h5>
+<p>As <a href="#item-ValidatedRefreshToken--validate"><code>validate</code></a>, less the epoch check.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn revalidate(
+    self,
+    tx: &amp;mut (impl RefreshTokensTx + BrowserSessionsTx),
+    authenticated_client: &amp;AuthenticatedClient,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Self, TokenExchangeError&gt; {
+    Self::live_family(tx, authenticated_client, self.presented_hash, now)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L489-L496"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 489–496</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="live_family"><a class="header" href="#live_family"><code>live_family</code></a></h4>
+<p>The half both constructors run. A revoked family is one whose deadline was pulled back to the revocation instant, so the deadline check covers both. The browser session is checked with <a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/grant_store/browser_sessions.rs#L55"><code>BrowserSessionsTx::is_browser_session_revoked</code></a>.</p>
+<div id="item-ValidatedRefreshToken--live_family" class="item-anchor"></div>
+
+<p>The store-only half of validation: the family <code>presented_hash</code>
+belongs to, required to be <code>authenticated_client</code>’s, unexpired at
+<code>now</code>, and not minted under a revoked browser session. A revoked family
+is one whose deadline was pulled back to the revocation instant, so the
+deadline check covers both.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn live_family(
+    tx: &amp;mut (impl RefreshTokensTx + BrowserSessionsTx),
+    authenticated_client: &amp;AuthenticatedClient,
+    presented_hash: String,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Self, TokenExchangeError&gt; {
+    let Some((_, family)) = tx.refresh_token_with_family_by_hash(&amp;presented_hash)? else {
+        return Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::RefreshTokenNotFound,
+        ));
+    };
+    if family.client_id != authenticated_client.client_id() {
+        return Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::RefreshTokenClientMismatch {
+                family_client_id: family.client_id,
+                presented_client_id: authenticated_client.client_id().to_owned(),
+            },
+        ));
+    }
+    // Covers both natural deadline passage and prior revocation — revoking
+    // pulls `expires_at` back to the revocation instant rather than
+    // deleting rows, so the lineage stays auditable.
+    if family.expires_at &lt;= now {
+        return Err(TokenExchangeError::InvalidGrant(
+            InvalidGrantReason::RefreshTokenExpired,
+        ));
+    }
+    // Revoking a browser session ends every family minted under it. A
+    // family with no session (the device flow) has none to check.
+    if let Some(sid) = family.sid.as_deref() {
+        if tx.is_browser_session_revoked(sid)? {
+            return Err(TokenExchangeError::InvalidGrant(
+                InvalidGrantReason::RefreshTokenSessionRevoked {
+                    family_id: family.family_id,
+                },
+            ));
+        }
+    }
+    Ok(ValidatedRefreshToken {
+        token_scopes: token_scope_spellings(&amp;family.scopes),
+        family,
+        presented_hash,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L503-L546"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 503–546</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="getters-2"><a class="header" href="#getters-2">Getters</a></h4>
+<div id="item-ValidatedRefreshToken--client_id" class="item-anchor"></div>
+
+<p>The client the family belongs to.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client_id(&amp;self) -&gt; &amp;str {
+    &amp;self.family.client_id
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L549-L551"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 549–551</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--token_scopes" class="item-anchor"></div>
+
+<p>The family’s scopes with each SMART scope’s alternate spelling added —
+the token’s <code>scope</code> claim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn token_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.token_scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L555-L557"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 555–557</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--granted_scopes" class="item-anchor"></div>
+
+<p>The family’s scopes as granted, for the token response’s <code>scope</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn granted_scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.family.scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L560-L562"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 560–562</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--patient" class="item-anchor"></div>
+
+<p>The patient context the family was bound to, if any.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn patient(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.family.patient.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L565-L567"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 565–567</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--sid" class="item-anchor"></div>
+
+<p>The browser session the family was minted under, if any.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn sid(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    self.family.sid.as_deref()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L570-L572"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 570–572</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--device_grant_id" class="item-anchor"></div>
+
+<p>The device grant that earned the family, if the device flow started
+it and a grant was resolved then. A family the code flow started
+records the code it consumed; a device-flow family has no code, so a
+family with no code hash belongs to a device grant. A code grant is
+used when it stands in for the Owner at <code>/oauth/authorize</code>, not when
+its family refreshes, so its id is not returned here.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn device_grant_id(&amp;self) -&gt; Option&lt;&amp;str&gt; {
+    match self.family.authorization_code_hash {
+        Some(_) =&gt; None,
+        None =&gt; self.family.grant_id.as_deref(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L580-L585"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 580–585</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--family_id" class="item-anchor"></div>
+
+<p>The family this token belongs to.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn family_id(&amp;self) -&gt; &amp;str {
+    &amp;self.family.family_id
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L588-L590"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 588–590</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ValidatedRefreshToken--presented_hash" class="item-anchor"></div>
+
+<p>The storage hash of the presented token — what rotation consumes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn presented_hash(&amp;self) -&gt; &amp;str {
+    &amp;self.presented_hash
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L593-L595"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 593–595</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="grantredemption"><a class="header" href="#grantredemption"><code>GrantRedemption</code></a></h3>
+<p>The two proofs above that establish a session, read through for the refresh family they start.</p>
+<div id="item-GrantRedemption" class="item-anchor"></div>
+
+<p>A redemption that may start a refresh-token family: the two grants that
+establish a session rather than renew one. A refresh only rotates the
+family it already belongs to, so it is not one of these.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum GrantRedemption&lt;'a&gt; {
+    /// An authorization code redeemed at `/oauth/token`.
+    AuthorizationCode(&amp;'a RedeemedAuthorizationCode),
+    /// An approved device request claimed by its poll.
+    DeviceCode(&amp;'a ConsumedDeviceRequest),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L66-L71"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 66–71</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="getters-3"><a class="header" href="#getters-3">Getters</a></h4>
+<p>The first test under <a href="#item-RedeemedAuthorizationCode--redeem"><code>redeem</code></a> and the one under <a href="#item-ConsumedDeviceRequest--consume"><code>consume</code></a> read <code>authorization_code</code> either way.</p>
+<div id="item-GrantRedemption--client_id" class="item-anchor"></div>
+
+<p>The <code>client_id</code> the redemption is bound to.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn client_id(self) -&gt; &amp;'a str {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; redeemed_code.client_id(),
+        GrantRedemption::DeviceCode(consumed_device_request) =&gt; {
+            consumed_device_request.client_id()
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L75-L82"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 75–82</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-GrantRedemption--patient" class="item-anchor"></div>
+
+<p>SMART-on-FHIR patient context bound at approval, if any.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn patient(self) -&gt; Option&lt;&amp;'a str&gt; {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; redeemed_code.patient(),
+        GrantRedemption::DeviceCode(consumed_device_request) =&gt; {
+            consumed_device_request.patient()
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L85-L92"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 85–92</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-GrantRedemption--granted_scopes" class="item-anchor"></div>
+
+<p>The scopes as granted (without the alternate spellings the token
+carries), for the token response’s <code>scope</code> and the family’s record.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn granted_scopes(self) -&gt; &amp;'a [String] {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; redeemed_code.granted_scopes(),
+        GrantRedemption::DeviceCode(consumed_device_request) =&gt; {
+            consumed_device_request.granted_scopes()
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L96-L103"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 96–103</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-GrantRedemption--authorization_code" class="item-anchor"></div>
+
+<p>The authorization code this redemption consumed, so a later replay of
+that code can revoke the family it started; <code>None</code> for the device flow.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn authorization_code(self) -&gt; Option&lt;&amp;'a str&gt; {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; {
+            Some(redeemed_code.authorization_code())
+        }
+        GrantRedemption::DeviceCode(_) =&gt; None,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L107-L114"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 107–114</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-GrantRedemption--sid" class="item-anchor"></div>
+
+<p>The browser session the redemption was made under, which the family it
+starts records; <code>None</code> for the device flow.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn sid(self) -&gt; Option&lt;&amp;'a str&gt; {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; Some(redeemed_code.sid()),
+        GrantRedemption::DeviceCode(_) =&gt; None,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L118-L123"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 118–123</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-GrantRedemption--grant_id" class="item-anchor"></div>
+
+<p>The standing grant behind this redemption, if one was resolved.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn grant_id(self) -&gt; Option&lt;&amp;'a str&gt; {
+    match self {
+        GrantRedemption::AuthorizationCode(redeemed_code) =&gt; redeemed_code.grant_id(),
+        GrantRedemption::DeviceCode(consumed_device_request) =&gt; {
+            consumed_device_request.grant_id()
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L126-L133"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 126–133</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_refresh_token_earned"><a class="header" href="#is_refresh_token_earned"><code>is_refresh_token_earned</code></a></h4>
+<p>The token exchange asks it before it starts a family. Its test sits with the writer that starts one, on the <a href="../writers/refresh-family-writer.html">Refresh Family Writer</a> page.</p>
+<div id="item-GrantRedemption--is_refresh_token_earned" class="item-anchor"></div>
+
+<p>Whether the grant carries <code>KnownScope::OfflineAccess</code> and so earns a
+refresh-token family alongside its access token.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn is_refresh_token_earned(self) -&gt; bool {
+    self.granted_scopes()
+        .iter()
+        .any(|scope| scope == KnownScope::OfflineAccess.as_str())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/10940d96353db3dce9f8f906558dd26ad1a8aeac/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L137-L141"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 137–141</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/authority/standing-grant.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/authority/same-device-sign-in.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/authority/standing-grant.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/authority/same-device-sign-in.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

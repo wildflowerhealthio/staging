@@ -1,0 +1,798 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Browser Sessions - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-c9130fb8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="browser-sessions"><a class="header" href="#browser-sessions">Browser Sessions</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs"><code>authorization-server-rust/src/db/browser_sessions.rs</code></a></p>
+
+<p>Two tables hold what the server knows about the browsers it has let in. <code>browser_sessions</code> holds one row per <a href="../domain/browser-session.html">browser session</a>, keyed by its <code>sid</code>, read back as a <a href="../domain/browser-session.html#item-BrowserSession"><code>BrowserSession</code></a>, one field to one column of the same name. <code>scopes</code> is compact JSON text through the shared <code>JsonStrings</code>; <code>kind</code> is its wire string, <code>same_device</code> or <code>paired</code>, which a <code>CHECK</code> on the column also enforces.</p>
+<p><strong>A session’s row outlives the session.</strong> Revoking it stamps <code>revoked_at</code> and keeps the row, because the token verifier and a refresh look the <code>sid</code> up to refuse what the session minted. The row goes only in the retention sweep, <a href="../domain/retention.html#item-purge_expired"><code>purge_expired</code></a>, with the cutoff <code>now</code> less <a href="../domain/retention.html#item-BROWSER_SESSION_RETENTION"><code>BROWSER_SESSION_RETENTION</code></a>.</p>
+<p><code>session_shortfall_acknowledgements</code> records, per session, <strong>the apps it has gone on past its <a href="../domain/authorization-request/code-request.html">limited page</a> for</strong>. Its primary key is the pair (<code>sid</code>, <code>client_id</code>), so a pair is recorded at most once and a lookup by the pair is a key lookup. Neither table carries a foreign key: <code>sid</code> here, and on the requests, codes and refresh families that record it, is a soft reference the retention sweep keeps tidy.</p>
+<p>The tests open a store with <a href="test-fixtures.html#item-browser_sessions--tests--store"><code>store</code></a>.</p>
+<h2 id="dbbrowser_sessions"><a class="header" href="#dbbrowser_sessions"><code>db::browser_sessions</code></a></h2>
+<h3 id="impl-browsersessionstx-for-sqlitegranttx"><a class="header" href="#impl-browsersessionstx-for-sqlitegranttx"><code>impl BrowserSessionsTx for SqliteGrantTx</code></a></h3>
+<p>The port is <a href="../grant-store/browser-sessions.html#item-BrowserSessionsTx"><code>BrowserSessionsTx</code></a>.</p>
+<h4 id="insert_browser_session"><a class="header" href="#insert_browser_session"><code>insert_browser_session</code></a></h4>
+<p>A second session with the same <code>sid</code> breaks the primary key. Every test here starts by inserting sessions.</p>
+<div id="item-SqliteGrantTx--insert_browser_session" class="item-anchor"></div>
+
+<p>Persist a freshly started browser session.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_browser_session(
+    &amp;mut self,
+    session: &amp;BrowserSession,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::insert_into(browser_sessions::table)
+        .values(session.clone())
+        .execute(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("insert_browser_session failed", e)
+        })?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L47-L59"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 47–59</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="browser_session_by_sid"><a class="header" href="#browser_session_by_sid"><code>browser_session_by_sid</code></a></h4>
+<div id="item-SqliteGrantTx--browser_session_by_sid" class="item-anchor"></div>
+
+<p>Load the browser session <code>sid</code>, or <code>None</code> when no session has it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn browser_session_by_sid(
+    &amp;mut self,
+    sid: &amp;str,
+) -&gt; Result&lt;Option&lt;BrowserSession&gt;, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    browser_sessions::table
+        .find(sid)
+        .select(BrowserSession::as_select())
+        .first(conn)
+        .optional()
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("browser_session_by_sid failed", e)
+        })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L62-L75"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 62–75</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_browser_session_revoked"><a class="header" href="#is_browser_session_revoked"><code>is_browser_session_revoked</code></a></h4>
+<p>A missing session fails closed.</p>
+<div id="item-SqliteGrantTx--is_browser_session_revoked" class="item-anchor"></div>
+
+<p>Whether the browser session <code>sid</code> is revoked or missing: no row with that
+<code>sid</code> and <code>revoked_at IS NULL</code> exists.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_browser_session_revoked(&amp;mut self, sid: &amp;str) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::select(not(exists(
+        browser_sessions::table
+            .find(sid)
+            .filter(browser_sessions::revoked_at.is_null()),
+    )))
+    .get_result(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure("is_browser_session_revoked failed", e)
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L97-L108"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 97–108</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="revoke_browser_session"><a class="header" href="#revoke_browser_session"><code>revoke_browser_session</code></a></h4>
+<div id="item-SqliteGrantTx--revoke_browser_session" class="item-anchor"></div>
+
+<p>Stamp the browser session <code>sid</code> revoked at <code>now</code>, returning <code>true</code> iff a
+standing session was transitioned. The <code>revoked_at IS NULL</code> guard keeps the
+first revocation’s instant.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn revoke_browser_session(
+    &amp;mut self,
+    sid: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let affected = diesel::update(
+        browser_sessions::table
+            .find(sid)
+            .filter(browser_sessions::revoked_at.is_null()),
+    )
+    .set(browser_sessions::revoked_at.eq(now))
+    .execute(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure("revoke_browser_session failed", e)
+    })?;
+    Ok(affected == 1)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L113-L130"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 113–130</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A started session round-trips through the table, and revoking it stamps
+it once: a second revoke keeps the first instant and reports <code>false</code>.
+It reads as revoked once revoked, and so does a <code>sid</code> with no row.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_round_trips_and_is_revoked_once() {
+    let store = store();
+    let now = chrono::Utc::now();
+    let session = BrowserSession::new_same_device_session(
+        vec!["system/*.cruds".to_owned(), "wildflower/*.cruds".to_owned()],
+        Duration::hours(8),
+        now,
+    );
+    store
+        .write(|tx| tx.insert_browser_session(&amp;session))
+        .expect("insert");
+    assert_eq!(
+        store
+            .read(|tx| tx.browser_session_by_sid(&amp;session.sid))
+            .expect("read"),
+        Some(session.clone())
+    );
+    assert!(store
+        .read(|tx| tx.browser_session_by_sid("no-such-sid"))
+        .expect("read")
+        .is_none());
+    assert!(!store
+        .read(|tx| tx.is_browser_session_revoked(&amp;session.sid))
+        .expect("read"));
+    assert!(store
+        .read(|tx| tx.is_browser_session_revoked("no-such-sid"))
+        .expect("read"));
+
+    let revoked_at = now + Duration::minutes(1);
+    assert!(store
+        .write(|tx| tx.revoke_browser_session(&amp;session.sid, revoked_at))
+        .expect("revoke"));
+    assert!(!store
+        .write(|tx| tx.revoke_browser_session(&amp;session.sid, revoked_at + Duration::minutes(1)))
+        .expect("second revoke"));
+    let stored = store
+        .read(|tx| tx.browser_session_by_sid(&amp;session.sid))
+        .expect("read")
+        .expect("still there");
+    assert_eq!(stored.revoked_at, Some(revoked_at));
+    assert!(store
+        .read(|tx| tx.is_browser_session_revoked(&amp;session.sid))
+        .expect("read"));
+    assert!(!store
+        .write(|tx| tx.revoke_browser_session("no-such-sid", now))
+        .expect("revoke"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L287-L333"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 287–333</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="live_browser_sessions"><a class="header" href="#live_browser_sessions"><code>live_browser_sessions</code></a></h4>
+<p>The Owner’s list of browsers.</p>
+<div id="item-SqliteGrantTx--live_browser_sessions" class="item-anchor"></div>
+
+<p>Every browser session live at <code>now</code> (not revoked, <code>expires_at</code> after
+<code>now</code>), newest first.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn live_browser_sessions(
+    &amp;mut self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Vec&lt;BrowserSession&gt;, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    browser_sessions::table
+        .filter(browser_sessions::revoked_at.is_null())
+        .filter(browser_sessions::expires_at.gt(now))
+        .order(browser_sessions::created_at.desc())
+        .select(BrowserSession::as_select())
+        .load(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("live_browser_sessions failed", e)
+        })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L79-L93"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 79–93</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Only sessions neither revoked nor expired at <code>now</code> are live, newest
+first.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn live_sessions_are_the_unrevoked_unexpired_ones_newest_first() {
+    let store = store();
+    let now = chrono::Utc::now();
+    let older = BrowserSession::new_same_device_session(
+        vec![],
+        Duration::hours(8),
+        now - Duration::hours(2),
+    );
+    let newer = BrowserSession::new_same_device_session(
+        vec![],
+        Duration::hours(8),
+        now - Duration::hours(1),
+    );
+    let expired = BrowserSession::new_same_device_session(
+        vec![],
+        Duration::hours(8),
+        now - Duration::hours(9),
+    );
+    let revoked = BrowserSession::new_same_device_session(vec![], Duration::hours(8), now);
+    for session in [&amp;older, &amp;newer, &amp;expired, &amp;revoked] {
+        store
+            .write(|tx| tx.insert_browser_session(session))
+            .expect("insert");
+    }
+    store
+        .write(|tx| tx.revoke_browser_session(&amp;revoked.sid, now))
+        .expect("revoke");
+
+    let live: Vec&lt;String&gt; = store
+        .read(|tx| tx.live_browser_sessions(now))
+        .expect("read")
+        .into_iter()
+        .map(|session| session.sid)
+        .collect();
+    assert_eq!(live, vec![newer.sid, older.sid]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L338-L373"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 338–373</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="touch_browser_session_last_seen"><a class="header" href="#touch_browser_session_last_seen"><code>touch_browser_session_last_seen</code></a></h4>
+<p>When the server accepts a session’s cookie it passes <code>seen_before</code> as <code>seen_at</code> less <a href="../domain/browser-session.html#item-LAST_SEEN_RESOLUTION"><code>LAST_SEEN_RESOLUTION</code></a>, so <strong>the column moves at most once per window, and never backwards</strong>. A refresh family rotating passes <code>seen_at</code> as <code>seen_before</code>, so it moves the column unless the column is already later.</p>
+<div id="item-SqliteGrantTx--touch_browser_session_last_seen" class="item-anchor"></div>
+
+<p>Move the browser session <code>sid</code>’s <code>last_seen_at</code> to <code>seen_at</code>, unless it was
+last seen after <code>seen_before</code>, returning <code>true</code> iff it moved. The
+guard keeps the column from moving backwards, and from moving more than
+once inside a window that ends at <code>seen_at</code>. Moved by the cookie-use
+recorder and by a refresh-token rotation under the session.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn touch_browser_session_last_seen(
+    &amp;mut self,
+    sid: &amp;str,
+    seen_at: DateTime&lt;Utc&gt;,
+    seen_before: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let affected = diesel::update(
+        browser_sessions::table
+            .find(sid)
+            .filter(browser_sessions::last_seen_at.le(seen_before)),
+    )
+    .set(browser_sessions::last_seen_at.eq(seen_at))
+    .execute(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure("touch_browser_session_last_seen failed", e)
+    })?;
+    Ok(affected == 1)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L137-L155"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 137–155</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A touch moves <code>last_seen_at</code> only when it was last seen before the
+guard, so a second touch inside the window and a touch from the past
+leave it; a <code>sid</code> with no row moves nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_touch_moves_last_seen_only_past_the_guard() {
+    let store = store();
+    let signed_in_at = chrono::Utc::now();
+    let session =
+        BrowserSession::new_same_device_session(vec![], Duration::hours(8), signed_in_at);
+    store
+        .write(|tx| tx.insert_browser_session(&amp;session))
+        .expect("insert");
+    let last_seen = |store: &amp;SqliteGrantStore| {
+        store
+            .read(|tx| tx.browser_session_by_sid(&amp;session.sid))
+            .expect("read")
+            .expect("stored")
+            .last_seen_at
+    };
+
+    let seen_at = signed_in_at + Duration::minutes(6);
+    assert!(store
+        .write(|tx| tx.touch_browser_session_last_seen(
+            &amp;session.sid,
+            seen_at,
+            seen_at - Duration::minutes(5)
+        ))
+        .expect("touch"));
+    assert_eq!(last_seen(&amp;store), seen_at);
+
+    let soon_after = seen_at + Duration::minutes(1);
+    assert!(!store
+        .write(|tx| tx.touch_browser_session_last_seen(
+            &amp;session.sid,
+            soon_after,
+            soon_after - Duration::minutes(5)
+        ))
+        .expect("touch inside the window"));
+    assert!(!store
+        .write(|tx| tx.touch_browser_session_last_seen(
+            &amp;session.sid,
+            signed_in_at,
+            signed_in_at
+        ))
+        .expect("touch from the past"));
+    assert_eq!(last_seen(&amp;store), seen_at);
+    assert!(!store
+        .write(|tx| tx.touch_browser_session_last_seen("no-such-sid", soon_after, soon_after))
+        .expect("touch"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L379-L424"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 379–424</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_session_shortfall_acknowledged_for_client"><a class="header" href="#is_session_shortfall_acknowledged_for_client"><code>is_session_shortfall_acknowledged_for_client</code></a></h4>
+<div id="item-SqliteGrantTx--is_session_shortfall_acknowledged_for_client" class="item-anchor"></div>
+
+<p>Whether the browser session <code>sid</code> has gone on past its limited page for
+<code>client_id</code> before.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_session_shortfall_acknowledged_for_client(
+    &amp;mut self,
+    sid: &amp;str,
+    client_id: &amp;str,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::select(exists(
+        session_shortfall_acknowledgements::table.find((sid, client_id)),
+    ))
+    .get_result(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure(
+            "is_session_shortfall_acknowledged_for_client failed",
+            e,
+        )
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L159-L175"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 159–175</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="record_session_shortfall_acknowledgement"><a class="header" href="#record_session_shortfall_acknowledgement"><code>record_session_shortfall_acknowledgement</code></a></h4>
+<p>Continue records it, in the same write as the request’s acknowledgement; Cancel records nothing. The <code>INSERT</code> does nothing on a primary-key conflict.</p>
+<div id="item-SqliteGrantTx--record_session_shortfall_acknowledgement" class="item-anchor"></div>
+
+<p>Record that the browser session <code>sid</code> went on past its limited page for
+<code>client_id</code>. Recording it again changes nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_session_shortfall_acknowledgement(
+    &amp;mut self,
+    sid: &amp;str,
+    client_id: &amp;str,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::insert_into(session_shortfall_acknowledgements::table)
+        .values((
+            session_shortfall_acknowledgements::sid.eq(sid),
+            session_shortfall_acknowledgements::client_id.eq(client_id),
+        ))
+        .on_conflict_do_nothing()
+        .execute(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure(
+                "record_session_shortfall_acknowledgement failed",
+                e,
+            )
+        })?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L179-L199"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 179–199</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A session’s limited-page acknowledgement is per client, and recording
+it twice is no error.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_shortfall_acknowledgement_is_per_session_and_client() {
+    let store = store();
+    assert!(!store
+        .read(|tx| tx.is_session_shortfall_acknowledged_for_client("sid-1", "app"))
+        .expect("read"));
+    for _ in 0..2 {
+        store
+            .write(|tx| tx.record_session_shortfall_acknowledgement("sid-1", "app"))
+            .expect("record");
+    }
+    for (sid, client_id, acknowledged) in [
+        ("sid-1", "app", true),
+        ("sid-1", "other-app", false),
+        ("sid-2", "app", false),
+    ] {
+        assert_eq!(
+            store
+                .read(|tx| tx.is_session_shortfall_acknowledged_for_client(sid, client_id))
+                .expect("read"),
+            acknowledged,
+            "{sid} {client_id}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L429-L452"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 429–452</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="delete_browser_sessions_ended_before"><a class="header" href="#delete_browser_sessions_ended_before"><code>delete_browser_sessions_ended_before</code></a></h4>
+<p>The prune test keeps sessions alive with refresh families built by <a href="test-fixtures.html#item-browser_sessions--tests--family"><code>family</code></a>.</p>
+<div id="item-SqliteGrantTx--delete_browser_sessions_ended_before" class="item-anchor"></div>
+
+<p>Delete every browser session that expired or was revoked before <code>cutoff</code>
+and that no refresh-token family alive at <code>cutoff</code> names, returning how
+many went, and with them every limited-page acknowledgement whose session
+is gone. A family that outlives its session’s expiry keeps the row, so
+its refresh still finds the session it was minted under. The family probe
+is correlated on <code>sid</code>, so <code>refresh_token_families_sid_idx</code> answers it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_browser_sessions_ended_before(
+    &amp;mut self,
+    cutoff: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;usize, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let named_by_a_family_alive_at_cutoff = exists(
+        refresh_token_families::table
+            .filter(refresh_token_families::sid.eq(browser_sessions::sid.nullable()))
+            .filter(refresh_token_families::expires_at.ge(cutoff)),
+    );
+    let pruned = diesel::delete(
+        browser_sessions::table
+            .filter(
+                browser_sessions::expires_at
+                    .lt(cutoff)
+                    .or(browser_sessions::revoked_at.lt(cutoff)),
+            )
+            .filter(not(named_by_a_family_alive_at_cutoff)),
+    )
+    .execute(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure(
+            "delete_browser_sessions_ended_before failed",
+            e,
+        )
+    })?;
+    diesel::delete(session_shortfall_acknowledgements::table.filter(
+        not(exists(browser_sessions::table.filter(
+            browser_sessions::sid.eq(session_shortfall_acknowledgements::sid),
+        ))),
+    ))
+    .execute(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure(
+            "delete session_shortfall_acknowledgements without a session failed",
+            e,
+        )
+    })?;
+    Ok(pruned)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L207-L246"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 207–246</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The prune takes a session that expired or was revoked before the
+cutoff, unless a family alive at the cutoff names it, and the
+limited-page acknowledgements of every session it takes; a session
+that ended after the cutoff stays.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_prune_takes_only_sessions_ended_before_the_cutoff_that_no_live_family_names() {
+    let store = store();
+    let now = chrono::Utc::now();
+    let cutoff = now - Duration::hours(24);
+    let session = |created_at| {
+        BrowserSession::new_same_device_session(vec![], Duration::hours(8), created_at)
+    };
+    let expired_long_ago = session(now - Duration::days(3));
+    // Still unexpired, but revoked a day and more ago.
+    let revoked_long_ago = BrowserSession::new_same_device_session(
+        vec![],
+        Duration::hours(48),
+        now - Duration::hours(30),
+    );
+    let expired_recently = session(now - Duration::hours(10));
+    let named_by_a_live_family = session(now - Duration::days(3));
+    let named_by_a_dead_family = session(now - Duration::days(3));
+    for session in [
+        &amp;expired_long_ago,
+        &amp;revoked_long_ago,
+        &amp;expired_recently,
+        &amp;named_by_a_live_family,
+        &amp;named_by_a_dead_family,
+    ] {
+        store
+            .write(|tx| tx.insert_browser_session(session))
+            .expect("insert");
+    }
+    store
+        .write(|tx| tx.revoke_browser_session(&amp;revoked_long_ago.sid, now - Duration::hours(29)))
+        .expect("revoke");
+    store
+        .write(|tx| {
+            tx.insert_refresh_token_family_row(&amp;family(
+                "live",
+                &amp;named_by_a_live_family.sid,
+                now + Duration::days(30),
+            ))?;
+            tx.insert_refresh_token_family_row(&amp;family(
+                "dead",
+                &amp;named_by_a_dead_family.sid,
+                now - Duration::days(2),
+            ))
+        })
+        .expect("families");
+    store
+        .write(|tx| {
+            tx.record_session_shortfall_acknowledgement(&amp;expired_long_ago.sid, "app")?;
+            tx.record_session_shortfall_acknowledgement(&amp;expired_recently.sid, "app")
+        })
+        .expect("acknowledgements");
+
+    let pruned = store
+        .write(|tx| tx.delete_browser_sessions_ended_before(cutoff))
+        .expect("prune");
+
+    assert_eq!(pruned, 3);
+    for (session, kept) in [
+        (&amp;expired_long_ago, false),
+        (&amp;revoked_long_ago, false),
+        (&amp;expired_recently, true),
+        (&amp;named_by_a_live_family, true),
+        (&amp;named_by_a_dead_family, false),
+    ] {
+        assert_eq!(
+            store
+                .read(|tx| tx.browser_session_by_sid(&amp;session.sid))
+                .expect("read")
+                .is_some(),
+            kept,
+            "session created {}",
+            session.created_at
+        );
+    }
+    for (session, kept) in [(&amp;expired_long_ago, false), (&amp;expired_recently, true)] {
+        assert_eq!(
+            store
+                .read(|tx| tx.is_session_shortfall_acknowledged_for_client(&amp;session.sid, "app"))
+                .expect("read"),
+            kept,
+            "acknowledgement of the session created {}",
+            session.created_at
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/browser_sessions.rs#L459-L543"><code>authorization-server-rust/src/db/browser_sessions.rs</code> lines 459–543</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/persistence/clients.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence/authorization-requests.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/persistence/clients.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence/authorization-requests.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
