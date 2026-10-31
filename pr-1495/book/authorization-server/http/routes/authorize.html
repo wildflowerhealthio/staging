@@ -1,0 +1,634 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Authorize - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="authorize"><a class="header" href="#authorize">Authorize</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code></a></p>
+
+<p><code>GET /oauth/authorize</code> is the front door of the authorization-code flow. Nothing in the server calls it. An app finds it in the FHIR server’s <code>.well-known/smart-configuration</code> and sends <strong>the person’s browser</strong> here, with PKCE and a <code>state</code>. Everything the endpoint answers is for that browser: a redirect onward, or a page saying why it can’t.</p>
+<p><strong>No browser session, no authorization.</strong> A browser that carries no live <a href="../../domain/browser-session.html">browser session</a> is sent to the pairing page first, and nothing is parked, consumed or raised. A browser with one has its request handed to the <a href="../../capabilities/oauth/code-authorization-starter.html">code authorization starter</a>, which validates it, parks it as a <a href="../../domain/authorization-request/code-request.html">code request</a> made in that session, and says where the browser goes next:</p>
+<ul>
+<li>back to the app with a code, when a <a href="../../domain/grant.html#when-a-grant-skips-the-owner">standing grant skips the Owner</a>: the request changes nothing in the app’s registration, the grant covers every requested scope, and the session holds what the request needs or has gone on past the <a href="../../domain/authorization-request/code-request.html#the-limited-page">limited page</a> for this app before;</li>
+<li>to the limited page, when the session holds less than the request asks for and hasn’t gone on for this app;</li>
+<li>to the consent card, when the <a href="../../domain/authorization-request/code-request.html#who-decides">browser decides</a> the request itself;</li>
+<li>to the wait page otherwise, with the request raised for the Owner.</li>
+</ul>
+<p>A request that fails once its redirect is trusted goes back to the app with <code>error</code> and <code>state</code>. One that fails while its redirect isn’t trusted gets a local <code>400</code> page, since redirecting there would be an open redirect. The <a href="../../integration-tests/grant-flows.html">Grant Flows</a>, <a href="../../integration-tests/oauth-endpoints.html">OAuth Endpoints</a>, <a href="../../integration-tests/session-required.html">Session Required</a> and <a href="../../integration-tests/consent-card.html">Consent Card</a> integration tests hold the endpoint to each of these answers.</p>
+<h2 id="httproutesoauthauthorize"><a class="header" href="#httproutesoauthauthorize"><code>http::routes::oauth::authorize</code></a></h2>
+<h3 id="authorizeparams"><a class="header" href="#authorizeparams"><code>AuthorizeParams</code></a></h3>
+<p>A query missing any of the seven required parameters fails to deserialize, and axum answers its own <code>400</code> before the handler runs. The starter checks the values. A <code>launch</code> names a <a href="../../domain/launch-context.html">launch context</a>.</p>
+<div id="item-AuthorizeParams" class="item-anchor"></div>
+
+<p>Query parameters accepted at <code>/oauth/authorize</code> per RFC 6749 §4.1.1 +
+RFC 7636 (PKCE). Stricter than the base spec: <code>state</code> is required (the
+spec merely recommends it), and PKCE with S256 is mandatory — both
+matching the OAuth 2.1 direction. The optional SMART App Launch extensions
+(<code>launch</code>, <code>aud</code>) are documented on their fields below.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct AuthorizeParams {
+    /// The response the client wants; only `code` is supported, anything else
+    /// is `unsupported_response_type`.
+    pub response_type: String,
+    /// The PKCE transform (RFC 7636 §4.3); only `S256` is accepted.
+    pub code_challenge_method: String,
+    /// The client asking. An unknown one is trusted on first use and carried
+    /// to the Owner's prompt as a registration warning; a disabled one is
+    /// refused on a local page.
+    pub client_id: String,
+    /// The scopes asked for, space-separated (RFC 6749 §3.3). Scopes outside a
+    /// trusted-on-first-use client's registration are carried to the Owner's
+    /// prompt; outside a server-defined registration they are refused.
+    pub scope: String,
+    /// The PKCE challenge, `BASE64URL(SHA256(code_verifier))`, which the code
+    /// remembers so `POST /oauth/token` can check the verifier (RFC 7636 §4.2).
+    pub code_challenge: String,
+    /// Where the browser goes back to with the code or the error. It must be
+    /// an http(s) URL; until it is trusted (registered for this client), a
+    /// failure renders the local page rather than redirecting there.
+    pub redirect_uri: String,
+    /// The client's opaque value, carried back unchanged on every redirect to
+    /// it. Required here, though RFC 6749 only recommends it.
+    pub state: String,
+    /// SMART App Launch `launch` value, handed to the app in its launch URL
+    /// and forwarded here. It must name a launch this server minted for this
+    /// `client_id` that is unused and unexpired (five minutes); it is consumed,
+    /// so it works once, and the request carries the launch's context
+    /// (including any patient it binds) to the consent. Any other value is
+    /// `invalid_request`, its `error_description` saying why. A browser
+    /// without a session is sent to pairing before the launch is
+    /// read, so pairing never spends it. Absent, the request is plain OAuth.
+    pub launch: Option&lt;String&gt;,
+    /// SMART App Launch audience: the FHIR server the app expects to call with
+    /// the token. When present it must be this server's origin
+    /// (`https://&lt;domain&gt;`), which is also its FHIR base, else
+    /// `invalid_request`. The minted token's `aud` is the server's origin.
+    pub aud: Option&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L146-L186"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 146–186</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_authorize_request"><a class="header" href="#handle_authorize_request"><code>handle_authorize_request</code></a></h3>
+<p>It reads the browser session through <a href="../browser-session-cookie.html#item-carried_browser_session"><code>carried_browser_session</code></a> before anything else, and passes the starter whether the session <a href="../browser-session-cookie.html#item-can_decide_consents">can decide consents</a>. <code>may_raise_for_owner</code> asks the <a href="../middleware.html#item-DeferredStartLimit">deferred start limit</a>, when the layer deferred one; with nothing deferred, the layer has already asked.</p>
+<div id="item-handle_authorize_request" class="item-anchor"></div>
+
+<p>The authorization endpoint (RFC 6749 §3.1), the public front door of the
+OAuth flow. It issues nothing to a browser without a browser session: such
+a browser is sent to the pairing page first. For a browser with one it
+validates the request, then either auto-issues an authorization code (when
+an existing grant pre-approves every requested scope) or parks the
+user-agent on the consent card or the wait page while the Owner decides.</p>
+<p>Nothing in-process calls this route. Registered clients (e.g.
+SMART-on-FHIR apps) discover it via the FHIR server’s
+<code>.well-known/smart-configuration</code> (<code>authorization_endpoint</code>) and send the
+<em>user’s browser</em> here with PKCE params to start an authorization-code
+flow:</p>
+<ol>
+<li>Browser lands here. The browser session cookie is read before anything
+else: a browser without a live browser session is 302’d to the pairing
+page, <code>/oauth/pair?next=&lt;this request's path and query&gt;</code>, and nothing is
+parked, notified or consumed. Once the Owner approves the pairing, the
+page sends the browser back here with its new session. A browser with a
+session has its request parked as an <code>AuthorizationRequest</code> (5-minute
+TTL), made in that session (<code>sid</code>). A SMART App Launch’s <code>aud</code> and
+<code>launch</code> are checked first (see their fields), and the launch is
+consumed onto the request.</li>
+<li>A request asking for more than the browser’s session holds (scopes a
+code issued in that session would not carry in full) waits on the
+limited page at <code>/oauth/authorize/{id}/limited</code>, which says what the
+session lacks and offers Continue or Cancel:
+<code>POST /oauth/authorize/{id}/continue</code> goes on as below,
+<code>POST /oauth/authorize/{id}/cancel</code> answers the client
+<code>access_denied</code>. Until then the Owner isn’t asked about it. Once a
+browser session has pressed Continue for a client, its later requests
+for that client skip the page, whatever the session then lacks. What
+the session holds is read from its <code>browser_sessions</code> row.</li>
+<li>Unless every requested scope is pre-approved by an existing grant for
+this (client, <code>redirect_uri</code>) pair, the request joins the pending-consent
+queue and the browser is 302’d to a page this authorization server
+serves beside the endpoint, on the origin the browser used. A browser
+whose session can decide consents and holds the request’s approval
+scopes goes to the consent card at <code>/oauth/authorize/{id}/consent</code>, where
+it decides in place; the request records that it can be decided there
+(<code>decidable_in_requesting_browser</code>). Any other goes to the wait page at
+<code>/oauth/authorize/{id}/wait</code>, and the Owner is notified (the host
+webview’s popup). The wait page polls <code>GET /oauth/authorize/{id}</code> (a
+custom extension, not part of any RFC), which answers the browser
+session the request was made in and a session that can decide it on
+the consent card, until the Owner decides — in the
+popup, in a signed-in launcher, or on the consent card once that
+browser can decide it. Either way the code is issued under the session
+the request was made in, not the approver’s.
+RFC 6749 leaves the owner-interaction mechanism unspecified, so both
+pages are spec-legal; likewise §4.1 explicitly allows skipping consent
+on a previously established authorization decision, which is what the
+grant fast path implements.</li>
+<li>Approval 302s the browser back to the client’s <code>redirect_uri</code> with
+<code>code</code> + <code>state</code> (§4.1.2); the client then redeems the short-lived
+code at <code>POST /oauth/token</code> (§4.1.3) with its PKCE verifier.</li>
+</ol>
+<p>Clients without a server-defined registration are <strong>trusted on first use</strong>: an
+unknown <code>client_id</code>, an unregistered <code>redirect_uri</code>, and scopes outside the
+registration are all carried to the Owner’s prompt as a registration warning
+rather than rejected here, and nothing is written to the <code>clients</code> table
+until the Owner approves. Such a request never takes the grant fast path,
+and while its redirect is untrusted every other failure renders the local
+HTML page instead of redirecting. A server-defined registration (the host
+app’s, the FHIR server UI’s) keeps the strict treatment, and a disabled
+client is rejected either way. Once the redirect is trusted, a failure goes
+back to the client’s <code>redirect_uri</code> with <code>error</code>, <code>error_description</code> and
+<code>state</code> (RFC 6749 §4.1.2.1) instead.</p>
+<p>The start limit is asked only when it must be: its layer defers a request
+from a browser that can decide consents, and one carrying no session, and
+the starter asks the deferred limit only before it raises the request for
+the Owner or parks it for the limited page.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_authorize_request(
+    code_authorization_starter: Live&lt;LiveCodeAuthorizationStarter&gt;,
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    deferred_start_limit: Option&lt;Extension&lt;DeferredStartLimit&gt;&gt;,
+    headers: HeaderMap,
+    OriginalUri(authorize_uri): OriginalUri,
+    Query(params): Query&lt;AuthorizeParams&gt;,
+) -&gt; Result&lt;Response, AuthorizeError&gt; {
+    // The start limit's layer deferred it for a browser that can decide
+    // consents, and for one without a session (sent to pairing below, so it
+    // never asks): asked only if the request is raised for the Owner.
+    let may_raise_for_owner = || {
+        deferred_start_limit
+            .as_ref()
+            .is_none_or(|Extension(deferred_start_limit)| deferred_start_limit.admits())
+    };
+    let browser_session = carried_browser_session(&amp;token_verifier, &amp;headers).map_err(|error| {
+        AuthorizeError::Internal(InternalError::new(
+            "verify a browser session at /oauth/authorize",
+            error,
+        ))
+    })?;
+    // No browser session, no authorization: pair this browser first, then
+    // come back to this very request. Nothing is parked, notified or consumed.
+    let Some((browser_session, browser_sid)) = browser_session
+        .as_ref()
+        .and_then(|claims| Some((claims, claims.sid.as_deref()?)))
+    else {
+        return Ok(found_redirect(&amp;pairing_page_location(
+            authorize_uri
+                .path_and_query()
+                .map_or(authorize_uri.path(), |path_and_query| {
+                    path_and_query.as_str()
+                }),
+        )));
+    };
+    let session_token_grant = browser_session.granted();
+    let next_step = code_authorization_starter.start(
+        &amp;AuthorizeRequest {
+            response_type: &amp;params.response_type,
+            code_challenge_method: &amp;params.code_challenge_method,
+            client_id: &amp;params.client_id,
+            scope: &amp;params.scope,
+            code_challenge: &amp;params.code_challenge,
+            redirect_uri: &amp;params.redirect_uri,
+            client_state: &amp;params.state,
+            launch: params.launch.as_deref(),
+            aud: params.aud.as_deref(),
+            session_token_grant: &amp;session_token_grant,
+            can_decide_consents: can_decide_consents(browser_session),
+            may_raise_for_owner: &amp;may_raise_for_owner,
+            sid: browser_sid,
+        },
+        FreshIds {
+            request_id: Uuid::new_v4().to_string(),
+            code: generate_authorization_code(),
+        },
+        chrono::Utc::now(),
+    )?;
+    Ok(found_redirect(&amp;next_step_location(next_step, "")))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L272-L332"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 272–332</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="next_step_location"><a class="header" href="#next_step_location"><code>next_step_location</code></a></h3>
+<p>The pages’ locations come from <a href="authorization-pages.html#item-consent_page_location"><code>consent_page_location</code></a>, <a href="authorization-pages.html#item-wait_page_location"><code>wait_page_location</code></a> and <a href="authorization-pages.html#item-limited_page_location"><code>limited_page_location</code></a>; the app’s from the domain’s <a href="../../domain/authorization-code.html#item-build_client_redirect_url"><code>build_client_redirect_url</code></a>.</p>
+<div id="item-next_step_location" class="item-anchor"></div>
+
+<p>Where <code>next_step</code> sends the browser: straight back to the client with the
+fresh code when fully pre-approved (RFC 6749 §4.1.2), else to a page for
+the request, relative to <code>/oauth/</code> (<a href="authorization-pages.html#item-request_page_location"><code>request_page_location</code></a>) after
+<code>page_prefix</code>: empty for <code>/oauth/authorize</code>’s own <code>Location</code>, which the
+browser resolves against the endpoint, and <code>/oauth/</code> for the limited
+page’s Continue, which the page follows from elsewhere.</p>
+<p>The Owner decides on the consent card when this browser can decide the
+request, and else from this authorization server’s wait page, which waits
+for whichever surface — the host popup, a signed-in launcher’s consent
+list, or the consent card — decides first. A browser whose session holds
+less than the app asks for is first told so on the limited page, which
+goes on or cancels.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn next_step_location(next_step: AuthorizeNextStep, page_prefix: &amp;str) -&gt; String {
+    let request_page = match next_step {
+        AuthorizeNextStep::RedirectToClient {
+            redirect_uri,
+            code,
+            client_state,
+        } =&gt; return build_client_redirect_url(&amp;redirect_uri, &amp;code, &amp;client_state),
+        AuthorizeNextStep::AwaitOwner {
+            request_id,
+            decidable_in_requesting_browser: true,
+        } =&gt; consent_page_location(&amp;request_id),
+        AuthorizeNextStep::AwaitOwner {
+            request_id,
+            decidable_in_requesting_browser: false,
+        } =&gt; wait_page_location(&amp;request_id),
+        AuthorizeNextStep::ConfirmSessionShortfall { request_id } =&gt; {
+            limited_page_location(&amp;request_id)
+        }
+    };
+    format!("{page_prefix}{request_page}")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L349-L369"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 349–369</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="authorizeerror"><a class="header" href="#authorizeerror"><code>AuthorizeError</code></a></h3>
+<div id="item-AuthorizeError" class="item-anchor"></div>
+
+<p>Error half of the <code>/oauth/authorize</code> handler’s <code>Result</code>. Each variant
+renders one of the endpoint’s failure responses through <code>IntoResponse</code>, so a
+fallible step bails with <code>?</code> instead of a <code>match</code> + <code>return</code> at every call
+site — the authorization-endpoint analogue of
+<a href="token-endpoint.html#item-TokenError"><code>TokenError</code></a> (and, on the Owner
+<code>/authorization</code> surface,
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError</code></a>).
+Kept small (no embedded <code>Response</code>) so <code>Result&lt;_, AuthorizeError&gt;</code> doesn’t
+trip <code>clippy::result_large_err</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) enum AuthorizeError {
+    /// A failure on a request whose `redirect_uri` is not trusted — a disabled
+    /// client, a malformed or non-http(s) URI, an unregistered redirect for a
+    /// server-defined registration, or (because the client is new to this authorization server or
+    /// the redirect is not on its registration) any later validation failure.
+    /// Renders a `400` with the server's own HTML error page
+    /// ([`oauth_error_html`]) — redirecting to an unvouched-for URI would be
+    /// an open redirect (RFC 6749 §4.1.2.1).
+    LocalPage(AuthorizeRefusal),
+    /// A spec'd error once `redirect_uri` is validated — 302 back to the
+    /// client. Carries the already-built `Location` (the client `redirect_uri`
+    /// merged with `error` + `error_description` + `state`, RFC 6749
+    /// §4.1.2.1) rather than the `Url`, keeping the variant small enough to
+    /// dodge `clippy::result_large_err`.
+    Redirect {
+        /// The client's `redirect_uri` with the error, its description and
+        /// the client's `state` in its query.
+        location: String,
+    },
+    /// No active signing key: without token-mint capability the endpoint can't
+    /// proceed, so it 503s rather than parking a request it can never complete.
+    /// Nothing is parked.
+    ServiceUnavailable,
+    /// The authorization start limit refused a request that would be raised
+    /// for the Owner — the `429` the limit's layer answers.
+    StartLimited,
+    /// A logged, opaque 500 — see [`InternalError`]. A store failure, or a
+    /// request the fast path found no longer pending when it came to approve
+    /// it.
+    Internal(InternalError),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L51-L81"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 51–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from"><a class="header" href="#from"><code>from</code></a></h4>
+<p>The starter’s failures map onto it. A redirectable one has its <code>Location</code> built here, with <a href="../../domain/authorization-code.html#item-build_client_error_redirect_url"><code>build_client_error_redirect_url</code></a>. A request the fast path found no longer pending, and a store failure, are both logged <code>500</code>s.</p>
+<div id="item-AuthorizeError--from" class="item-anchor"></div>
+
+<p>Render the flow’s failure vocabulary onto the endpoint’s responses: a local
+page while the redirect is untrusted, a 302 with <code>error</code> +
+<code>error_description</code> + <code>state</code> back to a validated redirect (RFC 6749
+§4.1.2.1), a 503 with no signing key, the start limit’s 429, and a logged
+opaque 500 for the rest.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn from(error: AuthorizationStartError) -&gt; Self {
+    match error {
+        AuthorizationStartError::NoActiveSigningKey =&gt; AuthorizeError::ServiceUnavailable,
+        AuthorizationStartError::StartLimited =&gt; AuthorizeError::StartLimited,
+        AuthorizationStartError::LocalPage(kind) =&gt; {
+            if kind == AuthorizeRefusal::RedirectUriNotAllowed {
+                tracing::warn!("redirect_uri not on a server-defined registration");
+            }
+            AuthorizeError::LocalPage(kind)
+        }
+        AuthorizationStartError::Redirectable {
+            redirect_uri,
+            error,
+            description,
+            client_state,
+        } =&gt; AuthorizeError::Redirect {
+            location: build_client_error_redirect_url(
+                &amp;redirect_uri,
+                error,
+                description,
+                &amp;client_state,
+            ),
+        },
+        AuthorizationStartError::RequestNotPending =&gt; {
+            AuthorizeError::Internal(InternalError::new(
+                "approve_authorization_request",
+                "authorization request was not pending",
+            ))
+        }
+        AuthorizationStartError::Store(error) =&gt; AuthorizeError::Internal(InternalError::new(
+            "store operation failed at /oauth/authorize",
+            error,
+        )),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L90-L124"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 90–124</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response"><a class="header" href="#into_response"><code>into_response</code></a></h4>
+<p>The local page is <a href="../errors-and-wire-shapes.html#item-oauth_error_html"><code>oauth_error_html</code></a>, and the <code>429</code> is the start limit’s own <a href="../middleware.html#item-start_limited_response"><code>start_limited_response</code></a>.</p>
+<div id="item-AuthorizeError--into_response" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    match self {
+        AuthorizeError::LocalPage(kind) =&gt; html_bad_request(oauth_error_html(kind)),
+        AuthorizeError::Redirect { location } =&gt; found_redirect(&amp;location),
+        AuthorizeError::ServiceUnavailable =&gt; StatusCode::SERVICE_UNAVAILABLE.into_response(),
+        AuthorizeError::StartLimited =&gt; start_limited_response(),
+        AuthorizeError::Internal(error) =&gt; error.into_response(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L128-L136"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 128–136</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="found_redirect"><a class="header" href="#found_redirect"><code>found_redirect</code></a></h3>
+<div id="item-found_redirect" class="item-anchor"></div>
+
+<p><code>302 Found</code> redirect. RFC 6749’s examples use 302, so all
+<code>/oauth/authorize</code> redirects use it — axum’s <code>Redirect</code> helpers only offer
+303/307/308.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn found_redirect(location: &amp;str) -&gt; Response {
+    (
+        StatusCode::FOUND,
+        [(axum::http::header::LOCATION, location.to_string())],
+    )
+        .into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L34-L40"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 34–40</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="html_bad_request"><a class="header" href="#html_bad_request"><code>html_bad_request</code></a></h3>
+<div id="item-html_bad_request" class="item-anchor"></div>
+
+<p>A <code>400 Bad Request</code> carrying <code>html</code>, the server’s own error page, for a
+failure that can’t be redirected to the client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn html_bad_request(html: String) -&gt; Response {
+    (StatusCode::BAD_REQUEST, Html(html)).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorize.rs#L373-L375"><code>authorization-server-rust/src/http/routes/oauth/authorize.rs</code> lines 373–375</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/http/routes/oauth-router.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/http/routes/authorization-pages.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/http/routes/oauth-router.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/http/routes/authorization-pages.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Utilities - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-57569e7c.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-95701d4f.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="utilities"><a class="header" href="#utilities">Utilities</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/mod.rs"><code>authorization-server-rust/src/crypto_util/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs"><code>authorization-server-rust/src/crypto_util/base64.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/sha256.rs"><code>authorization-server-rust/src/crypto_util/sha256.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs"><code>authorization-server-rust/src/crypto_util/random_token.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs"><code>authorization-server-rust/src/crypto_util/pkce.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/public_jwk.rs"><code>authorization-server-rust/src/crypto_util/public_jwk.rs</code></a></p>
+
+<p>The mechanisms underneath the rules: encodings, digests, random secrets, the user code a person types, PKCE, secret hashing, and the public key’s wire shape. <strong>They know nothing of the product</strong> and depend on nothing else in the crate. The rules that use them (what a token claims, when a secret matches, what a code may be redeemed for) live in the <a href="domain.html">Domain</a>. Constant-time comparison is left to the <code>subtle</code> crate where it is needed.</p>
+<h2 id="crypto_utilbase64"><a class="header" href="#crypto_utilbase64"><code>crypto_util::base64</code></a></h2>
+<p>The two RFC 4648 alphabets the server needs, named for their exact wire format so they can’t be confused, and the only place a base64 engine is built. <strong>URL-safe without padding</strong> is the web’s: opaque tokens, digests, and JWT and JWK key material. <strong>Standard with padding</strong> is only for HTTP Basic credentials at the token endpoint. The decoders’ <code>DecodeError</code> is re-exported here, so no other module names the <code>base64</code> crate.</p>
+<h3 id="url_safe_no_pad_encode"><a class="header" href="#url_safe_no_pad_encode"><code>url_safe_no_pad_encode</code></a></h3>
+<div id="item-url_safe_no_pad_encode" class="item-anchor"></div>
+
+<p>Encode bytes as URL-safe base64 (RFC 4648 §5) without padding.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn url_safe_no_pad_encode(bytes: &amp;[u8]) -&gt; String {
+    URL_SAFE_NO_PAD.encode(bytes)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L28-L30"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 28–30</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The two alphabets differ only in the symbols for indices 62 and 63:
+<code>+</code>/<code>/</code> in the standard form, <code>-</code>/<code>_</code> in the url-safe form.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn alphabets_differ_on_the_62nd_and_63rd_symbols() {
+    // 0xFB,0xF0 select base64 indices 62 and 63 — the only two symbols the
+    // alphabets disagree on: standard emits `+`/`/`, url-safe emits `-`/`_`.
+    let bytes = [0xfb, 0xf0];
+    assert_eq!(standard_encode(&amp;bytes), "+/A=");
+    assert_eq!(url_safe_no_pad_encode(&amp;bytes), "-_A");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L73-L79"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 73–79</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="url_safe_no_pad_decode"><a class="header" href="#url_safe_no_pad_decode"><code>url_safe_no_pad_decode</code></a></h3>
+<div id="item-url_safe_no_pad_decode" class="item-anchor"></div>
+
+<p>Decode a URL-safe base64 (RFC 4648 §5, no padding) string back to bytes.</p>
+<h4 id="errors"><a class="header" href="#errors">Errors</a></h4>
+<p>Returns a <code>DecodeError</code> if <code>s</code> is not valid unpadded base64url.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn url_safe_no_pad_decode(s: &amp;str) -&gt; Result&lt;Vec&lt;u8&gt;, DecodeError&gt; {
+    URL_SAFE_NO_PAD.decode(s)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L37-L39"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 37–39</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="standard_encode"><a class="header" href="#standard_encode"><code>standard_encode</code></a></h3>
+<div id="item-standard_encode" class="item-anchor"></div>
+
+<p>Encode bytes as standard base64 (RFC 4648 §4) with <code>=</code> padding.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn standard_encode(bytes: &amp;[u8]) -&gt; String {
+    STANDARD.encode(bytes)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L43-L45"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 43–45</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The standard form pads an incomplete final quantum with <code>=</code>; the
+url-safe no-pad form leaves it off.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn standard_pads_while_url_safe_does_not() {
+    // A single input byte leaves the final base64 quantum incomplete: the
+    // standard form pads it with `=`, the url-safe no-pad form omits it.
+    assert_eq!(standard_encode(&amp;[0x00]), "AA==");
+    assert_eq!(url_safe_no_pad_encode(&amp;[0x00]), "AA");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L63-L68"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 63–68</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="standard_decode"><a class="header" href="#standard_decode"><code>standard_decode</code></a></h3>
+<div id="item-standard_decode" class="item-anchor"></div>
+
+<p>Decode a standard base64 (RFC 4648 §4, padded) string back to bytes.</p>
+<h4 id="errors-1"><a class="header" href="#errors-1">Errors</a></h4>
+<p>Returns a <code>DecodeError</code> if <code>s</code> is not valid padded standard base64.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn standard_decode(s: &amp;str) -&gt; Result&lt;Vec&lt;u8&gt;, DecodeError&gt; {
+    STANDARD.decode(s)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L52-L54"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 52–54</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each flavour decodes what it encodes back to the same bytes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn each_variant_round_trips() {
+    let bytes: &amp;[u8] = &amp;[0x00, 0x10, 0x83, 0xfb, 0xf0, 0xff];
+    assert_eq!(standard_decode(&amp;standard_encode(bytes)).unwrap(), bytes);
+    assert_eq!(
+        url_safe_no_pad_decode(&amp;url_safe_no_pad_encode(bytes)).unwrap(),
+        bytes
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/base64.rs#L83-L90"><code>authorization-server-rust/src/crypto_util/base64.rs</code> lines 83–90</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utilsha256"><a class="header" href="#crypto_utilsha256"><code>crypto_util::sha256</code></a></h2>
+<h3 id="as_base64_no_pad"><a class="header" href="#as_base64_no_pad"><code>as_base64_no_pad</code></a></h3>
+<p><strong>The at-rest form of a high-entropy secret</strong>: a digest can’t be reversed, so a leaked database yields nothing presentable. It is also the PKCE S256 transform, which <a href="#item-compute_code_challenge"><code>compute_code_challenge</code></a>’s test checks against RFC 7636’s example.</p>
+<div id="item-as_base64_no_pad" class="item-anchor"></div>
+
+<p>SHA-256 of <code>input</code>, base64url-encoded without padding.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn as_base64_no_pad(input: &amp;[u8]) -&gt; String {
+    let mut hasher = Sha256::new();
+    hasher.update(input);
+    base64::url_safe_no_pad_encode(&amp;hasher.finalize())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/sha256.rs#L11-L15"><code>authorization-server-rust/src/crypto_util/sha256.rs</code> lines 11–15</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utilrandom_token"><a class="header" href="#crypto_utilrandom_token"><code>crypto_util::random_token</code></a></h2>
+<p><strong>Every secret the server hands out that must be impossible to guess</strong> is 32 bytes from the OS’s secure generator, URL-safe base64 without padding. The value carries no structure. One construction serves <a href="domain/authorization-code.html">authorization codes</a> and device codes, <a href="domain/refresh-token.html">refresh tokens</a>, SMART <code>launch</code> values and <a href="domain/same-device-sign-in-codes.html">same-device sign-in codes</a>; each has its own name, so a call site says which it is minting.</p>
+<h3 id="generate_authorization_code"><a class="header" href="#generate_authorization_code"><code>generate_authorization_code</code></a></h3>
+<div id="item-generate_authorization_code" class="item-anchor"></div>
+
+<p>Generate an opaque, URL-safe authorization/device code from 32 CSPRNG
+bytes, base64url-encoded without padding. Suitable for OAuth
+<code>authorization_code</code> and <code>device_code</code> values where unguessability is the
+only requirement (the value carries no structure).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn generate_authorization_code() -&gt; String {
+    let mut bytes = [0u8; TOKEN_BYTES];
+    rand::rng().fill_bytes(&amp;mut bytes);
+    base64::url_safe_no_pad_encode(&amp;bytes)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L20-L24"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 20–24</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A token is 43 unpadded base64url characters that decode back to
+exactly 32 bytes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn encodes_32_bytes_as_unpadded_base64url() {
+    let code = generate_authorization_code();
+    // 32 bytes -&gt; 43 base64url chars, no padding.
+    assert_eq!(code.len(), 43);
+    assert!(!code.contains('='));
+    assert!(code
+        .bytes()
+        .all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'_'));
+    // Round-trips back to exactly 32 bytes.
+    let decoded = base64::url_safe_no_pad_decode(&amp;code).expect("valid base64url");
+    assert_eq!(decoded.len(), TOKEN_BYTES);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L65-L76"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 65–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Two tokens generated one after the other differ.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn successive_codes_differ() {
+    let a = generate_authorization_code();
+    let b = generate_authorization_code();
+    assert_ne!(a, b);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L80-L84"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 80–84</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="generate_refresh_token"><a class="header" href="#generate_refresh_token"><code>generate_refresh_token</code></a></h3>
+<div id="item-generate_refresh_token" class="item-anchor"></div>
+
+<p>Generate an opaque refresh token — same construction as
+<a href="#item-generate_authorization_code"><code>generate_authorization_code</code></a>; the two differ only in where they’re
+stored and how long they live (RFC 6749 §10.4 wants the same
+unguessability bar).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn generate_refresh_token() -&gt; String {
+    generate_authorization_code()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L30-L32"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 30–32</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="generate_launch_nonce"><a class="header" href="#generate_launch_nonce"><code>generate_launch_nonce</code></a></h3>
+<div id="item-generate_launch_nonce" class="item-anchor"></div>
+
+<p>Generate an opaque SMART App Launch <code>launch</code> value — same construction as
+<a href="#item-generate_authorization_code"><code>generate_authorization_code</code></a>: it is a single-use credential an app
+presents at <code>/authorize</code>, so it gets the same unguessability bar.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn generate_launch_nonce() -&gt; String {
+    generate_authorization_code()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L37-L39"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 37–39</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="generate_same_device_sign_in_code"><a class="header" href="#generate_same_device_sign_in_code"><code>generate_same_device_sign_in_code</code></a></h3>
+<div id="item-generate_same_device_sign_in_code" class="item-anchor"></div>
+
+<p>Generate a one-time same-device sign-in code — same construction as
+<a href="#item-generate_authorization_code"><code>generate_authorization_code</code></a>: whoever presents it is signed in as the
+Owner, so it gets the same unguessability bar.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn generate_same_device_sign_in_code() -&gt; String {
+    generate_authorization_code()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L44-L46"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 44–46</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="token_storage_hash"><a class="header" href="#token_storage_hash"><code>token_storage_hash</code></a></h3>
+<p><strong>How a secret is kept once handed out.</strong> A refresh family records the digest of the authorization code that began it, so a replayed code can find and end the family.</p>
+<div id="item-token_storage_hash" class="item-anchor"></div>
+
+<p>SHA-256 digest of an opaque token, base64url-encoded without padding —
+the at-rest form for refresh tokens and for the authorization code a refresh
+family records, and the in-memory key for same-device sign-in codes, so a
+stolen database never yields a presentable credential. Public so
+integration tests can plant rows with known plaintexts.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn token_storage_hash(token: &amp;str) -&gt; String {
+    sha256::as_base64_no_pad(token.as_bytes())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/random_token.rs#L54-L56"><code>authorization-server-rust/src/crypto_util/random_token.rs</code> lines 54–56</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utiloauth_user_code"><a class="header" href="#crypto_utiloauth_user_code"><code>crypto_util::oauth_user_code</code></a></h2>
+<p><strong>The short code a person types on the device page</strong> to find a device’s or a browser’s <a href="domain/authorization-request/polled-requests.html">polled request</a>: two blocks of four letters, <code>BCDF-GHJK</code>.</p>
+<h3 id="alphabet"><a class="header" href="#alphabet"><code>ALPHABET</code></a></h3>
+<div id="item-ALPHABET" class="item-anchor"></div>
+
+<p>Unambiguous consonants used in device-flow user codes — no vowels, no Y, no 0/1/I/O confusables.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) const ALPHABET: &amp;[u8] = "BCDFGHJKLMNPQRSTVWXZ".as_bytes();
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L8"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> line 8</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The alphabet holds only uppercase consonants: no vowels, no Y, and no
+digit a reader could mistake for a letter.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn alphabet_is_unambiguous_consonants() {
+    // No vowels, no 0/1/I/O confusables, no Y.
+    for &amp;c in ALPHABET {
+        let c = c as char;
+        assert!(c.is_ascii_uppercase());
+        assert!(!matches!(c, 'A' | 'E' | 'I' | 'O' | 'U' | 'Y'));
+        assert!(!matches!(c, '0' | '1'));
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L67-L75"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 67–75</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="block_length"><a class="header" href="#block_length"><code>BLOCK_LENGTH</code></a></h3>
+<div id="item-BLOCK_LENGTH" class="item-anchor"></div>
+
+<p>How many letters each dash-separated block of a user code holds.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) const BLOCK_LENGTH: usize = 4;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L10"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> line 10</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="block_count"><a class="header" href="#block_count"><code>BLOCK_COUNT</code></a></h3>
+<div id="item-BLOCK_COUNT" class="item-anchor"></div>
+
+<p>How many blocks a user code has. Two blocks of four from the 20-letter
+alphabet give 20^8 (about 2^34.5) codes: the shape RFC 8628 §6.1 gives as
+its example.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) const BLOCK_COUNT: usize = 2;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L14"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> line 14</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="generate_oauth_user_code"><a class="header" href="#generate_oauth_user_code"><code>generate_oauth_user_code</code></a></h3>
+<p>The random source is a parameter, so a test can seed it.</p>
+<div id="item-generate_oauth_user_code" class="item-anchor"></div>
+
+<p>Generate a device-flow user code (e.g. <code>BCDF-GHJK</code>) using the unambiguous consonant alphabet.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn generate_oauth_user_code&lt;R: RngExt + ?Sized&gt;(rng: &amp;mut R) -&gt; String {
+    let mut chars =
+        std::iter::repeat_with(|| ALPHABET[rng.random_range(0..ALPHABET.len())] as char);
+    let dash_count = BLOCK_COUNT - 1;
+    let letter_count = BLOCK_COUNT * BLOCK_LENGTH;
+    let mut out = String::with_capacity(letter_count + dash_count);
+    for block_idx in 0..BLOCK_COUNT {
+        if block_idx &gt; 0 {
+            out.push('-');
+        }
+        out.extend((&amp;mut chars).take(BLOCK_LENGTH));
+    }
+    out
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L17-L30"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 17–30</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Every generated code passes the shape check.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn generated_code_is_valid() {
+    let mut rng = rand::rngs::StdRng::seed_from_u64(0);
+    for _ in 0..1000 {
+        let code = generate_oauth_user_code(&amp;mut rng);
+        assert!(is_valid_oauth_user_code(&amp;code), "bad code: {code}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L56-L62"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 56–62</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="is_valid_oauth_user_code"><a class="header" href="#is_valid_oauth_user_code"><code>is_valid_oauth_user_code</code></a></h3>
+<div id="item-is_valid_oauth_user_code" class="item-anchor"></div>
+
+<p>Return true if <code>s</code> matches the user-code shape: <code>BLOCK_COUNT</code> blocks of <code>BLOCK_LENGTH</code> <code>ALPHABET</code> chars joined by <code>-</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_valid_oauth_user_code(s: &amp;str) -&gt; bool {
+    let mut blocks_seen = 0usize;
+    for part in s.split('-') {
+        if blocks_seen &gt;= BLOCK_COUNT
+            || part.len() != BLOCK_LENGTH
+            || !part.bytes().all(|b| ALPHABET.contains(&amp;b))
+        {
+            return false;
+        }
+        blocks_seen += 1;
+    }
+    blocks_seen == BLOCK_COUNT
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L34-L46"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 34–46</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><code>[a-z]</code> and <code>ALPHABET</code> (uppercase consonants) are disjoint, so the
+per-block alphabet check rejects any lowercase code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_codes_with_wrong_alphabet(c in "[a-z]{4}-[a-z]{4}") {
+    prop_assert!(!is_valid_oauth_user_code(&amp;c));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L81-L83"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 81–83</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A dash-less run of valid chars is a single block, so it fails on
+block <em>count</em> (<code>blocks_seen == BLOCK_COUNT</code> is <code>1 == 2</code>) regardless
+of length — this pins the block-count path, not block-length.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_dashless_codes_on_block_count(s in "[BCDFGHJKLMNPQRSTVWXZ]{3,7}") {
+    prop_assert!(!is_valid_oauth_user_code(&amp;s));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L89-L91"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 89–91</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Well-formed <code>BLOCK-BLOCK</code> shape where at least one block has
+the wrong length — the only way to exercise the per-block
+<code>part.len() != BLOCK_LENGTH</code> check in isolation.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_codes_with_one_wrong_length_block(
+    (a, b) in (
+        "[BCDFGHJKLMNPQRSTVWXZ]{1,7}",
+        "[BCDFGHJKLMNPQRSTVWXZ]{1,7}",
+    ).prop_filter(
+        "at least one block must differ from BLOCK_LENGTH",
+        |(a, b)| a.len() != BLOCK_LENGTH || b.len() != BLOCK_LENGTH,
+    )
+) {
+    let code = format!("{a}-{b}");
+    prop_assert!(!is_valid_oauth_user_code(&amp;code));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L97-L108"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 97–108</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Three well-formed blocks — pins the <code>blocks_seen &gt;= BLOCK_COUNT</code>
+early return that rejects too many blocks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_codes_with_too_many_blocks(
+    a in "[BCDFGHJKLMNPQRSTVWXZ]{4}",
+    b in "[BCDFGHJKLMNPQRSTVWXZ]{4}",
+    c in "[BCDFGHJKLMNPQRSTVWXZ]{4}",
+) {
+    let code = format!("{a}-{b}-{c}");
+    prop_assert!(!is_valid_oauth_user_code(&amp;code));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/oauth_user_code.rs#L113-L120"><code>authorization-server-rust/src/crypto_util/oauth_user_code.rs</code> lines 113–120</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utilpkce"><a class="header" href="#crypto_utilpkce"><code>crypto_util::pkce</code></a></h2>
+<p><strong>Proof that the app redeeming a code is the app that asked for it</strong> (RFC 7636). The app sends <code>/oauth/authorize</code> a challenge, the S256 digest of a secret verifier it keeps, and sends the verifier itself to <code>/oauth/token</code>. The challenge’s shape is checked at <code>/oauth/authorize</code>, the verifier’s length at <code>/oauth/token</code>, and the challenge derived from the verifier is compared with the one the <a href="domain/authorization-code.html">code</a> carries.</p>
+<h3 id="is_valid_code_verifier_length"><a class="header" href="#is_valid_code_verifier_length"><code>is_valid_code_verifier_length</code></a></h3>
+<div id="item-is_valid_code_verifier_length" class="item-anchor"></div>
+
+<p>True when <code>code_verifier</code> has an RFC 7636 §4.1-legal length (43–128 chars).
+Counts Unicode scalar values, matching how the verifier arrives on the wire.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_valid_code_verifier_length(code_verifier: &amp;str) -&gt; bool {
+    (CODE_VERIFIER_MIN_LEN..=CODE_VERIFIER_MAX_LEN).contains(&amp;code_verifier.chars().count())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs#L16-L18"><code>authorization-server-rust/src/crypto_util/pkce.rs</code> lines 16–18</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="is_valid_s256_code_challenge"><a class="header" href="#is_valid_s256_code_challenge"><code>is_valid_s256_code_challenge</code></a></h3>
+<div id="item-is_valid_s256_code_challenge" class="item-anchor"></div>
+
+<p>True when <code>s</code> is a syntactically valid S256 <code>code_challenge</code>: exactly 43
+base64url characters (<code>[A-Za-z0-9-_]</code>, no padding) per RFC 7636 §4.2/§4.3.
+RFC 7636’s ABNF also lists <code>.</code> and <code>~</code>, but the SHA-256/base64url form the
+only supported method (S256) produces never contains them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_valid_s256_code_challenge(s: &amp;str) -&gt; bool {
+    s.len() == S256_CODE_CHALLENGE_LEN
+        &amp;&amp; s.bytes()
+            .all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'_')
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs#L29-L33"><code>authorization-server-rust/src/crypto_util/pkce.rs</code> lines 29–33</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A challenge one character short or long, padded with <code>=</code>, or ending in
+a <code>.</code> is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn s256_challenge_shape_is_43_base64url_chars() {
+    assert!(!is_valid_s256_code_challenge(&amp;"a".repeat(42)));
+    assert!(!is_valid_s256_code_challenge(&amp;"a".repeat(44)));
+    assert!(!is_valid_s256_code_challenge(&amp;format!(
+        "{}=",
+        "a".repeat(42)
+    )));
+    assert!(!is_valid_s256_code_challenge(&amp;format!(
+        "{}.",
+        "a".repeat(42)
+    )));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs#L59-L70"><code>authorization-server-rust/src/crypto_util/pkce.rs</code> lines 59–70</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="compute_code_challenge"><a class="header" href="#compute_code_challenge"><code>compute_code_challenge</code></a></h3>
+<div id="item-compute_code_challenge" class="item-anchor"></div>
+
+<p>Derive the PKCE S256 <code>code_challenge</code> from a <code>code_verifier</code> (RFC 7636 §4.2).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn compute_code_challenge(code_verifier: &amp;str) -&gt; String {
+    sha256::as_base64_no_pad(code_verifier.as_bytes())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs#L37-L39"><code>authorization-server-rust/src/crypto_util/pkce.rs</code> lines 37–39</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The verifier from RFC 7636 Appendix B derives the challenge the RFC
+gives, and that challenge passes the shape check.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rfc7636_appendix_b_example() {
+    // RFC 7636 Appendix B
+    let verifier = "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk";
+    let expected = "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM";
+    assert_eq!(compute_code_challenge(verifier), expected);
+    assert!(is_valid_s256_code_challenge(expected));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/pkce.rs#L48-L54"><code>authorization-server-rust/src/crypto_util/pkce.rs</code> lines 48–54</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utilclient_secret"><a class="header" href="#crypto_utilclient_secret"><code>crypto_util::client_secret</code></a></h2>
+<p><strong>A confidential app’s secret is stored only as an argon2id hash</strong>, in the <code>secret_hash</code> of its <a href="domain/client.html">registration</a>. Verifying compares in constant time, so no caller compares secrets itself.</p>
+<h3 id="clientsecreterror"><a class="header" href="#clientsecreterror"><code>ClientSecretError</code></a></h3>
+<div id="item-ClientSecretError" class="item-anchor"></div>
+
+<p>Failure modes for client-secret hashing and verification.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum ClientSecretError {
+    /// Hashing the plaintext secret failed (e.g. a parameter/encoding error).
+    Hash(argon2::password_hash::Error),
+    /// The stored value was not a parseable PHC hash string.
+    MalformedHash(argon2::password_hash::Error),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L15-L22"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 15–22</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="hash_client_secret"><a class="header" href="#hash_client_secret"><code>hash_client_secret</code></a></h3>
+<div id="item-hash_client_secret" class="item-anchor"></div>
+
+<p>Hash a plaintext client secret into an argon2id PHC string suitable for
+storage in <code>clients.secret_hash</code>. Each call uses a fresh random salt, so the
+same secret hashes to a different string every time.</p>
+<h4 id="errors-2"><a class="header" href="#errors-2">Errors</a></h4>
+<p>Returns <a href="#item-ClientSecretError"><code>ClientSecretError::Hash</code></a> if the argon2id hashing step fails.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn hash_client_secret(secret: &amp;str) -&gt; Result&lt;String, ClientSecretError&gt; {
+    Argon2::default()
+        .hash_password(secret.as_bytes())
+        .map(|hash| hash.to_string())
+        .map_err(ClientSecretError::Hash)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L31-L36"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 31–36</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A hashed secret is an argon2id PHC string, and the same plaintext
+verifies against it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn hash_then_verify_roundtrips() {
+    let phc = hash_client_secret("correct horse battery staple").unwrap();
+    // A PHC string self-describes as argon2id.
+    assert!(
+        phc.starts_with("$argon2id$"),
+        "unexpected PHC prefix: {phc}"
+    );
+    assert!(verify_client_secret("correct horse battery staple", &amp;phc).unwrap());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L65-L73"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 65–73</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each hash gets a fresh salt, so one secret hashes to two different
+strings, and both still verify.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn same_secret_hashes_differently_each_time() {
+    let a = hash_client_secret("repeated-secret").unwrap();
+    let b = hash_client_secret("repeated-secret").unwrap();
+    assert_ne!(a, b, "random salt should make each hash unique");
+    // ...but both still verify.
+    assert!(verify_client_secret("repeated-secret", &amp;a).unwrap());
+    assert!(verify_client_secret("repeated-secret", &amp;b).unwrap());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L85-L92"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 85–92</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="verify_client_secret"><a class="header" href="#verify_client_secret"><code>verify_client_secret</code></a></h3>
+<div id="item-verify_client_secret" class="item-anchor"></div>
+
+<p>Verify a presented plaintext secret against a stored argon2id PHC string.</p>
+<p>Returns <code>Ok(true)</code> on a match, <code>Ok(false)</code> on a mismatch, and <code>Err</code> only if
+the stored value cannot be parsed as a PHC hash. The comparison is
+constant-time internally.</p>
+<h4 id="errors-3"><a class="header" href="#errors-3">Errors</a></h4>
+<p>Returns <a href="#item-ClientSecretError"><code>ClientSecretError::MalformedHash</code></a> if <code>stored_phc</code> is not a
+parseable PHC hash string (or verification fails for a non-mismatch reason).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn verify_client_secret(presented: &amp;str, stored_phc: &amp;str) -&gt; Result&lt;bool, ClientSecretError&gt; {
+    let parsed =
+        PasswordHash::new(stored_phc).map_err(|e| ClientSecretError::MalformedHash(e.into()))?;
+    match Argon2::default().verify_password(presented.as_bytes(), &amp;parsed) {
+        Ok(()) =&gt; Ok(true),
+        Err(argon2::password_hash::Error::PasswordInvalid) =&gt; Ok(false),
+        Err(e) =&gt; Err(ClientSecretError::MalformedHash(e)),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L48-L56"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 48–56</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A different plaintext does not verify against a stored hash.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn verify_rejects_wrong_secret() {
+    let phc = hash_client_secret("the-real-secret").unwrap();
+    assert!(!verify_client_secret("not-the-secret", &amp;phc).unwrap());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L77-L80"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 77–80</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A stored value that is not a PHC string is an error, not a mismatch.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn malformed_stored_hash_is_an_error() {
+    assert!(verify_client_secret("anything", "not-a-phc-string").is_err());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/client_secret.rs#L96-L98"><code>authorization-server-rust/src/crypto_util/client_secret.rs</code> lines 96–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crypto_utilpublic_jwk"><a class="header" href="#crypto_utilpublic_jwk"><code>crypto_util::public_jwk</code></a></h2>
+<h3 id="publicjwk"><a class="header" href="#publicjwk"><code>PublicJwk</code></a></h3>
+<p>The <a href="domain/signing-key.html">signing key</a> projects itself onto it (<a href="domain/signing-key.html#item-PublicJwk--from"><code>PublicJwk::from</code></a>).</p>
+<div id="item-PublicJwk" class="item-anchor"></div>
+
+<p>One signing key’s public half, as served at the JWKS endpoint. Resource
+servers fetch it to verify the access tokens the server signs.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct PublicJwk {
+    /// Key identifier matching the source `SigningKey.kid`; verifiers use this to select the key.
+    pub kid: String,
+    /// JWK key type — always `"RSA"`.
+    pub kty: String,
+    /// JWS algorithm the key is intended for — always `"RS256"`.
+    pub alg: String,
+    /// Permitted JWK operations — always `["verify"]` for published public keys.
+    pub key_ops: Vec&lt;String&gt;,
+    /// RSA modulus `n`, base64url-encoded.
+    pub n: String,
+    /// RSA public exponent `e`, base64url-encoded.
+    pub e: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/crypto_util/public_jwk.rs#L10-L23"><code>authorization-server-rust/src/crypto_util/public_jwk.rs</code> lines 10–23</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../authorization-server/persistence/test-fixtures.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../authorization-server/integration-tests.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../authorization-server/persistence/test-fixtures.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../authorization-server/integration-tests.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

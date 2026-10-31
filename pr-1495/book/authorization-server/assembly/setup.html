@@ -1,0 +1,800 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Setup - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs"><code>authorization-server-rust/src/lib.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/config.rs"><code>authorization-server-rust/src/config.rs</code></a></p>
+
+<p>The authorization server isn’t a process of its own. It is one slice of the Wildflower host, and <strong>the host builds it once, at boot, with one call</strong>: <a href="#item-setup_authorization_server"><code>setup_authorization_server</code></a>. The host hands over what only it has: the shared database, the shared revocation store, its configuration, a channel to hear about the Owner prompt on, and its say over how fast requests may start. It gets back a router to merge, the shared state its own gates need, and four in-process handles.</p>
+<p>This page is that seam: the configuration, the constants that name the server’s own clients and the Owner’s authority, the call itself, the background sweeps it starts, and what the crate root re-exports for the host.</p>
+<h2 id="config"><a class="header" href="#config"><code>config</code></a></h2>
+<div id="item-config" class="item-anchor"></div>
+
+<p><a href="#item-AuthorizationServerConfig"><code>AuthorizationServerConfig</code></a>: what the host tells the authorization
+server about itself at boot.</p>
+<h3 id="authorizationserverconfig"><a class="header" href="#authorizationserverconfig"><code>AuthorizationServerConfig</code></a></h3>
+<div id="item-AuthorizationServerConfig" class="item-anchor"></div>
+
+<p>What the host tells the server about itself, passed to
+<a href="#item-setup_authorization_server"><code>crate::setup_authorization_server</code></a>. The live Tauri app reads most of it
+from <code>tauri-shared-config.json</code> and the server’s record; standalone and test
+builds use the crate’s defaults.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct AuthorizationServerConfig {
+    /// The server's origin, `https://&lt;domain&gt;`, as a typed [`Url`]. Every token
+    /// this server mints carries its bare origin (via
+    /// [`wildflowerhealthio_shared_structures::origin_string`]) as both `iss` and `aud`, and
+    /// the bearer gates accept only tokens that do. Every request is served at
+    /// it. See `docs/Origins/Explanation.md`.
+    pub server_origin: Url,
+
+    /// The scopes the host app's client may be granted, as wire strings —
+    /// seeded as its `allowed_scopes`. The Owner's own authority is
+    /// [`crate::OWNER_SCOPES`], not this. The live Tauri app sources these from
+    /// `tauri-shared-config.json`; standalone/test builds use
+    /// [`crate::default_host_app_client_scopes`].
+    pub host_app_client_scopes: Vec&lt;String&gt;,
+
+    /// The `client_id` of the FHIR server's web UI (`helios-ui`), which signs
+    /// its users in here with the authorization-code flow. Seeded on every boot
+    /// with `{server_origin}/ui/callback` as its one redirect URI (see
+    /// `crate::seeding`). The host owns the id and hands the same one to
+    /// `fhir-r4-rust`, which sends it as the UI's `client_id`.
+    pub fhir_ui_client_id: String,
+
+    /// The hosted launcher, where logout lands the browser (see
+    /// [`LauncherBase`]). The live Tauri app sources it from
+    /// `tauri-shared-config.json`.
+    pub launcher_base: LauncherBase,
+
+    /// The hosted Wildflower Authorization app (see [`AuthorizationAppBase`]):
+    /// besides the launcher, this server's own paths and the pages below, a
+    /// place `/oauth/sign-in` may send a browser next. The live Tauri app
+    /// sources it from `tauri-shared-config.json`.
+    pub authorization_app_base: AuthorizationAppBase,
+
+    /// The page the host opens this server's launches in, its own launcher,
+    /// which a browser signed in at `/oauth/sign-in` may be sent on to. The
+    /// live Tauri app sources it from the server's record.
+    pub launcher_url: Url,
+
+    /// The page the host opens this server's Authorization app at, which a
+    /// browser signed in at `/oauth/sign-in` may be sent on to. The live Tauri
+    /// app sources it from the server's record.
+    pub authorization_url: Url,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/config.rs#L13-L55"><code>authorization-server-rust/src/config.rs</code> lines 13–55</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="crate"><a class="header" href="#crate"><code>crate</code></a></h2>
+<div id="item-lib" class="item-anchor"></div>
+
+<p>The Wildflower authorization server: the OAuth 2.0 and SMART App Launch
+authorization server in front of the Owner’s FHIR server. It decides which
+apps, devices and browsers may reach the Owner’s data, asks the Owner when
+it must, and signs the access tokens the FHIR server checks.</p>
+<p>The host builds one with <a href="#item-setup_authorization_server"><code>setup_authorization_server</code></a> and merges its
+router: <code>/oauth/*</code> for apps, devices and browsers on their way in,
+<code>/authorization/*</code> for the Owner’s own pages, and <code>/.well-known/jwks.json</code>
+for anyone checking a token. <code>domain</code> holds the rules, <code>db</code> the <code>SQLite</code>
+store, and <code>http</code> the routes that adapt between the two.</p>
+<h3 id="the-servers-own-clients"><a class="header" href="#the-servers-own-clients">The server’s own clients</a></h3>
+<p>Two clients are <strong>essential</strong> (see <a href="../domain/client.html#item-is_essential_client"><code>is_essential_client</code></a>): the Owner could not get in without them, so neither can be disabled. <a href="seeding.html">Seeding</a> rewrites both on every boot.</p>
+<div id="item-WILDFLOWER_HOST_APP_CLIENT_ID" class="item-anchor"></div>
+
+<p><code>client_id</code> of the Wildflower host app’s OAuth client, seeded at bootstrap
+with a server-defined registration. Like <a href="#item-BROWSER_SESSION_CLIENT_ID"><code>BROWSER_SESSION_CLIENT_ID</code></a>, it
+is an essential client: it can’t be disabled.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const WILDFLOWER_HOST_APP_CLIENT_ID: &amp;str = "c4e755b6a4c1abf2aae6d0d83f2545a5";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L98"><code>authorization-server-rust/src/lib.rs</code> line 98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-default_host_app_client_scopes" class="item-anchor"></div>
+
+<p>The default scopes the host app’s client may be granted: <code>openid</code> alone.
+Standalone and test builds seed
+<a href="#item-AuthorizationServerConfig"><code>AuthorizationServerConfig::host_app_client_scopes</code></a> from this; the live
+Tauri app sources the value from <code>tauri-shared-config.json</code> instead.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn default_host_app_client_scopes() -&gt; Vec&lt;String&gt; {
+    vec![Scope::Known(KnownScope::Openid).to_string()]
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L164-L166"><code>authorization-server-rust/src/lib.rs</code> lines 164–166</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><strong>Every signed-in browser’s token is issued to the browser-session client.</strong> So revoking this subject signs every browser out, while one browser is signed out by revoking its session (its token’s <code>sid</code>) or its token’s <code>jti</code>. Neither sign-in nor pairing is an OAuth flow, so the client is seeded with no grant type, and <code>/oauth/token</code> never mints its token.</p>
+<div id="item-BROWSER_SESSION_CLIENT_ID" class="item-anchor"></div>
+
+<p><code>client_id</code> of the browser-session client: the browsers the server has
+signed in. The Owner’s is signed in by the host app on its own device with
+a same-device sign-in code at <code>/oauth/sign-in</code>; any other browser pairs at
+<code>/oauth/pair</code>, showing a code the Owner approves. Each such browser holds a
+token issued to this client (its <code>sub</code>), so revoking the client’s subject
+signs every browser out, and one browser is signed out by revoking its
+browser session (its token’s <code>sid</code>) or its token’s <code>jti</code>. Like
+<a href="#item-WILDFLOWER_HOST_APP_CLIENT_ID"><code>WILDFLOWER_HOST_APP_CLIENT_ID</code></a>, it is an essential client: it can’t be
+disabled. Seeded at boot by <a href="#item-setup_authorization_server"><code>crate::setup_authorization_server</code></a> with
+<a href="#item-OWNER_SCOPES"><code>OWNER_SCOPES</code></a>, the most a browser session may hold, and no grant type;
+it takes part in no OAuth flow, since neither sign-in nor pairing is one.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const BROWSER_SESSION_CLIENT_ID: &amp;str = "cb9bbe139845cae9654b7909d60d274f";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L111"><code>authorization-server-rust/src/lib.rs</code> line 111</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="the-owners-authority"><a class="header" href="#the-owners-authority">The Owner’s authority</a></h3>
+<p><strong>A token covering the widest scopes covers every per-resource scope an <code>/authorization</code> route asks for</strong>, so the Owner passes every gate. The Owner’s scopes add <code>wildflower/launch</code>, which is a known scope rather than a resource scope, so the <code>wildflower/*</code> wildcard doesn’t cover it and it has to be listed.</p>
+<div id="item-WILDFLOWER_WIDEST_SCOPES" class="item-anchor"></div>
+
+<p>The maximal-access scopes that mark an Owner: full system FHIR access
+(<code>system/*.cruds</code>) <strong>and</strong> full Wildflower-resource access
+(<code>wildflower/*.cruds</code>). An Owner token covers <em>every</em> one of these, so it
+covers every per-resource <code>/authorization/*</code> scope the scope-gated extractors
+require — the fail-closed owner default.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const WILDFLOWER_WIDEST_SCOPES: &amp;[Scope] = &amp;[
+    Scope::FhirResource(FhirResourceScope {
+        context: ContextLevel::System,
+        resource: ResourceType::Wildcard,
+        permission: Permission::ALL,
+    }),
+    Scope::WildflowerResource(WildflowerResourceScope {
+        resource: WildflowerResourceType::Wildcard,
+        permission: Permission::ALL,
+    }),
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L118-L128"><code>authorization-server-rust/src/lib.rs</code> lines 118–128</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-OWNER_SCOPES" class="item-anchor"></div>
+
+<p>The Owner’s scopes: the authority the Owner approves consents with, what a
+same-device session holds, the most a paired browser session may be granted,
+and the browser-session client’s <code>allowed_scopes</code>.
+An approval can’t delegate a resource scope these don’t cover.</p>
+<p><a href="#item-WILDFLOWER_WIDEST_SCOPES"><code>WILDFLOWER_WIDEST_SCOPES</code></a> (the owner <em>identity</em>) plus <code>wildflower/launch</code>,
+an owner <em>capability</em>. As a <em>known</em> scope it is NOT covered by the
+<code>wildflower/*</code> resource wildcard, so the apps launch surface would <code>403</code> the
+Owner without it listed explicitly here. Rendered by <a href="#item-owner_scopes"><code>owner_scopes</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const OWNER_SCOPES: &amp;[Scope] = &amp;[
+    Scope::FhirResource(FhirResourceScope {
+        context: ContextLevel::System,
+        resource: ResourceType::Wildcard,
+        permission: Permission::ALL,
+    }),
+    Scope::WildflowerResource(WildflowerResourceScope {
+        resource: WildflowerResourceType::Wildcard,
+        permission: Permission::ALL,
+    }),
+    // The app-launch umbrella capability — granted, not part of the owner identity.
+    Scope::Known(KnownScope::AnyScopedAppLaunch),
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L139-L151"><code>authorization-server-rust/src/lib.rs</code> lines 139–151</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Owner’s scopes cover every owner-defining scope, so an Owner’s
+token passes every <code>/authorization/*</code> owner gate.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_owner_s_scopes_cover_the_widest_scopes() {
+    assert!(Grant::new(OWNER_SCOPES.to_vec()).covers_all(WILDFLOWER_WIDEST_SCOPES));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L462-L464"><code>authorization-server-rust/src/lib.rs</code> lines 462–464</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-owner_scopes" class="item-anchor"></div>
+
+<p>The Owner’s scope wire strings — the rendered <a href="#item-OWNER_SCOPES"><code>OWNER_SCOPES</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn owner_scopes() -&gt; Vec&lt;String&gt; {
+    wildflowerhealthio_scopes::render_scopes(OWNER_SCOPES)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L155-L157"><code>authorization-server-rust/src/lib.rs</code> lines 155–157</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="setup_authorization_server"><a class="header" href="#setup_authorization_server"><code>setup_authorization_server</code></a></h3>
+<p><strong>Build the server over the host’s database, and start it working.</strong> In order:</p>
+<ol>
+<li><strong>Open and seed the store</strong> (<a href="seeding.html#item-open_and_seed_store"><code>open_and_seed_store</code></a>): run the migrations, make sure a signing key is active, and rewrite the server’s own clients.</li>
+<li><strong>Build the shared state</strong> (<a href="live-bindings.html#item-AuthorizationServerState"><code>AuthorizationServerState</code></a>) from the config, with a <a href="../domain/browser-session.html#item-StaleSessionCutoff">stale-session cutoff</a> at the run’s start. The host ends an Owner session once the server’s last launch view closes, so one no open view holds is one whose ending was missed, as across the app’s exit, or failed. <strong>The run’s start cuts off the Owner sessions earlier runs signed in, except those the host’s launch views still open hold</strong>: setup is handed those views’ sign-in codes, whichever run minted them, and exempts the sessions they signed in, so the restart a return from a suspend brings on iOS keeps an open view signed in. The others are stale, and nothing is written for them, so a store that can’t be written then doesn’t keep the server from starting. Paired sessions stand.</li>
+<li><strong>Publish the <a href="../domain/owner-prompt.html">Owner prompt</a></strong> on <code>owner_approval_tx</code>. The channel’s value doesn’t survive a restart, but the row does, so a request left pending across a restart is in the server’s first status, and the host notifies about it.</li>
+<li><strong>Start the background sweeps</strong> below.</li>
+<li><strong>Build the router</strong>, whose routes are at <code>/.well-known/jwks.json</code>, <code>/oauth/*</code> and <code>/authorization/*</code>. The host merges it as it is.</li>
+<li><strong>Build the in-process handles</strong> the host keeps.</li>
+</ol>
+<p>The host builds <code>revocation_store</code> once and passes the same store to the FHIR server’s adapter, so <strong>the authorization server’s gates and the FHIR server read one denylist</strong>. Where no visitor can reach the server, the host passes <a href="ports-and-adapters.html#item-AdmitEveryAuthorizationStart"><code>AdmitEveryAuthorizationStart</code></a> as the start gate.</p>
+<div id="item-setup_authorization_server" class="item-anchor"></div>
+
+<p>Build the authorization-server-rust HTTP surface over the host-owned diesel
+connection <code>pool</code> (the same app-wide <code>wildflowerhealthio_persistence::open_pool</code> pool the
+other diesel-backed slices ride). Runs idempotent bootstrap
+(schema migrations, signing-key seed, essential-client seed), and:</p>
+<ul>
+<li>publishes the <a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>, the newest request awaiting the Owner
+(device-code and authorization-code requests and browser pairings
+alike), on <code>owner_approval_tx</code>. On the
+Tauri host, the server’s run reports it as its detail, which the base’s
+server status carries and from which the host notifies each new
+request.
+Seeding at boot means a request that was pending
+across an app restart is still reported (the row survived in SQLite, the
+in-memory <code>watch</code> value didn’t);</li>
+<li>cuts off, at the run’s start, the same-device sessions earlier runs
+signed in, except those <code>open_views_sign_in_codes</code> signed in: the codes
+of the host’s launch views still open, whichever run minted them. The
+host ends a same-device session once the last of the server’s launch
+views has closed, so a session no open view holds is one whose ending
+was missed, as across the app’s exit, or failed. So the
+<code>StaleSessionCutoff</code> invalidates sessions before the run’s start,
+with the open views’ sessions exempt: it makes the others stale,
+writing nothing, so a store that can’t be written doesn’t keep the
+server from starting, and the browser is sent through sign-in again,
+which the host’s next launch does. Paired sessions stand;</li>
+<li>returns a <code>Router</code> whose routes are at <code>/.well-known/jwks.json</code>,
+<code>/oauth/*</code>, and <code>/authorization/*</code> (authenticated bearer JWT + per-resource
+scope gates via the <code>Scoped&lt;…&gt;</code> extractors) — the
+slice owns its mount paths so the caller just <code>.merge()</code>s;</li>
+<li>returns the <code>Arc&lt;AuthorizationServerState&gt;</code> the caller passes to
+<a href="../http/middleware.html#item-authorization_server_auth_middleware"><code>authorization_server_auth_middleware</code></a> to gate fhir-r4-rust;</li>
+<li>returns the <a href="oauth-bindings.html#item-LaunchContextMinter"><code>LaunchContextMinter</code></a> an in-process launcher mints each
+SMART App Launch <code>launch</code> value through, which <code>/oauth/authorize</code> then
+consumes;</li>
+<li>returns the <a href="oauth-bindings.html#item-SameDeviceSignInCodeMinter"><code>SameDeviceSignInCodeMinter</code></a> the host mints each
+same-device sign-in code through, which <code>/oauth/sign-in</code> then redeems,
+and which ends the sessions codes signed in when the host asks;</li>
+<li>returns the <a href="oauth-bindings.html#item-PendingConsentWatcher"><code>PendingConsentWatcher</code></a> the host waits on for a pending
+consent it opened to be decided or expire;</li>
+<li>returns the <a href="session-bindings.html#item-InProcessTokenVerifier"><code>InProcessTokenVerifier</code></a> the host’s FHIR server verifies
+each bearer through, in-process.</li>
+</ul>
+<p><code>authorization_start_gate</code> says whether a request may start an
+authorization request (<code>GET /oauth/authorize</code>,
+<code>POST /oauth/device_authorization</code>): asked for every one that carries no
+live browser session, which is answered <code>429</code> when it refuses. Pass
+<a href="ports-and-adapters.html#item-AdmitEveryAuthorizationStart"><code>AdmitEveryAuthorizationStart</code></a> where no visitor reaches the server.</p>
+<p>Every token this server mints carries the server’s origin
+(<a href="#item-AuthorizationServerConfig"><code>AuthorizationServerConfig::server_origin</code></a>) as both <code>iss</code> and <code>aud</code>, and
+the bearer gates accept no other. See
+<code>docs/Origins/Explanation.md</code>.</p>
+<p><code>revocation_store</code> is the shared token-revocation store the host builds once
+on the shared database and threads into both this setup and fhir-r4-rust’s HFS
+adapter, so the auth gate and the FHIR server read one denylist/epoch store.</p>
+<h4 id="errors"><a class="header" href="#errors">Errors</a></h4>
+<p>Returns an error if opening and seeding the store fails.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn setup_authorization_server(
+    pool: DieselPool,
+    revocation_store: RevocationStore,
+    config: &amp;AuthorizationServerConfig,
+    owner_approval_tx: watch::Sender&lt;Option&lt;OwnerPrompt&gt;&gt;,
+    authorization_start_gate: Arc&lt;dyn AuthorizationStartGate&gt;,
+    open_views_sign_in_codes: &amp;[SameDeviceSignInCode],
+) -&gt; anyhow::Result&lt;AuthorizationServer&gt; {
+    let store = seeding::open_and_seed_store(
+        pool,
+        &amp;config.host_app_client_scopes,
+        &amp;config.fhir_ui_client_id,
+        &amp;config.server_origin,
+    )?;
+    let server_origin: Arc&lt;str&gt; =
+        wildflowerhealthio_shared_structures::origin_string(&amp;config.server_origin).into();
+    let same_device_sign_in_codes = Arc::new(SameDeviceSignInCodes::new());
+    let stale_session_cutoff = Arc::new(StaleSessionCutoff::new(
+        Utc::now(),
+        open_views_sign_in_codes
+            .iter()
+            .filter_map(SameDeviceSignInCode::signed_in_sid)
+            .collect(),
+    ));
+    let (pending_consents_recomputed_tx, pending_consents_recomputed_rx) = watch::channel(());
+    let state = Arc::new(AuthorizationServerState {
+        store: store.clone(),
+        revocation_store: revocation_store.clone(),
+        server_origin: server_origin.clone(),
+        device_page: Arc::new(http::device_page_url(&amp;config.server_origin)),
+        launcher_base: config.launcher_base.clone(),
+        owner_approval_tx,
+        pending_consents_recomputed_tx,
+        owner_grant: Grant::new(OWNER_SCOPES.to_vec()),
+        same_device_sign_in_codes: same_device_sign_in_codes.clone(),
+        sign_in_destinations: Arc::new(SignInDestinations::new(
+            config.server_origin.clone(),
+            config.launcher_base.clone(),
+            config.authorization_app_base.clone(),
+            config.launcher_url.clone(),
+            config.authorization_url.clone(),
+        )),
+        authorization_start_gate,
+        last_seen_throttle: Arc::new(LastSeenThrottle::new()),
+        stale_session_cutoff,
+    });
+    // Publish the Owner prompt from SQLite so a request that was
+    // pending across an app restart is reported in the run's first detail —
+    // the `watch` value itself doesn't survive the process, but the row
+    // does.
+    ports::OwnerApproval::republish_active(state.as_ref());
+    spawn_device_consent_reaper(state.clone());
+    // Reclaim the authorization server rows past their retention window: once at startup, then
+    // daily.
+    spawn_retention_sweep(store);
+    // Reclaim expired denylist rows: once at startup, then daily.
+    spawn_revocation_purge(revocation_store);
+    let router = http::router(state.clone());
+    let launch_context_minter = LaunchContextMinter::new(state.store.clone());
+    let in_process_token_verifier = InProcessTokenVerifier::new(&amp;state);
+    let same_device_sign_in_code_minter =
+        SameDeviceSignInCodeMinter::new(same_device_sign_in_codes, state.store.clone());
+    let pending_consent_watcher =
+        PendingConsentWatcher::new(state.store.clone(), pending_consents_recomputed_rx);
+    Ok(AuthorizationServer {
+        router,
+        state,
+        launch_context_minter,
+        same_device_sign_in_code_minter,
+        pending_consent_watcher,
+        in_process_token_verifier,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L277-L349"><code>authorization-server-rust/src/lib.rs</code> lines 277–349</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Every integration test starts from it, through the harness’s <a href="../integration-tests/test-fixtures.html#item-spin_up"><code>spin_up</code></a>.</p>
+<h3 id="authorizationserver"><a class="header" href="#authorizationserver"><code>AuthorizationServer</code></a></h3>
+<p>The handles it holds are <a href="oauth-bindings.html#item-LaunchContextMinter"><code>LaunchContextMinter</code></a>, <a href="oauth-bindings.html#item-SameDeviceSignInCodeMinter"><code>SameDeviceSignInCodeMinter</code></a>, <a href="oauth-bindings.html#item-PendingConsentWatcher"><code>PendingConsentWatcher</code></a> and <a href="session-bindings.html#item-InProcessTokenVerifier"><code>InProcessTokenVerifier</code></a>.</p>
+<div id="item-AuthorizationServer" class="item-anchor"></div>
+
+<p>What <a href="#item-setup_authorization_server"><code>setup_authorization_server</code></a> hands the host: the router to merge,
+the shared state its own gates need, and the in-process handles it keeps.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct AuthorizationServer {
+    /// The server's HTTP surface, at `/.well-known/jwks.json`, `/oauth/*` and
+    /// `/authorization/*`. The host merges it into its own router, which the
+    /// tunnel listener serves.
+    pub router: axum::Router,
+    /// The shared state, which the host passes to
+    /// [`authorization_server_auth_middleware`], the bearer gate on the FHIR
+    /// server's routes.
+    pub state: Arc&lt;AuthorizationServerState&gt;,
+    /// Mints the SMART App Launch `launch` values `/oauth/authorize` consumes,
+    /// which the in-process launchers (the apps slice, the host) put in an
+    /// app's launch URL.
+    pub launch_context_minter: LaunchContextMinter,
+    /// Mints the one-time codes `/oauth/sign-in` signs the Owner's own browser
+    /// in with: for the host, in-process. It also ends the sessions codes
+    /// signed in, for the host to call once their views have closed.
+    pub same_device_sign_in_code_minter: SameDeviceSignInCodeMinter,
+    /// Waits for a pending consent to be decided or expire: for the host,
+    /// in-process, which closes the page it opened the request at.
+    pub pending_consent_watcher: PendingConsentWatcher,
+    /// Verifies access tokens exactly as the authorization server's own gates
+    /// do: for the host's FHIR server, which verifies each bearer through it
+    /// in-process.
+    pub in_process_token_verifier: InProcessTokenVerifier,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L191-L215"><code>authorization-server-rust/src/lib.rs</code> lines 191–215</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="the-background-sweeps"><a class="header" href="#the-background-sweeps">The background sweeps</a></h3>
+<p><code>setup_authorization_server</code> starts three loops on the runtime. <strong>None changes what the server honours</strong>: each either reclaims rows the read paths already refuse, or republishes what the store already says. After a long pause such as a suspend, each runs once rather than catching up on the ticks it missed.</p>
+<p>The reaper republishes the Owner prompt, because republishing otherwise happens only after a write, and an idle server would go on advertising a request that has expired.</p>
+<div id="item-DEVICE_CONSENT_REAPER_INTERVAL" class="item-anchor"></div>
+
+<p>How often the background reaper recomputes the <a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>, so the
+watch channel drops a request whose <code>expires_at</code> has passed without any
+HTTP mutation arriving to trigger a republish. Picked well under the
+5-minute <code>DEVICE_AUTHORIZATION_TTL</code> so a freshly-expired request clears
+within seconds; the recompute is two <code>LIMIT 1</code> reads, one per request
+table, and the watch sender suppresses no-op publishes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const DEVICE_CONSENT_REAPER_INTERVAL: std::time::Duration = std::time::Duration::from_secs(15);
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L187"><code>authorization-server-rust/src/lib.rs</code> line 187</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-spawn_device_consent_reaper" class="item-anchor"></div>
+
+<p>Spawn the background reaper that periodically recomputes the
+<a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>. Mutation-driven republishing alone leaves
+the watch advertising a request whose row has expired in the meantime —
+without this task, an idle host stays stuck on the now-expired request
+until some unrelated handler happens to write. The reaper drops the stale
+request within <code>DEVICE_CONSENT_REAPER_INTERVAL</code>, and <code>send_if_modified</code>
+suppresses ticks that leave it unchanged so an idle server
+publishes nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn spawn_device_consent_reaper(state: Arc&lt;AuthorizationServerState&gt;) {
+    tokio::spawn(async move {
+        let mut ticks = interval(DEVICE_CONSENT_REAPER_INTERVAL);
+        // A long pause (suspend/resume, debugger break) must not cause a
+        // burst of catch-up republishes — one tick after the gap is the
+        // right behaviour.
+        ticks.set_missed_tick_behavior(MissedTickBehavior::Delay);
+        // The first tick fires immediately; the boot-time republish in
+        // `setup_authorization_server` already covered that, so consume it before
+        // the loop.
+        ticks.tick().await;
+        loop {
+            ticks.tick().await;
+            ports::OwnerApproval::republish_active(state.as_ref());
+        }
+    });
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L437-L453"><code>authorization-server-rust/src/lib.rs</code> lines 437–453</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The retention sweep applies <a href="../domain/retention.html#item-purge_expired"><code>purge_expired</code></a>.</p>
+<div id="item-RETENTION_SWEEP_INTERVAL" class="item-anchor"></div>
+
+<p>How often the background sweep reclaims the authorization server rows past their retention
+window (see <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/domain/mod.rs#L98"><code>domain::retention</code></a>). Same cadence as
+<a href="#item-REVOCATION_PURGE_INTERVAL"><code>REVOCATION_PURGE_INTERVAL</code></a>, and far finer than the coarsest window it
+enforces (90 days), so a row is never retained much longer than the policy
+says.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const RETENTION_SWEEP_INTERVAL: std::time::Duration = std::time::Duration::from_secs(24 * 60 * 60);
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L179"><code>authorization-server-rust/src/lib.rs</code> line 179</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-spawn_retention_sweep" class="item-anchor"></div>
+
+<p>Spawn the background sweep that deletes the authorization server rows past their retention
+window — once at startup (the interval’s immediate first tick), then every
+<a href="#item-RETENTION_SWEEP_INTERVAL"><code>RETENTION_SWEEP_INTERVAL</code></a>. The windows and their rationale live in
+<a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/domain/mod.rs#L98"><code>domain::retention</code></a>.</p>
+<p>Space reclamation only: every row it touches is already past <code>expires_at</code>
+(or, for a browser session, its <code>revoked_at</code>) and rejected by the read
+paths, so nothing here changes what the server honours. A failed sweep is
+logged and retried next tick.</p>
+<p>Runs on <code>spawn_blocking</code> rather than a runtime
+worker: <code>pool.get()</code> alone can park for r2d2’s 30s connection timeout, and the
+sweep then holds one write transaction across a delete per table.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn spawn_retention_sweep(store: SqliteGrantStore) {
+    tokio::spawn(async move {
+        let mut ticks = interval(RETENTION_SWEEP_INTERVAL);
+        // A long pause (suspend/resume) must not queue up catch-up sweeps —
+        // one tick after the gap reclaims the same rows anyway.
+        ticks.set_missed_tick_behavior(MissedTickBehavior::Delay);
+        loop {
+            // First tick is immediate → startup sweep; then daily.
+            ticks.tick().await;
+            // Cheap clone (the pool is an `Arc` inside) so the loop keeps its own
+            // handle for the next tick.
+            let sweep_store = store.clone();
+            let swept = tokio::task::spawn_blocking(move || {
+                domain::retention::purge_expired(&amp;sweep_store, Utc::now())
+            })
+            .await;
+            match swept {
+                Ok(Ok(purged)) if !purged.is_empty() =&gt; tracing::info!(
+                    refresh_token_families = purged.refresh_token_families,
+                    code_authorization_requests = purged.code_authorization_requests,
+                    user_code_requests = purged.user_code_requests,
+                    authorization_codes = purged.authorization_codes,
+                    browser_sessions = purged.browser_sessions,
+                    "swept the authorization server rows past their retention window",
+                ),
+                Ok(Ok(_)) =&gt; {}
+                Ok(Err(error)) =&gt; {
+                    tracing::warn!(%error, "the authorization server retention sweep failed")
+                }
+                Err(error) =&gt; {
+                    tracing::warn!(%error, "the authorization server retention sweep task failed")
+                }
+            }
+        }
+    });
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L392-L427"><code>authorization-server-rust/src/lib.rs</code> lines 392–427</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The revocation purge only reclaims space, because an expired token is refused anyway. Its floor is <a href="../domain/browser-session.html#item-LONGEST_BROWSER_SESSION_TTL"><code>LONGEST_BROWSER_SESSION_TTL</code></a>, the longest any token minted here lives, so a row is never dropped while its token could still be live.</p>
+<div id="item-REVOCATION_PURGE_INTERVAL" class="item-anchor"></div>
+
+<p>How often the background sweep drops denylist rows whose token has already
+expired (mirrors the refresh-token/device-code reaping cadence). The first
+sweep runs at startup; thereafter daily. A revoked-then-expired <code>jti</code> is
+rejected by expiry validation regardless, so this only reclaims space.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const REVOCATION_PURGE_INTERVAL: std::time::Duration = std::time::Duration::from_secs(24 * 60 * 60);
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L172"><code>authorization-server-rust/src/lib.rs</code> line 172</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-spawn_revocation_purge" class="item-anchor"></div>
+
+<p>Spawn the background sweep that purges expired rows from the revocation
+denylist — once at startup (the interval’s immediate first tick) then every
+<a href="#item-REVOCATION_PURGE_INTERVAL"><code>REVOCATION_PURGE_INTERVAL</code></a>. Purely space reclamation: an expired <code>jti</code> is
+already rejected by expiry validation, denylisted or not.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn spawn_revocation_purge(revocation_store: RevocationStore) {
+    tokio::spawn(async move {
+        let mut ticks = interval(REVOCATION_PURGE_INTERVAL);
+        ticks.set_missed_tick_behavior(MissedTickBehavior::Delay);
+        loop {
+            // First tick is immediate → startup purge; then daily.
+            ticks.tick().await;
+            // Retention floor = the longest access token we mint (a browser
+            // session's token lives as long as the session, at most a day,
+            // past the 15-min OAuth `ACCESS_TOKEN_TTL`), so a denylist row is
+            // never dropped while its token could still be live — even if the
+            // `/authorization/revocations` caller supplied a too-early
+            // `expiresAt`. See `RevocationStore::purge_expired`.
+            match revocation_store.purge_expired(Utc::now(), LONGEST_BROWSER_SESSION_TTL) {
+                Ok(purged) if purged &gt; 0 =&gt; {
+                    tracing::info!(purged, "swept expired revoked jtis");
+                }
+                Ok(_) =&gt; {}
+                Err(error) =&gt; tracing::warn!(%error, "revoked-jti sweep failed"),
+            }
+        }
+    });
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/lib.rs#L355-L377"><code>authorization-server-rust/src/lib.rs</code> lines 355–377</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="what-the-crate-root-re-exports"><a class="header" href="#what-the-crate-root-re-exports">What the crate root re-exports</a></h3>
+<p>The host imports the crate root, not its modules. Beyond the items above, the root re-exports:</p>
+<ul>
+<li><strong>the store</strong>: <code>SqliteGrantStore</code>, the persistence port <code>GrantStore</code> and <code>GrantTx</code>, and <code>DieselPool</code>, so the host can name the pool type without depending on diesel;</li>
+<li><strong>the Owner prompt</strong>: <a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>, what the host is told about, and <a href="../domain/owner-prompt.html#item-ConsentKey"><code>ConsentKey</code></a>, what it waits on;</li>
+<li><strong>the gates and cookies</strong>: <code>authorization_server_auth_middleware</code> and <code>AuthorizationServerAuthMiddleware</code>, <code>ensure_bearer_header</code>, <code>AuthorizationServerState</code>, and the browser-session cookie’s name, header and helpers;</li>
+<li><strong>the in-process handles</strong>: <code>LaunchContextMinter</code>, <code>SameDeviceSignInCodeMinter</code>, <code>PendingConsentWatcher</code>, <code>InProcessTokenVerifier</code>;</li>
+<li><strong>the start gate</strong>: <code>AuthorizationStartGate</code>, which the host implements, and <code>AdmitEveryAuthorizationStart</code>;</li>
+<li><code>grantable_admin_scopes</code>, every admin scope the <code>/authorization</code> surface enforces;</li>
+<li>in debug builds only, <a href="seeding.html#item-seed_dev_app_clients"><code>seed_dev_app_clients</code></a>.</li>
+</ul>
+<p>The modules <code>config</code>, <code>crypto_util</code>, <code>db</code>, <code>domain</code> and <code>http</code> stay public too: the integration tests reach into some of them, and the crate’s public doc links point into them.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/assembly.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/assembly/live-bindings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/assembly.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/assembly/live-bindings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

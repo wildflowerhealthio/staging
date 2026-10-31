@@ -1,0 +1,1246 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Device Code - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="device-code"><a class="header" href="#device-code">Device Code</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs"><code>authorization-server-rust/tests/integration/device_code.rs</code></a></p>
+
+<p>The device-code flow (RFC 8628) is for a device with no browser of its own to send to <code>/oauth/authorize</code>: a TV, a watch, a command line. The device asks at <code>/oauth/device_authorization</code>, shows its user a short code, and polls <code>/oauth/token</code>. The Owner enters the code on the <a href="device-page.html">Device Page</a> and approves. Until then the device hears “not yet”.</p>
+<p>The request is a <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest"><code>DeviceRequest</code></a>, one of the <a href="../domain/authorization-request/polled-requests.html">polled requests</a>. The Owner’s approval is recorded twice. The request carries the approval the poll redeems (<a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--approve"><code>DeviceRequest::approve</code></a>). A standing <a href="../domain/grant.html#item-DeviceGrant"><code>DeviceGrant</code></a> is what the Owner’s list of authorized devices shows.</p>
+<p>The file also holds the token endpoint’s <a href="../domain/refresh-token.html">refresh-token</a> promises, for both flows: rotation, the family’s deadline, binding to the client, and what revoking a grant does to its client’s refresh tokens.</p>
+<h2 id="integrationdevice_code"><a class="header" href="#integrationdevice_code"><code>integration::device_code</code></a></h2>
+<h3 id="device_grant_pending_then_slow_down"><a class="header" href="#device_grant_pending_then_slow_down"><code>device_grant_pending_then_slow_down</code></a></h3>
+<div id="item-device_grant_pending_then_slow_down" class="item-anchor"></div>
+
+<p>First poll on a still-pending request returns <code>authorization_pending</code>; an
+immediate second poll trips the slow-down rate limit
+(<code>last_polled_at</code> is within <code>DEVICE_CODE_POLL_INTERVAL</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_grant_pending_then_slow_down() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        TEST_CLIENT_ID,
+        "dev-pending",
+        &amp;[TEST_CLIENT_SCOPE],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=integration-test-app&amp;device_code=dev-pending";
+    let first = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(first.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(first.into_body()).await,
+        serde_json::json!({ "error": "authorization_pending" })
+    );
+    let second = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(second.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(second.into_body()).await,
+        serde_json::json!({ "error": "slow_down" })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L14-L39"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 14–39</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--stamp_poll"><code>DeviceRequest::stamp_poll</code></a> and <a href="../domain/authorization-request.html#item-DEVICE_CODE_POLL_INTERVAL"><code>DEVICE_CODE_POLL_INTERVAL</code></a>; the poll outcomes are decided in <a href="../authority/redemption.html#item-ConsumedDeviceRequest--consume"><code>ConsumedDeviceRequest::consume</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-spin_up"><code>spin_up</code></a>, <a href="test-fixtures.html#item-seed_test_client"><code>seed_test_client</code></a>, <a href="test-fixtures.html#item-plant_device_request"><code>plant_device_request</code></a>, <a href="test-fixtures.html#item-store_handle"><code>store_handle</code></a>, <a href="test-fixtures.html#item-TEST_CLIENT_ID"><code>TEST_CLIENT_ID</code></a>, <a href="test-fixtures.html#item-TEST_CLIENT_SCOPE"><code>TEST_CLIENT_SCOPE</code></a>, <a href="test-fixtures.html#item-post_form"><code>post_form</code></a> and <a href="test-fixtures.html#item-body_json"><code>body_json</code></a>.</p>
+<h3 id="device_grant_single_use_then_expired_token"><a class="header" href="#device_grant_single_use_then_expired_token"><code>device_grant_single_use_then_expired_token</code></a></h3>
+<div id="item-device_grant_single_use_then_expired_token" class="item-anchor"></div>
+
+<p>An approved device request mints a token exactly once: the first exchange
+succeeds and expires the request, so a second exchange sees <code>expired_token</code>
+(single-use, RFC 8628 §3.4).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_grant_single_use_then_expired_token() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        TEST_CLIENT_ID,
+        "dev-approved",
+        &amp;[TEST_CLIENT_SCOPE],
+        RequestStatus::Approved,
+        Utc::now() + Duration::minutes(5),
+    );
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=integration-test-app&amp;device_code=dev-approved";
+    let first = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(first.status(), StatusCode::OK);
+    let token = body_json(first.into_body()).await;
+    assert_eq!(token["token_type"], "Bearer");
+    assert_eq!(token["scope"], TEST_CLIENT_SCOPE);
+
+    let second = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(second.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(second.into_body()).await,
+        serde_json::json!({ "error": "expired_token" })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L45-L70"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 45–70</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--claim"><code>DeviceRequest::claim</code></a>.</p>
+<h3 id="device_consent_clamps_granted_scopes_to_client_allowed"><a class="header" href="#device_consent_clamps_granted_scopes_to_client_allowed"><code>device_consent_clamps_granted_scopes_to_client_allowed</code></a></h3>
+<div id="item-device_consent_clamps_granted_scopes_to_client_allowed" class="item-anchor"></div>
+
+<p>Device-flow consent clamps the granted scopes to the client’s current
+<code>allowed_scopes</code>, not just to what the request asked for: a request that
+asked for <code>write</code> while it was permitted grants no <code>write</code> once the
+client’s registration no longer allows it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_consent_clamps_granted_scopes_to_client_allowed() {
+    let (g, owner_token, db) = spin_up();
+    // The client permits only `read`.
+    seed_client_with_redirect(&amp;db, "device-client", "https://app.example/cb", &amp;["read"]);
+    // A pending device request that asks for the disallowed `write` too.
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-clamp",
+        &amp;["read", "write"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+
+    // The Owner approves both scopes; the handler must drop `write`.
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read","write"]}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({ "status": "approved" })
+    );
+
+    // The issued token carries only the still-allowed `read`, never `write`.
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=device-client&amp;device_code=dev-clamp";
+    let res = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(res.status(), StatusCode::OK);
+    let token = body_json(res.into_body()).await;
+    assert_eq!(token["scope"], "read");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L77-L113"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 77–113</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--approve"><code>DeviceRequest::approve</code></a>; the clamp is <a href="../authority/delegated-scopes.html#item-DelegatedScopes--clamp"><code>DelegatedScopes::clamp</code></a>, with the ceiling <a href="../authority/delegated-scopes.html#item-ApprovableScopes--for_device"><code>ApprovableScopes::for_device</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-seed_client_with_redirect"><code>seed_client_with_redirect</code></a> and <a href="test-fixtures.html#item-build_request"><code>build_request</code></a>.</p>
+<h3 id="device_consent_threads_patient_onto_request"><a class="header" href="#device_consent_threads_patient_onto_request"><code>device_consent_threads_patient_onto_request</code></a></h3>
+<div id="item-device_consent_threads_patient_onto_request" class="item-anchor"></div>
+
+<p>Device-flow consent takes an optional <code>patient</code> from the approve body onto
+the approved request, as the code flow does, so an approver that selects a
+patient binds it to what the device is issued.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_consent_threads_patient_onto_request() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "device-client", "https://app.example/cb", &amp;["read"]);
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-patient",
+        &amp;["read"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+
+    // The Owner approves and selects a patient context.
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read"],"patient":"Patient/123"}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({ "status": "approved" })
+    );
+
+    // The posted patient is persisted onto the now-approved request.
+    let request = store_handle(&amp;db)
+        .read(|tx| tx.device_request_by_id("dev-patient"))
+        .expect("query request")
+        .expect("request present");
+    assert_eq!(request.state.status(), RequestStatus::Approved);
+    assert_eq!(
+        request
+            .state
+            .approval()
+            .and_then(|approval| approval.patient.as_deref()),
+        Some("Patient/123")
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L119-L159"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 119–159</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--approve"><code>DeviceRequest::approve</code></a>.</p>
+<h3 id="device_consent_allows_expansion_beyond_requested"><a class="header" href="#device_consent_allows_expansion_beyond_requested"><code>device_consent_allows_expansion_beyond_requested</code></a></h3>
+<div id="item-device_consent_allows_expansion_beyond_requested" class="item-anchor"></div>
+
+<p>Device-flow consent is expandable: the Owner approving a device may grant
+scopes the device never requested, up to the client’s <code>allowed_scopes</code>.
+The code flow stays clamped to the requested scopes, so a third-party app
+can’t widen its own grant; <code>device_consent_clamps_granted_scopes_to_client_allowed</code>
+holds the allowed-scopes ceiling.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_consent_allows_expansion_beyond_requested() {
+    let (g, owner_token, db) = spin_up();
+    // The client is allowed both read and write.
+    seed_client_with_redirect(
+        &amp;db,
+        "device-client",
+        "https://app.example/cb",
+        &amp;["read", "write"],
+    );
+    // ...but the device requested only `read`.
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-expand",
+        &amp;["read"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+
+    // The Owner grants the un-requested-but-allowed `write` on top of `read`.
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read","write"]}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({ "status": "approved" })
+    );
+
+    // The expansion is persisted onto the grant — `write` was never requested.
+    let request = store_handle(&amp;db)
+        .read(|tx| tx.device_request_by_id("dev-expand"))
+        .expect("query request")
+        .expect("request present");
+    let granted = &amp;request
+        .state
+        .approval()
+        .expect("granted scopes")
+        .granted_scopes;
+    assert!(granted.contains(&amp;"read".to_string()));
+    assert!(granted.contains(&amp;"write".to_string()));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L167-L213"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 167–213</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--approve"><code>DeviceRequest::approve</code></a> and <a href="../authority/delegated-scopes.html#item-ApprovableScopes--for_device"><code>ApprovableScopes::for_device</code></a>.</p>
+<h3 id="device_authorization_carries_device_name_to_consent"><a class="header" href="#device_authorization_carries_device_name_to_consent"><code>device_authorization_carries_device_name_to_consent</code></a></h3>
+<div id="item-device_authorization_carries_device_name_to_consent" class="item-anchor"></div>
+
+<p>The device-authorization request carries the human-chosen <code>device_name</code>
+extension end to end: minted at <code>/oauth/device_authorization</code>, stored on the
+request, and surfaced (alongside the client’s <code>allowedScopes</code> expansion
+envelope) on the <code>/authorization/devices/{userCode}</code> consent prompt.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_carries_device_name_to_consent() {
+    let (g, owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    // Start the flow with a device name (URL-encoded, includes a space + apostrophe).
+    let start = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded"),
+        Body::from(
+            "client_id=integration-test-app&amp;scope=system%2F*.cruds&amp;device_name=Ada%27s%20laptop",
+        ),
+    );
+    let res = g.router.clone().oneshot(start).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let user_code = body_json(res.into_body()).await["user_code"]
+        .as_str()
+        .expect("user_code")
+        .to_string();
+
+    // The consent prompt surfaces the device name and a non-empty expansion envelope.
+    let get = build_request(
+        Request::get(format!("/authorization/devices/{user_code}"))
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}")),
+        Body::empty(),
+    );
+    let res = g.router.clone().oneshot(get).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let consent = body_json(res.into_body()).await;
+    assert_eq!(consent["deviceName"], "Ada's laptop");
+    assert!(consent["allowedScopes"]
+        .as_array()
+        .expect("allowedScopes array")
+        .iter()
+        .any(|scope| scope == "system/*.cruds"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L220-L254"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 220–254</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-NewDeviceRequestArgs"><code>NewDeviceRequestArgs</code></a>; the prompt is read by <a href="../capabilities/access/device-consents.html#item-ConsentReader--device_consent"><code>ConsentReader::device_consent</code></a>.</p>
+<h3 id="device_authorization_infers_device_name_from_user_agent_when_unnamed"><a class="header" href="#device_authorization_infers_device_name_from_user_agent_when_unnamed"><code>device_authorization_infers_device_name_from_user_agent_when_unnamed</code></a></h3>
+<div id="item-device_authorization_infers_device_name_from_user_agent_when_unnamed" class="item-anchor"></div>
+
+<p>When a device-code client doesn’t name itself, a friendly name is inferred
+from its <code>User-Agent</code> and surfaced on the consent prompt (and later keyed on
+by the durable grant). A browser-shaped UA becomes “Browser on OS”.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_infers_device_name_from_user_agent_when_unnamed() {
+    let (g, owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    // No `device_name` in the body — only a browser User-Agent.
+    let start = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded")
+            .header("user-agent", CHROME_MAC_USER_AGENT),
+        Body::from("client_id=integration-test-app&amp;scope=system%2F*.cruds"),
+    );
+    let res = g.router.clone().oneshot(start).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let user_code = body_json(res.into_body()).await["user_code"]
+        .as_str()
+        .expect("user_code")
+        .to_string();
+
+    let get = build_request(
+        Request::get(format!("/authorization/devices/{user_code}"))
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}")),
+        Body::empty(),
+    );
+    let res = g.router.clone().oneshot(get).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        body_json(res.into_body()).await["deviceName"],
+        "Chrome on macOS"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L260-L289"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 260–289</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/device-authorization.html#item-device_name_from_user_agent"><code>device_name_from_user_agent</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-CHROME_MAC_USER_AGENT"><code>CHROME_MAC_USER_AGENT</code></a>.</p>
+<h3 id="explicit_device_name_wins_over_user_agent_inference"><a class="header" href="#explicit_device_name_wins_over_user_agent_inference"><code>explicit_device_name_wins_over_user_agent_inference</code></a></h3>
+<div id="item-explicit_device_name_wins_over_user_agent_inference" class="item-anchor"></div>
+
+<p>A client-supplied <code>device_name</code> is never overridden by the User-Agent
+inference — the explicit name wins even when a recognizable UA is present.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn explicit_device_name_wins_over_user_agent_inference() {
+    let (g, owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let start = build_request(
+        Request::post("/oauth/device_authorization")
+            .header("content-type", "application/x-www-form-urlencoded")
+            .header("user-agent", CHROME_MAC_USER_AGENT),
+        Body::from(
+            "client_id=integration-test-app&amp;scope=system%2F*.cruds&amp;device_name=Ada%27s%20laptop",
+        ),
+    );
+    let res = g.router.clone().oneshot(start).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let user_code = body_json(res.into_body()).await["user_code"]
+        .as_str()
+        .expect("user_code")
+        .to_string();
+
+    let get = build_request(
+        Request::get(format!("/authorization/devices/{user_code}"))
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}")),
+        Body::empty(),
+    );
+    let res = g.router.clone().oneshot(get).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        body_json(res.into_body()).await["deviceName"],
+        "Ada's laptop"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L294-L324"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 294–324</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/device-authorization.html#item-device_name_from_user_agent"><code>device_name_from_user_agent</code></a>.</p>
+<h3 id="device_consent_approver_can_adjust_device_name"><a class="header" href="#device_consent_approver_can_adjust_device_name"><code>device_consent_approver_can_adjust_device_name</code></a></h3>
+<div id="item-device_consent_approver_can_adjust_device_name" class="item-anchor"></div>
+
+<p>The settings approver may rename the device before approving — the adjusted
+<code>deviceName</code> on the approve body is persisted onto the request (<code>COALESCE</code>d,
+so an omitted name leaves the stored one intact).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_consent_approver_can_adjust_device_name() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "device-client", "https://app.example/cb", &amp;["read"]);
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-rename",
+        &amp;["read"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read"],"deviceName":"Reception iPad"}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+
+    let request = store_handle(&amp;db)
+        .read(|tx| tx.device_request_by_id("dev-rename"))
+        .expect("query request")
+        .expect("request present");
+    assert_eq!(request.device_name.as_deref(), Some("Reception iPad"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L330-L357"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 330–357</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/authorization-request/polled-requests.html#item-DeviceRequest--approve"><code>DeviceRequest::approve</code></a>.</p>
+<h3 id="device_approval_mints_durable_grant_and_links_refresh_family"><a class="header" href="#device_approval_mints_durable_grant_and_links_refresh_family"><code>device_approval_mints_durable_grant_and_links_refresh_family</code></a></h3>
+<div id="item-device_approval_mints_durable_grant_and_links_refresh_family" class="item-anchor"></div>
+
+<p>Approving a device-code consent records a standing device grant, the record
+the Owner’s list of authorized devices shows, and the family the device’s
+<code>offline_access</code> token starts links back to that grant. This is the device
+half of “a refresh family names the grant that earned it”;
+<code>offline_access_issues_rotating_refresh_token</code> is the code-flow half.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_approval_mints_durable_grant_and_links_refresh_family() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "device-client",
+        "https://app.example/cb",
+        &amp;["read", "offline_access"],
+    );
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-durable",
+        &amp;["read", "offline_access"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+
+    // Approve, naming the device.
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read","offline_access"],"deviceName":"Reception iPad"}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+
+    // The standing device grant shows in the access index as the `device_code`
+    // union variant, titled by its deviceName.
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::get("/authorization/grants")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let grants = body_json(res.into_body()).await;
+    let device_grant = grants
+        .as_array()
+        .expect("grants array")
+        .iter()
+        .find(|grant| grant["grantType"] == "device_code")
+        .expect("a device grant was minted");
+    assert_eq!(device_grant["deviceName"], "Reception iPad");
+    assert_eq!(device_grant["clientId"], "device-client");
+    let scopes = device_grant["scopes"].as_array().expect("scopes array");
+    assert!(scopes.iter().any(|scope| scope == "read"));
+    assert!(scopes.iter().any(|scope| scope == "offline_access"));
+
+    // Redeeming the device_code issues the offline_access refresh token, whose
+    // family links back to the device grant just minted.
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=device-client&amp;device_code=dev-durable";
+    let res = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(res.status(), StatusCode::OK);
+    let refresh = body_json(res.into_body()).await["refresh_token"]
+        .as_str()
+        .expect("offline_access refresh token")
+        .to_string();
+
+    let (_, family) = store_handle(&amp;db)
+        .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token_storage_hash(&amp;refresh)))
+        .expect("family query")
+        .expect("family present");
+    assert_eq!(
+        family.grant_id.as_deref(),
+        Some(device_grant["id"].as_str().expect("grant id")),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L365-L439"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 365–439</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/grant.html#item-DeviceGrant"><code>DeviceGrant</code></a>, <a href="../domain/authorization-request/polled-requests.html#item-device_grant_name"><code>device_grant_name</code></a> and <a href="../domain/refresh-token.html#item-RefreshTokenFamily"><code>RefreshTokenFamily</code></a>.</p>
+<h3 id="a_device_refresh_stamps_its_grant_s_last_use"><a class="header" href="#a_device_refresh_stamps_its_grant_s_last_use"><code>a_device_refresh_stamps_its_grant_s_last_use</code></a></h3>
+<div id="item-a_device_refresh_stamps_its_grant_s_last_use" class="item-anchor"></div>
+
+<p>Each rotation of the refresh family a device grant earned marks the grant
+used: the Owner’s grant list shows no <code>lastUsedAt</code> once the device has
+claimed its first tokens, and the rotation’s instant after a refresh.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn a_device_refresh_stamps_its_grant_s_last_use() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "device-client",
+        "https://app.example/cb",
+        &amp;["read", "offline_access"],
+    );
+    plant_device_request(
+        &amp;store_handle(&amp;db),
+        "device-client",
+        "dev-used",
+        &amp;["read", "offline_access"],
+        RequestStatus::Pending,
+        Utc::now() + Duration::minutes(5),
+    );
+    let approve = build_request(
+        Request::post("/authorization/devices/WILD-FLWR/approve")
+            .header("host", "127.0.0.1")
+            .header("authorization", format!("Bearer {owner_token}"))
+            .header("content-type", "application/json"),
+        Body::from(r#"{"approvedScopes":["read","offline_access"],"deviceName":"Reception iPad"}"#),
+    );
+    let res = g.router.clone().oneshot(approve).await.expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let body = "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;\
+                client_id=device-client&amp;device_code=dev-used";
+    let res = post_form(&amp;g.router, "/oauth/token", body).await;
+    assert_eq!(res.status(), StatusCode::OK);
+    let refresh = body_json(res.into_body()).await["refresh_token"]
+        .as_str()
+        .expect("offline_access refresh token")
+        .to_string();
+    let last_used_at = || async {
+        let res = g
+            .router
+            .clone()
+            .oneshot(owner_grants_probe(&amp;owner_token))
+            .await
+            .expect("oneshot");
+        assert_eq!(res.status(), StatusCode::OK);
+        body_json(res.into_body())
+            .await
+            .as_array()
+            .expect("grants array")
+            .iter()
+            .find(|grant| grant["grantType"] == "device_code")
+            .expect("the device grant")["lastUsedAt"]
+            .clone()
+    };
+    assert_eq!(last_used_at().await, Value::Null);
+
+    let before = Utc::now();
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/oauth/token")
+                .header("content-type", "application/x-www-form-urlencoded"),
+            Body::from(format!(
+                "grant_type=refresh_token&amp;client_id=device-client&amp;refresh_token={refresh}"
+            )),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+
+    let stamped: chrono::DateTime&lt;Utc&gt; = last_used_at()
+        .await
+        .as_str()
+        .expect("lastUsedAt is set")
+        .parse()
+        .expect("an RFC 3339 instant");
+    assert!(stamped &gt;= before &amp;&amp; stamped &lt;= Utc::now());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L445-L519"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 445–519</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/grant.html#item-DeviceGrant"><code>DeviceGrant</code></a>’s <code>last_used_at</code>, stamped by <a href="../writers/refresh-family-writer.html#item-RefreshFamilyWriter--rotate"><code>RefreshFamilyWriter::rotate</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-owner_grants_probe"><code>owner_grants_probe</code></a>.</p>
+<h3 id="token_endpoint_rejects_grant_outside_client_allow_list"><a class="header" href="#token_endpoint_rejects_grant_outside_client_allow_list"><code>token_endpoint_rejects_grant_outside_client_allow_list</code></a></h3>
+<div id="item-token_endpoint_rejects_grant_outside_client_allow_list" class="item-anchor"></div>
+
+<p>A client restricted to a grant-type subset is refused a grant outside it
+(RFC 6749 §5.2 <code>unauthorized_client</code>). Here a code-only client is rejected
+at the refresh-token grant before any token lookup.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn token_endpoint_rejects_grant_outside_client_allow_list() {
+    let (g, _owner_token, db) = spin_up();
+    store_handle(&amp;db)
+        .write(|tx| {
+            tx.upsert_client(&amp;Client {
+                client_id: "code-only".to_string(),
+                name: "Code-only client".to_string(),
+                kind: ClientKind::Public,
+                redirect_uris: vec![Url::parse("https://app.example/cb").unwrap()],
+                allowed_scopes: vec!["read".to_string(), "offline_access".to_string()],
+                allowed_grant_types: vec![AllowedGrantType::AuthorizationCode],
+                secret_hash: None,
+                registered_at: Utc::now(),
+                disabled_at: None,
+                registration_source: RegistrationSource::TrustedOnFirstUse,
+            })
+        })
+        .expect("register code-only client");
+
+    let res = post_form(
+        &amp;g.router,
+        "/oauth/token",
+        "grant_type=refresh_token&amp;client_id=code-only&amp;refresh_token=whatever",
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await["error"],
+        "unauthorized_client"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L525-L555"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 525–555</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/client.html#item-AllowedGrantType"><code>AllowedGrantType</code></a>; the check is <a href="../capabilities/oauth/token-exchanger.html#item-ensure_grant_type_allowed"><code>ensure_grant_type_allowed</code></a>.</p>
+<h3 id="device_authorization_sets_cache_suppression_headers"><a class="header" href="#device_authorization_sets_cache_suppression_headers"><code>device_authorization_sets_cache_suppression_headers</code></a></h3>
+<div id="item-device_authorization_sets_cache_suppression_headers" class="item-anchor"></div>
+
+<p>RFC 6749 §5.1/§5.2 (inherited by RFC 8628 §3.4): the
+<code>/oauth/device_authorization</code> response suppresses caching just like the
+token endpoint’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn device_authorization_sets_cache_suppression_headers() {
+    let (g, _owner_token, db) = spin_up();
+    seed_test_client(&amp;db);
+    let res = post_form(
+        &amp;g.router,
+        "/oauth/device_authorization",
+        "client_id=integration-test-app&amp;scope=system%2F*.cruds",
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::OK);
+    assert_eq!(
+        res.headers()
+            .get("cache-control")
+            .map(|v| v.to_str().unwrap()),
+        Some("no-store")
+    );
+    assert_eq!(
+        res.headers().get("pragma").map(|v| v.to_str().unwrap()),
+        Some("no-cache")
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L561-L581"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 561–581</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/errors-and-wire-shapes.html#item-CacheSuppressed"><code>CacheSuppressed</code></a>.</p>
+<h3 id="offline_access_issues_rotating_refresh_token"><a class="header" href="#offline_access_issues_rotating_refresh_token"><code>offline_access_issues_rotating_refresh_token</code></a></h3>
+<div id="item-offline_access_issues_rotating_refresh_token" class="item-anchor"></div>
+
+<p>Granting <code>offline_access</code> issues a rotating refresh token, and the full
+rotation contract holds: redeeming swaps generations, replaying a consumed
+generation revokes the whole family (OAuth 2.1 rotation semantics), so the
+rotated-to token dies with it. The family records the app’s standing
+grant.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn offline_access_issues_rotating_refresh_token() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "test-app",
+        "https://app.example/cb",
+        &amp;["read", "offline_access"],
+    );
+    let request_id = authorize_and_approve(
+        &amp;g,
+        &amp;owner_token,
+        &amp;db.paired_browser_token,
+        "test-app",
+        "read%20offline_access",
+        r#"{"approvedScopes":["read","offline_access"],"acknowledgedRegistrationChange":false}"#,
+    )
+    .await;
+
+    // Pull the redeemable code off the status poll, then redeem it.
+    let res = get_authorization_status(&amp;g.router, &amp;db.paired_browser_token, &amp;request_id).await;
+    assert_eq!(res.status(), StatusCode::OK);
+    let status = body_json(res.into_body()).await;
+    let redirect = status["redirect"].as_str().expect("redirect");
+    let code = Url::parse(redirect)
+        .expect("redirect url")
+        .query_pairs()
+        .find(|(k, _)| k == "code")
+        .map(|(_, v)| v.into_owned())
+        .expect("code param");
+    let body = format!(
+        "grant_type=authorization_code&amp;client_id=test-app&amp;code={code}&amp;\
+         code_verifier={CODE_VERIFIER}&amp;redirect_uri=https%3A%2F%2Fapp.example%2Fcb"
+    );
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/oauth/token")
+                .header("content-type", "application/x-www-form-urlencoded"),
+            Body::from(body),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let token = body_json(res.into_body()).await;
+    assert_eq!(token["scope"], "read offline_access");
+    let first_refresh = token["refresh_token"]
+        .as_str()
+        .expect("refresh_token present with offline_access")
+        .to_string();
+
+    // The minted family records the authorization-code grant that authorized
+    // it, as a device family records its device grant.
+    {
+        let store = store_handle(&amp;db);
+        let grant = store
+            .read(|tx| {
+                tx.grant_by_client_and_redirect(
+                    "test-app",
+                    &amp;Url::parse("https://app.example/cb").unwrap(),
+                )
+            })
+            .expect("grant query")
+            .expect("code grant minted at approval");
+        let (_, family) = store
+            .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token_storage_hash(&amp;first_refresh)))
+            .expect("family query")
+            .expect("family present");
+        assert_eq!(family.grant_id.as_deref(), Some(grant.id.as_str()));
+    }
+
+    // Redeem the refresh token: fresh access token + the next generation.
+    let body = format!("grant_type=refresh_token&amp;client_id=test-app&amp;refresh_token={first_refresh}");
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/oauth/token")
+                .header("content-type", "application/x-www-form-urlencoded"),
+            Body::from(body.clone()),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    let refreshed = body_json(res.into_body()).await;
+    assert_eq!(refreshed["token_type"], "Bearer");
+    assert_eq!(refreshed["scope"], "read offline_access");
+    assert!(!refreshed["access_token"]
+        .as_str()
+        .expect("access_token")
+        .is_empty());
+    let second_refresh = refreshed["refresh_token"]
+        .as_str()
+        .expect("rotated refresh_token")
+        .to_string();
+    assert_ne!(second_refresh, first_refresh);
+
+    // Replaying the consumed generation is treated as theft …
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/oauth/token")
+                .header("content-type", "application/x-www-form-urlencoded"),
+            Body::from(body),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({
+            "error": "invalid_grant",
+            "error_description": "Refresh token has been revoked",
+        })
+    );
+
+    // … which kills the whole family: the rotated-to token is dead too. The
+    // family is expired in place (not deleted), so it reports as expired.
+    let body =
+        format!("grant_type=refresh_token&amp;client_id=test-app&amp;refresh_token={second_refresh}");
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/oauth/token")
+                .header("content-type", "application/x-www-form-urlencoded"),
+            Body::from(body),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({
+            "error": "invalid_grant",
+            "error_description": "Refresh token has expired",
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L590-L729"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 590–729</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/refresh-token.html#item-consume_refresh_token"><code>consume_refresh_token</code></a>, <a href="../domain/refresh-token.html#item-RefreshTokenFamily"><code>RefreshTokenFamily</code></a>, <a href="../domain/refresh-token.html#item-RefreshToken"><code>RefreshToken</code></a> and <a href="../domain/grant.html#item-AuthorizationCodeGrant"><code>AuthorizationCodeGrant</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-authorize_and_approve"><code>authorize_and_approve</code></a>, <a href="test-fixtures.html#item-get_authorization_status"><code>get_authorization_status</code></a> and <a href="test-fixtures.html#item-CODE_VERIFIER"><code>CODE_VERIFIER</code></a>.</p>
+<h3 id="expired_refresh_token_family_is_rejected"><a class="header" href="#expired_refresh_token_family_is_rejected"><code>expired_refresh_token_family_is_rejected</code></a></h3>
+<div id="item-expired_refresh_token_family_is_rejected" class="item-anchor"></div>
+
+<p>A refresh token past its family’s absolute deadline is <code>invalid_grant</code>.
+The rows survive the attempt — natural deadline passage writes nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn expired_refresh_token_family_is_rejected() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "test-app",
+        "https://app.example/cb",
+        &amp;["read", "offline_access"],
+    );
+    let store = store_handle(&amp;db);
+    plant_refresh_token(
+        &amp;store,
+        "stale-token",
+        "test-app",
+        Utc::now() - Duration::days(1),
+    );
+
+    let res = post_form(
+        &amp;g.router,
+        "/oauth/token",
+        "grant_type=refresh_token&amp;client_id=test-app&amp;refresh_token=stale-token",
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({
+            "error": "invalid_grant",
+            "error_description": "Refresh token has expired",
+        })
+    );
+    let (row, _family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token_storage_hash("stale-token")))
+        .expect("query")
+        .expect("row kept");
+    assert_eq!(row.consumed_at, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L734-L769"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 734–769</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/refresh-token.html#item-RefreshTokenFamily"><code>RefreshTokenFamily</code></a>; the check is <a href="../authority/redemption.html#item-ValidatedRefreshToken--validate"><code>ValidatedRefreshToken::validate</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-plant_refresh_token"><code>plant_refresh_token</code></a>.</p>
+<h3 id="refresh_token_is_bound_to_issuing_client"><a class="header" href="#refresh_token_is_bound_to_issuing_client"><code>refresh_token_is_bound_to_issuing_client</code></a></h3>
+<div id="item-refresh_token_is_bound_to_issuing_client" class="item-anchor"></div>
+
+<p>A refresh token presented by a different registered client is rejected
+exactly like an unknown token (RFC 6749 §6 client binding) — and the
+mismatch does NOT revoke the rightful owner’s family.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn refresh_token_is_bound_to_issuing_client() {
+    let (g, _owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "owner-app", "https://app.example/cb", &amp;["read"]);
+    seed_client_with_redirect(&amp;db, "other-app", "https://other.example/cb", &amp;["read"]);
+    let store = store_handle(&amp;db);
+    plant_refresh_token(
+        &amp;store,
+        "owned-token",
+        "owner-app",
+        Utc::now() + Duration::days(30),
+    );
+
+    let res = post_form(
+        &amp;g.router,
+        "/oauth/token",
+        "grant_type=refresh_token&amp;client_id=other-app&amp;refresh_token=owned-token",
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({
+            "error": "invalid_grant",
+            "error_description": "Invalid refresh_token parameter",
+        })
+    );
+    // The rightful owner's token is untouched — still live.
+    let (row, _family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token_storage_hash("owned-token")))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(row.consumed_at, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L775-L807"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 775–807</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/refresh-token.html#item-RefreshTokenFamily"><code>RefreshTokenFamily</code></a>; the binding is checked in <a href="../authority/redemption.html#item-ValidatedRefreshToken--validate"><code>ValidatedRefreshToken::validate</code></a>.</p>
+<h3 id="revoking_grant_revokes_refresh_tokens"><a class="header" href="#revoking_grant_revokes_refresh_tokens"><code>revoking_grant_revokes_refresh_tokens</code></a></h3>
+<div id="item-revoking_grant_revokes_refresh_tokens" class="item-anchor"></div>
+
+<p>Revoking a grant on the Owner surface also kills the client’s refresh
+tokens: every refresh family of that client has its deadline pulled back
+to the revocation and its live token stamped consumed, and the rows stay
+for the audit trail.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revoking_grant_revokes_refresh_tokens() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(
+        &amp;db,
+        "test-app",
+        "https://app.example/cb",
+        &amp;["read", "offline_access"],
+    );
+    authorize_and_approve(
+        &amp;g,
+        &amp;owner_token,
+        &amp;db.paired_browser_token,
+        "test-app",
+        "read",
+        r#"{"approvedScopes":["read"],"acknowledgedRegistrationChange":false}"#,
+    )
+    .await;
+    let store = store_handle(&amp;db);
+    plant_refresh_token(
+        &amp;store,
+        "standing-token",
+        "test-app",
+        Utc::now() + Duration::days(30),
+    );
+
+    // Find the grant id on the Owner surface, then revoke it.
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::get("/authorization/grants")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    let grants = body_json(res.into_body()).await;
+    let grant_id = grants[0]["id"].as_str().expect("grant id").to_string();
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::delete(format!("/authorization/grants/{grant_id}"))
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+
+    // Soft-revoked: the rows survive for audit, but the family's deadline is
+    // pulled back and the live token is stamped consumed — and redeeming it
+    // reports the family as expired.
+    let (token, family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token_storage_hash("standing-token")))
+        .expect("query")
+        .expect("rows kept");
+    assert!(family.expires_at &lt;= Utc::now());
+    assert!(token.consumed_at.is_some());
+    let res = post_form(
+        &amp;g.router,
+        "/oauth/token",
+        "grant_type=refresh_token&amp;client_id=test-app&amp;refresh_token=standing-token",
+    )
+    .await;
+    assert_eq!(res.status(), StatusCode::BAD_REQUEST);
+    assert_eq!(
+        body_json(res.into_body()).await,
+        serde_json::json!({
+            "error": "invalid_grant",
+            "error_description": "Refresh token has expired",
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/tests/integration/device_code.rs#L814-L889"><code>authorization-server-rust/tests/integration/device_code.rs</code> lines 814–889</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/refresh-token.html#item-RefreshTokenFamily"><code>RefreshTokenFamily</code></a> and <a href="../capabilities/access/grants.html#item-GrantsRevoker--revoke"><code>GrantsRevoker::revoke</code></a>, which also bumps the client’s revocation epoch (<a href="revocation.html#item-revoking_a_grant_bumps_the_client_revocation_epoch"><code>revoking_a_grant_bumps_the_client_revocation_epoch</code></a>).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/integration-tests/approval-scopes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/integration-tests/device-page.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/integration-tests/approval-scopes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/integration-tests/device-page.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

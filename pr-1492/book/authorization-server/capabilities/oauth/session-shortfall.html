@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Session Shortfall - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="session-shortfall"><a class="header" href="#session-shortfall">Session Shortfall</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code></a></p>
+
+<p>A browser paired with read-only access may run an app that asks for write. A code earned in that browser carries only what its session holds, so <strong>the person at the browser is told first, on the limited page, before the Owner is asked anything</strong>. The <a href="code-authorization-starter.html">code authorization starter</a> parks such a request <a href="../../domain/authorization-request/code-request.html#the-limited-page">awaiting the limited page</a> and sends the browser there. The page reads what the session lacks, and the person goes on (the starter’s <a href="code-authorization-starter.html#item-CodeAuthorizationStarter--continue_past_session_shortfall"><code>continue_past_session_shortfall</code></a>) or cancels (here).</p>
+<p><strong>Every operation answers only the browser session the request was made in</strong>, so a leaked request id reads, continues and cancels nothing. No scope opens the capability: the caller is the browser that made the request, known by its browser session’s <code>sid</code>. <strong>What the session holds is read from its row</strong>, not from its token, as <code>/oauth/authorize</code> reads it, so the page and the starter judge the session alike.</p>
+<p>The tests park code requests from the <a href="../test-fixtures.html#session-shortfall">session shortfall fixtures</a>.</p>
+<h2 id="domaincapabilitiesoauthsession_shortfall"><a class="header" href="#domaincapabilitiesoauthsession_shortfall"><code>domain::capabilities::oauth::session_shortfall</code></a></h2>
+<h3 id="sessionshortfallview"><a class="header" href="#sessionshortfallview"><code>SessionShortfallView</code></a></h3>
+<div id="item-SessionShortfallView" class="item-anchor"></div>
+
+<p>What the limited page says: the app, and the requested scopes the browser’s
+session lacks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct SessionShortfallView {
+    /// The client's registered name, or its `client_id` when it has no
+    /// registration yet (a client trusted on first use, asking for the first
+    /// time).
+    pub(crate) client_name: String,
+    /// The requested scopes a code issued in this session would not carry in
+    /// full ([`session_shortfall`]), in the request's order: dropped outright,
+    /// or narrowed to what the session holds.
+    pub(crate) missing_scopes: Vec&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L33-L42"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 33–42</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="load_code_request_awaiting_limited_page"><a class="header" href="#load_code_request_awaiting_limited_page"><code>load_code_request_awaiting_limited_page</code></a></h3>
+<p>The one load the page’s read, its Cancel and the starter’s Continue share.</p>
+<div id="item-load_code_request_awaiting_limited_page" class="item-anchor"></div>
+
+<p>Load request <code>id</code> for the browser session <code>sid</code> while it waits on that
+browser’s limited page: an unexpired code request made in <code>sid</code>, awaiting
+the page. Anything else (an unknown id, another session’s request, one
+gone on, decided or expired) is
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::AuthorizationRequestNotFound</code></a>, the status
+poll’s <code>404</code>, so the answer says nothing about whether <code>id</code> exists.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn load_code_request_awaiting_limited_page(
+    tx: &amp;mut impl AuthorizationRequestsTx,
+    id: &amp;str,
+    sid: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;CodeRequest, AuthorizationServerError&gt; {
+    let not_found = || AuthorizationServerError::AuthorizationRequestNotFound { id: id.to_owned() };
+    tx.code_request_by_id(id)?
+        .filter(|request| request.is_awaiting_limited_page_at(now) &amp;&amp; request.sid == sid)
+        .ok_or_else(not_found)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L70-L80"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 70–80</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Another session, a request gone on past the page, an expired one, a
+decided one and an unknown id all read as not found.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn only_the_requesting_session_reads_a_request_still_waiting_on_its_page() {
+    let store = FakeGrantStore::default();
+    let now = Utc::now();
+    store
+        .tx()
+        .insert_code_request(&amp;awaiting_limited_page("waiting"))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request("gone-on", now + Duration::minutes(5), false))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request("expired", now - Duration::seconds(1), true))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_with_status(
+            code_request("denied", now + Duration::minutes(5), false),
+            RequestStatus::Denied,
+        ))
+        .unwrap();
+    let session_shortfall = SessionShortfall::new(store, Arc::new(StaleSessionCutoff::none()));
+    for (id, sid) in [
+        ("waiting", "another-sid"),
+        ("gone-on", FIXTURE_SID),
+        ("expired", FIXTURE_SID),
+        ("denied", FIXTURE_SID),
+        ("ghost", FIXTURE_SID),
+    ] {
+        assert_eq!(
+            session_shortfall.read(id, sid, now),
+            Err(AuthorizationServerError::AuthorizationRequestNotFound { id: id.to_owned() }),
+            "{id} from {sid}"
+        );
+        assert_eq!(
+            session_shortfall.cancel(id, sid, now),
+            Err(AuthorizationServerError::AuthorizationRequestNotFound { id: id.to_owned() }),
+            "{id} from {sid}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L307-L348"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 307–348</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="browser_session_grant"><a class="header" href="#browser_session_grant"><code>browser_session_grant</code></a></h3>
+<p>The one read of what a session holds, shared with the <a href="code-authorization-starter.html">code authorization starter</a>.</p>
+<div id="item-browser_session_grant" class="item-anchor"></div>
+
+<p>The grant the browser session <code>sid</code> holds at <code>now</code>, as its row records it:
+what a code issued under it may carry at most. <code>None</code> once the session has
+ended (revoked, expired, stale under <code>stale_session_cutoff</code>, or pruned
+since), when no code is issued under it at all.</p>
+<h4 id="errors"><a class="header" href="#errors">Errors</a></h4>
+<p><a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> on a store failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn browser_session_grant(
+    tx: &amp;mut impl BrowserSessionsTx,
+    sid: &amp;str,
+    stale_session_cutoff: &amp;StaleSessionCutoff,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;Grant&gt;, AuthorizationServerError&gt; {
+    Ok(tx
+        .browser_session_by_sid(sid)?
+        .filter(|browser_session| browser_session.is_live_at(now, stale_session_cutoff))
+        .map(|browser_session| Grant::parse(browser_session.scopes)))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L52-L62"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 52–62</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="sessionshortfall"><a class="header" href="#sessionshortfall"><code>SessionShortfall</code></a></h3>
+<div id="item-SessionShortfall" class="item-anchor"></div>
+
+<p>Read and cancel requests waiting on their browser’s limited page. Public
+(the caller is the browser that made the request, identified by its
+browser session), so its only powers are these two.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct SessionShortfall&lt;S: GrantStore&gt; {
+    /// The store the waiting request is read from and denied in.
+    store: S,
+    /// The cutoff before which a same-device session is stale: a stale
+    /// session holds nothing.
+    stale_session_cutoff: Arc&lt;StaleSessionCutoff&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L85-L91"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 85–91</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="new"><a class="header" href="#new"><code>new</code></a></h4>
+<div id="item-SessionShortfall--new" class="item-anchor"></div>
+
+<p>Build it over a store handle and the stale-session cutoff, lifted from
+the state.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn new(store: S, stale_session_cutoff: Arc&lt;StaleSessionCutoff&gt;) -&gt; Self {
+    SessionShortfall {
+        store,
+        stale_session_cutoff,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L96-L101"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 96–101</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="read"><a class="header" href="#read"><code>read</code></a></h4>
+<p>The missing scopes come from <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L444-L453"><code>session_shortfall</code></a>. <code>openid</code> isn’t held access, so a session never lacks it.</p>
+<div id="item-SessionShortfall--read" class="item-anchor"></div>
+
+<p>What request <code>id</code> asks for that the browser session <code>sid</code> doesn’t
+hold, and the app asking, in a read scope. The missing scopes come from
+<a href="../../authority/delegated-scopes.html#item-session_shortfall"><code>session_shortfall</code></a> against the session’s grant as its row holds it
+now (<a href="#item-browser_session_grant"><code>browser_session_grant</code></a>), the same check <code>/oauth/authorize</code>
+made when it parked the request.</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p>See <a href="#item-load_code_request_awaiting_limited_page"><code>load_code_request_awaiting_limited_page</code></a>;
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::AuthorizationRequestNotFound</code></a> too once the
+session has ended, since no code is issued under it; the store’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn read(
+    &amp;self,
+    id: &amp;str,
+    sid: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;SessionShortfallView, AuthorizationServerError&gt; {
+    self.store.read(|tx| {
+        let request = load_code_request_awaiting_limited_page(tx, id, sid, now)?;
+        let session_grant = browser_session_grant(tx, sid, &amp;self.stale_session_cutoff, now)?
+            .ok_or_else(|| AuthorizationServerError::AuthorizationRequestNotFound {
+                id: id.to_owned(),
+            })?;
+        let client_name = tx
+            .client_by_id(&amp;request.client_id)?
+            .map_or_else(|| request.client_id.clone(), |client| client.name);
+        Ok(SessionShortfallView {
+            client_name,
+            missing_scopes: session_shortfall(&amp;request.requested_scopes, &amp;session_grant),
+        })
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L114-L134"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 114–134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The page reads the app’s name and what the session lacks of the
+request, in the request’s order.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_read_names_the_app_and_what_the_session_lacks() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .upsert_client(&amp;client("client", &amp;["patient/Patient.r"]))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;awaiting_limited_page("req-1"))
+        .unwrap();
+    seed_session(&amp;store, FIXTURE_SID, &amp;["patient/Patient.rs"]);
+    let session_shortfall = SessionShortfall::new(store, Arc::new(StaleSessionCutoff::none()));
+    let view = session_shortfall
+        .read("req-1", FIXTURE_SID, Utc::now())
+        .expect("the requesting session reads it");
+    assert_eq!(
+        view,
+        SessionShortfallView {
+            client_name: "client display name".to_owned(),
+            missing_scopes: vec!["patient/Observation.r".to_owned()],
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L243-L265"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 243–265</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>What the session lacks is read from its row as it stands: a session
+holding all the request asks for lacks nothing, and once it has ended
+the request reads as not found.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_read_takes_what_the_session_holds_from_its_row_now() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .insert_code_request(&amp;awaiting_limited_page("req-1"))
+        .unwrap();
+    seed_session(
+        &amp;store,
+        FIXTURE_SID,
+        &amp;["patient/Patient.rs", "patient/Observation.rs"],
+    );
+    let session_shortfall = SessionShortfall::new(store, Arc::new(StaleSessionCutoff::none()));
+    let now = Utc::now();
+    assert_eq!(
+        session_shortfall
+            .read("req-1", FIXTURE_SID, now)
+            .expect("reads")
+            .missing_scopes,
+        Vec::&lt;String&gt;::new()
+    );
+    session_shortfall
+        .store
+        .tx()
+        .revoke_browser_session(FIXTURE_SID, now)
+        .unwrap();
+    assert_eq!(
+        session_shortfall.read("req-1", FIXTURE_SID, now),
+        Err(AuthorizationServerError::AuthorizationRequestNotFound {
+            id: "req-1".to_owned()
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L271-L302"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 271–302</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="cancel"><a class="header" href="#cancel"><code>cancel</code></a></h4>
+<p>The denial is the request’s own <a href="../../domain/authorization-request/code-request.html#item-CodeRequest--deny_on_limited_page"><code>deny_on_limited_page</code></a>, written through the <a href="../../domain/authorization-request.html#transitions-and-the-guarded-replace">guarded replace</a>. In the race test, the Cancel’s denial, built from its earlier read, is still a valid transition on paper, but its replace finds the row gone on past the page and writes nothing.</p>
+<div id="item-SessionShortfall--cancel" class="item-anchor"></div>
+
+<p>Deny request <code>id</code>, made in the browser session <code>sid</code>, and return the
+client callback carrying <code>error=access_denied</code>. The denial holds only
+while the request still waits on the page, so a Continue that
+went on with it meanwhile wins and this answers not found. The Owner
+was never told of a request still waiting here, so nothing is
+republished. A Cancel isn’t remembered: unlike a Continue it records
+nothing for the session and the client, so the browser’s next request
+for the client stops at the page again.</p>
+<h5 id="errors-2"><a class="header" href="#errors-2">Errors</a></h5>
+<p>See <a href="#item-load_code_request_awaiting_limited_page"><code>load_code_request_awaiting_limited_page</code></a>; the store’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn cancel(
+    &amp;self,
+    id: &amp;str,
+    sid: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;String, AuthorizationServerError&gt; {
+    let not_found =
+        || AuthorizationServerError::AuthorizationRequestNotFound { id: id.to_owned() };
+    let cancelled = self.store.write(|tx| {
+        let request = load_code_request_awaiting_limited_page(tx, id, sid, now)?;
+        let cancelled = request.deny_on_limited_page(now).map_err(|_| not_found())?;
+        if tx.replace_code_request(&amp;request, &amp;cancelled)? {
+            Ok(cancelled)
+        } else {
+            Err(not_found())
+        }
+    })?;
+    Ok(build_client_error_redirect_url(
+        &amp;cancelled.redirect_uri,
+        OAuthErrorCode::AccessDenied,
+        REQUEST_DECLINED_DESCRIPTION,
+        &amp;cancelled.client_state,
+    ))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L148-L171"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 148–171</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Cancel denies the request and hands back the client’s <code>access_denied</code>
+callback, and remembers nothing for the session; a second cancel finds
+nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn cancel_denies_the_request_and_answers_access_denied() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .insert_code_request(&amp;awaiting_limited_page("req-1"))
+        .unwrap();
+    let session_shortfall = SessionShortfall::new(store, Arc::new(StaleSessionCutoff::none()));
+    let callback = session_shortfall
+        .cancel("req-1", FIXTURE_SID, Utc::now())
+        .expect("cancels");
+    assert_eq!(
+        callback,
+        "https://example.com/cb?error=access_denied\
+         &amp;error_description=The+request+was+declined.&amp;state=state"
+    );
+    assert_eq!(
+        status_of(&amp;session_shortfall, "req-1"),
+        RequestStatus::Denied
+    );
+    assert!(!session_shortfall
+        .store
+        .tx()
+        .is_session_shortfall_acknowledged_for_client(FIXTURE_SID, "client")
+        .unwrap());
+    assert!(session_shortfall
+        .cancel("req-1", FIXTURE_SID, Utc::now())
+        .is_err());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L354-L381"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 354–381</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A Cancel that read the request before a Continue went on with it
+doesn’t deny it after: the Continue wins and the Cancel lands nowhere.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_cancel_racing_a_continue_leaves_the_continued_request_alone() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .insert_code_request(&amp;awaiting_limited_page("req-1"))
+        .unwrap();
+    let session_shortfall = SessionShortfall::new(store, Arc::new(StaleSessionCutoff::none()));
+    let now = Utc::now();
+    let read_by_cancel = load_code_request_awaiting_limited_page(
+        &amp;mut session_shortfall.store.tx(),
+        "req-1",
+        FIXTURE_SID,
+        now,
+    )
+    .expect("the Cancel reads it first");
+    let continued = read_by_cancel
+        .acknowledge_session_shortfall(Duration::minutes(5), now)
+        .expect("the Continue goes on with it");
+    assert!(session_shortfall
+        .store
+        .tx()
+        .replace_code_request(&amp;read_by_cancel, &amp;continued)
+        .unwrap());
+    let cancelled = read_by_cancel
+        .deny_on_limited_page(now)
+        .expect("the Cancel's read still waits");
+    assert!(!session_shortfall
+        .store
+        .tx()
+        .replace_code_request(&amp;read_by_cancel, &amp;cancelled)
+        .unwrap());
+    assert_eq!(
+        status_of(&amp;session_shortfall, "req-1"),
+        RequestStatus::Pending
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs#L386-L421"><code>authorization-server-rust/src/domain/capabilities/oauth/session_shortfall.rs</code> lines 386–421</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/capabilities/oauth/authorization-status-reader.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/capabilities/oauth/client-authenticator.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/capabilities/oauth/authorization-status-reader.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/capabilities/oauth/client-authenticator.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

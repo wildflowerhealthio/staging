@@ -1,0 +1,650 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pairing and Sign-In - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-ba81b10a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="pairing-and-sign-in"><a class="header" href="#pairing-and-sign-in">Pairing and Sign-In</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_in.rs"><code>authorization-server-rust/src/http/routes/oauth/sign_in.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_out.rs"><code>authorization-server-rust/src/http/routes/oauth/sign_out.rs</code></a></p>
+
+<p>A browser needs a <a href="../../domain/browser-session.html">browser session</a> before it can ask for anything, and it holds one as its <a href="../browser-session-cookie.html">browser session cookie</a>. <strong>There are two ways to get one, and one way to give it up.</strong> A browser that isn’t the Owner’s asks to be paired: it shows a code, and the Owner approves it from somewhere they are already signed in. The Owner’s own browser, on the device the server runs on, is signed in by the base app with a one-time <a href="../../domain/same-device-sign-in-codes.html">same-device sign-in code</a>. Either kind of browser signs out from the <strong>Sign out</strong> button on the server’s pages.</p>
+<p>Wildflower has no accounts and no passwords. RFC 6749 leaves how a person signs in to an authorization server to the server (§3.1): here, holding the device the server runs on is what makes someone the Owner, and the Owner’s approval is what lets any other browser in. The <a href="../../integration-tests/browser-pairing.html">Browser Pairing</a>, <a href="../../integration-tests/same-device-sign-in.html">Same-Device Sign-In</a> and <a href="../../integration-tests/browser-sessions.html">Browser Sessions</a> integration tests hold these routes end to end.</p>
+<h2 id="httproutesoauthbrowser_pairing"><a class="header" href="#httproutesoauthbrowser_pairing"><code>http::routes::oauth::browser_pairing</code></a></h2>
+<p>The <a href="authorization-pages.html#item-pairing_page_location">pairing page</a> makes two calls on its own origin: start a <a href="../../domain/authorization-request/polled-requests.html">pairing request</a>, then poll it until the Owner decides. Pairing is no OAuth flow, so the bodies are JSON, not form-encoded. A JSON body needs a CORS preflight from any other origin, and the server’s CORS policy never allows credentials, so <strong>only the server’s own pages can have a poll’s cookie set</strong>.</p>
+<h3 id="browserpairingstartbody"><a class="header" href="#browserpairingstartbody"><code>BrowserPairingStartBody</code></a></h3>
+<div id="item-BrowserPairingStartBody" class="item-anchor"></div>
+
+<p><code>POST /oauth/pair/start</code> body.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct BrowserPairingStartBody {
+    /// Where the browser goes once it holds its session: a path on this
+    /// server, in practice an `/oauth/authorize` URL.
+    next: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L34-L38"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 34–38</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_browser_pairing_start"><a class="header" href="#handle_browser_pairing_start"><code>handle_browser_pairing_start</code></a></h3>
+<p>The browser is named by <a href="device-authorization.html#item-device_name_from_user_agent"><code>device_name_from_user_agent</code></a>, a name the page may change while it polls. The start goes through the <a href="../../capabilities/oauth/browser-pairing.html">browser pairing</a> capability, which parks the pairing and republishes the <a href="../../domain/owner-prompt.html">Owner prompt</a>, so the host notifies the Owner.</p>
+<div id="item-handle_browser_pairing_start" class="item-anchor"></div>
+
+<p>Start a browser pairing for this browser, named after its <code>User-Agent</code>,
+and raise the Owner’s notification. The body’s <code>next</code> is where the browser
+goes once paired, in practice the <code>/oauth/authorize</code> request it was sent
+away from.</p>
+<p>The answer’s pairing code is the page’s secret, and the user code is for
+the Owner, who confirms it on the device page: only the page that started
+the pairing can collect the session. The refusals:</p>
+<ul>
+<li><code>next</code> is no path on this server: <code>400</code>, <code>BrowserPairingNextNotAllowed</code>.</li>
+<li>The browser-session client is disabled: <code>403</code>,
+<code>BrowserSessionClientDisabled</code>.</li>
+<li>No unused user code could be generated, or a store failed: a logged
+<code>500</code>.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_browser_pairing_start(
+    pairing: Live&lt;LiveBrowserPairing&gt;,
+    headers: HeaderMap,
+    Json(body): Json&lt;BrowserPairingStartBody&gt;,
+) -&gt; Response {
+    let user_agent_name = headers
+        .get(header::USER_AGENT)
+        .and_then(|value| value.to_str().ok())
+        .and_then(device_name_from_user_agent);
+    let response = match pairing.start(&amp;body.next, user_agent_name, Utc::now()) {
+        Ok(started) =&gt; Json(StartedBrowserPairingBody::from(started)).into_response(),
+        Err(BrowserPairingStartError::NextNotAllowed) =&gt; (
+            StatusCode::BAD_REQUEST,
+            Json(BrowserPairingRefused {
+                error: "BrowserPairingNextNotAllowed",
+            }),
+        )
+            .into_response(),
+        Err(BrowserPairingStartError::BrowserSessionClientDisabled) =&gt; (
+            StatusCode::FORBIDDEN,
+            Json(BrowserPairingRefused {
+                error: "BrowserSessionClientDisabled",
+            }),
+        )
+            .into_response(),
+        Err(BrowserPairingStartError::UserCodeExhausted) =&gt; InternalError::new(
+            "start a browser pairing",
+            "exhausted every user_code generation attempt",
+        )
+        .into_response(),
+        Err(BrowserPairingStartError::Store(error)) =&gt; {
+            InternalError::new("start a browser pairing", error).into_response()
+        }
+    };
+    CacheSuppressed(response).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L149-L184"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 149–184</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="startedbrowserpairingbody"><a class="header" href="#startedbrowserpairingbody"><code>StartedBrowserPairingBody</code></a></h3>
+<div id="item-StartedBrowserPairingBody" class="item-anchor"></div>
+
+<p>A started pairing, for the pairing page.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct StartedBrowserPairingBody {
+    /// The secret the page polls with. Only this page holds it.
+    pairing_code: String,
+    /// The code the page shows, which the Owner confirms on the device page.
+    user_code: String,
+    /// The name the browser goes by until the page names it, taken from its
+    /// user agent.
+    browser_name: String,
+    /// Where the page sends the browser once it holds its session: `next`,
+    /// resolved against this server.
+    next: String,
+    /// Seconds until the request expires.
+    expires_in: i64,
+    /// Seconds the page waits between polls.
+    interval: i64,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L43-L58"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 43–58</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from"><a class="header" href="#from"><code>from</code></a></h4>
+<div id="item-StartedBrowserPairingBody--from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn from(started: StartedBrowserPairing) -&gt; Self {
+    StartedBrowserPairingBody {
+        pairing_code: started.pairing_code,
+        user_code: started.user_code,
+        browser_name: started.browser_name,
+        next: started.next.location().to_owned(),
+        expires_in: started.expires_in,
+        interval: started.interval,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L61-L70"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 61–70</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="browserpairingrefused"><a class="header" href="#browserpairingrefused"><code>BrowserPairingRefused</code></a></h3>
+<div id="item-BrowserPairingRefused" class="item-anchor"></div>
+
+<p>Why a pairing didn’t start: <code>next</code> is no path on this server
+(<code>BrowserPairingNextNotAllowed</code>, 400), or the browser-session client is
+disabled (<code>BrowserSessionClientDisabled</code>, 403).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct BrowserPairingRefused {
+    /// Which refusal: `BrowserPairingNextNotAllowed` or
+    /// `BrowserSessionClientDisabled`.
+    error: &amp;'static str,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L77-L81"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 77–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="browserpairingpollbody"><a class="header" href="#browserpairingpollbody"><code>BrowserPairingPollBody</code></a></h3>
+<div id="item-BrowserPairingPollBody" class="item-anchor"></div>
+
+<p><code>POST /oauth/pair/poll</code> body.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct BrowserPairingPollBody {
+    /// The pairing code the start answered with.
+    pairing_code: String,
+    /// The name the page now gives its browser. Recorded while the request
+    /// is pending; blank keeps the name it has.
+    browser_name: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L86-L92"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 86–92</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_browser_pairing_poll"><a class="header" href="#handle_browser_pairing_poll"><code>handle_browser_pairing_poll</code></a></h3>
+<p><strong>The poll that finds the pairing approved hands the browser its session.</strong> The capability claims the request, stores the approved browser session and mints its token, and the answer sets that token as the cookie through <a href="../browser-session-cookie.html#item-browser_session_set_cookie"><code>browser_session_set_cookie</code></a>.</p>
+<div id="item-handle_browser_pairing_poll" class="item-anchor"></div>
+
+<p>Poll a browser pairing. The poll that finds it approved starts the
+browser’s paired session and sets it as the browser’s
+<code>__Host-browser_session</code> cookie. A blank <code>browser_name</code> keeps the name the
+pairing has. An unknown pairing code is a <code>404</code>; a store failure, a session
+that couldn’t be stored, and a token that couldn’t be minted are each a
+logged <code>500</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_browser_pairing_poll(
+    pairing: Live&lt;LiveBrowserPairing&gt;,
+    Json(body): Json&lt;BrowserPairingPollBody&gt;,
+) -&gt; Response {
+    let response = match pairing.poll(&amp;body.pairing_code, &amp;body.browser_name, Utc::now()) {
+        Ok(BrowserPairingStatus::Approved { session_token }) =&gt; (
+            [(
+                header::SET_COOKIE,
+                browser_session_set_cookie(&amp;session_token, PAIRED_SESSION_TTL),
+            )],
+            Json(BrowserPairingStatusBody::Approved),
+        )
+            .into_response(),
+        Ok(BrowserPairingStatus::Pending) =&gt; {
+            Json(BrowserPairingStatusBody::Pending).into_response()
+        }
+        Ok(BrowserPairingStatus::SlowDown) =&gt; {
+            Json(BrowserPairingStatusBody::SlowDown).into_response()
+        }
+        Ok(BrowserPairingStatus::Denied) =&gt; Json(BrowserPairingStatusBody::Denied).into_response(),
+        Ok(BrowserPairingStatus::Expired) =&gt; {
+            Json(BrowserPairingStatusBody::Expired).into_response()
+        }
+        Err(BrowserPairingPollError::NotFound) =&gt; (
+            StatusCode::NOT_FOUND,
+            Json(BrowserPairingNotFound {
+                error: "BrowserPairingNotFound",
+            }),
+        )
+            .into_response(),
+        Err(BrowserPairingPollError::Store(error)) =&gt; {
+            InternalError::new("poll a browser pairing", error).into_response()
+        }
+        Err(BrowserPairingPollError::SessionNotStored(error)) =&gt; {
+            InternalError::new("store a paired browser session", error).into_response()
+        }
+        Err(BrowserPairingPollError::Issuance(error)) =&gt; {
+            InternalError::new("mint a paired browser session's token", error).into_response()
+        }
+    };
+    CacheSuppressed(response).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L202-L243"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 202–243</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="browserpairingstatusbody"><a class="header" href="#browserpairingstatusbody"><code>BrowserPairingStatusBody</code></a></h3>
+<div id="item-BrowserPairingStatusBody" class="item-anchor"></div>
+
+<p>Where a pairing stands. <code>approved</code> carries the browser’s session as its
+<code>Set-Cookie</code>; the page then goes on to its <code>next</code>. <code>slow_down</code> means the
+page polled sooner than its interval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) enum BrowserPairingStatusBody {
+    /// The Owner hasn't decided yet; the page polls again after its interval.
+    Pending,
+    /// The page polled sooner than its interval allows; nothing was read or
+    /// recorded, and the page should wait longer before the next poll.
+    SlowDown,
+    /// The Owner approved, and this poll started the paired session: the
+    /// response sets its token as the `__Host-browser_session` cookie, living
+    /// for [`PAIRED_SESSION_TTL`] (a day).
+    Approved,
+    /// The Owner declined. No cookie is set.
+    Denied,
+    /// The request expired before the Owner approved it, or an earlier poll
+    /// already collected its session. No cookie is set.
+    Expired,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L99-L114"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 99–114</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="browserpairingnotfound"><a class="header" href="#browserpairingnotfound"><code>BrowserPairingNotFound</code></a></h3>
+<div id="item-BrowserPairingNotFound" class="item-anchor"></div>
+
+<p>No browser pairing has the presented pairing code
+(<code>BrowserPairingNotFound</code>, 404).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct BrowserPairingNotFound {
+    /// Always `BrowserPairingNotFound`.
+    error: &amp;'static str,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/browser_pairing.rs#L119-L122"><code>authorization-server-rust/src/http/routes/oauth/browser_pairing.rs</code> lines 119–122</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthsign_in"><a class="header" href="#httproutesoauthsign_in"><code>http::routes::oauth::sign_in</code></a></h2>
+<p>The base app mints a one-time code in-process and opens <code>/oauth/sign-in</code> in a browser it can’t script. <strong>Redeeming the code signs that browser in as the Owner.</strong> It is a browser page, not API surface, so it is mounted with the pages and kept out of the spec.</p>
+<h3 id="router"><a class="header" href="#router"><code>router</code></a></h3>
+<div id="item-sign_in--router" class="item-anchor"></div>
+
+<p>The sign-in’s route, relative to the <code>/oauth</code> mount.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn router() -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    Router::new().route("/sign-in", get(handle_sign_in))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_in.rs#L32-L34"><code>authorization-server-rust/src/http/routes/oauth/sign_in.rs</code> lines 32–34</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="signinparams"><a class="header" href="#signinparams"><code>SignInParams</code></a></h3>
+<div id="item-SignInParams" class="item-anchor"></div>
+
+<p>The query the base puts on the sign-in URL. A missing parameter reads as
+empty, which no code and no allowed <code>next</code> is, so it gets the error page
+like any other bad value.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct SignInParams {
+    /// The one-time same-device sign-in code.
+    code: String,
+    /// Where the browser goes once signed in.
+    next: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_in.rs#L40-L47"><code>authorization-server-rust/src/http/routes/oauth/sign_in.rs</code> lines 40–47</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_sign_in"><a class="header" href="#handle_sign_in"><code>handle_sign_in</code></a></h3>
+<p>The code goes to the <a href="../../capabilities/oauth/same-device-sign-in.html">same-device sign-in</a> capability, which answers an Owner session’s token and the redirect.</p>
+<div id="item-handle_sign_in" class="item-anchor"></div>
+
+<p>Redeem the code for a same-device session’s token, hand the browser the token as
+its <code>__Host-browser_session</code> cookie, and <code>303</code> it on to <code>next</code>. A <code>next</code> that
+isn’t allowed, a disabled browser-session client, or a code that is unknown,
+spent or expired, gets the error page, with no cookie and no redirect.</p>
+<p>Every answer is uncached and sends no <code>Referer</code> on, since the request’s own
+URL carries the code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_sign_in(
+    same_device_sign_in: Live&lt;LiveSameDeviceSignIn&gt;,
+    Query(params): Query&lt;SignInParams&gt;,
+) -&gt; Response {
+    let response = match same_device_sign_in.sign_in(&amp;params.code, &amp;params.next, Utc::now()) {
+        Ok(SignedIn {
+            session_token,
+            redirect,
+        }) =&gt; (
+            StatusCode::SEE_OTHER,
+            [
+                (header::LOCATION, redirect.location().to_owned()),
+                (
+                    header::SET_COOKIE,
+                    browser_session_set_cookie(&amp;session_token, SAME_DEVICE_SESSION_TTL),
+                ),
+            ],
+        )
+            .into_response(),
+        Err(SameDeviceSignInError::Refused(refusal)) =&gt; refusal_page(refusal),
+        Err(SameDeviceSignInError::Store(error)) =&gt; {
+            InternalError::new("read the browser-session client", error).into_response()
+        }
+        Err(SameDeviceSignInError::SessionNotStored(error)) =&gt; {
+            InternalError::new("store the same-device session", error).into_response()
+        }
+        Err(SameDeviceSignInError::Issuance(error)) =&gt; {
+            InternalError::new("mint the same-device session's token", error).into_response()
+        }
+    };
+    (
+        [(header::REFERRER_POLICY, "no-referrer")],
+        CacheSuppressed(response),
+    )
+        .into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_in.rs#L56-L91"><code>authorization-server-rust/src/http/routes/oauth/sign_in.rs</code> lines 56–91</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="refusal_page"><a class="header" href="#refusal_page"><code>refusal_page</code></a></h3>
+<p>The page is <a href="../errors-and-wire-shapes.html#item-sign_in_error_html"><code>sign_in_error_html</code></a>.</p>
+<div id="item-refusal_page" class="item-anchor"></div>
+
+<p>The <code>400</code> error page a refused sign-in gets, naming why: a <code>next</code> that
+isn’t allowed, a disabled browser-session client, or a code that is
+unknown, spent or expired. It sets no cookie and redirects nowhere.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn refusal_page(refusal: SignInRefusal) -&gt; Response {
+    (StatusCode::BAD_REQUEST, Html(sign_in_error_html(refusal))).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_in.rs#L96-L98"><code>authorization-server-rust/src/http/routes/oauth/sign_in.rs</code> lines 96–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthsign_out"><a class="header" href="#httproutesoauthsign_out"><code>http::routes::oauth::sign_out</code></a></h2>
+<p>A browser ends its own browser session from the <strong>Sign out</strong> form on the server’s pages. <strong>The cookie alone authenticates it</strong>; no bearer is involved. <strong>A browser always leaves signed out</strong>: one with no cookie, or whose session already ended, has nothing to revoke and gets the same answer.</p>
+<p>Nothing here checks where the form came from. The host’s cookie-to-bearer layer refuses a write carrying the cookie from any origin but the server’s own, so another page can’t sign a browser out.</p>
+<h3 id="router-1"><a class="header" href="#router-1"><code>router</code></a></h3>
+<div id="item-sign_out--router" class="item-anchor"></div>
+
+<p>The sign-out’s route, relative to the <code>/oauth</code> mount.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn router() -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    Router::new().route("/sign-out", post(handle_sign_out))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_out.rs#L34-L36"><code>authorization-server-rust/src/http/routes/oauth/sign_out.rs</code> lines 34–36</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_sign_out"><a class="header" href="#handle_sign_out"><code>handle_sign_out</code></a></h3>
+<p>The <a href="../../capabilities/session/browser-session-ender.html">browser session ender</a> revokes the session, which ends everything minted under it, and the answer clears the cookie with <a href="../browser-session-cookie.html#item-browser_session_clearing_set_cookie"><code>browser_session_clearing_set_cookie</code></a>.</p>
+<div id="item-handle_sign_out" class="item-anchor"></div>
+
+<p>Revoke the browser session the request’s cookie holds, if it holds a
+standing one, then clear the cookie and <code>303</code> to the launcher’s root. The
+<code>303</code> turns the form’s <code>POST</code> into a <code>GET</code>. A browser session that can’t be
+checked or revoked, because a store can’t be read or written, is a <code>500</code>
+that leaves the cookie as it was.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_sign_out(
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    browser_session_ender: Live&lt;LiveBrowserSessionEnder&gt;,
+    pages: LauncherPages,
+    headers: HeaderMap,
+) -&gt; Response {
+    let session_claims = match carried_browser_session(&amp;token_verifier, &amp;headers) {
+        Ok(session_claims) =&gt; session_claims,
+        Err(error) =&gt; {
+            return InternalError::new("check the browser session to sign out", error)
+                .into_response()
+        }
+    };
+    if let Some(session_claims) = session_claims {
+        if let Err(error) = browser_session_ender.end(&amp;session_claims, Utc::now()) {
+            return InternalError::new("revoke the browser session", error).into_response();
+        }
+    }
+    CacheSuppressed((
+        StatusCode::SEE_OTHER,
+        [
+            (header::LOCATION, pages.root_url().to_owned()),
+            (header::SET_COOKIE, browser_session_clearing_set_cookie()),
+        ],
+    ))
+    .into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/sign_out.rs#L43-L69"><code>authorization-server-rust/src/http/routes/oauth/sign_out.rs</code> lines 43–69</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/http/routes/authorization-pages.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/http/routes/device-authorization.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/http/routes/authorization-pages.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/http/routes/device-authorization.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

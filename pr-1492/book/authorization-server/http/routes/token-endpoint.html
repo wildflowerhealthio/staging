@@ -1,0 +1,1398 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Token Endpoint - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="token-endpoint"><a class="header" href="#token-endpoint">Token Endpoint</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs"><code>authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_revocation.rs"><code>authorization-server-rust/src/http/routes/oauth/token_revocation.rs</code></a></p>
+
+<p>The token endpoint is where an app’s back end, not a browser, gets its tokens. It trades an <a href="../../domain/authorization-code.html">authorization code</a>, a device code or a <a href="../../domain/refresh-token.html">refresh token</a> for an <a href="../../domain/access-token.html">access token</a> (RFC 6749 §3.2, RFC 8628 §3.4), and <code>POST /oauth/revoke</code> beside it takes one of the app’s tokens back (RFC 7009). <strong>Every call is made by a client, and the client is authenticated before the handler runs.</strong> A public client proves itself by its <code>client_id</code> alone, a confidential one by its secret too.</p>
+<p>Three routes take this shape: <code>/oauth/token</code>, <code>/oauth/revoke</code> and <code>/oauth/device_authorization</code>, on the <a href="device-authorization.html">next page</a>. Each reads a form-encoded body through one extractor, <a href="#item-TokenRequest"><code>TokenRequest</code></a>, which hands the handler the parsed body and an <a href="../../authority/authenticated-client.html"><code>AuthenticatedClient</code></a> proof. A handler can’t act for a client whose secret was never checked, because it never sees raw credentials. Every answer, success or error, is uncached (RFC 6749 §5.1). The <a href="../../integration-tests/client-auth.html">Client Auth</a>, <a href="../../integration-tests/grant-flows.html">Grant Flows</a> and <a href="../../integration-tests/token-revocation.html">Token Revocation</a> integration tests hold the routes end to end.</p>
+<h2 id="httproutesoauthtoken_request"><a class="header" href="#httproutesoauthtoken_request"><code>http::routes::oauth::token_request</code></a></h2>
+<h3 id="tokenrequest"><a class="header" href="#tokenrequest"><code>TokenRequest</code></a></h3>
+<div id="item-TokenRequest" class="item-anchor"></div>
+
+<p>An RFC 6749 token-style request, extracted once into its <code>payload</code> (the
+endpoint’s own body, generic per endpoint) and the
+<code>authenticated_client</code>.</p>
+<p>Centralizes what the token-style endpoints otherwise repeat inline: the
+RFC 6749 §3.2 <code>Content-Type</code> check, reading the body, the §2.3.1 credential dance
+(<a href="#item-resolve_client_credentials"><code>resolve_client_credentials</code></a>, which reconciles the <code>Authorization: Basic</code>
+header with body <code>client_id</code> / <code>client_secret</code>), and §2.3 client
+authentication through the <a href="../../assembly/oauth-bindings.html#item-LiveClientAuthenticator"><code>LiveClientAuthenticator</code></a>. On any failure the
+rejection is a <a href="#item-TokenError"><code>TokenError</code></a>, so it renders the same cache-suppressed §5.2
+error shape as the rest of the surface; an authentication failure carries
+<code>presented_via</code> so a Basic attempt gets its <code>WWW-Authenticate</code> challenge.</p>
+<p>The body is read once; the grant payload and the credential fields are then
+each deserialized from it (two cheap <code>serde_urlencoded</code> passes over the same
+small string — they pull disjoint, differently-shaped fields, so a single
+pass would buy nothing but coupling).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct TokenRequest&lt;P&gt; {
+    /// The endpoint's own body, parsed from the form: it ignores
+    /// `client_id` and `client_secret`, which the credential parse reads.
+    pub payload: P,
+    /// The verified client — the proof every client-gated operation takes.
+    pub authenticated_client: AuthenticatedClient,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L41-L47"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 41–47</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from_request"><a class="header" href="#from_request"><code>from_request</code></a></h4>
+<p>The payload is parsed before the credentials, so a malformed body reads as malformed, not as “Missing client_id”. The client is authenticated through the <a href="../../capabilities/oauth/client-authenticator.html">client authenticator</a>.</p>
+<div id="item-TokenRequest--from_request" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn from_request(
+    req: Request,
+    state: &amp;Arc&lt;AuthorizationServerState&gt;,
+) -&gt; Result&lt;Self, Self::Rejection&gt; {
+    require_form_urlencoded_content_type(req.headers())?;
+    // `resolve_client_credentials` needs only the `Authorization` header
+    // value; capture it (owned) before the body read consumes the request.
+    let authorization = req
+        .headers()
+        .get(AUTHORIZATION)
+        .and_then(|value| value.to_str().ok())
+        .map(str::to_owned);
+    let body = String::from_request(req, state).await.map_err(|_| {
+        TokenError::bad_request(OAuthErrorCode::InvalidRequest, Some("Invalid request body"))
+    })?;
+    // Parse the grant payload before resolving credentials so a structurally
+    // malformed body still reads as such, not as "Missing client_id".
+    let payload: P = serde_urlencoded::from_str(&amp;body).map_err(|_| {
+        TokenError::bad_request(OAuthErrorCode::InvalidRequest, Some("Malformed payload"))
+    })?;
+    let presented = resolve_client_credentials(authorization.as_deref(), &amp;body)?;
+    let authenticated_client = LiveClientAuthenticator::from_state(state)
+        .authenticate(&amp;presented.credentials)
+        .map_err(|error| ClientAuthenticationFailure {
+            error,
+            presented_via: presented.presented_via,
+        })?;
+    Ok(TokenRequest {
+        payload,
+        authenticated_client,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L55-L86"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 55–86</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="form_urlencoded"><a class="header" href="#form_urlencoded"><code>FORM_URLENCODED</code></a></h3>
+<div id="item-FORM_URLENCODED" class="item-anchor"></div>
+
+<p>The media type RFC 6749 §3.2 (and §4 device-flow extensions) require on a
+token-endpoint request body.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const FORM_URLENCODED: &amp;str = "application/x-www-form-urlencoded";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L22"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> line 22</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="require_form_urlencoded_content_type"><a class="header" href="#require_form_urlencoded_content_type"><code>require_form_urlencoded_content_type</code></a></h3>
+<p>The tests build their headers with <a href="../test-fixtures.html#token-endpoint"><code>headers_with_content_type</code></a>.</p>
+<div id="item-require_form_urlencoded_content_type" class="item-anchor"></div>
+
+<p>Reject unless the request carries <code>Content-Type: application/x-www-form- urlencoded</code> (RFC 6749 §3.2). Matches the media type only, tolerating a
+<code>; charset=…</code> parameter and case differences per RFC 7231 §3.1.1.1.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn require_form_urlencoded_content_type(headers: &amp;HeaderMap) -&gt; Result&lt;(), TokenError&gt; {
+    let is_form = headers
+        .get(CONTENT_TYPE)
+        .and_then(|value| value.to_str().ok())
+        .and_then(|value| value.split(';').next())
+        .is_some_and(|media_type| media_type.trim().eq_ignore_ascii_case(FORM_URLENCODED));
+    if is_form {
+        Ok(())
+    } else {
+        Err(TokenError::bad_request(
+            OAuthErrorCode::InvalidRequest,
+            Some("Content-Type must be application/x-www-form-urlencoded"),
+        ))
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L92-L106"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 92–106</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The exact form media type passes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn accepts_exact_form_urlencoded() {
+    assert!(
+        require_form_urlencoded_content_type(&amp;headers_with_content_type(FORM_URLENCODED))
+            .is_ok()
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L122-L127"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 122–127</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The form media type passes in mixed case and with a <code>charset</code>
+parameter.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn accepts_form_urlencoded_with_charset_and_mixed_case() {
+    assert!(
+        require_form_urlencoded_content_type(&amp;headers_with_content_type(
+            "Application/X-WWW-Form-Urlencoded; charset=utf-8"
+        ))
+        .is_ok()
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L132-L139"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 132–139</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Any other media type, such as JSON, is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_other_content_types() {
+    assert!(
+        require_form_urlencoded_content_type(&amp;headers_with_content_type("application/json"))
+            .is_err()
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L143-L148"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 143–148</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A request with no <code>Content-Type</code> is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn rejects_a_missing_content_type() {
+    assert!(require_form_urlencoded_content_type(&amp;HeaderMap::new()).is_err());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_request.rs#L152-L154"><code>authorization-server-rust/src/http/routes/oauth/token_request.rs</code> lines 152–154</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthclient_auth"><a class="header" href="#httproutesoauthclient_auth"><code>http::routes::oauth::client_auth</code></a></h2>
+<p>A client presents its credentials one of two ways (RFC 6749 §2.3.1): the HTTP Basic <code>Authorization</code> header, or <code>client_id</code> and <code>client_secret</code> in the form body. <strong>The header wins; the body is the fallback; a secret both ways is refused</strong>, since §2.3 forbids more than one authentication method per request. Checking the credentials is the domain’s job; this file only reads them. The tests build the expected answer with <a href="../test-fixtures.html#token-endpoint"><code>presented</code></a> and a Basic header with <a href="../test-fixtures.html#token-endpoint"><code>basic_authorization</code></a>.</p>
+<h3 id="resolve_client_credentials"><a class="header" href="#resolve_client_credentials"><code>resolve_client_credentials</code></a></h3>
+<div id="item-resolve_client_credentials" class="item-anchor"></div>
+
+<p>Resolve the client credentials for a token-style request from the request’s
+<code>Authorization</code> header value (<code>None</code> when absent) and the raw
+<code>application/x-www-form-urlencoded</code> body.</p>
+<p>Precedence per RFC 6749 §2.3.1: a Basic <code>Authorization</code> header wins; body
+<code>client_id</code>/<code>client_secret</code> are the fallback. A body <code>client_id</code> alongside
+Basic is tolerated when it matches the Basic userid (some client libraries
+always send it); a body <code>client_secret</code> alongside Basic is a second
+authentication method and is rejected (§2.3).</p>
+<h4 id="errors"><a class="header" href="#errors">Errors</a></h4>
+<ul>
+<li><a href="#item-ResolveClientCredentialsError"><code>ResolveClientCredentialsError::MalformedBasic</code></a> when a Basic header is
+present but undecodable.</li>
+<li><a href="#item-ResolveClientCredentialsError"><code>ResolveClientCredentialsError::InvalidRequest</code></a> when credentials are
+presented both ways, the body <code>client_id</code> contradicts the Basic userid,
+or no <code>client_id</code> is present at all.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn resolve_client_credentials(
+    authorization: Option&lt;&amp;str&gt;,
+    form_body: &amp;str,
+) -&gt; Result&lt;PresentedCredentials, ResolveClientCredentialsError&gt; {
+    // A structurally unparseable body simply contributes no credentials; the
+    // grant-payload parse is responsible for rejecting malformed bodies. `mut`
+    // so the success path can `take` the fields out (the zero-on-drop structs
+    // forbid moving fields by plain access).
+    let mut body: BodyClientCredentials = serde_urlencoded::from_str(form_body).unwrap_or_default();
+    let basic =
+        decode_basic_authorization_header(authorization).map_err(|MalformedBasicHeader| {
+            ResolveClientCredentialsError::MalformedBasic(OAuthError::new(
+                OAuthErrorCode::InvalidClient,
+                Some("Malformed Basic authorization header"),
+            ))
+        })?;
+    match basic {
+        Some(mut basic) =&gt; {
+            if body.client_secret.is_some() {
+                return Err(ResolveClientCredentialsError::InvalidRequest(
+                    OAuthError::new(
+                        OAuthErrorCode::InvalidRequest,
+                        Some("Multiple client authentication methods presented"),
+                    ),
+                ));
+            }
+            if body
+                .client_id
+                .as_deref()
+                .is_some_and(|body_client_id| body_client_id != basic.client_id)
+            {
+                return Err(ResolveClientCredentialsError::InvalidRequest(
+                    OAuthError::new(
+                        OAuthErrorCode::InvalidRequest,
+                        Some("client_id does not match Basic authorization header"),
+                    ),
+                ));
+            }
+            // `take` moves the fields out without a plain-access move, which the
+            // zero-on-drop `BasicCredentials` forbids; the emptied `basic`
+            // scrubs its now-empty buffers on drop.
+            Ok(PresentedCredentials {
+                credentials: ClientCredentials {
+                    client_id: std::mem::take(&amp;mut basic.client_id),
+                    client_secret: Some(std::mem::take(&amp;mut basic.client_secret)),
+                },
+                presented_via: ClientAuthenticationMethod::HttpBasic,
+            })
+        }
+        None =&gt; match body.client_id.take() {
+            Some(client_id) =&gt; Ok(PresentedCredentials {
+                credentials: ClientCredentials {
+                    client_id,
+                    client_secret: body.client_secret.take(),
+                },
+                presented_via: ClientAuthenticationMethod::RequestBody,
+            }),
+            None =&gt; Err(ResolveClientCredentialsError::InvalidRequest(
+                OAuthError::new(OAuthErrorCode::InvalidRequest, Some("Missing client_id")),
+            )),
+        },
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L149-L211"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 149–211</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Without an <code>Authorization</code> header, the body’s <code>client_id</code> and secret are read,
+presented in the body.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn resolves_body_credentials_when_no_authorization_header() {
+    let resolved = resolve_client_credentials(
+        None,
+        "grant_type=refresh_token&amp;client_id=app&amp;client_secret=s3cret&amp;refresh_token=x",
+    )
+    .unwrap();
+    assert_eq!(
+        resolved,
+        presented(
+            "app",
+            Some("s3cret"),
+            ClientAuthenticationMethod::RequestBody
+        )
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L313-L327"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 313–327</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A Basic header with no body credentials is read, presented by Basic.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn resolves_basic_header_credentials() {
+    let authorization = basic_authorization("app", "s3cret");
+    let resolved = resolve_client_credentials(
+        Some(&amp;authorization),
+        "grant_type=refresh_token&amp;refresh_token=x",
+    )
+    .unwrap();
+    assert_eq!(
+        resolved,
+        presented("app", Some("s3cret"), ClientAuthenticationMethod::HttpBasic)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L331-L342"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 331–342</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A body <code>client_secret</code> beside a Basic header is a second authentication
+method, refused as <code>invalid_request</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_alongside_body_client_secret_is_invalid_request() {
+    let authorization = basic_authorization("app", "s3cret");
+    let err =
+        resolve_client_credentials(Some(&amp;authorization), "client_secret=s3cret").unwrap_err();
+    let ResolveClientCredentialsError::InvalidRequest(oauth_error) = err else {
+        panic!("expected InvalidRequest, got {err:?}");
+    };
+    assert_eq!(oauth_error.error, "invalid_request");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L409-L417"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 409–417</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A body <code>client_id</code> naming the Basic client is tolerated, and the method
+stays Basic.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_with_matching_body_client_id_is_allowed() {
+    let authorization = basic_authorization("app", "s3cret");
+    let resolved = resolve_client_credentials(Some(&amp;authorization), "client_id=app").unwrap();
+    assert_eq!(resolved.credentials.client_id, "app");
+    assert_eq!(
+        resolved.presented_via,
+        ClientAuthenticationMethod::HttpBasic
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L422-L430"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 422–430</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A body <code>client_id</code> naming another client than the Basic header is
+<code>invalid_request</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_with_mismatched_body_client_id_is_invalid_request() {
+    let authorization = basic_authorization("app", "s3cret");
+    let err =
+        resolve_client_credentials(Some(&amp;authorization), "client_id=other-app").unwrap_err();
+    let ResolveClientCredentialsError::InvalidRequest(oauth_error) = err else {
+        panic!("expected InvalidRequest, got {err:?}");
+    };
+    assert_eq!(oauth_error.error, "invalid_request");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L435-L443"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 435–443</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>With no Basic header and no body <code>client_id</code>, the request is
+<code>invalid_request</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn missing_client_id_everywhere_is_invalid_request() {
+    let err = resolve_client_credentials(None, "grant_type=refresh_token&amp;refresh_token=x")
+        .unwrap_err();
+    let ResolveClientCredentialsError::InvalidRequest(oauth_error) = err else {
+        panic!("expected InvalidRequest, got {err:?}");
+    };
+    assert_eq!(oauth_error.error, "invalid_request");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L448-L455"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 448–455</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="presentedcredentials"><a class="header" href="#presentedcredentials"><code>PresentedCredentials</code></a></h3>
+<p>The domain’s <a href="../../domain/client-credentials.html#item-ClientCredentials"><code>ClientCredentials</code></a>, and how they arrived.</p>
+<div id="item-PresentedCredentials" class="item-anchor"></div>
+
+<p>The domain <a href="../../domain/client-credentials.html#item-ClientCredentials"><code>ClientCredentials</code></a> plus the transport fact the domain doesn’t
+need: how they were presented, which drives the RFC 6749 §5.2
+<code>WWW-Authenticate: Basic</code> challenge on an authentication failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct PresentedCredentials {
+    /// The `client_id` and, for a confidential client, the secret, for the
+    /// domain to check.
+    pub credentials: ClientCredentials,
+    /// How they arrived, which decides whether a `401` carries the Basic
+    /// challenge.
+    pub presented_via: ClientAuthenticationMethod,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L49-L56"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 49–56</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="clientauthenticationmethod"><a class="header" href="#clientauthenticationmethod"><code>ClientAuthenticationMethod</code></a></h3>
+<div id="item-ClientAuthenticationMethod" class="item-anchor"></div>
+
+<p>The two RFC 6749 §2.3.1 ways a client presents its credentials: the HTTP
+Basic <code>Authorization</code> header (the registered <code>client_secret_basic</code> method)
+or <code>client_id</code>/<code>client_secret</code> form-body parameters (<code>client_secret_post</code>).
+Authentication failures must answer a header-based attempt with a matching
+<code>WWW-Authenticate</code> challenge (§5.2), so the method travels with the
+credentials.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum ClientAuthenticationMethod {
+    /// HTTP Basic `Authorization` header (`client_secret_basic`).
+    HttpBasic,
+    /// `client_id`/`client_secret` in the form body (`client_secret_post`).
+    RequestBody,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L38-L43"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 38–43</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="bodyclientcredentials"><a class="header" href="#bodyclientcredentials"><code>BodyClientCredentials</code></a></h3>
+<div id="item-BodyClientCredentials" class="item-anchor"></div>
+
+<p>Form-body credential parameters, parsed independently of the grant payload
+(serde ignores the grant-specific fields).</p>
+<p>The parsed <code>client_secret</code> is scrubbed on drop so a body secret that never
+makes it into a resolved <a href="../../domain/client-credentials.html#item-ClientCredentials"><code>ClientCredentials</code></a> (e.g. rejected because Basic
+auth was also presented) doesn’t linger as plaintext. <code>client_id</code> is not
+secret, so it is skipped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct BodyClientCredentials {
+    /// The body's `client_id`: the client's whole proof for a public client,
+    /// or, beside a Basic header, tolerated only when it names the same
+    /// client.
+    client_id: Option&lt;String&gt;,
+    /// The body's `client_secret` (`client_secret_post`). Beside a Basic
+    /// header it is a second authentication method, and refused.
+    client_secret: Option&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L99-L108"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 99–108</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="basiccredentials"><a class="header" href="#basiccredentials"><code>BasicCredentials</code></a></h3>
+<div id="item-BasicCredentials" class="item-anchor"></div>
+
+<p>Decoded userid/password halves of a Basic <code>Authorization</code> header
+(RFC 6749 §2.3.1).</p>
+<p>The <code>client_secret</code> half is scrubbed on drop so a decoded Basic secret that
+is rejected before becoming a resolved <a href="../../domain/client-credentials.html#item-ClientCredentials"><code>ClientCredentials</code></a> (e.g. presented
+alongside a body secret, or with a mismatched body <code>client_id</code>) doesn’t
+linger as plaintext. <code>client_id</code> is not secret, so it is skipped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct BasicCredentials {
+    /// The userid half: the client's `client_id`.
+    client_id: String,
+    /// The password half: the client's secret, kept whole even when it holds
+    /// a colon, since the pair splits at the first one.
+    client_secret: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L118-L125"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 118–125</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="decode_basic_authorization_header"><a class="header" href="#decode_basic_authorization_header"><code>decode_basic_authorization_header</code></a></h3>
+<div id="item-decode_basic_authorization_header" class="item-anchor"></div>
+
+<p>Decode the <code>Authorization</code> header value as Basic credentials per RFC 6749
+§2.3.1: base64 → UTF-8 → split at the first colon → form-urlencoded-decode
+each half.</p>
+<p><code>Ok(None)</code> means no Basic attempt (<code>authorization</code> is <code>None</code>, or a different
+scheme such as <code>Bearer</code> — mirroring <code>try_bearer_token_from_headers</code>);
+<code>Err(MalformedBasicHeader)</code> means the client attempted Basic but the
+header is undecodable.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn decode_basic_authorization_header(
+    authorization: Option&lt;&amp;str&gt;,
+) -&gt; Result&lt;Option&lt;BasicCredentials&gt;, MalformedBasicHeader&gt; {
+    let Some(value) = authorization else {
+        return Ok(None);
+    };
+    let prefix = "basic ";
+    // Case-insensitive prefix check against just the scheme bytes, matching
+    // `try_bearer_token_from_headers` in `middleware/require_auth.rs`.
+    if !value
+        .get(..prefix.len())
+        .is_some_and(|p| p.eq_ignore_ascii_case(prefix))
+    {
+        return Ok(None);
+    }
+    try_decode_basic_payload(value[prefix.len()..].trim()).map(Some)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L221-L237"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 221–237</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Basic scheme is matched without regard to case: <code>bASIC</code> is Basic.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_scheme_match_is_case_insensitive() {
+    let encoded = base64::standard_encode("app:s3cret".as_bytes());
+    let authorization = format!("bASIC {encoded}");
+    let resolved = resolve_client_credentials(Some(&amp;authorization), "").unwrap();
+    assert_eq!(
+        resolved.presented_via,
+        ClientAuthenticationMethod::HttpBasic
+    );
+    assert_eq!(resolved.credentials.client_id, "app");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L346-L355"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 346–355</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A header with another scheme, such as <code>Bearer</code>, is no Basic attempt: it is
+ignored, and the body’s credentials are read.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn non_basic_authorization_scheme_falls_back_to_body() {
+    let resolved = resolve_client_credentials(
+        Some("Bearer some-jwt"),
+        "client_id=app&amp;client_secret=s3cret",
+    )
+    .unwrap();
+    assert_eq!(
+        resolved,
+        presented(
+            "app",
+            Some("s3cret"),
+            ClientAuthenticationMethod::RequestBody
+        )
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L360-L374"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 360–374</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="try_decode_basic_payload"><a class="header" href="#try_decode_basic_payload"><code>try_decode_basic_payload</code></a></h3>
+<div id="item-try_decode_basic_payload" class="item-anchor"></div>
+
+<p>The fallible tail of <a href="#item-decode_basic_authorization_header"><code>decode_basic_authorization_header</code></a>, split out so
+every decode failure collapses to the same <a href="#item-MalformedBasicHeader"><code>MalformedBasicHeader</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn try_decode_basic_payload(
+    encoded_payload: &amp;str,
+) -&gt; Result&lt;BasicCredentials, MalformedBasicHeader&gt; {
+    let decoded_bytes =
+        base64::standard_decode(encoded_payload).map_err(|_| MalformedBasicHeader)?;
+    // The decoded `id:secret` pair holds the plaintext secret; `Zeroizing` scrubs
+    // it when this frame returns. `from_utf8` reuses `decoded_bytes`' buffer, so
+    // wrapping the resulting string covers the raw bytes too. On the invalid-UTF-8
+    // path `from_utf8` hands the bytes back inside the `FromUtf8Error`, which would
+    // otherwise drop them unscrubbed — zeroize them before discarding the error.
+    let decoded_pair = Zeroizing::new(String::from_utf8(decoded_bytes).map_err(|e| {
+        e.into_bytes().zeroize();
+        MalformedBasicHeader
+    })?);
+    let (encoded_client_id, encoded_client_secret) =
+        decoded_pair.split_once(':').ok_or(MalformedBasicHeader)?;
+    Ok(BasicCredentials {
+        client_id: form_urlencoded_decode_credential_component(encoded_client_id)
+            .ok_or(MalformedBasicHeader)?,
+        client_secret: form_urlencoded_decode_credential_component(encoded_client_secret)
+            .ok_or(MalformedBasicHeader)?,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L241-L263"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 241–263</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The pair splits at the first colon, so a secret holding a colon is kept
+whole.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_password_keeps_text_after_first_colon() {
+    let authorization = basic_authorization("app", "se:cret");
+    let resolved = resolve_client_credentials(Some(&amp;authorization), "").unwrap();
+    assert_eq!(
+        resolved.credentials.client_secret.as_deref(),
+        Some("se:cret")
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L397-L404"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 397–404</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="form_urlencoded_decode_credential_component"><a class="header" href="#form_urlencoded_decode_credential_component"><code>form_urlencoded_decode_credential_component</code></a></h3>
+<p>Each half was form-encoded before the pair was base64-encoded, so <code>+</code> is a space and <code>%2B</code> a plus.</p>
+<div id="item-form_urlencoded_decode_credential_component" class="item-anchor"></div>
+
+<p>Decode one <code>application/x-www-form-urlencoded</code> value (<code>+</code> → space, then
+percent-decode), per the encoding RFC 6749 §2.3.1 applies to each Basic
+credential half before base64.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn form_urlencoded_decode_credential_component(encoded_component: &amp;str) -&gt; Option&lt;String&gt; {
+    // `+` → space first is safe: `%2B` contains no literal `+`, so an encoded
+    // plus still round-trips through the percent-decode step. `plus_decoded` is a
+    // full copy of the (possibly secret) component half, so wrap it in `Zeroizing`
+    // to scrub it when this frame returns rather than leaving it on the heap. The
+    // returned `String` is moved on into `BasicCredentials`, whose own drop scrubs
+    // it.
+    let plus_decoded = Zeroizing::new(encoded_component.replace('+', " "));
+    percent_encoding::percent_decode_str(&amp;plus_decoded)
+        .decode_utf8()
+        .ok()
+        .map(std::borrow::Cow::into_owned)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L268-L280"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 268–280</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each Basic half is form-decoded after the base64: <code>%2B</code> is a plus, <code>+</code> a
+space and <code>%40</code> an <code>@</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn basic_halves_are_form_urlencoded_decoded() {
+    // userid "app+one" → "app%2Bone"; password "p@ss word%" → "p%40ss+word%25"
+    let encoded = base64::standard_encode("app%2Bone:p%40ss+word%25".as_bytes());
+    let authorization = format!("Basic {encoded}");
+    let resolved = resolve_client_credentials(Some(&amp;authorization), "").unwrap();
+    assert_eq!(
+        resolved,
+        presented(
+            "app+one",
+            Some("p@ss word%"),
+            ClientAuthenticationMethod::HttpBasic
+        )
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L379-L392"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 379–392</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="malformedbasicheader"><a class="header" href="#malformedbasicheader"><code>MalformedBasicHeader</code></a></h3>
+<div id="item-MalformedBasicHeader" class="item-anchor"></div>
+
+<p>Marker error: an <code>Authorization: Basic</code> header was present but could not
+be decoded (bad base64, invalid UTF-8, no colon, undecodable halves).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct MalformedBasicHeader;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L130"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> line 130</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="resolveclientcredentialserror"><a class="header" href="#resolveclientcredentialserror"><code>ResolveClientCredentialsError</code></a></h3>
+<div id="item-ResolveClientCredentialsError" class="item-anchor"></div>
+
+<p>Failure modes of credential resolution, before any store lookup.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum ResolveClientCredentialsError {
+    /// RFC 6749 §2.3 violation (credentials presented two ways, or a body
+    /// `client_id` contradicting the Basic userid) or no `client_id` at all —
+    /// surface as 400 `invalid_request`.
+    InvalidRequest(OAuthError),
+    /// The client attempted Basic auth but the header is unusable — surface
+    /// as 401 `invalid_client` with a `WWW-Authenticate: Basic` challenge
+    /// (RFC 6749 §5.2).
+    MalformedBasic(OAuthError),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L60-L69"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 60–69</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response"><a class="header" href="#into_response"><code>into_response</code></a></h4>
+<div id="item-ResolveClientCredentialsError--into_response" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    match self {
+        ResolveClientCredentialsError::InvalidRequest(error) =&gt; OAuthErrorResponse {
+            status: StatusCode::BAD_REQUEST,
+            error,
+        }
+        .into_response(),
+        ResolveClientCredentialsError::MalformedBasic(error) =&gt; (
+            [(header::WWW_AUTHENTICATE, BASIC_AUTH_CHALLENGE)],
+            OAuthErrorResponse {
+                status: StatusCode::UNAUTHORIZED,
+                error,
+            },
+        )
+            .into_response(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L72-L88"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 72–88</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A Basic header that won’t decode (bad base64, no colon, bytes that aren’t
+UTF-8, a percent-escape to a bad byte) is a failed authentication: a <code>401</code>
+carrying the <code>WWW-Authenticate: Basic</code> challenge.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn malformed_basic_header_is_invalid_client_with_challenge() {
+    let malformed_payloads = [
+        "Basic !!!not-base64!!!".to_string(),
+        // valid base64 of a colon-less payload
+        format!(
+            "Basic {}",
+            base64::standard_encode("no-colon-here".as_bytes())
+        ),
+        // valid base64 of invalid UTF-8 bytes
+        format!(
+            "Basic {}",
+            base64::standard_encode(&amp;[0xff, 0xfe, b':', b'x'])
+        ),
+        // a percent-escape that decodes to an invalid UTF-8 byte
+        format!(
+            "Basic {}",
+            base64::standard_encode("app%ff:secret".as_bytes())
+        ),
+    ];
+    for authorization in malformed_payloads {
+        let err = resolve_client_credentials(Some(&amp;authorization), "").unwrap_err();
+        assert!(
+            matches!(err, ResolveClientCredentialsError::MalformedBasic(_)),
+            "expected MalformedBasic for {authorization:?}, got {err:?}"
+        );
+        let response = err.into_response();
+        assert_eq!(response.status(), StatusCode::UNAUTHORIZED);
+        assert_eq!(
+            response
+                .headers()
+                .get(header::WWW_AUTHENTICATE)
+                .and_then(|v| v.to_str().ok()),
+            Some(BASIC_AUTH_CHALLENGE)
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L461-L496"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> lines 461–496</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="basic_auth_challenge"><a class="header" href="#basic_auth_challenge"><code>BASIC_AUTH_CHALLENGE</code></a></h3>
+<div id="item-BASIC_AUTH_CHALLENGE" class="item-anchor"></div>
+
+<p><code>WWW-Authenticate</code> challenge attached to 401 responses when the client
+attempted Basic authentication (RFC 6749 §5.2: the response “MUST include
+the <code>WWW-Authenticate</code> response header field matching the authentication
+scheme used by the client”).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const BASIC_AUTH_CHALLENGE: &amp;str = r#"Basic realm="wildflower-authorization""#;
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/client_auth.rs#L29"><code>authorization-server-rust/src/http/routes/oauth/client_auth.rs</code> line 29</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthinternal"><a class="header" href="#httproutesoauthinternal"><code>http::routes::oauth::internal</code></a></h2>
+<h3 id="oautherrorresponse"><a class="header" href="#oautherrorresponse"><code>OAuthErrorResponse</code></a></h3>
+<div id="item-OAuthErrorResponse" class="item-anchor"></div>
+
+<p>An <a href="../errors-and-wire-shapes.html#item-OAuthError"><code>OAuthError</code></a> paired with the HTTP status it renders at — the
+<code>(status, JSON body)</code> shape every OAuth-surface error response shares.
+On its own it isn’t cache-suppressed: the status poll renders it that way,
+and the token-style routes wrap it in <a href="#item-TokenError"><code>TokenError</code></a>, which is.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct OAuthErrorResponse {
+    /// The HTTP status: `400` for the caller's mistakes, `401` for a failed
+    /// client authentication, `500` for the server's own failure.
+    pub status: StatusCode,
+    /// The RFC 6749 §5.2 body: `error` and an optional `error_description`.
+    pub error: OAuthError,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L24-L30"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 24–30</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="new"><a class="header" href="#new"><code>new</code></a></h4>
+<div id="item-OAuthErrorResponse--new" class="item-anchor"></div>
+
+<p>The response at <code>status</code> with the <code>error</code> code and an optional
+human-readable <code>description</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn new(status: StatusCode, error: OAuthErrorCode, description: Option&lt;&amp;str&gt;) -&gt; Self {
+    Self {
+        status,
+        error: OAuthError::new(error, description),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L35-L40"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 35–40</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="server_error"><a class="header" href="#server_error"><code>server_error</code></a></h4>
+<div id="item-OAuthErrorResponse--server_error" class="item-anchor"></div>
+
+<p>A <code>server_error</code> 500 carrying the RFC 6749 §5.2 body — the shape every
+“the server failed mid-flow” OAuth response shares. Shared so a surface
+like the authorize-status poll (which mixes <code>AuthorizationServerError</code> with a
+non-cache-suppressed <code>OAuthErrorResponse</code>, so it can’t use <code>TokenError</code>)
+doesn’t hand-roll the status + code each time.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn server_error(description: &amp;str) -&gt; Self {
+    Self::new(
+        StatusCode::INTERNAL_SERVER_ERROR,
+        OAuthErrorCode::ServerError,
+        Some(description),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L47-L53"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 47–53</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response-1"><a class="header" href="#into_response-1"><code>into_response</code></a></h4>
+<div id="item-OAuthErrorResponse--into_response" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    (self.status, Json(self.error)).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L57-L59"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 57–59</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="tokenerror"><a class="header" href="#tokenerror"><code>TokenError</code></a></h3>
+<div id="item-TokenError" class="item-anchor"></div>
+
+<p>Error half of the token / device-authorization / revocation endpoints’ <code>Result</code>-returning
+handlers (the OAuth-surface analogue of the Owner <code>/authorization</code> surface’s
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError</code></a>). Every
+variant renders the matching RFC 6749 §5.2 response, cache-suppressed per
+§5.1, through <code>IntoResponse</code> — so a fallible step bails with <code>?</code> instead of
+a <code>match</code> + <code>return</code> at each call site. Kept small (no embedded <code>Response</code>)
+so <code>Result&lt;_, TokenError&gt;</code> doesn’t trip <code>clippy::result_large_err</code>.</p>
+<p>It is also the <a href="#item-TokenRequest"><code>TokenRequest</code></a>
+extractor’s rejection. Beyond the constructors, the rest come by
+conversion: a credential error and an authentication failure keep their
+own rendering, a store failure becomes the logged opaque 500, and a failed
+exchange maps onto RFC 6749 §5.2 and RFC 8628 §3.5.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum TokenError {
+    /// An OAuth error body at its status: the §5.2 400s (`invalid_grant`,
+    /// `unauthorized_client`, `invalid_request`, `invalid_scope`, `slow_down`,
+    /// …) and the JSON-bodied 500 from a token-mint failure.
+    Oauth(OAuthErrorResponse),
+    /// Client-credential resolution failure (RFC 6749 §2.3) — renders its own
+    /// response, possibly with a `WWW-Authenticate: Basic` challenge.
+    ResolveCredentials(ResolveClientCredentialsError),
+    /// Client-authentication failure — renders its own response, possibly with
+    /// a `WWW-Authenticate: Basic` challenge.
+    ClientAuth(ClientAuthenticationFailure),
+    /// A logged, opaque, cache-suppressed 500 (e.g. a store read failed) —
+    /// see [`InternalError`].
+    Internal(InternalError),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L75-L89"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 75–89</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="bad_request"><a class="header" href="#bad_request"><code>bad_request</code></a></h4>
+<div id="item-TokenError--bad_request" class="item-anchor"></div>
+
+<p>A 400 OAuth error: the <code>error</code> code plus an optional human-readable
+<code>description</code> (RFC 6749 §5.2).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn bad_request(error: OAuthErrorCode, description: Option&lt;&amp;str&gt;) -&gt; Self {
+    TokenError::Oauth(OAuthErrorResponse::new(
+        StatusCode::BAD_REQUEST,
+        error,
+        description,
+    ))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L94-L100"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 94–100</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="server_error-1"><a class="header" href="#server_error-1"><code>server_error</code></a></h4>
+<div id="item-TokenError--server_error" class="item-anchor"></div>
+
+<p>An OAuth <code>server_error</code> 500 with a JSON body — used when token minting
+fails after the request was otherwise valid.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn server_error(error: OAuthError) -&gt; Self {
+    TokenError::Oauth(OAuthErrorResponse {
+        status: StatusCode::INTERNAL_SERVER_ERROR,
+        error,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L104-L109"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 104–109</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="internal"><a class="header" href="#internal"><code>internal</code></a></h4>
+<div id="item-TokenError--internal" class="item-anchor"></div>
+
+<p>A server-side failure: logs <code>source</code> against <code>context</code> and 500s opaquely.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn internal(context: &amp;'static str, source: impl std::fmt::Display) -&gt; Self {
+    TokenError::Internal(InternalError::new(context, source))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L112-L114"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 112–114</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response-2"><a class="header" href="#into_response-2"><code>into_response</code></a></h4>
+<div id="item-TokenError--into_response" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    match self {
+        TokenError::Oauth(response) =&gt; CacheSuppressed(response).into_response(),
+        TokenError::ResolveCredentials(error) =&gt; CacheSuppressed(error).into_response(),
+        TokenError::ClientAuth(error) =&gt; CacheSuppressed(error).into_response(),
+        TokenError::Internal(error) =&gt; CacheSuppressed(error).into_response(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L243-L250"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 243–250</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="conversions"><a class="header" href="#conversions">Conversions</a></h4>
+<p>The rest come by conversion. A credential error and an authentication failure keep their own rendering. A store failure (<a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError</code></a>) becomes the logged, opaque <code>500</code>. A failed exchange (<a href="../../domain/errors.html#item-TokenExchangeError"><code>TokenExchangeError</code></a>) maps onto RFC 6749 §5.2 and RFC 8628 §3.5: a wrong grant type is <code>400 unauthorized_client</code>; a bad verifier and an <a href="../../domain/errors.html#item-InvalidGrantReason"><code>InvalidGrantReason</code></a> are <code>400 invalid_grant</code>; a bad <code>redirect_uri</code> is <code>400 invalid_request</code>; a device poll’s states are <code>400</code> with their own codes; a token that couldn’t be signed is <code>500 server_error</code>.</p>
+<h3 id="invalid_grant_description"><a class="header" href="#invalid_grant_description"><code>invalid_grant_description</code></a></h3>
+<p><strong>The wire doesn’t say which check refused a code.</strong> Wrong client, wrong <code>redirect_uri</code>, expired, wrong verifier and already redeemed all read “Invalid authorization grant”, since telling them apart would leak facts about a code that may be another client’s. The reason carries no secret, so it is logged, and the operator can still tell them apart.</p>
+<div id="item-invalid_grant_description" class="item-anchor"></div>
+
+<p>The one wire description each family of refusal shares (see
+<a href="#item-TokenError"><code>From&lt;TokenExchangeError&gt;</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn invalid_grant_description(reason: &amp;InvalidGrantReason) -&gt; &amp;'static str {
+    match reason {
+        InvalidGrantReason::CodeNotFoundOrRedeemed
+        | InvalidGrantReason::CodeClientMismatch { .. }
+        | InvalidGrantReason::CodeRedirectMismatch { .. }
+        | InvalidGrantReason::CodeExpired { .. }
+        | InvalidGrantReason::PkceMismatch { .. } =&gt; "Invalid authorization grant",
+        InvalidGrantReason::DeviceRequestNotFound { .. } =&gt; "Unknown device_code",
+        InvalidGrantReason::DeviceCodeAlreadyRedeemed { .. } =&gt; "Device code already redeemed",
+        InvalidGrantReason::RefreshTokenNotFound
+        | InvalidGrantReason::RefreshTokenClientMismatch { .. }
+        | InvalidGrantReason::RefreshTokenVanished { .. } =&gt; "Invalid refresh_token parameter",
+        InvalidGrantReason::RefreshTokenExpired =&gt; "Refresh token has expired",
+        InvalidGrantReason::RefreshTokenReplayed { .. }
+        | InvalidGrantReason::RefreshTokenSessionRevoked { .. }
+        | InvalidGrantReason::RefreshTokenClientRevoked { .. } =&gt; "Refresh token has been revoked",
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L211-L228"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 211–228</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="clientauthenticationfailure"><a class="header" href="#clientauthenticationfailure"><code>ClientAuthenticationFailure</code></a></h3>
+<p>The domain’s <a href="../../authority/authenticated-client.html"><code>ClientAuthenticationError</code></a> and how the client presented its credentials.</p>
+<div id="item-ClientAuthenticationFailure" class="item-anchor"></div>
+
+<p>A domain <a href="../../authority/authenticated-client.html#item-ClientAuthenticationError"><code>ClientAuthenticationError</code></a> paired with how the client
+authenticated, which is what the rendering needs: RFC 6749 §5.2 says a <code>401</code>
+answering a Basic-authentication attempt carries a matching
+<code>WWW-Authenticate: Basic</code> challenge.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct ClientAuthenticationFailure {
+    /// Which check refused the client, or the server-side failure that kept
+    /// it from being checked.
+    pub error: ClientAuthenticationError,
+    /// How the client presented its credentials: a Basic attempt's `401`
+    /// carries the challenge, a body attempt's doesn't.
+    pub presented_via: ClientAuthenticationMethod,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L258-L265"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 258–265</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response-3"><a class="header" href="#into_response-3"><code>into_response</code></a></h4>
+<div id="item-ClientAuthenticationFailure--into_response" class="item-anchor"></div>
+
+<p>The caller’s-fault variants render as <code>401 invalid_client</code> with a
+description naming the check; the server-side ones log and render as
+<code>500 server_error</code> with no detail.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    let server_error = || {
+        OAuthErrorResponse::new(
+            StatusCode::INTERNAL_SERVER_ERROR,
+            OAuthErrorCode::ServerError,
+            None,
+        )
+        .into_response()
+    };
+    let description = match self.error {
+        ClientAuthenticationError::UnknownClient =&gt; "Unknown client_id",
+        ClientAuthenticationError::Disabled =&gt; "Client is disabled",
+        ClientAuthenticationError::SecretNotConfigured =&gt; "Client secret not configured",
+        ClientAuthenticationError::SecretRequired =&gt; "Client secret required",
+        ClientAuthenticationError::SecretMismatch =&gt; "Invalid client_secret",
+        ClientAuthenticationError::Verification(error) =&gt; {
+            tracing::error!(%error, "client secret verification failed");
+            return server_error();
+        }
+        ClientAuthenticationError::Store(error) =&gt; {
+            tracing::error!(%error, "client_by_id lookup failed");
+            return server_error();
+        }
+    };
+    let unauthorized = OAuthErrorResponse::new(
+        StatusCode::UNAUTHORIZED,
+        OAuthErrorCode::InvalidClient,
+        Some(description),
+    );
+    match self.presented_via {
+        ClientAuthenticationMethod::HttpBasic =&gt; (
+            [(header::WWW_AUTHENTICATE, BASIC_AUTH_CHALLENGE)],
+            unauthorized,
+        )
+            .into_response(),
+        ClientAuthenticationMethod::RequestBody =&gt; unauthorized.into_response(),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/internal.rs#L271-L308"><code>authorization-server-rust/src/http/routes/oauth/internal.rs</code> lines 271–308</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthtoken_exchange"><a class="header" href="#httproutesoauthtoken_exchange"><code>http::routes::oauth::token_exchange</code></a></h2>
+<h3 id="tokenpayload"><a class="header" href="#tokenpayload"><code>TokenPayload</code></a></h3>
+<div id="item-TokenPayload" class="item-anchor"></div>
+
+<p>Body of an RFC 6749 / RFC 8628 token endpoint request, dispatched by the
+wire-level <code>grant_type</code> field. Client credentials are not parsed here —
+they may also arrive via the <code>Authorization: Basic</code> header, so the
+<a href="#item-TokenRequest"><code>TokenRequest</code></a> extractor owns both sources (any body
+<code>client_id</code>/<code>client_secret</code> fields are simply ignored by this enum).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum TokenPayload {
+    /// Authorization-code grant — the client redeems a previously-issued
+    /// `code` (RFC 6749 §4.1.3) along with the PKCE verifier.
+    AuthorizationCode {
+        /// The code `/oauth/authorize` sent to the client's redirect; it is
+        /// redeemable once, by the client it was issued to.
+        code: String,
+        /// The PKCE verifier whose S256 hash is the request's
+        /// `code_challenge` (RFC 7636 §4.5).
+        code_verifier: String,
+        /// Must be the `redirect_uri` the authorization request named
+        /// (RFC 6749 §4.1.3).
+        redirect_uri: String,
+    },
+    /// Device-code grant — the client polls with the `device_code` it was
+    /// handed at `/device_authorization` (RFC 8628 §3.4).
+    DeviceCode {
+        /// The `device_code` `/oauth/device_authorization` answered with.
+        device_code: String,
+    },
+    /// Refresh-token grant — the client trades its live refresh token for a
+    /// fresh access token plus the refresh token's successor (RFC 6749 §6).
+    RefreshToken {
+        /// The refresh token being rotated; the trade spends it.
+        refresh_token: String,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs#L24-L53"><code>authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs</code> lines 24–53</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Clients using <code>client_secret_post</code> keep their credentials in the form
+body; the grant enum doesn’t parse them, so it must tolerate the extra
+fields rather than reject the request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn token_payload_tolerates_unparsed_client_credential_fields() {
+    let payload: TokenPayload = serde_urlencoded::from_str(
+        "grant_type=refresh_token&amp;client_id=app&amp;client_secret=s3cret&amp;refresh_token=tok",
+    )
+    .expect("unknown fields are ignored");
+    let TokenPayload::RefreshToken { refresh_token } = payload else {
+        panic!("expected RefreshToken variant, got {payload:?}");
+    };
+    assert_eq!(refresh_token, "tok");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs#L134-L143"><code>authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs</code> lines 134–143</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_token_request"><a class="header" href="#handle_token_request"><code>handle_token_request</code></a></h3>
+<p>Each exchange goes to the <a href="../../capabilities/oauth/token-exchanger.html">token exchanger</a>, with the authenticated client.</p>
+<div id="item-handle_token_request" class="item-anchor"></div>
+
+<p><code>POST /oauth/token</code> (RFC 6749 §3.2, RFC 8628 §3.4): hand the body’s grant
+to the matching exchange for the authenticated client, an authorization
+code with its PKCE verifier, a device code while the device polls, or a
+refresh token for an access token and its successor. A <code>grant_type</code> the
+endpoint doesn’t take fails to parse, so it is the extractor’s
+<code>400 invalid_request</code>, “Malformed payload”.</p>
+<p>Either outcome is uncached (§5.1): <code>Ok</code> through <a href="../errors-and-wire-shapes.html#item-TokenResponse"><code>TokenResponse</code></a>, <code>Err</code>
+through <a href="#item-TokenError"><code>TokenError</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_token_request(
+    exchanger: Live&lt;LiveTokenExchanger&gt;,
+    request: TokenRequest&lt;TokenPayload&gt;,
+) -&gt; Response {
+    let TokenRequest {
+        payload,
+        authenticated_client,
+    } = request;
+    let now = Utc::now();
+    let exchanged = match payload {
+        TokenPayload::AuthorizationCode {
+            code,
+            code_verifier,
+            redirect_uri,
+        } =&gt; exchanger.exchange_authorization_code(
+            &amp;authenticated_client,
+            &amp;PresentedAuthorizationCode {
+                code: &amp;code,
+                code_verifier: &amp;code_verifier,
+                redirect_uri: &amp;redirect_uri,
+            },
+            now,
+        ),
+        TokenPayload::DeviceCode { device_code } =&gt; {
+            exchanger.exchange_device_code(&amp;authenticated_client, &amp;device_code, now)
+        }
+        TokenPayload::RefreshToken { refresh_token } =&gt; {
+            exchanger.exchange_refresh_token(&amp;authenticated_client, &amp;refresh_token, now)
+        }
+    };
+    let token = match exchanged {
+        Ok(token) =&gt; token,
+        Err(error) =&gt; return TokenError::from(error).into_response(),
+    };
+    token_response(token).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs#L76-L111"><code>authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs</code> lines 76–111</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="token_response"><a class="header" href="#token_response"><code>token_response</code></a></h3>
+<p>It renders as a <a href="../errors-and-wire-shapes.html#item-TokenResponse"><code>TokenResponse</code></a>.</p>
+<div id="item-token_response" class="item-anchor"></div>
+
+<p>The RFC 6749 §5.1 body for an exchange, with SMART’s <code>patient</code> when the
+grant binds one.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn token_response(token: IssuedTokens) -&gt; TokenResponse {
+    TokenResponse {
+        access_token: token.access_token,
+        token_type: "Bearer".to_string(),
+        expires_in: token.expires_in,
+        scope: token.granted_scopes.join(" "),
+        refresh_token: token.refresh_token,
+        patient: token.patient,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs#L115-L124"><code>authorization-server-rust/src/http/routes/oauth/token_exchange/mod.rs</code> lines 115–124</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthtoken_revocation"><a class="header" href="#httproutesoauthtoken_revocation"><code>http::routes::oauth::token_revocation</code></a></h2>
+<h3 id="tokenrevocationpayload"><a class="header" href="#tokenrevocationpayload"><code>TokenRevocationPayload</code></a></h3>
+<div id="item-TokenRevocationPayload" class="item-anchor"></div>
+
+<p>Body of an RFC 7009 §2.1 revocation request. Client credentials are parsed
+by the <a href="#item-TokenRequest"><code>TokenRequest</code></a> extractor, and <code>token_type_hint</code> is not read: the
+revoker tells the token’s type from the token (§2.1 lets the server search
+every type it supports).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct TokenRevocationPayload {
+    /// The access or refresh token to revoke.
+    token: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_revocation.rs#L23-L26"><code>authorization-server-rust/src/http/routes/oauth/token_revocation.rs</code> lines 23–26</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_token_revocation_request"><a class="header" href="#handle_token_revocation_request"><code>handle_token_revocation_request</code></a></h3>
+<p><strong>A client learns nothing about tokens that aren’t its own.</strong> The <a href="../../capabilities/oauth/client-token-revoker.html">client token revoker</a> tells the token’s type from the token, ending a refresh token’s family or denylisting an access token, and only when it is the authenticated client’s.</p>
+<div id="item-handle_token_revocation_request" class="item-anchor"></div>
+
+<p>Revoke the presented token. RFC 7009 §2.2: <code>200</code> whether the token was
+revoked, was already dead, or was never one of this client’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_token_revocation_request(
+    revoker: Live&lt;LiveClientTokenRevoker&gt;,
+    request: TokenRequest&lt;TokenRevocationPayload&gt;,
+) -&gt; Result&lt;StatusCode, TokenError&gt; {
+    let TokenRequest {
+        payload,
+        authenticated_client,
+    } = request;
+    revoker.revoke(&amp;authenticated_client, &amp;payload.token, Utc::now())?;
+    Ok(StatusCode::OK)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/token_revocation.rs#L42-L52"><code>authorization-server-rust/src/http/routes/oauth/token_revocation.rs</code> lines 42–52</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/http/routes/device-authorization.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/http/routes/consent-routes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/http/routes/device-authorization.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/http/routes/consent-routes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

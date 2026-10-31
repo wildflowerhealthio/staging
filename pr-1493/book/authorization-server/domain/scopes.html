@@ -1,0 +1,1080 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Scopes - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-57569e7c.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-95701d4f.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="scopes"><a class="header" href="#scopes">Scopes</a></h1>
+<!-- markdownlint-disable-file link-fragments -- the item-… anchors are added when the book is built. -->
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs"><code>scopes-rust/src/smart.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/lib.rs"><code>scopes-rust/src/lib.rs</code></a></p>
+
+<p>A <strong>scope</strong> names a slice of access: <code>patient/Observation.rs</code> reads and searches one patient’s observations, <code>system/*.cruds</code> does anything to any resource, <code>offline_access</code> asks for a refresh token. Every list of scopes in this server is a list of these strings: what a client’s registration allows, what a request asks for, what a grant, a browser session or a token holds.</p>
+<p><strong>The server never compares scopes by spelling.</strong> It parses each string into a structured scope and asks whether one <strong>covers</strong> another: <code>patient/*.rs</code> covers <code>patient/Observation.r</code>, and <code>system/*.cruds</code> covers both. Whenever a later page says a registration, a grant or a browser session “covers” a request, it means <a href="#item-allowed_scope_covers"><code>allowed_scope_covers</code></a>. Parsing never fails: a string the grammar can’t read is kept as an unknown scope that covers only itself.</p>
+<p>The scopes live in their own slice, <code>slices/scopes/scopes-rust</code>, shared by the server’s Rust slices. This page shows the parts the authorization server uses. Three questions come up again and again:</p>
+<ul>
+<li><strong>Does one scope cover another?</strong> A client’s registration, a standing grant and a browser session each answer it for a request (<a href="#item-allowed_scope_covers"><code>allowed_scope_covers</code></a>).</li>
+<li><strong>What does a list become, widened by another?</strong> An approval widens a grant, and a client’s registration trusted on first use, by what it granted (<a href="#item-widened_scopes"><code>widened_scopes</code></a>).</li>
+<li><strong>What may an approval grant?</strong> What the Owner ticked, kept only where the request asked for it and a ceiling allows it (<a href="#item-grantable_scopes"><code>grantable_scopes</code></a>).</li>
+</ul>
+<h2 id="wildflowerhealthio_scopesscope"><a class="header" href="#wildflowerhealthio_scopesscope"><code>wildflowerhealthio_scopes::scope</code></a></h2>
+<p>The structured model the string-facing functions below parse into.</p>
+<h3 id="scope"><a class="header" href="#scope"><code>Scope</code></a></h3>
+<div id="item-Scope" class="item-anchor"></div>
+
+<p>An OAuth 2.0 / SMART on FHIR scope. Build from a string with <code>From</code> or
+<code>FromStr</code> (both infallible — parsing is total, falling back to
+<a href="#item-Scope"><code>Unknown</code></a>); render with <code>Display</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum Scope {
+    /// A SMART `context/Type.perms` FHIR resource scope.
+    FhirResource(FhirResourceScope),
+    /// A `wildflower/Resource.perms` scope on one of the app's own resources.
+    WildflowerResource(WildflowerResourceScope),
+    /// A broadly-known non-resource scope (`openid`, `offline_access`, …).
+    Known(KnownScope),
+    /// Anything unrecognized, preserved verbatim.
+    Unknown(UnknownScope),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/mod.rs#L47-L56"><code>scopes-rust/src/scope/mod.rs</code> lines 47–56</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h4 id="covers"><a class="header" href="#covers"><code>covers</code></a></h4>
+<div id="item-Scope--covers" class="item-anchor"></div>
+
+<p>Does this (client-allowed) scope cover <code>other</code> (a requested scope)?
+Resource scopes compare structurally within their kind; known and unknown
+scopes — and any cross-kind pair — match exactly.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn covers(&amp;self, other: &amp;Scope) -&gt; bool {
+    match (self, other) {
+        (Scope::FhirResource(a), Scope::FhirResource(b)) =&gt; a.covers(b),
+        (Scope::WildflowerResource(a), Scope::WildflowerResource(b)) =&gt; a.covers(b),
+        (a, b) =&gt; a == b,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/mod.rs#L120-L126"><code>scopes-rust/src/scope/mod.rs</code> lines 120–126</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h3 id="grant"><a class="header" href="#grant"><code>Grant</code></a></h3>
+<p>A list of scopes as one value. A token’s <code>scope</code> claim is read into one, and the scope gates check a caller’s authority against it.</p>
+<div id="item-slices--scopes--scopes-rust--src--scope--grant--Grant" class="item-anchor"></div>
+
+<p>An ordered collection of <a href="#item-Scope"><code>Scope</code></a>s — a parsed grant. Order is preserved so a
+grant round-trips through <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L30-L36"><code>parse</code></a> → <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L41-L43"><code>render</code></a>
+in the spelling it was given.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct Grant {
+    /// The grant's scopes, in their original order.
+    pub scopes: Vec&lt;Scope&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L16-L19"><code>scopes-rust/src/scope/grant.rs</code> lines 16–19</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h4 id="widen"><a class="header" href="#widen"><code>widen</code></a></h4>
+<div id="item-Grant--widen" class="item-anchor"></div>
+
+<p>Fold <code>additional</code> into this grant and collapse the result
+(<a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L143-L145"><code>collapse</code></a>) — the structured form of “widen a stored
+scope list by what was just approved”. Granting again what is already
+held is a no-op, and a broader addition <em>replaces</em> the narrower entries
+it supersedes rather than sitting alongside them: widening
+<code>[patient/Patient.r]</code> by <code>[patient/Patient.cruds]</code> leaves
+<code>[patient/Patient.cruds]</code>, not both.</p>
+<p>The result reaches exactly the interactions the two lists reached between
+them — never a resource, context or interaction neither granted — which is
+what makes it safe on an authorization ceiling such as a client’s
+<code>allowed_scopes</code>. It is not string-for-string conservative: see
+<a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L143-L145"><code>collapse</code></a> for the one way a merged scope admits a
+spelling the pair did not.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn widen(&amp;mut self, additional: &amp;Grant) {
+    self.scopes.extend(additional.scopes.iter().cloned());
+    self.collapse();
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L121-L124"><code>scopes-rust/src/scope/grant.rs</code> lines 121–124</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>An approval that grants the whole resource <em>replaces</em> the narrower
+entry rather than sitting beside it, and keeps that entry’s position.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widening_replaces_a_narrower_entry_with_the_broader_grant() {
+    assert_eq!(
+        widened(&amp;["patient/Patient.r", "openid"], &amp;["patient/Patient.cruds"]),
+        ["patient/Patient.cruds", "openid"]
+    );
+    // The merged scope keeps the replaced entry's position — `openid` is not
+    // shuffled by a widening that never touched it.
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L375-L382"><code>scopes-rust/src/scope/grant.rs</code> lines 375–382</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Widening by scopes the grant already covers leaves it exactly as it was.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widening_by_an_already_covered_scope_changes_nothing() {
+    let standing = ["patient/*.cruds", "openid"];
+    assert_eq!(
+        widened(&amp;standing, &amp;["patient/Observation.r", "openid"]),
+        standing
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L386-L392"><code>scopes-rust/src/scope/grant.rs</code> lines 386–392</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Two scopes on one resource, neither covering the other, restate as one
+scope holding both sets of interactions, in the grammar they share.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widening_unions_the_interactions_of_one_resource() {
+    // Neither covers the other, but both address `patient/Patient` in the
+    // letter grammar, so they restate as one scope.
+    assert_eq!(
+        widened(&amp;["patient/Patient.r"], &amp;["patient/Patient.s"]),
+        ["patient/Patient.rs"]
+    );
+    // Within the v1 word grammar the union lands on `*` (the only word
+    // spelling of `read ∪ write`), staying in the grammar it started in.
+    assert_eq!(
+        widened(&amp;["patient/Patient.read"], &amp;["patient/Patient.write"]),
+        ["patient/Patient.*"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L397-L410"><code>scopes-rust/src/scope/grant.rs</code> lines 397–410</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>The grammar guard: a v1 word and a v2 letter bag never fold together, so
+a word-registered entry can’t be turned into letter-grammar access it
+never had. Subsumption still crosses the grammars one way.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widening_never_merges_a_v1_word_into_a_letter_bag() {
+    // `.read` (word) and `.c` (letter) each grant what the other doesn't;
+    // folding them to `.crs` would newly hand over letter `r`/`s`.
+    assert_eq!(
+        widened(&amp;["patient/Patient.read"], &amp;["patient/Patient.c"]),
+        ["patient/Patient.read", "patient/Patient.c"]
+    );
+    // But `.cruds` *covers* `.read`, so it absorbs it outright.
+    assert_eq!(
+        widened(&amp;["patient/Patient.read"], &amp;["patient/Patient.cruds"]),
+        ["patient/Patient.cruds"]
+    );
+    // And the reverse never happens — a word grant can't swallow a letter one.
+    assert_eq!(
+        widened(&amp;["patient/Patient.cruds"], &amp;["patient/Patient.*"]),
+        ["patient/Patient.cruds"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L416-L433"><code>scopes-rust/src/scope/grant.rs</code> lines 416–433</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A wildcard or a broader context absorbs what it subsumes, but the two are
+never <em>merged</em> into one — <code>system</code> and <code>user</code> stay distinct spellings
+unless one genuinely covers the other.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widening_absorbs_across_resources_and_contexts_by_coverage() {
+    assert_eq!(
+        widened(
+            &amp;["patient/Observation.r", "patient/Condition.rs"],
+            &amp;["patient/*.cruds"]
+        ),
+        ["patient/*.cruds"]
+    );
+    assert_eq!(
+        widened(&amp;["user/Patient.r"], &amp;["system/Patient.cruds"]),
+        ["system/Patient.cruds"]
+    );
+    // `user` does not reach `patient`, so neither absorbs the other.
+    assert_eq!(
+        widened(&amp;["user/Patient.r"], &amp;["patient/Patient.r"]),
+        ["user/Patient.r", "patient/Patient.r"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/grant.rs#L439-L456"><code>scopes-rust/src/scope/grant.rs</code> lines 439–456</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h2 id="wildflowerhealthio_scopessmart"><a class="header" href="#wildflowerhealthio_scopessmart"><code>wildflowerhealthio_scopes::smart</code></a></h2>
+<p>The string-facing entry points, which take and return the <code>Vec&lt;String&gt;</code> columns the server stores. The tests here build sets with a <a href="test-fixtures.html#scopes">small helper</a>.</p>
+<h3 id="allowed_scope_covers"><a class="header" href="#allowed_scope_covers"><code>allowed_scope_covers</code></a></h3>
+<div id="item-allowed_scope_covers" class="item-anchor"></div>
+
+<p>Does the scope <code>allowed</code> (a client’s registered scope, or a standing
+grant’s) cover the scope <code>requested</code>?
+Both sides are parsed to a <a href="#item-Scope"><code>Scope</code></a> and compared with <a href="#item-Scope--covers"><code>Scope::covers</code></a>:
+resource scopes match by context + resource-type (wildcard-aware) + a
+permission-bit superset — a v2 letter-form <code>allowed</code> covers an equivalent v1
+word request, but a v1 word-form <code>allowed</code> never covers a letter request;
+known and unknown scopes match exactly.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn allowed_scope_covers(allowed: &amp;str, requested: &amp;str) -&gt; bool {
+    Scope::from(allowed).covers(&amp;Scope::from(requested))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L75-L77"><code>scopes-rust/src/smart.rs</code> lines 75–77</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A non-resource scope, known or unknown, covers its identical twin.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn exact_match_grants() {
+    assert!(allowed_scope_covers("offline_access", "offline_access"));
+    assert!(allowed_scope_covers("an_unknown_scope", "an_unknown_scope"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L119-L122"><code>scopes-rust/src/smart.rs</code> lines 119–122</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A <code>*</code> resource type covers every concrete type in the same context, at
+the same or fewer interactions.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn type_wildcard_covers_specific_type() {
+    assert!(allowed_scope_covers("system/*.cruds", "system/Patient.r"));
+    assert!(allowed_scope_covers(
+        "system/*.cruds",
+        "system/Observation.cruds"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L127-L133"><code>scopes-rust/src/smart.rs</code> lines 127–133</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A scope covers the same resource with a subset of its interactions.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn narrower_perms_covered_by_broader_perms() {
+    assert!(allowed_scope_covers(
+        "system/Patient.cruds",
+        "system/Patient.rs"
+    ));
+    assert!(allowed_scope_covers(
+        "user/Observation.rs",
+        "user/Observation.r"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L137-L146"><code>scopes-rust/src/smart.rs</code> lines 137–146</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p><code>system</code> covers every context, while <code>user</code> and <code>patient</code> cover only
+themselves: a patient scope is bound to the launch patient, not the
+user’s own access.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn context_hierarchy_only_system_covers_downward() {
+    // `system` covers every context...
+    assert!(allowed_scope_covers("system/*.cruds", "user/Patient.r"));
+    assert!(allowed_scope_covers("system/*.cruds", "patient/Patient.r"));
+    // ...but `user` and `patient` cover only themselves: a patient-launch
+    // scope is bound to the launch patient, not the user's own access.
+    assert!(!allowed_scope_covers("user/*.cruds", "patient/Patient.r"));
+    assert!(!allowed_scope_covers("patient/*.cruds", "user/Patient.r"));
+    assert!(!allowed_scope_covers("user/*.cruds", "system/Patient.r"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L152-L161"><code>scopes-rust/src/smart.rs</code> lines 152–161</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A scope never covers a request for an interaction it lacks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn missing_perm_bit_rejects() {
+    assert!(!allowed_scope_covers(
+        "system/Patient.r",
+        "system/Patient.cruds"
+    ));
+    assert!(!allowed_scope_covers(
+        "system/Patient.rs",
+        "system/Patient.u"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L165-L174"><code>scopes-rust/src/smart.rs</code> lines 165–174</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A non-resource scope and a resource scope never cover each other, in
+either direction.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn non_smart_scopes_only_match_exactly() {
+    // No `/` + `.` resource shape, so these parse to `Known`/`Unknown` and
+    // never cross-cover a resource scope.
+    assert!(!allowed_scope_covers("system/*.cruds", "offline_access"));
+    assert!(!allowed_scope_covers("offline_access", "system/Patient.r"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L179-L184"><code>scopes-rust/src/smart.rs</code> lines 179–184</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>In the SMART v1 word grammar, <code>*</code> covers <code>read</code> and <code>write</code>, while the two
+words are disjoint and neither covers <code>*</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn v1_word_perms_cover_only_within_the_word_grammar() {
+    // `*` is the word-grammar superset of both words...
+    assert!(allowed_scope_covers(
+        "patient/*.*",
+        "patient/Observation.read"
+    ));
+    assert!(allowed_scope_covers(
+        "patient/*.*",
+        "patient/Observation.write"
+    ));
+    assert!(allowed_scope_covers(
+        "patient/Observation.read",
+        "patient/Observation.read"
+    ));
+    // ...but the words are disjoint, and neither reaches up to `*`.
+    assert!(!allowed_scope_covers(
+        "patient/Observation.read",
+        "patient/Observation.write"
+    ));
+    assert!(!allowed_scope_covers(
+        "patient/Observation.read",
+        "patient/Observation.*"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L189-L212"><code>scopes-rust/src/smart.rs</code> lines 189–212</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A v2 letter scope covers the equivalent v1 word scope, but a v1 word
+scope never covers a v2 letter one, so a word-registered client can’t
+reach letter-grammar access.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn v1_and_v2_perms_cross_cover_letter_over_word_only() {
+    // A v2 letter grant covers the equivalent v1 word request (same interaction
+    // bits) — the live case, since tokens are minted in the letter grammar.
+    assert!(allowed_scope_covers(
+        "patient/Patient.cruds",
+        "patient/Patient.read"
+    ));
+    // But a v1 word grant never covers a v2 letter request — a word-registered
+    // client can't reach into letter-grammar access.
+    assert!(!allowed_scope_covers(
+        "patient/Patient.read",
+        "patient/Patient.rs"
+    ));
+    assert!(!allowed_scope_covers(
+        "patient/Patient.*",
+        "patient/Patient.cruds"
+    ));
+    assert!(!allowed_scope_covers(
+        "patient/*.*",
+        "patient/Observation.d"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L218-L239"><code>scopes-rust/src/smart.rs</code> lines 218–239</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A permission segment with a stray letter makes the scope unknown, so it
+covers, and is covered by, only its identical string.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn invalid_perm_segments_reject() {
+    // A stray non-interaction letter makes the segment unparseable, so the
+    // scope is `Unknown` and only matches the identical string.
+    assert!(!allowed_scope_covers(
+        "patient/Observation.rx",
+        "patient/Observation.r"
+    ));
+    assert!(!allowed_scope_covers(
+        "patient/Observation.r",
+        "patient/Observation.rx"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L244-L255"><code>scopes-rust/src/smart.rs</code> lines 244–255</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h3 id="widened_scopes"><a class="header" href="#widened_scopes"><code>widened_scopes</code></a></h3>
+<div id="item-widened_scopes" class="item-anchor"></div>
+
+<p>Widen the stored scope list <code>standing</code> by <code>additional</code>, returning the
+collapsed union as wire strings — the string-facing form of
+<a href="#item-Grant--widen"><code>Grant::widen</code></a>, for callers holding <code>Vec&lt;String&gt;</code>
+columns (a client’s <code>allowed_scopes</code>, a standing grant’s <code>scopes</code>).</p>
+<p>The result grants exactly what the two lists granted between them, stated as
+shortly as the grammar allows: <code>["patient/Patient.r"]</code> widened by
+<code>["patient/Patient.cruds"]</code> is <code>["patient/Patient.cruds"]</code>, not both. Parsing
+is total, so an unrecognized string survives as an <code>Unknown</code> scope that only
+ever collapses against an identical twin.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn widened_scopes(standing: &amp;[String], additional: &amp;[String]) -&gt; Vec&lt;String&gt; {
+    let mut grant = Grant::parse(standing);
+    grant.widen(&amp;Grant::parse(additional));
+    grant.render()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L62-L66"><code>scopes-rust/src/smart.rs</code> lines 62–66</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h3 id="grantable_scopes"><a class="header" href="#grantable_scopes"><code>grantable_scopes</code></a></h3>
+<p>The server calls this through <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L182-L190"><code>ApprovableScopes::grantable_subset</code></a>, with the ceiling the request allows: for an app’s request, what its <a href="client.html">client registration</a> permits.</p>
+<div id="item-grantable_scopes" class="item-anchor"></div>
+
+<p>The scopes an Owner approval can actually grant: those that are both still
+requested by the pending request and covered by the <code>ceiling</code> (for a consent
+prompt, the most the client’s registration permits). The Owner can only
+narrow, never widen, and the <code>ceiling</code> clamp stops a stale request from
+granting a scope the client’s policy no longer permits.</p>
+<p>Both sides match by <strong>coverage</strong>, not exact equality (each parsed to a <a href="#item-Scope"><code>Scope</code></a>
+and compared with <a href="#item-Scope--covers"><code>Scope::covers</code></a>). Coverage on the requested side is what
+lets an Owner narrow: an approved <code>patient/Observation.s</code> is still ⊆ a requested
+<code>patient/Observation.rs</code>, so it’s granted where exact equality would drop it.
+Coverage is wildcard/context-aware and bridges grammars one way — a v2 letter
+scope covers the equivalent v1 word, but not the reverse (known/unknown match
+exactly — see <a href="#item-Scope--covers"><code>Scope::covers</code></a>).</p>
+<p>Every kept scope is rendered back to its own approved wire spelling (v1↔v2
+back-compat — see <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/resource/permission.rs#L54"><code>Permission</code></a>), de-duplicated by rendered
+form (first-seen order). An empty grant stays empty (approve handlers treat
+“nothing granted” as a deny).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn grantable_scopes(
+    approved: Vec&lt;String&gt;,
+    requested: &amp;HashSet&lt;&amp;str&gt;,
+    ceiling: &amp;HashSet&lt;&amp;str&gt;,
+) -&gt; Vec&lt;String&gt; {
+    let requested: Vec&lt;Scope&gt; = requested.iter().map(|&amp;s| Scope::from(s)).collect();
+    let ceiling: Vec&lt;Scope&gt; = ceiling.iter().map(|&amp;s| Scope::from(s)).collect();
+
+    let mut seen: HashSet&lt;String&gt; = HashSet::new();
+    let mut granted: Vec&lt;String&gt; = Vec::new();
+    for approved_scope in approved.into_iter().map(|s| Scope::from(s.as_str())) {
+        let is_requested = requested.iter().any(|r| r.covers(&amp;approved_scope));
+        let is_under_ceiling = ceiling.iter().any(|c| c.covers(&amp;approved_scope));
+        if is_requested &amp;&amp; is_under_ceiling {
+            let rendered = approved_scope.to_string();
+            if seen.insert(rendered.clone()) {
+                granted.push(rendered);
+            }
+        }
+    }
+    granted
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L29-L50"><code>scopes-rust/src/smart.rs</code> lines 29–50</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>An approval is granted only where something requested covers it; an
+approved scope nobody asked for is dropped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_filters_by_requested_and_allowed_coverage() {
+    let approved = vec![
+        "system/Patient.r".to_string(),
+        "offline_access".to_string(),
+        "user/Observation.r".to_string(), // not requested
+    ];
+    let requested = s(&amp;["system/Patient.r", "offline_access"]);
+    let allowed = s(&amp;["system/*.cruds", "offline_access"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["system/Patient.r", "offline_access"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L260-L270"><code>scopes-rust/src/smart.rs</code> lines 260–270</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>An approval broader than the ceiling is dropped, even when it was
+requested.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_drops_uncovered_approvals() {
+    let approved = vec!["system/Patient.cruds".to_string()];
+    let requested = s(&amp;["system/Patient.cruds"]);
+    // Allowed grants only `system/*.r` — `cruds` is broader than `r`.
+    let allowed = s(&amp;["system/*.r"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert!(granted.is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L275-L282"><code>scopes-rust/src/smart.rs</code> lines 275–282</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A v1 word scope is granted in its own spelling, for SMART v1
+back-compatibility.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_preserves_v1_word_scopes() {
+    // The growth-chart case: a v1 `.read` scope is granted and returned
+    // verbatim (SMART back-compat — a v1 grant is returned as v1).
+    let approved = vec!["patient/Observation.read".to_string()];
+    let requested = s(&amp;["patient/Observation.read"]);
+    let allowed = s(&amp;["patient/Observation.read"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["patient/Observation.read"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L287-L295"><code>scopes-rust/src/smart.rs</code> lines 287–295</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>The v1 <code>write</code> and <code>*</code> words are granted in their own spellings too.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_preserves_write_and_wildcard_words() {
+    let approved = vec![
+        "patient/Observation.write".to_string(),
+        "patient/Patient.*".to_string(),
+    ];
+    let requested = s(&amp;["patient/Observation.write", "patient/Patient.*"]);
+    let allowed = s(&amp;["patient/*.*"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(
+        granted,
+        vec!["patient/Observation.write", "patient/Patient.*"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L299-L311"><code>scopes-rust/src/smart.rs</code> lines 299–311</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A word and a letter spelling of overlapping access are distinct scopes:
+an approval of both grants both.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_keeps_distinct_word_and_letter_forms() {
+    // Owner approved both the word and the letter form — they're distinct
+    // scopes (each round-trips to its own spelling), so both are emitted.
+    let approved = vec![
+        "patient/Observation.read".to_string(),
+        "patient/Observation.rs".to_string(),
+    ];
+    let requested = s(&amp;["patient/Observation.read", "patient/Observation.rs"]);
+    // Each approval round-trips to its own wire form, so both spellings are
+    // emitted (deduplicated by rendered form); `patient/*.cruds` covers both.
+    let allowed = s(&amp;["patient/*.cruds", "patient/*.*"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(
+        granted,
+        vec!["patient/Observation.read", "patient/Observation.rs"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L316-L332"><code>scopes-rust/src/smart.rs</code> lines 316–332</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>The Owner can narrow: an approved <code>.s</code> is granted against a requested
+<code>.rs</code>, which covers it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_grants_owner_narrowed_v2_letters() {
+    // The client requested `.rs`; the Owner approved the tighter `.s`.
+    // `.s` ⊆ `.rs`, so coverage on the requested side keeps it — an
+    // exact-equality check would have dropped this narrowed approval.
+    let approved = vec!["patient/Observation.s".to_string()];
+    let requested = s(&amp;["patient/Observation.rs"]);
+    let allowed = s(&amp;["patient/*.cruds"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["patient/Observation.s"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L337-L346"><code>scopes-rust/src/smart.rs</code> lines 337–346</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A wildcard request lets the Owner approve one concrete type under it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_grants_wildcard_requested_narrowed_to_concrete_type() {
+    // A wildcard request covers a concrete-type approval: `patient/*.r`
+    // covers `patient/Observation.r`, so the concrete grant is within the
+    // requested envelope and is kept.
+    let approved = vec!["patient/Observation.r".to_string()];
+    let requested = s(&amp;["patient/*.r"]);
+    let allowed = s(&amp;["patient/*.cruds"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["patient/Observation.r"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L350-L359"><code>scopes-rust/src/smart.rs</code> lines 350–359</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Interactions are a set, so a request spelled <code>.sr</code> covers an approval
+spelled <code>.rs</code>, which is granted in its own spelling.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_grants_non_canonical_letter_order() {
+    // The parser is letter-set based, so a request spelled `.sr` covers an
+    // approval spelled `.rs` (same interaction set); the approved wire
+    // spelling is returned verbatim.
+    let approved = vec!["patient/Observation.rs".to_string()];
+    let requested = s(&amp;["patient/Observation.sr"]);
+    let allowed = s(&amp;["patient/*.cruds"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["patient/Observation.rs"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L364-L373"><code>scopes-rust/src/smart.rs</code> lines 364–373</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>An approved resource scope no requested scope covers is dropped, while
+the requested one beside it is granted.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_drops_unrequested_resource_scopes() {
+    // Only Observation was requested; an approved Condition scope is not
+    // covered by anything requested and is dropped.
+    let approved = vec![
+        "patient/Observation.r".to_string(),
+        "patient/Condition.r".to_string(),
+    ];
+    let requested = s(&amp;["patient/Observation.r"]);
+    let allowed = s(&amp;["patient/*.cruds"]);
+    let granted = grantable_scopes(approved, &amp;requested, &amp;allowed);
+    assert_eq!(granted, vec!["patient/Observation.r"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L378-L389"><code>scopes-rust/src/smart.rs</code> lines 378–389</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Granting follows coverage’s one-way bridge: a letter request makes an
+equivalent word approval grantable, but a word request never makes a
+letter approval grantable.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_bridges_letter_over_word_asymmetrically() {
+    // `Scope::covers` bridges grammars one way (letter covers word, not the
+    // reverse — see the `v1_and_v2_perms_cross_cover_letter_over_word_only`
+    // test above).
+    let allowed = s(&amp;["patient/*.cruds"]);
+
+    // A v1 *word* request does not make a v2 *letter* approval grantable — a
+    // word grant never reaches into letter-grammar access.
+    let word_requested_letter_approved = grantable_scopes(
+        vec!["patient/Observation.rs".to_string()],
+        &amp;s(&amp;["patient/Observation.read"]),
+        &amp;allowed,
+    );
+    assert!(word_requested_letter_approved.is_empty());
+
+    // But a v2 *letter* request covers the equivalent v1 *word* approval, and
+    // the approved word spelling is returned verbatim.
+    let letter_requested_word_approved = grantable_scopes(
+        vec!["patient/Observation.read".to_string()],
+        &amp;s(&amp;["patient/Observation.rs"]),
+        &amp;allowed,
+    );
+    assert_eq!(
+        letter_requested_word_approved,
+        vec!["patient/Observation.read".to_string()]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L395-L421"><code>scopes-rust/src/smart.rs</code> lines 395–421</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>A known scope such as <code>openid</code> is granted only against the same scope
+requested.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_known_scopes_match_exactly_not_by_coverage() {
+    // Known/flag scopes have no subset structure — coverage collapses to
+    // equality, so `openid` grants only against a requested `openid`.
+    let granted = grantable_scopes(
+        vec!["openid".to_string()],
+        &amp;s(&amp;["openid"]),
+        &amp;s(&amp;["openid", "offline_access"]),
+    );
+    assert_eq!(granted, vec!["openid"]);
+
+    let mismatch = grantable_scopes(
+        vec!["openid".to_string()],
+        &amp;s(&amp;["offline_access"]),
+        &amp;s(&amp;["openid", "offline_access"]),
+    );
+    assert!(mismatch.is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L426-L442"><code>scopes-rust/src/smart.rs</code> lines 426–442</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>The ceiling clamps even a narrowed approval the request covers: a <code>.s</code>
+outside a <code>.r</code> ceiling is dropped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grantable_allowed_clamp_still_applies_under_coverage() {
+    // Requested and Owner-approved a narrowed `.s`, but the client's
+    // `allowed_scopes` only permit `.r` — the `allowed` clamp drops it even
+    // though the requested side now matches by coverage.
+    let granted = grantable_scopes(
+        vec!["patient/Observation.s".to_string()],
+        &amp;s(&amp;["patient/Observation.rs"]),
+        &amp;s(&amp;["patient/*.r"]),
+    );
+    assert!(granted.is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L447-L457"><code>scopes-rust/src/smart.rs</code> lines 447–457</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h3 id="with_alternate_canonical_forms"><a class="header" href="#with_alternate_canonical_forms"><code>with_alternate_canonical_forms</code></a></h3>
+<p>The server mints a token’s <code>scope</code> claim through this, so the FHIR server, which reads only the letter grammar, honours a grant spelled in words.</p>
+<div id="item-with_alternate_canonical_forms" class="item-anchor"></div>
+
+<p>Append each scope’s equivalent alternate spelling, where it has one (see
+<a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/scope/mod.rs#L194-L207"><code>Scope::as_alternate_canonical_form</code></a>) — today, a resource scope in SMART v1
+word form gaining its canonical v2 letter form.</p>
+<p>Some consumers parse only one spelling — notably helios-auth’s
+<code>SmartPermissions</code>, which HFS uses to authorize FHIR requests and which reads
+<strong>only</strong> the SMART v2 letter grammar, silently dropping a <code>.read</code>/<code>.write</code>/<code>.*</code>
+segment. Emitting both spellings into a token’s <code>scope</code> claim means such a
+consumer still honors the grant, while consumers that read the original
+spelling keep working (the originals are preserved verbatim). Only the extra
+alternates are added — de-duplicated against the input, order-preserving, and
+idempotent.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn with_alternate_canonical_forms(scopes: &amp;[String]) -&gt; Vec&lt;String&gt; {
+    let mut out: Vec&lt;String&gt; = Vec::with_capacity(scopes.len());
+    for s in scopes {
+        out.push(s.clone());
+        if let Some(alternate) = Scope::from(s.as_str()).as_alternate_canonical_form() {
+            let alternate = alternate.to_string();
+            // Skip an alternate the caller already granted (idempotency) or that
+            // an earlier original in this pass already produced.
+            let already_granted = scopes.iter().any(|x| x == &amp;alternate);
+            if !already_granted &amp;&amp; !out.contains(&amp;alternate) {
+                out.push(alternate);
+            }
+        }
+    }
+    out
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L91-L106"><code>scopes-rust/src/smart.rs</code> lines 91–106</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Each v1 word resource scope gains its v2 letter twin right after it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn alternates_added_for_v1_word_resource_scopes() {
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["patient/Observation.read"])),
+        v(&amp;["patient/Observation.read", "patient/Observation.rs"])
+    );
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["patient/Observation.write"])),
+        v(&amp;["patient/Observation.write", "patient/Observation.cud"])
+    );
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["system/*.*"])),
+        v(&amp;["system/*.*", "system/*.cruds"])
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L466-L479"><code>scopes-rust/src/smart.rs</code> lines 466–479</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Letter-form resource scopes, known and unknown scopes, and a v1-worded
+Wildflower scope (which parses as unknown) gain nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn no_alternate_for_letter_forms_and_non_resource_scopes() {
+    // Already-letter resource scopes have no distinct alternate.
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["patient/Observation.rs"])),
+        v(&amp;["patient/Observation.rs"])
+    );
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["system/*.cruds"])),
+        v(&amp;["system/*.cruds"])
+    );
+    // Known/unknown scopes are passed through untouched.
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["openid", "offline_access", "launch/patient"])),
+        v(&amp;["openid", "offline_access", "launch/patient"])
+    );
+    // A v1-worded wildflower string parses as Unknown (the word grammar is
+    // FHIR-only), so it gains no alternate.
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;["wildflower/Grant.read"])),
+        v(&amp;["wildflower/Grant.read"])
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L484-L505"><code>scopes-rust/src/smart.rs</code> lines 484–505</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>Expanding twice changes nothing, and a list already holding a twin
+doesn’t gain it again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn alternate_expansion_is_idempotent_and_deduplicates_existing_alternates() {
+    let once = with_alternate_canonical_forms(&amp;v(&amp;["patient/Observation.read"]));
+    assert_eq!(with_alternate_canonical_forms(&amp;once), once);
+    // A grant that already carries both forms gains nothing.
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;[
+            "patient/Observation.read",
+            "patient/Observation.rs"
+        ])),
+        v(&amp;["patient/Observation.read", "patient/Observation.rs"])
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L510-L521"><code>scopes-rust/src/smart.rs</code> lines 510–521</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<p>In a typical SMART grant, each v1 read gains its twin right after it,
+and everything else keeps its place.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn alternates_preserve_order_in_a_typical_smart_grant() {
+    // The growth-chart grant: OIDC + launch + v1 patient reads. Each v1
+    // resource read gains its letter-form alternate right after it;
+    // everything else is untouched and in order.
+    assert_eq!(
+        with_alternate_canonical_forms(&amp;v(&amp;[
+            "openid",
+            "launch/patient",
+            "patient/Observation.read",
+            "patient/Patient.read",
+            "offline_access"
+        ])),
+        v(&amp;[
+            "openid",
+            "launch/patient",
+            "patient/Observation.read",
+            "patient/Observation.rs",
+            "patient/Patient.read",
+            "patient/Patient.rs",
+            "offline_access"
+        ])
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/smart.rs#L526-L548"><code>scopes-rust/src/smart.rs</code> lines 526–548</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+<h2 id="wildflowerhealthio_scopes"><a class="header" href="#wildflowerhealthio_scopes"><code>wildflowerhealthio_scopes</code></a></h2>
+<h3 id="render_scopes"><a class="header" href="#render_scopes"><code>render_scopes</code></a></h3>
+<div id="item-render_scopes" class="item-anchor"></div>
+
+<p>Render a slice of <a href="#item-Scope"><code>Scope</code></a>s to their canonical wire strings — the shape
+stored in client <code>allowed_scopes</code>/grant rows and minted into a token’s
+space-joined <code>scope</code> claim, in order.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn render_scopes(scopes: &amp;[Scope]) -&gt; Vec&lt;String&gt; {
+    scopes.iter().map(ToString::to_string).collect()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/slices/scopes/scopes-rust/src/lib.rs#L23-L25"><code>scopes-rust/src/lib.rs</code> lines 23–25</a> · <a href="https://wildflowerhealth.io/code-index/scopes/">scopes in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/domain.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/domain/signing-key.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/domain.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/domain/signing-key.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

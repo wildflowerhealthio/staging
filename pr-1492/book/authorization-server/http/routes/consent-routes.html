@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Consent Routes - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="consent-routes"><a class="header" href="#consent-routes">Consent Routes</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/mod.rs"><code>authorization-server-rust/src/http/routes/oauth_consents/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/get.rs"><code>authorization-server-rust/src/http/routes/oauth_consents/get.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/approve.rs"><code>authorization-server-rust/src/http/routes/oauth_consents/approve.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/deny.rs"><code>authorization-server-rust/src/http/routes/oauth_consents/deny.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/ask_owner.rs"><code>authorization-server-rust/src/http/routes/oauth_consents/ask_owner.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/mod.rs"><code>authorization-server-rust/src/http/routes/devices/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/get.rs"><code>authorization-server-rust/src/http/routes/devices/get.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/approve.rs"><code>authorization-server-rust/src/http/routes/devices/approve.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/deny.rs"><code>authorization-server-rust/src/http/routes/devices/deny.rs</code></a></p>
+
+<p>A request that needs a decision is a <strong>consent prompt</strong>, and these routes are where it is read and decided. There are two surfaces. The <strong>code-flow prompt</strong> is an app’s <a href="../../domain/authorization-request/code-request.html">code request</a>, keyed by the request’s id, which the consent card shows. The <strong>device page’s prompt</strong> is keyed by the short user code the device page asks for: a device’s request through the device flow, or a browser asking to be paired (the <a href="../../domain/authorization-request/polled-requests.html">polled requests</a>).</p>
+<p>Both surfaces live under <code>/authorization</code>, behind the <a href="../middleware.html#item-require_valid_session">session gate</a>, and no answer is cached. Each handler acquires its capability through <code>Scoped&lt;…&gt;</code>: <strong>reading a prompt takes <code>wildflower/AuthorizationRequest.r</code>, deciding one takes <code>wildflower/AuthorizationRequest.u</code></strong>, and a token without the scope gets a <code>403</code> naming it. The Owner holds both. A paired browser holds only what its pairing granted, so it may be able to read a prompt it can’t decide.</p>
+<p>The rules of a decision (what an approval may grant, the acknowledgement, the patient, the race with another surface) belong to the capability: <a href="../../capabilities/access/oauth-consents.html">OAuth Consents</a> for the code flow and <a href="../../capabilities/access/device-consents.html">Device Consents</a> for the device page. The routes read the body, pass the server’s clock, and put the outcome on the wire, as a <a href="../errors-and-wire-shapes.html#item-ConsentResult"><code>ConsentResult</code></a>. The <a href="../../integration-tests/consent-card.html">Consent Card</a>, <a href="../../integration-tests/approval-scopes.html">Approval Scopes</a> and <a href="../../integration-tests/device-code.html">Device Code</a> integration tests hold them end to end.</p>
+<h2 id="httproutesoauth_consents"><a class="header" href="#httproutesoauth_consents"><code>http::routes::oauth_consents</code></a></h2>
+<h3 id="router"><a class="header" href="#router"><code>router</code></a></h3>
+<p>Asking the Owner raises a request for the Owner’s attention, so that route alone is wrapped in the <a href="../middleware.html#item-defer_authorization_start_limit">deferred start limit</a> the caller passes in.</p>
+<div id="item-oauth_consents--router" class="item-anchor"></div>
+
+<p>The <code>/oauth-consents</code> route table. <code>defer_start_limit</code> wraps the <code>ask-owner</code>
+route, which raises a request for the Owner and so spends from the
+authorization start limit (see
+<a href="../middleware.html#item-defer_authorization_start_limit"><code>defer_authorization_start_limit</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn router(
+    defer_start_limit: impl Fn(
+        MethodRouter&lt;Arc&lt;AuthorizationServerState&gt;&gt;,
+    ) -&gt; MethodRouter&lt;Arc&lt;AuthorizationServerState&gt;&gt;,
+) -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    Router::new()
+        .route("/oauth-consents/{id}", get::route())
+        .route("/oauth-consents/{id}/approve", approve::route())
+        .route("/oauth-consents/{id}/deny", deny::route())
+        .route(
+            "/oauth-consents/{id}/ask-owner",
+            defer_start_limit(ask_owner::route()),
+        )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/mod.rs#L30-L43"><code>authorization-server-rust/src/http/routes/oauth_consents/mod.rs</code> lines 30–43</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauth_consentsget"><a class="header" href="#httproutesoauth_consentsget"><code>http::routes::oauth_consents::get</code></a></h2>
+<h3 id="handle_get_oauth_consent"><a class="header" href="#handle_get_oauth_consent"><code>handle_get_oauth_consent</code></a></h3>
+<p><strong>The consent card loads the prompt it is about to show.</strong> The capability resolves the request against the app’s registration as it stands now, and answers <code>404</code> when the id names no live code-flow prompt: unknown, decided, expired, still waiting on its own browser’s limited page, or for an app disabled since.</p>
+<div id="item-handle_get_oauth_consent" class="item-anchor"></div>
+
+<p><code>GET /authorization/oauth-consents/{id}</code> — load a pending authorization-code consent
+prompt for the launcher to render (scope <code>wildflower/AuthorizationRequest.r</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_get_oauth_consent(
+    consents: Scoped&lt;LiveConsentReader&gt;,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Json&lt;OAuthConsent&gt;, AuthorizationServerError&gt; {
+    let OAuthConsentView {
+        pending_request,
+        client_name,
+        presented_client_change,
+        missing_approval_scopes,
+    } = consents.oauth_consent(&amp;id, Utc::now())?;
+    Ok(Json(OAuthConsent {
+        id: id.clone(),
+        patient: pending_request
+            .state
+            .approval()
+            .and_then(|approval| approval.patient.clone()),
+        client_id: pending_request.client_id,
+        client_name,
+        scopes: pending_request.requested_scopes,
+        redirect_uri: pending_request.redirect_uri,
+        pre_approved_scopes: pending_request.pre_approved_scopes,
+        registration: presented_client_change.into(),
+        missing_approval_scopes,
+    }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/get.rs#L112-L136"><code>authorization-server-rust/src/http/routes/oauth_consents/get.rs</code> lines 112–136</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="oauthconsent"><a class="header" href="#oauthconsent"><code>OAuthConsent</code></a></h3>
+<div id="item-OAuthConsent" class="item-anchor"></div>
+
+<p>Body returned to the launcher when it loads an authorization-code consent
+prompt — describes the client, scopes, and any pre-approved subset. Local to
+this one route (its only reader); the shapes two consent surfaces share live
+in <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/mod.rs#L15"><code>crate::http::wire_representations</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct OAuthConsent {
+    /// The request's id, which the card approves or denies by.
+    pub(crate) id: String,
+    /// The app's public `client_id`.
+    pub(crate) client_id: String,
+    /// The client's registered display name, so the consent UI can name the
+    /// app instead of showing a raw `client_id`. Falls back to the
+    /// `client_id` when the registration lookup misses.
+    pub(crate) client_name: String,
+    /// Everything the app asked for, in request order.
+    pub(crate) scopes: Vec&lt;String&gt;,
+    /// Where the app will be sent back to with the code.
+    pub(crate) redirect_uri: url::Url,
+    /// The requested scopes a standing grant already covers, ticked to start
+    /// with.
+    pub(crate) pre_approved_scopes: Vec&lt;String&gt;,
+    /// The patient on the request's approval. A request the card can load is
+    /// pending, so it carries no approval and this is `null`; the patient a
+    /// SMART launch bound is not sent. The field stays on the wire so the card
+    /// can be told of a patient a request asks for, once a launch can.
+    pub(crate) patient: Option&lt;String&gt;,
+    /// How this request compares against the client's registration **right
+    /// now** — the warning the consent UI leads with, and the flag that makes
+    /// its acknowledgement checkbox mandatory.
+    pub(crate) registration: ClientRegistrationBody,
+    /// The approval scopes the caller's own token lacks to approve this
+    /// request (`wildflower/Grant.c`, and `wildflower/Client.c` or
+    /// `wildflower/Client.u` when approving would register or widen the
+    /// client). Empty when it may approve; otherwise the consent UI asks the
+    /// server's Owner in place of Allow.
+    pub(crate) missing_approval_scopes: Vec&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/get.rs#L25-L56"><code>authorization-server-rust/src/http/routes/oauth_consents/get.rs</code> lines 25–56</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="clientregistrationbody"><a class="header" href="#clientregistrationbody"><code>ClientRegistrationBody</code></a></h3>
+<p>The <a href="../../domain/client.html#item-PresentedClientChange">presented client change</a> on the wire. Its <code>WouldWiden</code> is called <code>changed</code> here.</p>
+<div id="item-ClientRegistrationBody" class="item-anchor"></div>
+
+<p>Wire shape of <a href="#item-OAuthConsent"><code>OAuthConsent::registration</code></a> — the
+<a href="../../domain/client.html#item-PresentedClientChange"><code>PresentedClientChange</code></a>, <code>status</code>-tagged.</p>
+<p><code>{"status":"registered"}</code> for a request that matches the registration,
+<code>{"status":"new"}</code> for a client this authorization server has never seen, and
+<code>{"status":"changed","redirectUriIsNew":…,"newScopes":[…]}</code> when a known
+client steps outside its registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum ClientRegistrationBody {
+    /// The redirect is registered and every scope is covered: nothing new
+    /// for the Owner to acknowledge.
+    Registered,
+    /// The Owner has never approved this app; nothing about it is stored
+    /// until they do.
+    New,
+    /// The app is known, but the request steps outside its registration: a
+    /// new redirect, new scopes, or both.
+    Changed {
+        /// The presented `redirect_uri` is on no allowlist entry.
+        redirect_uri_is_new: bool,
+        /// The requested scopes the registration does not cover, in request
+        /// order.
+        new_scopes: Vec&lt;String&gt;,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/get.rs#L67-L85"><code>authorization-server-rust/src/http/routes/oauth_consents/get.rs</code> lines 67–85</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from"><a class="header" href="#from"><code>from</code></a></h4>
+<div id="item-ClientRegistrationBody--from" class="item-anchor"></div>
+
+<p>Render the domain change onto the wire.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn from(registration: PresentedClientChange) -&gt; Self {
+    match registration {
+        PresentedClientChange::NoChange =&gt; ClientRegistrationBody::Registered,
+        PresentedClientChange::WouldCreate =&gt; ClientRegistrationBody::New,
+        PresentedClientChange::WouldWiden {
+            redirect_uri_is_new,
+            unregistered_requested_scopes: new_scopes,
+        } =&gt; ClientRegistrationBody::Changed {
+            redirect_uri_is_new,
+            new_scopes,
+        },
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/get.rs#L90-L102"><code>authorization-server-rust/src/http/routes/oauth_consents/get.rs</code> lines 90–102</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauth_consentsapprove"><a class="header" href="#httproutesoauth_consentsapprove"><code>http::routes::oauth_consents::approve</code></a></h2>
+<h3 id="approveoauthconsentbody"><a class="header" href="#approveoauthconsentbody"><code>ApproveOAuthConsentBody</code></a></h3>
+<p>It has its own shape rather than the device page’s <a href="../errors-and-wire-shapes.html#item-ApproveBody"><code>ApproveBody</code></a>, because only this surface carries a registration warning.</p>
+<div id="item-ApproveOAuthConsentBody" class="item-anchor"></div>
+
+<p>Body posted by the launcher to approve an authorization-code consent prompt.</p>
+<p>Its own shape rather than the device flow’s
+<a href="../errors-and-wire-shapes.html#item-ApproveBody"><code>ApproveBody</code></a>: only this
+surface carries a registration warning, so only this body demands the
+acknowledgement, and the device flow keeps no field it would always have to
+send.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct ApproveOAuthConsentBody {
+    /// The scopes the Owner ticked.
+    pub(crate) approved_scopes: Vec&lt;String&gt;,
+    /// Optional SMART-on-FHIR patient context to bind to the grant. When the
+    /// request's SMART launch bound a patient, it must be that patient.
+    pub(crate) patient: Option&lt;String&gt;,
+    /// The Owner's acknowledgement that they recognise this app and its
+    /// redirect address. Required (not defaulted) so a client that has not been
+    /// updated to show the warning cannot approve a `new` or `changed` prompt by
+    /// omission; it is ignored when the prompt carries no warning.
+    pub(crate) acknowledged_registration_change: bool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/approve.rs#L29-L40"><code>authorization-server-rust/src/http/routes/oauth_consents/approve.rs</code> lines 29–40</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_approve_oauth_consent"><a class="header" href="#handle_approve_oauth_consent"><code>handle_approve_oauth_consent</code></a></h3>
+<div id="item-handle_approve_oauth_consent" class="item-anchor"></div>
+
+<p><code>POST /authorization/oauth-consents/{id}/approve</code> — the Owner approves a
+consent prompt, granting a (narrowed) scope set and minting the authorization code the
+polling endpoint hands back to the client. Gated by <a href="../../assembly/access-bindings.html#item-LiveConsentDecider"><code>LiveConsentDecider</code></a>
+(scope <code>wildflower/AuthorizationRequest.u</code>), which also carries the approver’s
+own scopes: an approval delegating a resource scope beyond them is rejected
+with a <code>403</code>. Approving a prompt whose client, redirect, or scopes are
+outside the current registration without
+<a href="#item-ApproveOAuthConsentBody"><code>acknowledged_registration_change</code></a>
+is rejected with a <code>409</code> and writes nothing, as is an approval naming a
+patient other than the one the request’s SMART launch binds. The write
+scope lives in the consent capability’s <code>approve_oauth_consent</code>.</p>
+<p>The answers:</p>
+<ul>
+<li><code>200</code>, <code>"status":"approved"</code>: the code is issued; <code>redirect</code> is the
+app’s callback carrying it and the app’s <code>state</code>, for the card to leave
+for.</li>
+<li><code>200</code>, <code>"status":"denied"</code>: nothing was granted, the requesting
+browser’s session has ended, or the app was disabled since; the request
+is denied and <code>redirect</code> carries <code>access_denied</code>.</li>
+<li><code>403</code>: the approver lacks an approval scope, or a ticked resource scope
+is beyond their own grant. Nothing is written.</li>
+<li><code>409</code>: the registration change wasn’t acknowledged, or the body names a
+patient other than the one the launch bound. Nothing is written.</li>
+<li><code>404</code>: no live code-flow prompt has this id.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_approve_oauth_consent(
+    consents: Scoped&lt;LiveConsentDecider&gt;,
+    Path(id): Path&lt;String&gt;,
+    Json(body): Json&lt;ApproveOAuthConsentBody&gt;,
+) -&gt; Result&lt;Json&lt;ConsentResult&gt;, AuthorizationServerError&gt; {
+    let outcome = consents.approve_oauth_consent(
+        &amp;id,
+        ApproveOAuthConsentInput {
+            owner_approved_scopes: body.approved_scopes,
+            patient: body.patient,
+            acknowledged_registration_change: body.acknowledged_registration_change,
+        },
+        generate_authorization_code,
+        Utc::now(),
+    )?;
+    Ok(Json(outcome.into()))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/approve.rs#L72-L88"><code>authorization-server-rust/src/http/routes/oauth_consents/approve.rs</code> lines 72–88</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauth_consentsdeny"><a class="header" href="#httproutesoauth_consentsdeny"><code>http::routes::oauth_consents::deny</code></a></h2>
+<h3 id="handle_deny_oauth_consent"><a class="header" href="#handle_deny_oauth_consent"><code>handle_deny_oauth_consent</code></a></h3>
+<div id="item-handle_deny_oauth_consent" class="item-anchor"></div>
+
+<p><code>POST /authorization/oauth-consents/{id}/deny</code> — the Owner declines a consent prompt (scope
+<code>wildflower/AuthorizationRequest.u</code>). The answer carries the client callback
+with <code>error=access_denied</code>, for the consent card to leave for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_deny_oauth_consent(
+    consents: Scoped&lt;LiveConsentDecider&gt;,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Json&lt;ConsentResult&gt;, AuthorizationServerError&gt; {
+    Ok(Json(consents.deny_oauth_consent(&amp;id, Utc::now())?.into()))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/deny.rs#L25-L30"><code>authorization-server-rust/src/http/routes/oauth_consents/deny.rs</code> lines 25–30</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauth_consentsask_owner"><a class="header" href="#httproutesoauth_consentsask_owner"><code>http::routes::oauth_consents::ask_owner</code></a></h2>
+<h3 id="handle_ask_owner"><a class="header" href="#handle_ask_owner"><code>handle_ask_owner</code></a></h3>
+<p><strong>A browser that can read a prompt but not approve it hands it to the Owner.</strong> The capability asks the start limit the layer <a href="../middleware.html#item-DeferredStartLimit">deferred</a> onto the request, and only when it is about to raise.</p>
+<div id="item-handle_ask_owner" class="item-anchor"></div>
+
+<p><code>POST /authorization/oauth-consents/{id}/ask-owner</code> — a browser that can read a consent
+prompt but not approve it hands it to the server’s Owner (scope
+<code>wildflower/AuthorizationRequest.r</code>, as reading it takes): the request no
+longer counts as decidable in the browser that made it, so the host
+notifies the Owner. Decides nothing. Raising a request spends from the
+authorization start limit, as starting one the Owner is asked about does:
+<code>429 Too Many Requests</code> when refused, the request left as it was. Raising
+one already raised spends nothing. <code>204 No Content</code>, or <code>404</code> once the
+request is no longer pending.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_ask_owner(
+    consents: Scoped&lt;LiveConsentRaiser&gt;,
+    Extension(deferred_start_limit): Extension&lt;DeferredStartLimit&gt;,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Response, AuthorizationServerError&gt; {
+    Ok(
+        match consents.raise_for_owner(&amp;id, || deferred_start_limit.admits(), Utc::now())? {
+            OwnerRaising::Raised | OwnerRaising::AlreadyRaised =&gt; {
+                StatusCode::NO_CONTENT.into_response()
+            }
+            OwnerRaising::StartLimited =&gt; start_limited_response(),
+        },
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth_consents/ask_owner.rs#L33-L46"><code>authorization-server-rust/src/http/routes/oauth_consents/ask_owner.rs</code> lines 33–46</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesdevices"><a class="header" href="#httproutesdevices"><code>http::routes::devices</code></a></h2>
+<h3 id="router-1"><a class="header" href="#router-1"><code>router</code></a></h3>
+<div id="item-devices--router" class="item-anchor"></div>
+
+<p>The <code>/devices</code> route table: the prompt, and its approve and deny.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn router() -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    Router::new()
+        .route("/devices/{userCode}", get::route())
+        .route("/devices/{userCode}/approve", approve::route())
+        .route("/devices/{userCode}/deny", deny::route())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/mod.rs#L22-L27"><code>authorization-server-rust/src/http/routes/devices/mod.rs</code> lines 22–27</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesdevicesget"><a class="header" href="#httproutesdevicesget"><code>http::routes::devices::get</code></a></h2>
+<h3 id="handle_get_device_consent"><a class="header" href="#handle_get_device_consent"><code>handle_get_device_consent</code></a></h3>
+<p><strong>The device page loads the prompt for the code the approver typed.</strong> A code-flow request never reaches the match: the reader refuses one as not found.</p>
+<div id="item-handle_get_device_consent" class="item-anchor"></div>
+
+<p><code>GET /authorization/devices/{userCode}</code> — load a pending device-code consent prompt for
+the launcher to render (scope <code>wildflower/AuthorizationRequest.r</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_get_device_consent(
+    consents: Scoped&lt;LiveConsentReader&gt;,
+    Path(user_code): Path&lt;String&gt;,
+) -&gt; Result&lt;Json&lt;DeviceConsent&gt;, AuthorizationServerError&gt; {
+    let DeviceConsentView {
+        request,
+        client_name,
+        starting_scopes,
+        approvable_scopes,
+        missing_approval_scopes,
+    } = consents.device_consent(&amp;user_code, Utc::now())?;
+    let (kind, device_name) = match &amp;request {
+        PolledRequest::Pairing(pairing_request) =&gt; (
+            DeviceConsentKind::Browser,
+            Some(pairing_request.browser_name.clone()),
+        ),
+        PolledRequest::Device(device_request) =&gt; (
+            DeviceConsentKind::Device,
+            device_request.device_name.clone(),
+        ),
+    };
+    Ok(Json(DeviceConsent {
+        kind,
+        user_code,
+        client_id: request.client_id().to_owned(),
+        client_name,
+        device_name,
+        starting_scopes,
+        allowed_scopes: approvable_scopes,
+        missing_approval_scopes,
+    }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/get.rs#L72-L103"><code>authorization-server-rust/src/http/routes/devices/get.rs</code> lines 72–103</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="deviceconsentkind"><a class="header" href="#deviceconsentkind"><code>DeviceConsentKind</code></a></h3>
+<div id="item-DeviceConsentKind" class="item-anchor"></div>
+
+<p>What asks at the device page: a device, through the RFC 8628 device-code
+flow, or a browser pairing for a browser session. On the wire, <code>"device"</code>
+or <code>"browser"</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) enum DeviceConsentKind {
+    /// A device's request, through the device-code flow.
+    Device,
+    /// A browser pairing, asking for a browser session.
+    Browser,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/get.rs#L23-L28"><code>authorization-server-rust/src/http/routes/devices/get.rs</code> lines 23–28</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="deviceconsent"><a class="header" href="#deviceconsent"><code>DeviceConsent</code></a></h3>
+<div id="item-DeviceConsent" class="item-anchor"></div>
+
+<p>Body returned to the launcher when it loads a pending device-page consent
+prompt — what asks, the requesting client, the device’s or browser’s
+name, the scopes the approver’s ticks start from, and the <em>expansion
+envelope</em> the approver may grant up to (device consent is expandable): a
+device client’s full allowed-scope set, a browser’s the Owner’s scopes.
+Local to this one route (its only reader).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct DeviceConsent {
+    /// What asks: `device` for a device's request, `browser` for a pairing.
+    pub(crate) kind: DeviceConsentKind,
+    /// The code the Owner entered or confirmed, which approve and deny name.
+    pub(crate) user_code: String,
+    /// The requesting client: the device's app, or the browser-session client
+    /// for a pairing.
+    pub(crate) client_id: String,
+    /// The client's registered name, or its `client_id` when it has no row.
+    pub(crate) client_name: String,
+    /// The browser's name for a pairing; for a device, the name it gave or
+    /// was inferred from its `User-Agent`, if any.
+    pub(crate) device_name: Option&lt;String&gt;,
+    /// The scopes the approver's ticks start from: a device's requested
+    /// scopes, or for a browser everything the caller may delegate.
+    pub(crate) starting_scopes: Vec&lt;String&gt;,
+    /// How far the approver may expand: the app's whole registered scope
+    /// list for a device, the Owner's scopes for a pairing. Device consent is
+    /// expandable.
+    pub(crate) allowed_scopes: Vec&lt;String&gt;,
+    /// The approval scopes the caller's own token lacks to approve this
+    /// request (`wildflower/AuthorizationRequest.u`, and `wildflower/Grant.c`
+    /// for a device's standing grant). Empty when it may approve; otherwise
+    /// the device page sends the Owner to the device running the server.
+    pub(crate) missing_approval_scopes: Vec&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/get.rs#L38-L63"><code>authorization-server-rust/src/http/routes/devices/get.rs</code> lines 38–63</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesdevicesapprove"><a class="header" href="#httproutesdevicesapprove"><code>http::routes::devices::approve</code></a></h2>
+<h3 id="handle_approve_device_consent"><a class="header" href="#handle_approve_device_consent"><code>handle_approve_device_consent</code></a></h3>
+<p>A pairing’s approval leaves no standing grant: the pairing page’s poll starts the browser’s session. Neither answer carries a <code>redirect</code>, since the device or the browser polls for its result.</p>
+<div id="item-handle_approve_device_consent" class="item-anchor"></div>
+
+<p><code>POST /authorization/devices/{userCode}/approve</code> — the Owner approves a device-code
+consent prompt, granting the (expanded) scope set and leaving a standing
+device grant. Gated by <a href="../../assembly/access-bindings.html#item-LiveConsentDecider"><code>LiveConsentDecider</code></a> (scope
+<code>wildflower/AuthorizationRequest.u</code>), which also carries the approver’s own
+scopes: an approval delegating a resource scope beyond them is rejected with
+a <code>403</code>. The write scope lives in the consent capability’s <code>approve_device_consent</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_approve_device_consent(
+    consents: Scoped&lt;LiveConsentDecider&gt;,
+    Path(user_code): Path&lt;String&gt;,
+    Json(body): Json&lt;ApproveBody&gt;,
+) -&gt; Result&lt;Json&lt;ConsentResult&gt;, AuthorizationServerError&gt; {
+    let outcome = consents.approve_device_consent(
+        &amp;user_code,
+        ApproveDeviceConsentInput {
+            owner_approved_scopes: body.approved_scopes,
+            patient: body.patient,
+            device_name: body.device_name,
+        },
+        Utc::now(),
+    )?;
+    Ok(Json(outcome.into()))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/approve.rs#L28-L43"><code>authorization-server-rust/src/http/routes/devices/approve.rs</code> lines 28–43</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesdevicesdeny"><a class="header" href="#httproutesdevicesdeny"><code>http::routes::devices::deny</code></a></h2>
+<h3 id="handle_deny_device_consent"><a class="header" href="#handle_deny_device_consent"><code>handle_deny_device_consent</code></a></h3>
+<div id="item-handle_deny_device_consent" class="item-anchor"></div>
+
+<p><code>POST /authorization/devices/{userCode}/deny</code> — the Owner declines a device-code consent
+prompt (scope <code>wildflower/AuthorizationRequest.u</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn handle_deny_device_consent(
+    consents: Scoped&lt;LiveConsentDecider&gt;,
+    Path(user_code): Path&lt;String&gt;,
+) -&gt; Result&lt;Json&lt;ConsentResult&gt;, AuthorizationServerError&gt; {
+    consents.deny_device_consent(&amp;user_code, Utc::now())?;
+    Ok(Json(ConsentResult::Denied { redirect: None }))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/http/routes/devices/deny.rs#L24-L30"><code>authorization-server-rust/src/http/routes/devices/deny.rs</code> lines 24–30</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/http/routes/token-endpoint.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/http/routes/owner-resource-routes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/http/routes/token-endpoint.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/http/routes/owner-resource-routes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

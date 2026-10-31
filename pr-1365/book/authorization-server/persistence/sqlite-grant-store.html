@@ -1,0 +1,3263 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SQLite Grant Store - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-c9130fb8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="sqlite-grant-store"><a class="header" href="#sqlite-grant-store">SQLite Grant Store</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs"><code>authorization-server-rust/src/db/grant_store.rs</code></a></p>
+
+<p><code>SqliteGrantStore</code> is the <a href="../grant-store.html">Grant Store</a> port’s SQLite adapter. It holds a pool of connections onto the host’s shared database file, applies this crate’s migrations when it is opened, and opens the port’s two scopes on a connection it checks out of the pool: a read scope in autocommit, where each statement sees a committed state and no lock is held between statements, and a write scope inside <code>BEGIN IMMEDIATE</code>, which takes the write lock before its first read.</p>
+<p><strong>SQLite admits one writer at a time across every connection to the file.</strong> A second write scope’s <code>BEGIN IMMEDIATE</code> waits for the first to commit, for up to the connection’s busy timeout, and then fails. That is what lets a capability read a row, decide, and write it back in one write scope without another writer landing in between.</p>
+<h2 id="the-revocation-store-and-lock-order"><a class="header" href="#the-revocation-store-and-lock-order">The revocation store and lock order</a></h2>
+<p>The host’s token revocation store, which holds the per-token denylist and each app’s revocation epoch, is not in this adapter. It reads and writes through the host’s shared rusqlite connection: another connection onto the same file, behind a lock of its own. <strong>No write scope touches the revocation store.</strong> Taking that connection’s lock while holding the file’s write lock risks a lock-order stall: the other connection, mid-write, can be waiting for the write lock this scope holds, and the two wait on each other until the busy timeout. So a capability reads or writes the revocation store before or after its write scope, never inside it, which is why <a href="../grant-store.html#two-scopes-in-one-operation">two operations open two scopes</a>.</p>
+<h2 id="dbgrant_store"><a class="header" href="#dbgrant_store"><code>db::grant_store</code></a></h2>
+<h3 id="sqlitegrantstore"><a class="header" href="#sqlitegrantstore"><code>SqliteGrantStore</code></a></h3>
+<div id="item-SqliteGrantStore" class="item-anchor"></div>
+
+<p>The <code>SQLite</code> adapter for the <a href="../grant-store.html#item-GrantStore"><code>GrantStore</code></a> port. Cheap to clone (the
+pool is an <code>Arc</code> inside), so it drops straight into the axum state.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct SqliteGrantStore {
+    /// The app-wide r2d2 pool onto the shared database file, built and owned
+    /// by the host (`wildflowerhealthio_persistence::open_pool`): the same pool
+    /// the other diesel-backed slices' stores ride. Diesel's connection API is
+    /// `&amp;mut`, so each scope checks a connection out of the pool rather than
+    /// sharing one behind a mutex; the pool (an `Arc` inside) makes the store
+    /// cheap to clone into the axum state. Its connections are additional
+    /// openers onto the same file the host's rusqlite
+    /// `persistence-rust::Connection` serves the remaining rusqlite slices
+    /// from: `SQLite` permits several connections per file, and the pool's
+    /// `busy_timeout` pragma rides out the brief write locks any connection
+    /// takes.
+    pool: DieselPool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L41-L54"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 41–54</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="new"><a class="header" href="#new"><code>new</code></a></h4>
+<p>Boot-time <a href="../assembly/seeding.html">seeding</a> calls it before its first scope. The integration harness calls it again on a running test server’s pool, for a second handle that plants rows.</p>
+<div id="item-SqliteGrantStore--new" class="item-anchor"></div>
+
+<p>Wrap the host-owned connection <code>pool</code> and apply pending authorization server
+migrations once, on a single checked-out connection, under
+<code>MIGRATION_NAMESPACE</code>. The host builds the app-wide pool (via
+<code>wildflowerhealthio_persistence::open_pool</code>) on the same file its rusqlite connection
+opens for the other slices; both coexist (see the <code>pool</code> field).</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p>Returns an error if a connection can’t be checked out of the pool or a
+migration fails.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn new(pool: DieselPool) -&gt; anyhow::Result&lt;Self&gt; {
+    let mut conn = pool
+        .get()
+        .context("failed to check out a connection to run authorization server migrations")?;
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .context("failed to apply authorization server migrations")?;
+    drop(conn);
+    Ok(Self { pool })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L67-L79"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 67–79</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="open_in_memory"><a class="header" href="#open_in_memory"><code>open_in_memory</code></a></h4>
+<div id="item-SqliteGrantStore--open_in_memory" class="item-anchor"></div>
+
+<p>Build a store over a private in-memory database — for tests. Each call
+is an independent, freshly-migrated database. Uses
+<code>wildflowerhealthio_persistence::open_in_memory_pool</code>, whose shared-cache URI keeps
+the pooled connections on one in-memory database (a naive <code>:memory:</code>
+pool gives each connection its own empty db).</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p>Returns an error if the in-memory pool can’t be built or migrated.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn open_in_memory() -&gt; anyhow::Result&lt;Self&gt; {
+    Self::new(wildflowerhealthio_persistence::open_in_memory_pool()?)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L90-L92"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 90–92</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The in-memory constructor produces an independent, migrated store per
+call — the isolation every store test relies on.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn open_in_memory_stores_are_independent() {
+    let a = SqliteGrantStore::open_in_memory().expect("store a");
+    let b = SqliteGrantStore::open_in_memory().expect("store b");
+    let key = crate::domain::signing_key::SigningKey::generate().expect("generate key");
+    a.write(|tx| tx.insert_signing_key(&amp;key))
+        .expect("insert into a");
+    assert_eq!(a.read(|tx| tx.all_signing_keys()).expect("read a").len(), 1);
+    assert_eq!(
+        b.read(|tx| tx.all_signing_keys()).expect("read b").len(),
+        0,
+        "store b must not see store a's key",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2827-L2839"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2827–2839</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="pool"><a class="header" href="#pool"><code>pool</code></a></h4>
+<div id="item-SqliteGrantStore--pool" class="item-anchor"></div>
+
+<p>The pool, for tests that tamper with stored rows via raw SQL to prove the
+column mappings reject an out-of-domain stored value as a typed read error
+(rather than a panic) at the read boundary.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn pool(&amp;self) -&gt; &amp;DieselPool {
+    &amp;self.pool
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L110-L112"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 110–112</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="connection"><a class="header" href="#connection"><code>connection</code></a></h4>
+<div id="item-SqliteGrantStore--connection" class="item-anchor"></div>
+
+<p>Check a connection out of the pool, mapping a checkout failure to the
+port’s opaque <a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> — the shared first step
+of every method in the port impl below. Each query in the sibling <code>db/*</code>
+modules runs on one of these, checked out per call — diesel’s connection
+API is <code>&amp;mut</code>, so the store hands out a fresh connection rather than
+sharing one.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn connection(&amp;self) -&gt; Result&lt;PooledDieselConnection, AuthorizationServerError&gt; {
+    self.pool.get().map_err(|e| {
+        AuthorizationServerError::infrastructure("failed to check out a connection", e)
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L100-L104"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 100–104</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="read"><a class="header" href="#read"><code>read</code></a></h4>
+<p>Each statement the closure runs commits on its own.</p>
+<div id="item-SqliteGrantStore--read" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn read&lt;T, E: From&lt;AuthorizationServerError&gt;&gt;(
+    &amp;self,
+    f: impl FnOnce(&amp;mut Self::Tx&lt;'_&gt;) -&gt; Result&lt;T, E&gt;,
+) -&gt; Result&lt;T, E&gt; {
+    let mut conn = self.connection()?;
+    f(&amp;mut SqliteGrantTx { conn: &amp;mut conn })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L131-L137"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 131–137</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="write"><a class="header" href="#write"><code>write</code></a></h4>
+<p>The closure’s own error comes back unchanged, so a capability sees its flow’s refusal, not a store error. Only a failure of <code>BEGIN</code>, <code>COMMIT</code> or <code>ROLLBACK</code> itself becomes the infrastructure error <code>grant store transaction failed</code>.</p>
+<div id="item-SqliteGrantStore--write" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn write&lt;T, E: From&lt;AuthorizationServerError&gt;&gt;(
+    &amp;self,
+    f: impl FnOnce(&amp;mut Self::Tx&lt;'_&gt;) -&gt; Result&lt;T, E&gt;,
+) -&gt; Result&lt;T, E&gt; {
+    let mut conn = self.connection()?;
+    let sqlite: &amp;mut SqliteConnection = &amp;mut conn;
+    sqlite
+        .immediate_transaction(|conn| {
+            f(&amp;mut SqliteGrantTx { conn }).map_err(ScopeError::Closure)
+        })
+        .map_err(|error| match error {
+            ScopeError::Closure(error) =&gt; error,
+            ScopeError::Transaction(error) =&gt; {
+                E::from(AuthorizationServerError::infrastructure(
+                    "grant store transaction failed",
+                    error,
+                ))
+            }
+        })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L139-L158"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 139–158</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="scopeerror"><a class="header" href="#scopeerror"><code>ScopeError</code></a></h3>
+<div id="item-ScopeError" class="item-anchor"></div>
+
+<p>How a write scope failed: its closure’s own error, or diesel’s <code>BEGIN</code>,
+<code>COMMIT</code> or <code>ROLLBACK</code> — which diesel’s transaction runner needs a
+<code>From&lt;diesel::result::Error&gt;</code> for, whatever error the closure speaks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum ScopeError&lt;E&gt; {
+    /// The scope's closure failed with its own error; the transaction rolls
+    /// back, and the caller gets that error as it was.
+    Closure(E),
+    /// Diesel's `BEGIN`, `COMMIT` or `ROLLBACK` failed; the caller gets it as an
+    /// infrastructure error.
+    Transaction(diesel::result::Error),
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L164-L171"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 164–171</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="sqlitegranttx"><a class="header" href="#sqlitegranttx"><code>SqliteGrantTx</code></a></h3>
+<div id="item-SqliteGrantTx" class="item-anchor"></div>
+
+<p>The <a href="../grant-store.html#item-GrantTx"><code>GrantTx</code></a> a <a href="#item-SqliteGrantStore"><code>SqliteGrantStore</code></a> scope
+hands its closure: one checked-out diesel connection, in autocommit for a
+read scope and inside <code>BEGIN IMMEDIATE</code> for a write scope. Each concern’s
+<code>db/</code> file implements its trait on it, next to that concern’s <code>table!</code>.</p>
+<p><code>pub</code> only because it is the adapter’s <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/domain/grant_store/store.rs#L20-L22"><code>GrantStore::Tx</code></a>; out-of-crate
+callers can name it but reach nothing except through the traits.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct SqliteGrantTx&lt;'a&gt; {
+    /// The scope's checked-out connection, which every query in the scope runs
+    /// on; inside the write scope's transaction for a write scope.
+    pub(in crate::db) conn: &amp;'a mut SqliteConnection,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L122-L126"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 122–126</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="migration_namespace"><a class="header" href="#migration_namespace"><code>MIGRATION_NAMESPACE</code></a></h3>
+<div id="item-MIGRATION_NAMESPACE" class="item-anchor"></div>
+
+<p>This slice’s migration namespace in the shared database. Applied versions are
+bookkept per-namespace by <code>wildflowerhealthio_persistence::run_diesel_migrations</code>, so
+the authorization server’s <code>0001</code> and another diesel slice’s <code>0001</code> never collide — the
+stock diesel harness records versions in a single un-namespaced
+<code>__diesel_schema_migrations</code> table, where a second diesel slice’s <code>0001</code>
+would silently mask the first.</p>
+<p>Still <code>gatekeeper</code>: existing databases record their migrations under it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const MIGRATION_NAMESPACE: &amp;str = "gatekeeper";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L26"><code>authorization-server-rust/src/db/grant_store.rs</code> line 26</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="migrations"><a class="header" href="#migrations"><code>MIGRATIONS</code></a></h3>
+<p><strong>A migration runs once per database, so a shipped migration is never edited.</strong> An install that already ran it never reads it again; a change lands as a new migration, which reaches fresh and upgraded installs alike. The tests hold each migration to that: each drives a database to the version just before it with <a href="test-fixtures.html#item-tests--MigrationsThrough"><code>MigrationsThrough</code></a>, plants the rows an install could hold, upgrades, and checks the result, often reverting the migration too, to show its <code>down.sql</code> restores what was there.</p>
+<div id="item-MIGRATIONS" class="item-anchor"></div>
+
+<p>The authorization server migrations, embedded from the crate’s <code>migrations/</code> tree at
+compile time (diesel layout: <code>&lt;version&gt;_&lt;name&gt;/up.sql</code> + <code>down.sql</code>).
+Applied once per database in <a href="#item-SqliteGrantStore--new"><code>SqliteGrantStore::new</code></a> via
+<code>wildflowerhealthio_persistence::run_diesel_migrations</code> under <a href="#item-MIGRATION_NAMESPACE"><code>MIGRATION_NAMESPACE</code></a>
+(see that runner for why the stock diesel harness can’t be shared across
+slices). Each migration’s header says what it changes and why (see
+<code>migrations/</code>); because each runs only once per database, an upgrade neither
+re-drops nor re-seeds.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const MIGRATIONS: EmbeddedMigrations = embed_migrations!();
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L36"><code>authorization-server-rust/src/db/grant_store.rs</code> line 36</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Running the migrations twice is a no-op the second time (the namespaced
+runner skips already-applied versions) and every expected table — plus
+the <code>grants</code> view — exists afterwards, so opening an existing database
+never re-drops or errors.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migrations_are_idempotent_and_create_the_schema() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("first run");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("second run");
+    let names: Vec&lt;String&gt; = diesel::sql_query(
+        "SELECT name FROM sqlite_master WHERE type IN ('table', 'view') ORDER BY name",
+    )
+    .load::&lt;Name&gt;(&amp;mut conn)
+    .expect("list tables")
+    .into_iter()
+    .map(|n| n.name)
+    .collect();
+    for expected in [
+        "authorization_code_grants",
+        "authorization_codes",
+        "clients",
+        "code_authorization_requests",
+        "device_grants",
+        "grants",
+        "browser_sessions",
+        "launch_contexts",
+        "refresh_token_families",
+        "refresh_tokens",
+        "session_shortfall_acknowledgements",
+        "signing_keys",
+        "user_code_requests",
+    ] {
+        assert!(names.iter().any(|n| n == expected), "missing {expected}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2729-L2768"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2729–2768</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Migration <code>0001</code> is a destructive rebaseline: applied over a database
+carrying the retired rusqlite-migrated tables (simulated here by
+pre-creating an old-shape <code>grants</code> parent + child with a row in it),
+it drops them and recreates the final shape — no copy, no error.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migration_rebaselines_over_the_old_rusqlite_tables() {
+    use diesel::connection::SimpleConnection;
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    conn.batch_execute(
+        "PRAGMA foreign_keys = ON;
+         CREATE TABLE grants (
+             id TEXT PRIMARY KEY NOT NULL,
+             client_id TEXT NOT NULL,
+             scopes TEXT NOT NULL,
+             granted_at TEXT NOT NULL,
+             last_used_at TEXT,
+             patient TEXT,
+             grant_type TEXT NOT NULL
+         );
+         CREATE TABLE authorization_code_grants (
+             id TEXT PRIMARY KEY NOT NULL REFERENCES grants(id) ON DELETE CASCADE,
+             client_id TEXT NOT NULL,
+             redirect_uri TEXT NOT NULL
+         );
+         INSERT INTO grants VALUES
+             ('g1', 'c1', '[]', '2024-01-01 00:00:00+00:00', NULL, NULL,
+              'authorization_code');
+         INSERT INTO authorization_code_grants VALUES
+             ('g1', 'c1', 'https://example.com/cb');",
+    )
+    .expect("simulate the old schema");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("rebaseline");
+
+    // The old parent's row is gone (destructive) and `grants` is now the
+    // UNION ALL view over the two rebuilt concrete tables.
+    let grants: Vec&lt;Name&gt; = diesel::sql_query("SELECT id AS name FROM grants")
+        .load(&amp;mut conn)
+        .expect("grants view is queryable");
+    assert!(grants.is_empty(), "the rebaseline copies no data");
+    let kind: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT type AS name FROM sqlite_master WHERE name = 'grants'")
+            .load(&amp;mut conn)
+            .expect("sqlite_master");
+    assert_eq!(kind.len(), 1);
+    assert_eq!(kind[0].name, "view");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2775-L2822"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2775–2822</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Every migration has a version of its own, apart from the historical
+<code>0009</code> pair (left as it shipped; <code>0015</code> / <code>0016</code> repair it). The runner
+records applied migrations by version alone, so a second directory
+under a version an install has already applied is silently skipped
+there — while a fresh database runs it, so no other test notices.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migration_versions_are_unique_apart_from_the_historical_0009_pair() {
+    let mut names_by_version = std::collections::BTreeMap::&lt;String, Vec&lt;String&gt;&gt;::new();
+    for migration in
+        MigrationSource::&lt;Sqlite&gt;::migrations(&amp;MIGRATIONS).expect("load migrations")
+    {
+        names_by_version
+            .entry(migration.name().version().to_string())
+            .or_default()
+            .push(migration.name().to_string());
+    }
+    let mut shared: Vec&lt;(String, Vec&lt;String&gt;)&gt; = names_by_version
+        .into_iter()
+        .filter(|(_, names)| names.len() &gt; 1)
+        .collect();
+    for (_, names) in &amp;mut shared {
+        names.sort();
+    }
+    assert_eq!(
+        shared,
+        vec![(
+            "0009".to_owned(),
+            vec![
+                "0009_seed_ohif_viewer_client".to_owned(),
+                "0009_widen_importer_client_write_scopes".to_owned(),
+            ],
+        )],
+        "give each new migration a version no other migration uses",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L415-L443"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 415–443</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="the-0009-pair-and-its-repairs"><a class="header" href="#the-0009-pair-and-its-repairs">The <code>0009</code> pair and its repairs</a></h4>
+<p>Two folders share version <code>0009</code>, and the runner records versions alone, so an install that opened while only one of them existed recorded <code>0009</code> and never ran the other. Later migrations repair each half.</p>
+<div id="item-tests--an_install_already_at_0009_is_upgraded_onto_the_fhir_viewer_redirect" class="item-anchor"></div>
+
+<p>The regression <code>0010_ohif_viewer_client_fhir_viewer_redirect</code> exists for:
+migrations are run-once, so an install that already applied <code>0009</code> never
+re-reads it. Editing <code>0009</code>’s <code>redirect_uris</code> in place would have left
+every upgraded install on the published directory URL, and <code>/authorize</code>
+matches <code>redirect_uri</code> by exact URL equality — so the <code>/fhir-viewer</code>
+launch would fail there. A fresh open applies both migrations and cannot
+tell the two apart; driving a database to <code>0009</code> first is the only way to
+observe it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0009_is_upgraded_onto_the_fhir_viewer_redirect() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0009"),
+    )
+    .expect("migrate to 0009");
+
+    let seeded: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT redirect_uris AS name FROM clients WHERE client_id = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;("ohif-viewer")
+            .load(&amp;mut conn)
+            .expect("0009 must have seeded the ohif-viewer client");
+    assert_eq!(
+        seeded[0].name, r#"["/","https://wildflowerhealth.io/ohif-viewer/"]"#,
+        "0009 must stay exactly as it shipped — an install that ran it sees no edit",
+    );
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0010"),
+    )
+    .expect("upgrade through 0010");
+
+    let upgraded: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT redirect_uris AS name FROM clients WHERE client_id = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;("ohif-viewer")
+            .load(&amp;mut conn)
+            .expect("the client row must survive the upgrade");
+    assert_eq!(
+        upgraded[0].name,
+        r#"["/","https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L230-L265"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 230–265</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_that_ran_only_the_ohif_0009_gains_the_importer_write_scopes" class="item-anchor"></div>
+
+<p>The regression <code>0015_repair_importer_client_write_scopes</code> exists for: an
+install that ran only <code>0009_seed_ohif_viewer_client</code> (it landed first)
+skipped <code>0009_widen_importer_client_write_scopes</code>, and kept the <code>0008</code>
+scope set. Upgrading it must widen the Importer’s scopes to <code>0009</code>’s set.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_that_ran_only_the_ohif_0009_gains_the_importer_write_scopes() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThroughOnly0009("0009_seed_ohif_viewer_client"),
+    )
+    .expect("migrate to the OHIF 0009 alone");
+    assert_eq!(
+        column_for_client(&amp;mut conn, "allowed_scopes", "importer-app")[0].name,
+        r#"["launch","openid","fhirUser","system/DocumentReference.rs","system/DocumentReference.u","system/Patient.u","system/Observation.u"]"#,
+        "the importer widening was skipped, leaving 0008's set",
+    );
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0015"),
+    )
+    .expect("upgrade through 0015");
+
+    assert_eq!(
+        column_for_client(&amp;mut conn, "allowed_scopes", "importer-app")[0].name,
+        r#"["launch","openid","fhirUser","system/DocumentReference.cruds","system/Patient.cruds","system/Observation.cruds","system/Practitioner.cruds","system/DiagnosticReport.cruds","system/Medication.cruds","system/MedicationRequest.cruds","system/MedicationDispense.cruds","system/ServiceRequest.cruds","system/ImagingStudy.cruds"]"#,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L311-L336"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 311–336</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_that_ran_only_the_importer_0009_gains_the_ohif_viewer_client" class="item-anchor"></div>
+
+<p>The regression <code>0016_repair_ohif_viewer_client</code> exists for: an install
+that ran only <code>0009_widen_importer_client_write_scopes</code> has no
+<code>ohif-viewer</code> client, so <code>0010</code>’s redirect update matched nothing.
+Upgrading it must seed the client in the <code>0009</code> + <code>0010</code> end state.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_that_ran_only_the_importer_0009_gains_the_ohif_viewer_client() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThroughOnly0009("0009_widen_importer_client_write_scopes"),
+    )
+    .expect("migrate to the importer 0009 alone");
+    assert!(
+        column_for_client(&amp;mut conn, "client_id", "ohif-viewer").is_empty(),
+        "the OHIF seed was skipped",
+    );
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0016"),
+    )
+    .expect("upgrade through 0016");
+
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", "ohif-viewer")[0].name,
+        r#"["/","https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+    );
+    assert_eq!(
+        column_for_client(&amp;mut conn, "allowed_scopes", "ohif-viewer")[0].name,
+        r#"["launch","openid","fhirUser","system/Patient.rs","system/ImagingStudy.rs","system/DocumentReference.rs"]"#,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L343-L371"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 343–371</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--the_0009_repairs_leave_changed_rows_alone" class="item-anchor"></div>
+
+<p>The repairs leave a row alone once it has changed from the state they
+fix: an Importer client whose scopes were changed after <code>0009</code> is not
+reset to <code>0009</code>’s set, and an existing <code>ohif-viewer</code> row is not
+touched.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_0009_repairs_leave_changed_rows_alone() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0013"),
+    )
+    .expect("migrate to 0013");
+    diesel::sql_query(
+        "UPDATE clients SET allowed_scopes = '[\"launch\"]' \
+         WHERE client_id IN ('importer-app', 'ohif-viewer')",
+    )
+    .execute(&amp;mut conn)
+    .expect("change both rows");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0016"),
+    )
+    .expect("upgrade through the repairs");
+
+    for client_id in ["importer-app", "ohif-viewer"] {
+        assert_eq!(
+            column_for_client(&amp;mut conn, "allowed_scopes", client_id)[0].name,
+            r#"["launch"]"#,
+            "{client_id} must be left as it was",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L378-L407"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 378–407</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="seeding-reshaping-and-re-keying-clients"><a class="header" href="#seeding-reshaping-and-re-keying-clients">Seeding, reshaping and re-keying clients</a></h4>
+<p>The first-party apps’ clients are written by SQL migrations, and every later change to one, a new redirect, narrower scopes, a random id, a new name, is a migration of its own. A re-key carries what was issued to the old id with it, and a rename or a reshape leaves alone a row the Owner has changed.</p>
+<div id="item-tests--an_install_already_at_0018_gains_the_lifting_app_client" class="item-anchor"></div>
+
+<p>A new seed reaches an install that already ran every earlier migration:
+driving a database through <code>0018</code> and then opening it with the full set
+must add the <code>lifting-app</code> client (<code>0019</code>) with its exact redirect URIs
+and scope set — the upgrade path a fresh open cannot distinguish from a
+first run.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0018_gains_the_lifting_app_client() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0018"),
+    )
+    .expect("migrate to 0018");
+
+    let before: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT client_id AS name FROM clients WHERE client_id = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;("lifting-app")
+            .load(&amp;mut conn)
+            .expect("query clients");
+    assert!(
+        before.is_empty(),
+        "no migration through 0018 seeds lifting-app"
+    );
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0019"),
+    )
+    .expect("upgrade through 0019");
+
+    let redirects: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT redirect_uris AS name FROM clients WHERE client_id = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;("lifting-app")
+            .load(&amp;mut conn)
+            .expect("0019 must seed the lifting-app client");
+    assert_eq!(
+        redirects[0].name,
+        r#"["/","https://wildflowerhealth.io/lifting-app/"]"#,
+    );
+    let scopes: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT allowed_scopes AS name FROM clients WHERE client_id = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;("lifting-app")
+            .load(&amp;mut conn)
+            .expect("query scopes");
+    assert_eq!(
+        scopes[0].name,
+        r#"["launch","launch/patient","openid","fhirUser","system/Patient.rs","system/PlanDefinition.crus","system/ServiceRequest.crus","system/Procedure.crus","system/Observation.crus"]"#,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L451-L495"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 451–495</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0019_drops_launch_patient_from_the_app_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0019</code> — Medications and Lifting allowing
+<code>launch/patient</code> — is moved by <code>0020</code> onto the in-app patient pick: both
+clients lose <code>launch/patient</code>, and Medications gains <code>system/Patient.rs</code>
+for its picker. Reverting <code>0020</code> restores what <code>0019</code> left.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0019_drops_launch_patient_from_the_app_clients() {
+    const MEDICATIONS_AT_0019: &amp;str = r#"["launch","launch/patient","openid","fhirUser","system/MedicationRequest.rs","system/Medication.rs"]"#;
+    const LIFTING_AT_0019: &amp;str = r#"["launch","launch/patient","openid","fhirUser","system/Patient.rs","system/PlanDefinition.crus","system/ServiceRequest.crus","system/Procedure.crus","system/Observation.crus"]"#;
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0019"),
+    )
+    .expect("migrate to 0019");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, "medications-app"),
+        MEDICATIONS_AT_0019
+    );
+    assert_eq!(allowed_scopes_of(&amp;mut conn, "lifting-app"), LIFTING_AT_0019);
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0020"),
+    )
+    .expect("upgrade through 0020");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, "medications-app"),
+        r#"["launch","openid","fhirUser","system/MedicationRequest.rs","system/Medication.rs","system/Patient.rs"]"#,
+    );
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, "lifting-app"),
+        r#"["launch","openid","fhirUser","system/Patient.rs","system/PlanDefinition.crus","system/ServiceRequest.crus","system/Procedure.crus","system/Observation.crus"]"#,
+    );
+
+    let migration_0020 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0020"))
+        .expect("0020 is embedded");
+    migration_0020.revert(&amp;mut conn).expect("revert 0020");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, "medications-app"),
+        MEDICATIONS_AT_0019
+    );
+    assert_eq!(allowed_scopes_of(&amp;mut conn, "lifting-app"), LIFTING_AT_0019);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L516-L560"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 516–560</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0020_drops_path_entries_from_redirect_uris" class="item-anchor"></div>
+
+<p>An install already at <code>0020</code> — each seeded first-party client holding a
+<code>"/"</code> path entry ahead of its absolute redirect — is moved by <code>0021</code> onto
+absolute entries only: every path entry is gone, the absolute ones keep
+their order, a row with no path entry is left untouched, and every row
+decodes as a <a href="../domain/client.html#item-Client"><code>Client</code></a>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0020_drops_path_entries_from_redirect_uris() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0020"),
+    )
+    .expect("migrate to 0020");
+    let redirect_uris_of = |conn: &amp;mut SqliteConnection, client_id: &amp;str| {
+        column_for_client(conn, "redirect_uris", client_id)[0]
+            .name
+            .clone()
+    };
+    for (client_id, at_0020) in [
+        (
+            "medications-app",
+            r#"["/","https://wildflowerhealth.io/medications-app/"]"#,
+        ),
+        (
+            "web-trace-app",
+            r#"["/","https://wildflowerhealth.io/web-trace-app/"]"#,
+        ),
+        (
+            "importer-app",
+            r#"["/","https://wildflowerhealth.io/importer-app/"]"#,
+        ),
+        (
+            "ohif-viewer",
+            r#"["/","https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+        ),
+        (
+            "lifting-app",
+            r#"["/","https://wildflowerhealth.io/lifting-app/"]"#,
+        ),
+    ] {
+        assert_eq!(redirect_uris_of(&amp;mut conn, client_id), at_0020);
+    }
+    // A path entry between two absolute ones, so the rebuilt array must
+    // keep the absolute entries in their original order.
+    diesel::sql_query(
+        "UPDATE clients SET redirect_uris = \
+         '[\"https://b.example/cb\",\"/nested/\",\"https://a.example/cb\"]' \
+         WHERE client_id = 'web-trace-app'",
+    )
+    .execute(&amp;mut conn)
+    .expect("plant an interleaved path entry");
+    let docs_at_0020 = redirect_uris_of(&amp;mut conn, "wildflower-server-docs");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0021"),
+    )
+    .expect("upgrade through 0021");
+
+    for (client_id, after) in [
+        (
+            "medications-app",
+            r#"["https://wildflowerhealth.io/medications-app/"]"#,
+        ),
+        (
+            "web-trace-app",
+            r#"["https://b.example/cb","https://a.example/cb"]"#,
+        ),
+        (
+            "importer-app",
+            r#"["https://wildflowerhealth.io/importer-app/"]"#,
+        ),
+        (
+            "ohif-viewer",
+            r#"["https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+        ),
+        (
+            "lifting-app",
+            r#"["https://wildflowerhealth.io/lifting-app/"]"#,
+        ),
+    ] {
+        assert_eq!(redirect_uris_of(&amp;mut conn, client_id), after);
+    }
+    assert_eq!(
+        redirect_uris_of(&amp;mut conn, "wildflower-server-docs"),
+        docs_at_0020,
+        "a row with no path entry is left untouched",
+    );
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("upgrade through the rest");
+    let clients: Vec&lt;crate::domain::client::Client&gt; = crate::db::clients::clients::table
+        .select(crate::domain::client::Client::as_select())
+        .load(&amp;mut conn)
+        .expect("every migrated row decodes as a Client");
+    assert!(!clients.is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L568-L663"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 568–663</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0021_gains_the_health_viewer_app_client" class="item-anchor"></div>
+
+<p>A new seed reaches an install that already ran every earlier migration:
+driving a database through <code>0021</code> and then opening it with the full set
+must add the <code>health-viewer-app</code> client (<code>0022</code>) with its exact redirect
+URIs and scope set.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0021_gains_the_health_viewer_app_client() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0021"),
+    )
+    .expect("migrate to 0021");
+    assert!(
+        column_for_client(&amp;mut conn, "client_id", "health-viewer-app").is_empty(),
+        "no migration through 0021 seeds health-viewer-app"
+    );
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0022"),
+    )
+    .expect("upgrade through 0022");
+
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", "health-viewer-app")[0].name,
+        r#"["https://wildflowerhealth.io/health-viewer-app/"]"#,
+    );
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, "health-viewer-app"),
+        r#"["launch","openid","fhirUser","system/Observation.rs","system/MedicationRequest.rs","system/Patient.rs"]"#,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L670-L698"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 670–698</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0024_rekeys_the_lifting_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0024</code> re-keys Lifting’s clients when <code>0025</code> runs:
+the production client and a debug build’s dev client take their random
+ids, the production redirect moves to <code>/lifting/</code>, what was issued to
+them (here a launch) follows, and reverting <code>0025</code> restores <code>0019</code>’s ids.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0024_rekeys_the_lifting_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const STRENGTH: &amp;str = "bdf9fc5cb5a28c6683b49896b0ef8a75";
+    const STRENGTH_DEV: &amp;str = "8467e680a05f1e92e22864e923144e5a";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0024"),
+    )
+    .expect("migrate to 0024");
+    conn.batch_execute(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('lifting-app-dev', 'Lifting (Dev)', 'public', \
+                 '[\"http://localhost:5199/\"]', '[\"launch\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL); \
+         INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('issued', 'lifting-app', 'pat-1', \
+                 '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a dev client and a launch at 0024");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0025"),
+    )
+    .expect("upgrade through 0025");
+
+    assert!(column_for_client(&amp;mut conn, "client_id", "lifting-app").is_empty());
+    assert!(column_for_client(&amp;mut conn, "client_id", "lifting-app-dev").is_empty());
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", STRENGTH)[0].name,
+        r#"["https://wildflowerhealth.io/lifting/"]"#,
+    );
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", STRENGTH_DEV)[0].name,
+        r#"["http://localhost:5199/"]"#,
+    );
+    let launch: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id AS name FROM launch_contexts WHERE nonce = 'issued'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the launch");
+    assert_eq!(launch[0].name, STRENGTH);
+
+    let migration_0025 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0025"))
+        .expect("0025 is embedded");
+    migration_0025.revert(&amp;mut conn).expect("revert 0025");
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", "lifting-app")[0].name,
+        r#"["https://wildflowerhealth.io/lifting-app/"]"#,
+    );
+    assert_eq!(
+        column_for_client(&amp;mut conn, "client_id", "lifting-app-dev").len(),
+        1
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L755-L819"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 755–819</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0026_loses_the_web_trace_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0026</code> loses both Web Trace clients when it
+upgrades, with every grant and refresh token they hold, under the
+foreign key <code>refresh_tokens</code> keeps on its family.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0026_loses_the_web_trace_clients() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    diesel::sql_query("PRAGMA foreign_keys = ON")
+        .execute(&amp;mut conn)
+        .expect("enforce foreign keys, as the pool does");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0026"),
+    )
+    .expect("migrate to 0026");
+    for statement in [
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('web-trace-app-dev', 'Web Trace (Dev)', 'public', \
+                 '[\"http://localhost:5191/\"]', '[\"launch\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL)",
+        "INSERT INTO refresh_token_families \
+         (family_id, client_id, scopes, issued_at, expires_at) \
+         VALUES ('web-trace-family', 'web-trace-app', '[]', '2024-01-01', '2099-01-01')",
+        "INSERT INTO refresh_token_families \
+         (family_id, client_id, scopes, issued_at, expires_at) \
+         VALUES ('importer-family', 'importer-app', '[]', '2024-01-01', '2099-01-01')",
+        "INSERT INTO refresh_tokens (token_hash, family_id, issued_at) \
+         VALUES ('web-trace-token', 'web-trace-family', '2024-01-01')",
+        "INSERT INTO refresh_tokens (token_hash, family_id, issued_at) \
+         VALUES ('importer-token', 'importer-family', '2024-01-01')",
+    ] {
+        diesel::sql_query(statement)
+            .execute(&amp;mut conn)
+            .expect("plant a 0026 row");
+    }
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0027"),
+    )
+    .expect("upgrade through 0027");
+
+    for client_id in ["web-trace-app", "web-trace-app-dev"] {
+        assert!(column_for_client(&amp;mut conn, "client_id", client_id).is_empty());
+    }
+    assert_eq!(
+        column_for_client(&amp;mut conn, "client_id", "importer-app").len(),
+        1
+    );
+    let token_hashes: Vec&lt;Name&gt; =
+        diesel::sql_query("SELECT token_hash AS name FROM refresh_tokens ORDER BY token_hash")
+            .load(&amp;mut conn)
+            .expect("query refresh_tokens");
+    let token_hashes: Vec&lt;&amp;str&gt; = token_hashes.iter().map(|row| row.name.as_str()).collect();
+    assert_eq!(
+        token_hashes,
+        ["importer-token"],
+        "another client's tokens stay"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2845-L2903"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2845–2903</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0027_rekeys_the_site_app_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0027</code> re-keys the site’s clients when <code>0028</code> runs:
+each production client takes its random id and its redirect moves to the
+product’s path, each dev client takes its random id, what was issued to
+them (here a launch) follows, and the Synthetic Data Loader gains a
+production client. Reverting <code>0028</code> restores the old ids and paths and
+removes that client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0027_rekeys_the_site_app_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const SYNTHETIC_DATA: &amp;str = "225ba6af034a3acec6be7ff8010df67f";
+    // (old id, new id, the redirect it holds after `0028`).
+    let production = [
+        (
+            "medications-app",
+            "9769f8b274370708d0d3ebb2e3e59b7c",
+            r#"["https://wildflowerhealth.io/medications/"]"#,
+        ),
+        (
+            "importer-app",
+            "165cd26573e5ac72378e6ad2d2198330",
+            r#"["https://wildflowerhealth.io/importer/"]"#,
+        ),
+        (
+            "health-viewer-app",
+            "474e103de61f9141c4b640d59bfa130e",
+            r#"["https://wildflowerhealth.io/health-viewer/"]"#,
+        ),
+        (
+            "wildflower-server-docs",
+            "664a01e8614050cd82ffe90350b81413",
+            r#"["https://wildflowerhealth.io/server-docs/"]"#,
+        ),
+    ];
+    let dev = [
+        ("medications-app-dev", "4be2ee91360733fdcb99b43a3822de5f"),
+        ("importer-app-dev", "57268ff88aea38d6a22de56ae53e2c28"),
+        ("health-viewer-app-dev", "e7efc7c805f5f8f640bb3b3d48a2d7aa"),
+        ("synthetic-data-app-dev", "07a31e58db3367afda5c6480e03ed993"),
+    ];
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0027"),
+    )
+    .expect("migrate to 0027");
+    let redirects_at_0027: Vec&lt;String&gt; = production
+        .iter()
+        .map(|(old, _, _)| {
+            column_for_client(&amp;mut conn, "redirect_uris", old)[0]
+                .name
+                .clone()
+        })
+        .collect();
+    for (old, _) in dev {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO clients \
+             (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+              secret_hash, registered_at, disabled_at) \
+             VALUES ('{old}', 'A (Dev)', 'public', '[\"http://localhost:5190/\"]', \
+                     '[\"launch\"]', '[\"authorization_code\"]', NULL, \
+                     '2024-01-01 00:00:00+00:00', NULL)"
+        ))
+        .expect("a dev client at 0027");
+    }
+    conn.batch_execute(
+        "INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('issued', 'importer-app', 'pat-1', \
+                 '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a launch at 0027");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0028"),
+    )
+    .expect("upgrade through 0028");
+
+    for (old, new, redirects) in production {
+        assert!(column_for_client(&amp;mut conn, "client_id", old).is_empty());
+        assert_eq!(
+            column_for_client(&amp;mut conn, "redirect_uris", new)[0].name,
+            redirects,
+        );
+    }
+    for (old, new) in dev {
+        assert!(column_for_client(&amp;mut conn, "client_id", old).is_empty());
+        assert_eq!(
+            column_for_client(&amp;mut conn, "redirect_uris", new)[0].name,
+            r#"["http://localhost:5190/"]"#,
+        );
+    }
+    let launch: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id AS name FROM launch_contexts WHERE nonce = 'issued'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the launch");
+    assert_eq!(launch[0].name, "165cd26573e5ac72378e6ad2d2198330");
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", SYNTHETIC_DATA)[0].name,
+        r#"["https://wildflowerhealth.io/synthetic-data/"]"#,
+    );
+
+    let migration_0028 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0028"))
+        .expect("0028 is embedded");
+    migration_0028.revert(&amp;mut conn).expect("revert 0028");
+    for ((old, _, _), at_0027) in production.iter().zip(&amp;redirects_at_0027) {
+        assert_eq!(
+            &amp;column_for_client(&amp;mut conn, "redirect_uris", old)[0].name,
+            at_0027,
+        );
+    }
+    for (old, _) in dev {
+        assert_eq!(column_for_client(&amp;mut conn, "client_id", old).len(), 1);
+    }
+    assert!(column_for_client(&amp;mut conn, "client_id", SYNTHETIC_DATA).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L828-L943"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 828–943</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0028_rekeys_the_ohif_viewer_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0028</code> re-keys the OHIF viewer’s clients when
+<code>0029</code> runs: the production client and a debug build’s dev client take
+their random ids and keep their redirects, and what was issued to them
+(here a launch) follows. Reverting <code>0029</code> restores the old ids.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0028_rekeys_the_ohif_viewer_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const OHIF_VIEWER: &amp;str = "941de68e6b59eb9dcc32df8ede89e636";
+    const OHIF_VIEWER_DEV: &amp;str = "f9866f7b1d0d8505dc65ef4f749664b5";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0028"),
+    )
+    .expect("migrate to 0028");
+    conn.batch_execute(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('ohif-viewer-dev', 'Imaging (Dev)', 'public', \
+                 '[\"http://localhost:5194/fhir-viewer\"]', '[\"launch\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL); \
+         INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('issued', 'ohif-viewer', 'pat-1', \
+                 '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a dev client and a launch at 0028");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0029"),
+    )
+    .expect("upgrade through 0029");
+
+    assert!(column_for_client(&amp;mut conn, "client_id", "ohif-viewer").is_empty());
+    assert!(column_for_client(&amp;mut conn, "client_id", "ohif-viewer-dev").is_empty());
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", OHIF_VIEWER)[0].name,
+        r#"["https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+    );
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", OHIF_VIEWER_DEV)[0].name,
+        r#"["http://localhost:5194/fhir-viewer"]"#,
+    );
+    let launch: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id AS name FROM launch_contexts WHERE nonce = 'issued'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the launch");
+    assert_eq!(launch[0].name, OHIF_VIEWER);
+
+    let migration_0029 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0029"))
+        .expect("0029 is embedded");
+    migration_0029.revert(&amp;mut conn).expect("revert 0029");
+    for client_id in ["ohif-viewer", "ohif-viewer-dev"] {
+        assert_eq!(
+            column_for_client(&amp;mut conn, "client_id", client_id).len(),
+            1
+        );
+    }
+    assert!(column_for_client(&amp;mut conn, "client_id", OHIF_VIEWER).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L950-L1013"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 950–1013</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0029_rekeys_the_fhir_sync_pebble_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0029</code> re-keys FHIR Sync for Pebble’s clients when
+<code>0030</code> runs: the production client and a debug build’s dev client take
+their random ids and keep their redirects, and what was issued to them
+(here a launch) follows. Reverting <code>0030</code> restores the old ids.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0029_rekeys_the_fhir_sync_pebble_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const FHIR_SYNC_PEBBLE: &amp;str = "6847df97d54c31936d54ca1b36b3bb09";
+    const FHIR_SYNC_PEBBLE_DEV: &amp;str = "61e195d6b08bab6bf2cedb1ef3831fa7";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0029"),
+    )
+    .expect("migrate to 0029");
+    conn.batch_execute(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('fhir-sync-pebble-dev', 'FHIR Sync for Pebble (Dev)', 'public', \
+                 '[\"http://localhost:5195/\"]', '[\"openid\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL); \
+         INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('issued', 'fhir-sync-pebble', 'pat-1', \
+                 '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a dev client and a launch at 0029");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0030"),
+    )
+    .expect("upgrade through 0030");
+
+    assert!(column_for_client(&amp;mut conn, "client_id", "fhir-sync-pebble").is_empty());
+    assert!(column_for_client(&amp;mut conn, "client_id", "fhir-sync-pebble-dev").is_empty());
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", FHIR_SYNC_PEBBLE)[0].name,
+        r#"["https://wildflowerhealth.io/fhir-sync-pebble/"]"#,
+    );
+    assert_eq!(
+        column_for_client(&amp;mut conn, "redirect_uris", FHIR_SYNC_PEBBLE_DEV)[0].name,
+        r#"["http://localhost:5195/"]"#,
+    );
+    let launch: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id AS name FROM launch_contexts WHERE nonce = 'issued'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the launch");
+    assert_eq!(launch[0].name, FHIR_SYNC_PEBBLE);
+
+    let migration_0030 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0030"))
+        .expect("0030 is embedded");
+    migration_0030.revert(&amp;mut conn).expect("revert 0030");
+    for client_id in ["fhir-sync-pebble", "fhir-sync-pebble-dev"] {
+        assert_eq!(
+            column_for_client(&amp;mut conn, "client_id", client_id).len(),
+            1
+        );
+    }
+    assert!(column_for_client(&amp;mut conn, "client_id", FHIR_SYNC_PEBBLE).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1020-L1083"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1020–1083</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0031_narrows_the_launcher_client" class="item-anchor"></div>
+
+<p>An install already at <code>0031</code> — the launcher’s client allowing <code>0012</code>’s
+maximal vocabulary — is narrowed by <code>0032</code> to the scopes the launcher
+asks for. Reverting <code>0032</code> restores what <code>0031</code> left.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0031_narrows_the_launcher_client() {
+    const LAUNCHER: &amp;str = "03a513940b52f8c2649a5366d1a26d19";
+    const LAUNCHER_AT_0031: &amp;str = r#"["openid","profile","fhirUser","launch","launch/patient","offline_access","wildflower/launch","system/*.cruds","wildflower/*.cruds"]"#;
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0031"),
+    )
+    .expect("migrate to 0031");
+    assert_eq!(allowed_scopes_of(&amp;mut conn, LAUNCHER), LAUNCHER_AT_0031);
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0032"),
+    )
+    .expect("upgrade through 0032");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, LAUNCHER),
+        r#"["launch","launch/patient","wildflower/launch","system/*.cruds","wildflower/*.cruds"]"#,
+    );
+
+    let migration_0032 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0032"))
+        .expect("0032 is embedded");
+    migration_0032.revert(&amp;mut conn).expect("revert 0032");
+    assert_eq!(allowed_scopes_of(&amp;mut conn, LAUNCHER), LAUNCHER_AT_0031);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1089-L1121"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1089–1121</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0031_rekeys_the_host_app_client" class="item-anchor"></div>
+
+<p>An install already at <code>0031</code>, holding the host app’s client under its
+old <code>wildflower-host</code> id and a grant of it, re-keys both when <code>0033</code>
+runs: no <code>wildflower-host</code> row lingers beside the one seeding upserts.
+Reverting <code>0033</code> restores the old id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0031_rekeys_the_host_app_client() {
+    use diesel::connection::SimpleConnection as _;
+    const HOST_APP: &amp;str = "c4e755b6a4c1abf2aae6d0d83f2545a5";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0031"),
+    )
+    .expect("migrate to 0031");
+    conn.batch_execute(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('wildflower-host', 'Wildflower (host)', 'public', '[]', \
+                 '[\"system/*.cruds\"]', '[\"device_code\"]', NULL, \
+                 '2024-01-01 00:00:00+00:00', NULL); \
+         INSERT INTO device_grants \
+         (id, client_id, scopes, granted_at, last_used_at, patient, device_name) \
+         VALUES ('host-grant', 'wildflower-host', '[\"system/*.cruds\"]', \
+                 '2026-01-01T00:00:00Z', NULL, NULL, 'The Owner''s laptop')",
+    )
+    .expect("the host app's client and a grant at 0031");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0033"),
+    )
+    .expect("upgrade through 0033");
+
+    assert!(column_for_client(&amp;mut conn, "client_id", "wildflower-host").is_empty());
+    assert_eq!(
+        column_for_client(&amp;mut conn, "name", HOST_APP)[0].name,
+        "Wildflower Host"
+    );
+    let grant: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id AS name FROM device_grants WHERE id = 'host-grant'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the grant");
+    assert_eq!(grant[0].name, HOST_APP);
+
+    let migration_0033 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0033"))
+        .expect("0033 is embedded");
+    migration_0033.revert(&amp;mut conn).expect("revert 0033");
+    assert_eq!(
+        column_for_client(&amp;mut conn, "client_id", "wildflower-host").len(),
+        1
+    );
+    assert!(column_for_client(&amp;mut conn, "client_id", HOST_APP).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1128-L1184"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1128–1184</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0034_renames_the_plots_and_strength_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0034</code> renames the Plots and Strength clients
+when <code>0035</code> runs: each client still holding its seeded name takes its
+product’s, and one whose name is anything else keeps it. Reverting
+<code>0035</code> restores the seeded names.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0034_renames_the_plots_and_strength_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const PLOTS: &amp;str = "474e103de61f9141c4b640d59bfa130e";
+    const PLOTS_DEV: &amp;str = "e7efc7c805f5f8f640bb3b3d48a2d7aa";
+    const STRENGTH: &amp;str = "bdf9fc5cb5a28c6683b49896b0ef8a75";
+    const STRENGTH_DEV: &amp;str = "8467e680a05f1e92e22864e923144e5a";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0034"),
+    )
+    .expect("migrate to 0034");
+    conn.batch_execute(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('e7efc7c805f5f8f640bb3b3d48a2d7aa', 'Health Viewer (Dev)', 'public', \
+                 '[\"http://localhost:5196/\"]', '[\"launch\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL), \
+                ('8467e680a05f1e92e22864e923144e5a', 'My lifts', 'public', \
+                 '[\"http://localhost:5199/\"]', '[\"launch\"]', \
+                 '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL)",
+    )
+    .expect("the dev clients at 0034, Strength's under another name");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0035"),
+    )
+    .expect("upgrade through 0035");
+
+    let name_of = |conn: &amp;mut SqliteConnection, client_id: &amp;str| {
+        column_for_client(conn, "name", client_id)[0].name.clone()
+    };
+    assert_eq!(name_of(&amp;mut conn, PLOTS), "Plots");
+    assert_eq!(name_of(&amp;mut conn, PLOTS_DEV), "Plots (Dev)");
+    assert_eq!(name_of(&amp;mut conn, STRENGTH), "Strength");
+    assert_eq!(name_of(&amp;mut conn, STRENGTH_DEV), "My lifts");
+
+    let migration_0035 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0035"))
+        .expect("0035 is embedded");
+    migration_0035.revert(&amp;mut conn).expect("revert 0035");
+    assert_eq!(name_of(&amp;mut conn, PLOTS), "Synthesized Health Viewer");
+    assert_eq!(name_of(&amp;mut conn, PLOTS_DEV), "Health Viewer (Dev)");
+    assert_eq!(name_of(&amp;mut conn, STRENGTH), "Lifting");
+    assert_eq!(name_of(&amp;mut conn, STRENGTH_DEV), "My lifts");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1191-L1244"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1191–1244</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0036_adds_the_app_origin_redirects" class="item-anchor"></div>
+
+<p>An install already at <code>0036</code> gains each hosted app’s own origin as a
+redirect when <code>0037</code> runs, in front of the redirect on
+<code>wildflowerhealth.io</code> it held; a client whose list the Owner changed
+keeps it. Reverting <code>0037</code> restores the lists.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0036_adds_the_app_origin_redirects() {
+    use diesel::connection::SimpleConnection as _;
+    const MEDICATIONS: &amp;str = "9769f8b274370708d0d3ebb2e3e59b7c";
+    const OHIF_VIEWER: &amp;str = "941de68e6b59eb9dcc32df8ede89e636";
+    const LAUNCHER: &amp;str = "03a513940b52f8c2649a5366d1a26d19";
+    const STRENGTH: &amp;str = "bdf9fc5cb5a28c6683b49896b0ef8a75";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0036"),
+    )
+    .expect("migrate to 0036");
+    conn.batch_execute(&amp;format!(
+        "UPDATE clients SET redirect_uris = '[\"https://lifts.example/\"]' \
+         WHERE client_id = '{STRENGTH}'"
+    ))
+    .expect("Strength's redirects changed by the Owner at 0036");
+    let redirects_of = |conn: &amp;mut SqliteConnection, client_id: &amp;str| {
+        column_for_client(conn, "redirect_uris", client_id)[0]
+            .name
+            .clone()
+    };
+    let at_0036 = [MEDICATIONS, OHIF_VIEWER, LAUNCHER, STRENGTH]
+        .map(|client_id| redirects_of(&amp;mut conn, client_id));
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0037"),
+    )
+    .expect("upgrade through 0037");
+
+    assert_eq!(
+        redirects_of(&amp;mut conn, MEDICATIONS),
+        r#"["https://medications.wildflowerhealth.io/","https://wildflowerhealth.io/medications/"]"#,
+    );
+    assert_eq!(
+        redirects_of(&amp;mut conn, OHIF_VIEWER),
+        r#"["https://ohif-viewer.wildflowerhealth.io/fhir-viewer","https://wildflowerhealth.io/ohif-viewer/fhir-viewer"]"#,
+    );
+    assert_eq!(
+        redirects_of(&amp;mut conn, LAUNCHER),
+        r#"["https://launcher.wildflowerhealth.io/","https://wildflowerhealth.io/launcher/"]"#,
+    );
+    assert_eq!(
+        redirects_of(&amp;mut conn, STRENGTH),
+        r#"["https://lifts.example/"]"#
+    );
+
+    let migration_0037 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0037"))
+        .expect("0037 is embedded");
+    migration_0037.revert(&amp;mut conn).expect("revert 0037");
+    let reverted = [MEDICATIONS, OHIF_VIEWER, LAUNCHER, STRENGTH]
+        .map(|client_id| redirects_of(&amp;mut conn, client_id));
+    assert_eq!(reverted, at_0036);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1251-L1312"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1251–1312</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0037_rekeys_the_browser_session_client_and_ends_owner_sessions" class="item-anchor"></div>
+
+<p>An install already at <code>0037</code>, holding the browser-session client under
+its old <code>wildflower-owner-browser</code> id and a row naming it in every table
+that names a client, re-keys them all when <code>0038</code> runs, and every
+standing same-device session ends, so the Owner signs in again; one already
+revoked keeps its time, and a paired browser’s session stands. The
+request column takes its new name. Reverting <code>0038</code> restores the old id
+and column name.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0037_rekeys_the_browser_session_client_and_ends_owner_sessions() {
+    use diesel::connection::SimpleConnection as _;
+    const BROWSERS: &amp;str = "cb9bbe139845cae9654b7909d60d274f";
+    const OLD_ID: &amp;str = "wildflower-owner-browser";
+    const REVOKED_AT: &amp;str = "2026-10-01 00:00:00+00:00";
+    const CLIENT_TABLES: [(&amp;str, &amp;str); 6] = [
+        ("authorization_requests", "id"),
+        ("authorization_codes", "code"),
+        ("authorization_code_grants", "id"),
+        ("device_grants", "id"),
+        ("refresh_token_families", "family_id"),
+        ("launch_contexts", "nonce"),
+    ];
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0037"),
+    )
+    .expect("migrate to 0037");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO clients \
+         (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+          secret_hash, registered_at, disabled_at) \
+         VALUES ('{OLD_ID}', 'Wildflower (Owner browsers)', 'public', \
+                 '[]', '[\"system/*.cruds\"]', '[]', NULL, \
+                 '2024-01-01 00:00:00+00:00', NULL); \
+         INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, requested_at, expires_at, status) \
+         VALUES ('browser-row', 'authorization_code', '{OLD_ID}', '[]', \
+                 '2026-10-16 00:00:00+00:00', '2026-10-16 00:10:00+00:00', 'pending'); \
+         INSERT INTO authorization_codes \
+         (code, request_id, client_id, redirect_uri, code_challenge, granted_scopes, \
+          issued_at, expires_at, sid) \
+         VALUES ('browser-row', 'browser-row', '{OLD_ID}', 'https://example/', \
+                 'challenge', '[]', '2026-10-16 00:00:00+00:00', \
+                 '2026-10-16 00:01:00+00:00', 'standing'); \
+         INSERT INTO authorization_code_grants \
+         (id, client_id, scopes, granted_at, redirect_uri) \
+         VALUES ('browser-row', '{OLD_ID}', '[]', '2026-10-16T00:00:00Z', \
+                 'https://example/'); \
+         INSERT INTO device_grants \
+         (id, client_id, scopes, granted_at, device_name) \
+         VALUES ('browser-row', '{OLD_ID}', '[]', '2026-10-16T00:00:00Z', 'A laptop'); \
+         INSERT INTO refresh_token_families \
+         (family_id, client_id, scopes, issued_at, expires_at) \
+         VALUES ('browser-row', '{OLD_ID}', '[]', '2026-10-16 00:00:00+00:00', \
+                 '2026-10-17 00:00:00+00:00'); \
+         INSERT INTO launch_contexts (nonce, client_id, created_at, expires_at) \
+         VALUES ('browser-row', '{OLD_ID}', '2026-10-16 00:00:00+00:00', \
+                 '2026-10-16 00:10:00+00:00'); \
+         INSERT INTO browser_sessions \
+         (sid, kind, name, scopes, created_at, expires_at, revoked_at) \
+         VALUES ('standing', 'owner', NULL, '[]', '2026-10-16 00:00:00+00:00', \
+                 '2026-10-16 08:00:00+00:00', NULL), \
+                ('revoked', 'owner', NULL, '[]', '2026-10-01 00:00:00+00:00', \
+                 '2026-10-01 08:00:00+00:00', '{REVOKED_AT}'), \
+                ('approved', 'approved', 'A tablet', '[]', '2026-10-16 00:00:00+00:00', \
+                 '2026-11-16 00:00:00+00:00', NULL)"
+    ))
+    .expect("the browser-session client, a row naming it per table and three sessions at 0037");
+    let client_ids_of_seeded_rows = |conn: &amp;mut SqliteConnection| {
+        CLIENT_TABLES.map(|(table, key)| {
+            diesel::sql_query(format!(
+                "SELECT client_id AS name FROM {table} WHERE {key} = 'browser-row'"
+            ))
+            .load::&lt;Name&gt;(conn)
+            .expect("read the seeded row")
+            .remove(0)
+            .name
+        })
+    };
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0038"),
+    )
+    .expect("upgrade through 0038");
+
+    assert!(column_for_client(&amp;mut conn, "client_id", OLD_ID).is_empty());
+    assert_eq!(
+        column_for_client(&amp;mut conn, "name", BROWSERS)[0].name,
+        "Wildflower Browsers"
+    );
+    assert_eq!(client_ids_of_seeded_rows(&amp;mut conn), [BROWSERS; 6]);
+    let revoked_at_of = |conn: &amp;mut SqliteConnection, sid: &amp;str| {
+        diesel::sql_query("SELECT revoked_at AS name FROM browser_sessions WHERE sid = ?")
+            .bind::&lt;diesel::sql_types::Text, _&gt;(sid)
+            .load::&lt;OptionalName&gt;(conn)
+            .expect("read the session")
+            .remove(0)
+            .name
+    };
+    let ended_at = revoked_at_of(&amp;mut conn, "standing").expect("the same-device session ended");
+    assert!(
+        chrono::DateTime::parse_from_str(&amp;ended_at, "%F %T%.f%:z").is_ok(),
+        "{ended_at} is in the diesel chrono text encoding"
+    );
+    assert_eq!(
+        revoked_at_of(&amp;mut conn, "revoked").as_deref(),
+        Some(REVOKED_AT)
+    );
+    assert_eq!(revoked_at_of(&amp;mut conn, "approved"), None);
+    diesel::sql_query("SELECT decidable_in_requesting_browser FROM authorization_requests")
+        .execute(&amp;mut conn)
+        .expect("the column has its new name");
+
+    let migration_0038 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0038"))
+        .expect("0038 is embedded");
+    migration_0038.revert(&amp;mut conn).expect("revert 0038");
+    assert_eq!(column_for_client(&amp;mut conn, "client_id", OLD_ID).len(), 1);
+    assert!(column_for_client(&amp;mut conn, "client_id", BROWSERS).is_empty());
+    assert_eq!(client_ids_of_seeded_rows(&amp;mut conn), [OLD_ID; 6]);
+    diesel::sql_query("SELECT requested_by_owner_browser FROM authorization_requests")
+        .execute(&amp;mut conn)
+        .expect("the column has its old name");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1322-L1445"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1322–1445</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0038_renames_the_strength_clients" class="item-anchor"></div>
+
+<p>An install already at <code>0038</code> renames the Strength clients to
+Wildflower Strength when <code>0039</code> runs: a client still holding the name
+<code>0035</code> wrote takes the product’s, and one whose name is anything else
+keeps it. Reverting <code>0039</code> restores the <code>0035</code> names.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0038_renames_the_strength_clients() {
+    use diesel::connection::SimpleConnection as _;
+    const STRENGTH: &amp;str = "bdf9fc5cb5a28c6683b49896b0ef8a75";
+    const STRENGTH_DEV: &amp;str = "8467e680a05f1e92e22864e923144e5a";
+
+    let name_of = |conn: &amp;mut SqliteConnection, client_id: &amp;str| {
+        column_for_client(conn, "name", client_id)[0].name.clone()
+    };
+    let migration_0039 = || {
+        MIGRATIONS
+            .migrations()
+            .expect("embedded migrations")
+            .into_iter()
+            .find(|migration| migration.name().version() == MigrationVersion::from("0039"))
+            .expect("0039 is embedded")
+    };
+    for (dev_name, dev_name_after) in [
+        ("Strength (Dev)", "Wildflower Strength (Dev)"),
+        ("My lifts", "My lifts"),
+    ] {
+        let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+        wildflowerhealthio_persistence::run_diesel_migrations(
+            &amp;mut conn,
+            MIGRATION_NAMESPACE,
+            MigrationsThrough("0038"),
+        )
+        .expect("migrate to 0038");
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO clients \
+             (client_id, name, kind, redirect_uris, allowed_scopes, allowed_grant_types, \
+              secret_hash, registered_at, disabled_at) \
+             VALUES ('{STRENGTH_DEV}', '{dev_name}', 'public', \
+                     '[\"http://localhost:5199/\"]', '[\"launch\"]', \
+                     '[\"authorization_code\"]', NULL, '2024-01-01 00:00:00+00:00', NULL)"
+        ))
+        .expect("the dev client at 0038");
+        assert_eq!(name_of(&amp;mut conn, STRENGTH), "Strength");
+
+        wildflowerhealthio_persistence::run_diesel_migrations(
+            &amp;mut conn,
+            MIGRATION_NAMESPACE,
+            MigrationsThrough("0039"),
+        )
+        .expect("upgrade through 0039");
+        assert_eq!(name_of(&amp;mut conn, STRENGTH), "Wildflower Strength");
+        assert_eq!(name_of(&amp;mut conn, STRENGTH_DEV), dev_name_after);
+
+        migration_0039().revert(&amp;mut conn).expect("revert 0039");
+        assert_eq!(name_of(&amp;mut conn, STRENGTH), "Strength");
+        assert_eq!(name_of(&amp;mut conn, STRENGTH_DEV), dev_name);
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1452-L1503"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1452–1503</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0040_widens_the_authorization_web_client" class="item-anchor"></div>
+
+<p>An install already at <code>0040</code> widens Wildflower Authorization’s client
+to the browser-session scopes when <code>0041</code> runs; one whose scopes the
+Owner changed keeps them. Reverting <code>0041</code> restores <code>0031</code>’s set.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0040_widens_the_authorization_web_client() {
+    use diesel::connection::SimpleConnection as _;
+    const AUTHORIZATION_WEB: &amp;str = "7277e898bee8ac81ea44788236e619a5";
+    const AT_0040: &amp;str =
+        r#"["openid","wildflower/Grant.rd","wildflower/Client.ru","wildflower/Token.d"]"#;
+    let migrated_through_0040 = || {
+        let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+        wildflowerhealthio_persistence::run_diesel_migrations(
+            &amp;mut conn,
+            MIGRATION_NAMESPACE,
+            MigrationsThrough("0040"),
+        )
+        .expect("migrate to 0040");
+        conn
+    };
+
+    let mut conn = migrated_through_0040();
+    assert_eq!(allowed_scopes_of(&amp;mut conn, AUTHORIZATION_WEB), AT_0040);
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("upgrade through 0041");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut conn, AUTHORIZATION_WEB),
+        r#"["openid","wildflower/Grant.rd","wildflower/Client.ru","wildflower/Token.d","wildflower/BrowserSession.rd"]"#,
+    );
+    let migration_0041 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0041"))
+        .expect("0041 is embedded");
+    migration_0041.revert(&amp;mut conn).expect("revert 0041");
+    assert_eq!(allowed_scopes_of(&amp;mut conn, AUTHORIZATION_WEB), AT_0040);
+
+    let mut changed = migrated_through_0040();
+    changed
+        .batch_execute(&amp;format!(
+            "UPDATE clients SET allowed_scopes = '[\"openid\"]' \
+             WHERE client_id = '{AUTHORIZATION_WEB}'"
+        ))
+        .expect("the Owner changed the scopes at 0040");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut changed,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("upgrade through 0041");
+    assert_eq!(
+        allowed_scopes_of(&amp;mut changed, AUTHORIZATION_WEB),
+        r#"["openid"]"#
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1599-L1653"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1599–1653</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0044_starts_every_client_trusted_on_first_use" class="item-anchor"></div>
+
+<p>An install already at <code>0044</code> gains <code>clients.registration_source</code> when
+<code>0045</code> runs, every existing row trusted on first use; seeding’s upsert
+then marks the rows it owns server-defined on the next boot. Reverting
+<code>0045</code> drops the column.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0044_starts_every_client_trusted_on_first_use() {
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0044"),
+    )
+    .expect("migrate to 0044");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0045"),
+    )
+    .expect("upgrade through 0045");
+    let sources = diesel::sql_query("SELECT DISTINCT registration_source AS name FROM clients")
+        .load::&lt;Name&gt;(&amp;mut conn)
+        .expect("read the column")
+        .into_iter()
+        .map(|row| row.name)
+        .collect::&lt;Vec&lt;_&gt;&gt;();
+    assert_eq!(sources, ["trusted_on_first_use"]);
+
+    let migration_0045 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0045"))
+        .expect("0045 is embedded");
+    migration_0045.revert(&amp;mut conn).expect("revert 0045");
+    assert!(
+        diesel::sql_query("SELECT registration_source FROM clients")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the column is gone"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1951-L1986"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1951–1986</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="reshaping-tables"><a class="header" href="#reshaping-tables">Reshaping tables</a></h4>
+<p>A table whose shape changes is rebuilt, and every row an install could hold is carried across. The last three of these shape what the <a href="authorization-requests.html">Authorization Requests</a> and <a href="browser-sessions.html">Browser Sessions</a> pages describe: the session kinds’ names, the limited page’s own status, and the split of one request table into one per flow.</p>
+<div id="item-tests--an_install_already_at_0023_keeps_its_launches_and_admits_any_client" class="item-anchor"></div>
+
+<p>An install already at <code>0023</code>, holding a launch context, is moved by
+<code>0024</code> onto a nullable <code>client_id</code>: the row survives intact, a launch for
+any client (NULL client) can then be stored, and the table refuses a
+patient on a launch with no client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0023_keeps_its_launches_and_admits_any_client() {
+    use diesel::connection::SimpleConnection as _;
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0023"),
+    )
+    .expect("migrate to 0023");
+    conn.batch_execute(
+        "INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('bound', 'app', 'pat-1', '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a launch at 0023");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MIGRATIONS,
+    )
+    .expect("upgrade through 0024");
+
+    let kept: Vec&lt;Name&gt; = diesel::sql_query(
+        "SELECT client_id || ':' || patient AS name FROM launch_contexts WHERE nonce = 'bound'",
+    )
+    .load(&amp;mut conn)
+    .expect("read the kept launch");
+    assert_eq!(kept.len(), 1);
+    assert_eq!(kept[0].name, "app:pat-1");
+    conn.batch_execute(
+        "INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+         VALUES ('any', NULL, NULL, '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+    )
+    .expect("a launch for any client is stored");
+    assert!(
+        conn.batch_execute(
+            "INSERT INTO launch_contexts (nonce, client_id, patient, created_at, expires_at) \
+             VALUES ('bad', NULL, 'pat-1', '2026-01-01T00:00:00Z', '2026-01-01T00:05:00Z')",
+        )
+        .is_err(),
+        "a patient needs a client"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L705-L748"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 705–748</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0039_backfills_browser_session_last_seen" class="item-anchor"></div>
+
+<p>An install already at <code>0039</code> gains <code>browser_sessions.last_seen_at</code> when
+<code>0040</code> runs, each session’s backfilled to its <code>created_at</code> and the rest
+of the row kept, <code>revoked_at</code> included. The rebuilt table still takes
+only the two kinds. Reverting <code>0040</code> drops the column again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0039_backfills_browser_session_last_seen() {
+    use diesel::connection::SimpleConnection as _;
+    const CREATED_AT: &amp;str = "2026-10-16 00:00:00+00:00";
+    const REVOKED_AT: &amp;str = "2026-10-16 01:00:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0039"),
+    )
+    .expect("migrate to 0039");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO browser_sessions \
+         (sid, kind, name, scopes, created_at, expires_at, revoked_at) \
+         VALUES ('standing', 'owner', NULL, '[\"system/*.cruds\"]', '{CREATED_AT}', \
+                 '2026-10-16 08:00:00+00:00', NULL), \
+                ('revoked', 'approved', 'A tablet', '[]', '2026-10-01 00:00:00+00:00', \
+                 '2026-11-01 00:00:00+00:00', '{REVOKED_AT}')"
+    ))
+    .expect("two sessions at 0039");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0040"),
+    )
+    .expect("upgrade through 0040");
+
+    let column_of = |conn: &amp;mut SqliteConnection, column: &amp;str, sid: &amp;str| {
+        diesel::sql_query(format!(
+            "SELECT {column} AS name FROM browser_sessions WHERE sid = ?"
+        ))
+        .bind::&lt;diesel::sql_types::Text, _&gt;(sid)
+        .load::&lt;OptionalName&gt;(conn)
+        .expect("read the session")
+        .remove(0)
+        .name
+    };
+    assert_eq!(
+        column_of(&amp;mut conn, "last_seen_at", "standing").as_deref(),
+        Some(CREATED_AT)
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "last_seen_at", "revoked").as_deref(),
+        Some("2026-10-01 00:00:00+00:00")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "revoked_at", "revoked").as_deref(),
+        Some(REVOKED_AT)
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "name", "revoked").as_deref(),
+        Some("A tablet")
+    );
+    assert!(
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO browser_sessions \
+             (sid, kind, name, scopes, created_at, expires_at, last_seen_at) \
+             VALUES ('odd', 'other', NULL, '[]', '{CREATED_AT}', '{CREATED_AT}', \
+                     '{CREATED_AT}')"
+        ))
+        .is_err(),
+        "the kind CHECK survives the rebuild"
+    );
+
+    let migration_0040 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0040"))
+        .expect("0040 is embedded");
+    migration_0040.revert(&amp;mut conn).expect("revert 0040");
+    assert!(
+        diesel::sql_query("SELECT last_seen_at FROM browser_sessions")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the column is gone"
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "created_at", "standing").as_deref(),
+        Some(CREATED_AT)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1510-L1593"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1510–1593</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0041_ends_its_sessionless_code_flow" class="item-anchor"></div>
+
+<p>An install already at <code>0041</code>, holding what the code flow minted with no
+browser session, has it ended when <code>0042</code> runs: a live sessionless
+code-flow family expires now and its unconsumed token is stamped
+consumed, a sessionless code is dropped and a sessionless pending
+code-flow request expires. A family already dead keeps its times, and a
+family made in a session or by the device flow keeps going, as do the
+code and requests made in a session or by a device. Reverting <code>0042</code>
+makes a code’s <code>sid</code> nullable again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0041_ends_its_sessionless_code_flow() {
+    use diesel::connection::SimpleConnection as _;
+    const FUTURE: &amp;str = "2999-01-01 00:00:00+00:00";
+    const PAST: &amp;str = "2026-01-01 00:00:00+00:00";
+    const EARLIER: &amp;str = "2025-12-01 00:00:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0041"),
+    )
+    .expect("migrate to 0041");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO refresh_token_families \
+         (family_id, client_id, scopes, issued_at, expires_at, authorization_code_hash, sid) \
+         VALUES ('code-sessionless', 'app', '[]', '{EARLIER}', '{FUTURE}', 'hash-1', NULL), \
+                ('code-dead', 'app', '[]', '{EARLIER}', '{PAST}', 'hash-2', NULL), \
+                ('code-in-session', 'app', '[]', '{EARLIER}', '{FUTURE}', 'hash-3', 'sid-1'), \
+                ('device', 'device-app', '[]', '{EARLIER}', '{FUTURE}', NULL, NULL); \
+         INSERT INTO refresh_tokens (token_hash, family_id, issued_at, consumed_at) \
+         VALUES ('spent', 'code-sessionless', '{EARLIER}', '{EARLIER}'), \
+                ('live', 'code-sessionless', '{EARLIER}', NULL), \
+                ('dead', 'code-dead', '{EARLIER}', NULL), \
+                ('in-session', 'code-in-session', '{EARLIER}', NULL), \
+                ('device', 'device', '{EARLIER}', NULL); \
+         INSERT INTO authorization_codes \
+         (code, request_id, client_id, redirect_uri, code_challenge, granted_scopes, \
+          issued_at, expires_at, sid) \
+         VALUES ('sessionless', 'sessionless', 'app', 'https://example/', 'challenge', \
+                 '[]', '{EARLIER}', '{FUTURE}', NULL), \
+                ('in-session', 'in-session', 'app', 'https://example/', 'challenge', \
+                 '[]', '{EARLIER}', '{FUTURE}', 'sid-1'); \
+         INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, requested_at, expires_at, status, sid) \
+         VALUES ('sessionless', 'authorization_code', 'app', '[]', '{EARLIER}', '{FUTURE}', \
+                 'pending', NULL), \
+                ('in-session', 'authorization_code', 'app', '[]', '{EARLIER}', '{FUTURE}', \
+                 'pending', 'sid-1'), \
+                ('device', 'device_code', 'device-app', '[]', '{EARLIER}', '{FUTURE}', \
+                 'pending', NULL)"
+    ))
+    .expect("families, tokens, codes and requests at 0041");
+    let read = |conn: &amp;mut SqliteConnection, query: &amp;str| {
+        diesel::sql_query(query)
+            .load::&lt;OptionalName&gt;(conn)
+            .expect("read")
+            .into_iter()
+            .map(|row| row.name)
+            .collect::&lt;Vec&lt;_&gt;&gt;()
+    };
+    let family_expiry = |conn: &amp;mut SqliteConnection, family_id: &amp;str| {
+        read(
+            conn,
+            &amp;format!(
+                "SELECT expires_at AS name FROM refresh_token_families \
+                 WHERE family_id = '{family_id}'"
+            ),
+        )
+        .remove(0)
+        .expect("an expiry")
+    };
+    let consumed_at = |conn: &amp;mut SqliteConnection, token_hash: &amp;str| {
+        read(
+            conn,
+            &amp;format!(
+                "SELECT consumed_at AS name FROM refresh_tokens \
+                 WHERE token_hash = '{token_hash}'"
+            ),
+        )
+        .remove(0)
+    };
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0042"),
+    )
+    .expect("upgrade through 0042");
+
+    let ended_at = family_expiry(&amp;mut conn, "code-sessionless");
+    let ended_at_time = chrono::DateTime::parse_from_str(&amp;ended_at, "%F %T%.f%:z")
+        .unwrap_or_else(|_| panic!("{ended_at} is in the diesel chrono text encoding"));
+    assert!(ended_at_time &lt;= chrono::Utc::now(), "the family ended");
+    assert_eq!(consumed_at(&amp;mut conn, "live"), Some(ended_at));
+    assert_eq!(consumed_at(&amp;mut conn, "spent").as_deref(), Some(EARLIER));
+    assert_eq!(family_expiry(&amp;mut conn, "code-dead"), PAST);
+    assert_eq!(consumed_at(&amp;mut conn, "dead"), None);
+    for (family_id, token_hash) in [("code-in-session", "in-session"), ("device", "device")] {
+        assert_eq!(family_expiry(&amp;mut conn, family_id), FUTURE, "{family_id}");
+        assert_eq!(consumed_at(&amp;mut conn, token_hash), None, "{token_hash}");
+    }
+    assert_eq!(
+        read(&amp;mut conn, "SELECT code AS name FROM authorization_codes"),
+        [Some("in-session".to_owned())]
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT id || ':' || status AS name FROM authorization_requests ORDER BY id"
+        ),
+        [
+            Some("device:pending".to_owned()),
+            Some("in-session:pending".to_owned()),
+            Some("sessionless:expired".to_owned()),
+        ]
+    );
+    let insert_sessionless_code = |conn: &amp;mut SqliteConnection| {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO authorization_codes \
+             (code, request_id, client_id, redirect_uri, code_challenge, granted_scopes, \
+              issued_at, expires_at, sid) \
+             VALUES ('another', 'another', 'app', 'https://example/', 'challenge', '[]', \
+                     '{EARLIER}', '{FUTURE}', NULL)"
+        ))
+    };
+    assert!(
+        insert_sessionless_code(&amp;mut conn).is_err(),
+        "a code names its session"
+    );
+
+    let migration_0042 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0042"))
+        .expect("0042 is embedded");
+    migration_0042.revert(&amp;mut conn).expect("revert 0042");
+    insert_sessionless_code(&amp;mut conn).expect("a code's sid is nullable again");
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT code AS name FROM authorization_codes ORDER BY code"
+        ),
+        [Some("another".to_owned()), Some("in-session".to_owned())]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1664-L1800"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1664–1800</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0042_acknowledges_every_existing_request" class="item-anchor"></div>
+
+<p>An install already at <code>0042</code> gains
+<code>authorization_requests.session_shortfall_acknowledged</code> when <code>0043</code>
+runs: every existing request, of either flow, reads as acknowledged,
+so none is hidden from the Owner. Reverting <code>0043</code> drops the column and
+<code>session_shortfall_acknowledgements</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0042_acknowledges_every_existing_request() {
+    use diesel::connection::SimpleConnection as _;
+    const AT: &amp;str = "2026-10-18 00:00:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0042"),
+    )
+    .expect("migrate to 0042");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, requested_at, expires_at, status, sid) \
+         VALUES ('code', 'authorization_code', 'app', '[]', '{AT}', '{AT}', 'pending', \
+                 'sid-1'), \
+                ('device', 'device_code', 'device-app', '[]', '{AT}', '{AT}', 'pending', \
+                 NULL)"
+    ))
+    .expect("two requests at 0042");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0043"),
+    )
+    .expect("upgrade through 0043");
+    let acknowledged = diesel::sql_query(
+        "SELECT CAST(session_shortfall_acknowledged AS TEXT) AS name \
+         FROM authorization_requests ORDER BY id",
+    )
+    .load::&lt;OptionalName&gt;(&amp;mut conn)
+    .expect("read the column")
+    .into_iter()
+    .map(|row| row.name)
+    .collect::&lt;Vec&lt;_&gt;&gt;();
+    assert_eq!(acknowledged, [Some("1".to_owned()), Some("1".to_owned())]);
+
+    let migration_0043 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0043"))
+        .expect("0043 is embedded");
+    migration_0043.revert(&amp;mut conn).expect("revert 0043");
+    assert!(
+        diesel::sql_query("SELECT session_shortfall_acknowledged FROM authorization_requests")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the column is gone"
+    );
+    assert!(
+        diesel::sql_query("SELECT sid FROM session_shortfall_acknowledgements")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the table is gone"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1808-L1865"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1808–1865</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0043_claims_redeemed_requests_and_drops_the_rest" class="item-anchor"></div>
+
+<p>An install already at <code>0043</code> loses its stored <code>expired</code> status when
+<code>0044</code> runs: an approved request a poll redeemed (it carries its
+<code>granted_scopes</code>) becomes <code>claimed</code>, and any other <code>expired</code> row (a
+request <code>0042</code> ended) is deleted, as is a code request from before the
+browser-session flow (no <code>sid</code>). The <code>code_challenge_method</code> column,
+always <code>S256</code>, goes. Reverting <code>0044</code> brings the column back as <code>S256</code>
+on every code row and stores a claim as <code>expired</code> again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0043_claims_redeemed_requests_and_drops_the_rest() {
+    use diesel::connection::SimpleConnection as _;
+    const AT: &amp;str = "2026-10-18 00:00:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0043"),
+    )
+    .expect("migrate to 0043");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, requested_at, expires_at, status, \
+          granted_scopes, user_code, code_challenge, code_challenge_method, sid, \
+          redirect_uri, client_state) \
+         VALUES ('redeemed', 'device_code', 'device-app', '[]', '{AT}', '{AT}', 'expired', \
+                 '[\"openid\"]', 'UC-1', NULL, NULL, NULL, NULL, NULL), \
+                ('ended', 'authorization_code', 'app', '[]', '{AT}', '{AT}', 'expired', \
+                 NULL, NULL, 'challenge', 'S256', NULL, 'https://app.example/cb', 's'), \
+                ('pre-session', 'authorization_code', 'app', '[]', '{AT}', '{AT}', \
+                 'approved', '[\"openid\"]', NULL, 'challenge', 'S256', NULL, \
+                 'https://app.example/cb', 's'), \
+                ('pending', 'authorization_code', 'app', '[]', '{AT}', '{AT}', 'pending', \
+                 NULL, NULL, 'challenge', 'S256', 'sid-1', 'https://app.example/cb', 's')"
+    ))
+    .expect("requests at 0043");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0044"),
+    )
+    .expect("upgrade through 0044");
+    let statuses = |conn: &amp;mut SqliteConnection| {
+        diesel::sql_query(
+            "SELECT id || ':' || status AS name FROM authorization_requests ORDER BY id",
+        )
+        .load::&lt;Name&gt;(conn)
+        .expect("read")
+        .into_iter()
+        .map(|row| row.name)
+        .collect::&lt;Vec&lt;_&gt;&gt;()
+    };
+    assert_eq!(statuses(&amp;mut conn), ["pending:pending", "redeemed:claimed"]);
+    assert!(
+        diesel::sql_query("SELECT code_challenge_method FROM authorization_requests")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the method column is gone"
+    );
+
+    let migration_0044 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0044"))
+        .expect("0044 is embedded");
+    migration_0044.revert(&amp;mut conn).expect("revert 0044");
+    assert_eq!(statuses(&amp;mut conn), ["pending:pending", "redeemed:expired"]);
+    let methods = diesel::sql_query(
+        "SELECT code_challenge_method AS name FROM authorization_requests ORDER BY id",
+    )
+    .load::&lt;OptionalName&gt;(&amp;mut conn)
+    .expect("read the method column")
+    .into_iter()
+    .map(|row| row.name)
+    .collect::&lt;Vec&lt;_&gt;&gt;();
+    assert_eq!(methods, [Some("S256".to_owned()), None]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1875-L1944"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1875–1944</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0045_renames_the_browser_session_kinds" class="item-anchor"></div>
+
+<p>An install already at <code>0045</code> renames each browser session’s <code>kind</code>
+when <code>0046</code> runs: <code>owner</code> becomes <code>same_device</code> and <code>approved</code> becomes
+<code>paired</code>, and the rest of each row is kept, <code>revoked_at</code> included. The
+rebuilt table takes only the new kinds. Reverting <code>0046</code> maps them
+back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0045_renames_the_browser_session_kinds() {
+    use diesel::connection::SimpleConnection as _;
+    const CREATED_AT: &amp;str = "2026-10-16 00:00:00+00:00";
+    const LAST_SEEN_AT: &amp;str = "2026-10-16 02:00:00+00:00";
+    const REVOKED_AT: &amp;str = "2026-10-16 03:00:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0045"),
+    )
+    .expect("migrate to 0045");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO browser_sessions \
+         (sid, kind, name, scopes, created_at, expires_at, revoked_at, last_seen_at) \
+         VALUES ('same-device', 'owner', NULL, '[\"system/*.cruds\"]', '{CREATED_AT}', \
+                 '2026-10-16 08:00:00+00:00', NULL, '{LAST_SEEN_AT}'), \
+                ('paired', 'approved', 'A tablet', '[\"wildflower/launch\"]', \
+                 '{CREATED_AT}', '2026-10-17 00:00:00+00:00', NULL, '{LAST_SEEN_AT}'), \
+                ('revoked', 'approved', 'A phone', '[]', '{CREATED_AT}', \
+                 '2026-10-17 00:00:00+00:00', '{REVOKED_AT}', '{CREATED_AT}')"
+    ))
+    .expect("three sessions at 0045");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0046"),
+    )
+    .expect("upgrade through 0046");
+
+    let column_of = |conn: &amp;mut SqliteConnection, column: &amp;str, sid: &amp;str| {
+        diesel::sql_query(format!(
+            "SELECT {column} AS name FROM browser_sessions WHERE sid = ?"
+        ))
+        .bind::&lt;diesel::sql_types::Text, _&gt;(sid)
+        .load::&lt;OptionalName&gt;(conn)
+        .expect("read the session")
+        .remove(0)
+        .name
+    };
+    assert_eq!(
+        column_of(&amp;mut conn, "kind", "same-device").as_deref(),
+        Some("same_device")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "kind", "paired").as_deref(),
+        Some("paired")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "kind", "revoked").as_deref(),
+        Some("paired")
+    );
+    assert_eq!(column_of(&amp;mut conn, "name", "same-device"), None);
+    assert_eq!(
+        column_of(&amp;mut conn, "scopes", "same-device").as_deref(),
+        Some("[\"system/*.cruds\"]")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "name", "paired").as_deref(),
+        Some("A tablet")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "expires_at", "paired").as_deref(),
+        Some("2026-10-17 00:00:00+00:00")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "last_seen_at", "paired").as_deref(),
+        Some(LAST_SEEN_AT)
+    );
+    assert_eq!(column_of(&amp;mut conn, "revoked_at", "paired"), None);
+    assert_eq!(
+        column_of(&amp;mut conn, "revoked_at", "revoked").as_deref(),
+        Some(REVOKED_AT)
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "created_at", "revoked").as_deref(),
+        Some(CREATED_AT)
+    );
+    assert!(
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO browser_sessions \
+             (sid, kind, name, scopes, created_at, expires_at, last_seen_at) \
+             VALUES ('old', 'owner', NULL, '[]', '{CREATED_AT}', '{CREATED_AT}', \
+                     '{CREATED_AT}')"
+        ))
+        .is_err(),
+        "the rebuilt CHECK refuses the old kinds"
+    );
+    assert!(
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO browser_sessions \
+             (sid, kind, name, scopes, created_at, expires_at, last_seen_at) \
+             VALUES ('same-device', 'same_device', NULL, '[]', '{CREATED_AT}', \
+                     '{CREATED_AT}', '{CREATED_AT}')"
+        ))
+        .is_err(),
+        "sid stays the primary key"
+    );
+
+    let migration_0046 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0046"))
+        .expect("0046 is embedded");
+    migration_0046.revert(&amp;mut conn).expect("revert 0046");
+    assert_eq!(
+        column_of(&amp;mut conn, "kind", "same-device").as_deref(),
+        Some("owner")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "kind", "paired").as_deref(),
+        Some("approved")
+    );
+    assert_eq!(
+        column_of(&amp;mut conn, "revoked_at", "revoked").as_deref(),
+        Some(REVOKED_AT)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L1994-L2114"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 1994–2114</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0046_gives_the_limited_page_its_own_status" class="item-anchor"></div>
+
+<p>An install already at <code>0046</code> gives a code request waiting on its
+browser’s limited page (<code>pending</code>, unacknowledged) its own status when
+<code>0047</code> runs, <code>awaiting_limited_page</code>, and drops
+<code>session_shortfall_acknowledged</code>. Every other in-flight row keeps its
+status and columns: an acknowledged pending code request, an approved
+one, a pending device request, an approved one its poll hasn’t claimed
+yet (its approval, name and last poll), a claimed pairing, and a denied
+device request sharing its <code>user_code</code> with a pending one. The partial
+unique index on a pending <code>user_code</code> still holds. Reverting <code>0047</code>
+brings the column back and the waiting request to <code>pending</code>, unset.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0046_gives_the_limited_page_its_own_status() {
+    use diesel::connection::SimpleConnection as _;
+    const AT: &amp;str = "2026-10-20 00:00:00+00:00";
+    const UNTIL: &amp;str = "2026-10-20 00:05:00+00:00";
+    const POLLED_AT: &amp;str = "2026-10-20 00:01:00+00:00";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0046"),
+    )
+    .expect("migrate to 0046");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, code_challenge, redirect_uri, \
+          client_state, user_code, requested_at, expires_at, last_polled_at, status, \
+          granted_scopes, patient, device_name, sid, session_shortfall_acknowledged) \
+         VALUES \
+         ('code-waiting', 'authorization_code', 'app', '[\"read\"]', 'challenge', \
+          'https://app.example/cb', 's', NULL, '{AT}', '{UNTIL}', NULL, 'pending', \
+          NULL, NULL, NULL, 'sid-1', 0), \
+         ('code-pending', 'authorization_code', 'app', '[\"read\"]', 'challenge', \
+          'https://app.example/cb', 's', NULL, '{AT}', '{UNTIL}', NULL, 'pending', \
+          NULL, NULL, NULL, 'sid-1', 1), \
+         ('code-approved', 'authorization_code', 'app', '[\"read\"]', 'challenge', \
+          'https://app.example/cb', 's', NULL, '{AT}', '{UNTIL}', NULL, 'approved', \
+          '[\"read\"]', 'Patient/1', NULL, 'sid-1', 1), \
+         ('device-pending', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'SAME-CODE', '{AT}', '{UNTIL}', '{POLLED_AT}', 'pending', NULL, NULL, \
+          NULL, NULL, 1), \
+         ('device-approved', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'APPR-OVED', '{AT}', '{UNTIL}', '{POLLED_AT}', 'approved', \
+          '[\"openid\"]', 'Patient/2', 'Kitchen iPad', NULL, 1), \
+         ('pairing-claimed', 'browser_pairing', 'browser-session', '[]', NULL, NULL, \
+          NULL, 'PAIR-CODE', '{AT}', '{UNTIL}', NULL, 'claimed', \
+          '[\"wildflower/launch\"]', NULL, 'Firefox on Linux', NULL, 1), \
+         ('device-denied', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'SAME-CODE', '{AT}', '{UNTIL}', NULL, 'denied', NULL, NULL, NULL, \
+          NULL, 1)"
+    ))
+    .expect("in-flight requests at 0046");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0047"),
+    )
+    .expect("upgrade through 0047");
+    let rows = |conn: &amp;mut SqliteConnection, columns: &amp;str| {
+        diesel::sql_query(format!(
+            "SELECT id || ':' || {columns} AS name FROM authorization_requests ORDER BY id"
+        ))
+        .load::&lt;Name&gt;(conn)
+        .expect("read the requests")
+        .into_iter()
+        .map(|row| row.name)
+        .collect::&lt;Vec&lt;_&gt;&gt;()
+    };
+    assert_eq!(
+        rows(&amp;mut conn, "status"),
+        [
+            "code-approved:approved",
+            "code-pending:pending",
+            "code-waiting:awaiting_limited_page",
+            "device-approved:approved",
+            "device-denied:denied",
+            "device-pending:pending",
+            "pairing-claimed:claimed",
+        ]
+    );
+    assert_eq!(
+        rows(
+            &amp;mut conn,
+            "COALESCE(granted_scopes, '-') || ':' || COALESCE(patient, '-') || ':' || \
+             COALESCE(device_name, '-') || ':' || COALESCE(last_polled_at, '-') || ':' || \
+             COALESCE(user_code, '-')"
+        ),
+        [
+            "code-approved:[\"read\"]:Patient/1:-:-:-",
+            "code-pending:-:-:-:-:-",
+            "code-waiting:-:-:-:-:-",
+            format!(
+                "device-approved:[\"openid\"]:Patient/2:Kitchen iPad:{POLLED_AT}:APPR-OVED"
+            )
+            .as_str(),
+            "device-denied:-:-:-:-:SAME-CODE",
+            format!("device-pending:-:-:-:{POLLED_AT}:SAME-CODE").as_str(),
+            "pairing-claimed:[\"wildflower/launch\"]:-:Firefox on Linux:-:PAIR-CODE",
+        ]
+    );
+    assert!(
+        diesel::sql_query("SELECT session_shortfall_acknowledged FROM authorization_requests")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the column is gone"
+    );
+    let plant_on_same_code = |conn: &amp;mut SqliteConnection, id: &amp;str, status: &amp;str| {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO authorization_requests \
+             (id, grant_type, client_id, requested_scopes, user_code, requested_at, \
+              expires_at, status) \
+             VALUES ('{id}', 'device_code', 'device-app', '[]', 'SAME-CODE', '{AT}', \
+                     '{UNTIL}', '{status}')"
+        ))
+    };
+    assert!(
+        plant_on_same_code(&amp;mut conn, "another-pending", "pending").is_err(),
+        "a second pending request on a code collides"
+    );
+    plant_on_same_code(&amp;mut conn, "another-denied", "denied")
+        .expect("a decided request shares a code");
+
+    let migration_0047 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0047"))
+        .expect("0047 is embedded");
+    migration_0047.revert(&amp;mut conn).expect("revert 0047");
+    let reverted = rows(
+        &amp;mut conn,
+        "status || ':' || CAST(session_shortfall_acknowledged AS TEXT)",
+    );
+    assert!(reverted.contains(&amp;"code-waiting:pending:0".to_owned()));
+    assert!(reverted.contains(&amp;"code-pending:pending:1".to_owned()));
+    assert!(reverted.contains(&amp;"device-pending:pending:1".to_owned()));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2127-L2254"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2127–2254</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0047_splits_the_authorization_requests" class="item-anchor"></div>
+
+<p>An install already at <code>0047</code> splits <code>authorization_requests</code> in two
+when <code>0048</code> runs: code requests into <code>code_authorization_requests</code>,
+device requests and browser pairings into <code>user_code_requests</code> (their
+<code>grant_type</code> becoming <code>flow</code>). Every in-flight shape lands in its table
+with every column, id and timestamp as it was: a code request awaiting
+the limited page, a pending one with a launch and patient, an approved
+one, a denied one; a pending device request, an approved one its poll
+hasn’t claimed (approval, name and last poll), a claimed one, and a
+denied one sharing its <code>user_code</code> with the pending one; a pending,
+approved and claimed pairing. The old table goes, the new indexes and
+CHECKs hold, and reverting <code>0048</code> rebuilds the one table, row for row.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0047_splits_the_authorization_requests() {
+    use diesel::connection::SimpleConnection as _;
+    const AT: &amp;str = "2026-10-20 00:00:00+00:00";
+    const UNTIL: &amp;str = "2026-10-20 00:05:00+00:00";
+    const POLLED_AT: &amp;str = "2026-10-20 00:01:00+00:00";
+    const CODE_COLUMNS: &amp;str = "id || '|' || client_id || '|' || requested_scopes || '|' || \
+         requested_at || '|' || expires_at || '|' || status || '|' || \
+         COALESCE(granted_scopes, '-') || '|' || COALESCE(patient, '-') || '|' || \
+         redirect_uri || '|' || code_challenge || '|' || client_state || '|' || sid || '|' || \
+         COALESCE(launch, '-') || '|' || COALESCE(launch_bound_patient, '-') || '|' || \
+         pre_approved_scopes || '|' || decidable_in_requesting_browser";
+    const USER_CODE_COLUMNS: &amp;str = "id || '|' || {flow} || '|' || client_id || '|' || \
+         requested_scopes || '|' || requested_at || '|' || expires_at || '|' || status || \
+         '|' || COALESCE(granted_scopes, '-') || '|' || COALESCE(patient, '-') || '|' || \
+         user_code || '|' || COALESCE(device_name, '-') || '|' || \
+         COALESCE(last_polled_at, '-')";
+    const ONE_TABLE_COLUMNS: &amp;str = "id || '|' || grant_type || '|' || client_id || '|' || \
+         requested_scopes || '|' || COALESCE(code_challenge, '-') || '|' || \
+         COALESCE(redirect_uri, '-') || '|' || COALESCE(client_state, '-') || '|' || \
+         COALESCE(user_code, '-') || '|' || pre_approved_scopes || '|' || requested_at || \
+         '|' || expires_at || '|' || COALESCE(last_polled_at, '-') || '|' || status || '|' || \
+         COALESCE(granted_scopes, '-') || '|' || COALESCE(patient, '-') || '|' || \
+         COALESCE(device_name, '-') || '|' || COALESCE(launch, '-') || '|' || \
+         COALESCE(launch_bound_patient, '-') || '|' || decidable_in_requesting_browser || \
+         '|' || COALESCE(sid, '-')";
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0047"),
+    )
+    .expect("migrate to 0047");
+    conn.batch_execute(&amp;format!(
+        "INSERT INTO authorization_requests \
+         (id, grant_type, client_id, requested_scopes, code_challenge, redirect_uri, \
+          client_state, user_code, pre_approved_scopes, requested_at, expires_at, \
+          last_polled_at, status, granted_scopes, patient, device_name, launch, \
+          launch_bound_patient, decidable_in_requesting_browser, sid) \
+         VALUES \
+         ('code-waiting', 'authorization_code', 'app', '[\"read\"]', 'challenge-1', \
+          'https://app.example/cb', 's-1', NULL, '[]', '{AT}', '{UNTIL}', NULL, \
+          'awaiting_limited_page', NULL, NULL, NULL, NULL, NULL, 0, 'sid-1'), \
+         ('code-pending', 'authorization_code', 'app', '[\"read\",\"write\"]', \
+          'challenge-2', 'https://app.example/cb', 's-2', NULL, '[\"read\"]', '{AT}', \
+          '{UNTIL}', NULL, 'pending', NULL, NULL, NULL, 'launch-1', 'Patient/9', 1, \
+          'sid-2'), \
+         ('code-approved', 'authorization_code', 'app', '[\"read\"]', 'challenge-3', \
+          'https://app.example/cb', 's-3', NULL, '[]', '{AT}', '{UNTIL}', NULL, \
+          'approved', '[\"read\"]', 'Patient/1', NULL, NULL, NULL, 0, 'sid-3'), \
+         ('code-denied', 'authorization_code', 'app', '[\"read\"]', 'challenge-4', \
+          'https://app.example/cb', 's-4', NULL, '[]', '{AT}', '{UNTIL}', NULL, \
+          'denied', NULL, NULL, NULL, NULL, NULL, 0, 'sid-4'), \
+         ('device-pending', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'SAME-CODE', '[]', '{AT}', '{UNTIL}', '{POLLED_AT}', 'pending', NULL, \
+          NULL, NULL, NULL, NULL, 0, NULL), \
+         ('device-approved', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'APPR-OVED', '[]', '{AT}', '{UNTIL}', '{POLLED_AT}', 'approved', \
+          '[\"openid\"]', 'Patient/2', 'Kitchen iPad', NULL, NULL, 0, NULL), \
+         ('device-claimed', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'CLAI-MEDD', '[]', '{AT}', '{UNTIL}', '{POLLED_AT}', 'claimed', \
+          '[\"openid\"]', NULL, 'Hallway TV', NULL, NULL, 0, NULL), \
+         ('device-denied', 'device_code', 'device-app', '[\"openid\"]', NULL, NULL, \
+          NULL, 'SAME-CODE', '[]', '{AT}', '{UNTIL}', NULL, 'denied', NULL, NULL, NULL, \
+          NULL, NULL, 0, NULL), \
+         ('pairing-pending', 'browser_pairing', 'browser-session', '[]', NULL, NULL, \
+          NULL, 'PAIR-PEND', '[]', '{AT}', '{UNTIL}', NULL, 'pending', NULL, NULL, \
+          'Firefox on Linux', NULL, NULL, 0, NULL), \
+         ('pairing-approved', 'browser_pairing', 'browser-session', '[]', NULL, NULL, \
+          NULL, 'PAIR-APPR', '[]', '{AT}', '{UNTIL}', '{POLLED_AT}', 'approved', \
+          '[\"wildflower/launch\"]', NULL, 'Safari on iPad', NULL, NULL, 0, NULL), \
+         ('pairing-claimed', 'browser_pairing', 'browser-session', '[]', NULL, NULL, \
+          NULL, 'PAIR-CLAI', '[]', '{AT}', '{UNTIL}', NULL, 'claimed', \
+          '[\"wildflower/launch\"]', NULL, 'Chrome on Windows', NULL, NULL, 0, NULL)"
+    ))
+    .expect("in-flight requests at 0047");
+    let read = |conn: &amp;mut SqliteConnection, query: &amp;str| {
+        diesel::sql_query(query)
+            .load::&lt;Name&gt;(conn)
+            .expect(query)
+            .into_iter()
+            .map(|row| row.name)
+            .collect::&lt;Vec&lt;_&gt;&gt;()
+    };
+    let code_before = read(
+        &amp;mut conn,
+        &amp;format!(
+            "SELECT {CODE_COLUMNS} AS name FROM authorization_requests \
+             WHERE grant_type = 'authorization_code' ORDER BY id"
+        ),
+    );
+    let user_code_before = read(
+        &amp;mut conn,
+        &amp;format!(
+            "SELECT {} AS name FROM authorization_requests \
+             WHERE grant_type != 'authorization_code' ORDER BY id",
+            USER_CODE_COLUMNS.replace("{flow}", "grant_type")
+        ),
+    );
+    let one_table_before = read(
+        &amp;mut conn,
+        &amp;format!("SELECT {ONE_TABLE_COLUMNS} AS name FROM authorization_requests ORDER BY id"),
+    );
+    assert_eq!(one_table_before.len(), 11, "every shape planted");
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0048"),
+    )
+    .expect("upgrade through 0048");
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT id AS name FROM code_authorization_requests ORDER BY id"
+        ),
+        [
+            "code-approved",
+            "code-denied",
+            "code-pending",
+            "code-waiting"
+        ]
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT id AS name FROM user_code_requests ORDER BY id"
+        ),
+        [
+            "device-approved",
+            "device-claimed",
+            "device-denied",
+            "device-pending",
+            "pairing-approved",
+            "pairing-claimed",
+            "pairing-pending",
+        ]
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            &amp;format!(
+                "SELECT {CODE_COLUMNS} AS name FROM code_authorization_requests ORDER BY id"
+            )
+        ),
+        code_before,
+        "every code-flow column kept"
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            &amp;format!(
+                "SELECT {} AS name FROM user_code_requests ORDER BY id",
+                USER_CODE_COLUMNS.replace("{flow}", "flow")
+            )
+        ),
+        user_code_before,
+        "every user-code column kept, `grant_type` as `flow`"
+    );
+    assert!(
+        user_code_before.contains(&amp;format!(
+            "device-approved|device_code|device-app|[\"openid\"]|{AT}|{UNTIL}|approved|\
+             [\"openid\"]|Patient/2|APPR-OVED|Kitchen iPad|{POLLED_AT}"
+        )),
+        "{user_code_before:#?}"
+    );
+    assert!(
+        diesel::sql_query("SELECT id FROM authorization_requests")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the one table is gone"
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT name FROM sqlite_master WHERE type = 'index' \
+             AND tbl_name IN ('code_authorization_requests', 'user_code_requests') \
+             AND name NOT LIKE 'sqlite_autoindex%' ORDER BY name"
+        ),
+        [
+            "user_code_requests_pending_user_code_uidx",
+            "user_code_requests_user_code_idx",
+        ]
+    );
+    let plant_device = |conn: &amp;mut SqliteConnection, id: &amp;str, flow: &amp;str, status: &amp;str| {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO user_code_requests \
+             (id, flow, client_id, requested_scopes, requested_at, expires_at, status, \
+              user_code) \
+             VALUES ('{id}', '{flow}', 'device-app', '[]', '{AT}', '{UNTIL}', '{status}', \
+                     'SAME-CODE')"
+        ))
+    };
+    assert!(
+        plant_device(&amp;mut conn, "another-pending", "device_code", "pending").is_err(),
+        "a second pending request on a code collides"
+    );
+    assert!(
+        plant_device(&amp;mut conn, "expired", "device_code", "expired").is_err(),
+        "a status the user-code flows never have is refused"
+    );
+    assert!(
+        plant_device(&amp;mut conn, "code", "authorization_code", "denied").is_err(),
+        "a code request is no user-code request"
+    );
+    assert!(
+        plant_device(&amp;mut conn, "approved-bare", "device_code", "approved").is_err(),
+        "an approval without its granted scopes is refused"
+    );
+    plant_device(&amp;mut conn, "another-denied", "device_code", "denied")
+        .expect("a decided request shares a code");
+    let plant_code = |conn: &amp;mut SqliteConnection, id: &amp;str, status: &amp;str| {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO code_authorization_requests \
+             (id, client_id, requested_scopes, requested_at, expires_at, status, \
+              redirect_uri, code_challenge, client_state, sid, pre_approved_scopes, \
+              decidable_in_requesting_browser) \
+             VALUES ('{id}', 'app', '[]', '{AT}', '{UNTIL}', '{status}', \
+                     'https://app.example/cb', 'challenge', 's', 'sid-1', '[]', 0)"
+        ))
+    };
+    assert!(
+        plant_code(&amp;mut conn, "claimed", "claimed").is_err(),
+        "a status the code flow never has is refused"
+    );
+    assert!(
+        plant_code(&amp;mut conn, "approved-bare", "approved").is_err(),
+        "an approval without its granted scopes is refused"
+    );
+    plant_code(&amp;mut conn, "another-pending", "pending").expect("a well-formed code request");
+    conn.batch_execute(
+        "DELETE FROM user_code_requests WHERE id = 'another-denied'; \
+         DELETE FROM code_authorization_requests WHERE id = 'another-pending'",
+    )
+    .expect("clear the probes");
+
+    let migration_0048 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0048"))
+        .expect("0048 is embedded");
+    migration_0048.revert(&amp;mut conn).expect("revert 0048");
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            &amp;format!(
+                "SELECT {ONE_TABLE_COLUMNS} AS name FROM authorization_requests ORDER BY id"
+            )
+        ),
+        one_table_before,
+        "the revert rebuilds every row"
+    );
+    assert_eq!(
+        read(
+            &amp;mut conn,
+            "SELECT name FROM sqlite_master WHERE type IN ('table', 'index') \
+             AND (name LIKE 'authorization_requests%' OR name LIKE '%code_%requests%') \
+             AND name NOT LIKE 'sqlite_autoindex%' ORDER BY name"
+        ),
+        [
+            "authorization_requests",
+            "authorization_requests_pending_user_code_uidx",
+            "authorization_requests_user_code_idx",
+        ]
+    );
+    assert!(
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO authorization_requests \
+             (id, grant_type, client_id, requested_scopes, user_code, requested_at, \
+              expires_at, status) \
+             VALUES ('another-pending', 'device_code', 'device-app', '[]', 'SAME-CODE', \
+                     '{AT}', '{UNTIL}', 'pending')"
+        ))
+        .is_err(),
+        "a second pending request on a code still collides"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2268-L2549"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2268–2549</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_install_already_at_0048_gives_every_client_a_refresh_policy" class="item-anchor"></div>
+
+<p>An install already at <code>0048</code> gives every client a refresh policy when
+<code>0049</code> runs: the ticket’s table for the first-party clients the
+migrations seeded, the same policy boot-time seeding writes for the
+clients it owns (so an install where those rows already exist and a
+fresh one agree), and the trust-on-first-use defaults by scope for every
+other row. Reverting <code>0049</code> drops the columns.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_install_already_at_0048_gives_every_client_a_refresh_policy() {
+    use std::collections::BTreeMap;
+
+    use chrono::Duration;
+    use diesel::connection::SimpleConnection as _;
+
+    use crate::db::clients::clients;
+    use crate::domain::client::{Client, RefreshPolicy};
+    use crate::seeding::{
+        BROWSER_SESSION_CLIENT_REFRESH_POLICY, DATA_APP_REFRESH_POLICY,
+        FHIR_SYNC_PEBBLE_REFRESH_POLICY, FHIR_UI_REFRESH_POLICY, HOST_APP_REFRESH_POLICY,
+    };
+
+    const FHIR_UI: &amp;str = "5ea43272eba5e825c50de39032f96bf0";
+    // The clients boot-time seeding owns, keyed by id, with the policy it
+    // inserts each one with.
+    let seeded_at_boot = [
+        (
+            crate::WILDFLOWER_HOST_APP_CLIENT_ID,
+            HOST_APP_REFRESH_POLICY,
+        ),
+        (
+            crate::BROWSER_SESSION_CLIENT_ID,
+            BROWSER_SESSION_CLIENT_REFRESH_POLICY,
+        ),
+        (FHIR_UI, FHIR_UI_REFRESH_POLICY),
+        (
+            crate::seeding::MEDICATIONS_DEV_CLIENT_ID,
+            DATA_APP_REFRESH_POLICY,
+        ),
+        (
+            crate::seeding::IMPORTER_DEV_CLIENT_ID,
+            DATA_APP_REFRESH_POLICY,
+        ),
+        (crate::seeding::PLOTS_DEV_CLIENT_ID, DATA_APP_REFRESH_POLICY),
+        (
+            crate::seeding::SYNTHETIC_DATA_DEV_CLIENT_ID,
+            DATA_APP_REFRESH_POLICY,
+        ),
+        (
+            crate::seeding::STRENGTH_DEV_CLIENT_ID,
+            DATA_APP_REFRESH_POLICY,
+        ),
+        (
+            crate::seeding::OHIF_VIEWER_DEV_CLIENT_ID,
+            DATA_APP_REFRESH_POLICY,
+        ),
+        (
+            crate::seeding::FHIR_SYNC_PEBBLE_DEV_CLIENT_ID,
+            FHIR_SYNC_PEBBLE_REFRESH_POLICY,
+        ),
+    ];
+    // Rows the Owner approved on first use, or left behind under a
+    // legacy id, with the scopes they hold.
+    let first_use = [
+        ("owner-approved-admin", r#"["openid","wildflower/Grant.r"]"#),
+        ("owner-approved-data", r#"["openid","patient/*.rs"]"#),
+        ("wildflower-react", r#"["launch","wildflower/launch"]"#),
+        ("wildflower-medication", r#"["launch","patient/*.read"]"#),
+        ("look-alike", r#"["Wildflower/Grant.r","openid"]"#),
+    ];
+
+    let mut conn = SqliteConnection::establish(":memory:").expect("open in-memory");
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0048"),
+    )
+    .expect("migrate to 0048");
+    let row_ids = seeded_at_boot
+        .iter()
+        .map(|(client_id, _)| (*client_id, "[]"))
+        .chain(first_use);
+    for (client_id, allowed_scopes) in row_ids {
+        conn.batch_execute(&amp;format!(
+            "INSERT INTO clients (client_id, name, kind, redirect_uris, allowed_scopes, \
+             allowed_grant_types, registered_at) \
+             VALUES ('{client_id}', '{client_id}', 'public', '[]', '{allowed_scopes}', \
+                     '[]', '2026-10-01 00:00:00+00:00')"
+        ))
+        .expect("a client row at 0048");
+    }
+
+    wildflowerhealthio_persistence::run_diesel_migrations(
+        &amp;mut conn,
+        MIGRATION_NAMESPACE,
+        MigrationsThrough("0049"),
+    )
+    .expect("upgrade through 0049");
+    let policies: BTreeMap&lt;String, RefreshPolicy&gt; = clients::table
+        .select(Client::as_select())
+        .load(&amp;mut conn)
+        .expect("every row reads back as a client")
+        .into_iter()
+        .map(|client| (client.client_id, client.refresh_policy))
+        .collect();
+
+    let policy = |idle_ttl, max_ttl, ends_with_browser_session| RefreshPolicy {
+        idle_ttl,
+        max_ttl,
+        ends_with_browser_session,
+    };
+    let session_bound_two_hours = policy(Some(Duration::hours(2)), None, true);
+    let first_use_data = policy(Some(Duration::days(1)), Some(Duration::days(7)), false);
+    let expected: BTreeMap&lt;String, RefreshPolicy&gt; = [
+        // Wildflower Authorization.
+        (
+            "7277e898bee8ac81ea44788236e619a5",
+            policy(Some(Duration::minutes(30)), None, true),
+        ),
+        // The Launcher and the Server API Console.
+        ("03a513940b52f8c2649a5366d1a26d19", session_bound_two_hours),
+        ("664a01e8614050cd82ffe90350b81413", session_bound_two_hours),
+        // Medications, Plots, Strength, Importer, Synthetic Data, OHIF.
+        ("9769f8b274370708d0d3ebb2e3e59b7c", DATA_APP_REFRESH_POLICY),
+        ("474e103de61f9141c4b640d59bfa130e", DATA_APP_REFRESH_POLICY),
+        ("bdf9fc5cb5a28c6683b49896b0ef8a75", DATA_APP_REFRESH_POLICY),
+        ("165cd26573e5ac72378e6ad2d2198330", DATA_APP_REFRESH_POLICY),
+        ("225ba6af034a3acec6be7ff8010df67f", DATA_APP_REFRESH_POLICY),
+        ("941de68e6b59eb9dcc32df8ede89e636", DATA_APP_REFRESH_POLICY),
+        // FHIR Sync for Pebble.
+        (
+            "6847df97d54c31936d54ca1b36b3bb09",
+            FHIR_SYNC_PEBBLE_REFRESH_POLICY,
+        ),
+        // The SMART sample apps, trusted on first use with no
+        // `wildflower/` scope.
+        ("growth_chart", first_use_data),
+        ("my_web_app", first_use_data),
+        ("cc344727-6f90-496c-94fd-c7829aa9a51d", first_use_data),
+        ("owner-approved-admin", session_bound_two_hours),
+        ("owner-approved-data", first_use_data),
+        ("wildflower-react", session_bound_two_hours),
+        ("wildflower-medication", first_use_data),
+        ("look-alike", first_use_data),
+    ]
+    .into_iter()
+    .chain(seeded_at_boot)
+    .map(|(client_id, policy)| (client_id.to_owned(), policy))
+    .collect();
+    assert_eq!(policies, expected);
+    assert_eq!(
+        FHIR_SYNC_PEBBLE_REFRESH_POLICY,
+        policy(Some(Duration::days(30)), Some(Duration::days(365)), false)
+    );
+    assert_eq!(
+        DATA_APP_REFRESH_POLICY,
+        policy(Some(Duration::days(7)), Some(Duration::days(30)), false)
+    );
+
+    let migration_0049 = MIGRATIONS
+        .migrations()
+        .expect("embedded migrations")
+        .into_iter()
+        .find(|migration| migration.name().version() == MigrationVersion::from("0049"))
+        .expect("0049 is embedded");
+    migration_0049.revert(&amp;mut conn).expect("revert 0049");
+    assert!(
+        diesel::sql_query("SELECT refresh_ends_with_browser_session FROM clients")
+            .execute(&amp;mut conn)
+            .is_err(),
+        "the columns are gone"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/grant_store.rs#L2558-L2722"><code>authorization-server-rust/src/db/grant_store.rs</code> lines 2558–2722</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/persistence.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence/clients.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/persistence.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence/clients.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

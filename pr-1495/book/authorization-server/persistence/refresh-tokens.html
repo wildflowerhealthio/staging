@@ -1,0 +1,846 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Refresh Tokens - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="refresh-tokens"><a class="header" href="#refresh-tokens">Refresh Tokens</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs"><code>authorization-server-rust/src/db/refresh_tokens.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code></a></p>
+
+<p>A <a href="../domain/refresh-token.html">refresh family</a> is two tables. <code>refresh_token_families</code> holds what every link in the chain shares, once per family: the app, the scopes, the patient, the deadline, the hash of the code that started it, the grant behind it, the browser session. <code>refresh_tokens</code> holds one row per link, keyed by the hash of the token; the token itself is never stored. A link’s <code>family_id</code> is a foreign key to its family, enforced, as the pool turns <code>foreign_keys</code> on for every connection, so <strong>no link can exist without its family</strong>.</p>
+<p><strong>Ending a family never deletes it.</strong> Each expiry below, for a replayed link, the app revoking its token, the Owner revoking a grant, or a replayed code, pulls the family’s <code>expires_at</code> back to the moment it ended and stamps its unspent link spent at the same moment. The rows stay, so a link presented later still resolves to its dead family and is refused for that reason. Only the retention sweep deletes, once a family has been dead long enough.</p>
+<p>The family’s <code>grant_id</code> is a soft reference with no foreign key: revoking a grant deletes the grant and keeps its families. The family table is indexed on <code>client_id</code> and <code>authorization_code_hash</code>, which the bulk expiries match on, on <code>sid</code>, which the browser-session sweep asks about, and on <code>grant_id</code>; the link table on <code>family_id</code>. The methods that touch both tables run their two statements in a nested transaction, which inside a write scope’s <code>BEGIN IMMEDIATE</code> is a savepoint: both land or neither does.</p>
+<p>The tests are in a file of their own, <code>refresh_tokens/tests.rs</code>, and each is shown under the primitive it holds. They draw families from <a href="test-fixtures.html#item-arb_family"><code>arb_family</code></a> and plant them with <a href="test-fixtures.html#item-seed_family_with_token"><code>seed_family_with_token</code></a>.</p>
+<h2 id="dbrefresh_tokens"><a class="header" href="#dbrefresh_tokens"><code>db::refresh_tokens</code></a></h2>
+<h3 id="impl-refreshtokenstx-for-sqlitegranttx"><a class="header" href="#impl-refreshtokenstx-for-sqlitegranttx"><code>impl RefreshTokensTx for SqliteGrantTx</code></a></h3>
+<p>The port is <a href="../grant-store/refresh-tokens.html#item-RefreshTokensTx"><code>RefreshTokensTx</code></a>.</p>
+<h4 id="insert_refresh_token_family_row"><a class="header" href="#insert_refresh_token_family_row"><code>insert_refresh_token_family_row</code></a></h4>
+<div id="item-SqliteGrantTx--insert_refresh_token_family_row" class="item-anchor"></div>
+
+<p>A single-table insert; the writer pairs it with the family’s first
+token in the same scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_refresh_token_family_row(
+    &amp;mut self,
+    family: &amp;RefreshTokenFamily,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::insert_into(refresh_token_families::table)
+        .values(family.clone())
+        .execute(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure(
+                "insert_refresh_token_family_row failed",
+                e,
+            )
+        })?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L43-L58"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 43–58</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="insert_refresh_token"><a class="header" href="#insert_refresh_token"><code>insert_refresh_token</code></a></h4>
+<p>A link with no family would read later as an unknown token, so replaying it would end nothing; the foreign key makes that a failed write instead.</p>
+<div id="item-SqliteGrantTx--insert_refresh_token" class="item-anchor"></div>
+
+<p>Persist a single refresh-token row into an existing family — a rotation
+successor, or the family’s first token (sequenced after the family row by the
+<a href="../writers/refresh-family-writer.html#item-RefreshFamilyWriter--start_family"><code>RefreshFamilyWriter::start_family</code></a>
+action).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_refresh_token(
+    &amp;mut self,
+    token: &amp;RefreshToken,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::insert_into(refresh_tokens::table)
+        .values(token.clone())
+        .execute(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("insert_refresh_token failed", e)
+        })?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L64-L76"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 64–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-insert_refresh_token_rejects_orphan_without_family" class="item-anchor"></div>
+
+<p>Foreign-key enforcement (<code>PRAGMA foreign_keys = ON</code>): a refresh token
+whose family does not exist is rejected at insert time instead of
+becoming an orphan that later reads as “not found” (so a genuine replay
+of such a token would fail to revoke anything). The store surfaces it as
+an <code>Infrastructure</code> error whose source text names the constraint.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_refresh_token_rejects_orphan_without_family() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let err = store
+        .write(|tx| tx.insert_refresh_token(&amp;sample_token("orphan", "no-such-family")))
+        .expect_err("orphan insert must violate the foreign key");
+    assert!(
+        matches!(
+            &amp;err,
+            AuthorizationServerError::Infrastructure { source, .. }
+                if source.to_uppercase().contains("FOREIGN KEY")
+        ),
+        "expected a foreign-key constraint violation, got {err:?}"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L130-L143"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 130–143</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="refresh_token_with_family_by_hash"><a class="header" href="#refresh_token_with_family_by_hash"><code>refresh_token_with_family_by_hash</code></a></h4>
+<p>Telling a live link from a replayed one, and a live family from an ended one, is the caller’s job (<a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L441-L478"><code>ValidatedRefreshToken::validate</code></a>).</p>
+<div id="item-SqliteGrantTx--refresh_token_with_family_by_hash" class="item-anchor"></div>
+
+<p>Resolve a presented token hash to its row plus the owning family in
+one JOIN. Consumed tokens resolve too — the caller distinguishes a
+live token from a replayed one via <code>consumed_at</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn refresh_token_with_family_by_hash(
+    &amp;mut self,
+    token_hash: &amp;str,
+) -&gt; Result&lt;Option&lt;(RefreshToken, RefreshTokenFamily)&gt;, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    refresh_tokens::table
+        .inner_join(refresh_token_families::table)
+        .filter(refresh_tokens::token_hash.eq(token_hash))
+        .select((RefreshToken::as_select(), RefreshTokenFamily::as_select()))
+        .first(conn)
+        .optional()
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure(
+                "refresh_token_with_family_by_hash failed",
+                e,
+            )
+        })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L81-L98"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 81–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-insert_and_fetch_round_trip" class="item-anchor"></div>
+
+<p>Any family and token stored together read back together by the token’s
+hash, exactly as written.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_and_fetch_round_trip(
+    family in arb_family(),
+    token in arb_token_in_family("family-under-test"),
+) {
+    let family = RefreshTokenFamily { family_id: "family-under-test".to_string(), ..family };
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    seed_family_with_token(&amp;store, &amp;family, &amp;token);
+    let (fetched_token, fetched_family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash(&amp;token.token_hash))
+        .expect("query")
+        .expect("row present");
+    prop_assert_eq!(fetched_token, token);
+    prop_assert_eq!(fetched_family, family);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L69-L82"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 69–82</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="stamp_refresh_token_consumed_if_live"><a class="header" href="#stamp_refresh_token_consumed_if_live"><code>stamp_refresh_token_consumed_if_live</code></a></h4>
+<p>A <code>false</code> doesn’t say why: spent already, or never issued. <a href="../domain/refresh-token.html#item-consume_refresh_token"><code>consume_refresh_token</code></a> asks <code>has_refresh_token</code> next to tell them apart.</p>
+<div id="item-SqliteGrantTx--stamp_refresh_token_consumed_if_live" class="item-anchor"></div>
+
+<p>The <code>consumed_at IS NULL</code> guard is the whole atomicity of the consume:
+a concurrent redeemer of the same live token loses the affected-row
+count and gets <code>false</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn stamp_refresh_token_consumed_if_live(
+    &amp;mut self,
+    token_hash: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let affected = diesel::update(
+        refresh_tokens::table
+            .find(token_hash)
+            .filter(refresh_tokens::consumed_at.is_null()),
+    )
+    .set(refresh_tokens::consumed_at.eq(now))
+    .execute(conn)
+    .map_err(|e| {
+        AuthorizationServerError::infrastructure(
+            "stamp_refresh_token_consumed_if_live failed",
+            e,
+        )
+    })?;
+    Ok(affected == 1)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L103-L123"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 103–123</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-stamp_consumes_live_then_loses_the_guard_on_replay" class="item-anchor"></div>
+
+<p>The guarded-update primitive is the whole atomicity of a consume:
+the first stamp of a live token wins (<code>true</code>), a second stamp of the
+now-consumed token loses the <code>consumed_at IS NULL</code> guard (<code>false</code>)
+while the row still exists — the SQL facts the domain assembles into
+<code>Consumed</code> then <code>Replayed</code>. (The three-state decision itself is
+tested against the action in <code>domain::refresh_token</code>.)</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn stamp_consumes_live_then_loses_the_guard_on_replay(
+    family in arb_family(),
+    token in arb_token_in_family("family-under-test"),
+) {
+    let family = RefreshTokenFamily { family_id: "family-under-test".to_string(), ..family };
+    let live = RefreshToken { consumed_at: None, ..token };
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    seed_family_with_token(&amp;store, &amp;family, &amp;live);
+    let now = Utc::now();
+    prop_assert!(store
+        .write(|tx| tx.stamp_refresh_token_consumed_if_live(&amp;live.token_hash, now))
+        .expect("first stamp"));
+    prop_assert!(!store
+        .write(|tx| tx.stamp_refresh_token_consumed_if_live(&amp;live.token_hash, now))
+        .expect("second stamp"));
+    prop_assert!(store
+        .write(|tx| tx.has_refresh_token(&amp;live.token_hash))
+        .expect("exists probe"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L91-L109"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 91–109</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="has_refresh_token"><a class="header" href="#has_refresh_token"><code>has_refresh_token</code></a></h4>
+<div id="item-SqliteGrantTx--has_refresh_token" class="item-anchor"></div>
+
+<p>Whether any token row (live or consumed) bears <code>token_hash</code> — the existence
+probe that tells a replay from a miss after
+<a href="#item-SqliteGrantTx--stamp_refresh_token_consumed_if_live"><code>Self::stamp_refresh_token_consumed_if_live</code></a> reported no live row.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn has_refresh_token(&amp;mut self, token_hash: &amp;str) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    diesel::select(diesel::dsl::exists(refresh_tokens::table.find(token_hash)))
+        .get_result(conn)
+        .map_err(|e| AuthorizationServerError::infrastructure("has_refresh_token failed", e))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L128-L133"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 128–133</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-unknown_hash_neither_stamps_nor_exists" class="item-anchor"></div>
+
+<p>A hash never issued can’t be stamped consumed and isn’t found.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn unknown_hash_neither_stamps_nor_exists() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    assert!(!store
+        .write(|tx| tx.stamp_refresh_token_consumed_if_live("never-issued", Utc::now()))
+        .expect("stamp"));
+    assert!(!store
+        .write(|tx| tx.has_refresh_token("never-issued"))
+        .expect("exists probe"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L114-L122"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 114–122</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="expire_refresh_token_family"><a class="header" href="#expire_refresh_token_family"><code>expire_refresh_token_family</code></a></h4>
+<div id="item-SqliteGrantTx--expire_refresh_token_family" class="item-anchor"></div>
+
+<p>End a token family by pulling its <code>expires_at</code> back to <code>now</code>, and
+stamp its still-live token consumed at the same instant so no row in
+a dead family looks live. Used by reuse detection and by
+<code>ClientTokenRevoker</code> when a client revokes its own refresh token. Rows are kept (not
+deleted) so the lineage stays auditable and replayed tokens still
+resolve to their dead family. The <code>consumed_at IS NULL</code> guard keeps
+genuine consumption stamps intact.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn expire_refresh_token_family(
+    &amp;mut self,
+    family_id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    conn.transaction(|conn| {
+        diesel::update(refresh_token_families::table.find(family_id))
+            .set(refresh_token_families::expires_at.eq(now))
+            .execute(conn)?;
+        diesel::update(
+            refresh_tokens::table
+                .filter(refresh_tokens::family_id.eq(family_id))
+                .filter(refresh_tokens::consumed_at.is_null()),
+        )
+        .set(refresh_tokens::consumed_at.eq(now))
+        .execute(conn)?;
+        Ok(())
+    })
+    .map_err(|e: diesel::result::Error| {
+        AuthorizationServerError::infrastructure("expire_refresh_token_family failed", e)
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L142-L164"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 142–164</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-expire_family_pulls_deadline_back_and_stamps_the_live_token" class="item-anchor"></div>
+
+<p>Ending a family keeps its rows: its deadline moves to the moment it ended,
+its live token is stamped consumed then, a token redeemed earlier keeps its
+own stamp, and another family is untouched.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn expire_family_pulls_deadline_back_and_stamps_the_live_token() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    seed_family_with_token(
+        &amp;store,
+        &amp;sample_family("family-a", "client-1"),
+        &amp;sample_token("token-1", "family-a"),
+    );
+    store
+        .write(|tx| tx.insert_refresh_token(&amp;sample_token("token-2", "family-a")))
+        .expect("insert token-2");
+    let untouched = sample_family("family-b", "client-1");
+    seed_family_with_token(&amp;store, &amp;untouched, &amp;sample_token("other", "family-b"));
+    // token-1 was genuinely redeemed before the revocation — its stamp
+    // must survive the family kill untouched.
+    let redeemed_at = Utc::now();
+    assert!(store
+        .write(|tx| tx.stamp_refresh_token_consumed_if_live("token-1", redeemed_at))
+        .expect("consume"));
+
+    let revoked_at = Utc::now();
+    store
+        .write(|tx| tx.expire_refresh_token_family("family-a", revoked_at))
+        .expect("expire");
+
+    // Rows are kept — the lineage stays auditable — with the family's
+    // deadline pulled back to the revocation instant.
+    let (redeemed_token, family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash("token-1"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(family.expires_at, revoked_at);
+    assert_eq!(redeemed_token.consumed_at, Some(redeemed_at));
+    // The live token is stamped at the revocation instant, so nothing in
+    // a dead family looks live.
+    let (live_token, _) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash("token-2"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(live_token.consumed_at, Some(revoked_at));
+    // The sibling family is untouched.
+    let (other_token, other_family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash("other"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(other_family.expires_at, untouched.expires_at);
+    assert_eq!(other_token.consumed_at, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L193-L239"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 193–239</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="expire_refresh_token_families_for_client"><a class="header" href="#expire_refresh_token_families_for_client"><code>expire_refresh_token_families_for_client</code></a></h4>
+<p>It runs alongside a grant’s delete in one write scope (<a href="grants.html#item-delete_device_grant"><code>delete_device_grant</code></a>). It matches on <code>client_id</code> alone, so a family that had already ended also gets the new instant as its deadline.</p>
+<div id="item-SqliteGrantTx--expire_refresh_token_families_for_client" class="item-anchor"></div>
+
+<p>End every refresh-token family issued to a client, with the same
+expire-and-stamp semantics as <a href="#item-SqliteGrantTx--expire_refresh_token_family"><code>Self::expire_refresh_token_family</code></a> — used when
+the Owner revokes a grant, so standing consent and standing credentials die
+together.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn expire_refresh_token_families_for_client(
+    &amp;mut self,
+    client_id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    conn.transaction(|conn| {
+        diesel::update(
+            refresh_tokens::table
+                .filter(refresh_tokens::consumed_at.is_null())
+                .filter(
+                    refresh_tokens::family_id.eq_any(
+                        refresh_token_families::table
+                            .filter(refresh_token_families::client_id.eq(client_id))
+                            .select(refresh_token_families::family_id),
+                    ),
+                ),
+        )
+        .set(refresh_tokens::consumed_at.eq(now))
+        .execute(conn)?;
+        diesel::update(
+            refresh_token_families::table
+                .filter(refresh_token_families::client_id.eq(client_id)),
+        )
+        .set(refresh_token_families::expires_at.eq(now))
+        .execute(conn)?;
+        Ok(())
+    })
+    .map_err(|e: diesel::result::Error| {
+        AuthorizationServerError::infrastructure(
+            "expire_refresh_token_families_for_client failed",
+            e,
+        )
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L170-L204"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 170–204</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-expire_for_client_spares_other_clients" class="item-anchor"></div>
+
+<p>Ending a client’s families ends that client’s alone: another client’s
+family keeps its deadline and its live token.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn expire_for_client_spares_other_clients() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    seed_family_with_token(
+        &amp;store,
+        &amp;sample_family("family-a", "client-1"),
+        &amp;sample_token("token-1", "family-a"),
+    );
+    let untouched = sample_family("family-b", "client-2");
+    seed_family_with_token(&amp;store, &amp;untouched, &amp;sample_token("other", "family-b"));
+
+    let revoked_at = Utc::now();
+    store
+        .write(|tx| tx.expire_refresh_token_families_for_client("client-1", revoked_at))
+        .expect("expire");
+
+    let (token, family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash("token-1"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(family.expires_at, revoked_at);
+    assert_eq!(token.consumed_at, Some(revoked_at));
+    let (other_token, other_family) = store
+        .read(|tx| tx.refresh_token_with_family_by_hash("other"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(other_family.expires_at, untouched.expires_at);
+    assert_eq!(other_token.consumed_at, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L320-L347"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 320–347</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="expire_refresh_token_families_for_authorization_code"><a class="header" href="#expire_refresh_token_families_for_authorization_code"><code>expire_refresh_token_families_for_authorization_code</code></a></h4>
+<p>A redemption of a code no longer stored runs it before refusing: <strong>a replayed code takes down the refresh token its first redemption earned</strong>. Its test is an integration test, which replays a code and finds its family ended (<a href="../integration-tests/grant-flows.html">Grant Flows</a>).</p>
+<div id="item-SqliteGrantTx--expire_refresh_token_families_for_authorization_code" class="item-anchor"></div>
+
+<p>End every refresh-token family minted from a given authorization code
+(identified by the code’s hash), with the same expire-and-stamp
+semantics as <a href="#item-SqliteGrantTx--expire_refresh_token_family"><code>Self::expire_refresh_token_family</code></a>. Used by authorization-code
+reuse detection (RFC 6749 §4.1.2): a detectably replayed code revokes the
+refresh lineage its first redemption produced. A code that never minted a
+family (no <code>offline_access</code>, or never existed) matches no row and the call
+is a no-op.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn expire_refresh_token_families_for_authorization_code(
+    &amp;mut self,
+    authorization_code_hash: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    conn.transaction(|conn| {
+        diesel::update(
+            refresh_tokens::table
+                .filter(refresh_tokens::consumed_at.is_null())
+                .filter(
+                    refresh_tokens::family_id.eq_any(
+                        refresh_token_families::table
+                            .filter(
+                                refresh_token_families::authorization_code_hash
+                                    .eq(authorization_code_hash),
+                            )
+                            .select(refresh_token_families::family_id),
+                    ),
+                ),
+        )
+        .set(refresh_tokens::consumed_at.eq(now))
+        .execute(conn)?;
+        diesel::update(refresh_token_families::table.filter(
+            refresh_token_families::authorization_code_hash.eq(authorization_code_hash),
+        ))
+        .set(refresh_token_families::expires_at.eq(now))
+        .execute(conn)?;
+        Ok(())
+    })
+    .map_err(|e: diesel::result::Error| {
+        AuthorizationServerError::infrastructure(
+            "expire_refresh_token_families_for_authorization_code failed",
+            e,
+        )
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L213-L249"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 213–249</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="delete_refresh_token_families_expired_before"><a class="header" href="#delete_refresh_token_families_expired_before"><code>delete_refresh_token_families_expired_before</code></a></h4>
+<p>The cutoff is the sweep’s, <a href="../domain/retention.html#item-purge_expired"><code>purge_expired</code></a> with <a href="../domain/retention.html#item-REFRESH_TOKEN_FAMILY_RETENTION"><code>REFRESH_TOKEN_FAMILY_RETENTION</code></a>. <strong>An ended family stays readable until it ages past the window.</strong></p>
+<div id="item-SqliteGrantTx--delete_refresh_token_families_expired_before" class="item-anchor"></div>
+
+<p>Delete every refresh-token family whose absolute deadline fell before
+<code>cutoff</code>, along with the <code>refresh_tokens</code> rows descended from them, and
+return how many <strong>families</strong> were removed. Children first, so the delete
+passes under <code>PRAGMA foreign_keys = ON</code>.</p>
+<p>The one place lineage is destroyed rather than expired in place — the
+counterpart to <a href="#item-SqliteGrantTx--expire_refresh_token_family"><code>Self::expire_refresh_token_family</code></a>, which keeps it readable.
+<code>cutoff</code> is the <em>retention</em> cutoff, not <code>now</code>; the window is the caller’s
+(<code>domain::retention::purge_expired</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_refresh_token_families_expired_before(
+    &amp;mut self,
+    cutoff: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;usize, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    conn.transaction(|conn| {
+        diesel::delete(
+            refresh_tokens::table.filter(
+                refresh_tokens::family_id.eq_any(
+                    refresh_token_families::table
+                        .filter(refresh_token_families::expires_at.lt(cutoff))
+                        .select(refresh_token_families::family_id),
+                ),
+            ),
+        )
+        .execute(conn)?;
+        diesel::delete(
+            refresh_token_families::table.filter(refresh_token_families::expires_at.lt(cutoff)),
+        )
+        .execute(conn)
+    })
+    .map_err(|e: diesel::result::Error| {
+        AuthorizationServerError::infrastructure(
+            "delete_refresh_token_families_expired_before failed",
+            e,
+        )
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens.rs#L260-L287"><code>authorization-server-rust/src/db/refresh_tokens.rs</code> lines 260–287</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-delete_expired_families_takes_every_generation_with_them" class="item-anchor"></div>
+
+<p>The reclaiming delete is FK-safe and cascades by hand: a family past the
+cutoff goes with <strong>every</strong> generation under it, so no token row is left
+pointing at a family that no longer exists (which <code>PRAGMA foreign_keys = ON</code>
+would reject outright, and which would otherwise read as “unknown token” and
+silently defeat replay detection).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_expired_families_takes_every_generation_with_them() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let mut dead = sample_family("family-dead", "client-1");
+    dead.expires_at = Utc::now() - chrono::Duration::days(91);
+    seed_family_with_token(&amp;store, &amp;dead, &amp;sample_token("dead-1", "family-dead"));
+    store
+        .write(|tx| tx.insert_refresh_token(&amp;sample_token("dead-2", "family-dead")))
+        .expect("insert a second generation");
+
+    let purged = store
+        .write(|tx| {
+            tx.delete_refresh_token_families_expired_before(Utc::now() - chrono::Duration::days(90))
+        })
+        .expect("delete");
+
+    assert_eq!(
+        purged, 1,
+        "one family removed, counted by family not by token"
+    );
+    for gone in ["dead-1", "dead-2"] {
+        assert!(
+            store
+                .read(|tx| tx.refresh_token_with_family_by_hash(gone))
+                .expect("query")
+                .is_none(),
+            "{gone} outlived its family",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L247-L275"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 247–275</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-delete_expired_families_spares_the_recently_dead_and_the_live" class="item-anchor"></div>
+
+<p>The cutoff is a strict <code>&lt;</code> on the family’s own deadline, so a family that
+merely <em>expired</em> — including one revoked for reuse, whose <code>expires_at</code> was
+pulled back to the revocation instant — stays readable until it ages past
+the window. This is what keeps the “revocation keeps the lineage auditable”
+guarantee from being quietly undone by the sweep.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_expired_families_spares_the_recently_dead_and_the_live() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let mut recently_revoked = sample_family("family-revoked", "client-1");
+    recently_revoked.expires_at = Utc::now() - chrono::Duration::days(1);
+    seed_family_with_token(
+        &amp;store,
+        &amp;recently_revoked,
+        &amp;sample_token("revoked-token", "family-revoked"),
+    );
+    // `sample_family` deadlines land 90 days out, i.e. comfortably live.
+    seed_family_with_token(
+        &amp;store,
+        &amp;sample_family("family-live", "client-1"),
+        &amp;sample_token("live-token", "family-live"),
+    );
+
+    let purged = store
+        .write(|tx| {
+            tx.delete_refresh_token_families_expired_before(Utc::now() - chrono::Duration::days(90))
+        })
+        .expect("delete");
+
+    assert_eq!(purged, 0);
+    for spared in ["revoked-token", "live-token"] {
+        assert!(
+            store
+                .read(|tx| tx.refresh_token_with_family_by_hash(spared))
+                .expect("query")
+                .is_some(),
+            "{spared} was reclaimed early",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/cd67c85f91f89d8dc54a3ff00025441e84d351c7/apps/host/wildflower-server/authorization-server-rust/src/db/refresh_tokens/tests.rs#L283-L315"><code>authorization-server-rust/src/db/refresh_tokens/tests.rs</code> lines 283–315</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/persistence/authorization-codes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence/signing-keys.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/persistence/authorization-codes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence/signing-keys.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

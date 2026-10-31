@@ -1,0 +1,842 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Grant Recorder - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-57569e7c.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-95701d4f.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="grant-recorder"><a class="header" href="#grant-recorder">Grant Recorder</a></h1>
+<!-- markdownlint-disable-file link-fragments -- the item-… anchors are added when the book is built. -->
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code></a></p>
+
+<p>When the Owner approves an app, the approval leaves a <a href="../domain/grant.html">standing grant</a> behind, so the app’s next request for the same access goes through without asking. The grant recorder writes it: it creates the grant, or widens the one already standing. For an app <a href="../domain/client.html">trusted on first use</a> it also writes the app’s registration, which the approval is what justifies.</p>
+<p><strong>Both writes take <a href="../authority/delegated-scopes.html#item-DelegatedScopes">delegated scopes</a>.</strong> A grant row and a widened registration only ever carry scopes an approver was entitled to delegate, and a scope the Owner unticked is added to neither. The proof also says whether to write the registration at all (<a href="../authority/delegated-scopes.html#item-DelegatedScopes--would_write_registration"><code>would_write_registration</code></a>).</p>
+<h2 id="domaincapabilitieswritersgrant_recorder"><a class="header" href="#domaincapabilitieswritersgrant_recorder"><code>domain::capabilities::writers::grant_recorder</code></a></h2>
+<p>The tests record grants at one redirect and widen a fixture client with the <a href="test-fixtures.html#grant-recorder">grant-recorder fixtures</a>.</p>
+<h3 id="grantrecorder"><a class="header" href="#grantrecorder"><code>GrantRecorder</code></a></h3>
+<div id="item-GrantRecorder" class="item-anchor"></div>
+
+<p>Create or widen standing grants and, for a client trusted on first use,
+its registration, inside the caller’s transaction; the gate is the
+<a href="../authority/delegated-scopes.html#item-DelegatedScopes"><code>DelegatedScopes</code></a> each method takes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct GrantRecorder&lt;'a, T: GrantTx&gt; {
+    /// The caller's open write scope, holding the write lock from before the
+    /// grant is read; the grant and the registration it justifies land with
+    /// the rest of the operation or not at all.
+    tx: &amp;'a mut T,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L21-L26"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 21–26</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="within"><a class="header" href="#within"><code>within</code></a></h4>
+<div id="item-GrantRecorder--within" class="item-anchor"></div>
+
+<p>A writer inside the caller’s transaction <code>tx</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn within(tx: &amp;'a mut T) -&gt; Self {
+    GrantRecorder { tx }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L30-L32"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 30–32</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="record_code_grant"><a class="header" href="#record_code_grant"><code>record_code_grant</code></a></h4>
+<p><strong>One grant per app and redirect: a re-approval widens the grant that stands, never adds a second.</strong> The widening is the grant’s own <a href="../domain/grant.html#item-AuthorizationCodeGrant--absorb_reapproval"><code>absorb_reapproval</code></a>.</p>
+<div id="item-GrantRecorder--record_code_grant" class="item-anchor"></div>
+
+<p>Register (or widen) the client and insert or cumulatively update the
+standing authorization-code grant for <code>(client_id, redirect_uri)</code>, in
+the caller’s write scope: write the <code>clients</code> row when the proof
+<a href="../authority/delegated-scopes.html#item-DelegatedScopes--would_write_registration">writes the registration</a>, then
+read the standing grant — if present, fold the re-approval in via
+<a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/grant.rs#L127-L132"><code>CumulativeConsent::absorb_reapproval</code></a> and write it back; otherwise
+mint a fresh grant. The scope holds the write lock from before the
+read, so two concurrent approvals serialise at the read rather than
+both reading the pre-merge row and one losing its scope union, and the
+registration lands with the grant it justifies or not at all.</p>
+<p>For a client trusted on first use the <code>clients</code> row, as read inside the
+transaction, is created when absent, otherwise widened in place, and the
+approved redirect joins its allowlist exactly when the row doesn’t
+already allow it. The proof’s approver held both <code>wildflower/Client.c</code>
+and <code>wildflower/Client.u</code>, so whichever the row calls for is covered. A
+fixed registration, which an approval never writes, gets no <code>clients</code>
+row at all.</p>
+<p>The grant (and any widened registration) records exactly the proof’s
+scopes, so a scope the approver pruned is never added to either.</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p><a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> on a store failure, which
+rolls the caller’s scope back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn record_code_grant(
+    &amp;mut self,
+    client_id: &amp;str,
+    redirect_uri: &amp;Url,
+    delegated_scopes: &amp;DelegatedScopes,
+    patient: Option&lt;&amp;str&gt;,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let delegated = delegated_scopes.scopes();
+    if delegated_scopes.would_write_registration() {
+        write_registration(self.tx, client_id, redirect_uri, delegated, now)?;
+    }
+    match self
+        .tx
+        .grant_by_client_and_redirect(client_id, redirect_uri)?
+    {
+        Some(mut grant) =&gt; {
+            grant.absorb_reapproval(delegated, patient, now);
+            self.tx.update_authorization_code_grant(&amp;grant)
+        }
+        None =&gt; self
+            .tx
+            .create_authorization_code_grant(&amp;AuthorizationCodeGrant {
+                id: Uuid::new_v4().to_string(),
+                client_id: client_id.to_owned(),
+                scopes: delegated.to_vec(),
+                granted_at: now,
+                last_used_at: None,
+                patient: patient.map(str::to_owned),
+                redirect_uri: redirect_uri.clone(),
+            }),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L60-L92"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 60–92</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A first record inserts the grant; a second on the same <code>(client, redirect)</code> updates that same row, unioning the scopes and taking the
+latest patient — never a duplicate.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_code_grant_inserts_then_unions_scopes() {
+    let store = FakeGrantStore::default();
+    let mut tx = store.tx();
+    let mut recorder = GrantRecorder::within(&amp;mut tx);
+    recorder
+        .record_code_grant(
+            "client-a",
+            &amp;redirect(),
+            &amp;delegated_scopes(&amp;["patient/Patient.r"]),
+            Some("pat-1"),
+            Utc::now(),
+        )
+        .unwrap();
+    let first = store
+        .tx()
+        .grant_by_client_and_redirect("client-a", &amp;redirect())
+        .unwrap()
+        .expect("grant inserted");
+    assert_eq!(first.scopes, ["patient/Patient.r"]);
+
+    recorder
+        .record_code_grant(
+            "client-a",
+            &amp;redirect(),
+            &amp;delegated_scopes(&amp;["patient/Patient.r", "patient/Observation.r"]),
+            Some("pat-2"),
+            Utc::now(),
+        )
+        .unwrap();
+    let merged = store
+        .tx()
+        .grant_by_client_and_redirect("client-a", &amp;redirect())
+        .unwrap()
+        .expect("grant present");
+    assert_eq!(
+        merged.id, first.id,
+        "the same grant is updated, not duplicated"
+    );
+    assert_eq!(
+        merged.scopes,
+        ["patient/Patient.r", "patient/Observation.r"]
+    );
+    assert_eq!(merged.patient.as_deref(), Some("pat-2"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L236-L279"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 236–279</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A proof that writes no registration writes no client row at all, even
+when none exists — a fixed registration is never registered by an
+approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_code_grant_without_widening_never_creates_a_client() {
+    let store = FakeGrantStore::default();
+    GrantRecorder::within(&amp;mut store.tx())
+        .record_code_grant(
+            "host",
+            &amp;redirect(),
+            &amp;delegated_scopes(&amp;["openid"]),
+            None,
+            Utc::now(),
+        )
+        .unwrap();
+    assert_eq!(store.tx().client_by_id("host").unwrap(), None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L285-L297"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 285–297</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Recording a registering approval for an unknown client creates the
+trust-on-first-use row holding exactly the delegated scopes and the
+approved redirect.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_code_grant_widen_registers_a_new_client_with_the_delegated_scopes() {
+    let store = FakeGrantStore::default();
+    GrantRecorder::within(&amp;mut store.tx())
+        .record_code_grant(
+            "newcomer",
+            &amp;redirect(),
+            &amp;registering_delegated_scopes(&amp;["patient/Patient.r", "openid"]),
+            None,
+            Utc::now(),
+        )
+        .unwrap();
+    let row = store
+        .tx()
+        .client_by_id("newcomer")
+        .unwrap()
+        .expect("registered on first use");
+    assert_eq!(row.allowed_scopes, ["patient/Patient.r", "openid"]);
+    assert_eq!(row.redirect_uris, [redirect()]);
+    assert_eq!(row.kind, ClientKind::Public);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L303-L322"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 303–322</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Widening a known client by an approval whose redirect the row already
+allows widens the scopes but leaves the allowlist alone; one whose
+redirect is new to the row appends it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_code_grant_widening_appends_only_a_new_redirect() {
+    let elsewhere = Url::parse("https://other.example/cb").unwrap();
+    for (approved_redirect, expected_redirects) in [
+        (redirect(), vec![redirect()]),
+        (elsewhere.clone(), vec![redirect(), elsewhere.clone()]),
+    ] {
+        let store = FakeGrantStore::default();
+        store
+            .tx()
+            .upsert_client(&amp;client("app", &amp;["openid"]))
+            .unwrap();
+        GrantRecorder::within(&amp;mut store.tx())
+            .record_code_grant(
+                "app",
+                &amp;approved_redirect,
+                &amp;registering_delegated_scopes(&amp;["patient/Patient.r"]),
+                None,
+                Utc::now(),
+            )
+            .unwrap();
+        let row = store.tx().client_by_id("app").unwrap().expect("present");
+        assert_eq!(row.redirect_uris, expected_redirects);
+        assert_eq!(row.allowed_scopes, ["openid", "patient/Patient.r"]);
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L328-L352"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 328–352</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/grant-flows.html">Grant Flows</a> tests hold the grant and the registration at the consent route: an approval persists a grant, approvals union into it, approving a new app registers it so its next request takes the fast path, and approving a changed app widens its registration.</p>
+<h4 id="record_device_grant"><a class="header" href="#record_device_grant"><code>record_device_grant</code></a></h4>
+<div id="item-GrantRecorder--record_device_grant" class="item-anchor"></div>
+
+<p>Insert or cumulatively update the standing device grant for
+<code>(client_id, device_name)</code> — the same read-merge-write shape as
+<a href="#item-GrantRecorder--record_code_grant"><code>record_code_grant</code></a>, keyed on the device
+name. Device consent never touches the registration.</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p><a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::Infrastructure</code></a> on a store failure, which
+rolls the caller’s scope back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn record_device_grant(
+    &amp;mut self,
+    client_id: &amp;str,
+    device_name: &amp;str,
+    delegated_scopes: &amp;DelegatedScopes,
+    patient: Option&lt;&amp;str&gt;,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let delegated = delegated_scopes.scopes();
+    match self
+        .tx
+        .device_grant_by_client_and_device_name(client_id, device_name)?
+    {
+        Some(mut grant) =&gt; {
+            grant.absorb_reapproval(delegated, patient, now);
+            self.tx.update_device_grant(&amp;grant)
+        }
+        None =&gt; self.tx.create_device_grant(&amp;DeviceGrant {
+            id: Uuid::new_v4().to_string(),
+            client_id: client_id.to_owned(),
+            scopes: delegated.to_vec(),
+            granted_at: now,
+            last_used_at: None,
+            patient: patient.map(str::to_owned),
+            device_name: device_name.to_owned(),
+        }),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L103-L130"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 103–130</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The device grant follows the same insert-then-union shape, keyed on the
+device name.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn record_device_grant_inserts_then_unions_scopes() {
+    let store = FakeGrantStore::default();
+    let mut tx = store.tx();
+    let mut recorder = GrantRecorder::within(&amp;mut tx);
+    recorder
+        .record_device_grant(
+            "client-a",
+            "Kitchen iPad",
+            &amp;delegated_scopes(&amp;["patient/Patient.r"]),
+            None,
+            Utc::now(),
+        )
+        .unwrap();
+    recorder
+        .record_device_grant(
+            "client-a",
+            "Kitchen iPad",
+            &amp;delegated_scopes(&amp;["patient/Observation.r"]),
+            None,
+            Utc::now(),
+        )
+        .unwrap();
+    let grant = store
+        .tx()
+        .device_grant_by_client_and_device_name("client-a", "Kitchen iPad")
+        .unwrap()
+        .expect("present");
+    assert_eq!(grant.scopes, ["patient/Patient.r", "patient/Observation.r"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L357-L385"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 357–385</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A new grant of either kind starts never used, and a re-approval keeps
+the stamp its use left.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_new_grant_starts_unused_and_a_reapproval_keeps_its_last_use() {
+    let store = FakeGrantStore::default();
+    let record = || {
+        let mut tx = store.tx();
+        let mut recorder = GrantRecorder::within(&amp;mut tx);
+        recorder
+            .record_code_grant(
+                "client-a",
+                &amp;redirect(),
+                &amp;delegated_scopes(&amp;["openid"]),
+                None,
+                Utc::now(),
+            )
+            .unwrap();
+        recorder
+            .record_device_grant(
+                "client-a",
+                "Kitchen iPad",
+                &amp;delegated_scopes(&amp;["openid"]),
+                None,
+                Utc::now(),
+            )
+            .unwrap();
+    };
+    let code_grant = || {
+        store
+            .tx()
+            .grant_by_client_and_redirect("client-a", &amp;redirect())
+            .unwrap()
+            .expect("code grant")
+    };
+    let device_grant = || {
+        store
+            .tx()
+            .device_grant_by_client_and_device_name("client-a", "Kitchen iPad")
+            .unwrap()
+            .expect("device grant")
+    };
+
+    record();
+    assert_eq!(code_grant().last_used_at, None);
+    assert_eq!(device_grant().last_used_at, None);
+
+    let used_at = Utc::now();
+    store
+        .tx()
+        .stamp_authorization_code_grant_used(&amp;code_grant().id, used_at)
+        .unwrap();
+    store
+        .tx()
+        .stamp_device_grant_used(&amp;device_grant().id, used_at)
+        .unwrap();
+    record();
+    assert_eq!(code_grant().last_used_at, Some(used_at));
+    assert_eq!(device_grant().last_used_at, Some(used_at));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L390-L445"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 390–445</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="write_registration"><a class="header" href="#write_registration"><code>write_registration</code></a></h3>
+<p>The store’s upsert updates the row in place, keeping its registration time and any <code>disabled_at</code>, so <strong>a widening never brings a disabled app back</strong>.</p>
+<div id="item-write_registration" class="item-anchor"></div>
+
+<p>Create the <code>clients</code> row for <code>client_id</code>, or widen the existing one, by the
+<code>delegated</code> scopes and (when the row doesn’t allow it yet) the redirect —
+inside the caller’s transaction, after reading the row under its write lock,
+so the write follows the row as it stands, not as an earlier read saw it.
+The store’s upsert keeps the row’s registration time and <code>disabled_at</code>, so
+a widening never brings a disabled client back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn write_registration&lt;T: GrantTx&gt;(
+    tx: &amp;mut T,
+    client_id: &amp;str,
+    redirect_uri: &amp;Url,
+    delegated: &amp;[String],
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let row = match tx.client_by_id(client_id)? {
+        Some(existing_client) =&gt; {
+            let adds_redirect = !existing_client.allows_redirect_uri(redirect_uri);
+            widen_registration(existing_client, redirect_uri, delegated, adds_redirect)
+        }
+        None =&gt; new_registration(client_id, redirect_uri, delegated, now),
+    };
+    // `upsert_client` updates in place, preserving `registered_at` and any admin
+    // `disabled_at` — a widening never resurrects a disabled client.
+    tx.upsert_client(&amp;row)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L139-L156"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 139–156</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="new_registration"><a class="header" href="#new_registration"><code>new_registration</code></a></h3>
+<div id="item-new_registration" class="item-anchor"></div>
+
+<p>The <code>clients</code> row a first approval of an unregistered client creates: a
+public client named after its own <code>client_id</code> (there is no registrar to have
+supplied a display name), holding only the redirect it just used and the
+scopes the approver actually granted.</p>
+<p>The scopes go in collapsed, through the same <code>widened_scopes</code> the widening
+path uses (against an empty registration), so a row created by a first
+approval and a row widened into the same state are byte-identical — the
+approval order can’t leave two clients with differently-spelled but
+equivalent ceilings.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn new_registration(
+    client_id: &amp;str,
+    redirect_uri: &amp;Url,
+    granted_scopes: &amp;[String],
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Client {
+    Client {
+        client_id: client_id.to_owned(),
+        name: client_id.to_owned(),
+        kind: ClientKind::Public,
+        redirect_uris: vec![redirect_uri.clone()],
+        allowed_scopes: widened_scopes(&amp;[], granted_scopes),
+        allowed_grant_types: AllowedGrantType::ALL.to_vec(),
+        secret_hash: None,
+        registered_at: now,
+        disabled_at: None,
+        registration_source: RegistrationSource::TrustedOnFirstUse,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L168-L186"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 168–186</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A row created by a first approval and a row widened into the same state
+agree exactly — <code>new_registration</code> and <code>widen_registration</code> share one
+collapse.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_new_registration_matches_a_row_widened_into_the_same_state() {
+    let granted: Vec&lt;String&gt; = ["patient/Patient.r", "patient/Patient.s", "openid"]
+        .iter()
+        .map(|s| (*s).to_owned())
+        .collect();
+    let fresh = new_registration("app", &amp;redirect(), &amp;granted, Utc::now());
+    assert_eq!(fresh.allowed_scopes, ["patient/Patient.rs", "openid"]);
+    assert_eq!(
+        fresh.allowed_scopes,
+        widened(&amp;[], &amp;["patient/Patient.r", "patient/Patient.s", "openid"])
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L523-L534"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 523–534</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="widen_registration"><a class="header" href="#widen_registration"><code>widen_registration</code></a></h3>
+<p>The scopes widen by meaning, through <a href="../domain/scopes.html#item-widened_scopes"><code>widened_scopes</code></a>, and the row is only ever read by coverage, as in <a href="../domain/client.html#item-PresentedClientChange"><code>PresentedClientChange</code></a>, so a collapsed row admits exactly what the uncollapsed one would.</p>
+<div id="item-widen_registration" class="item-anchor"></div>
+
+<p>Widen an existing registration by what the approver just approved: append the
+<code>redirect_uri</code> as an absolute entry when it resolved to none of the existing
+ones, and widen <code>allowed_scopes</code> by the granted scopes. Everything else on
+the row (its name, kind, secret, registration time) is left exactly as it
+was.</p>
+<p>The scope half is <code>wildflowerhealthio_scopes::widened_scopes</code>, not a string union: the
+granted scopes are parsed, so an approval that grants
+<code>patient/Patient.cruds</code> <strong>replaces</strong> a registered <code>patient/Patient.r</code>
+instead of leaving the row carrying both, and granting again what the row
+already covers leaves it untouched. <code>allowed_scopes</code> is only ever read
+through <code>wildflowerhealthio_scopes::allowed_scope_covers</code> (at <code>/authorize</code>, at
+<code>/device_authorization</code>, and in
+<a href="../domain/client.html#item-PresentedClientChange--from_presented_registration"><code>PresentedClientChange::from_presented_registration</code></a>),
+so a collapsed row admits exactly the requests the un-collapsed one did.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn widen_registration(
+    mut client: Client,
+    redirect_uri: &amp;Url,
+    granted_scopes: &amp;[String],
+    adds_redirect: bool,
+) -&gt; Client {
+    if adds_redirect {
+        client.redirect_uris.push(redirect_uri.clone());
+    }
+    client.allowed_scopes = widened_scopes(&amp;client.allowed_scopes, granted_scopes);
+    client
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L203-L214"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 203–214</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The registration records the <em>broader</em> grant rather than accumulating
+both spellings of the same resource.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_broader_grant_replaces_the_narrower_registered_scope() {
+    assert_eq!(
+        widened(&amp;["patient/Patient.r", "openid"], &amp;["patient/Patient.cruds"]),
+        ["patient/Patient.cruds", "openid"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L457-L462"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 457–462</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Two disjoint interactions on one resource are recorded as the single
+scope granting both, not as two rows.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn disjoint_interactions_on_one_resource_become_one_scope() {
+    assert_eq!(
+        widened(&amp;["patient/Patient.r"], &amp;["patient/Patient.s"]),
+        ["patient/Patient.rs"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L467-L472"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 467–472</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Re-approving what the row already covers leaves it byte-identical — the
+common case, where an app the Owner has approved before asks again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn re_granting_a_covered_scope_leaves_the_row_untouched() {
+    let registered = ["patient/*.cruds", "openid"];
+    assert_eq!(
+        widened(&amp;registered, &amp;["patient/Observation.r", "openid"]),
+        registered
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L477-L483"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 477–483</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A v1 word registration is never folded into a letter bag — that would
+hand the client letter-grammar access it was never registered for. The
+two spellings sit side by side until one genuinely covers the other.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_v1_word_registration_is_not_merged_into_letter_access() {
+    assert_eq!(
+        widened(&amp;["patient/Patient.read"], &amp;["patient/Patient.c"]),
+        ["patient/Patient.read", "patient/Patient.c"]
+    );
+    assert_eq!(
+        widened(&amp;["patient/Patient.read"], &amp;["patient/Patient.cruds"]),
+        ["patient/Patient.cruds"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L489-L498"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 489–498</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The property the trust-on-first-use path depends on: after widening, the
+same request classifies as fully covered — collapsing the row must never
+cost it coverage of what was just granted.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn everything_granted_is_covered_by_the_widened_row() {
+    let granted = [
+        "patient/Patient.r",
+        "patient/Patient.s",
+        "patient/Observation.read",
+        "openid",
+        "a_stray_unknown",
+    ];
+    let owned: Vec&lt;String&gt; = granted.iter().map(|s| (*s).to_owned()).collect();
+    let widened = widened(&amp;["patient/Condition.r"], &amp;granted);
+    assert!(uncovered_scopes(&amp;widened, &amp;owned).is_empty());
+    // ...and the pre-existing registration survives it.
+    assert!(uncovered_scopes(&amp;widened, &amp;["patient/Condition.r".to_owned()]).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L504-L517"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 504–517</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Widening the scopes never touches the redirect allowlist, and a new
+redirect is appended without disturbing the registered ones.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_redirect_allowlist_moves_only_when_the_redirect_is_new() {
+    let registered = client("app", &amp;["openid"]);
+    let elsewhere = Url::parse("https://other.example/cb").unwrap();
+    let granted = vec!["openid".to_owned()];
+
+    let unchanged = widen_registration(registered.clone(), &amp;elsewhere, &amp;granted, false);
+    assert_eq!(unchanged.redirect_uris, registered.redirect_uris);
+
+    let appended = widen_registration(registered.clone(), &amp;elsewhere, &amp;granted, true);
+    assert_eq!(
+        appended.redirect_uris,
+        [registered.redirect_uris[0].clone(), elsewhere]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/0eea3c8d0c4c3e90bbe62265caed5cb8cc51deaa/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs#L539-L552"><code>authorization-server-rust/src/domain/capabilities/writers/grant_recorder.rs</code> lines 539–552</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/writers/request-approver.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/writers/refresh-family-writer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/writers/request-approver.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/writers/refresh-family-writer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

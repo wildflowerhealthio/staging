@@ -1,0 +1,1490 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Delegated Scopes - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="delegated-scopes"><a class="header" href="#delegated-scopes">Delegated Scopes</a></h1>
+<!-- markdownlint-disable-file link-fragments -- the item-… anchors are added when the book is built. -->
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code></a></p>
+
+<p>When a request is approved, someone is handing on access: the Owner, or a browser the Owner paired. <strong>No one can delegate more than they hold.</strong> This page holds the scope rules the whole server leans on for that, in three parts.</p>
+<ul>
+<li><strong>What a prompt may grant at most.</strong> Each consent prompt has a ceiling, set by its flow and the app’s <a href="../domain/client.html">registration</a>. Whatever the approver ticks is clamped to it.</li>
+<li><strong>What the approver must hold.</strong> To approve a prompt at all, the approver holds its <strong>approval scopes</strong>: the power to decide the request and to create what approving it creates. And every piece of access it passes on, it must hold itself.</li>
+<li><strong>What the browser holds.</strong> A code issued for an app carries only what the <a href="../domain/browser-session.html">browser session</a> the request was made in also holds, and the browser is told beforehand what it lacks, on the <a href="../domain/authorization-request/code-request.html#the-limited-page">limited page</a>.</li>
+</ul>
+<p><strong>Delegated scopes</strong> are the proof of the first two: a scope set the approver has approved <strong>and</strong> is entitled to delegate. The writers that record grants, write registrations and issue codes on an approval accept nothing else. The third part is two free functions, applied when a code is issued and when <code>/oauth/authorize</code> decides where to send the browser.</p>
+<p>Every “covers” on this page is the <a href="../domain/scopes.html#item-allowed_scope_covers">scope coverage</a> the Scopes page explains: by permission, not by spelling.</p>
+<h2 id="domainauthoritydelegated_scopes"><a class="header" href="#domainauthoritydelegated_scopes"><code>domain::authority::delegated_scopes</code></a></h2>
+<p>The tests build prompts and approvers with the <a href="test-fixtures.html#delegated-scopes">delegated-scopes fixtures</a>.</p>
+<h3 id="approvalflow"><a class="header" href="#approvalflow"><code>ApprovalFlow</code></a></h3>
+<p>A prompt belongs to one of three flows, and the flow decides both its ceiling and its approval scopes.</p>
+<div id="item-ApprovalFlow" class="item-anchor"></div>
+
+<p>The flow a consent prompt belongs to, which decides its ceiling, its
+approval scopes, and whether approving it writes the client registration.</p>
+<ul>
+<li>A code prompt for a client trusted on first use records a grant, writes
+the registration, and its approver must hold what is asked.</li>
+<li>A code prompt for a server-defined (fixed) registration records a grant
+and its approver must hold what is asked, but it writes no registration.</li>
+<li>A device prompt records a grant only; its consent is expandable, so the
+approver need not hold what the device asked for.</li>
+<li>A browser pairing records no grant and writes no registration; like a
+device prompt it is expandable.</li>
+</ul>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum ApprovalFlow {
+    /// An authorization-code prompt, whose approval records a standing grant
+    /// and approves the request as asked.
+    Code {
+        /// Whether the client's registration is server-defined, which an
+        /// approval never writes. When it is not, the client is trusted on
+        /// first use, so approving creates or widens its registration.
+        registration_is_fixed: bool,
+    },
+    /// A device-code prompt: approving records a standing device grant.
+    Device,
+    /// A browser pairing: approving records no grant and registers no client.
+    BrowserPairing,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L42-L55"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 42–55</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="what-approving-does"><a class="header" href="#what-approving-does">What approving does</a></h4>
+<div id="item-ApprovalFlow--would_record_grant" class="item-anchor"></div>
+
+<p>Whether approving records a standing grant: a code or device approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn would_record_grant(self) -&gt; bool {
+    self != ApprovalFlow::BrowserPairing
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L59-L61"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 59–61</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ApprovalFlow--would_write_registration" class="item-anchor"></div>
+
+<p>Whether approving creates or widens the client’s registration: a code
+approval for a client trusted on first use.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn would_write_registration(self) -&gt; bool {
+    self == ApprovalFlow::Code {
+        registration_is_fixed: false,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L65-L69"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 65–69</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-ApprovalFlow--would_approve_as_asked" class="item-anchor"></div>
+
+<p>Whether the approver must hold every resource scope the request asks
+for: a code approval, which approves the request as asked. Device and
+pairing consent is expandable instead.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn would_approve_as_asked(self) -&gt; bool {
+    matches!(self, ApprovalFlow::Code { .. })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L74-L76"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 74–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="is_held_access"><a class="header" href="#is_held_access"><code>is_held_access</code></a></h3>
+<p>Not every scope is access. A resource scope (<code>patient/Observation.rs</code>, <code>system/*.cruds</code>, <code>wildflower/Grant.c</code>) and <code>wildflower/launch</code> are <strong>held access</strong>: what its holder must itself hold to pass on.</p>
+<div id="item-is_held_access" class="item-anchor"></div>
+
+<p>Whether <code>scope</code> is access its holder must itself hold to pass on: a
+resource scope, or <code>wildflower/launch</code>. An approver delegates, and a
+browser session bounds a code to, only the held access it covers. Identity
+and session markers (<code>openid</code>, <code>fhirUser</code>, <code>launch</code>, <code>offline_access</code>, …)
+are no access anyone holds, so anyone may pass them on.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_held_access(scope: &amp;Scope) -&gt; bool {
+    scope.is_resource() || *scope == Scope::any_scoped_app_launch()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L333-L335"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 333–335</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="coverage_in_either_spelling"><a class="header" href="#coverage_in_either_spelling"><code>coverage_in_either_spelling</code></a></h3>
+<p><strong>Holding is judged by coverage, in either SMART spelling.</strong> SMART writes a permission two ways, the v1 words (<code>.read</code>) and the v2 letters (<code>.rs</code>). A token redeemed at <code>/oauth/token</code> carries <a href="../domain/scopes.html#item-with_alternate_canonical_forms">both</a> in its <code>scope</code> claim, so a holder of one counts as holding the other.</p>
+<div id="item-coverage_in_either_spelling" class="item-anchor"></div>
+
+<p>Whether <code>holder</code> covers a scope in either SMART spelling: nothing of it is
+left uncovered (<a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L467-L477"><code>uncovered_part_in_either_spelling</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn coverage_in_either_spelling(holder: &amp;Grant) -&gt; impl Fn(&amp;Scope) -&gt; bool {
+    let holder_lacks = uncovered_part_in_either_spelling(holder);
+    move |scope: &amp;Scope| holder_lacks(scope).is_none()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L457-L460"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 457–460</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="may_pass_on"><a class="header" href="#may_pass_on"><code>may_pass_on</code></a></h3>
+<div id="item-may_pass_on" class="item-anchor"></div>
+
+<p>Whether <code>holder</code> may pass a scope on: it is no held access
+(<a href="#item-is_held_access"><code>is_held_access</code></a>), or <code>holder</code> covers it in either SMART spelling.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn may_pass_on(holder: &amp;Grant) -&gt; impl Fn(&amp;Scope) -&gt; bool {
+    let holder_covers = coverage_in_either_spelling(holder);
+    move |scope: &amp;Scope| !is_held_access(scope) || holder_covers(scope)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L339-L342"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 339–342</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="uncovered_held_access"><a class="header" href="#uncovered_held_access"><code>uncovered_held_access</code></a></h3>
+<div id="item-uncovered_held_access" class="item-anchor"></div>
+
+<p>The held access in <code>granted</code> the <code>holder</code> may not pass on
+(<a href="#item-may_pass_on"><code>may_pass_on</code></a>), rendered, in order.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn uncovered_held_access(granted: &amp;[String], holder: &amp;Grant) -&gt; Vec&lt;String&gt; {
+    let holder_may_pass_on = may_pass_on(holder);
+    granted
+        .iter()
+        .filter(|rendered| !holder_may_pass_on(&amp;Scope::from(rendered.as_str())))
+        .cloned()
+        .collect()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L346-L353"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 346–353</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="approvablescopes"><a class="header" href="#approvablescopes"><code>ApprovableScopes</code></a></h3>
+<div id="item-ApprovableScopes" class="item-anchor"></div>
+
+<p>The scopes one consent prompt may grant at most, decided by its flow. An
+approved scope must be covered by a scope of the request <strong>and</strong> by a
+scope of the registration ceiling (the most the client’s registration
+permits for this approval); each constructor names the policy that fills
+those two halves.</p>
+<p>The flow also decides the prompt’s <strong>approval scopes</strong>, what its approver
+must hold to approve it at all
+(<a href="#item-ApprovableScopes--missing_approval_scopes"><code>missing_approval_scopes</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct ApprovableScopes {
+    /// The half that bounds a tick by what was asked: the request's scopes for
+    /// a code prompt, so a code prompt never grants past what the client asked
+    /// for. An expandable prompt fills it with its ceiling instead: a device
+    /// prompt's registered scopes, a pairing's the Owner's scopes.
+    requested_scopes: Vec&lt;String&gt;,
+    /// The most the client's registration permits for this approval: a fixed
+    /// registration's scopes, a registration trusted on first use's scopes
+    /// plus what the request asks for, a device client's registered scopes, or
+    /// the Owner's scopes for a pairing.
+    registration_ceiling_scopes: Vec&lt;String&gt;,
+    /// The prompt's flow, which sets its approval scopes and whether approving
+    /// it writes the registration.
+    flow: ApprovalFlow,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L89-L103"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 89–103</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="for_code"><a class="header" href="#for_code"><code>for_code</code></a></h4>
+<p><strong>Who defines the registration decides the ceiling</strong> (<a href="../domain/client.html#item-Client--is_registration_fixed"><code>is_registration_fixed</code></a>). Either way the request is the other half, so <strong>a code prompt never grants past what the app asked for.</strong> A <a href="../domain/authorization-request/code-request.html#item-ResolvedCodeRequest--approvable_scopes">resolved code request</a> builds its prompt here.</p>
+<div id="item-ApprovableScopes--for_code" class="item-anchor"></div>
+
+<p>An authorization-code prompt for <code>requested_scopes</code>. A fixed
+(server-defined) registration is its own ceiling; any other client
+is trusted on first use, so its ceiling also takes in what this request
+asked for — its registration is widened with the grant.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn for_code(
+    requested_scopes: &amp;[String],
+    maybe_existing_client: Option&lt;&amp;Client&gt;,
+    registration_is_fixed: bool,
+) -&gt; Self {
+    let registered_client_scopes = maybe_existing_client
+        .iter()
+        .flat_map(|existing_client| existing_client.allowed_scopes.iter().cloned());
+    let registration_ceiling_scopes = if registration_is_fixed {
+        registered_client_scopes.collect()
+    } else {
+        registered_client_scopes
+            .chain(requested_scopes.iter().cloned())
+            .collect()
+    };
+    ApprovableScopes {
+        requested_scopes: requested_scopes.to_vec(),
+        registration_ceiling_scopes,
+        flow: ApprovalFlow::Code {
+            registration_is_fixed,
+        },
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L134-L156"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 134–156</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A client trusted on first use may be granted what its request asked
+for even when its registration does not list it (or it has none yet);
+a fixed registration may not.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_code_prompt_widens_the_allowance_only_for_a_registration_trusted_on_first_use() {
+    let requested = owned_scopes(&amp;["patient/Patient.r", "openid"]);
+    let registered = client("app", &amp;["openid"]);
+    let approved = || owned_scopes(&amp;["patient/Patient.r", "openid"]);
+
+    let trusted_on_first_use = ApprovableScopes::for_code(&amp;requested, Some(&amp;registered), false);
+    assert_eq!(
+        trusted_on_first_use.grantable_subset(approved()),
+        ["patient/Patient.r", "openid"]
+    );
+    let unknown = ApprovableScopes::for_code(&amp;requested, None, false);
+    assert_eq!(
+        unknown.grantable_subset(approved()),
+        ["patient/Patient.r", "openid"]
+    );
+
+    let fixed = ApprovableScopes::for_code(&amp;requested, Some(&amp;registered), true);
+    assert_eq!(fixed.grantable_subset(approved()), ["openid"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L643-L661"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 643–661</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Even for a registration trusted on first use, a code prompt never grants past what
+the request asked for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_code_prompt_never_grants_beyond_the_request() {
+    let approvable = ApprovableScopes::for_code(
+        &amp;owned_scopes(&amp;["openid"]),
+        Some(&amp;client("app", &amp;["openid", "patient/Patient.r"])),
+        false,
+    );
+    assert_eq!(
+        approvable.grantable_subset(owned_scopes(&amp;["openid", "patient/Patient.r"])),
+        ["openid"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L666-L676"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 666–676</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="for_device"><a class="header" href="#for_device"><code>for_device</code></a></h4>
+<div id="item-ApprovableScopes--for_device" class="item-anchor"></div>
+
+<p>A device-code prompt for a client registered with
+<code>registered_client_scopes</code>. Device consent is <strong>expandable</strong>: the Owner
+may grant anything the client’s registration allows, whatever the
+device asked for, so the registered client scopes fill both halves.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn for_device(registered_client_scopes: &amp;[String]) -&gt; Self {
+    ApprovableScopes {
+        requested_scopes: registered_client_scopes.to_vec(),
+        registration_ceiling_scopes: registered_client_scopes.to_vec(),
+        flow: ApprovalFlow::Device,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L110-L116"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 110–116</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Device consent is expandable: anything the client is allowed is
+grantable, whatever the device asked for, and nothing beyond it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_device_prompt_grants_within_the_client_allowance() {
+    let approvable =
+        ApprovableScopes::for_device(&amp;owned_scopes(&amp;["patient/*.rs", "offline_access"]));
+    assert_eq!(
+        approvable.grantable_subset(owned_scopes(&amp;[
+            "patient/Observation.r",
+            "offline_access",
+            "system/*.r",
+        ])),
+        ["patient/Observation.r", "offline_access"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L626-L637"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 626–637</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/device-code.html">Device Code</a> tests hold the same rule at the consent route: <code>device_consent_allows_expansion_beyond_requested</code> and <code>device_consent_clamps_granted_scopes_to_client_allowed</code>.</p>
+<h4 id="for_browser_pairing"><a class="header" href="#for_browser_pairing"><code>for_browser_pairing</code></a></h4>
+<p><strong>No paired browser session can hold more than a same-device one</strong>, since both are capped by the Owner’s scopes.</p>
+<div id="item-ApprovableScopes--for_browser_pairing" class="item-anchor"></div>
+
+<p>A browser pairing prompt. It requests the Owner’s scopes, and like
+device consent it is <strong>expandable</strong>: the Owner may grant anything up to
+<a href="../assembly/setup.html#item-OWNER_SCOPES"><code>OWNER_SCOPES</code></a>, which fill both halves, so no
+paired browser session can hold more than a same-device session.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn for_browser_pairing() -&gt; Self {
+    ApprovableScopes {
+        requested_scopes: crate::owner_scopes(),
+        registration_ceiling_scopes: crate::owner_scopes(),
+        flow: ApprovalFlow::BrowserPairing,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L122-L128"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 122–128</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A pairing prompt grants up to the Owner’s scopes, whatever the ticks
+started from, and never past them: a tick no Owner scope covers is
+dropped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_pairing_prompt_grants_up_to_the_owner_s_scopes() {
+    let approvable = ApprovableScopes::for_browser_pairing();
+    assert_eq!(
+        approvable.grantable_subset(owned_scopes(&amp;[
+            "wildflower/launch",
+            "system/Patient.rs",
+            "openid",
+            "offline_access",
+        ])),
+        ["wildflower/launch", "system/Patient.rs"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L682-L693"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 682–693</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="grantable_subset"><a class="header" href="#grantable_subset"><code>grantable_subset</code></a></h4>
+<p>The tests under each constructor above show it per flow. It is the prompt’s half of <a href="../domain/scopes.html#item-grantable_scopes"><code>grantable_scopes</code></a>.</p>
+<div id="item-ApprovableScopes--grantable_subset" class="item-anchor"></div>
+
+<p>The subset of the <code>owner_approved_scopes</code> (the approver’s ticks) this
+prompt may grant: each one covered by a requested scope and by a
+registration-ceiling scope (by permission, not spelling — see
+<code>wildflowerhealthio_scopes::grantable_scopes</code>). Rendered in canonical
+form, deduplicated, in the order the approver gave them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn grantable_subset(&amp;self, owner_approved_scopes: Vec&lt;String&gt;) -&gt; Vec&lt;String&gt; {
+    let requested: HashSet&lt;&amp;str&gt; = self.requested_scopes.iter().map(String::as_str).collect();
+    let ceiling: HashSet&lt;&amp;str&gt; = self
+        .registration_ceiling_scopes
+        .iter()
+        .map(String::as_str)
+        .collect();
+    grantable_scopes(owner_approved_scopes, &amp;requested, &amp;ceiling)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L163-L171"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 163–171</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="missing_approval_scopes"><a class="header" href="#missing_approval_scopes"><code>missing_approval_scopes</code></a></h4>
+<p><strong>One function answers “may this approver approve?” for every place that asks</strong>, so the consent card, the approve route and <code>/oauth/authorize</code> never disagree.</p>
+<div id="item-ApprovableScopes--missing_approval_scopes" class="item-anchor"></div>
+
+<p>The prompt’s <strong>approval scopes</strong> the <code>approver_grant</code> does not cover,
+rendered, in order; empty when it may approve. Shared by the approve
+paths (through <a href="#item-DelegatedScopes--clamp"><code>DelegatedScopes::clamp</code></a>), the consent read
+(<code>missingApprovalScopes</code>), and <code>/oauth/authorize</code>’s choice between the
+consent card and the wait page, so the three never disagree.</p>
+<p>The approval scopes, and who takes them:</p>
+<ul>
+<li><code>wildflower/AuthorizationRequest.u</code>: every approval, to decide the
+request at all.</li>
+<li><code>wildflower/Grant.c</code>: a code or device approval, which records a
+standing grant; a browser pairing records none.</li>
+<li><code>wildflower/Client.c</code> and <code>wildflower/Client.u</code>: a code approval for
+a client trusted on first use, which creates or widens its
+registration, whichever the row needs when the approval lands; a
+server-defined registration takes neither.</li>
+<li>Each held access (<a href="#item-is_held_access"><code>is_held_access</code></a>) the request asks for that the
+prompt may grant: a code approval, which approves the request as
+asked, else it goes to the Owner.</li>
+</ul>
+<p>A device or pairing prompt is expandable, so its approver may grant
+whatever it holds, and <a href="#item-DelegatedScopes--clamp"><code>DelegatedScopes::clamp</code></a> bounds that scope by
+scope instead. The Owner’s scopes lack no approval scope on any prompt.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn missing_approval_scopes(&amp;self, approver_grant: &amp;Grant) -&gt; Vec&lt;String&gt; {
+    let mut approval_scopes = consent_decider_scopes();
+    if self.flow.would_record_grant() {
+        approval_scopes.extend(grant_creating_approval_scopes());
+    }
+    if self.flow.would_write_registration() {
+        approval_scopes.extend(client_registering_approval_scopes());
+    }
+    let uncovered_approval_scopes: Vec&lt;Scope&gt; = approval_scopes
+        .into_iter()
+        .filter(|required| !approver_grant.covers(required))
+        .collect();
+    let mut missing = render_scopes(&amp;uncovered_approval_scopes);
+    if self.flow.would_approve_as_asked() {
+        missing.extend(uncovered_held_access(
+            &amp;self.grantable_subset(self.requested_scopes.clone()),
+            approver_grant,
+        ));
+    }
+    missing
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L217-L237"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 217–237</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The approval scopes follow the flow: deciding always, creating the
+grant for a code or device approval, and both client scopes for a code
+approval that writes a registration trusted on first use, however the
+row stands.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_approval_scopes_follow_the_flow() {
+    let nothing = Grant::parse(Vec::&lt;&amp;str&gt;::new());
+    let registered = client("app", &amp;["openid"]);
+    for (approvable, expected) in [
+        (
+            ApprovableScopes::for_browser_pairing(),
+            &amp;["wildflower/AuthorizationRequest.u"][..],
+        ),
+        (
+            device_prompt(&amp;["openid"]),
+            &amp;["wildflower/AuthorizationRequest.u", "wildflower/Grant.c"][..],
+        ),
+        (
+            ApprovableScopes::for_code(&amp;owned_scopes(&amp;["openid"]), Some(&amp;registered), true),
+            &amp;["wildflower/AuthorizationRequest.u", "wildflower/Grant.c"][..],
+        ),
+        (
+            ApprovableScopes::for_code(&amp;owned_scopes(&amp;["openid"]), Some(&amp;registered), false),
+            &amp;[
+                "wildflower/AuthorizationRequest.u",
+                "wildflower/Grant.c",
+                "wildflower/Client.c",
+                "wildflower/Client.u",
+            ][..],
+        ),
+        (
+            ApprovableScopes::for_code(&amp;owned_scopes(&amp;["openid"]), None, false),
+            &amp;[
+                "wildflower/AuthorizationRequest.u",
+                "wildflower/Grant.c",
+                "wildflower/Client.c",
+                "wildflower/Client.u",
+            ][..],
+        ),
+    ] {
+        assert_eq!(
+            approvable.missing_approval_scopes(&amp;nothing),
+            expected,
+            "{approvable:?}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L700-L741"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 700–741</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A code approval also takes every resource scope the prompt may grant,
+in either SMART spelling: the approver approves the request as asked or
+leaves it to the Owner. The fixed registration’s ceiling drops what it
+can’t grant first.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_code_approval_takes_the_requested_resource_scopes() {
+    let requested = owned_scopes(&amp;["patient/Observation.read", "system/Patient.r", "openid"]);
+    let fixed = ApprovableScopes::for_code(
+        &amp;requested,
+        Some(&amp;client("app", &amp;["patient/Observation.read", "openid"])),
+        true,
+    );
+    assert_eq!(
+        fixed.missing_approval_scopes(&amp;grant(&amp;[])),
+        ["patient/Observation.read"]
+    );
+    assert_eq!(
+        fixed.missing_approval_scopes(&amp;grant(&amp;["patient/Observation.rs"])),
+        Vec::&lt;String&gt;::new()
+    );
+    let trusted_on_first_use = ApprovableScopes::for_code(&amp;requested, None, false);
+    assert_eq!(
+        trusted_on_first_use.missing_approval_scopes(&amp;grant(&amp;[
+            "wildflower/Client.cu",
+            "patient/Observation.rs"
+        ])),
+        ["system/Patient.r"]
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L748-L771"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 748–771</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Owner’s scopes cover every approval scope of every flow, whatever
+a code request asks for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_owner_s_scopes_cover_every_approval_scope() {
+    let owner_grant = Grant::parse(crate::owner_scopes());
+    let requested = owned_scopes(&amp;["user/*.cruds", "patient/Observation.read", "openid"]);
+    for approvable in [
+        ApprovableScopes::for_browser_pairing(),
+        device_prompt(&amp;["openid"]),
+        ApprovableScopes::for_code(&amp;requested, None, false),
+        ApprovableScopes::for_code(&amp;requested, Some(&amp;client("app", &amp;["openid"])), false),
+    ] {
+        assert_eq!(
+            approvable.missing_approval_scopes(&amp;owner_grant),
+            Vec::&lt;String&gt;::new(),
+            "{approvable:?}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L834-L849"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 834–849</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/approval-scopes.html">Approval Scopes</a> page holds it at the routes: a browser session without <code>wildflower/Grant.c</code> goes to the wait page, and an Owner session lacks no approval scope.</p>
+<h4 id="delegable_scopes"><a class="header" href="#delegable_scopes"><code>delegable_scopes</code></a></h4>
+<p>Where a pairing card’s ticks start. Its promise is that the card, approved untouched, passes <a href="#item-DelegatedScopes--clamp"><code>clamp</code></a> below.</p>
+<div id="item-ApprovableScopes--delegable_scopes" class="item-anchor"></div>
+
+<p>Everything the approver holding <code>approver_grant</code> may delegate on this
+prompt, which the pairing card’s ticks start from: each requested scope and
+each of the approver’s own scopes the prompt may grant, less any held
+access (<a href="#item-is_held_access"><code>is_held_access</code></a>) the approver does not cover. Approving it
+untouched passes <a href="#item-DelegatedScopes--clamp"><code>DelegatedScopes::clamp</code></a>’s approver check, so a
+pairing card that starts from the Owner’s scopes starts an approver
+holding less from all it holds instead.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn delegable_scopes(&amp;self, approver_grant: &amp;Grant) -&gt; Vec&lt;String&gt; {
+    let candidates = self
+        .requested_scopes
+        .iter()
+        .cloned()
+        .chain(approver_grant.render())
+        .collect();
+    let approver_may_pass_on = may_pass_on(approver_grant);
+    self.grantable_subset(candidates)
+        .into_iter()
+        .filter(|rendered| approver_may_pass_on(&amp;Scope::from(rendered.as_str())))
+        .collect()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L180-L192"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 180–192</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A pairing prompt’s delegable scopes are the Owner’s for the Owner, and
+everything a narrower approver holds that an Owner could grant (its
+<code>openid</code> is no Owner scope), so approving them passes the clamp.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_pairing_prompt_s_delegable_scopes_are_what_the_approver_holds() {
+    let approvable = ApprovableScopes::for_browser_pairing();
+    assert_eq!(
+        approvable.delegable_scopes(&amp;Grant::parse(crate::owner_scopes())),
+        crate::owner_scopes(),
+    );
+    let narrower = grant(&amp;["system/Patient.rs", "wildflower/launch", "openid"]);
+    let delegable = approvable.delegable_scopes(&amp;narrower);
+    assert_eq!(
+        delegable,
+        [
+            "wildflower/launch",
+            "wildflower/AuthorizationRequest.u",
+            "wildflower/Grant.c",
+            "system/Patient.rs",
+        ],
+    );
+    assert_eq!(
+        DelegatedScopes::clamp(&amp;narrower, delegable.clone(), &amp;approvable)
+            .expect("the approver covers what it may delegate")
+            .expect("granted")
+            .scopes(),
+        delegable,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L777-L801"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 777–801</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><code>wildflower/launch</code> is held access like a resource scope: a pairing
+card for an approver without it opens without it ticked, and ticking
+it anyway fails the approver check rather than handing the new session
+a launch its approver lacks.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_approver_without_launch_may_not_delegate_it() {
+    let approvable = ApprovableScopes::for_browser_pairing();
+    let without_launch = grant(&amp;["system/Patient.rs"]);
+    assert_eq!(
+        approvable.delegable_scopes(&amp;without_launch),
+        [
+            "wildflower/AuthorizationRequest.u",
+            "wildflower/Grant.c",
+            "system/Patient.rs",
+        ],
+    );
+    assert_eq!(
+        DelegatedScopes::clamp(
+            &amp;without_launch,
+            owned_scopes(&amp;["wildflower/launch", "system/Patient.rs"]),
+            &amp;approvable,
+        ),
+        Err(AuthorizationServerError::InsufficientApproverScope {
+            approver_missing_scopes: owned_scopes(&amp;["wildflower/launch"]),
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L808-L829"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 808–829</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="delegatedscopes"><a class="header" href="#delegatedscopes"><code>DelegatedScopes</code></a></h3>
+<div id="item-DelegatedScopes" class="item-anchor"></div>
+
+<p>A scope set an approver has approved <strong>and</strong> is entitled to delegate. Holding
+one is proof that the approver held the prompt’s approval scopes, and that
+every held access (<a href="#item-is_held_access"><code>is_held_access</code></a>) in it is covered by the approver’s
+own grant, so the writers that record grants, write registrations, and
+issue codes accept nothing else. The fields are private and there is no
+other constructor.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct DelegatedScopes {
+    /// The ticks that survived the prompt's ceiling, every held access among
+    /// them covered by the approver: what the request's approval, the standing
+    /// grant and a widened registration record as they are. A code issued
+    /// under them is further bounded by the browser session.
+    scopes: Vec&lt;String&gt;,
+    /// Whether the approval behind the proof creates or widens the client's
+    /// registration: only a code approval for a client trusted on first use,
+    /// whose approver held `wildflower/Client.c` and `wildflower/Client.u`.
+    /// The grant recorder asks it whether to write the `clients` row.
+    writes_registration: bool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L247-L258"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 247–258</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="clamp"><a class="header" href="#clamp"><code>clamp</code></a></h4>
+<p>The one constructor. It runs <a href="#item-ApprovableScopes--missing_approval_scopes"><code>missing_approval_scopes</code></a> first, then <a href="#item-ApprovableScopes--grantable_subset"><code>grantable_subset</code></a>, then <a href="#item-uncovered_held_access"><code>uncovered_held_access</code></a> against the approver’s grant. <strong>A held access the approver lacks fails the whole approval</strong>, rather than being dropped in silence, so the Owner sees the refusal instead of a narrower grant than they ticked.</p>
+<div id="item-DelegatedScopes--clamp" class="item-anchor"></div>
+
+<p>The approval rule, in three steps:</p>
+<ol>
+<li>Require that the <code>approver_grant</code> holds the <code>approvable</code> prompt’s
+approval scopes
+(<a href="#item-ApprovableScopes--missing_approval_scopes"><code>missing_approval_scopes</code></a>),
+whatever was ticked, even nothing.</li>
+<li>Clamp the <code>owner_approved_scopes</code> to the <code>approvable</code> scopes’
+grantable subset: <code>Ok(None)</code> when nothing survives, and the caller
+denies rather than recording an empty grant.</li>
+<li>Require that the <code>approver_grant</code> covers every held access
+(<a href="#item-is_held_access"><code>is_held_access</code></a>) that survives, in either spelling; one it lacks
+fails the whole approval, naming it.</li>
+</ol>
+<p>Identity and session
+markers (<code>openid</code>, <code>offline_access</code>, …) are no held access and pass the
+approver check; a resource scope or <code>wildflower/launch</code> the approver
+lacks fails the whole approval (a <code>403</code>) rather than being silently
+dropped. Coverage is checked across both SMART spellings via
+<code>Scope::as_alternate_canonical_form</code>, the twinning the token minter
+applies.</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p><a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::InsufficientScope</code></a> naming the approval
+scopes the approver lacks, checked first, whatever was ticked; then
+<a href="../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::InsufficientApproverScope</code></a> naming the
+held access the approver cannot delegate.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn clamp(
+    approver_grant: &amp;Grant,
+    owner_approved_scopes: Vec&lt;String&gt;,
+    approvable: &amp;ApprovableScopes,
+) -&gt; Result&lt;Option&lt;Self&gt;, AuthorizationServerError&gt; {
+    let missing_scopes = approvable.missing_approval_scopes(approver_grant);
+    if !missing_scopes.is_empty() {
+        return Err(AuthorizationServerError::InsufficientScope { missing_scopes });
+    }
+    let grantable = approvable.grantable_subset(owner_approved_scopes);
+    if grantable.is_empty() {
+        return Ok(None);
+    }
+    let approver_missing_scopes = uncovered_held_access(&amp;grantable, approver_grant);
+    if approver_missing_scopes.is_empty() {
+        Ok(Some(DelegatedScopes {
+            scopes: grantable,
+            writes_registration: approvable.flow.would_write_registration(),
+        }))
+    } else {
+        Err(AuthorizationServerError::InsufficientApproverScope {
+            approver_missing_scopes,
+        })
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L288-L312"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 288–312</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The happy path: ticks inside the approvable scopes and inside the
+approver’s own authority come back as the delegated set, verbatim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_admits_covered_approvable_scopes() {
+    let requested: &amp;[&amp;str] = &amp;["patient/Patient.r", "openid"];
+    let allowed: &amp;[&amp;str] = &amp;["patient/Patient.r", "openid", "patient/Observation.r"];
+    let delegated = DelegatedScopes::clamp(
+        &amp;grant(&amp;["system/*.cruds"]),
+        owned_scopes(&amp;["patient/Patient.r", "openid"]),
+        &amp;approvable(requested, allowed),
+    )
+    .expect("approver covers everything")
+    .expect("something was granted");
+    assert_eq!(delegated.scopes(), ["patient/Patient.r", "openid"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L514-L525"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 514–525</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A tick outside the approvable scopes (requested ∩ allowed) is dropped,
+not delegated.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_drops_ticks_outside_the_approvable_scopes() {
+    let requested: &amp;[&amp;str] = &amp;["patient/Patient.r"];
+    let allowed: &amp;[&amp;str] = &amp;["patient/Patient.r"];
+    let delegated = DelegatedScopes::clamp(
+        &amp;grant(&amp;["system/*.cruds"]),
+        owned_scopes(&amp;["patient/Patient.r", "patient/Observation.r"]),
+        &amp;approvable(requested, allowed),
+    )
+    .expect("approver covers everything")
+    .expect("something was granted");
+    assert_eq!(delegated.scopes(), ["patient/Patient.r"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L530-L541"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 530–541</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Nothing surviving the clamp is <code>None</code>, so the caller denies rather than
+recording an empty grant.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_yields_none_when_nothing_survives() {
+    let requested: &amp;[&amp;str] = &amp;["patient/Patient.r"];
+    let allowed: &amp;[&amp;str] = &amp;["patient/Patient.r"];
+    let delegated = DelegatedScopes::clamp(
+        &amp;grant(&amp;["system/*.cruds"]),
+        owned_scopes(&amp;["patient/Observation.r"]),
+        &amp;approvable(requested, allowed),
+    )
+    .expect("no approver check runs on an empty set");
+    assert_eq!(delegated, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L546-L556"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 546–556</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The escalation the proof exists to rule out: a resource scope the approver
+does not hold fails the approval and names the scope, rather than being
+delegated or silently narrowed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_rejects_a_resource_scope_the_approver_does_not_hold() {
+    let outcome = DelegatedScopes::clamp(
+        &amp;grant(&amp;["patient/Patient.r"]),
+        owned_scopes(&amp;["patient/Patient.r", "patient/Observation.r"]),
+        &amp;device_prompt(&amp;["patient/Patient.r", "patient/Observation.r"]),
+    );
+    assert_eq!(
+        outcome,
+        Err(AuthorizationServerError::InsufficientApproverScope {
+            approver_missing_scopes: owned_scopes(&amp;["patient/Observation.r"]),
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L562-L574"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 562–574</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An approver holding nothing at all can delegate no resource scope — the
+“gain scope from nothing” case.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_rejects_every_resource_scope_for_an_empty_approver() {
+    let outcome = DelegatedScopes::clamp(
+        &amp;grant(&amp;[]),
+        owned_scopes(&amp;["patient/Patient.r"]),
+        &amp;device_prompt(&amp;["patient/Patient.r"]),
+    );
+    assert!(matches!(
+        outcome,
+        Err(AuthorizationServerError::InsufficientApproverScope { .. })
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L579-L589"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 579–589</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Identity and session markers are not resource access, so an approver who
+holds none of them may still delegate them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_passes_identity_markers_through_the_approver_check() {
+    let requested: &amp;[&amp;str] = &amp;["openid", "offline_access"];
+    let allowed = requested;
+    let delegated = DelegatedScopes::clamp(
+        &amp;grant(&amp;["patient/Patient.r"]),
+        owned_scopes(&amp;["openid", "offline_access"]),
+        &amp;approvable(requested, allowed),
+    )
+    .expect("markers need no resource authority")
+    .expect("granted");
+    assert_eq!(delegated.scopes().len(), 2);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L594-L605"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 594–605</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The v1-word / v2-letter bridge: an approver holding the letter form covers
+a delegation spelled in the word form, and vice versa.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_covers_across_the_two_smart_spellings() {
+    let requested: &amp;[&amp;str] = &amp;["patient/Patient.read"];
+    let allowed = requested;
+    let delegated = DelegatedScopes::clamp(
+        &amp;grant(&amp;["patient/Patient.rs"]),
+        owned_scopes(&amp;["patient/Patient.read"]),
+        &amp;approvable(requested, allowed),
+    )
+    .expect("letter authority covers the word spelling")
+    .expect("granted");
+    assert_eq!(delegated.scopes(), ["patient/Patient.read"]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L610-L621"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 610–621</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An approver lacking an approval scope is refused whatever it ticked,
+even nothing, rather than having the approval applied as a deny.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clamp_refuses_an_approver_lacking_an_approval_scope_before_anything_else() {
+    let outcome = DelegatedScopes::clamp(
+        &amp;Grant::parse(["wildflower/AuthorizationRequest.u", "system/*.cruds"]),
+        Vec::new(),
+        &amp;device_prompt(&amp;["system/Patient.r"]),
+    );
+    assert_eq!(
+        outcome,
+        Err(AuthorizationServerError::InsufficientScope {
+            missing_scopes: owned_scopes(&amp;["wildflower/Grant.c"]),
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L854-L866"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 854–866</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/grant-flows.html">Grant Flows</a>, <a href="../integration-tests/approval-scopes.html">Approval Scopes</a> and <a href="../integration-tests/browser-pairing.html">Browser Pairing</a> tests hold the clamp at the routes: an Owner narrowing a request, an approver lacking a requested scope leaving it pending, and a pairing granting nothing past the Owner’s scopes or the approver’s.</p>
+<h4 id="scopes"><a class="header" href="#scopes"><code>scopes</code></a></h4>
+<p>The <code>clamp</code> tests read it.</p>
+<div id="item-DelegatedScopes--scopes" class="item-anchor"></div>
+
+<p>The delegated scopes, rendered — the set every write under this proof
+records verbatim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn scopes(&amp;self) -&gt; &amp;[String] {
+    &amp;self.scopes
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L316-L318"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 316–318</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="would_write_registration"><a class="header" href="#would_write_registration"><code>would_write_registration</code></a></h4>
+<div id="item-DelegatedScopes--would_write_registration" class="item-anchor"></div>
+
+<p>Whether the approval behind this proof creates or widens its client’s
+registration (a code approval for a client trusted on first use, whose
+approver held <code>wildflower/Client.c</code> and <code>wildflower/Client.u</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn would_write_registration(&amp;self) -&gt; bool {
+    self.writes_registration
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L323-L325"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 323–325</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Only a code approval for a client trusted on first use writes the
+registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn only_a_trusted_on_first_use_code_approval_writes_the_registration() {
+    let writes_registration = |approvable: &amp;ApprovableScopes| {
+        DelegatedScopes::clamp(
+            &amp;Grant::parse(crate::owner_scopes()),
+            owned_scopes(&amp;["openid"]),
+            approvable,
+        )
+        .expect("the owner covers everything")
+        .expect("granted")
+        .would_write_registration()
+    };
+    let requested = owned_scopes(&amp;["openid"]);
+    let registered = client("app", &amp;["openid"]);
+    assert!(writes_registration(&amp;ApprovableScopes::for_code(
+        &amp;requested,
+        Some(&amp;registered),
+        false
+    )));
+    assert!(!writes_registration(&amp;ApprovableScopes::for_code(
+        &amp;requested,
+        Some(&amp;registered),
+        true
+    )));
+    assert!(!writes_registration(&amp;device_prompt(&amp;["openid"])));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L1110-L1134"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 1110–1134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="session_bounded_scopes"><a class="header" href="#session_bounded_scopes"><code>session_bounded_scopes</code></a></h3>
+<p><strong>A code carries only what both the app’s authority and the browser the request was made in allow.</strong> The request’s approval and the standing grant keep the authorized scopes; only the code is narrowed. So a browser paired read-only earns no app write access, whoever approved the request.</p>
+<div id="item-session_bounded_scopes" class="item-anchor"></div>
+
+<p>The <code>authorized</code> scopes narrowed to what the browser session holding
+<code>session_grant</code> also holds: an authorization code carries only what both
+the client’s authority and the browser the request was made in allow.</p>
+<p>Held access (<a href="#item-is_held_access"><code>is_held_access</code></a>) the session covers, by the rule
+<a href="#item-DelegatedScopes--clamp"><code>DelegatedScopes::clamp</code></a> holds an approver to (either SMART spelling,
+<code>system/*</code> covering <code>patient/*</code> and <code>user/*</code>), stays as authorized. Held
+access the session covers only in part narrows to the parts it holds: its
+intersection with each session scope
+(<a href="#item-intersection_in_either_spelling"><code>intersection_in_either_spelling</code></a>), so <code>system/*.cruds</code> against a
+session holding <code>system/Patient.cruds</code> yields <code>system/Patient.cruds</code>. A
+part is spelled in the authorized scope’s grammar where one spells it, and
+in letters where no word does.
+<code>wildflower/launch</code> has no parts, so it stays only when the session holds
+it. Identity and session markers are no held access, so they pass through.</p>
+<p>One scope’s parts are collapsed (<code>Grant::collapse</code>), so overlapping
+session scopes yield the broadest part once, and the result keeps each
+scope’s first occurrence, in order. A session that covers everything
+authorized changes nothing but exact duplicates.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn session_bounded_scopes(authorized: &amp;[String], session_grant: &amp;Grant) -&gt; Vec&lt;String&gt; {
+    let session_covers = coverage_in_either_spelling(session_grant);
+    let mut already_bounded = HashSet::new();
+    let bounded: Vec&lt;Scope&gt; = authorized
+        .iter()
+        .map(|rendered| Scope::from(rendered.as_str()))
+        .flat_map(|authorized_scope| {
+            if !is_held_access(&amp;authorized_scope) || session_covers(&amp;authorized_scope) {
+                vec![authorized_scope]
+            } else {
+                let mut parts = Grant::new(
+                    session_grant
+                        .scopes
+                        .iter()
+                        .filter_map(|session_scope| {
+                            intersection_in_either_spelling(&amp;authorized_scope, session_scope)
+                        })
+                        .collect(),
+                );
+                parts.collapse();
+                parts.scopes
+            }
+        })
+        .filter(|scope| already_bounded.insert(scope.clone()))
+        .collect();
+    render_scopes(&amp;bounded)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L375-L401"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 375–401</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A session bounds a code’s resource scopes by coverage in either SMART
+spelling: the letter form covers the word form and back, and <code>system/*</code>
+covers <code>patient/*</code> and <code>user/*</code>. What it holds none of is dropped.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_bounds_resource_scopes_by_coverage_in_either_spelling() {
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;[
+                "patient/Patient.read",
+                "patient/Observation.rs",
+                "patient/Condition.rs",
+                "wildflower/Grant.c",
+            ]),
+            &amp;Grant::parse(["patient/Patient.rs", "patient/Observation.read"]),
+        ),
+        ["patient/Patient.read", "patient/Observation.rs"],
+    );
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;[
+                "patient/Observation.rs",
+                "user/*.cruds",
+                "wildflower/Grant.c"
+            ]),
+            &amp;Grant::parse(["system/*.cruds"]),
+        ),
+        ["patient/Observation.rs", "user/*.cruds"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L872-L896"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 872–896</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A scope the session holds only part of narrows to the parts it holds:
+wildcards to the session’s named types, contexts to the session’s, and
+interactions to those the session holds.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_narrows_a_scope_it_holds_only_part_of() {
+    let paired_session = Grant::parse([
+        "wildflower/launch",
+        "system/Patient.cruds",
+        "system/Observation.rs",
+        "wildflower/Apps.r",
+    ]);
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;["system/*.cruds", "wildflower/*.cruds", "openid"]),
+            &amp;paired_session,
+        ),
+        [
+            "system/Patient.cruds",
+            "system/Observation.rs",
+            "wildflower/Apps.r",
+            "openid",
+        ],
+    );
+    let patient_session = Grant::parse(["patient/Patient.rs", "patient/Observation.r"]);
+    assert_eq!(
+        session_bounded_scopes(&amp;owned_scopes(&amp;["patient/*.rs"]), &amp;patient_session),
+        ["patient/Patient.rs", "patient/Observation.r"],
+    );
+    // A word scope narrows in its own grammar where a word spells the
+    // part, and to the letter form where none does.
+    assert_eq!(
+        session_bounded_scopes(&amp;owned_scopes(&amp;["patient/*.read"]), &amp;patient_session),
+        ["patient/Patient.read", "patient/Observation.r"],
+    );
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;["patient/Observation.rs"]),
+            &amp;Grant::parse(["patient/Observation.r"]),
+        ),
+        ["patient/Observation.r"],
+    );
+    // A letter scope stays letters against a session spelled in words.
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;["patient/*.cruds"]),
+            &amp;Grant::parse(["patient/Observation.read"]),
+        ),
+        ["patient/Observation.rs"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L902-L947"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 902–947</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Parts the session holds several ways come out once: one scope’s
+overlapping parts collapse into the broadest, and a part two scopes
+share appears once.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_s_parts_are_deduplicated() {
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;["system/*.cruds"]),
+            &amp;Grant::parse(["system/*.rs", "system/Patient.r", "patient/*.rs"]),
+        ),
+        ["system/*.rs"],
+    );
+    assert_eq!(
+        session_bounded_scopes(
+            &amp;owned_scopes(&amp;["system/*.cruds", "patient/*.rs", "openid", "openid"]),
+            &amp;Grant::parse(["patient/Patient.r"]),
+        ),
+        ["patient/Patient.r", "openid"],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L953-L968"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 953–968</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Identity and session markers pass through a session that holds none of
+them; <code>wildflower/launch</code> stays only when the session holds it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_session_passes_markers_through_and_bounds_launch() {
+    let authorized = owned_scopes(&amp;[
+        "openid",
+        "fhirUser",
+        "launch",
+        "launch/patient",
+        "offline_access",
+        "wildflower/launch",
+        "patient/Patient.rs",
+    ]);
+    assert_eq!(
+        session_bounded_scopes(&amp;authorized, &amp;Grant::parse(["patient/Observation.r"])),
+        [
+            "openid",
+            "fhirUser",
+            "launch",
+            "launch/patient",
+            "offline_access"
+        ],
+    );
+    assert_eq!(
+        session_bounded_scopes(&amp;authorized, &amp;Grant::parse(["wildflower/launch"])),
+        [
+            "openid",
+            "fhirUser",
+            "launch",
+            "launch/patient",
+            "offline_access",
+            "wildflower/launch"
+        ],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L973-L1004"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 973–1004</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Owner’s scopes bound nothing an approval can grant.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_owner_s_session_bounds_nothing() {
+    let authorized = owned_scopes(&amp;[
+        "patient/Observation.read",
+        "user/*.cruds",
+        "wildflower/Apps.r",
+        "wildflower/launch",
+        "openid",
+    ]);
+    assert_eq!(
+        session_bounded_scopes(&amp;authorized, &amp;Grant::parse(crate::owner_scopes())),
+        authorized,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L1008-L1020"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 1008–1020</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="intersection_in_either_spelling"><a class="header" href="#intersection_in_either_spelling"><code>intersection_in_either_spelling</code></a></h3>
+<div id="item-intersection_in_either_spelling" class="item-anchor"></div>
+
+<p>The broadest scope both <code>authorized_scope</code> and <code>session_scope</code> cover
+(<code>Scope::intersection</code>) when each also counts in its alternate canonical
+form, spelled in the authorized scope’s grammar where one exists:
+<code>patient/Observation.rs</code> against <code>patient/Observation.read</code> is
+<code>patient/Observation.rs</code>, and <code>patient/*.read</code> against <code>patient/Patient.rs</code>
+is <code>patient/Patient.read</code>. <code>patient/*.read</code> against <code>patient/Patient.r</code> has
+no word spelling, so it is the letter <code>patient/Patient.r</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn intersection_in_either_spelling(
+    authorized_scope: &amp;Scope,
+    session_scope: &amp;Scope,
+) -&gt; Option&lt;Scope&gt; {
+    let authorized_spellings = [
+        Some(authorized_scope.clone()),
+        authorized_scope.as_alternate_canonical_form(),
+    ];
+    // The session's letter form first, so a letter-spelled authorized scope
+    // intersects to a letter bag rather than the session's word.
+    let session_spellings = [
+        session_scope.as_alternate_canonical_form(),
+        Some(session_scope.clone()),
+    ];
+    authorized_spellings
+        .iter()
+        .flatten()
+        .find_map(|authorized_spelling| {
+            session_spellings
+                .iter()
+                .flatten()
+                .find_map(|session_spelling| authorized_spelling.intersection(session_spelling))
+        })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L410-L433"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 410–433</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="session_shortfall"><a class="header" href="#session_shortfall"><code>session_shortfall</code></a></h3>
+<p><strong>The browser is told what it lacks before a narrowed code is issued.</strong> The shortfall and the bound are two views of one rule: the shortfall names, as requested, each scope the bound would drop or narrow.</p>
+<div id="item-session_shortfall" class="item-anchor"></div>
+
+<p>What a code issued in the browser session holding <code>session_grant</code> would
+not carry of the <code>requested</code> scopes, in the request’s order: for each held
+access (<a href="#item-is_held_access"><code>is_held_access</code></a>) the session does not cover, the part of it the
+session lacks (<code>Grant::uncovered_part</code>, in either SMART spelling), whether
+<a href="#item-session_bounded_scopes"><code>session_bounded_scopes</code></a> drops the scope or narrows it to the part the
+session holds. A session holding <code>system/*.cuds</code> and <code>system/Patient.r</code>
+lacks <code>system/MedicationRequest.r</code> of <code>system/MedicationRequest.rs</code>, and
+nothing of <code>system/Patient.rs</code>. Empty when the session holds all the
+request asks for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn session_shortfall(requested: &amp;[String], session_grant: &amp;Grant) -&gt; Vec&lt;String&gt; {
+    let session_lacks = uncovered_part_in_either_spelling(session_grant);
+    let lacking: Vec&lt;Scope&gt; = requested
+        .iter()
+        .map(|rendered| Scope::from(rendered.as_str()))
+        .filter(is_held_access)
+        .filter_map(|requested_scope| session_lacks(&amp;requested_scope))
+        .collect();
+    render_scopes(&amp;lacking)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L444-L453"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 444–453</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The shortfall is what the session lacks of every requested scope the
+session bound drops or narrows, in the request’s order: nothing for a
+session that holds all the request asks for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_session_shortfall_is_what_the_session_bound_drops_or_narrows() {
+    let requested = owned_scopes(&amp;[
+        "openid",
+        "patient/Patient.read",
+        "patient/Observation.rs",
+        "patient/Condition.rs",
+        "system/*.cruds",
+        "wildflower/launch",
+        "offline_access",
+    ]);
+    let session_grant = Grant::parse(["patient/Patient.rs", "patient/Observation.r"]);
+    assert_eq!(
+        session_shortfall(&amp;requested, &amp;session_grant),
+        [
+            "patient/Observation.s",
+            "patient/Condition.rs",
+            "system/*.cruds",
+            "wildflower/launch",
+        ],
+    );
+    // Of those, the session bound narrows two and drops the rest.
+    assert_eq!(
+        session_bounded_scopes(&amp;requested, &amp;session_grant),
+        [
+            "openid",
+            "patient/Patient.read",
+            "patient/Observation.r",
+            "patient/Patient.rs",
+            "offline_access",
+        ],
+    );
+    assert!(session_shortfall(&amp;requested, &amp;Grant::parse(crate::owner_scopes())).is_empty());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L1026-L1058"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 1026–1058</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>End to end, the <a href="../integration-tests/session-shortfall.html">Session Shortfall</a> tests hold the limited page to it: the fast path stops there and then issues the narrowed code, and an Owner session never sees it.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/authority/authenticated-client.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/authority/standing-grant.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/authority/authenticated-client.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/authority/standing-grant.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

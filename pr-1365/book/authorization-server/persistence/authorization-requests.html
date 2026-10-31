@@ -1,0 +1,1600 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Authorization Requests - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-c9130fb8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="authorization-requests"><a class="header" href="#authorization-requests">Authorization Requests</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/code_request_row.rs"><code>authorization-server-rust/src/db/authorization_requests/code_request_row.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code></a></p>
+
+<p>The <a href="../domain/authorization-request.html">authorization requests</a> live in two tables, by how a request is keyed. <code>code_authorization_requests</code> holds the <a href="../domain/authorization-request/code-request.html">code requests</a>, keyed by id. <code>user_code_requests</code> holds the <a href="../domain/authorization-request/polled-requests.html">device requests and browser pairings</a>, keyed by the poller’s secret, found by the <code>user_code</code> the Owner enters, and told apart by a <code>flow</code> column. Only this module knows those two flows share a table.</p>
+<p><strong>A decision lands once.</strong> Every write of a transition is the flow’s guarded replace: one <code>UPDATE</code> of the whole row, guarded on the key and the status the request was read with, so of two transitions read from one row the first to land wins and the other matches nothing (<a href="../domain/authorization-request.html#transitions-and-the-guarded-replace">the guarded replace</a>). <strong>At most one pending request holds a <code>user_code</code></strong>: a partial unique index holds it, and a request decided or claimed is outside the index.</p>
+<p><strong>A row is checked against its flow and status on the way in.</strong> Each table’s row type reads into the flow’s struct through one conversion, the one place the columns are held against the flow and status; the table’s <code>CHECK</code>s refuse the same rows on write. A row whose approval disagrees with its status, or that lacks a column its flow requires, fails the read as malformed rather than reading as absent.</p>
+<p>The tests’ requests are built by the helpers on the <a href="test-fixtures.html#authorization-requests">Test Fixtures</a> page.</p>
+<h2 id="dbauthorization_requestscode_request_row"><a class="header" href="#dbauthorization_requestscode_request_row"><code>db::authorization_requests::code_request_row</code></a></h2>
+<h3 id="codeauthorizationrequestrow"><a class="header" href="#codeauthorizationrequestrow"><code>CodeAuthorizationRequestRow</code></a></h3>
+<div id="item-CodeAuthorizationRequestRow" class="item-anchor"></div>
+
+<p>One <code>code_authorization_requests</code> row, one field per column of the same
+name. Every column a <a href="../domain/authorization-request/code-request.html#item-CodeRequest"><code>CodeRequest</code></a> always has is <code>NOT NULL</code>. The approval
+is <code>granted_scopes</code> and <code>patient</code>, set only while the request is approved;
+the table’s CHECKs hold it to that, and to a <code>status</code> the code flow has.
+No foreign key ties <code>client_id</code> to <code>clients</code> or <code>sid</code> to
+<code>browser_sessions</code>: an app trusted on first use has no <code>clients</code> row yet,
+and a session is pruned on its own schedule.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct CodeAuthorizationRequestRow {
+    /// The primary key: the request's UUID, so every read and write by id is
+    /// a key lookup. An authorization code names its request by it.
+    pub(super) id: String,
+    /// The client that made the request.
+    client_id: String,
+    /// The scopes the client asked for, as a JSON array.
+    requested_scopes: JsonStrings,
+    /// When the request started; the Owner prompt orders by it.
+    requested_at: DateTime&lt;Utc&gt;,
+    /// When the request stops waiting for a decision. The retention sweep
+    /// deletes a row by it, whatever its status.
+    expires_at: DateTime&lt;Utc&gt;,
+    /// Where the request stands, as its wire string: `awaiting_limited_page`,
+    /// `pending`, `approved` or `denied`. A replace lands only on a row still
+    /// at the status it was read with. Expiry is read from `expires_at`, never
+    /// stored here.
+    status: RequestStatus,
+    /// The approved scopes, as a JSON array: set exactly while `status` is
+    /// `approved`.
+    granted_scopes: Option&lt;JsonStrings&gt;,
+    /// The patient the approval binds, if any; only ever set beside
+    /// `granted_scopes`.
+    patient: Option&lt;String&gt;,
+    /// The redirect the client presented, which its code or error goes back to.
+    redirect_uri: UrlText,
+    /// The PKCE S256 challenge the code's redemption is checked against.
+    code_challenge: String,
+    /// The `state` the client sent, which its callback carries back.
+    client_state: String,
+    /// The browser session the request was made in, which its code is issued
+    /// under.
+    sid: String,
+    /// The SMART App Launch `launch` value the request consumed; `NULL` for a
+    /// plain OAuth request.
+    launch: Option&lt;String&gt;,
+    /// The patient the consumed launch binds, if any, which an approval must
+    /// name.
+    launch_bound_patient: Option&lt;String&gt;,
+    /// The requested scopes a standing grant already covered when the request
+    /// parked, as a JSON array; the consent card shows them ticked.
+    pre_approved_scopes: JsonStrings,
+    /// Whether the browser that made the request can decide it itself; raising
+    /// the request for the Owner clears it.
+    decidable_in_requesting_browser: bool,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/code_request_row.rs#L50-L95"><code>authorization-server-rust/src/db/authorization_requests/code_request_row.rs</code> lines 50–95</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into-a-coderequest"><a class="header" href="#into-a-coderequest">Into a <code>CodeRequest</code></a></h4>
+<div id="item-CodeRequest--try_from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn try_from(mut row: CodeAuthorizationRequestRow) -&gt; Result&lt;Self, Self::Error&gt; {
+    let approval = approval_from_columns(
+        row.status,
+        row.granted_scopes.take(),
+        row.patient.take(),
+        |problem| row.malformed(problem),
+    )?;
+    let state = match (row.status, approval) {
+        (RequestStatus::AwaitingLimitedPage, None) =&gt; CodeRequestState::AwaitingLimitedPage,
+        (RequestStatus::Pending, None) =&gt; CodeRequestState::Pending,
+        (RequestStatus::Approved, Some(approval)) =&gt; CodeRequestState::Approved(approval),
+        (RequestStatus::Denied, None) =&gt; CodeRequestState::Denied,
+        (status, _) =&gt; {
+            return Err(row.malformed(&amp;format!("is {status}, which its flow never is")));
+        }
+    };
+    Ok(CodeRequest {
+        id: row.id,
+        client_id: row.client_id,
+        requested_scopes: row.requested_scopes.0,
+        requested_at: row.requested_at,
+        expires_at: row.expires_at,
+        state,
+        redirect_uri: row.redirect_uri.0,
+        code_challenge: row.code_challenge,
+        client_state: row.client_state,
+        sid: row.sid,
+        launch: row.launch,
+        launch_bound_patient: row.launch_bound_patient,
+        pre_approved_scopes: row.pre_approved_scopes.0,
+        decidable_in_requesting_browser: row.decidable_in_requesting_browser,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/code_request_row.rs#L110-L142"><code>authorization-server-rust/src/db/authorization_requests/code_request_row.rs</code> lines 110–142</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="dbauthorization_requestsuser_code_request_row"><a class="header" href="#dbauthorization_requestsuser_code_request_row"><code>db::authorization_requests::user_code_request_row</code></a></h2>
+<h3 id="usercoderequestrow"><a class="header" href="#usercoderequestrow"><code>UserCodeRequestRow</code></a></h3>
+<div id="item-UserCodeRequestRow" class="item-anchor"></div>
+
+<p>One <code>user_code_requests</code> row, one field per column of the same name. A
+browser pairing keeps its browser’s name in <code>device_name</code>, the column the
+device page reads a requester’s name from. The approval is
+<code>granted_scopes</code> and <code>patient</code>, set only while the request is approved or
+claimed; the table’s CHECKs hold it to that, to a <code>status</code> these flows
+have, and a pairing to a name and no patient.</p>
+<p>Two indexes on <code>user_code</code> serve the device page: a plain one for its
+lookups by the code the Owner types or confirms, and
+<code>user_code_requests_pending_user_code_uidx</code>, unique where <code>status</code> is
+<code>pending</code>, so <strong>at most one pending request holds a user code</strong>. Decided
+and claimed rows are outside it, so they may share a code with each other
+and with one pending request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct UserCodeRequestRow {
+    /// The primary key: the device's `device_code`, or the pairing code, the
+    /// secret the requester polls with.
+    pub(super) id: String,
+    /// Which flow the row is, as its wire string: `device_code` or
+    /// `browser_pairing`. A read by id filters on it, so a device code never
+    /// reads as a pairing.
+    pub(super) flow: FlowType,
+    /// The client that made the request: the device's client, or the
+    /// browser-session client for a pairing.
+    client_id: String,
+    /// The scopes the requester asked for, as a JSON array.
+    requested_scopes: JsonStrings,
+    /// When the request started; the Owner prompt orders by it.
+    pub(super) requested_at: DateTime&lt;Utc&gt;,
+    /// When the request stops waiting for a decision, and the requester stops
+    /// being able to claim it. The retention sweep deletes a row by it,
+    /// whatever its status.
+    expires_at: DateTime&lt;Utc&gt;,
+    /// Where the request stands, as its wire string: `pending`, `approved`,
+    /// `denied` or `claimed`. A replace lands only on a row still at the
+    /// status it was read with.
+    status: RequestStatus,
+    /// The approved scopes, as a JSON array: set exactly while `status` is
+    /// `approved` or `claimed`.
+    granted_scopes: Option&lt;JsonStrings&gt;,
+    /// The patient a device approval binds, if any; only ever set beside
+    /// `granted_scopes`, and never on a pairing.
+    patient: Option&lt;String&gt;,
+    /// The short code the Owner enters or confirms on the device page.
+    pub(super) user_code: String,
+    /// The requester's name: the name a device gave itself or the approver
+    /// settled on (`NULL` falls back to the client's name), or the pairing
+    /// browser's, which a pairing always has.
+    device_name: Option&lt;String&gt;,
+    /// When the requester last polled; the poll's slow-down check reads it.
+    last_polled_at: Option&lt;DateTime&lt;Utc&gt;&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L57-L94"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 57–94</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into-a-devicerequest-a-pairingrequest-or-either"><a class="header" href="#into-a-devicerequest-a-pairingrequest-or-either">Into a <code>DeviceRequest</code>, a <code>PairingRequest</code> or either</a></h4>
+<div id="item-UserCodeRequestRow--require_flow" class="item-anchor"></div>
+
+<p>Refuse a row of another flow than <code>flow</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn require_flow(&amp;self, flow: FlowType) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    if self.flow == flow {
+        Ok(())
+    } else {
+        Err(self.malformed(&amp;format!("read as a {flow} request")))
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L106-L112"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 106–112</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-UserCodeRequestRow--take_state" class="item-anchor"></div>
+
+<p>The polled state, its approval taken out of the row’s approval columns
+and mapped to the flow’s approval by <code>into_flow_approval</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn take_state&lt;A&gt;(
+    &amp;mut self,
+    into_flow_approval: impl FnOnce(&amp;Self, Approval) -&gt; Result&lt;A, AuthorizationServerError&gt;,
+) -&gt; Result&lt;PolledState&lt;A&gt;, AuthorizationServerError&gt; {
+    let approval = approval_from_columns(
+        self.status,
+        self.granted_scopes.take(),
+        self.patient.take(),
+        |problem| self.malformed(problem),
+    )?;
+    match (self.status, approval) {
+        (RequestStatus::Pending, None) =&gt; Ok(PolledState::Pending),
+        (RequestStatus::Denied, None) =&gt; Ok(PolledState::Denied),
+        (RequestStatus::Approved, Some(approval)) =&gt; {
+            Ok(PolledState::Approved(into_flow_approval(self, approval)?))
+        }
+        (RequestStatus::Claimed, Some(approval)) =&gt; {
+            Ok(PolledState::Claimed(into_flow_approval(self, approval)?))
+        }
+        (status, _) =&gt; Err(self.malformed(&amp;format!("is {status}, which its flow never is"))),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L116-L137"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 116–137</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-DeviceRequest--try_from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn try_from(mut row: UserCodeRequestRow) -&gt; Result&lt;Self, Self::Error&gt; {
+    row.require_flow(FlowType::DeviceCode)?;
+    let state = row.take_state(|_, approval| Ok(approval))?;
+    Ok(DeviceRequest {
+        id: row.id,
+        client_id: row.client_id,
+        requested_scopes: row.requested_scopes.0,
+        requested_at: row.requested_at,
+        expires_at: row.expires_at,
+        user_code: row.user_code,
+        device_name: row.device_name,
+        last_polled_at: row.last_polled_at,
+        state,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L143-L157"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 143–157</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-PairingRequest--try_from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn try_from(mut row: UserCodeRequestRow) -&gt; Result&lt;Self, Self::Error&gt; {
+    row.require_flow(FlowType::BrowserPairing)?;
+    let state = row.take_state(|row, approval| match approval.patient {
+        None =&gt; Ok(PairingApproval {
+            granted_scopes: approval.granted_scopes,
+        }),
+        Some(_) =&gt; Err(row.malformed("binds a patient")),
+    })?;
+    let Some(browser_name) = row.device_name.take() else {
+        return Err(row.malformed("has no device_name"));
+    };
+    Ok(PairingRequest {
+        id: row.id,
+        client_id: row.client_id,
+        requested_scopes: row.requested_scopes.0,
+        requested_at: row.requested_at,
+        expires_at: row.expires_at,
+        user_code: row.user_code,
+        browser_name,
+        last_polled_at: row.last_polled_at,
+        state,
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L163-L185"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 163–185</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-PolledRequest--try_from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn try_from(row: UserCodeRequestRow) -&gt; Result&lt;Self, Self::Error&gt; {
+    match row.flow {
+        FlowType::DeviceCode =&gt; DeviceRequest::try_from(row).map(PolledRequest::Device),
+        FlowType::BrowserPairing =&gt; PairingRequest::try_from(row).map(PolledRequest::Pairing),
+        FlowType::AuthorizationCode =&gt; Err(row.malformed("carries a user code")),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs#L191-L197"><code>authorization-server-rust/src/db/authorization_requests/user_code_request_row.rs</code> lines 191–197</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="dbauthorization_requests"><a class="header" href="#dbauthorization_requests"><code>db::authorization_requests</code></a></h2>
+<h3 id="approval_from_columns"><a class="header" href="#approval_from_columns"><code>approval_from_columns</code></a></h3>
+<p>Both conversions read the approval through it.</p>
+<div id="item-approval_from_columns" class="item-anchor"></div>
+
+<p>The approval a row’s <code>granted_scopes</code> and <code>patient</code> columns hold: present
+exactly when <code>status</code> is approved or claimed, and a patient only beside
+granted scopes. Any other combination is <code>malformed</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approval_from_columns(
+    status: RequestStatus,
+    granted_scopes: Option&lt;JsonStrings&gt;,
+    patient: Option&lt;String&gt;,
+    malformed: impl FnOnce(&amp;str) -&gt; AuthorizationServerError,
+) -&gt; Result&lt;Option&lt;Approval&gt;, AuthorizationServerError&gt; {
+    let carries_approval = matches!(status, RequestStatus::Approved | RequestStatus::Claimed);
+    match (granted_scopes, patient) {
+        (Some(granted_scopes), patient) if carries_approval =&gt; Ok(Some(Approval {
+            granted_scopes: granted_scopes.0,
+            patient,
+        })),
+        (None, None) if !carries_approval =&gt; Ok(None),
+        _ =&gt; Err(malformed(&amp;format!(
+            "is {status} but its approval columns disagree"
+        ))),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L47-L64"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 47–64</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A row whose approval columns disagree with its status, in a status its
+flow never has, or with a column its flow requires missing, is refused
+by the schema’s CHECKs; and if one were there anyway, it fails the read
+as malformed rather than reading as absent.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_malformed_row_fails_the_read() {
+    for (id, tamper) in [
+        (
+            "req-1",
+            "UPDATE code_authorization_requests SET status = 'approved' WHERE id = 'req-1'",
+        ),
+        (
+            "req-1",
+            "UPDATE code_authorization_requests SET granted_scopes = '[]' WHERE id = 'req-1'",
+        ),
+        (
+            "req-1",
+            "UPDATE code_authorization_requests SET patient = 'Patient/1' WHERE id = 'req-1'",
+        ),
+        (
+            "req-1",
+            "UPDATE code_authorization_requests SET status = 'claimed', granted_scopes = '[]' \
+             WHERE id = 'req-1'",
+        ),
+        (
+            "dev-1",
+            "UPDATE user_code_requests SET status = 'awaiting_limited_page' WHERE id = 'dev-1'",
+        ),
+        (
+            "dev-1",
+            "UPDATE user_code_requests SET flow = 'authorization_code' WHERE id = 'dev-1'",
+        ),
+        (
+            "dev-1",
+            "UPDATE user_code_requests SET flow = 'browser_pairing' WHERE id = 'dev-1'",
+        ),
+        (
+            "dev-1",
+            "UPDATE user_code_requests SET flow = 'browser_pairing', \
+             status = 'approved', granted_scopes = '[]', patient = 'Patient/1', \
+             device_name = 'Laptop' WHERE id = 'dev-1'",
+        ),
+        (
+            "dev-1",
+            "UPDATE user_code_requests SET status = 'approved' WHERE id = 'dev-1'",
+        ),
+    ] {
+        let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+        insert_code(&amp;store, &amp;code_request("req-1", false));
+        insert_device(&amp;store, &amp;device_request("dev-1"));
+        let mut conn = store.pool().get().expect("check out a connection");
+        assert!(
+            diesel::sql_query(tamper).execute(&amp;mut conn).is_err(),
+            "the schema refuses {tamper}"
+        );
+        drop(conn);
+        execute_unchecked(&amp;store, tamper);
+        assert!(
+            store.read(|tx| tx.authorization_request_by_id(id)).is_err(),
+            "{tamper}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L988-L1045"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 988–1045</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The <code>status</code> and <code>flow</code> mappings reject an unknown stored discriminant
+(planted past the CHECKs) on read as a typed error, never a panic.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn corrupt_enum_columns_are_typed_read_errors() {
+    for (table, column, id) in [
+        ("user_code_requests", "status", "dev-1"),
+        ("user_code_requests", "flow", "dev-1"),
+        ("code_authorization_requests", "status", "req-1"),
+    ] {
+        let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+        insert_device(&amp;store, &amp;device_request("dev-1"));
+        insert_code(&amp;store, &amp;code_request("req-1", false));
+        execute_unchecked(
+            &amp;store,
+            &amp;format!("UPDATE {table} SET {column} = 'bogus' WHERE id = '{id}'"),
+        );
+        assert!(
+            store.read(|tx| tx.authorization_request_by_id(id)).is_err(),
+            "a corrupt `{table}.{column}` must surface as a typed read error",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1050-L1068"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1050–1068</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="impl-authorizationrequeststx-for-sqlitegranttx"><a class="header" href="#impl-authorizationrequeststx-for-sqlitegranttx"><code>impl AuthorizationRequestsTx for SqliteGrantTx</code></a></h3>
+<p>The port is <a href="../grant-store/authorization-requests.html#item-AuthorizationRequestsTx"><code>AuthorizationRequestsTx</code></a>.</p>
+<h4 id="loading-a-request"><a class="header" href="#loading-a-request">Loading a request</a></h4>
+<div id="item-SqliteGrantTx--authorization_request_by_id" class="item-anchor"></div>
+
+<p>The code table first, then the user-code table.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn authorization_request_by_id(
+    &amp;mut self,
+    id: &amp;str,
+) -&gt; Result&lt;Option&lt;AuthorizationRequest&gt;, AuthorizationServerError&gt; {
+    if let Some(code_request) = self.code_request_by_id(id)? {
+        return Ok(Some(AuthorizationRequest::Code(code_request)));
+    }
+    user_code_requests::table
+        .find(id)
+        .select(UserCodeRequestRow::as_select())
+        .first(self.conn)
+        .optional()
+        .map_err(failed("authorization_request_by_id failed"))?
+        .map(|row| PolledRequest::try_from(row).map(AuthorizationRequest::from))
+        .transpose()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L231-L246"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 231–246</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Every flow, in every state, reads back exactly as it was written.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_and_fetch_round_trip(request in arb_authorization_request()) {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    store.write(|tx| insert_any(tx, &amp;request)).expect("insert");
+    let fetched = store
+        .read(|tx| tx.authorization_request_by_id(request.id()))
+        .expect("query")
+        .expect("row present");
+    prop_assert_eq!(fetched, request);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L624-L632"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 624–632</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each flow’s loader reads its own flow’s requests, and no other’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn each_flow_s_loader_reads_only_its_own_flow() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let code = code_request("req-1", false);
+    let device = device_request("dev-1");
+    insert_code(&amp;store, &amp;code);
+    insert_device(&amp;store, &amp;device);
+    store
+        .read(|tx| {
+            assert_eq!(tx.code_request_by_id("req-1")?, Some(code.clone()));
+            assert_eq!(tx.code_request_by_id("dev-1")?, None);
+            assert_eq!(tx.device_request_by_id("dev-1")?, Some(device.clone()));
+            assert_eq!(tx.device_request_by_id("req-1")?, None);
+            assert_eq!(tx.pairing_request_by_id("dev-1")?, None);
+            assert_eq!(
+                tx.polled_request_by_user_code("UC-dev-1")?,
+                Some(PolledRequest::Device(device.clone()))
+            );
+            Ok::&lt;_, AuthorizationServerError&gt;(())
+        })
+        .expect("reads");
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L697-L717"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 697–717</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SqliteGrantTx--user_code_request_by_id" class="item-anchor"></div>
+
+<p>The user-code request keyed <code>id</code> of <code>flow</code>, read into the flow’s
+struct <code>R</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn user_code_request_by_id&lt;R: TryFrom&lt;UserCodeRequestRow, Error = AuthorizationServerError&gt;&gt;(
+    &amp;mut self,
+    id: &amp;str,
+    flow: FlowType,
+    operation: &amp;'static str,
+) -&gt; Result&lt;Option&lt;R&gt;, AuthorizationServerError&gt; {
+    user_code_requests::table
+        .find(id)
+        .filter(user_code_requests::flow.eq(flow))
+        .select(UserCodeRequestRow::as_select())
+        .first(self.conn)
+        .optional()
+        .map_err(failed(operation))?
+        .map(R::try_from)
+        .transpose()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L103-L118"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 103–118</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="inserting-a-request"><a class="header" href="#inserting-a-request">Inserting a request</a></h4>
+<p>Bulk reclamation of expired rows is the retention sweep’s, so an insert leaves an unrelated expired row alone. The one row it clears is an expired pending one holding the new request’s <code>user_code</code>, which would otherwise hold the slot in the partial unique index.</p>
+<div id="item-SqliteGrantTx--insert_user_code_row" class="item-anchor"></div>
+
+<p>Insert a user-code request’s <code>row</code>, first clearing an already-expired
+pending row holding its <code>user_code</code> (as of the request’s start): that
+row occupies the partial unique index the insert would otherwise
+collide with. Bulk reclamation is the retention sweep’s; see
+<code>authorization-server-rust/docs/Book/Domain/Retention Explanation.md</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_user_code_row(
+    &amp;mut self,
+    row: &amp;UserCodeRequestRow,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    diesel::delete(
+        user_code_requests::table
+            .filter(user_code_requests::user_code.eq(&amp;row.user_code))
+            .filter(user_code_requests::status.eq(RequestStatus::Pending))
+            .filter(user_code_requests::expires_at.lt(row.requested_at)),
+    )
+    .execute(self.conn)
+    .map_err(failed("insert_user_code_row failed"))?;
+    diesel::insert_into(user_code_requests::table)
+        .values(row)
+        .execute(self.conn)
+        .map_err(failed("insert_user_code_row failed"))?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L125-L142"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 125–142</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An insert leaves an unrelated expired row for the retention sweep, so
+the window is the only thing that decides when it goes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_leaves_unrelated_expired_requests_for_the_sweep() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let ten_minutes_ago = Utc::now() - Duration::minutes(10);
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("expired-1", "UC-1", ten_minutes_ago, Duration::minutes(5)),
+    );
+    insert_device(&amp;store, &amp;device_request("fresh-1"));
+    assert!(stored(&amp;store, "expired-1").is_some());
+    assert!(stored(&amp;store, "fresh-1").is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L722-L732"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 722–732</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The one thing an insert prunes: a pending row holding the same
+<code>user_code</code> that had expired when the new request started, which sits
+in the partial pending-<code>user_code</code> unique index the insert would
+otherwise collide with.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_clears_an_expired_row_holding_the_same_user_code() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let ten_minutes_ago = Utc::now() - Duration::minutes(10);
+    insert_device(
+        &amp;store,
+        &amp;device_request_at(
+            "dev-stale",
+            "SAME-CODE",
+            ten_minutes_ago,
+            Duration::minutes(5),
+        ),
+    );
+    let pairing = PairingRequest::new(
+        NewPairingRequestArgs {
+            id: "pair-new".to_owned(),
+            client_id: crate::BROWSER_SESSION_CLIENT_ID.to_owned(),
+            requested_scopes: crate::owner_scopes(),
+            ttl: Duration::minutes(5),
+            user_code: "SAME-CODE".to_owned(),
+            browser_name: "Firefox on Linux".to_owned(),
+        },
+        Utc::now(),
+    );
+    store
+        .write(|tx| tx.insert_pairing_request(&amp;pairing))
+        .expect("insert");
+    assert!(stored(&amp;store, "dev-stale").is_none());
+    assert!(stored(&amp;store, "pair-new").is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L739-L767"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 739–767</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A live pending request holding the code is never dropped to make
+room: a collision on a live code stays a hard error.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_never_drops_a_live_row_holding_the_same_user_code() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("dev-live", "SAME-CODE", Utc::now(), Duration::minutes(5)),
+    );
+    let colliding = device_request_at("dev-new", "SAME-CODE", Utc::now(), Duration::minutes(5));
+    assert!(store
+        .write(|tx| tx.insert_device_request(&amp;colliding))
+        .is_err());
+    assert!(stored(&amp;store, "dev-live").is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L772-L783"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 772–783</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A decided row holding the code is outside the partial index, so it
+neither collides nor is pruned.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn insert_leaves_a_decided_row_holding_the_same_user_code() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let ten_minutes_ago = Utc::now() - Duration::minutes(10);
+    let decided = device_with_status(
+        device_request_at(
+            "dev-denied",
+            "SAME-CODE",
+            ten_minutes_ago,
+            Duration::minutes(5),
+        ),
+        RequestStatus::Denied,
+    );
+    insert_device(&amp;store, &amp;decided);
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("dev-new", "SAME-CODE", Utc::now(), Duration::minutes(5)),
+    );
+    assert!(stored(&amp;store, "dev-denied").is_some());
+    assert!(stored(&amp;store, "dev-new").is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L788-L807"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 788–807</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="the-guarded-replace"><a class="header" href="#the-guarded-replace">The guarded replace</a></h4>
+<div id="item-SqliteGrantTx--replace_code_request" class="item-anchor"></div>
+
+<p>One <code>UPDATE</code> of every column but the key to <code>changed</code>, guarded on the
+key and the status <code>read</code> has.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn replace_code_request(
+    &amp;mut self,
+    read: &amp;CodeRequest,
+    changed: &amp;CodeRequest,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    if changed.id != read.id {
+        return Err(replaced_by_another(&amp;read.id, &amp;changed.id));
+    }
+    let affected = diesel::update(
+        code_authorization_requests::table
+            .find(&amp;read.id)
+            .filter(code_authorization_requests::status.eq(read.state.status())),
+    )
+    .set(CodeAuthorizationRequestRow::from(changed))
+    .execute(self.conn)
+    .map_err(failed("replace_authorization_request failed"))?;
+    Ok(affected == 1)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L384-L401"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 384–401</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A replace lands on the row with the status it was read with and
+writes the whole changed request; a second transition from the same
+stale read no longer lands, so of two decisions the first wins.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_replace_lands_only_while_the_row_has_the_status_it_was_read_with() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    let read = device_request("dev-1");
+    insert_device(&amp;store, &amp;read);
+    let approval = Approval {
+        granted_scopes: vec!["openid".to_owned()],
+        patient: Some("Patient/1".to_owned()),
+    };
+    let approved = read
+        .approve(approval, Some("Kitchen iPad".to_owned()), now)
+        .expect("approves");
+    assert!(store
+        .write(|tx| tx.replace_device_request(&amp;read, &amp;approved))
+        .expect("replace"));
+    assert_eq!(
+        stored(&amp;store, "dev-1"),
+        Some(AuthorizationRequest::Device(approved.clone()))
+    );
+
+    let denied = read.deny(now).expect("the stale read still denies");
+    assert!(
+        !store
+            .write(|tx| tx.replace_device_request(&amp;read, &amp;denied))
+            .expect("replace"),
+        "the approval won"
+    );
+    assert_eq!(
+        stored(&amp;store, "dev-1"),
+        Some(AuthorizationRequest::Device(approved))
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L861-L892"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 861–892</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The limited page’s Continue and Cancel both read the request awaiting
+the page: the first to land moves its status on, and the other’s
+replace doesn’t land.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_cancel_racing_a_continue_on_the_limited_page_does_not_land() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    let read = code_request("req-1", true);
+    insert_code(&amp;store, &amp;read);
+    let continued = read
+        .acknowledge_session_shortfall(Duration::minutes(5), now)
+        .expect("continues");
+    let cancelled = read.deny_on_limited_page(now).expect("cancels");
+    assert!(store
+        .write(|tx| tx.replace_code_request(&amp;read, &amp;continued))
+        .expect("replace"));
+    assert!(!store
+        .write(|tx| tx.replace_code_request(&amp;read, &amp;cancelled))
+        .expect("replace"));
+    assert_eq!(
+        stored(&amp;store, "req-1").map(|request| request.status()),
+        Some(RequestStatus::Pending)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L898-L917"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 898–917</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A replace on a row that isn’t there lands nowhere; one whose changed
+request names another row is refused.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_replace_on_a_missing_or_another_row_does_not_land() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let ghost = device_request("ghost");
+    let denied = ghost.deny(Utc::now()).expect("denies");
+    assert!(!store
+        .write(|tx| tx.replace_device_request(&amp;ghost, &amp;denied))
+        .expect("replace"));
+    assert!(stored(&amp;store, "ghost").is_none());
+
+    let victim = device_request("victim");
+    insert_device(&amp;store, &amp;victim);
+    assert!(store
+        .write(|tx| tx.replace_device_request(&amp;victim, &amp;denied))
+        .is_err());
+    assert_eq!(
+        stored(&amp;store, "victim"),
+        Some(AuthorizationRequest::Device(victim))
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L952-L970"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 952–970</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SqliteGrantTx--replace_user_code_row" class="item-anchor"></div>
+
+<p>One <code>UPDATE</code> of every column but the key to <code>changed</code>, guarded on the
+key, the flow and the status <code>read_status</code> the request was read with.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn replace_user_code_row(
+    &amp;mut self,
+    read_id: &amp;str,
+    read_status: RequestStatus,
+    changed: &amp;UserCodeRequestRow,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    if changed.id != read_id {
+        return Err(replaced_by_another(read_id, &amp;changed.id));
+    }
+    let affected = diesel::update(
+        user_code_requests::table
+            .find(read_id)
+            .filter(user_code_requests::flow.eq(changed.flow))
+            .filter(user_code_requests::status.eq(read_status)),
+    )
+    .set(changed)
+    .execute(self.conn)
+    .map_err(failed("replace_authorization_request failed"))?;
+    Ok(affected == 1)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L146-L165"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 146–165</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A poll stamp leaves the status as it was, so an approval read before
+it still lands (writing back the <code>last_polled_at</code> it read); a stamp
+read before an approval no longer does.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approvals_never_fight_poll_stamps() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    let read = device_request("dev-1");
+    insert_device(&amp;store, &amp;read);
+    let approval = Approval {
+        granted_scopes: vec!["openid".to_owned()],
+        patient: None,
+    };
+    let replace = |changed: &amp;DeviceRequest| {
+        store
+            .write(|tx| tx.replace_device_request(&amp;read, changed))
+            .expect("replace")
+    };
+    assert!(replace(&amp;read.stamp_poll(now).expect("stamps")));
+    assert!(replace(
+        &amp;read.approve(approval, None, now).expect("approves")
+    ));
+    assert!(!replace(&amp;read.stamp_poll(now).expect("stamps")));
+    let Some(AuthorizationRequest::Device(device)) = stored(&amp;store, "dev-1") else {
+        panic!("the device request is stored");
+    };
+    assert_eq!(device.state.status(), RequestStatus::Approved);
+    assert_eq!(device.last_polled_at, None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L923-L947"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 923–947</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="owner_prompt"><a class="header" href="#owner_prompt"><code>owner_prompt</code></a></h4>
+<p>The one request the host notifies about and opens: the <a href="../domain/owner-prompt.html">Owner prompt</a>.</p>
+<div id="item-SqliteGrantTx--owner_prompt" class="item-anchor"></div>
+
+<p>Two reads, the newest candidate from each table, keeping the later by
+<code>requested_at</code> (on a tie, the code request; within a table, the
+greater id). The client’s name comes from its registration through a
+left join: a client trusted on first use has none until the Owner
+approves it. A disabled client’s request is skipped, a client with no
+row’s kept (the rule on <a href="../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>). Only <code>pending</code> rows are
+candidates, so a code request still on its browser’s limited page is
+none.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt(
+    &amp;mut self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;OwnerPrompt&gt;, AuthorizationServerError&gt; {
+    let code = self.newest_pending_code_request(now)?;
+    let polled = self.newest_pending_user_code_request(now)?;
+    Ok(
+        later_of(code, polled).map(|(request, registered_client_name)| {
+            OwnerPrompt::for_request(&amp;request, registered_client_name)
+        }),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L321-L332"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 321–332</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The newest pending request across every flow is the one the host is
+told of, its client named by its <code>client_id</code> until it is registered.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt_picks_the_newest_request_across_every_flow() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    insert_device(
+        &amp;store,
+        &amp;device_request_at(
+            "dev-1",
+            "UC-1",
+            now - Duration::seconds(3),
+            Duration::minutes(5),
+        ),
+    );
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::DeviceCode {
+            user_code: "UC-1".to_owned(),
+            client_name: "device-client".to_owned(),
+        })
+    );
+    insert_code(&amp;store, &amp;code_request("req-1", false));
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::AuthorizationCode {
+            id: "req-1".to_owned(),
+            client_name: "app".to_owned(),
+            decidable_in_requesting_browser: false,
+        })
+    );
+    let pairing = PairingRequest::new(
+        NewPairingRequestArgs {
+            id: "pair-1".to_owned(),
+            client_id: crate::BROWSER_SESSION_CLIENT_ID.to_owned(),
+            requested_scopes: crate::owner_scopes(),
+            ttl: Duration::minutes(5),
+            user_code: "UC-2".to_owned(),
+            browser_name: "Firefox on Linux".to_owned(),
+        },
+        now + Duration::seconds(1),
+    );
+    store
+        .write(|tx| tx.insert_pairing_request(&amp;pairing))
+        .expect("insert");
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::BrowserPairing {
+            user_code: "UC-2".to_owned(),
+            browser_name: "Firefox on Linux".to_owned(),
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1078-L1127"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1078–1127</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Expired, decided, and still-on-the-limited-page requests are no
+candidates: the Owner isn’t asked about a request its own browser
+hasn’t gone on with.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt_skips_what_does_not_wait_for_the_owner() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let ten_minutes_ago = Utc::now() - Duration::minutes(10);
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("expired", "UC-1", ten_minutes_ago, Duration::minutes(5)),
+    );
+    insert_device(
+        &amp;store,
+        &amp;device_with_status(device_request("approved"), RequestStatus::Approved),
+    );
+    insert_code(
+        &amp;store,
+        &amp;code_with_status(code_request("denied", false), RequestStatus::Denied),
+    );
+    insert_code(&amp;store, &amp;code_request("on-limited-page", true));
+    assert_eq!(newest(&amp;store), None);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1133-L1150"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1133–1150</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A disabled client’s request is no candidate; a client with no row
+stays one.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt_skips_a_disabled_client() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    insert_device(
+        &amp;store,
+        &amp;device_request_at(
+            "dev-1",
+            "UC-1",
+            now - Duration::seconds(3),
+            Duration::minutes(5),
+        ),
+    );
+    store
+        .write(|tx| {
+            tx.upsert_client(&amp;Client {
+                disabled_at: Some(now),
+                ..client("app", &amp;["read"])
+            })
+        })
+        .expect("register disabled");
+    insert_code(&amp;store, &amp;code_request("req-1", false));
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::DeviceCode {
+            user_code: "UC-1".to_owned(),
+            client_name: "device-client".to_owned(),
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1155-L1183"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1155–1183</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Of a code request and a device request started at the same instant, the
+prompt keeps the code request; of two started at once in one table, the
+greater id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt_breaks_a_tie_deterministically() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    let code_at = |id: &amp;str| {
+        CodeRequest::new(
+            NewCodeRequestArgs {
+                ttl: Duration::minutes(5),
+                ..fixture_code_args(id, "app", vec!["read".to_owned()])
+            },
+            now,
+        )
+    };
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("dev-1", "UC-1", now, Duration::minutes(5)),
+    );
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("dev-2", "UC-2", now, Duration::minutes(5)),
+    );
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::DeviceCode {
+            user_code: "UC-2".to_owned(),
+            client_name: "device-client".to_owned(),
+        })
+    );
+    insert_code(&amp;store, &amp;code_at("req-1"));
+    insert_code(&amp;store, &amp;code_at("req-2"));
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::AuthorizationCode {
+            id: "req-2".to_owned(),
+            client_name: "app".to_owned(),
+            decidable_in_requesting_browser: false,
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1189-L1226"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1189–1226</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A registered client is named by its registered name.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_prompt_names_a_registered_client_by_its_name() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    store
+        .write(|tx| tx.upsert_client(&amp;client("app", &amp;["read"])))
+        .expect("register");
+    insert_code(&amp;store, &amp;code_request("req-1", false));
+    assert_eq!(
+        newest(&amp;store),
+        Some(OwnerPrompt::AuthorizationCode {
+            id: "req-1".to_owned(),
+            client_name: "app display name".to_owned(),
+            decidable_in_requesting_browser: false,
+        })
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1230-L1244"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1230–1244</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SqliteGrantTx--newest_pending_code_request" class="item-anchor"></div>
+
+<p>The newest pending, unexpired code request whose client isn’t
+disabled; of two started at once, the greater id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn newest_pending_code_request(
+    &amp;mut self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;PromptCandidate&gt;, AuthorizationServerError&gt; {
+    code_authorization_requests::table
+        .left_join(
+            clients::table.on(clients::client_id.eq(code_authorization_requests::client_id)),
+        )
+        .filter(code_authorization_requests::status.eq(RequestStatus::Pending))
+        .filter(code_authorization_requests::expires_at.gt(now))
+        .filter(clients::disabled_at.is_null())
+        .order((
+            code_authorization_requests::requested_at.desc(),
+            code_authorization_requests::id.desc(),
+        ))
+        .select((
+            CodeAuthorizationRequestRow::as_select(),
+            clients::name.nullable(),
+        ))
+        .first::&lt;(CodeAuthorizationRequestRow, Option&lt;String&gt;)&gt;(self.conn)
+        .optional()
+        .map_err(failed("owner_prompt failed"))?
+        .map(|(row, registered_client_name)| {
+            Ok((
+                AuthorizationRequest::Code(CodeRequest::try_from(row)?),
+                registered_client_name,
+            ))
+        })
+        .transpose()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L169-L198"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 169–198</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SqliteGrantTx--newest_pending_user_code_request" class="item-anchor"></div>
+
+<p>The newest pending, unexpired device request or pairing whose client
+isn’t disabled; of two started at once, the greater id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn newest_pending_user_code_request(
+    &amp;mut self,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;Option&lt;PromptCandidate&gt;, AuthorizationServerError&gt; {
+    user_code_requests::table
+        .left_join(clients::table.on(clients::client_id.eq(user_code_requests::client_id)))
+        .filter(user_code_requests::status.eq(RequestStatus::Pending))
+        .filter(user_code_requests::expires_at.gt(now))
+        .filter(clients::disabled_at.is_null())
+        .order((
+            user_code_requests::requested_at.desc(),
+            user_code_requests::id.desc(),
+        ))
+        .select((UserCodeRequestRow::as_select(), clients::name.nullable()))
+        .first::&lt;(UserCodeRequestRow, Option&lt;String&gt;)&gt;(self.conn)
+        .optional()
+        .map_err(failed("owner_prompt failed"))?
+        .map(|(row, registered_client_name)| {
+            Ok((
+                AuthorizationRequest::from(PolledRequest::try_from(row)?),
+                registered_client_name,
+            ))
+        })
+        .transpose()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L202-L226"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 202–226</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-later_of" class="item-anchor"></div>
+
+<p>Of the newest pending code request and the newest pending user-code
+request, the later by <code>requested_at</code>; on a tie, the code request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn later_of(
+    code: Option&lt;PromptCandidate&gt;,
+    polled: Option&lt;PromptCandidate&gt;,
+) -&gt; Option&lt;PromptCandidate&gt; {
+    match (code, polled) {
+        (Some(code), Some(polled)) if polled.0.requested_at() &gt; code.0.requested_at() =&gt; {
+            Some(polled)
+        }
+        (Some(code), _) =&gt; Some(code),
+        (None, polled) =&gt; polled,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L87-L98"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 87–98</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_awaiting_owner"><a class="header" href="#is_awaiting_owner"><code>is_awaiting_owner</code></a></h4>
+<p>Whether the consent the host holds open is still undecided.</p>
+<div id="item-SqliteGrantTx--is_awaiting_owner" class="item-anchor"></div>
+
+<p>The request by the key <code>consent_key</code> carries, then its client’s
+<code>disabled_at</code>, both within the caller’s scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_awaiting_owner(
+    &amp;mut self,
+    consent_key: &amp;ConsentKey,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let request = match consent_key {
+        ConsentKey::DeviceCode { user_code } | ConsentKey::BrowserPairing { user_code } =&gt; self
+            .pending_polled_request_by_user_code(user_code)?
+            .map(AuthorizationRequest::from),
+        ConsentKey::AuthorizationCode { id } =&gt; {
+            self.code_request_by_id(id)?.map(AuthorizationRequest::Code)
+        }
+    };
+    match request {
+        Some(request) if request.is_undecided_at(now) =&gt; {
+            Ok(!self.is_client_disabled(request.client_id())?)
+        }
+        _ =&gt; Ok(false),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L336-L355"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 336–355</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A request awaits the Owner until it is decided or expires, and a
+code request still on its browser’s limited page counts as
+undecided, as it waits there.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_request_awaits_the_owner_until_it_is_decided_or_expires() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    for (id, status, expires_at) in [
+        (
+            "waiting",
+            RequestStatus::Pending,
+            now + Duration::minutes(5),
+        ),
+        (
+            "on-limited-page",
+            RequestStatus::AwaitingLimitedPage,
+            now + Duration::minutes(5),
+        ),
+        ("stale", RequestStatus::Pending, now - Duration::minutes(1)),
+        (
+            "approved",
+            RequestStatus::Approved,
+            now + Duration::minutes(5),
+        ),
+        ("denied", RequestStatus::Denied, now + Duration::minutes(5)),
+    ] {
+        store
+            .write(|tx| tx.insert_code_request(&amp;code_request(id, status, expires_at)))
+            .unwrap();
+    }
+    store
+        .write(|tx| {
+            tx.insert_device_request(&amp;device_request(
+                "device-waiting",
+                "ABCD-EFGH",
+                RequestStatus::Pending,
+            ))
+        })
+        .unwrap();
+    store
+        .write(|tx| {
+            tx.insert_device_request(&amp;device_request(
+                "device-denied",
+                "WXYZ-WXYZ",
+                RequestStatus::Denied,
+            ))
+        })
+        .unwrap();
+
+    let pending = |key: ConsentKey| awaiting(&amp;store, &amp;key, now);
+    assert!(pending(oauth("waiting")));
+    assert!(pending(oauth("on-limited-page")));
+    assert!(pending(device("ABCD-EFGH")));
+    assert!(!pending(oauth("stale")));
+    assert!(!pending(oauth("approved")));
+    assert!(!pending(oauth("denied")));
+    assert!(!pending(device("WXYZ-WXYZ")));
+    assert!(!pending(oauth("ghost")));
+    assert!(!pending(device("GHST-GHST")));
+    assert!(!pending(oauth("device-waiting")));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1279-L1335"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1279–1335</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A disabled client’s request does not await the Owner: <code>owner_prompt</code>
+skips it, and its key isn’t awaiting; a client with no row stays a
+candidate.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_disabled_client_s_request_does_not_await_the_owner() {
+    use crate::domain::client::Client;
+    use crate::domain::test_fake::{client, code_request_for};
+
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    store
+        .write(|tx| {
+            tx.insert_code_request(&amp;code_request_for(
+                "unregistered",
+                "stranger",
+                vec!["read".to_owned()],
+            ))
+        })
+        .unwrap();
+    assert!(awaiting(&amp;store, &amp;oauth("unregistered"), now));
+    store
+        .write(|tx| {
+            tx.upsert_client(&amp;Client {
+                disabled_at: Some(now),
+                ..client("disabled-app", &amp;["read"])
+            })
+        })
+        .unwrap();
+    store
+        .write(|tx| {
+            tx.insert_code_request(&amp;code_request_for(
+                "disabled",
+                "disabled-app",
+                vec!["read".to_owned()],
+            ))
+        })
+        .unwrap();
+    assert!(!awaiting(&amp;store, &amp;oauth("disabled"), now));
+    assert!(matches!(
+        store.read(|tx| tx.owner_prompt(now)).unwrap(),
+        Some(OwnerPrompt::AuthorizationCode { id, .. }) if id == "unregistered"
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L1341-L1379"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 1341–1379</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="the-retention-deletes"><a class="header" href="#the-retention-deletes">The retention deletes</a></h4>
+<p>The cutoff is the sweep’s, <a href="../domain/retention.html#item-purge_expired"><code>purge_expired</code></a> with <a href="../domain/retention.html#item-AUTHORIZATION_RETENTION"><code>AUTHORIZATION_RETENTION</code></a>, so an expired request is kept a while before it goes.</p>
+<div id="item-SqliteGrantTx--delete_code_requests_expired_before" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_code_requests_expired_before(
+    &amp;mut self,
+    cutoff: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;usize, AuthorizationServerError&gt; {
+    diesel::delete(
+        code_authorization_requests::table
+            .filter(code_authorization_requests::expires_at.lt(cutoff)),
+    )
+    .execute(self.conn)
+    .map_err(failed("delete_code_requests_expired_before failed"))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L427-L437"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 427–437</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Each retention delete takes every row of its table that expired before
+the cutoff, whatever its status, and nothing after it or in the other
+table.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_expired_requests_respects_the_cutoff() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let now = Utc::now();
+    let old = now - Duration::days(10);
+    insert_device(
+        &amp;store,
+        &amp;device_request_at("old", "UC-OLD", old, Duration::minutes(5)),
+    );
+    insert_device(
+        &amp;store,
+        &amp;device_with_status(
+            device_request_at("old-claimed", "UC-CLAIMED", old, Duration::minutes(5)),
+            RequestStatus::Claimed,
+        ),
+    );
+    insert_device(&amp;store, &amp;device_request("recent"));
+    insert_code(
+        &amp;store,
+        &amp;CodeRequest::new(
+            NewCodeRequestArgs {
+                ttl: Duration::minutes(5),
+                ..fixture_code_args("old-code", "app", vec!["read".to_owned()])
+            },
+            old,
+        ),
+    );
+    insert_code(&amp;store, &amp;code_request("recent-code", false));
+    let cutoff = now - Duration::days(7);
+    let deleted_polled = store
+        .write(|tx| tx.delete_polled_requests_expired_before(cutoff))
+        .expect("delete");
+    assert_eq!(deleted_polled, 2);
+    assert!(stored(&amp;store, "old").is_none());
+    assert!(stored(&amp;store, "old-claimed").is_none());
+    assert!(stored(&amp;store, "recent").is_some());
+    assert!(stored(&amp;store, "old-code").is_some(), "another table's");
+    let deleted_code = store
+        .write(|tx| tx.delete_code_requests_expired_before(cutoff))
+        .expect("delete");
+    assert_eq!(deleted_code, 1);
+    assert!(stored(&amp;store, "old-code").is_none());
+    assert!(stored(&amp;store, "recent-code").is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L813-L855"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 813–855</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SqliteGrantTx--delete_polled_requests_expired_before" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn delete_polled_requests_expired_before(
+    &amp;mut self,
+    cutoff: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;usize, AuthorizationServerError&gt; {
+    diesel::delete(user_code_requests::table.filter(user_code_requests::expires_at.lt(cutoff)))
+        .execute(self.conn)
+        .map_err(failed("delete_polled_requests_expired_before failed"))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/32f2f113ea782fda950190d940f6963e9d23da72/apps/host/wildflower-server/authorization-server-rust/src/db/authorization_requests/mod.rs#L439-L446"><code>authorization-server-rust/src/db/authorization_requests/mod.rs</code> lines 439–446</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/persistence/browser-sessions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence/launch-contexts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/persistence/browser-sessions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence/launch-contexts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

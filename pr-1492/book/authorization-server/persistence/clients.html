@@ -1,0 +1,1156 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Clients - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="clients"><a class="header" href="#clients">Clients</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs"><code>authorization-server-rust/src/db/clients.rs</code></a></p>
+
+<p>The <code>clients</code> table holds every app’s <a href="../domain/client.html">registration</a>: one row per <code>client_id</code>, read back as a <a href="../domain/client.html#item-Client"><code>Client</code></a>, which maps onto the row one field to one column of the same name. <strong>The row is the registration.</strong> Every check at <code>/oauth/authorize</code> and <code>/oauth/token</code> reads it, the Owner’s approvals of an app trusted on first use write it, and boot-time <a href="../assembly/seeding.html">seeding</a> rewrites the server’s own clients on every boot. The primary key is <code>client_id</code>, so an app has at most one registration, and every lookup goes through that key.</p>
+<p>The three list columns hold compact JSON text: <code>allowed_scopes</code> through the shared <code>JsonStrings</code>, and <code>redirect_uris</code> and <code>allowed_grant_types</code> through two mappings only the client binds, <code>JsonUrls</code> and <code>JsonAllowedGrantTypes</code>. <code>kind</code> and <code>registration_source</code> are stored as their wire strings. The tests draw clients from <a href="test-fixtures.html#item-tests--arb_client"><code>arb_client</code></a>.</p>
+<div id="item-tests--stored_columns_reject_corrupt_values" class="item-anchor"></div>
+
+<p>Each of the client row’s custom column mappings rejects an out-of-domain
+stored value on read as a typed diesel error, never a panic: the JSON TEXT
+newtypes (<code>JsonUrls</code> / <code>JsonStrings</code>
+/ <code>JsonAllowedGrantTypes</code>) on malformed JSON
+or an unknown enum member, and the <a href="../domain/client.html#item-ClientKind"><code>ClientKind</code></a> text-enum mapping on an
+unknown discriminant. A row tampered via raw SQL surfaces at the
+<code>client_by_id</code> read boundary as <code>Err</code>, so a corrupt row can never silently
+decode to a wrong-but-valid client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn stored_columns_reject_corrupt_values() {
+    // `column = bad_value` tampered onto the migration-seeded `growth_chart`
+    // row, each asserted to fail the read.
+    for (column, bad_value) in [
+        ("redirect_uris", "not json"),        // JsonUrls: malformed JSON
+        ("redirect_uris", "[\"not a url\"]"), // JsonUrls: valid JSON, not a URL
+        // JsonUrls: a path entry is not an absolute URL (why migration 0021
+        // strips them)
+        ("redirect_uris", "[\"/\"]"),
+        ("allowed_scopes", "not json"), // JsonStrings: malformed JSON
+        ("allowed_grant_types", "[\"totally_unknown\"]"), // JsonAllowedGrantTypes: unknown member
+        ("kind", "bogus_kind"),                           // ClientKind: unknown discriminant
+    ] {
+        let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+        let mut conn = store.pool().get().expect("check out a connection");
+        diesel::sql_query(format!(
+            "UPDATE clients SET {column} = '{bad_value}' WHERE client_id = 'growth_chart'"
+        ))
+        .execute(&amp;mut conn)
+        .expect("tamper the stored row");
+        drop(conn);
+        assert!(
+            store.read(|tx| tx.client_by_id("growth_chart")).is_err(),
+            "a corrupt `{column}` must surface as a typed read error",
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L951-L977"><code>authorization-server-rust/src/db/clients.rs</code> lines 951–977</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="dbclients"><a class="header" href="#dbclients"><code>db::clients</code></a></h2>
+<h3 id="impl-clientstx-for-sqlitegranttx"><a class="header" href="#impl-clientstx-for-sqlitegranttx"><code>impl ClientsTx for SqliteGrantTx</code></a></h3>
+<p>The port is <a href="../grant-store/clients.html#item-ClientsTx"><code>ClientsTx</code></a>.</p>
+<h4 id="client_by_id"><a class="header" href="#client_by_id"><code>client_by_id</code></a></h4>
+<div id="item-SqliteGrantTx--client_by_id" class="item-anchor"></div>
+
+<p>Look up a registered client by its <code>client_id</code>, or <code>None</code> when absent.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn client_by_id(
+    &amp;mut self,
+    client_id: &amp;str,
+) -&gt; Result&lt;Option&lt;Client&gt;, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    clients::table
+        .find(client_id)
+        .select(Client::as_select())
+        .first(conn)
+        .optional()
+        .map_err(|e| AuthorizationServerError::infrastructure("client_by_id failed", e))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L50-L61"><code>authorization-server-rust/src/db/clients.rs</code> lines 50–61</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Any client upserted into a fresh store reads back by its id exactly as
+written.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn upsert_and_fetch_round_trip(client in arb_client()) {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    store.write(|tx| tx.upsert_client(&amp;client)).expect("upsert");
+    let fetched = store
+        .read(|tx| tx.client_by_id(&amp;client.client_id))
+        .expect("query")
+        .expect("row present");
+    prop_assert_eq!(fetched, client);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L193-L201"><code>authorization-server-rust/src/db/clients.rs</code> lines 193–201</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_client_disabled"><a class="header" href="#is_client_disabled"><code>is_client_disabled</code></a></h4>
+<div id="item-SqliteGrantTx--is_client_disabled" class="item-anchor"></div>
+
+<p>One read of the client’s <code>disabled_at</code>; a client with no row reads as
+enabled.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn is_client_disabled(&amp;mut self, client_id: &amp;str) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let disabled_at = clients::table
+        .find(client_id)
+        .select(clients::disabled_at)
+        .first::&lt;Option&lt;DateTime&lt;Utc&gt;&gt;&gt;(conn)
+        .optional()
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("is_client_disabled failed", e)
+        })?;
+    Ok(disabled_at.flatten().is_some())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L65-L76"><code>authorization-server-rust/src/db/clients.rs</code> lines 65–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="upsert_client"><a class="header" href="#upsert_client"><code>upsert_client</code></a></h4>
+<p><strong>An app keeps the time it was first registered, and a disabled app stays disabled</strong>, whoever writes its registration again: an approval that widens a disabled app’s registration doesn’t re-enable it.</p>
+<div id="item-SqliteGrantTx--upsert_client" class="item-anchor"></div>
+
+<p>Insert a client, or update its policy fields if one with the same
+<code>client_id</code> already exists. Used by the seeding every boot runs, so a
+seeded client’s definition always matches the code, and by the grant
+recorder’s trust-on-first-use registration. Uses <code>ON CONFLICT … DO UPDATE</code>, so it never deletes the row and preserves <code>registered_at</code> and
+<code>disabled_at</code> — the original registration time and any admin disable
+survive rather than the client being resurrected.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn upsert_client(&amp;mut self, client: &amp;Client) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    use diesel::upsert::excluded;
+    diesel::insert_into(clients::table)
+        .values(client.clone())
+        .on_conflict(clients::client_id)
+        .do_update()
+        .set((
+            clients::name.eq(excluded(clients::name)),
+            clients::kind.eq(excluded(clients::kind)),
+            clients::redirect_uris.eq(excluded(clients::redirect_uris)),
+            clients::allowed_scopes.eq(excluded(clients::allowed_scopes)),
+            clients::allowed_grant_types.eq(excluded(clients::allowed_grant_types)),
+            clients::secret_hash.eq(excluded(clients::secret_hash)),
+            clients::registration_source.eq(excluded(clients::registration_source)),
+        ))
+        .execute(conn)
+        .map_err(|e| AuthorizationServerError::infrastructure("upsert_client failed", e))?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L113-L132"><code>authorization-server-rust/src/db/clients.rs</code> lines 113–132</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Upserting an existing client updates its name and policy in place but
+keeps its first <code>registered_at</code> and the Owner’s disable.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn upsert_updates_policy_but_preserves_registration_and_disable() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let registered_at = chrono::DateTime::from_timestamp(1_000, 0).unwrap();
+    let disabled_at = chrono::DateTime::from_timestamp(1_500, 0).unwrap();
+    let mut client = Client {
+        client_id: "c1".to_string(),
+        name: "First".to_string(),
+        kind: ClientKind::Public,
+        redirect_uris: vec![],
+        allowed_scopes: vec!["openid".to_string()],
+        allowed_grant_types: AllowedGrantType::ALL.to_vec(),
+        secret_hash: None,
+        registered_at,
+        disabled_at: Some(disabled_at),
+        registration_source: RegistrationSource::TrustedOnFirstUse,
+    };
+    store.write(|tx| tx.upsert_client(&amp;client)).expect("insert");
+
+    // Re-seed with drifted policy, a newer registered_at, and disabled_at
+    // cleared: the policy fields update, but registration time and the admin
+    // disable are preserved (the row is updated in place, never resurrected).
+    client.name = "Renamed".to_string();
+    client.allowed_scopes = vec!["system/*.cruds".to_string()];
+    client.registered_at = chrono::DateTime::from_timestamp(2_000, 0).unwrap();
+    client.disabled_at = None;
+    client.registration_source = RegistrationSource::ServerDefined;
+    store.write(|tx| tx.upsert_client(&amp;client)).expect("update");
+
+    let fetched = store
+        .read(|tx| tx.client_by_id("c1"))
+        .expect("query")
+        .expect("row present");
+    assert_eq!(fetched.name, "Renamed");
+    assert_eq!(fetched.allowed_scopes, vec!["system/*.cruds".to_string()]);
+    assert_eq!(fetched.registered_at, registered_at);
+    assert_eq!(fetched.disabled_at, Some(disabled_at));
+    assert_eq!(
+        fetched.registration_source,
+        RegistrationSource::ServerDefined,
+        "seeding marks the rows it owns server-defined"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L285-L326"><code>authorization-server-rust/src/db/clients.rs</code> lines 285–326</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="list_clients"><a class="header" href="#list_clients"><code>list_clients</code></a></h4>
+<p>A fresh store isn’t empty, as the migrations seed the first-party clients, so the properties run against what they upsert themselves (<a href="test-fixtures.html#item-tests--seeded_client_ids"><code>seeded_client_ids</code></a>).</p>
+<div id="item-SqliteGrantTx--list_clients" class="item-anchor"></div>
+
+<p>Every registered client, ordered by <code>client_id</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn list_clients(&amp;mut self) -&gt; Result&lt;Vec&lt;Client&gt;, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    clients::table
+        .order(clients::client_id.asc())
+        .select(Client::as_select())
+        .load(conn)
+        .map_err(|e| AuthorizationServerError::infrastructure("list_clients failed", e))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L79-L86"><code>authorization-server-rust/src/db/clients.rs</code> lines 79–86</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p><code>list_clients</code> returns every stored row — the migration seeds plus
+whatever was upserted — exactly once each, sorted by <code>client_id</code>, with
+each upserted row decoding back unchanged.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn list_clients_returns_every_row_sorted_by_id(
+    upserted in prop::collection::vec(arb_client(), 0..6),
+) {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let mut expected: std::collections::BTreeMap&lt;String, Client&gt; = store
+        .read(|tx| tx.list_clients())
+        .expect("list seeds")
+        .into_iter()
+        .map(|c| (c.client_id.clone(), c))
+        .collect();
+    for client in &amp;upserted {
+        // Fresh ids only: a repeat upsert keeps the first row's
+        // `registered_at` / `disabled_at` by design, which is
+        // `upsert_client`'s property, not this one's.
+        if !expected.contains_key(&amp;client.client_id) {
+            store.write(|tx| tx.upsert_client(client)).expect("upsert");
+            expected.insert(client.client_id.clone(), client.clone());
+        }
+    }
+
+    let listed = store.read(|tx| tx.list_clients()).expect("list");
+    prop_assert_eq!(listed, expected.into_values().collect::&lt;Vec&lt;_&gt;&gt;());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L222-L244"><code>authorization-server-rust/src/db/clients.rs</code> lines 222–244</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="set_client_disabled"><a class="header" href="#set_client_disabled"><code>set_client_disabled</code></a></h4>
+<div id="item-SqliteGrantTx--set_client_disabled" class="item-anchor"></div>
+
+<p>Set or clear a client’s <code>disabled_at</code>, returning whether a row matched. Only
+the one column is written, so the client’s registration (redirects, scopes,
+secret, <code>registered_at</code>) survives a disable → enable round trip unchanged.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn set_client_disabled(
+    &amp;mut self,
+    client_id: &amp;str,
+    disabled_at: Option&lt;DateTime&lt;Utc&gt;&gt;,
+) -&gt; Result&lt;bool, AuthorizationServerError&gt; {
+    let conn = &amp;mut *self.conn;
+    let updated = diesel::update(clients::table.find(client_id))
+        .set(clients::disabled_at.eq(disabled_at))
+        .execute(conn)
+        .map_err(|e| {
+            AuthorizationServerError::infrastructure("set_client_disabled failed", e)
+        })?;
+    Ok(updated &gt; 0)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L91-L104"><code>authorization-server-rust/src/db/clients.rs</code> lines 91–104</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Setting then clearing <code>disabled_at</code> touches only that column: every
+other field of the row reads back exactly as registered, and the
+stamp itself reads back as written at each step.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn set_client_disabled_round_trips_only_the_stamp(
+    client in arb_client(),
+    stamp in arb_timestamp(),
+) {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    // A seeded id would keep the seed's policy on upsert; use a fresh one.
+    prop_assume!(!seeded_client_ids(&amp;store).contains(&amp;client.client_id));
+    store.write(|tx| tx.upsert_client(&amp;client)).expect("upsert");
+
+    prop_assert!(store.write(|tx| tx.set_client_disabled(&amp;client.client_id, Some(stamp))).expect("disable"));
+    let disabled = store.read(|tx| tx.client_by_id(&amp;client.client_id)).expect("query").expect("row");
+    prop_assert_eq!(&amp;disabled, &amp;Client { disabled_at: Some(stamp), ..client.clone() });
+
+    prop_assert!(store.write(|tx| tx.set_client_disabled(&amp;client.client_id, None)).expect("enable"));
+    let enabled = store.read(|tx| tx.client_by_id(&amp;client.client_id)).expect("query").expect("row");
+    prop_assert_eq!(enabled, Client { disabled_at: None, ..client });
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L250-L266"><code>authorization-server-rust/src/db/clients.rs</code> lines 250–266</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An id with no row reports <code>false</code> and creates nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn set_client_disabled_on_an_unknown_id_is_a_miss(
+    client_id in "[a-zA-Z0-9_-]{1,32}",
+    stamp in arb_opt_timestamp(),
+) {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let before = seeded_client_ids(&amp;store);
+    prop_assume!(!before.contains(&amp;client_id));
+    prop_assert!(!store.write(|tx| tx.set_client_disabled(&amp;client_id, stamp)).expect("update"));
+    prop_assert_eq!(seeded_client_ids(&amp;store), before);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L270-L279"><code>authorization-server-rust/src/db/clients.rs</code> lines 270–279</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="the-seeded-clients"><a class="header" href="#the-seeded-clients">The seeded clients</a></h2>
+<p>The SMART apps’ clients aren’t written by Rust: SQL migrations insert their rows. <strong>These tests are the guard that the hand-written SQL decodes as a <code>Client</code>.</strong> Several also pin a row to the app it registers, read from that app’s own source, so the row and the scopes the app asks for can’t drift apart unnoticed.</p>
+<div id="item-tests--migrations_seed_the_smart_app_clients" class="item-anchor"></div>
+
+<p>Every SMART client is seeded by a migration (not Rust) — the sample apps by
+<code>0003</code>, Medications by <code>0004</code> (renamed and given its published-site
+redirect by <code>0006</code>), the server-docs API console by
+<code>0007</code>, the Importer by <code>0008</code>, the OHIF imaging viewer by <code>0009</code>
+(re-seeded by <code>0016</code> on an install that skipped it), FHIR Sync for
+Pebble by <code>0017</code> (its Observation scope widened by <code>0018</code>), Strength by
+<code>0019</code>, Plots by <code>0022</code> (both renamed by <code>0035</code>), and the Synthetic Data
+Loader by <code>0028</code> (which re-keys Medications, the console, the Importer and
+Plots to random ids, as <code>0025</code> / <code>0026</code> did Strength and the
+launcher, <code>0029</code> does the OHIF viewer and <code>0030</code> FHIR Sync for Pebble), and
+Wildflower Authorization by <code>0031</code> (the launcher’s scopes are narrowed by
+<code>0032</code>), and <code>0037</code> puts each hosted app’s own origin in front of the
+redirect on <code>wildflowerhealth.io</code> it held — so a
+freshly-migrated store has them all, and every hand-written row decodes
+back to a valid <code>Client</code>. This is the guard that the SQL seeds’ JSON
+columns and <code>registered_at</code> text stay in the exact shape the store’s read
+path parses (a malformed value would fail <code>client_by_id</code>’s row mapping,
+not silently).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migrations_seed_the_smart_app_clients() {
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    for client_id in [
+        "growth_chart",
+        "my_web_app",
+        "cc344727-6f90-496c-94fd-c7829aa9a51d",
+        "9769f8b274370708d0d3ebb2e3e59b7c",
+        "664a01e8614050cd82ffe90350b81413",
+        "03a513940b52f8c2649a5366d1a26d19",
+        "165cd26573e5ac72378e6ad2d2198330",
+        "941de68e6b59eb9dcc32df8ede89e636",
+        "6847df97d54c31936d54ca1b36b3bb09",
+        "bdf9fc5cb5a28c6683b49896b0ef8a75",
+        "474e103de61f9141c4b640d59bfa130e",
+        "225ba6af034a3acec6be7ff8010df67f",
+        "7277e898bee8ac81ea44788236e619a5",
+    ] {
+        let client = store
+            .read(|tx| tx.client_by_id(client_id))
+            .expect("query (a decode failure surfaces here)")
+            .unwrap_or_else(|| panic!("{client_id} is seeded by a clients migration"));
+        assert_eq!(client.client_id, client_id);
+        assert_eq!(client.kind, ClientKind::Public);
+        assert!(
+            client.secret_hash.is_none(),
+            "{client_id} is a public client"
+        );
+        assert!(!client.allowed_scopes.is_empty());
+        assert!(!client.redirect_uris.is_empty());
+        assert!(!client.allowed_grant_types.is_empty());
+    }
+
+    // `my_web_app` (the Medication Viewer registration) carries the exact
+    // scope + redirect from the review comment.
+    let mwa = store
+        .read(|tx| tx.client_by_id("my_web_app"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        mwa.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "patient/*.read".to_string(),
+        ],
+    );
+    assert_eq!(
+        mwa.redirect_uris[0].as_str(),
+        "https://mitre.github.io/smart-on-fhir-demo/index.html",
+    );
+    assert_eq!(
+        mwa.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken
+        ],
+    );
+
+    // The old `medication_viewer` id is gone — replaced by `my_web_app` —
+    // the pre-rename first-party ids are gone with `0006`, the Web Trace
+    // clients with `0027`, and the ids `0028` re-keyed with it.
+    for retired in [
+        "medication_viewer",
+        "wildflower-medication",
+        "wildflower-web-trace",
+        "web-trace-app",
+        "web-trace-app-dev",
+        "medications-app",
+        "wildflower-server-docs",
+        "importer-app",
+        "health-viewer-app",
+    ] {
+        assert!(
+            store.read(|tx| tx.client_by_id(retired)).unwrap().is_none(),
+            "{retired} must no longer be registered",
+        );
+    }
+
+    // Medications carries the published-site redirect it launches from.
+    let medications = store
+        .read(|tx| tx.client_by_id("9769f8b274370708d0d3ebb2e3e59b7c"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        medications.redirect_uris,
+        vec![
+            url::Url::parse("https://medications.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/medications/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    // Its scopes are `system/` reads only, with no `launch/patient`: the app
+    // picks the patient itself, reading `Patient` for the picker (`0020`).
+    // This vector must stay element-for-element equal to
+    // `MEDICATIONS_SCOPE` in `apps/medications/medications-web/src/config.ts`;
+    // `seeding.rs`'s `seeds_the_medications_dev_client_with_the_apps_own_scopes`
+    // reads that file and pins this client to it.
+    assert_eq!(
+        medications.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "system/MedicationRequest.rs".to_string(),
+            "system/Medication.rs".to_string(),
+            "system/Patient.rs".to_string(),
+        ],
+    );
+
+    // The server-docs API console is a standalone-launch client, so it is
+    // registered with the MAXIMAL scope vocabulary and narrowed at consent
+    // (`grantable_scopes` clamps an approval to requested ∧ allowed). The
+    // three wildcards can't be collapsed further: `wildflower/launch` is a
+    // *known* scope no wildcard covers, and the FHIR and Wildflower resource
+    // grammars are disjoint.
+    let docs = store
+        .read(|tx| tx.client_by_id("664a01e8614050cd82ffe90350b81413"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        docs.redirect_uris,
+        vec![
+            url::Url::parse("https://server-docs.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/server-docs/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        docs.allowed_scopes,
+        vec![
+            "openid".to_string(),
+            "profile".to_string(),
+            "fhirUser".to_string(),
+            "launch".to_string(),
+            "launch/patient".to_string(),
+            "offline_access".to_string(),
+            "wildflower/launch".to_string(),
+            "system/*.cruds".to_string(),
+            "wildflower/*.cruds".to_string(),
+        ],
+    );
+    // Every scope the console might request is genuinely covered by what it
+    // is allowed — the property the migration's comment claims, checked
+    // against the live grammar rather than by eye.
+    for requested in [
+        "patient/Observation.read",
+        "user/Patient.rs",
+        "system/*.read",
+        "system/MedicationRequest.cruds",
+        "wildflower/Grant.r",
+        "wildflower/Apps.cruds",
+        "wildflower/launch",
+        "offline_access",
+    ] {
+        assert!(
+            docs.allowed_scopes.iter().any(|allowed| {
+                wildflowerhealthio_scopes::allowed_scope_covers(allowed, requested)
+            }),
+            "the console's allowed scopes must cover {requested}",
+        );
+    }
+    // The launcher (`apps/launcher/launcher-web`'s `main-web` build), seeded
+    // by `0012`, re-keyed to a random id and renamed by `0026`. Its scopes
+    // are pinned to the app by
+    // `migrations_narrow_the_launcher_client_to_the_apps_own_scopes`.
+    let web_client = store
+        .read(|tx| tx.client_by_id("03a513940b52f8c2649a5366d1a26d19"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(web_client.name, "Wildflower Launcher");
+    assert_eq!(
+        web_client.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+    );
+    // Absolute entries only, each the app ROOT (`0013` replaced 0012's
+    // `/home`; `0026` moved it to `/launcher/`; `0037` added the app's own
+    // origin in front): the web UI is a SPA on browser history, so
+    // `redirectUriForRoute` derives the served root per origin (the
+    // directory form would vary by whichever section the reader signed in
+    // from), and the reader's destination rides the client's pending record.
+    // Any other origin the build runs at is trusted on first use through the
+    // consent prompt, so these entries are the published addresses only.
+    assert_eq!(
+        web_client.redirect_uris,
+        vec![
+            url::Url::parse("https://launcher.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/launcher/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+
+    // The Importer carries the published-site redirect it
+    // launches from (seeded by `0008`). It is the one seeded
+    // SMART client whose scopes **carry writes**: importing persists what a
+    // captured session contained. The set `0008` seeded was widened by
+    // `0009_widen_importer_client_write_scopes` to add `Practitioner`,
+    // `DiagnosticReport`, `Medication`, `MedicationRequest`,
+    // `MedicationDispense`, `ServiceRequest`, and `ImagingStudy`, and to
+    // broaden every type to full `.cruds` (create + read + update + delete +
+    // search) — re-applied by `0015` on an install that skipped it. This
+    // vector must stay element-for-element equal to the `scope` string in
+    // `apps/importer-web/src/config.ts` —
+    // nothing spans the TS/Rust boundary to check it, so this assertion is the
+    // Rust-side mirror of that pin, and a scope added on one side alone fails
+    // `/authorize` on a real device.
+    let importer = store
+        .read(|tx| tx.client_by_id("165cd26573e5ac72378e6ad2d2198330"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        importer.redirect_uris,
+        vec![
+            url::Url::parse("https://importer.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/importer/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        importer.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "system/DocumentReference.cruds".to_string(),
+            "system/Patient.cruds".to_string(),
+            "system/Observation.cruds".to_string(),
+            "system/Practitioner.cruds".to_string(),
+            "system/DiagnosticReport.cruds".to_string(),
+            "system/Medication.cruds".to_string(),
+            "system/MedicationRequest.cruds".to_string(),
+            "system/MedicationDispense.cruds".to_string(),
+            "system/ServiceRequest.cruds".to_string(),
+            "system/ImagingStudy.cruds".to_string(),
+        ],
+    );
+    // The OHIF imaging viewer's client (seeded by `0009` as `ohif-viewer`,
+    // re-keyed to a random id by `0029`) carries its published-site
+    // redirect, repointed onto the `/fhir-viewer` route by `0010`, and is
+    // read-only. This vector must stay
+    // element-for-element equal to the `smartScope` string in
+    // `apps/ohif-viewer-web/config/app-config.js` — nothing spans the JS/Rust
+    // boundary to check it, so this assertion is the Rust-side mirror of that
+    // pin, and a scope added on one side alone fails `/authorize` on a real
+    // device.
+    let ohif = store
+        .read(|tx| tx.client_by_id("941de68e6b59eb9dcc32df8ede89e636"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        ohif.redirect_uris,
+        vec![
+            url::Url::parse("https://ohif-viewer.wildflowerhealth.io/fhir-viewer")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/ohif-viewer/fhir-viewer")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        ohif.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "system/Patient.rs".to_string(),
+            "system/ImagingStudy.rs".to_string(),
+            "system/DocumentReference.rs".to_string(),
+        ],
+    );
+    // FHIR Sync for Pebble's client (the Pebble watchapp's settings page,
+    // seeded by `0017` as `fhir-sync-pebble`, re-keyed to a random id by
+    // `0030`) is standalone-only: it carries its published-site redirect, and its scopes
+    // are `system/`, with no `launch`: the page picks the patient after the
+    // grant.
+    // This vector must stay element-for-element equal to the `scope` string
+    // in `apps/fhir-sync-pebble/fhir-sync-pebble-web/src/config.ts` — nothing spans the
+    // TS/Rust boundary to check it.
+    let pebble = store
+        .read(|tx| tx.client_by_id("6847df97d54c31936d54ca1b36b3bb09"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        pebble.redirect_uris,
+        vec![
+            url::Url::parse("https://fhir-sync-pebble.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/fhir-sync-pebble/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        pebble.allowed_scopes,
+        vec![
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "system/Patient.rs".to_string(),
+            "system/Observation.cu".to_string(),
+        ],
+    );
+    // Strength's client (seeded by `0019` as `lifting-app`, re-keyed to a
+    // random id by `0025`) carries its published-site redirect, and its
+    // scopes carry writes: the training plan
+    // definition's `PlanDefinition`, a `ServiceRequest` per exercise, and
+    // each workout's `Procedure` and per-set `Observation`s. There is no
+    // `launch/patient`: the app picks the lifter itself (`0020`).
+    // This vector must stay element-for-element equal to `STRENGTH_SCOPE` in
+    // `apps/strength/strength-web/src/config.ts`; `seeding.rs`'s
+    // `seeds_the_strength_dev_client_with_the_apps_own_scopes` reads that
+    // file and pins this client to it.
+    let strength = store
+        .read(|tx| tx.client_by_id("bdf9fc5cb5a28c6683b49896b0ef8a75"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        strength.redirect_uris,
+        vec![
+            url::Url::parse("https://strength.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/lifting/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        strength.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "openid".to_string(),
+            "fhirUser".to_string(),
+            "system/Patient.rs".to_string(),
+            "system/PlanDefinition.crus".to_string(),
+            "system/ServiceRequest.crus".to_string(),
+            "system/Procedure.crus".to_string(),
+            "system/Observation.crus".to_string(),
+        ],
+    );
+    assert_eq!(
+        strength.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+    );
+    // Plots' client carries its published-site redirect,
+    // seeded by `0022` and moved by `0028`, and read-only scopes. Its
+    // scopes are pinned to `apps/plots/plots-web/src/config.ts` by
+    // `seeding.rs`'s `seeds_the_plots_dev_client_with_the_apps_own_scopes`.
+    let plots = store
+        .read(|tx| tx.client_by_id("474e103de61f9141c4b640d59bfa130e"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        plots.redirect_uris,
+        vec![
+            url::Url::parse("https://plots.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/health-viewer/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        plots.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+    );
+    // The Synthetic Data Loader carries its published-site redirect, seeded
+    // by `0028`. Its write scopes are pinned to
+    // `apps/synthetic-data/synthetic-data-web/src/config.ts` by `seeding.rs`'s
+    // `seeds_the_synthetic_data_dev_client_with_the_apps_own_scopes`.
+    let synthetic_data = store
+        .read(|tx| tx.client_by_id("225ba6af034a3acec6be7ff8010df67f"))
+        .unwrap()
+        .unwrap();
+    assert_eq!(synthetic_data.name, "Synthetic Data Loader");
+    assert_eq!(
+        synthetic_data.redirect_uris,
+        vec![
+            url::Url::parse("https://synthetic-data.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/synthetic-data/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        synthetic_data.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L347-L745"><code>authorization-server-rust/src/db/clients.rs</code> lines 347–745</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--migrations_seed_the_authorization_web_client_with_the_apps_own_scopes" class="item-anchor"></div>
+
+<p>Wildflower Authorization’s client (<code>0031</code>) is a public PKCE client
+returning to the app’s published root (its own origin, added by <code>0037</code>,
+and its path on <code>wildflowerhealth.io</code>), allowed exactly the scopes the
+app asks for (widened by <code>0041</code>). Its id and scope string are read out of the app’s
+<code>src/config.ts</code>, the one place the app writes them, so the row can’t
+drift from it unnoticed: a scope the app asks for that the row doesn’t
+allow fails <code>/oauth/authorize</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migrations_seed_the_authorization_web_client_with_the_apps_own_scopes() {
+    const AUTHORIZATION_WEB_CONFIG_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/authorization/authorization-web/src/config.ts"
+    ));
+    const AUTHORIZATION_WEB_CLIENT_ID: &amp;str = "7277e898bee8ac81ea44788236e619a5";
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let client = store
+        .read(|tx| tx.client_by_id(AUTHORIZATION_WEB_CLIENT_ID))
+        .expect("query (a decode failure surfaces here)")
+        .expect("0031 seeds the Wildflower Authorization client");
+
+    assert!(
+        AUTHORIZATION_WEB_CONFIG_TS.contains(&amp;format!("'{AUTHORIZATION_WEB_CLIENT_ID}'")),
+        "apps/authorization/authorization-web/src/config.ts must sign in as {AUTHORIZATION_WEB_CLIENT_ID}",
+    );
+    let scope_string = format!("'{}'", client.allowed_scopes.join(" "));
+    assert!(
+        AUTHORIZATION_WEB_CONFIG_TS.contains(&amp;scope_string),
+        "apps/authorization/authorization-web/src/config.ts must request exactly {scope_string}",
+    );
+    assert_eq!(client.name, "Wildflower Authorization");
+    assert_eq!(client.kind, ClientKind::Public);
+    assert!(client.secret_hash.is_none());
+    assert_eq!(client.disabled_at, None);
+    assert_eq!(
+        client.redirect_uris,
+        vec![
+            url::Url::parse("https://authorization.wildflowerhealth.io/")
+                .expect("a valid absolute redirect"),
+            url::Url::parse("https://wildflowerhealth.io/authorization/")
+                .expect("a valid absolute redirect"),
+        ],
+    );
+    assert_eq!(
+        client.allowed_scopes,
+        vec![
+            "openid".to_string(),
+            "wildflower/Grant.rd".to_string(),
+            "wildflower/Client.ru".to_string(),
+            "wildflower/Token.d".to_string(),
+            "wildflower/BrowserSession.rd".to_string(),
+        ],
+    );
+    assert_eq!(
+        client.allowed_grant_types,
+        vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L755-L806"><code>authorization-server-rust/src/db/clients.rs</code> lines 755–806</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--migrations_narrow_the_launcher_client_to_the_apps_own_scopes" class="item-anchor"></div>
+
+<p>The launcher’s client (<code>0012</code>, narrowed by <code>0032</code>) allows exactly the
+scopes the launcher asks for. The scope string is read out of the app’s
+<code>src/sign-in.ts</code>, the one place the app writes it: the client is trusted
+on first use, so the request is what bounds it, and a row wider than the
+request would be a ceiling nothing uses.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn migrations_narrow_the_launcher_client_to_the_apps_own_scopes() {
+    const LAUNCHER_SIGN_IN_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/launcher/launcher-web/src/sign-in.ts"
+    ));
+    const LAUNCHER_CLIENT_ID: &amp;str = "03a513940b52f8c2649a5366d1a26d19";
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let client = store
+        .read(|tx| tx.client_by_id(LAUNCHER_CLIENT_ID))
+        .expect("query (a decode failure surfaces here)")
+        .expect("0012 seeds the launcher client");
+
+    assert!(
+        LAUNCHER_SIGN_IN_TS.contains(&amp;format!("'{LAUNCHER_CLIENT_ID}'")),
+        "apps/launcher/launcher-web/src/sign-in.ts must sign in as {LAUNCHER_CLIENT_ID}",
+    );
+    let scope_string = format!(
+        "const LAUNCHER_SCOPE = '{}'",
+        client.allowed_scopes.join(" ")
+    );
+    assert!(
+        LAUNCHER_SIGN_IN_TS.contains(&amp;scope_string),
+        "apps/launcher/launcher-web/src/sign-in.ts must declare exactly {scope_string}",
+    );
+    assert_eq!(
+        client.allowed_scopes,
+        vec![
+            "launch".to_string(),
+            "launch/patient".to_string(),
+            "wildflower/launch".to_string(),
+            "system/*.cruds".to_string(),
+            "wildflower/*.cruds".to_string(),
+        ],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L906-L940"><code>authorization-server-rust/src/db/clients.rs</code> lines 906–940</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--app_catalog_preassigns_wildflower_health_clients_as_seeded" class="item-anchor"></div>
+
+<p>The App Catalog publishes each Wildflower Health app’s OAuth client
+registration as its HALO <code>preassignedCredentials</code>, for a server that
+registers the app itself. Every Wildflower Health entry carrying the
+object must match its seeded client: a public client with no secret,
+the same scopes and grant types, every redirect it lists registered,
+and a smart-app’s <code>launchUrl</code> among them, since its launch page is
+where it returns to. The seeded row is the source of truth, so a
+migration that changes one fails here until the catalog follows.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn app_catalog_preassigns_wildflower_health_clients_as_seeded() {
+    const APP_CATALOG_JSON: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/app-catalog/app-catalog-web/public/apps.json"
+    ));
+    // The catalog's id for Wildflower Health, the publisher of every app
+    // whose client the migrations seed. Another publisher's credentials are
+    // that publisher's to keep, so they are not checked here.
+    const WILDFLOWER_HEALTH_PUBLISHER_ID: &amp;str = "5a3385ad-9a2b-4dc6-85a0-5b874da0b019";
+    let catalog: Vec&lt;AppCatalogEntry&gt; =
+        serde_json::from_str(APP_CATALOG_JSON).expect("apps.json decodes as catalog entries");
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    let mut checked = 0;
+    for entry in catalog {
+        if entry.publisher.id != WILDFLOWER_HEALTH_PUBLISHER_ID {
+            continue;
+        }
+        let Some(credentials) = entry.preassigned_credentials else {
+            continue;
+        };
+        let name = entry.name;
+        let client_id = credentials.client_id;
+        let client = store
+            .read(|tx| tx.client_by_id(&amp;client_id))
+            .expect("query (a decode failure surfaces here)")
+            .unwrap_or_else(|| panic!("{name}: {client_id} is seeded by a clients migration"));
+
+        assert_eq!(client.kind, ClientKind::Public, "{name}");
+        assert!(client.secret_hash.is_none(), "{name}");
+        assert_eq!(credentials.token_endpoint_auth_method, "none", "{name}");
+        assert_eq!(entry.scopes, client.allowed_scopes, "{name}: scopes");
+        assert_eq!(
+            credentials.grant_types, client.allowed_grant_types,
+            "{name}: grantTypes"
+        );
+        for redirect in &amp;credentials.redirect_uris {
+            assert!(
+                client.redirect_uris.contains(redirect),
+                "{name}: {redirect} is not registered for {client_id}",
+            );
+        }
+        if let Some(launch_url) = &amp;entry.launch_url {
+            assert!(
+                client.redirect_uris.contains(launch_url),
+                "{name}: its launchUrl {launch_url} is not registered for {client_id}",
+            );
+        }
+        checked += 1;
+    }
+    assert!(
+        checked &gt; 0,
+        "apps.json preassigns none of Wildflower Health's seeded clients"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/db/clients.rs#L845-L898"><code>authorization-server-rust/src/db/clients.rs</code> lines 845–898</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/persistence/sqlite-grant-store.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence/browser-sessions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/persistence/sqlite-grant-store.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence/browser-sessions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

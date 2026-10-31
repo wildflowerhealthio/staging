@@ -1,0 +1,1378 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Authorization Pages - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-b2378376.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-95701d4f.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="authorization-pages"><a class="header" href="#authorization-pages">Authorization Pages</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_status.rs"><code>authorization-server-rust/src/http/routes/oauth/authorization_status.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code></a></p>
+
+<p>While a request waits, <strong>the browser waits on a page this server serves, on its own origin</strong>, so the address bar names the server being approved. <code>/oauth/authorize</code> sends the browser to one of three pages beside it: the wait page while the Owner decides elsewhere, the consent card when this browser decides itself, the limited page when its session holds less than the app asks for. Two more pages are reached another way: the device page, where the Owner confirms a device’s code, and the pairing page, where a browser without a session asks for one.</p>
+<p>The pages are static. Each is the same bytes for every request, and reads the request id or code from its own URL, so nothing a caller sends can reach the markup. What changes is answered by JSON routes beside them: the status poll the wait page drives, and the calls the limited page makes. All of it is uncached, and all of it is locked down by the same security headers.</p>
+<h2 id="httproutesoauthpages"><a class="header" href="#httproutesoauthpages"><code>http::routes::oauth::pages</code></a></h2>
+<h3 id="content_security_policy"><a class="header" href="#content_security_policy"><code>content_security_policy</code></a></h3>
+<p><strong>A page loads only from this origin, talks only to this origin, and can’t be framed.</strong> The one thing that differs between pages is where their forms may go: the wait page has no form, and the React pages’ <strong>Sign out</strong> form posts here and is redirected on to the launcher.</p>
+<div id="item-content_security_policy" class="item-anchor"></div>
+
+<p>The <code>Content-Security-Policy</code> of a page whose forms may submit to, and
+follow redirects to, <code>form_targets</code> (a <code>form-action</code> source list,
+<a href="#item-NO_FORM_TARGETS"><code>NO_FORM_TARGETS</code></a> for none). Everything a page loads (its scripts,
+stylesheets and fonts) comes from this origin, it can only talk back to it,
+and nothing may frame it. The top-level navigation to the client’s redirect
+is not a fetch, so <code>connect-src</code> doesn’t constrain it. A router builds it
+once and hands it to <a href="#item-page_security_headers"><code>page_security_headers</code></a> for each request.</p>
+<h4 id="panics"><a class="header" href="#panics">Panics</a></h4>
+<p>When <code>form_targets</code> holds a byte a header value can’t, which a source list
+of keywords and origins never does.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn content_security_policy(form_targets: &amp;str) -&gt; HeaderValue {
+    HeaderValue::try_from(format!(
+        "default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; \
+         connect-src 'self'; base-uri 'none'; form-action {form_targets}; \
+         frame-ancestors 'none'"
+    ))
+    .expect("a source list of keywords and origins is a valid header value")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L28-L35"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> lines 28–35</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="no_form_targets"><a class="header" href="#no_form_targets"><code>NO_FORM_TARGETS</code></a></h3>
+<div id="item-NO_FORM_TARGETS" class="item-anchor"></div>
+
+<p>The <code>form-action</code> sources of a page that submits no form.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) const NO_FORM_TARGETS: &amp;str = "'none'";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L14"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> line 14</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="page_security_headers"><a class="header" href="#page_security_headers"><code>page_security_headers</code></a></h3>
+<p>Every page and asset is checked for them by <a href="../test-fixtures.html#authorization-pages"><code>assert_locked_down</code></a>.</p>
+<div id="item-page_security_headers" class="item-anchor"></div>
+
+<p>The headers every file of a page carries: its <code>content_type</code>, its
+<code>content_security_policy</code> (built by <a href="#item-content_security_policy"><code>content_security_policy</code></a>), no
+<code>Referer</code> on anything it loads from or leaves for another origin, and no
+sniffing a type other than the one declared. The referrer policy is
+<code>same-origin</code>, not <code>no-referrer</code>: under <code>no-referrer</code> a browser sends a form
+<code>POST</code> with <code>Origin: null</code>, which the host’s cookie→bearer layer refuses, so
+the pages’ Sign out would fail.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn page_security_headers(
+    content_type: &amp;'static str,
+    content_security_policy: &amp;HeaderValue,
+) -&gt; [(HeaderName, HeaderValue); 4] {
+    [
+        (header::CONTENT_TYPE, HeaderValue::from_static(content_type)),
+        (
+            header::CONTENT_SECURITY_POLICY,
+            content_security_policy.clone(),
+        ),
+        (
+            header::REFERRER_POLICY,
+            HeaderValue::from_static("same-origin"),
+        ),
+        (
+            header::X_CONTENT_TYPE_OPTIONS,
+            HeaderValue::from_static("nosniff"),
+        ),
+    ]
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L44-L63"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> lines 44–63</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="request_page_location"><a class="header" href="#request_page_location"><code>request_page_location</code></a></h3>
+<div id="item-request_page_location" class="item-anchor"></div>
+
+<p>The <code>Location</code> of <code>page</code> for pending request <code>request_id</code>: relative, so the
+browser resolves it against the <code>…/oauth/authorize</code> it just requested.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn request_page_location(request_id: &amp;str, page: &amp;str) -&gt; String {
+    let encoded_request_id = form_urlencoded::byte_serialize(request_id.as_bytes())
+        .collect::&lt;String&gt;()
+        .replace('+', "%20");
+    format!("authorize/{encoded_request_id}/{page}")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L67-L72"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> lines 67–72</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Resolved against an authorize URL with a query, a request page’s
+location lands at <code>/oauth/authorize/{id}/{page}</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_request_page_resolves_beside_the_authorize_endpoint() {
+    let authorize = Url::parse("https://ruth.wildflowerhealth.example/oauth/authorize?x=1")
+        .expect("valid url");
+    for page in ["wait", "consent"] {
+        let resolved = authorize
+            .join(&amp;request_page_location("req-1", page))
+            .expect("resolves");
+        assert_eq!(
+            resolved.as_str(),
+            format!("https://ruth.wildflowerhealth.example/oauth/authorize/req-1/{page}")
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L83-L95"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> lines 83–95</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A slash, a space and a question mark in the id are percent-encoded, so
+the id stays one path segment.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_request_page_location_keeps_the_id_one_segment() {
+    assert_eq!(
+        request_page_location("a/b c?", "wait"),
+        "authorize/a%2Fb%20c%3F/wait"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/pages.rs#L100-L105"><code>authorization-server-rust/src/http/routes/oauth/pages.rs</code> lines 100–105</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthwait_page"><a class="header" href="#httproutesoauthwait_page"><code>http::routes::oauth::wait_page</code></a></h2>
+<p>The wait page is where a browser waits <strong>while the Owner decides somewhere else</strong>: in the host’s popup, in a signed-in launcher, or on a consent card. Its script polls <a href="#item-handle_authorization_status_request">the status</a> until the request is decided, then follows the redirect the poll hands back. That redirect is the only address off this origin the page ever leaves for. While the request is pending, the page also checks whether this browser has since signed in as the Owner and, if so, switches to the consent card beside it. Its three files are embedded as they are, with nothing interpolated; the script has no unit tests, and the <a href="../../integration-tests/wait-page.html">Wait Page</a> integration tests pin how its files are served.</p>
+<h3 id="router"><a class="header" href="#router"><code>router</code></a></h3>
+<div id="item-wait_page--router" class="item-anchor"></div>
+
+<p>The wait page’s routes, relative to the <code>/oauth</code> mount. The page references
+its assets as <code>../wait.js</code> and <code>../wait.css</code>, which resolve to these two
+siblings whatever prefix the authorization server is mounted under.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn router() -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    let policy = content_security_policy(NO_FORM_TARGETS);
+    let script_policy = policy.clone();
+    let stylesheet_policy = policy.clone();
+    Router::new()
+        .route(
+            "/authorize/{id}/wait",
+            get(move || async move { wait_page(&amp;policy) }),
+        )
+        .route(
+            "/authorize/wait.js",
+            get(move || async move { wait_page_script(&amp;script_policy) }),
+        )
+        .route(
+            "/authorize/wait.css",
+            get(move || async move { wait_page_stylesheet(&amp;stylesheet_policy) }),
+        )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L42-L59"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 42–59</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_location"><a class="header" href="#wait_page_location"><code>wait_page_location</code></a></h3>
+<div id="item-wait_page_location" class="item-anchor"></div>
+
+<p>The <code>Location</code> <code>/oauth/authorize</code> parks a browser at for pending request
+<code>request_id</code> when its session can’t approve it: relative, so the browser
+resolves it against the <code>…/oauth/authorize</code> it just requested.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn wait_page_location(request_id: &amp;str) -&gt; String {
+    request_page_location(request_id, "wait")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L64-L66"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 64–66</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_html"><a class="header" href="#wait_page_html"><code>WAIT_PAGE_HTML</code></a></h3>
+<div id="item-WAIT_PAGE_HTML" class="item-anchor"></div>
+
+<p>The wait page’s markup, the same bytes for every request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const WAIT_PAGE_HTML: &amp;str = include_str!("wait_page/wait.html");
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L32"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> line 32</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_script"><a class="header" href="#wait_page_script"><code>WAIT_PAGE_SCRIPT</code></a></h3>
+<div id="item-WAIT_PAGE_SCRIPT" class="item-anchor"></div>
+
+<p>The wait page’s script: it reads the request id from the page’s path,
+polls the status, and follows the redirect the poll hands back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const WAIT_PAGE_SCRIPT: &amp;str = include_str!("wait_page/wait.js");
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L35"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> line 35</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_stylesheet"><a class="header" href="#wait_page_stylesheet"><code>WAIT_PAGE_STYLESHEET</code></a></h3>
+<div id="item-WAIT_PAGE_STYLESHEET" class="item-anchor"></div>
+
+<p>The wait page’s stylesheet.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const WAIT_PAGE_STYLESHEET: &amp;str = include_str!("wait_page/wait.css");
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L37"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> line 37</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page"><a class="header" href="#wait_page"><code>wait_page</code></a></h3>
+<div id="item-wait_page" class="item-anchor"></div>
+
+<p><code>GET /oauth/authorize/{id}/wait</code>: the page itself, whatever the id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn wait_page(policy: &amp;HeaderValue) -&gt; Response {
+    page_file("text/html; charset=utf-8", WAIT_PAGE_HTML, policy)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L69-L71"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 69–71</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_script-1"><a class="header" href="#wait_page_script-1"><code>wait_page_script</code></a></h3>
+<div id="item-wait_page_script" class="item-anchor"></div>
+
+<p><code>GET /oauth/authorize/wait.js</code>: the page’s script.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn wait_page_script(policy: &amp;HeaderValue) -&gt; Response {
+    page_file("text/javascript; charset=utf-8", WAIT_PAGE_SCRIPT, policy)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L74-L76"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 74–76</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="wait_page_stylesheet-1"><a class="header" href="#wait_page_stylesheet-1"><code>wait_page_stylesheet</code></a></h3>
+<div id="item-wait_page_stylesheet" class="item-anchor"></div>
+
+<p><code>GET /oauth/authorize/wait.css</code>: the page’s stylesheet.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn wait_page_stylesheet(policy: &amp;HeaderValue) -&gt; Response {
+    page_file("text/css; charset=utf-8", WAIT_PAGE_STYLESHEET, policy)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L79-L81"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 79–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="page_file"><a class="header" href="#page_file"><code>page_file</code></a></h3>
+<div id="item-page_file" class="item-anchor"></div>
+
+<p>One of the page’s files, with the page’s security headers and <code>policy</code>. Cache-suppressed
+like the status poll it drives, so an authorization server update never leaves a stale
+script polling a changed endpoint.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn page_file(content_type: &amp;'static str, body: &amp;'static str, policy: &amp;HeaderValue) -&gt; Response {
+    CacheSuppressed((page_security_headers(content_type, policy), body)).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/wait_page.rs#L86-L88"><code>authorization-server-rust/src/http/routes/oauth/wait_page.rs</code> lines 86–88</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthauthorization_pages"><a class="header" href="#httproutesoauthauthorization_pages"><code>http::routes::oauth::authorization_pages</code></a></h2>
+<p>The consent card, the limited page, the device page and the pairing page are the build of <code>authorization-server-web</code>, embedded in the binary when it is compiled. The consent card and the device page call <code>/authorization/*</code> and FHIR on the browser session’s bearer, which the host’s cookie-to-bearer layer presents for them. The pairing page calls <a href="pairing-and-sign-in.html"><code>/oauth/pair/*</code></a>, which needs no session. The limited page calls <a href="#httproutesoauthsession_shortfall"><code>/oauth/authorize/{id}/*</code></a>, on the browser session’s cookie.</p>
+<p>The unit tests serve a <a href="../test-fixtures.html#authorization-pages">fake build</a> laid out as Vite lays it out, with a launcher on another origin.</p>
+<h3 id="authorization_pages"><a class="header" href="#authorization_pages"><code>AUTHORIZATION_PAGES</code></a></h3>
+<div id="item-AUTHORIZATION_PAGES" class="item-anchor"></div>
+
+<p><code>apps/host/wildflower-server/authorization-server-web/dist</code>, as it was when
+the authorization server was compiled.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>static AUTHORIZATION_PAGES: Dir&lt;'static&gt; =
+    include_dir!("$CARGO_MANIFEST_DIR/../authorization-server-web/dist");
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L59-L60"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 59–60</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Whatever was built (or stubbed) into this binary has a consent page, a
+limited page, a widening’s card, a device page and a pairing page to
+serve.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_embedded_build_has_every_page() {
+    assert!(AUTHORIZATION_PAGES.get_file(CONSENT_PAGE).is_some());
+    assert!(AUTHORIZATION_PAGES.get_file(LIMITED_PAGE).is_some());
+    assert!(AUTHORIZATION_PAGES
+        .get_file(SESSION_WIDENING_PAGE)
+        .is_some());
+    assert!(AUTHORIZATION_PAGES.get_file(DEVICE_PAGE).is_some());
+    assert!(AUTHORIZATION_PAGES.get_file(PAIR_PAGE).is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L605-L613"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 605–613</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="router-1"><a class="header" href="#router-1"><code>router</code></a></h3>
+<div id="item-authorization_pages--router" class="item-anchor"></div>
+
+<p>The pages’ routes, relative to the <code>/oauth</code> mount. <code>launcher_base</code> is
+where the sign-out the pages’ form posts to sends the browser.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn router(launcher_base: &amp;LauncherBase) -&gt; Router&lt;Arc&lt;AuthorizationServerState&gt;&gt; {
+    router_for(&amp;AUTHORIZATION_PAGES, &amp;sign_out_form_targets(launcher_base))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L99-L101"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 99–101</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="sign_out_form_targets"><a class="header" href="#sign_out_form_targets"><code>sign_out_form_targets</code></a></h3>
+<div id="item-sign_out_form_targets" class="item-anchor"></div>
+
+<p>The <code>form-action</code> sources of a page whose sign-out form posts to this
+origin, and is redirected on to the launcher at <code>launcher_base</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn sign_out_form_targets(launcher_base: &amp;LauncherBase) -&gt; String {
+    format!(
+        "'self' {}",
+        launcher_base.as_url().origin().ascii_serialization()
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L105-L110"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 105–110</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="router_for"><a class="header" href="#router_for"><code>router_for</code></a></h3>
+<div id="item-router_for" class="item-anchor"></div>
+
+<p>The routes above, serving <code>pages</code>, whose forms may submit to
+<code>form_targets</code>. The policy is built once, here. They read no router state.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn router_for&lt;S: Clone + Send + Sync + 'static&gt;(
+    pages: &amp;'static Dir&lt;'static&gt;,
+    form_targets: &amp;str,
+) -&gt; Router&lt;S&gt; {
+    let policy = content_security_policy(form_targets);
+    let consent_policy = policy.clone();
+    let limited_policy = policy.clone();
+    let widening_policy = policy.clone();
+    let device_policy = policy.clone();
+    let pair_policy = policy.clone();
+    Router::new()
+        .route(
+            "/authorize/{id}/consent",
+            get(move || async move { page(pages, CONSENT_PAGE, &amp;consent_policy) }),
+        )
+        .route(
+            "/authorize/{id}/limited",
+            get(move || async move { page(pages, LIMITED_PAGE, &amp;limited_policy) }),
+        )
+        .route(
+            "/session-widenings/{id}/consent",
+            get(move || async move { page(pages, SESSION_WIDENING_PAGE, &amp;widening_policy) }),
+        )
+        .route(
+            DEVICE_PAGE_ROUTE,
+            get(move || async move { page(pages, DEVICE_PAGE, &amp;device_policy) }),
+        )
+        .route(
+            "/pair",
+            get(move || async move { page(pages, PAIR_PAGE, &amp;pair_policy) }),
+        )
+        .route(
+            "/assets/{*file}",
+            get(move |Path(file): Path&lt;String&gt;| async move { asset(pages, &amp;file, &amp;policy) }),
+        )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L156-L191"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 156–191</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="page"><a class="header" href="#page"><code>page</code></a></h3>
+<p><strong>A page is the same uncached bytes whatever its URL holds.</strong></p>
+<div id="item-page" class="item-anchor"></div>
+
+<p>The page <code>name</code> from <code>pages</code>, uncached, under <code>policy</code>, or <code>404</code> when the
+build has none.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn page(pages: &amp;'static Dir&lt;'static&gt;, name: &amp;str, policy: &amp;HeaderValue) -&gt; Response {
+    let Some(page) = pages.get_file(name) else {
+        return StatusCode::NOT_FOUND.into_response();
+    };
+    CacheSuppressed((
+        page_security_headers("text/html; charset=utf-8", policy),
+        page.contents(),
+    ))
+    .into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L195-L204"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 195–204</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The consent card is the same locked-down, <code>no-store</code> HTML whatever the id,
+an id spelling <code>&lt;script&gt;</code> included.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_consent_card_is_the_same_uncached_page_for_every_request() {
+    for uri in [
+        "/authorize/req-1/consent",
+        "/authorize/%3Cscript%3E/consent",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CONTENT_TYPE),
+            "text/html; charset=utf-8",
+            "{uri}"
+        );
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "no-store",
+            "{uri}"
+        );
+        assert_eq!(
+            body(response).await,
+            b"&lt;!doctype html&gt;&lt;title&gt;Approve&lt;/title&gt;",
+            "{uri}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L347-L371"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 347–371</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The limited page is the same locked-down, <code>no-store</code> page whatever the id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_limited_page_is_the_same_uncached_page_for_every_request() {
+    for uri in [
+        "/authorize/req-1/limited",
+        "/authorize/%3Cscript%3E/limited",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "no-store",
+            "{uri}"
+        );
+        assert_eq!(
+            body(response).await,
+            b"&lt;!doctype html&gt;&lt;title&gt;Limited access&lt;/title&gt;",
+            "{uri}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L375-L394"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 375–394</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A session widening’s card is the same locked-down, <code>no-store</code> page
+whatever the id.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_widening_card_is_the_same_uncached_page_for_every_widening() {
+    for uri in [
+        "/session-widenings/widen-1/consent",
+        "/session-widenings/%3Cscript%3E/consent",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "no-store",
+            "{uri}"
+        );
+        assert_eq!(
+            body(response).await,
+            b"&lt;!doctype html&gt;&lt;title&gt;Widen access&lt;/title&gt;",
+            "{uri}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L399-L418"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 399–418</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The device page is the same locked-down, <code>no-store</code> HTML with no code, a
+code, or markup as the code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_device_page_is_the_same_uncached_page_with_or_without_a_code() {
+    for uri in [
+        "/device",
+        "/device?user_code=WDJB-MJHT",
+        "/device?user_code=%3Cscript%3E",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CONTENT_TYPE),
+            "text/html; charset=utf-8",
+            "{uri}"
+        );
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "no-store",
+            "{uri}"
+        );
+        assert_eq!(
+            body(response).await,
+            b"&lt;!doctype html&gt;&lt;title&gt;Authorize a device&lt;/title&gt;",
+            "{uri}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L438-L463"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 438–463</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The pairing page is the same locked-down, <code>no-store</code> page whatever its
+<code>next</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn the_pairing_page_is_the_same_uncached_page_whatever_its_next() {
+    for uri in [
+        "/pair",
+        "/pair?next=%2Foauth%2Fauthorize%3Fclient_id%3Dapp",
+        "/pair?next=%3Cscript%3E",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "no-store",
+            "{uri}"
+        );
+        assert_eq!(
+            body(response).await,
+            b"&lt;!doctype html&gt;&lt;title&gt;Sign in this browser&lt;/title&gt;",
+            "{uri}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L468-L488"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 468–488</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="asset"><a class="header" href="#asset"><code>asset</code></a></h3>
+<p><strong>An asset is cached for a year without revalidating</strong>, since Vite’s file names carry a hash of their contents and never change under a name. Anything but a script, a stylesheet or a font is a <code>404</code>, even when the build holds it.</p>
+<div id="item-asset" class="item-anchor"></div>
+
+<p>The hashed script, stylesheet or font <code>file</code> under <code>pages</code>’ <code>assets/</code>,
+cached as immutable, under <code>policy</code>, or <code>404</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn asset(pages: &amp;'static Dir&lt;'static&gt;, file: &amp;str, policy: &amp;HeaderValue) -&gt; Response {
+    let Some(content_type) = asset_content_type(file) else {
+        return StatusCode::NOT_FOUND.into_response();
+    };
+    let Some(asset) = pages.get_file(format!("{ASSETS_DIR}/{file}")) else {
+        return StatusCode::NOT_FOUND.into_response();
+    };
+    (
+        [(header::CACHE_CONTROL, IMMUTABLE)],
+        page_security_headers(content_type, policy),
+        asset.contents(),
+    )
+        .into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L208-L221"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 208–221</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Scripts, a stylesheet and a <code>.woff2</code> font are served with their types,
+locked down, and cached for a year as <code>immutable</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn hashed_scripts_stylesheets_and_fonts_are_immutable_with_their_types() {
+    for (uri, content_type, contents) in [
+        (
+            "/assets/consent-abc123.js",
+            "text/javascript; charset=utf-8",
+            &amp;b"console.log(1)"[..],
+        ),
+        (
+            "/assets/react-def456.js",
+            "text/javascript; charset=utf-8",
+            &amp;b"export{}"[..],
+        ),
+        (
+            "/assets/consent-abc123.css",
+            "text/css; charset=utf-8",
+            &amp;b"body{}"[..],
+        ),
+        (
+            "/assets/sans-latin-1a2b3c.woff2",
+            "font/woff2",
+            &amp;b"wOF2"[..],
+        ),
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::OK, "{uri}");
+        assert_locked_down(&amp;response, uri);
+        assert_eq!(
+            header_of(&amp;response, header::CONTENT_TYPE),
+            content_type,
+            "{uri}"
+        );
+        assert_eq!(
+            header_of(&amp;response, header::CACHE_CONTROL),
+            "public, max-age=31536000, immutable",
+            "{uri}"
+        );
+        assert_eq!(body(response).await, contents, "{uri}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L537-L575"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 537–575</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A missing asset, a <code>.woff</code>, an <code>.svg</code>, a path climbing out of <code>assets/</code>, a
+page by its file name, and a path under the device page are all <code>404</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn anything_but_a_built_script_stylesheet_or_font_is_not_found() {
+    for uri in [
+        "/assets/nothing.js",
+        "/assets/nothing.woff2",
+        "/assets/sans-latin-1a2b3c.woff",
+        "/assets/logo-0a1b2c.svg",
+        "/assets/../consent.html",
+        "/assets/%2E%2E/consent.html",
+        "/consent.html",
+        "/device.html",
+        "/pair.html",
+        "/limited.html",
+        "/widening.html",
+        "/device/WDJB-MJHT",
+        "/authorize/req-1/consent.html",
+    ] {
+        let response = get(uri).await;
+        assert_eq!(response.status(), StatusCode::NOT_FOUND, "{uri}");
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L580-L599"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 580–599</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="asset_content_type"><a class="header" href="#asset_content_type"><code>asset_content_type</code></a></h3>
+<div id="item-asset_content_type" class="item-anchor"></div>
+
+<p>The media type an asset is served as, by its extension: a script, a
+stylesheet or a font, the only files a page loads under its CSP. <code>None</code> for
+anything else.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn asset_content_type(file: &amp;str) -&gt; Option&lt;&amp;'static str&gt; {
+    match FilePath::new(file)
+        .extension()
+        .and_then(|extension| extension.to_str())
+    {
+        Some("js") =&gt; Some("text/javascript; charset=utf-8"),
+        Some("css") =&gt; Some("text/css; charset=utf-8"),
+        Some("woff2") =&gt; Some("font/woff2"),
+        _ =&gt; None,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L226-L236"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 226–236</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="immutable"><a class="header" href="#immutable"><code>IMMUTABLE</code></a></h3>
+<div id="item-IMMUTABLE" class="item-anchor"></div>
+
+<p>How long a browser may keep a hashed asset: a year, without revalidating.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const IMMUTABLE: &amp;str = "public, max-age=31536000, immutable";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L95"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> line 95</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="consent_page_location"><a class="header" href="#consent_page_location"><code>consent_page_location</code></a></h3>
+<div id="item-consent_page_location" class="item-anchor"></div>
+
+<p>The <code>Location</code> <code>/oauth/authorize</code> sends a browser whose session can decide
+pending request <code>request_id</code> to: the consent card, beside the endpoint.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn consent_page_location(request_id: &amp;str) -&gt; String {
+    request_page_location(request_id, "consent")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L114-L116"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 114–116</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="limited_page_location"><a class="header" href="#limited_page_location"><code>limited_page_location</code></a></h3>
+<div id="item-limited_page_location" class="item-anchor"></div>
+
+<p>The <code>Location</code> <code>/oauth/authorize</code> sends a browser whose session holds less
+than pending request <code>request_id</code> asks for: the limited page, beside the
+endpoint.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn limited_page_location(request_id: &amp;str) -&gt; String {
+    request_page_location(request_id, LIMITED_PAGE_SEGMENT)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L121-L123"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 121–123</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The limited page’s redirect resolves beside <code>/oauth/authorize</code> to the
+page for that request, whatever its id holds.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_limited_location_resolves_to_the_limited_page() {
+    let authorize =
+        Url::parse("https://ruth.relay.example/oauth/authorize?x=1").expect("valid url");
+    assert_eq!(
+        authorize
+            .join(&amp;limited_page_location("req 1/?"))
+            .expect("resolves")
+            .path(),
+        "/oauth/authorize/req%201%2F%3F/limited"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L423-L433"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 423–433</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="pairing_page_location"><a class="header" href="#pairing_page_location"><code>pairing_page_location</code></a></h3>
+<div id="item-pairing_page_location" class="item-anchor"></div>
+
+<p>The <code>Location</code> <code>/oauth/authorize</code> sends a browser without a browser session
+to: the pairing page, beside the endpoint, with <code>next</code> (the path and query
+of the authorize request it made, on this origin) in its query, so the
+page sends the paired browser back to it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn pairing_page_location(next: &amp;str) -&gt; String {
+    let query = form_urlencoded::Serializer::new(String::new())
+        .append_pair(NEXT_PARAM, next)
+        .finish();
+    format!("pair?{query}")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L129-L134"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 129–134</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The pairing redirect resolves beside <code>/oauth/authorize</code> to the pairing
+page, and its <code>next</code> decodes back to the authorize request’s own path
+and query, whatever they hold.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_pairing_location_resolves_to_the_pairing_page_carrying_next() {
+    let authorize =
+        Url::parse("https://ruth.relay.example/oauth/authorize?x=1").expect("valid url");
+    for next in [
+        "/oauth/authorize?client_id=app&amp;scope=a%20b&amp;redirect_uri=https%3A%2F%2Fapp%2Fcb",
+        "/oauth/authorize?state=a&amp;b#c+d",
+    ] {
+        let resolved = authorize
+            .join(&amp;pairing_page_location(next))
+            .expect("resolves");
+        assert_eq!(resolved.path(), "/oauth/pair");
+        let nexts: Vec&lt;String&gt; = resolved
+            .query_pairs()
+            .filter(|(name, _)| name == NEXT_PARAM)
+            .map(|(_, value)| value.into_owned())
+            .collect();
+        assert_eq!(nexts, [next]);
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L494-L512"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 494–512</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="device_page_url"><a class="header" href="#device_page_url"><code>device_page_url</code></a></h3>
+<p>An absolute URL, since a device shows it to a person who types it elsewhere.</p>
+<div id="item-device_page_url" class="item-anchor"></div>
+
+<p>The RFC 8628 <code>verification_uri</code> of the server at <code>server_origin</code>: the
+device verification page.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn device_page_url(server_origin: &amp;Url) -&gt; Url {
+    let mut device_page = server_origin.clone();
+    device_page.set_path(&amp;format!("{OAUTH_MOUNT}{DEVICE_PAGE_ROUTE}"));
+    device_page
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L138-L142"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 138–142</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="device_page_url_with_code"><a class="header" href="#device_page_url_with_code"><code>device_page_url_with_code</code></a></h3>
+<div id="item-device_page_url_with_code" class="item-anchor"></div>
+
+<p>The RFC 8628 <code>verification_uri_complete</code> for <code>user_code</code>: <code>device_page</code>
+(see <a href="#item-device_page_url"><code>device_page_url</code></a>) with the code in its query, which the page fills
+its code box from and still asks the Owner to confirm.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn device_page_url_with_code(device_page: &amp;Url, user_code: &amp;str) -&gt; Url {
+    let mut url = device_page.clone();
+    url.query_pairs_mut()
+        .append_pair(USER_CODE_PARAM, user_code);
+    url
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L147-L152"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 147–152</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Both device page URLs keep the server origin’s port, and a code holding <code>&amp;</code>
+and a space is form-encoded.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_device_page_urls_are_on_the_server_origin_with_the_code_encoded() {
+    let device_page =
+        device_page_url(&amp;Url::parse("https://ruth.relay.example:8443").expect("an origin"));
+    assert_eq!(
+        device_page.as_str(),
+        "https://ruth.relay.example:8443/oauth/device"
+    );
+    assert_eq!(
+        device_page_url_with_code(&amp;device_page, "WDJB-MJHT").as_str(),
+        "https://ruth.relay.example:8443/oauth/device?user_code=WDJB-MJHT"
+    );
+    assert_eq!(
+        device_page_url_with_code(&amp;device_page, "a&amp;b c").as_str(),
+        "https://ruth.relay.example:8443/oauth/device?user_code=a%26b+c"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_pages.rs#L517-L532"><code>authorization-server-rust/src/http/routes/oauth/authorization_pages.rs</code> lines 517–532</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthauthorization_status"><a class="header" href="#httproutesoauthauthorization_status"><code>http::routes::oauth::authorization_status</code></a></h2>
+<h3 id="authorizationstatus"><a class="header" href="#authorizationstatus"><code>AuthorizationStatus</code></a></h3>
+<div id="item-AuthorizationStatus" class="item-anchor"></div>
+
+<p>Polling response for the wait page watching an authorization request as it
+moves from <code>Pending</code> toward approval or denial: where the request stands,
+and once it is decided, where to send the browser.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum AuthorizationStatus {
+    /// `{"status":"pending"}`: undecided and unexpired, whether it waits for
+    /// the Owner or still sits on its browser's limited page. The wait page
+    /// keeps polling.
+    Pending,
+    /// `{"status":"denied","redirect":…}`: the Owner declined, or the
+    /// browser session the request was made in was revoked; the poll can't
+    /// tell the two apart, so every denial reads as declined.
+    Denied {
+        /// Client callback URL carrying `error=access_denied`, an
+        /// `error_description` and `state` for code-flow requests (RFC 6749
+        /// §4.1.2.1) so the wait page can complete the flow. Always set: only
+        /// code-flow requests are polled here.
+        redirect: Option&lt;String&gt;,
+    },
+    /// `{"status":"approved","redirect":…}`: the request was approved and
+    /// its code issued.
+    Approved {
+        /// Client callback URL carrying the redeemable `code` and `state`
+        /// (RFC 6749 §4.1.2). The wait page follows it.
+        redirect: String,
+    },
+    /// `{"status":"error","message":…}`: the request passed its expiry
+    /// undecided, so it can't be decided any more. The wait page stops and
+    /// shows the message.
+    Error {
+        /// What the wait page shows: "Authorization request expired".
+        message: String,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_status.rs#L34-L64"><code>authorization-server-rust/src/http/routes/oauth/authorization_status.rs</code> lines 34–64</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="into_response"><a class="header" href="#into_response"><code>into_response</code></a></h4>
+<div id="item-AuthorizationStatus--into_response" class="item-anchor"></div>
+
+<p>Rendered through <a href="../errors-and-wire-shapes.html#item-CacheSuppressed"><code>CacheSuppressed</code></a>: the <code>Approved</code> variant carries the
+client redirect with a redeemable authorization <code>code</code>, which no cache may
+retain. Every variant is suppressed so the poll’s caching can’t differ by
+state.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn into_response(self) -&gt; Response {
+    CacheSuppressed(Json(self)).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_status.rs#L71-L73"><code>authorization-server-rust/src/http/routes/oauth/authorization_status.rs</code> lines 71–73</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_authorization_status_request"><a class="header" href="#handle_authorization_status_request"><code>handle_authorization_status_request</code></a></h3>
+<p><strong>A leaked request id collects nothing.</strong> The <a href="../../capabilities/oauth/authorization-status-reader.html">authorization status reader</a> enforces who may read; the handler passes it the browser session the cookie carries.</p>
+<div id="item-handle_authorization_status_request" class="item-anchor"></div>
+
+<p>Return the current status of the pending authorization request, including
+the final redirect URL once approved. The caller’s browser session (its
+<code>__Host-browser_session</code> cookie) is answered when the request was made in
+it, or when its grant covers <code>wildflower/AuthorizationRequest.r</code> and <code>.u</code>,
+the scopes that decide the request on the consent card. Any other caller,
+with another session or none, gets the same <code>404</code> as an unknown id, so a
+leaked request id can’t collect the code.</p>
+<p>The answers, by where the request stands:</p>
+<ul>
+<li>pending: <code>200</code> <a href="#item-AuthorizationStatus"><code>AuthorizationStatus::Pending</code></a>;</li>
+<li>pending past its expiry: <code>200</code> <a href="#item-AuthorizationStatus"><code>AuthorizationStatus::Error</code></a>;</li>
+<li>denied: <code>200</code> <a href="#item-AuthorizationStatus"><code>AuthorizationStatus::Denied</code></a>, with the client’s
+<code>access_denied</code> callback;</li>
+<li>approved: <code>200</code> <a href="#item-AuthorizationStatus"><code>AuthorizationStatus::Approved</code></a>, with the client’s
+callback carrying the code;</li>
+<li>unknown, or not readable by this caller: <code>404</code>
+<code>AuthorizationRequestNotFound</code>;</li>
+<li>approved but with no code: <code>500</code> <code>server_error</code>, an invariant the store
+broke.</li>
+</ul>
+<p>Only code requests are answered here; a device and a pairing have polls of
+their own.</p>
+<p>The error side is <code>axum::response::ErrorResponse</code> because two error shapes
+share the handler: the Owner-surface <code>AuthorizationServerError</code> (its
+<code>AuthorizationRequestNotFound</code> 404 / logged 500) and the OAuth-shaped
+<code>OAuthErrorResponse</code> <code>server_error</code> — <code>?</code> converts either through its
+<code>IntoResponse</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_authorization_status_request(
+    reader: Live&lt;LiveAuthorizationStatusReader&gt;,
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    headers: HeaderMap,
+    Path(id): Path&lt;String&gt;,
+) -&gt; axum::response::Result&lt;AuthorizationStatus&gt; {
+    let polling_browser_session =
+        carried_browser_session(&amp;token_verifier, &amp;headers).map_err(|error| {
+            InternalError::new("verify a browser session at /oauth/authorize/{id}", error)
+        })?;
+    let poller = polling_browser_session.and_then(|claims| {
+        let grant = claims.granted();
+        claims.sid.map(|sid| PollingBrowserSession { sid, grant })
+    });
+    let view = reader.status(&amp;id, poller.as_ref(), Utc::now()).map_err(
+        |error| -&gt; axum::response::ErrorResponse {
+            match error {
+                AuthorizationStatusError::NotFound { id } =&gt; {
+                    AuthorizationServerError::AuthorizationRequestNotFound { id }.into()
+                }
+                AuthorizationStatusError::ApprovedWithoutCode =&gt; {
+                    OAuthErrorResponse::server_error("Authorization code missing").into()
+                }
+                AuthorizationStatusError::Store(error) =&gt; error.into(),
+            }
+        },
+    )?;
+    Ok(match view {
+        AuthorizationStatusView::Pending =&gt; AuthorizationStatus::Pending,
+        AuthorizationStatusView::Expired =&gt; AuthorizationStatus::Error {
+            message: "Authorization request expired".to_string(),
+        },
+        // Build the client callback so the user-agent waiting at the client's
+        // redirect_uri receives `error=access_denied`, an `error_description`
+        // and `state`, and stops hanging. The poll can't tell an Owner's
+        // decline from a revoked browser session, so every denial reads as
+        // declined.
+        AuthorizationStatusView::Denied {
+            redirect_uri,
+            client_state,
+        } =&gt; AuthorizationStatus::Denied {
+            redirect: Some(build_client_error_redirect_url(
+                &amp;redirect_uri,
+                OAuthErrorCode::AccessDenied,
+                REQUEST_DECLINED_DESCRIPTION,
+                &amp;client_state,
+            )),
+        },
+        AuthorizationStatusView::Approved {
+            redirect_uri,
+            code,
+            client_state,
+        } =&gt; AuthorizationStatus::Approved {
+            redirect: build_client_redirect_url(&amp;redirect_uri, &amp;code, &amp;client_state),
+        },
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/authorization_status.rs#L116-L172"><code>authorization-server-rust/src/http/routes/oauth/authorization_status.rs</code> lines 116–172</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="httproutesoauthsession_shortfall"><a class="header" href="#httproutesoauthsession_shortfall"><code>http::routes::oauth::session_shortfall</code></a></h2>
+<p>A browser whose session holds less than an app asks for is told so on the <a href="../../domain/authorization-request/code-request.html#the-limited-page">limited page</a> before anyone else is bothered. The page makes three calls on its own origin: read what the session lacks, go on, or cancel; and it can ask the Owner to widen the session, through the <a href="session-widening-routes.html">session widening routes</a>. <strong>Each answers only the browser session the request was made in</strong>; any other browser, with another session or none, gets the same <code>404</code> as an unknown id.</p>
+<p>The two posts carry no body, so another page could send them as a simple request. What refuses one is the host’s cookie-to-bearer layer, which answers <code>403</code> to a write carrying the cookie from any origin but the server’s. Every answer is uncached, since a Continue may carry the app’s redirect with a code. The <a href="../../integration-tests/session-shortfall.html">Session Shortfall</a> integration tests hold all three.</p>
+<h3 id="sessionshortfallbody"><a class="header" href="#sessionshortfallbody"><code>SessionShortfallBody</code></a></h3>
+<div id="item-SessionShortfallBody" class="item-anchor"></div>
+
+<p>What the limited page says: the app, and the scopes this browser’s session
+lacks of what the app asked for.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct SessionShortfallBody {
+    /// The app's registered name, or its `client_id` when it has none yet.
+    client_name: String,
+    /// The requested scopes, as the app asked for them, that a code issued in
+    /// this browser's session would not carry in full, in the request's order.
+    missing_scopes: Vec&lt;String&gt;,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L41-L47"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 41–47</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from"><a class="header" href="#from"><code>from</code></a></h4>
+<div id="item-SessionShortfallBody--from" class="item-anchor"></div>
+
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn from(view: SessionShortfallView) -&gt; Self {
+    SessionShortfallBody {
+        client_name: view.client_name,
+        missing_scopes: view.missing_scopes,
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L50-L55"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 50–55</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="sessionshortfallnextbody"><a class="header" href="#sessionshortfallnextbody"><code>SessionShortfallNextBody</code></a></h3>
+<div id="item-SessionShortfallNextBody" class="item-anchor"></div>
+
+<p>Where the limited page sends the browser next.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) struct SessionShortfallNextBody {
+    /// The client callback (with a code, or with `error=access_denied`), or a
+    /// path on this server: the consent card or the wait page.
+    location: String,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L60-L64"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 60–64</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="requesting_browser_session"><a class="header" href="#requesting_browser_session"><code>requesting_browser_session</code></a></h3>
+<div id="item-requesting_browser_session" class="item-anchor"></div>
+
+<p>The browser session <code>headers</code> carry, and its <code>sid</code>, as the limited page’s
+calls are answered in it; the <code>404</code> an unknown request <code>id</code> gets when they
+carry none.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn requesting_browser_session(
+    token_verifier: &amp;LiveTokenVerifier,
+    headers: &amp;HeaderMap,
+    id: &amp;str,
+) -&gt; Result&lt;(VerifiedClaims, String), AuthorizationServerError&gt; {
+    let not_found = || AuthorizationServerError::AuthorizationRequestNotFound { id: id.to_owned() };
+    let claims = carried_browser_session(token_verifier, headers)
+        .map_err(|error| {
+            AuthorizationServerError::infrastructure(
+                "verify a browser session at the limited page",
+                error,
+            )
+        })?
+        .ok_or_else(not_found)?;
+    let sid = claims.sid.clone().ok_or_else(not_found)?;
+    Ok((claims, sid))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L69-L85"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 69–85</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="next_location"><a class="header" href="#next_location"><code>next_location</code></a></h3>
+<div id="item-next_location" class="item-anchor"></div>
+
+<p><code>location</code>, as the limited page’s next stop, uncached.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn next_location(location: String) -&gt; Response {
+    CacheSuppressed(Json(SessionShortfallNextBody { location })).into_response()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L88-L90"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 88–90</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_session_shortfall_read"><a class="header" href="#handle_session_shortfall_read"><code>handle_session_shortfall_read</code></a></h3>
+<div id="item-handle_session_shortfall_read" class="item-anchor"></div>
+
+<p>What this browser’s session lacks of request <code>id</code>, and the app asking.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_session_shortfall_read(
+    session_shortfall: Live&lt;LiveSessionShortfall&gt;,
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    headers: HeaderMap,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Response, AuthorizationServerError&gt; {
+    let (_, sid) = requesting_browser_session(&amp;token_verifier, &amp;headers, &amp;id)?;
+    let view = session_shortfall.read(&amp;id, &amp;sid, Utc::now())?;
+    Ok(CacheSuppressed(Json(SessionShortfallBody::from(view))).into_response())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L103-L112"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 103–112</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_session_shortfall_continue"><a class="header" href="#handle_session_shortfall_continue"><code>handle_session_shortfall_continue</code></a></h3>
+<p>The request takes the branch <code>/oauth/authorize</code> would have taken had the session held everything, and <a href="authorize.html#item-next_step_location"><code>next_step_location</code></a> builds the location, under <code>/oauth/</code>, since the page follows it from elsewhere. Any other failure renders as <code>/oauth/authorize</code> would render it (<a href="authorize.html#item-AuthorizeError"><code>AuthorizeError</code></a>).</p>
+<div id="item-handle_session_shortfall_continue" class="item-anchor"></div>
+
+<p>Go on with request <code>id</code> although this browser’s session holds less than it
+asks for: issue a code under a standing grant that covers it, or else ask
+the Owner, on the consent card when this browser can decide it and on the
+wait page otherwise, with the request’s five minutes started again. The
+request spent from the authorization start limit when <code>/oauth/authorize</code>
+parked it, so going on spends nothing. This browser session’s later
+requests for the same app skip the limited page. A client disabled since
+the request parked ends it: the request is denied and the app is sent
+<code>access_denied</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_session_shortfall_continue(
+    code_authorization_starter: Live&lt;LiveCodeAuthorizationStarter&gt;,
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    headers: HeaderMap,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Response, AuthorizationServerError&gt; {
+    let (_, sid) = requesting_browser_session(&amp;token_verifier, &amp;headers, &amp;id)?;
+    let next_step = code_authorization_starter.continue_past_session_shortfall(
+        &amp;id,
+        &amp;sid,
+        generate_authorization_code(),
+        Utc::now(),
+    );
+    let location = match next_step {
+        Ok(next_step) =&gt; next_step_location(next_step, &amp;format!("{OAUTH_MOUNT}/")),
+        Err(AuthorizationStartError::Store(
+            error @ AuthorizationServerError::AuthorizationRequestNotFound { .. },
+        )) =&gt; return Err(error),
+        // Cancelled between this Continue's acknowledgement and its fast-path
+        // approval: no longer waiting here, like any other request that isn't.
+        Err(AuthorizationStartError::RequestNotPending) =&gt; {
+            return Err(AuthorizationServerError::AuthorizationRequestNotFound { id })
+        }
+        Err(error) =&gt; match AuthorizeError::from(error) {
+            AuthorizeError::Redirect { location } =&gt; location,
+            other =&gt; return Ok(other.into_response()),
+        },
+    };
+    Ok(next_location(location))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L134-L163"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 134–163</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="handle_session_shortfall_cancel"><a class="header" href="#handle_session_shortfall_cancel"><code>handle_session_shortfall_cancel</code></a></h3>
+<div id="item-handle_session_shortfall_cancel" class="item-anchor"></div>
+
+<p>Cancel request <code>id</code>: deny it and send the browser back to the app with
+<code>error=access_denied</code>. Cancel isn’t remembered: this session’s next request
+for the app stops at the limited page again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) async fn handle_session_shortfall_cancel(
+    session_shortfall: Live&lt;LiveSessionShortfall&gt;,
+    token_verifier: Live&lt;LiveTokenVerifier&gt;,
+    headers: HeaderMap,
+    Path(id): Path&lt;String&gt;,
+) -&gt; Result&lt;Response, AuthorizationServerError&gt; {
+    let (_, sid) = requesting_browser_session(&amp;token_verifier, &amp;headers, &amp;id)?;
+    let client_callback = session_shortfall.cancel(&amp;id, &amp;sid, Utc::now())?;
+    Ok(next_location(client_callback))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/ed7bf832d9c0292a0f0cf75102e550731af05c52/apps/host/wildflower-server/authorization-server-rust/src/http/routes/oauth/session_shortfall.rs#L178-L187"><code>authorization-server-rust/src/http/routes/oauth/session_shortfall.rs</code> lines 178–187</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/http/routes/authorize.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/http/routes/pairing-and-sign-in.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/http/routes/authorize.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/http/routes/pairing-and-sign-in.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

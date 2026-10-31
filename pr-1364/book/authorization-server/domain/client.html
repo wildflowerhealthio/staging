@@ -1,0 +1,785 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Client - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-ba81b10a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="client"><a class="header" href="#client">Client</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs"><code>authorization-server-rust/src/domain/client/mod.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/kind.rs"><code>authorization-server-rust/src/domain/client/kind.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/registration_source.rs"><code>authorization-server-rust/src/domain/client/registration_source.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs"><code>authorization-server-rust/src/domain/client/presented_change.rs</code></a></p>
+
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/essential_client.rs"><code>authorization-server-rust/src/domain/essential_client.rs</code></a></p>
+
+<p>A <strong>client</strong> is an app that asks for access to the Owner’s FHIR server: a SMART app in a browser, a Pebble companion, the host app. It names itself with a <code>client_id</code> on every request. A client that can keep a secret is <strong>confidential</strong> and authenticates with <a href="client-credentials.html">its credentials</a>; a client that can’t (a single-page app, a native app) is <strong>public</strong>.</p>
+<p>Every client has a <strong>registration</strong>: the redirect URIs it may send a browser back to, the scopes it may ask for, and the grant types it may use at <code>/oauth/token</code>. <strong>Who defines the registration decides how a request is judged against it.</strong> A few clients belong to the server itself, and their registration is fixed: a request is held to it as it stands. Every other client is <strong>trusted on first use</strong>. An app the server has never seen isn’t turned away at <code>/oauth/authorize</code>. Its request goes to the Owner with a warning, and the Owner’s approval writes the registration, or widens it when a known app steps outside what it registered.</p>
+<p>That warning is the <strong>presented client change</strong>: what approving the request would change in the app’s registration. Nothing, if the request stays inside it; create it, for an app the Owner has never approved; or widen it, by a new redirect, new scopes, or both. The change is derived from the current row on every read, never stored, so a consent prompt opened after the row moved shows the move. A request that would change the registration never skips the Owner, even when a <a href="grant.html">standing grant</a> would cover it.</p>
+<p>Two clients the Owner can’t switch off at all, because they are how the Owner gets in: they are <strong>essential</strong>.</p>
+<h2 id="domainclient"><a class="header" href="#domainclient"><code>domain::client</code></a></h2>
+<h3 id="client-1"><a class="header" href="#client-1"><code>Client</code></a></h3>
+<div id="item-Client" class="item-anchor"></div>
+
+<p>A registered OAuth client — the identity and policy bundle that <code>/authorize</code>
+and <code>/token</code> look up by <code>client_id</code>. Diesel-mapped 1:1 to the <code>clients</code>
+table; the JSON list columns convert through the column newtypes in
+<code>crate::db::clients</code> and <code>crate::db::shared</code> at the bind/read boundary.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct Client {
+    /// Primary key — the app's public name for itself, sent on every request.
+    pub client_id: String,
+    /// Human-readable label: what the consent card calls the app.
+    pub name: String,
+    /// Whether the client can keep a secret (`Confidential`) or not (`Public`).
+    pub kind: ClientKind,
+    /// Allowlist of absolute redirect URIs; `/authorize` requires an exact
+    /// match against this set.
+    pub redirect_uris: Vec&lt;Url&gt;,
+    /// Scopes the client is permitted to request, matched by coverage: a
+    /// broad scope admits the narrower ones it covers. A request outside them
+    /// is refused for a server-defined registration, and goes to the Owner as
+    /// a registration change for one trusted on first use.
+    pub allowed_scopes: Vec&lt;String&gt;,
+    /// Grant types the client may use at `/token`; a grant outside this set is
+    /// rejected with `unauthorized_client` (RFC 6749 §5.2).
+    pub allowed_grant_types: Vec&lt;AllowedGrantType&gt;,
+    /// argon2id PHC string of the client secret for `Confidential` clients;
+    /// `None` for `Public`.
+    pub secret_hash: Option&lt;String&gt;,
+    /// When the client was registered.
+    pub registered_at: DateTime&lt;Utc&gt;,
+    /// Set when the Owner disabled the client: a disabled app gets nothing at
+    /// `/authorize` or `/token`. `None` while it is enabled.
+    pub disabled_at: Option&lt;DateTime&lt;Utc&gt;&gt;,
+    /// Who defines the registration: the server, which seeds it and holds
+    /// requests to it, or the Owner's approvals, which create and widen it.
+    pub registration_source: RegistrationSource,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L26-L58"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 26–58</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="is_registration_fixed"><a class="header" href="#is_registration_fixed"><code>is_registration_fixed</code></a></h4>
+<div id="item-Client--is_registration_fixed" class="item-anchor"></div>
+
+<p>Whether the registration is fixed: a request is held to it as it
+stands, and approving one never widens it. True for a registration the
+server defines.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn is_registration_fixed(&amp;self) -&gt; bool {
+    self.registration_source == RegistrationSource::ServerDefined
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L65-L67"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 65–67</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="allows_redirect_uri"><a class="header" href="#allows_redirect_uri"><code>allows_redirect_uri</code></a></h4>
+<p><strong>A redirect is allowed only if it is on the list, exactly</strong>: no prefix or pattern matching.</p>
+<div id="item-Client--allows_redirect_uri" class="item-anchor"></div>
+
+<p>Whether <code>redirect_uri</code> exactly equals an entry on this client’s
+<code>redirect_uris</code> allowlist, with no prefix or pattern matching. This is the one allowlist verdict: both
+<code>/authorize</code> and the consent read path call it, so a prompt can never
+disagree with the endpoint that parked it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn allows_redirect_uri(&amp;self, redirect_uri: &amp;Url) -&gt; bool {
+    self.redirect_uris.contains(redirect_uri)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L86-L88"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 86–88</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="allows_scopes"><a class="header" href="#allows_scopes"><code>allows_scopes</code></a></h4>
+<p><strong>A client may ask for any scope one of its allowed scopes <a href="scopes.html#item-allowed_scope_covers">covers</a>.</strong> The device flow asks this at <code>/oauth/device_authorization</code>, which refuses a request that steps outside. The test builds its client from the <a href="test-fixtures.html#client">shared client fixture</a>.</p>
+<div id="item-Client--allows_scopes" class="item-anchor"></div>
+
+<p>Whether every requested scope is inside this client’s <code>allowed_scopes</code>.
+Coverage-aware (<code>wildflowerhealthio_scopes::allowed_scope_covers</code>), not exact
+membership: a client allowed a broad scope (<code>patient/*.rs</code>) also admits
+a narrower request it covers (<code>patient/Observation.r</code>). Read at
+<code>/device_authorization</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn allows_scopes(&amp;self, requested: &amp;[String]) -&gt; bool {
+    requested
+        .iter()
+        .all(|requested_scope| self.allows_scope(requested_scope))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L75-L79"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 75–79</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Coverage, not spelling: a broad allowlist admits a narrower request it
+covers; a permission or context outside it is refused; an empty request
+is trivially allowed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn allows_scopes_is_coverage_aware() {
+    let client = client("app", &amp;["patient/*.rs", "openid"]);
+    assert!(client.allows_scopes(&amp;owned_scopes(&amp;["patient/Observation.r", "openid"])));
+    assert!(client.allows_scopes(&amp;[]));
+    assert!(!client.allows_scopes(&amp;owned_scopes(&amp;["patient/Observation.c"])));
+    assert!(!client.allows_scopes(&amp;owned_scopes(&amp;["system/*.r"])));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L107-L113"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 107–113</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-Client--allows_scope" class="item-anchor"></div>
+
+<p>Whether some entry of this client’s <code>allowed_scopes</code> covers
+<code>requested_scope</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn allows_scope(&amp;self, requested_scope: &amp;str) -&gt; bool {
+    self.allowed_scopes.iter().any(|allowed| {
+        wildflowerhealthio_scopes::allowed_scope_covers(allowed, requested_scope)
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/mod.rs#L92-L96"><code>authorization-server-rust/src/domain/client/mod.rs</code> lines 92–96</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainclientkind"><a class="header" href="#domainclientkind"><code>domain::client::kind</code></a></h2>
+<h3 id="clientkind"><a class="header" href="#clientkind"><code>ClientKind</code></a></h3>
+<div id="item-ClientKind" class="item-anchor"></div>
+
+<p>OAuth client authentication category (RFC 6749 §2.1) — <code>public</code> clients
+can’t keep a secret (e.g. SPAs, native), <code>confidential</code> ones can.</p>
+<p>The wire string (stored in the <code>kind</code> column and serialized) is the
+lowercased variant name: <code>Public</code> → <code>"public"</code>, <code>Confidential</code> →
+<code>"confidential"</code>. <code>strum</code> derives the <code>&amp;str</code> ↔ enum conversions
+(<code>AsRef&lt;str&gt;</code>, <code>Display</code>, <code>FromStr</code>) from the same
+<code>serialize_all</code> rule the serde <code>rename_all</code> uses, so the two can’t drift.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum ClientKind {
+    /// Can't keep a secret, so it authenticates by its `client_id` alone and
+    /// proves possession with PKCE: a browser app or a native app.
+    Public,
+    /// Keeps a secret on a back end, and presents it at `/token` by Basic
+    /// header or form body; its row stores the secret's argon2id hash.
+    Confidential,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/kind.rs#L34-L41"><code>authorization-server-rust/src/domain/client/kind.rs</code> lines 34–41</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="allowedgranttype"><a class="header" href="#allowedgranttype"><code>AllowedGrantType</code></a></h3>
+<div id="item-AllowedGrantType" class="item-anchor"></div>
+
+<p>A grant type the token endpoint supports, used for the per-client
+allow-list. Wire values match the <code>grant_type</code> parameter (RFC 6749 / RFC
+8628) so the stored JSON reads like the request.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum AllowedGrantType {
+    /// Redeem an authorization code with its PKCE verifier (RFC 6749 §4.1.3).
+    AuthorizationCode,
+    /// Rotate a refresh token into a fresh access token and its successor
+    /// (RFC 6749 §6).
+    RefreshToken,
+    /// Poll with a device code until the Owner decides (RFC 8628 §3.4).
+    DeviceCode,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/kind.rs#L47-L58"><code>authorization-server-rust/src/domain/client/kind.rs</code> lines 47–58</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="all"><a class="header" href="#all"><code>ALL</code></a></h4>
+<p>The host app’s seeded client is allowed every grant, and so is a client trusted on first use when an approval creates it.</p>
+<div id="item-AllowedGrantType--ALL" class="item-anchor"></div>
+
+<p>Every grant the token endpoint supports: the allow-list the host app’s
+seeded client gets, and so does a client trusted on first use when an
+approval creates it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub const ALL: [AllowedGrantType; 3] = [
+    AllowedGrantType::AuthorizationCode,
+    AllowedGrantType::RefreshToken,
+    AllowedGrantType::DeviceCode,
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/kind.rs#L64-L68"><code>authorization-server-rust/src/domain/client/kind.rs</code> lines 64–68</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainclientregistration_source"><a class="header" href="#domainclientregistration_source"><code>domain::client::registration_source</code></a></h2>
+<h3 id="registrationsource"><a class="header" href="#registrationsource"><code>RegistrationSource</code></a></h3>
+<div id="item-RegistrationSource" class="item-anchor"></div>
+
+<p>Who defines a client’s registration, stored in the <code>registration_source</code>
+column (<code>strum</code> derives the <code>snake_case</code> wire strings, <code>server_defined</code>
+and <code>trusted_on_first_use</code>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum RegistrationSource {
+    /// The server defines it, and boot-time seeding rewrites it every boot:
+    /// the host app's client, the browser-session client, and the FHIR
+    /// server UI's client. A request is held to it, and an approval never
+    /// writes it.
+    ServerDefined,
+    /// The Owner's approvals define it: created by the first approval of an
+    /// unknown client, and widened by any later approval of a request outside
+    /// it.
+    TrustedOnFirstUse,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/registration_source.rs#L15-L25"><code>authorization-server-rust/src/domain/client/registration_source.rs</code> lines 15–25</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainclientpresented_change"><a class="header" href="#domainclientpresented_change"><code>domain::client::presented_change</code></a></h2>
+<p>The tests judge requests at the <a href="test-fixtures.html#client">presented-change fixtures’</a> redirect, against clients built from the shared client fixture.</p>
+<h3 id="presentedclientchange"><a class="header" href="#presentedclientchange"><code>PresentedClientChange</code></a></h3>
+<div id="item-PresentedClientChange" class="item-anchor"></div>
+
+<p>What approving an authorization-code request would change in its client’s
+registration: the registration it presents (see
+<a href="#item-PresentedClientRegistration"><code>PresentedClientRegistration</code></a>) judged against the current <code>clients</code> row.
+The consent prompt renders it as the Owner-facing warning.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub enum PresentedClientChange {
+    /// The row exists, the `redirect_uri` is on its allowlist, and every
+    /// requested scope is covered by `allowed_scopes`: approving changes
+    /// nothing. The only change that may take the existing-grant fast path at
+    /// `/authorize`.
+    NoChange,
+    /// No row exists for this `client_id`: approving would create one. Nothing
+    /// is persisted for such a client until the Owner approves.
+    WouldCreate,
+    /// The row exists but the presented registration steps outside it, so
+    /// approving would widen the row (for a client trusted on first use).
+    WouldWiden {
+        /// The presented `redirect_uri` is not on the allowlist.
+        redirect_uri_is_new: bool,
+        /// The requested scopes no `allowed_scopes` entry covers, in request
+        /// order. Empty when only the redirect changed.
+        unregistered_requested_scopes: Vec&lt;String&gt;,
+    },
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L26-L44"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 26–44</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="from_presented_registration"><a class="header" href="#from_presented_registration"><code>from_presented_registration</code></a></h4>
+<div id="item-PresentedClientChange--from_presented_registration" class="item-anchor"></div>
+
+<p>Judge <code>presented_registration</code> against its current client row.</p>
+<p>@returns <a href="#item-PresentedClientChange"><code>WouldCreate</code></a> when no
+row exists, <a href="#item-PresentedClientChange"><code>NoChange</code></a> when the
+redirect is on the allowlist and every requested scope is covered, and
+<a href="#item-PresentedClientChange"><code>WouldWiden</code></a> otherwise — carrying
+which of the two stepped outside the registration.</p>
+<p>Scope coverage is the same coverage-aware check the rest of the slice
+uses (<code>wildflowerhealthio_scopes::allowed_scope_covers</code>): a client
+allowed a broad scope also covers a narrower same-grammar request. An
+unparseable scope parses to an <code>Unknown</code> scope that only covers itself,
+so it is reported as new unless the registration lists it verbatim —
+deliberately, since the Owner should see an unrecognized scope string.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn from_presented_registration(
+    presented_registration: &amp;PresentedClientRegistration&lt;'_&gt;,
+) -&gt; PresentedClientChange {
+    let Some(existing_client) = presented_registration.maybe_existing_client else {
+        return PresentedClientChange::WouldCreate;
+    };
+    let redirect_uri_is_new =
+        !existing_client.allows_redirect_uri(presented_registration.redirect_uri);
+    let unregistered_requested_scopes = uncovered_scopes(
+        &amp;existing_client.allowed_scopes,
+        presented_registration.scopes,
+    );
+    if redirect_uri_is_new || !unregistered_requested_scopes.is_empty() {
+        PresentedClientChange::WouldWiden {
+            redirect_uri_is_new,
+            unregistered_requested_scopes,
+        }
+    } else {
+        PresentedClientChange::NoChange
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L61-L81"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 61–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A client with no row would be created by an approval.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_unknown_client_would_create_its_registration() {
+    assert_eq!(
+        judge(None, &amp;redirect(), &amp;["read"]),
+        PresentedClientChange::WouldCreate
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L144-L149"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 144–149</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A registered redirect with every scope covered changes nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_allowlisted_redirect_with_covered_scopes_changes_nothing() {
+    let client = client("app", &amp;["read"]);
+    assert_eq!(
+        judge(Some(&amp;client), &amp;redirect(), &amp;["read"]),
+        PresentedClientChange::NoChange
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L153-L159"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 153–159</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Coverage, not string equality: a broad registered scope admits the
+narrower same-grammar request it covers, exactly as <code>/authorize</code>’s
+allowlist check does for a server-defined registration.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_scope_covered_by_a_broader_registered_scope_changes_nothing() {
+    let client = client("app", &amp;["patient/Observation.rs"]);
+    assert_eq!(
+        judge(Some(&amp;client), &amp;redirect(), &amp;["patient/Observation.r"]),
+        PresentedClientChange::NoChange
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L165-L171"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 165–171</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An unregistered redirect with covered scopes would widen the registration
+by the redirect alone, naming no new scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_unregistered_redirect_would_widen_without_new_scopes() {
+    let client = client("app", &amp;["read"]);
+    let elsewhere = Url::parse("https://other.example/cb").unwrap();
+    assert_eq!(
+        judge(Some(&amp;client), &amp;elsewhere, &amp;["read"]),
+        PresentedClientChange::WouldWiden {
+            redirect_uri_is_new: true,
+            unregistered_requested_scopes: Vec::new(),
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L176-L186"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 176–186</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>An unparseable scope string flows through as an <code>Unknown</code> scope that
+covers only itself: new unless the registration lists it verbatim.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_unparseable_scope_is_new_unless_registered_verbatim() {
+    let client = client("app", &amp;["not a scope!!"]);
+    assert_eq!(
+        judge(Some(&amp;client), &amp;redirect(), &amp;["not a scope!!"]),
+        PresentedClientChange::NoChange
+    );
+    assert_eq!(
+        judge(Some(&amp;client), &amp;redirect(), &amp;["something else!!"]),
+        PresentedClientChange::WouldWiden {
+            redirect_uri_is_new: false,
+            unregistered_requested_scopes: vec!["something else!!".to_owned()],
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L205-L218"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 205–218</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The change is exactly one of the three, and each is decided by the
+two facts it reports: <code>NoChange</code> iff the redirect is allowlisted and
+nothing is uncovered, and a <code>WouldWiden</code> change never carries both
+“nothing new” flags (that would be <code>NoChange</code>). The reported
+<code>unregistered_requested_scopes</code> are always a subset of what was requested, in request
+order.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_change_agrees_with_what_it_reports(
+    registered in prop::collection::vec(arb_plain_scope(), 0..5),
+    requested in prop::collection::vec(arb_plain_scope(), 0..5),
+    allowlisted in any::&lt;bool&gt;(),
+) {
+    let mut app = client("app", &amp;[]);
+    app.allowed_scopes = registered;
+    if !allowlisted {
+        app.redirect_uris = Vec::new();
+    }
+    let change = PresentedClientChange::from_presented_registration(&amp;PresentedClientRegistration {
+        maybe_existing_client: Some(&amp;app),
+        redirect_uri: &amp;redirect(),
+        scopes: &amp;requested,
+    });
+    let uncovered = uncovered_scopes(&amp;app.allowed_scopes, &amp;requested);
+    match change {
+        PresentedClientChange::WouldCreate =&gt; prop_assert!(false, "a known client never WouldCreate"),
+        PresentedClientChange::NoChange =&gt; {
+            prop_assert!(allowlisted);
+            prop_assert!(uncovered.is_empty());
+        }
+        PresentedClientChange::WouldWiden { redirect_uri_is_new, unregistered_requested_scopes } =&gt; {
+            prop_assert_eq!(redirect_uri_is_new, !allowlisted);
+            prop_assert_eq!(&amp;unregistered_requested_scopes, &amp;uncovered);
+            prop_assert!(redirect_uri_is_new || !unregistered_requested_scopes.is_empty());
+            // A subset of the request, in request order.
+            let mut remaining = requested.iter();
+            for new_scope in &amp;unregistered_requested_scopes {
+                prop_assert!(remaining.any(|r| r == new_scope));
+            }
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L237-L270"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 237–270</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="would_change_registration"><a class="header" href="#would_change_registration"><code>would_change_registration</code></a></h4>
+<div id="item-PresentedClientChange--would_change_registration" class="item-anchor"></div>
+
+<p>Whether approving this request would create or widen its client’s
+registration. A request that would is kept off the <code>/authorize</code>
+standing-grant fast path, and approving it needs the Owner’s explicit
+acknowledgement that the app (or its redirect / scopes) is new to them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn would_change_registration(&amp;self) -&gt; bool {
+    !matches!(self, PresentedClientChange::NoChange)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L87-L89"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 87–89</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Widening the registration to cover everything requested (the exact
+union an approval persists) makes the next identical request
+<code>NoChange</code> — the property the fast path relies on.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn unioning_the_requested_scopes_makes_the_next_request_change_nothing(
+    registered in prop::collection::vec(arb_plain_scope(), 0..5),
+    requested in prop::collection::vec(arb_plain_scope(), 0..5),
+) {
+    let mut app = client("app", &amp;[]);
+    app.allowed_scopes = registered;
+    app.allowed_scopes.extend(requested.iter().cloned());
+    prop_assert_eq!(
+        PresentedClientChange::from_presented_registration(&amp;PresentedClientRegistration {
+            maybe_existing_client: Some(&amp;app),
+            redirect_uri: &amp;redirect(),
+            scopes: &amp;requested,
+        }),
+        PresentedClientChange::NoChange,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L276-L291"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 276–291</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="presentedclientregistration"><a class="header" href="#presentedclientregistration"><code>PresentedClientRegistration</code></a></h3>
+<div id="item-PresentedClientRegistration" class="item-anchor"></div>
+
+<p>The client registration an authorization-code request presents (its
+redirect and scopes), paired with the stored row for its <code>client_id</code> it is
+judged against.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) struct PresentedClientRegistration&lt;'a&gt; {
+    /// The current `clients` row, or `None` when the `client_id` is unknown.
+    pub(crate) maybe_existing_client: Option&lt;&amp;'a Client&gt;,
+    /// The `redirect_uri` the request presented, already parsed.
+    pub(crate) redirect_uri: &amp;'a Url,
+    /// The scopes the request presented, whitespace-split, in request order.
+    pub(crate) scopes: &amp;'a [String],
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L95-L102"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 95–102</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="uncovered_scopes"><a class="header" href="#uncovered_scopes"><code>uncovered_scopes</code></a></h3>
+<p>The scope half of the change.</p>
+<div id="item-uncovered_scopes" class="item-anchor"></div>
+
+<p>The <code>requested</code> scopes that no <code>allowed</code> entry covers, in request order.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn uncovered_scopes(allowed: &amp;[String], requested: &amp;[String]) -&gt; Vec&lt;String&gt; {
+    requested
+        .iter()
+        .filter(|requested| {
+            !allowed
+                .iter()
+                .any(|allowed| wildflowerhealthio_scopes::allowed_scope_covers(allowed, requested))
+        })
+        .cloned()
+        .collect()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L105-L115"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 105–115</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The uncovered scopes are reported in <strong>request</strong> order (not registration
+order), and the covered ones are left out.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn uncovered_scopes_are_reported_in_request_order() {
+    let client = client("app", &amp;["read"]);
+    assert_eq!(
+        judge(Some(&amp;client), &amp;redirect(), &amp;["write", "read", "admin"]),
+        PresentedClientChange::WouldWiden {
+            redirect_uri_is_new: false,
+            unregistered_requested_scopes: vec!["write".to_owned(), "admin".to_owned()],
+        }
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/client/presented_change.rs#L191-L200"><code>authorization-server-rust/src/domain/client/presented_change.rs</code> lines 191–200</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="domainessential_client"><a class="header" href="#domainessential_client"><code>domain::essential_client</code></a></h2>
+<p>The host app’s client is how the Owner reaches the server at all, and the browser-session client is how a browser on the Owner’s device signs in as the Owner. <a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/clients.rs#L81-L84"><code>ClientsDisabler</code></a> refuses to disable either, and the Owner’s list of clients flags both.</p>
+<h3 id="is_essential_client"><a class="header" href="#is_essential_client"><code>is_essential_client</code></a></h3>
+<div id="item-is_essential_client" class="item-anchor"></div>
+
+<p>Whether <code>client_id</code> is one of the essential clients, which can’t be
+disabled: the host app’s (<a href="../assembly/setup.html#item-WILDFLOWER_HOST_APP_CLIENT_ID"><code>WILDFLOWER_HOST_APP_CLIENT_ID</code></a>) or the
+browser-session client (<a href="../assembly/setup.html#item-BROWSER_SESSION_CLIENT_ID"><code>BROWSER_SESSION_CLIENT_ID</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn is_essential_client(client_id: &amp;str) -&gt; bool {
+    client_id == WILDFLOWER_HOST_APP_CLIENT_ID || client_id == BROWSER_SESSION_CLIENT_ID
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/essential_client.rs#L14-L16"><code>authorization-server-rust/src/domain/essential_client.rs</code> lines 14–16</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The host app’s and the browser-session clients are essential; a
+lookalike id and any other client are not.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn only_the_host_app_s_and_the_browser_session_clients_are_essential() {
+    assert!(is_essential_client(WILDFLOWER_HOST_APP_CLIENT_ID));
+    assert!(is_essential_client(BROWSER_SESSION_CLIENT_ID));
+    assert!(!is_essential_client(&amp;format!(
+        "{WILDFLOWER_HOST_APP_CLIENT_ID}-2"
+    )));
+    assert!(!is_essential_client("ohif-viewer"));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/9c1ab67c171e814a8de7c815b4dfce37e07d3216/apps/host/wildflower-server/authorization-server-rust/src/domain/essential_client.rs#L25-L32"><code>authorization-server-rust/src/domain/essential_client.rs</code> lines 25–32</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/domain/client-credentials.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/domain/grant.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/domain/client-credentials.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/domain/grant.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

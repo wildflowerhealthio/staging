@@ -1,0 +1,1130 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Seeding - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9f5bbf40.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-5416f64a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="seeding"><a class="header" href="#seeding">Seeding</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs"><code>authorization-server-rust/src/seeding.rs</code></a></p>
+
+<p><strong>Some rows must exist before anyone can ask for anything</strong>: a key to sign tokens with, and the server’s own clients. Seeding writes them at every boot, and is safe to run again. The signing key is inserted only when no key is active, and never rotated. The server’s own clients are <strong>upserted</strong>: rewritten to match the code every boot, so their registrations follow the host’s configuration and a store written by another build is corrected. An upsert keeps a row’s registration time and any disable the Owner set.</p>
+<p>The bundled SMART sample apps’ clients are static, so a migration seeds them instead (<code>0003_seed_sample_clients</code>). Seeding in code is kept for what depends on the running host: the configured scopes and origin, and a freshly generated key.</p>
+<p>A debug build also seeds a client for each first-party app’s local dev server. Release builds contain no code that could write them.</p>
+<h2 id="seeding-1"><a class="header" href="#seeding-1"><code>seeding</code></a></h2>
+<div id="item-seeding" class="item-anchor"></div>
+
+<p>First-boot seeding for the grant store: the signing key and the essential
+clients (the host app’s client and the browser-session client). Safe to call
+on every boot — the signing key is inserted only when none exists (never
+rotated), and the two clients are <em>ensured</em> (re-applied as an upsert) so
+their definitions always match the host’s granted scopes, correcting any
+drift in the stored rows.</p>
+<p>The bundled SMART sample-app clients (growth-chart, medication-viewer →
+<code>my_web_app</code>, PRECISE-HBR) are seeded in SQL instead — migration
+<code>0003_seed_sample_clients</code> — since they’re static definitions a migration
+can express. Only the runtime-derived seeds (the essential clients’ scopes,
+the generated signing key) stay here.</p>
+<h3 id="open_and_seed_store"><a class="header" href="#open_and_seed_store"><code>open_and_seed_store</code></a></h3>
+<p><a href="setup.html#item-setup_authorization_server"><code>setup_authorization_server</code></a> calls it first, and the server doesn’t start if it fails. A key is generated before the write scope opens, because generating an RSA key is slow.</p>
+<div id="item-open_and_seed_store" class="item-anchor"></div>
+
+<p>Wrap the host-owned connection <code>pool</code> in a grant store (applying
+migrations, which includes the SQL seed of the SMART sample-app clients)
+and run the runtime-derived first-boot seeding steps — the signing key, the
+essential clients, and the FHIR server UI’s client. Safe to call on every
+boot.</p>
+<h4 id="errors"><a class="header" href="#errors">Errors</a></h4>
+<p>Returns an error if the store cannot be created (migrations) or if any seeding
+step fails.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn open_and_seed_store(
+    pool: DieselPool,
+    host_app_client_scopes: &amp;[String],
+    fhir_ui_client_id: &amp;str,
+    server_origin: &amp;url::Url,
+) -&gt; anyhow::Result&lt;SqliteGrantStore&gt; {
+    let store = SqliteGrantStore::new(pool).context("failed to open grant store")?;
+    // RSA key generation is slow, so it runs before the write lock is taken,
+    // and only on a boot that finds no active key.
+    let candidate_signing_key = if store
+        .read(|tx| tx.active_signing_key())
+        .context("failed to read signing keys")?
+        .is_none()
+    {
+        Some(SigningKey::generate().context("failed to generate signing key")?)
+    } else {
+        None
+    };
+    store.write(|tx| -&gt; anyhow::Result&lt;()&gt; {
+        ensure_some_active_signing_key(tx, candidate_signing_key)
+            .context("failed to seed signing key")?;
+        ensure_essential_clients(tx, host_app_client_scopes)
+            .context("failed to seed the essential clients")?;
+        ensure_fhir_ui_client(tx, fhir_ui_client_id, server_origin)
+            .context("failed to seed the FHIR server UI client")
+    })?;
+    Ok(store)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L36-L63"><code>authorization-server-rust/src/seeding.rs</code> lines 36–63</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="ensure_some_active_signing_key"><a class="header" href="#ensure_some_active_signing_key"><code>ensure_some_active_signing_key</code></a></h4>
+<div id="item-ensure_some_active_signing_key" class="item-anchor"></div>
+
+<p>Insert <code>candidate</code>, generated before the scope opened, as the active
+signing key if none is active; otherwise leave the existing keys alone.
+Idempotent — safe to call on every boot.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn ensure_some_active_signing_key(
+    tx: &amp;mut impl SigningKeysTx,
+    candidate: Option&lt;SigningKey&gt;,
+) -&gt; anyhow::Result&lt;()&gt; {
+    let existing = tx.active_signing_key().context("read signing keys")?;
+    if existing.is_some() {
+        return Ok(());
+    }
+    let mut key = candidate.context("the active signing key vanished during seeding")?;
+    key.is_active = true;
+    tx.insert_signing_key(&amp;key).context("insert signing key")?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L100-L112"><code>authorization-server-rust/src/seeding.rs</code> lines 100–112</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="ensure_essential_clients"><a class="header" href="#ensure_essential_clients"><code>ensure_essential_clients</code></a></h4>
+<p>The two <a href="setup.html#the-servers-own-clients">essential clients</a> are server-defined, public, and have no redirect URIs. The browser-session client has no grant type: its tokens are minted only at <code>/oauth/sign-in</code> and by the pairing page’s poll, and neither is an OAuth flow.</p>
+<div id="item-ensure_essential_clients" class="item-anchor"></div>
+
+<p>Ensure the essential clients — the host app’s client
+(<a href="setup.html#item-WILDFLOWER_HOST_APP_CLIENT_ID"><code>crate::WILDFLOWER_HOST_APP_CLIENT_ID</code></a>) and the browser-session client
+(<a href="setup.html#item-BROWSER_SESSION_CLIENT_ID"><code>crate::BROWSER_SESSION_CLIENT_ID</code></a>) — match the code’s definitions.
+Upserted on every boot so their policy always matches: the host app’s
+client is allowed <code>host_app_client_scopes</code> (the live app sources them from
+<code>tauri-shared-config.json</code>; see <a href="setup.html#item-default_host_app_client_scopes"><code>crate::default_host_app_client_scopes</code></a>),
+and the browser-session
+client the Owner’s scopes (<a href="setup.html#item-OWNER_SCOPES"><code>crate::OWNER_SCOPES</code></a>), the most any browser
+session may hold. This corrects stored rows that have drifted
+(registration time and any admin disable are preserved).</p>
+<p>Both are public with no redirect URIs. The host app’s client is allowed
+every grant type; the browser-session client none, since its tokens are
+minted only at <code>/oauth/sign-in</code> (a same-device session) and by the pairing
+page’s poll (a paired session), neither of them OAuth, so no OAuth flow
+can be run as it and <code>/oauth/token</code> never mints its token.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn ensure_essential_clients(
+    tx: &amp;mut impl ClientsTx,
+    host_app_client_scopes: &amp;[String],
+) -&gt; anyhow::Result&lt;()&gt; {
+    let wildflower_host_app_client = Client {
+        client_id: crate::WILDFLOWER_HOST_APP_CLIENT_ID.to_string(),
+        name: "Wildflower Host".to_string(),
+        kind: ClientKind::Public,
+        redirect_uris: vec![],
+        allowed_scopes: host_app_client_scopes.to_vec(),
+        allowed_grant_types: AllowedGrantType::ALL.to_vec(),
+        secret_hash: None,
+        registered_at: Utc::now(),
+        disabled_at: None,
+        registration_source: RegistrationSource::ServerDefined,
+    };
+    tx.upsert_client(&amp;wildflower_host_app_client)
+        .context("seed the host app's client")?;
+    let browser_session_client = Client {
+        client_id: crate::BROWSER_SESSION_CLIENT_ID.to_string(),
+        name: "Wildflower Browsers".to_string(),
+        kind: ClientKind::Public,
+        redirect_uris: vec![],
+        allowed_scopes: crate::owner_scopes(),
+        allowed_grant_types: vec![],
+        secret_hash: None,
+        registered_at: Utc::now(),
+        disabled_at: None,
+        registration_source: RegistrationSource::ServerDefined,
+    };
+    tx.upsert_client(&amp;browser_session_client)
+        .context("seed the browser-session client")?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L130-L163"><code>authorization-server-rust/src/seeding.rs</code> lines 130–163</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The host app’s client is seeded under
+<a href="setup.html#item-WILDFLOWER_HOST_APP_CLIENT_ID"><code>crate::WILDFLOWER_HOST_APP_CLIENT_ID</code></a> with the scopes threaded
+through <code>open_and_seed_store</code> (from <code>AuthorizationServerConfig</code>, which
+the live app sources from <code>tauri-shared-config.json</code>), NOT a hardcoded
+scope list: a regression that re-hardcodes the scopes here, letting
+them drift from the config, fails this test.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_host_app_s_client_with_the_configured_scopes() {
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    let scopes = vec!["openid".to_string(), "fhirUser".to_string()];
+    let store = open_and_seed_store(
+        pool,
+        &amp;scopes,
+        "fhir-ui-client",
+        &amp;url::Url::parse("https://ruth.relay.example").expect("origin"),
+    )
+    .expect("seed store");
+
+    let seeded = store
+        .read(|tx| tx.client_by_id(crate::WILDFLOWER_HOST_APP_CLIENT_ID))
+        .expect("query client")
+        .expect("the host app's client seeded under its constant id");
+    assert_eq!(seeded.name, "Wildflower Host");
+    assert_eq!(seeded.allowed_scopes, scopes);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L720-L738"><code>authorization-server-rust/src/seeding.rs</code> lines 720–738</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>With the standalone defaults, the host app’s client may be granted
+<code>openid</code> alone: the Owner’s authority is not the host client’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_default_host_app_s_client_is_allowed_openid_only() {
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    let store = open_and_seed_store(
+        pool,
+        &amp;crate::default_host_app_client_scopes(),
+        "fhir-ui-client",
+        &amp;url::Url::parse("https://ruth.relay.example").expect("origin"),
+    )
+    .expect("seed store");
+
+    let seeded = store
+        .read(|tx| tx.client_by_id(crate::WILDFLOWER_HOST_APP_CLIENT_ID))
+        .expect("query client")
+        .expect("the host app's client seeded");
+    assert_eq!(seeded.allowed_scopes, vec!["openid".to_string()]);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L779-L795"><code>authorization-server-rust/src/seeding.rs</code> lines 779–795</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The browser-session client is seeded as a public client with no redirect
+URIs and no grant type, allowed exactly the Owner’s scopes, whatever the
+host app’s client is allowed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_browser_session_client_with_the_owner_s_scopes() {
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    let store = open_and_seed_store(
+        pool,
+        &amp;["openid".to_string()],
+        "fhir-ui-client",
+        &amp;url::Url::parse("https://ruth.relay.example").expect("origin"),
+    )
+    .expect("seed store");
+
+    let seeded = store
+        .read(|tx| tx.client_by_id(crate::BROWSER_SESSION_CLIENT_ID))
+        .expect("query client")
+        .expect("the browser-session client seeded");
+    assert_eq!(seeded.kind, ClientKind::Public);
+    assert!(seeded.redirect_uris.is_empty());
+    assert!(seeded.allowed_grant_types.is_empty());
+    assert_eq!(seeded.allowed_scopes, crate::owner_scopes());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L801-L820"><code>authorization-server-rust/src/seeding.rs</code> lines 801–820</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="ensure_fhir_ui_client"><a class="header" href="#ensure_fhir_ui_client"><code>ensure_fhir_ui_client</code></a></h4>
+<p><strong>The FHIR server’s web UI signs its users in here</strong> with the authorization-code flow, so its client follows the server’s origin.</p>
+<div id="item-ensure_fhir_ui_client" class="item-anchor"></div>
+
+<p>The FHIR server UI’s client: a public client (PKCE, no secret) whose one
+redirect URI is <code>{server_origin}/ui/callback</code>, where <code>helios-ui</code> completes
+its sign-in, allowed <code>user/*.cruds</code> — the UI acts as the signed-in user
+across every resource type. Upserted on every boot, like
+<a href="#item-ensure_essential_clients"><code>ensure_essential_clients</code></a>, so it follows the server’s origin.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn ensure_fhir_ui_client(
+    tx: &amp;mut impl ClientsTx,
+    fhir_ui_client_id: &amp;str,
+    server_origin: &amp;url::Url,
+) -&gt; anyhow::Result&lt;()&gt; {
+    let client = Client {
+        client_id: fhir_ui_client_id.to_string(),
+        name: "FHIR server UI".to_string(),
+        kind: ClientKind::Public,
+        redirect_uris: vec![server_origin
+            .join("/ui/callback")
+            .context("build the UI's redirect URI")?],
+        allowed_scopes: vec![Scope::fhir_user_all(Permission::ALL).to_string()],
+        allowed_grant_types: vec![
+            AllowedGrantType::AuthorizationCode,
+            AllowedGrantType::RefreshToken,
+        ],
+        secret_hash: None,
+        registered_at: Utc::now(),
+        disabled_at: None,
+        registration_source: RegistrationSource::ServerDefined,
+    };
+    tx.upsert_client(&amp;client)
+        .context("seed the FHIR server UI client")?;
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L70-L95"><code>authorization-server-rust/src/seeding.rs</code> lines 70–95</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The UI’s client is seeded under the configured id as a public client
+that may only return to this server’s <code>/ui/callback</code> and only ask for
+<code>user/*.cruds</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_fhir_ui_client_for_this_servers_origin() {
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    let origin = url::Url::parse("https://ruth.relay.example").expect("origin");
+    let store = open_and_seed_store(pool, &amp;["openid".to_string()], "fhir-ui-client", &amp;origin)
+        .expect("seed store");
+
+    let seeded = store
+        .read(|tx| tx.client_by_id("fhir-ui-client"))
+        .expect("query client")
+        .expect("the UI client is seeded under the configured id");
+    assert_eq!(
+        (
+            seeded.kind,
+            seeded.redirect_uris,
+            seeded.allowed_scopes,
+            seeded.secret_hash
+        ),
+        (
+            ClientKind::Public,
+            vec![url::Url::parse("https://ruth.relay.example/ui/callback").expect("url")],
+            vec!["user/*.cruds".to_string()],
+            None
+        )
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L826-L851"><code>authorization-server-rust/src/seeding.rs</code> lines 826–851</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The three clients seeding owns are server-defined, so a request is held
+to their registrations; every other client is trusted on first use.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn the_clients_seeding_owns_are_server_defined() {
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    let store = open_and_seed_store(
+        pool,
+        &amp;crate::default_host_app_client_scopes(),
+        "fhir-ui-client",
+        &amp;url::Url::parse("https://ruth.relay.example").expect("origin"),
+    )
+    .expect("seed store");
+    let source_of = |client_id: &amp;str| {
+        store
+            .read(|tx| tx.client_by_id(client_id))
+            .expect("query client")
+            .map(|client| client.registration_source)
+    };
+    for client_id in [
+        crate::WILDFLOWER_HOST_APP_CLIENT_ID,
+        crate::BROWSER_SESSION_CLIENT_ID,
+        "fhir-ui-client",
+    ] {
+        assert_eq!(
+            source_of(client_id),
+            Some(RegistrationSource::ServerDefined),
+            "{client_id}"
+        );
+    }
+    assert_eq!(
+        source_of("growth_chart"),
+        Some(RegistrationSource::TrustedOnFirstUse)
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L743-L774"><code>authorization-server-rust/src/seeding.rs</code> lines 743–774</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="seed_dev_app_clients"><a class="header" href="#seed_dev_app_clients"><code>seed_dev_app_clients</code></a></h3>
+<p><strong>Debug builds only: a client for each first-party app’s local dev server.</strong> The first-party apps ship from the published site, and their clients register its redirect. A debug build also gets a dev tile per app, whose launch URL points at the app’s vite dev server on <code>localhost</code>, and that launch needs a client whose redirect is that exact loopback address. Each dev client is a separate client under its own id, because adding a plaintext loopback redirect to the production client would register it on a client a public website uses.</p>
+<ul>
+<li><strong>Ports come from the shared <code>dev-app-ports.json</code></strong>, embedded at compile time. The apps’ dev seed and each app’s <code>vite.config.ts</code> read the same file, so a redirect can’t drift off the port its dev server listens on.</li>
+<li><strong>The redirect is the origin root</strong>, except the OHIF viewer’s, whose launch lands on <code>/fhir-viewer</code>, since redirect matching is exact.</li>
+<li><strong>Scopes mirror each app’s production client</strong>, which is what a dev build of the app asks for.</li>
+<li><strong>It is code, not a migration</strong>, because migrations run in release databases too. The function, and its one call in the Tauri host, are compiled only into debug builds.</li>
+<li><strong>It upserts</strong>, so a change to a definition lands on the next boot. They are trusted on first use, like any app the Owner approved.</li>
+</ul>
+<div id="item-seed_dev_app_clients" class="item-anchor"></div>
+
+<p>The debug-only OAuth clients for the first-party apps’ vite dev servers — the
+authorization server half of <code>wildflowerhealthio_apps::seed_dev_apps</code>.</p>
+<p>The first-party SMART apps (Medications, Importer, the OHIF
+imaging viewer, Strength) ship as rows served from
+<a href="https://wildflowerhealth.io">https://wildflowerhealth.io</a> (apps migrations <code>0005_first_party_apps_to_cloud</code>
+onward), whose clients register the published-site redirect URI. A debug
+build also gets an <code>&lt;app&gt;-dev</code> row (<code>wildflowerhealthio_apps::dev_seed</code>) whose launch
+URL points at the app’s local vite dev server on the port
+<code>dev-app-ports.json</code> pins, and that row needs its own client, under a
+random id, whose absolute <code>http://localhost:{port}</code> redirect is what the
+authorize flow matches (FHIR Sync for Pebble has no row, but its dev server
+gets a client the same way). They are separate clients rather than extra
+redirect entries on the production ones because adding a plaintext loopback
+redirect there would register it on a client that a public website uses.</p>
+<p>The redirect path is the origin root for every app but the OHIF viewer,
+whose launch lands on <code>/fhir-viewer</code> — redirect matching is exact-URL.</p>
+<p>Scopes mirror each app’s production client exactly — a dev build of the app
+requests the same set (<code>apps/*/src/config.ts</code>).</p>
+<p>Runtime rather than a migration for the same reason as the app rows:
+migrations run unconditionally, so a migration-seeded dev client would exist
+in release databases too. The whole function is <code>#[cfg(debug_assertions)]</code>, as
+is its single call site in the Tauri host.</p>
+<p>Upserted (not insert-if-missing) so a definition change lands on the next boot
+— the same treatment <code>ensure_essential_clients</code> gets, and safe here because
+nothing but this code owns these rows.</p>
+<h4 id="errors-1"><a class="header" href="#errors-1">Errors</a></h4>
+<p>Returns an error if the store cannot be opened/migrated or an upsert fails.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn seed_dev_app_clients(pool: DieselPool) -&gt; anyhow::Result&lt;()&gt; {
+    let store = SqliteGrantStore::new(pool).context("failed to open grant store")?;
+    // Ports come from the shared dev-port file, not literals — see
+    // [`DEV_APP_PORTS_JSON`].
+    let ports: DevAppPorts = serde_json::from_str(DEV_APP_PORTS_JSON)
+        .expect("the embedded dev-app-ports.json must declare a port per dev app id");
+    let dev_clients = [
+        (
+            MEDICATIONS_DEV_CLIENT_ID,
+            "Medications (Dev)",
+            // `apps/medications/medications-web/src/config.ts`'s `MEDICATIONS_SCOPE` — see
+            // [`MEDICATIONS_DEV_SCOPES`].
+            MEDICATIONS_DEV_SCOPES,
+            ports.medications_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+        (
+            IMPORTER_DEV_CLIENT_ID,
+            "Importer (Dev)",
+            // Mirrors the production Importer client's write-carrying set
+            // (`apps/importer-web/src/config.ts`, as widened by the authorization server
+            // migration `0009_widen_importer_client_write_scopes`, re-applied by
+            // `0015` on an install that skipped it) — a dev build
+            // requests the same scopes, and unlike the medications viewer above the
+            // Importer writes. Full `.cruds` (create + read + update + delete +
+            // search) on each handled type.
+            [
+                "launch",
+                "openid",
+                "fhirUser",
+                "system/DocumentReference.cruds",
+                "system/Patient.cruds",
+                "system/Observation.cruds",
+                "system/Practitioner.cruds",
+                "system/DiagnosticReport.cruds",
+                "system/Medication.cruds",
+                "system/MedicationRequest.cruds",
+                "system/MedicationDispense.cruds",
+                "system/ServiceRequest.cruds",
+                "system/ImagingStudy.cruds",
+            ]
+            .as_slice(),
+            ports.importer_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+        (
+            OHIF_VIEWER_DEV_CLIENT_ID,
+            "Imaging (Dev)",
+            // Mirrors the production OHIF viewer client's read-only set (the
+            // `smartScope` in `apps/ohif-viewer-web/config/app-config.js`, seeded
+            // by migration `0009`): the launch Patient plus the ImagingStudy and
+            // DocumentReference searches the OHIF FHIR data source issues.
+            [
+                "launch",
+                "openid",
+                "fhirUser",
+                "system/Patient.rs",
+                "system/ImagingStudy.rs",
+                "system/DocumentReference.rs",
+            ]
+            .as_slice(),
+            ports.ohif_viewer_dev,
+            // NOT the root: redirect matching is exact-URL, so the entry must be
+            // the exact route the launch targets — the FHIR
+            // Viewer mode, as on the production client (seeded by migration
+            // `0009_seed_ohif_viewer_client` and repointed by `0010`), which is
+            // where OHIF's data source sends the browser back to and what it
+            // passes as `redirect_uri`.
+            "/fhir-viewer",
+        ),
+        (
+            FHIR_SYNC_PEBBLE_DEV_CLIENT_ID,
+            "FHIR Sync for Pebble (Dev)",
+            // Mirrors the production FHIR Sync for Pebble client (migration
+            // `0017_seed_fhir_sync_pebble_client`, widened by `0018`, re-keyed by
+            // `0030`, the `scope` in
+            // `apps/fhir-sync-pebble/fhir-sync-pebble-web/src/config.ts`). Standalone-only, so
+            // there is no `wildflowerhealthio_apps::dev_seed` row; the loopback root carries
+            // the `ConnectMenu`'s redirect.
+            [
+                "openid",
+                "fhirUser",
+                "system/Patient.rs",
+                "system/Observation.cu",
+            ]
+            .as_slice(),
+            ports.fhir_sync_pebble_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+        (
+            PLOTS_DEV_CLIENT_ID,
+            "Plots (Dev)",
+            // `apps/plots/plots-web/src/config.ts`'s scope string — see
+            // [`PLOTS_DEV_SCOPES`].
+            PLOTS_DEV_SCOPES,
+            ports.plots_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+        (
+            SYNTHETIC_DATA_DEV_CLIENT_ID,
+            "Synthetic Data (Dev)",
+            // `apps/synthetic-data/synthetic-data-web/src/config.ts`'s scope string — see
+            // [`SYNTHETIC_DATA_DEV_SCOPES`].
+            SYNTHETIC_DATA_DEV_SCOPES,
+            ports.synthetic_data_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+        (
+            STRENGTH_DEV_CLIENT_ID,
+            "Wildflower Strength (Dev)",
+            // `apps/strength/strength-web/src/config.ts`'s `STRENGTH_SCOPE` — see
+            // [`STRENGTH_DEV_SCOPES`].
+            STRENGTH_DEV_SCOPES,
+            ports.strength_dev,
+            DEV_ROOT_REDIRECT_PATH,
+        ),
+    ];
+    for (client_id, name, scopes, port, redirect_path) in dev_clients {
+        use url::Url;
+
+        let client = Client {
+            client_id: client_id.to_string(),
+            name: name.to_string(),
+            kind: ClientKind::Public,
+            // The port comes from the shared `dev-app-ports.json` (above), the
+            // same file the apps dev seed and each `vite.config.ts` read — so it
+            // is never a literal duplicated here, and the path is the route that
+            // client's launch actually lands on (redirect matching is exact-URL).
+            redirect_uris: vec![
+                Url::parse(&amp;format!("http://localhost:{port}{redirect_path}")).unwrap(),
+            ],
+            allowed_scopes: scopes.iter().map(|s| (*s).to_string()).collect(),
+            allowed_grant_types: vec![
+                AllowedGrantType::AuthorizationCode,
+                AllowedGrantType::RefreshToken,
+            ],
+            secret_hash: None,
+            registered_at: Utc::now(),
+            disabled_at: None,
+            registration_source: RegistrationSource::TrustedOnFirstUse,
+        };
+        store
+            .write(|tx| tx.upsert_client(&amp;client))
+            .with_context(|| format!("seed dev client {client_id}"))?;
+    }
+    Ok(())
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L361-L507"><code>authorization-server-rust/src/seeding.rs</code> lines 361–507</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-DEV_APP_PORTS_JSON" class="item-anchor"></div>
+
+<p>The shared dev-port file, embedded at compile time — the single source of
+truth for the first-party apps’ vite dev-server ports across the TS ⇄ Rust
+boundary. <code>apps-rust</code>’s <code>dev_seed.rs</code> embeds this same file to seed the
+matching <code>&lt;app&gt;-dev</code> app rows, and each app’s <code>vite.config.ts</code> reads it for
+<code>server.port</code> (+ <code>strictPort</code>), so a client’s loopback redirect below points
+at exactly the port the row and the dev server agree on. A literal here would
+let that redirect silently drift off the shared value.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const DEV_APP_PORTS_JSON: &amp;str = include_str!(concat!(
+    env!("CARGO_MANIFEST_DIR"),
+    "/../../../../dev-app-ports.json"
+));
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L173-L176"><code>authorization-server-rust/src/seeding.rs</code> lines 173–176</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-DevAppPorts" class="item-anchor"></div>
+
+<p>The subset of <a href="#item-DEV_APP_PORTS_JSON"><code>DEV_APP_PORTS_JSON</code></a> this seed needs — the seven first-party
+apps that register an OAuth client. The file also carries <code>server-docs-dev</code>
+and <code>watch-lifts-dev</code>, which are not SMART apps and so have no client
+here; serde ignores them.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct DevAppPorts {
+    /// The port the Medications vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    medications_dev: u16,
+    /// The port the Importer vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    importer_dev: u16,
+    /// The port the OHIF imaging viewer vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    ohif_viewer_dev: u16,
+    /// The port the FHIR Sync for Pebble vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    fhir_sync_pebble_dev: u16,
+    /// The port the Plots vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    plots_dev: u16,
+    /// The port the Synthetic Data Loader vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    synthetic_data_dev: u16,
+    /// The port the Strength vite dev server listens on, and its dev client's
+    /// loopback redirect names.
+    strength_dev: u16,
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L184-L213"><code>authorization-server-rust/src/seeding.rs</code> lines 184–213</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="the-scopes-each-dev-client-is-allowed"><a class="header" href="#the-scopes-each-dev-client-is-allowed">The scopes each dev client is allowed</a></h4>
+<p>Each app’s test reads the app’s own <code>config.ts</code>, the one place the app writes its scope string and client ids. A scope added on one side alone fails here, rather than at <code>/authorize</code> on a real device.</p>
+<div id="item-PLOTS_DEV_SCOPES" class="item-anchor"></div>
+
+<p>The Plots dev client’s scopes: exactly the scope string in
+<code>apps/plots/plots-web/src/config.ts</code>, which requests the same set for an EHR
+launch and a standalone connect, and the same set the production
+Plots client allows (the authorization server migration
+<code>0022_seed_health_viewer_app_client</code>, re-keyed by <code>0028_rekey_site_app_clients</code>). A test below reads that file and pins
+all three together, so a scope added on one side alone fails the test rather
+than <code>/authorize</code> on a real device.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const PLOTS_DEV_SCOPES: &amp;[&amp;str] = &amp;[
+    "launch",
+    "openid",
+    "fhirUser",
+    "system/Observation.rs",
+    "system/MedicationRequest.rs",
+    "system/Patient.rs",
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L253-L260"><code>authorization-server-rust/src/seeding.rs</code> lines 253–260</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Plots dev client is seeded on its dev server’s loopback
+root with exactly the scopes the app requests, and the production client
+(the authorization server migration <code>0022</code>, re-keyed by <code>0028</code>) allows the same set.
+The app’s scope string and both client ids are read out of <code>config.ts</code>
+itself, the one place the app writes them, so neither client can drift
+from it unnoticed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_plots_dev_client_with_the_apps_own_scopes() {
+    const PLOTS_CONFIG_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/plots/plots-web/src/config.ts"
+    ));
+    const PLOTS_CLIENT_ID: &amp;str = "474e103de61f9141c4b640d59bfa130e";
+    let scope_string = format!("'{}'", PLOTS_DEV_SCOPES.join(" "));
+    assert!(
+        PLOTS_CONFIG_TS.contains(&amp;scope_string),
+        "apps/plots/plots-web/src/config.ts must request exactly {scope_string}",
+    );
+    for client_id in [PLOTS_DEV_CLIENT_ID, PLOTS_CLIENT_ID] {
+        assert!(
+            PLOTS_CONFIG_TS.contains(&amp;format!("'{client_id}'")),
+            "apps/plots/plots-web/src/config.ts must launch as {client_id}",
+        );
+    }
+
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    seed_dev_app_clients(pool.clone()).expect("seed dev clients");
+    let store = SqliteGrantStore::new(pool).expect("open grant store");
+    let client = store
+        .read(|tx| tx.client_by_id(PLOTS_DEV_CLIENT_ID))
+        .expect("query client")
+        .expect("plots dev client seeded");
+    let ports: DevAppPorts = serde_json::from_str(DEV_APP_PORTS_JSON).expect("dev ports");
+    assert_eq!(client.kind, ClientKind::Public);
+    assert_eq!(client.allowed_scopes, PLOTS_DEV_SCOPES);
+    assert_eq!(
+        client.redirect_uris,
+        vec![
+            url::Url::parse(&amp;format!("http://localhost:{}/", ports.plots_dev))
+                .expect("a valid absolute redirect")
+        ],
+    );
+
+    let production = store
+        .read(|tx| tx.client_by_id(PLOTS_CLIENT_ID))
+        .expect("query client")
+        .expect("migration 0028 re-keys the Plots client");
+    assert_eq!(production.allowed_scopes, PLOTS_DEV_SCOPES);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L520-L563"><code>authorization-server-rust/src/seeding.rs</code> lines 520–563</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-SYNTHETIC_DATA_DEV_SCOPES" class="item-anchor"></div>
+
+<p>The Synthetic Data Loader dev client’s scopes: exactly the scope string in
+<code>apps/synthetic-data/synthetic-data-web/src/config.ts</code>, which requests the same set for an
+EHR launch and a standalone connect, and the same set the production client
+allows (the authorization server migration <code>0028_rekey_site_app_clients</code>). A test below
+reads that file and pins all three together.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const SYNTHETIC_DATA_DEV_SCOPES: &amp;[&amp;str] = &amp;[
+    "launch",
+    "openid",
+    "fhirUser",
+    "system/Patient.cu",
+    "system/Practitioner.cu",
+    "system/DocumentReference.cu",
+    "system/Observation.cu",
+    "system/DiagnosticReport.cu",
+    "system/Medication.cu",
+    "system/MedicationRequest.cu",
+    "system/MedicationDispense.cu",
+    "system/ServiceRequest.cu",
+    "system/ImagingStudy.cu",
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L268-L282"><code>authorization-server-rust/src/seeding.rs</code> lines 268–282</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The synthetic data loader’s dev client is seeded on its dev server’s
+loopback root with exactly the scopes the app requests, and the
+production client (the authorization server migration <code>0028</code>) allows the same set, read
+out of <code>config.ts</code> itself with both client ids, as Plots’ are.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_synthetic_data_dev_client_with_the_apps_own_scopes() {
+    const SYNTHETIC_DATA_CONFIG_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/synthetic-data/synthetic-data-web/src/config.ts"
+    ));
+    const SYNTHETIC_DATA_CLIENT_ID: &amp;str = "225ba6af034a3acec6be7ff8010df67f";
+    let scope_string = format!("'{}'", SYNTHETIC_DATA_DEV_SCOPES.join(" "));
+    assert!(
+        SYNTHETIC_DATA_CONFIG_TS.contains(&amp;scope_string),
+        "apps/synthetic-data/synthetic-data-web/src/config.ts must request exactly {scope_string}",
+    );
+    for client_id in [SYNTHETIC_DATA_DEV_CLIENT_ID, SYNTHETIC_DATA_CLIENT_ID] {
+        assert!(
+            SYNTHETIC_DATA_CONFIG_TS.contains(&amp;format!("'{client_id}'")),
+            "apps/synthetic-data/synthetic-data-web/src/config.ts must launch as {client_id}",
+        );
+    }
+
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    seed_dev_app_clients(pool.clone()).expect("seed dev clients");
+    let store = SqliteGrantStore::new(pool).expect("open grant store");
+    let client = store
+        .read(|tx| tx.client_by_id(SYNTHETIC_DATA_DEV_CLIENT_ID))
+        .expect("query client")
+        .expect("synthetic data dev client seeded");
+    let ports: DevAppPorts = serde_json::from_str(DEV_APP_PORTS_JSON).expect("dev ports");
+    assert_eq!(client.kind, ClientKind::Public);
+    assert_eq!(client.allowed_scopes, SYNTHETIC_DATA_DEV_SCOPES);
+    assert_eq!(
+        client.redirect_uris,
+        vec![
+            url::Url::parse(&amp;format!("http://localhost:{}/", ports.synthetic_data_dev))
+                .expect("a valid absolute redirect")
+        ],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L570-L607"><code>authorization-server-rust/src/seeding.rs</code> lines 570–607</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-MEDICATIONS_DEV_SCOPES" class="item-anchor"></div>
+
+<p>The Medications dev client’s scopes: exactly <code>MEDICATIONS_SCOPE</code> in
+<code>apps/medications/medications-web/src/config.ts</code>, which requests the same set for an
+EHR launch and a standalone connect, and the same set the production
+Medications client allows (the authorization server migration
+<code>0020_first_party_apps_pick_the_patient</code>, re-keyed by <code>0028_rekey_site_app_clients</code>). A test below reads that file and
+pins all three together.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const MEDICATIONS_DEV_SCOPES: &amp;[&amp;str] = &amp;[
+    "launch",
+    "openid",
+    "fhirUser",
+    "system/MedicationRequest.rs",
+    "system/Medication.rs",
+    "system/Patient.rs",
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L291-L298"><code>authorization-server-rust/src/seeding.rs</code> lines 291–298</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Medications dev client is seeded on its dev server’s loopback root
+with exactly the scopes the app requests, and the production client
+(authorization server migrations <code>0004</code> / <code>0011</code>, then <code>0020</code>, re-keyed by <code>0028</code>)
+allows the same set. The app’s <code>MEDICATIONS_SCOPE</code> and both client ids are
+read out of <code>config.ts</code> itself, the one place the app writes them, so
+neither client can drift from it unnoticed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_medications_dev_client_with_the_apps_own_scopes() {
+    const MEDICATIONS_CONFIG_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/medications/medications-web/src/config.ts"
+    ));
+    const MEDICATIONS_CLIENT_ID: &amp;str = "9769f8b274370708d0d3ebb2e3e59b7c";
+    let scope_string = format!("'{}'", MEDICATIONS_DEV_SCOPES.join(" "));
+    assert!(
+        MEDICATIONS_CONFIG_TS.contains(&amp;scope_string),
+        "apps/medications/medications-web/src/config.ts must request exactly {scope_string}",
+    );
+    for client_id in [MEDICATIONS_DEV_CLIENT_ID, MEDICATIONS_CLIENT_ID] {
+        assert!(
+            MEDICATIONS_CONFIG_TS.contains(&amp;format!("'{client_id}'")),
+            "apps/medications/medications-web/src/config.ts must launch as {client_id}",
+        );
+    }
+
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    seed_dev_app_clients(pool.clone()).expect("seed dev clients");
+    let store = SqliteGrantStore::new(pool).expect("open grant store");
+    let client = store
+        .read(|tx| tx.client_by_id(MEDICATIONS_DEV_CLIENT_ID))
+        .expect("query client")
+        .expect("medications dev client seeded");
+    let ports: DevAppPorts = serde_json::from_str(DEV_APP_PORTS_JSON).expect("dev ports");
+    assert_eq!(client.kind, ClientKind::Public);
+    assert_eq!(client.allowed_scopes, MEDICATIONS_DEV_SCOPES);
+    assert_eq!(
+        client.redirect_uris,
+        vec![
+            url::Url::parse(&amp;format!("http://localhost:{}/", ports.medications_dev))
+                .expect("a valid absolute redirect")
+        ],
+    );
+
+    let production = store
+        .read(|tx| tx.client_by_id(MEDICATIONS_CLIENT_ID))
+        .expect("query client")
+        .expect("migration 0028 re-keys the Medications client");
+    assert_eq!(production.allowed_scopes, MEDICATIONS_DEV_SCOPES);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L616-L659"><code>authorization-server-rust/src/seeding.rs</code> lines 616–659</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-STRENGTH_DEV_SCOPES" class="item-anchor"></div>
+
+<p>The Strength dev client’s scopes: exactly <code>STRENGTH_SCOPE</code> in
+<code>apps/strength/strength-web/src/config.ts</code>, which requests the same set for an
+EHR launch and a standalone connect, and the same set the production Strength
+client allows (authorization server migrations <code>0019_seed_lifting_app_client</code> and
+<code>0020_first_party_apps_pick_the_patient</code>, re-keyed by
+<code>0025_rekey_lifting_app_clients</code>).
+A test below reads that file and pins all three together. Writes are
+<code>.crus</code>: every write is an update-as-create to a client-minted id, and the
+app never deletes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const STRENGTH_DEV_SCOPES: &amp;[&amp;str] = &amp;[
+    "launch",
+    "openid",
+    "fhirUser",
+    "system/Patient.rs",
+    "system/PlanDefinition.crus",
+    "system/ServiceRequest.crus",
+    "system/Procedure.crus",
+    "system/Observation.crus",
+];
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L310-L319"><code>authorization-server-rust/src/seeding.rs</code> lines 310–319</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The Strength dev client is seeded on its dev server’s loopback root with
+exactly the scopes the app requests, and the production Strength client
+(authorization server migrations <code>0019</code>, <code>0020</code> and <code>0025</code>) allows the same set. The
+app’s <code>STRENGTH_SCOPE</code> and both client ids are read out of <code>config.ts</code>
+itself, the one place the app writes them, so neither client can drift
+from it unnoticed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn seeds_the_strength_dev_client_with_the_apps_own_scopes() {
+    const STRENGTH_CONFIG_TS: &amp;str = include_str!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/../../../../apps/strength/strength-web/src/config.ts"
+    ));
+    const STRENGTH_CLIENT_ID: &amp;str = "bdf9fc5cb5a28c6683b49896b0ef8a75";
+    let scope_string = format!("'{}'", STRENGTH_DEV_SCOPES.join(" "));
+    assert!(
+        STRENGTH_CONFIG_TS.contains(&amp;scope_string),
+        "apps/strength/strength-web/src/config.ts must request exactly {scope_string}",
+    );
+    for client_id in [STRENGTH_DEV_CLIENT_ID, STRENGTH_CLIENT_ID] {
+        assert!(
+            STRENGTH_CONFIG_TS.contains(&amp;format!("'{client_id}'")),
+            "apps/strength/strength-web/src/config.ts must launch as {client_id}",
+        );
+    }
+
+    let pool =
+        wildflowerhealthio_persistence::open_in_memory_pool().expect("open in-memory pool");
+    seed_dev_app_clients(pool.clone()).expect("seed dev clients");
+    let store = SqliteGrantStore::new(pool).expect("open grant store");
+    let client = store
+        .read(|tx| tx.client_by_id(STRENGTH_DEV_CLIENT_ID))
+        .expect("query client")
+        .expect("strength dev client seeded");
+    let ports: DevAppPorts = serde_json::from_str(DEV_APP_PORTS_JSON).expect("dev ports");
+    assert_eq!(client.kind, ClientKind::Public);
+    assert_eq!(client.allowed_scopes, STRENGTH_DEV_SCOPES);
+    assert_eq!(
+        client.redirect_uris,
+        vec![
+            url::Url::parse(&amp;format!("http://localhost:{}/", ports.strength_dev))
+                .expect("a valid absolute redirect")
+        ],
+    );
+
+    let production = store
+        .read(|tx| tx.client_by_id(STRENGTH_CLIENT_ID))
+        .expect("query client")
+        .expect("migration 0025 re-keys the Strength client");
+    assert_eq!(production.allowed_scopes, STRENGTH_DEV_SCOPES);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/d791d3bca3f55917eea04e7370a62824f1121e2c/apps/host/wildflower-server/authorization-server-rust/src/seeding.rs#L668-L711"><code>authorization-server-rust/src/seeding.rs</code> lines 668–711</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/assembly/ports-and-adapters.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/persistence.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/assembly/ports-and-adapters.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/persistence.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
