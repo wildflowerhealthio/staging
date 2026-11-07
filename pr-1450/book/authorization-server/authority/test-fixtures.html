@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Test Fixtures - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-f16b3b8a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="test-fixtures"><a class="header" href="#test-fixtures">Test Fixtures</a></h1>
+<p>The helpers the Authority part’s unit tests build their values with, by the page whose tests use them. They build on the crate-wide fixtures of the in-memory <a href="../grant-store/test-fake.html">test fake</a>, among them the shared <a href="../domain/test-fixtures.html#client">client</a>.</p>
+<p>Two test modules name a helper alike (<code>redirect</code>, <code>SESSION_TTL</code>); the second of each is shown as a plain excerpt with its doc comment kept.</p>
+<h2 id="authenticated-client"><a class="header" href="#authenticated-client">Authenticated Client</a></h2>
+<div id="item-authenticated_client--tests--presented" class="item-anchor"></div>
+
+<p>Credentials naming <code>client_id</code>, with <code>secret</code> if one is presented.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn presented(client_id: &amp;str, secret: Option&lt;&amp;str&gt;) -&gt; ClientCredentials {
+    ClientCredentials {
+        client_id: client_id.to_owned(),
+        client_secret: secret.map(str::to_owned),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/authenticated_client.rs#L127-L132"><code>authorization-server-rust/src/domain/authority/authenticated_client.rs</code> lines 127–132</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--confidential" class="item-anchor"></div>
+
+<p>A confidential client registered for <code>openid</code>, storing the hash of
+<code>secret</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn confidential(client_id: &amp;str, secret: &amp;str) -&gt; Client {
+    Client {
+        kind: ClientKind::Confidential,
+        secret_hash: Some(hash_client_secret(secret).expect("hash")),
+        ..client(client_id, &amp;["openid"])
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/authenticated_client.rs#L136-L142"><code>authorization-server-rust/src/domain/authority/authenticated_client.rs</code> lines 136–142</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="delegated-scopes"><a class="header" href="#delegated-scopes">Delegated Scopes</a></h2>
+<div id="item-tests--approvable" class="item-anchor"></div>
+
+<p>A prompt for a fixed registration: exactly what <code>requested</code> asks
+within what <code>allowed</code> lists.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approvable(requested: &amp;[&amp;str], allowed: &amp;[&amp;str]) -&gt; ApprovableScopes {
+    ApprovableScopes::for_code(
+        &amp;owned_scopes(requested),
+        Some(&amp;client("app", allowed)),
+        true,
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L486-L492"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 486–492</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--grant" class="item-anchor"></div>
+
+<p>An approver’s grant: the approval scopes of a prompt that registers no
+client (it decides requests and creates grants), plus <code>scopes</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn grant(scopes: &amp;[&amp;str]) -&gt; Grant {
+    Grant::parse(
+        ["wildflower/AuthorizationRequest.u", "wildflower/Grant.c"]
+            .iter()
+            .chain(scopes)
+            .copied(),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L496-L503"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 496–503</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--device_prompt" class="item-anchor"></div>
+
+<p>A device prompt for a client allowed <code>allowed</code>: expandable, so its
+approver delegates within what it holds, scope by scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn device_prompt(allowed: &amp;[&amp;str]) -&gt; ApprovableScopes {
+    ApprovableScopes::for_device(&amp;owned_scopes(allowed))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/delegated_scopes.rs#L507-L509"><code>authorization-server-rust/src/domain/authority/delegated_scopes.rs</code> lines 507–509</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="standing-grant"><a class="header" href="#standing-grant">Standing Grant</a></h2>
+<p><code>store_with_grant</code> stores its grant over the shared <a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L272-L282"><code>code_grant</code></a> fixture.</p>
+<div id="item-standing_grant--tests--redirect" class="item-anchor"></div>
+
+<p>The redirect URI every test’s grant and request share.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn redirect() -&gt; Url {
+    Url::parse("https://example.com/cb").unwrap()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/standing_grant.rs#L149-L151"><code>authorization-server-rust/src/domain/authority/standing_grant.rs</code> lines 149–151</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--store_with_grant" class="item-anchor"></div>
+
+<p>A store holding standing code grant “g1” for “client” at
+<a href="#item-standing_grant--tests--redirect"><code>redirect</code></a>, with <code>scopes</code> and <code>patient</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn store_with_grant(scopes: &amp;[&amp;str], patient: Option&lt;&amp;str&gt;) -&gt; FakeGrantStore {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .create_authorization_code_grant(&amp;AuthorizationCodeGrant {
+            scopes: owned_scopes(scopes),
+            patient: patient.map(str::to_owned),
+            ..code_grant("g1", "client")
+        })
+        .unwrap();
+    store
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/standing_grant.rs#L155-L166"><code>authorization-server-rust/src/domain/authority/standing_grant.rs</code> lines 155–166</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="redemption"><a class="header" href="#redemption">Redemption</a></h2>
+<p><code>authenticated</code> registers its app through the shared <a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L298-L312"><code>authenticated_public_client</code></a> fixture.</p>
+<div id="item-redemption--tests--authenticated" class="item-anchor"></div>
+
+<p>Register public client <code>client_id</code> and authenticate as it.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn authenticated(store: &amp;FakeGrantStore, client_id: &amp;str) -&gt; AuthenticatedClient {
+    authenticated_public_client(store, client(client_id, &amp;["openid"]))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L664-L666"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 664–666</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--REDIRECT" class="item-anchor"></div>
+
+<p>The redirect every test code is issued for and redeemed at.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const REDIRECT: &amp;str = "https://example.com/cb";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L669"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> line 669</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-redemption--tests--redirect" class="item-anchor"></div>
+
+<p><a href="#item-tests--REDIRECT"><code>REDIRECT</code></a>, parsed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn redirect() -&gt; Url {
+    Url::parse(REDIRECT).unwrap()
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L672-L674"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 672–674</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-redemption--tests--VERIFIER" class="item-anchor"></div>
+
+<p>The PKCE verifier whose challenge every test code is bound to.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const VERIFIER: &amp;str = "verifier-verifier-verifier-verifier-verifier-1";
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L677"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> line 677</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--issued_code" class="item-anchor"></div>
+
+<p>Store a fresh code for <code>client_id</code>, issued at <code>now</code> (in the past for
+an expired code), bound to <a href="#item-tests--REDIRECT"><code>REDIRECT</code></a> and <a href="#item-redemption--tests--VERIFIER"><code>VERIFIER</code></a>, to patient
+<code>pat-1</code> and browser session <code>sid-1</code>, granting <code>patient/Patient.read</code>;
+returns the code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn issued_code(store: &amp;FakeGrantStore, client_id: &amp;str, now: DateTime&lt;Utc&gt;) -&gt; String {
+    let code = generate_authorization_code();
+    store
+        .tx()
+        .issue_authorization_code(&amp;AuthorizationCode {
+            code: code.clone(),
+            request_id: "req".to_owned(),
+            client_id: client_id.to_owned(),
+            redirect_uri: redirect(),
+            code_challenge: compute_code_challenge(VERIFIER),
+            granted_scopes: vec!["patient/Patient.read".to_owned()],
+            patient: Some("pat-1".to_owned()),
+            issued_at: now,
+            expires_at: now + AUTHORIZATION_CODE_TTL,
+            sid: "sid-1".to_owned(),
+        })
+        .unwrap();
+    code
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L683-L701"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 683–701</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--reason" class="item-anchor"></div>
+
+<p>The <code>invalid_grant</code> reason <code>outcome</code> refused with; fails the test on
+any other outcome.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn reason(outcome: Result&lt;impl Sized, TokenExchangeError&gt;) -&gt; InvalidGrantReason {
+    match outcome {
+        Err(TokenExchangeError::InvalidGrant(reason)) =&gt; reason,
+        Err(other) =&gt; panic!("expected InvalidGrant, got {other:?}"),
+        Ok(_) =&gt; panic!("expected a refusal"),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L705-L711"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 705–711</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--live_family" class="item-anchor"></div>
+
+<p><a href="#item-tests--live_family_under"><code>live_family_under</code></a> no browser session, as for the device flow.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn live_family(store: &amp;FakeGrantStore, client_id: &amp;str, now: DateTime&lt;Utc&gt;) {
+    live_family_under(store, client_id, None, now);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L872-L874"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 872–874</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--live_family_under" class="item-anchor"></div>
+
+<p>Store refresh family <code>fam</code> for <code>client_id</code>, started under browser
+session <code>sid</code>, live for a day from <code>now</code> with <code>openid offline_access</code>,
+and its one unconsumed token, whose plaintext is <code>live</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn live_family_under(
+    store: &amp;FakeGrantStore,
+    client_id: &amp;str,
+    sid: Option&lt;&amp;str&gt;,
+    now: DateTime&lt;Utc&gt;,
+) {
+    store
+        .tx()
+        .insert_refresh_token_family_row(&amp;RefreshTokenFamily {
+            family_id: "fam".to_owned(),
+            client_id: client_id.to_owned(),
+            scopes: vec!["openid".to_owned(), "offline_access".to_owned()],
+            patient: None,
+            issued_at: now,
+            expires_at: now + Duration::days(1),
+            authorization_code_hash: None,
+            grant_id: None,
+            sid: sid.map(str::to_owned),
+        })
+        .unwrap();
+    store
+        .tx()
+        .insert_refresh_token(&amp;RefreshToken {
+            token_hash: token_storage_hash("live"),
+            family_id: "fam".to_owned(),
+            issued_at: now,
+            consumed_at: None,
+        })
+        .unwrap();
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/redemption.rs#L879-L908"><code>authorization-server-rust/src/domain/authority/redemption.rs</code> lines 879–908</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="same-device-sign-in"><a class="header" href="#same-device-sign-in">Same-Device Sign-In</a></h2>
+<div id="item-same_device_sign_in--tests--SESSION_TTL" class="item-anchor"></div>
+
+<p>The lifetime every test gives the session a sign-in starts.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const SESSION_TTL: Duration = Duration::hours(8);
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/same_device_sign_in.rs#L75"><code>authorization-server-rust/src/domain/authority/same_device_sign_in.rs</code> line 75</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-same_device_sign_in--tests--owner_grant" class="item-anchor"></div>
+
+<p>A stand-in for the Owner’s grant: every system and Wildflower
+permission.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn owner_grant() -&gt; Grant {
+    Grant::parse(["system/*.cruds", "wildflower/*.cruds"])
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/same_device_sign_in.rs#L79-L81"><code>authorization-server-rust/src/domain/authority/same_device_sign_in.rs</code> lines 79–81</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h2 id="browser-pairing"><a class="header" href="#browser-pairing">Browser Pairing</a></h2>
+<p><code>approved_pairing</code> approves its request through the shared <a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/test_fake/fixtures.rs#L162-L201"><code>approve_stored</code></a> fixture, as the Owner would on the device page.</p>
+<div id="item-browser_pairing--tests--SESSION_TTL" class="item-anchor"></div>
+
+<p>The lifetime every test gives the session a claim starts.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const SESSION_TTL: Duration = Duration::hours(24);
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/browser_pairing.rs#L91"><code>authorization-server-rust/src/domain/authority/browser_pairing.rs</code> line 91</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-apps--host--wildflower-server--authorization-server-rust--src--domain--authority--browser_pairing--tests--pairing" class="item-anchor"></div>
+
+<p>A fresh pending pairing request <code>id</code>, from the browser-session client,
+asking for <code>wildflower/launch</code> from a browser named “Firefox on Linux”.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn pairing(id: &amp;str) -&gt; PairingRequest {
+    PairingRequest::new(
+        NewPairingRequestArgs {
+            id: id.to_owned(),
+            client_id: BROWSER_SESSION_CLIENT_ID.to_owned(),
+            requested_scopes: vec!["wildflower/launch".to_owned()],
+            ttl: Duration::minutes(5),
+            user_code: format!("UC-{id}"),
+            browser_name: "Firefox on Linux".to_owned(),
+        },
+        Utc::now(),
+    )
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/browser_pairing.rs#L95-L107"><code>authorization-server-rust/src/domain/authority/browser_pairing.rs</code> lines 95–107</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-browser_pairing--tests--stored" class="item-anchor"></div>
+
+<p>The pairing request <code>id</code> as the store holds it now.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn stored(store: &amp;FakeGrantStore, id: &amp;str) -&gt; PairingRequest {
+    store
+        .tx()
+        .pairing_request_by_id(id)
+        .unwrap()
+        .expect("stored")
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/browser_pairing.rs#L110-L116"><code>authorization-server-rust/src/domain/authority/browser_pairing.rs</code> lines 110–116</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approved_pairing" class="item-anchor"></div>
+
+<p>Store pairing request <code>id</code>, approve it for <code>wildflower/launch</code> and
+<code>system/*.rs</code> under the name “Ruth’s laptop”, and read it back.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approved_pairing(store: &amp;FakeGrantStore, id: &amp;str) -&gt; PairingRequest {
+    store.tx().insert_pairing_request(&amp;pairing(id)).unwrap();
+    approve_stored(
+        store,
+        id,
+        &amp;["wildflower/launch", "system/*.rs"],
+        Some("Ruth's laptop"),
+    );
+    stored(store, id)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/authority/browser_pairing.rs#L120-L129"><code>authorization-server-rust/src/domain/authority/browser_pairing.rs</code> lines 120–129</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/authority/token-entitlement.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/writers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/authority/token-entitlement.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/writers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
