@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildflower server docs</title>
+    <meta
+      name="description"
+      content="Interactive API reference for a running Wildflower server. Point it at your own server with ?server=."
+    />
+    <script type="module" crossorigin src="./assets/index-Bsxm9JaH.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="./assets/reactivity.esm-bundler-ykQ30J6C.js">
+    <link rel="modulepreload" crossorigin href="./assets/slugger-CzqEc4ie.js">
+    <link rel="modulepreload" crossorigin href="./assets/runtime-core.esm-bundler-BMiJoboY.js">
+    <link rel="modulepreload" crossorigin href="./assets/markdown-BitXjqEt.js">
+    <link rel="modulepreload" crossorigin href="./assets/workspace-events-BioRZ1PG.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-B5wJN7Hi.css">
+  </head>
+  <body>
+    <header class="brand-bar">
+      <a href="https://wildflowerhealth.io/" aria-label="Wildflower, home" class="brand-bar__link">
+        <img src="./app-icon.png" alt="" width="24" height="24" class="brand-bar__icon" />
+        <span class="brand-bar__wordmark">Wildflower</span>
+      </a>
+    </header>
+    <div class="server-bar">
+      <p id="server-target" class="server-bar__target" hidden>
+        <span class="server-bar__label">Wildflower server</span>
+        <span id="server-target-url" class="server-bar__url"></span>
+      </p>
+      <button id="change-server" class="server-bar__submit" type="button" hidden>
+        Change server
+      </button>
+      <button id="sign-in" class="server-bar__submit" type="button" hidden>Sign in</button>
+      <p id="server-hint" class="server-bar__hint" hidden>
+        Every request below is sent to this origin, straight from your browser — nothing is proxied.
+        The target is kept in the page URL, so a configured console can be shared as a link.
+      </p>
+      <p id="auth-status" class="server-bar__status" hidden></p>
+    </div>
+    <section id="connect" class="connect" aria-labelledby="connect-heading" hidden></section>
+    <div id="reference"></div>
+  </body>
+</html>

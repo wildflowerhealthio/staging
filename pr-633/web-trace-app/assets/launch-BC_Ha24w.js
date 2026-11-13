@@ -1,0 +1,1 @@
+import{_ as e,t}from"./config-Btp6E8lD.js";var n=new URL(`.`,window.location.href).href;e({...t,redirectUri:n}).catch(e=>{document.body.textContent=`SMART launch failed: ${e instanceof Error?e.message:String(e)}`});
