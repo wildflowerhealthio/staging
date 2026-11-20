@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting&hellip;</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://launcher.wildflowerhealth.io/" />
+    <noscript><meta http-equiv="refresh" content="0; url=https://launcher.wildflowerhealth.io/" /></noscript>
+    <script>
+      ;(function () {
+        var from = "/launcher/"
+        var target = new URL("https://launcher.wildflowerhealth.io/")
+        var params = new URLSearchParams(window.location.search)
+        var deepLink = params.get('redirect')
+        if (deepLink !== null && deepLink.indexOf(from) === 0) {
+          params.set('redirect', '/' + deepLink.slice(from.length))
+        }
+        target.search = params.toString()
+        target.hash = window.location.hash
+        window.location.replace(target.href)
+      })()
+    </script>
+  </head>
+  <body>
+    <p>This app has moved to <a href="https://launcher.wildflowerhealth.io/">https://launcher.wildflowerhealth.io/</a>.</p>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+"use strict";(globalThis.rspackChunk=globalThis.rspackChunk||[]).push([[9472],{99107(e,t,r){r.r(t),r.d(t,{default:()=>i});var o=r(86326),n=r(79864);r(27114),r(11062);let i=function({value:e,onChange:t}){return o.createElement(n.Ay,{mode:"json",theme:"tomorrow_night",name:"smart-registration-body",value:e,onChange:t,width:"100%",height:"220px",fontSize:12,tabSize:2,showPrintMargin:!1,setOptions:{useWorker:!1},editorProps:{$blockScrolling:!0}})}}}]);
+//# sourceMappingURL=9472.bundle.b973382a2d8a5c5b.js.map

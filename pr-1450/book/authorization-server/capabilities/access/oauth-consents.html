@@ -1,0 +1,1598 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OAuth Consents - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-f16b3b8a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="oauth-consents"><a class="header" href="#oauth-consents">OAuth Consents</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code></a></p>
+
+<p>An app has sent a browser to <code>/oauth/authorize</code>, and its <a href="../../domain/authorization-request/code-request.html">code request</a> is parked, waiting for a decision. This page is that decision, as the consent card and the Owner’s popup drive it: read the prompt, ask the Owner about it, approve it, deny it. The capabilities are declared on <a href="consents.html">Consents</a>.</p>
+<p>Every operation starts by loading the prompt, and then resolves it against the app’s <a href="../../domain/client.html">registration</a> as it stands now, through the same <a href="../../domain/authorization-request/code-request.html#item-ResolvedCodeRequest"><code>ResolvedCodeRequest</code></a> <code>/oauth/authorize</code> used to park it, so the card can’t disagree with the endpoint. <strong>A prompt whose app has been disabled is never read and never approved</strong>: reading it is not found, and approving it denies it.</p>
+<p>An approval writes through the writers, inside the decider’s one write scope: the <a href="../../writers/request-approver.html">request approver</a> issues the code, bounded by the browser session the request was made in, and the <a href="../../writers/grant-recorder.html">grant recorder</a> records the standing grant and, for an app trusted on first use, its registration. So the code, the grant and the registration land together or not at all.</p>
+<p>The tests decide through a decider built over the <a href="../test-fixtures.html#consents">consent fixtures</a>.</p>
+<h2 id="domaincapabilitiesaccessconsentsoauth"><a class="header" href="#domaincapabilitiesaccessconsentsoauth"><code>domain::capabilities::access::consents::oauth</code></a></h2>
+<h3 id="load_pending_code_request"><a class="header" href="#load_pending_code_request"><code>load_pending_code_request</code></a></h3>
+<div id="item-load_pending_code_request" class="item-anchor"></div>
+
+<p>The code-flow prompt <code>id</code>, pending at <code>now</code>: the Owner can’t read,
+approve, deny or be asked about a request still waiting on its browser’s
+limited page. Anything else is not found.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(super) fn load_pending_code_request(
+    tx: &amp;mut impl AuthorizationRequestsTx,
+    id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;CodeRequest, AuthorizationServerError&gt; {
+    tx.code_request_by_id(id)?
+        .filter(|request| request.is_pending_at(now))
+        .ok_or_else(|| consent_not_found(id))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L262-L270"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 262–270</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--load_pending_code_request_accepts_a_live_request_and_refuses_the_rest" class="item-anchor"></div>
+
+<p>Only a pending, unexpired code-flow request loads as a prompt; an expired
+one, one still waiting on its browser’s limited page, and an unknown id
+are each <code>OAuthConsentNotFound</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn load_pending_code_request_accepts_a_live_request_and_refuses_the_rest() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-1",
+            RequestStatus::Pending,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    let loaded = oauth::load_pending_code_request(&amp;mut store.tx(), "req-1", Utc::now())
+        .expect("live request");
+    assert_eq!(loaded.id, "req-1");
+    assert_eq!(loaded.sid, crate::domain::test_fake::FIXTURE_SID);
+
+    // Expired / waiting on its limited page / unknown → OAuthConsentNotFound.
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "expired",
+            RequestStatus::Pending,
+            Utc::now() - Duration::minutes(1),
+        ))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "on-limited-page",
+            RequestStatus::AwaitingLimitedPage,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    for id in ["expired", "on-limited-page", "ghost"] {
+        assert_eq!(
+            oauth::load_pending_code_request(&amp;mut store.tx(), id, Utc::now()),
+            Err(AuthorizationServerError::OAuthConsentNotFound { id: id.to_owned() }),
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1388-L1426"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1388–1426</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="resolve"><a class="header" href="#resolve"><code>resolve</code></a></h3>
+<div id="item-resolve" class="item-anchor"></div>
+
+<p><code>pending_request</code> resolved against its client’s registration as <code>tx</code>
+holds it now.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn resolve(
+    tx: &amp;mut impl ClientsTx,
+    pending_request: &amp;CodeRequest,
+) -&gt; Result&lt;ResolvedCodeRequest, AuthorizationServerError&gt; {
+    let maybe_existing_client = tx.client_by_id(&amp;pending_request.client_id)?;
+    Ok(ResolvedCodeRequest::resolve(
+        &amp;pending_request.client_id,
+        &amp;pending_request.redirect_uri,
+        &amp;pending_request.requested_scopes,
+        maybe_existing_client.as_ref(),
+    ))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L297-L308"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 297–308</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="consentreader"><a class="header" href="#consentreader"><code>ConsentReader</code></a></h3>
+<h4 id="oauth_consent"><a class="header" href="#oauth_consent"><code>oauth_consent</code></a></h4>
+<div id="item-ConsentReader--oauth_consent" class="item-anchor"></div>
+
+<p>Load a pending authorization-code consent prompt for the launcher, with
+the client’s display name and its presented client change resolved against
+the current row, and the approval scopes the reader lacks.</p>
+<h5 id="errors"><a class="header" href="#errors">Errors</a></h5>
+<p><a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::OAuthConsentNotFound</code></a> when <code>id</code> names no
+live code-flow prompt, or its client is disabled; a store failure.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn oauth_consent(
+    &amp;self,
+    id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;OAuthConsentView, AuthorizationServerError&gt; {
+    self.store.read(|tx| {
+        let pending_request = load_pending_code_request(tx, id, now)?;
+        let resolved = resolve(tx, &amp;pending_request)?;
+        if resolved.is_client_disabled() {
+            return Err(consent_not_found(id));
+        }
+        Ok(OAuthConsentView {
+            missing_approval_scopes: resolved
+                .approvable_scopes()
+                .missing_approval_scopes(&amp;self.reader_grant),
+            client_name: resolved.client_name().to_owned(),
+            presented_client_change: resolved.presented_client_change().clone(),
+            pending_request,
+        })
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L40-L60"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 40–60</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--consent_reader_oauth_consent_resolves_the_client_name" class="item-anchor"></div>
+
+<p>The reader loads a pending code-flow prompt of a registered client with the
+request as stored.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn consent_reader_oauth_consent_resolves_the_client_name() {
+    let store = FakeGrantStore::default();
+    store
+        .tx()
+        .upsert_client(&amp;client("client", &amp;["read"]))
+        .unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-1",
+            RequestStatus::Pending,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    let reader = ConsentReader::new(store, owner_grant());
+    let view = reader.oauth_consent("req-1", Utc::now()).expect("view");
+    assert_eq!(view.pending_request.id, "req-1");
+    assert_eq!(
+        view.pending_request.redirect_uri.as_str(),
+        "https://example.com/cb"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1431-L1452"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1431–1452</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--consent_reader_says_which_approval_scopes_the_reader_lacks" class="item-anchor"></div>
+
+<p>The prompt a reader loads says which approval scopes it lacks for
+this request, and nothing for a reader holding them all.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn consent_reader_says_which_approval_scopes_the_reader_lacks() {
+    let read_by = |reader_grant: Grant| {
+        let store = FakeGrantStore::default();
+        store
+            .tx()
+            .insert_code_request(&amp;code_request(
+                "req-1",
+                RequestStatus::Pending,
+                Utc::now() + Duration::minutes(5),
+            ))
+            .unwrap();
+        ConsentReader::new(store, reader_grant)
+            .oauth_consent("req-1", Utc::now())
+            .expect("view")
+            .missing_approval_scopes
+    };
+    assert_eq!(
+        read_by(Grant::parse(["wildflower/AuthorizationRequest.r"])),
+        [
+            "wildflower/AuthorizationRequest.u",
+            "wildflower/Grant.c",
+            "wildflower/Client.c",
+            "wildflower/Client.u",
+        ],
+    );
+    assert_eq!(read_by(owner_grant()), Vec::&lt;String&gt;::new());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1325-L1351"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1325–1351</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--consent_reader_surfaces_a_client_read_failure" class="item-anchor"></div>
+
+<p>A client row the store cannot read fails the prompt read instead of
+rendering as an unknown (<code>WouldCreate</code>) client, on both consent surfaces.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn consent_reader_surfaces_a_client_read_failure() {
+    use crate::db::SqliteGrantStore;
+    use diesel::RunQueryDsl;
+
+    let store = SqliteGrantStore::open_in_memory().expect("open in-memory store");
+    store
+        .write(|tx| tx.upsert_client(&amp;client("client", &amp;["read"])))
+        .unwrap();
+    store
+        .write(|tx| {
+            tx.insert_code_request(&amp;code_request(
+                "req-1",
+                RequestStatus::Pending,
+                Utc::now() + Duration::minutes(5),
+            ))
+        })
+        .unwrap();
+    store
+        .write(|tx| {
+            tx.insert_device_request(&amp;device_request(
+                "dev-1",
+                "USER-CODE",
+                RequestStatus::Pending,
+            ))
+        })
+        .unwrap();
+    let mut conn = store.pool().get().expect("check out a connection");
+    diesel::sql_query(
+        "UPDATE clients SET allowed_scopes = 'not json' WHERE client_id = 'client'",
+    )
+    .execute(&amp;mut conn)
+    .expect("corrupt the stored row");
+    drop(conn);
+
+    let reader = ConsentReader::new(store, owner_grant());
+    assert!(matches!(
+        reader.oauth_consent("req-1", Utc::now()),
+        Err(AuthorizationServerError::Infrastructure { .. })
+    ));
+    assert!(matches!(
+        reader.device_consent("USER-CODE", Utc::now()),
+        Err(AuthorizationServerError::Infrastructure { .. })
+    ));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1457-L1500"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1457–1500</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="consentraiser"><a class="header" href="#consentraiser"><code>ConsentRaiser</code></a></h3>
+<h4 id="raise_for_owner"><a class="header" href="#raise_for_owner"><code>raise_for_owner</code></a></h4>
+<p><strong>A browser that can read a prompt but not approve it hands it to the Owner.</strong> The request’s own <a href="../../domain/authorization-request/code-request.html#item-CodeRequest--raise_for_owner"><code>raise_for_owner</code></a> transition is written through the guarded replace, so a request decided meanwhile is not found.</p>
+<div id="item-ConsentRaiser--raise_for_owner" class="item-anchor"></div>
+
+<p>Raise the pending authorization-code prompt <code>id</code> for the Owner and
+republish the Owner prompt, once <code>may_raise_for_owner</code>
+admits it: the authorization start limit, as for a request
+<code>/oauth/authorize</code> raises, so asking the Owner about request after
+request costs what starting them would have. A prompt not decidable in
+its requesting browser is already raised: nothing changes and the limit
+isn’t asked.</p>
+<h5 id="errors-1"><a class="header" href="#errors-1">Errors</a></h5>
+<p><a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::OAuthConsentNotFound</code></a> when <code>id</code> names no
+live code-flow prompt, or its client is disabled (the rule on
+<a href="../../domain/owner-prompt.html#item-OwnerPrompt"><code>OwnerPrompt</code></a>).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn raise_for_owner(
+    &amp;self,
+    id: &amp;str,
+    may_raise_for_owner: impl FnOnce() -&gt; bool,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;OwnerRaising, AuthorizationServerError&gt; {
+    let raising = self.store.write(|tx| {
+        let pending_request = load_pending_code_request(tx, id, now)?;
+        if tx.is_client_disabled(&amp;pending_request.client_id)? {
+            return Err(consent_not_found(id));
+        }
+        if !pending_request.decidable_in_requesting_browser {
+            return Ok(OwnerRaising::AlreadyRaised);
+        }
+        if !may_raise_for_owner() {
+            return Ok(OwnerRaising::StartLimited);
+        }
+        let raised = pending_request
+            .raise_for_owner(now)
+            .map_err(|_| consent_not_found(id))?;
+        if tx.replace_code_request(&amp;pending_request, &amp;raised)? {
+            Ok(OwnerRaising::Raised)
+        } else {
+            Err(consent_not_found(id))
+        }
+    })?;
+    if raising == OwnerRaising::Raised {
+        self.owner_approval.republish_active();
+    }
+    Ok(raising)
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L77-L107"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 77–107</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--raising_a_prompt_for_the_owner_leaves_it_pending_and_republishes" class="item-anchor"></div>
+
+<p>Raising a prompt for the Owner asks the start limit, and once admitted
+clears what made it decidable in the requesting browser and
+republishes; it decides nothing. Raising it again spends nothing, and
+a prompt no longer pending is not found.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn raising_a_prompt_for_the_owner_leaves_it_pending_and_republishes() {
+    let store = FakeGrantStore::default();
+    let request = CodeRequest::new(
+        NewCodeRequestArgs {
+            decidable_in_requesting_browser: true,
+            ..fixture_code_args("req-1", "client", owned_scopes(&amp;["read"]))
+        },
+        Utc::now(),
+    );
+    store.tx().insert_code_request(&amp;request).unwrap();
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-2",
+            RequestStatus::Denied,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    let raiser = ConsentRaiser::new(store, owner_approval.clone());
+
+    assert_eq!(
+        raiser.raise_for_owner("req-1", || false, Utc::now()),
+        Ok(OwnerRaising::StartLimited),
+    );
+    assert!(
+        raiser
+            .store
+            .tx()
+            .code_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .decidable_in_requesting_browser,
+        "a refused raise leaves the prompt as it was"
+    );
+    assert_eq!(owner_approval.count(), 0);
+
+    assert_eq!(
+        raiser.raise_for_owner("req-1", || true, Utc::now()),
+        Ok(OwnerRaising::Raised),
+    );
+    let raised = raiser
+        .store
+        .tx()
+        .code_request_by_id("req-1")
+        .unwrap()
+        .unwrap();
+    assert!(!raised.decidable_in_requesting_browser);
+    assert_eq!(raised.state.status(), RequestStatus::Pending);
+    assert_eq!(owner_approval.count(), 1);
+    assert_eq!(
+        raiser.raise_for_owner(
+            "req-1",
+            || panic!("an already-raised prompt spends nothing"),
+            Utc::now()
+        ),
+        Ok(OwnerRaising::AlreadyRaised),
+    );
+
+    assert_eq!(
+        raiser.raise_for_owner("req-2", || true, Utc::now()),
+        Err(AuthorizationServerError::OAuthConsentNotFound {
+            id: "req-2".to_owned()
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1507-L1572"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1507–1572</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="consentdecider"><a class="header" href="#consentdecider"><code>ConsentDecider</code></a></h3>
+<h4 id="approve_oauth_consent"><a class="header" href="#approve_oauth_consent"><code>approve_oauth_consent</code></a></h4>
+<div id="item-ConsentDecider--approve_oauth_consent" class="item-anchor"></div>
+
+<p>Approve the authorization-code consent prompt <code>id</code>: clamp the Owner’s
+ticks into a <a href="../../authority/delegated-scopes.html#item-DelegatedScopes"><code>DelegatedScopes</code></a> proof (which requires the approver’s
+approval scopes), issue the code, record the standing grant and, for a
+client trusted on first use, its registration, all in one write scope,
+so the code, the grant and the registration land together or not at
+all; once it commits, republish the Owner prompt and return the client
+callback URL. An approval that grants nothing is applied as a <strong>deny</strong>, and so is
+one for a request whose browser session has ended or whose client was
+disabled since it was made.</p>
+<h5 id="errors-2"><a class="header" href="#errors-2">Errors</a></h5>
+<p>Each refusal writes nothing.
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>InsufficientScope</code></a> names
+the approval scopes the approver lacks (see
+<a href="../../authority/delegated-scopes.html#item-ApprovableScopes--missing_approval_scopes"><code>ApprovableScopes::missing_approval_scopes</code></a>);
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>RegistrationNotAcknowledged</code></a>
+when the
+<a href="../../domain/client.html#item-PresentedClientChange">presented client change</a>
+finds the request new or changed and the Owner didn’t
+<a href="consents.html#item-ApproveOAuthConsentInput">acknowledge</a> it;
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>LaunchPatientMismatch</code></a>
+when the request’s SMART launch bound another patient;
+<a href="../../domain/errors.html#item-AuthorizationServerError"><code>OAuthConsentNotFound</code></a>
+when <code>id</code> names no live code-flow prompt.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn approve_oauth_consent(
+    &amp;self,
+    id: &amp;str,
+    input: ApproveOAuthConsentInput,
+    generate_code: impl FnOnce() -&gt; String,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;ConsentOutcome, AuthorizationServerError&gt; {
+    self.decide_and_republish(|tx| self.approve_oauth_in(tx, id, input, generate_code, now))
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L136-L144"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 136–144</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The approval lands:</p>
+<div id="item-tests--approve_oauth_consent_mints_a_code_and_returns_the_redirect" class="item-anchor"></div>
+
+<p>An approval of a registered client’s request issues its code, records the
+standing grant, returns the callback carrying the code and the client’s
+<code>state</code>, and republishes the Owner prompt.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_mints_a_code_and_returns_the_redirect() {
+    let (store, owner_approval) = live_code_store();
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;owner_grant(),
+        || "the-code".to_owned(),
+    )
+    .unwrap();
+    assert_eq!(
+        outcome,
+        ConsentOutcome::Approved {
+            redirect: Some("https://example.com/cb?code=the-code&amp;state=state".to_owned()),
+        },
+    );
+    assert!(store
+        .tx()
+        .authorization_code_by_request_id("req-1")
+        .unwrap()
+        .is_some());
+    assert!(store
+        .tx()
+        .grant_by_client_and_redirect(
+            "client",
+            &amp;url::Url::parse("https://example.com/cb").unwrap(),
+        )
+        .unwrap()
+        .is_some());
+    // The approval moved this request out of `pending`, so the Owner prompt
+    // has to be recomputed: the prompt spans every flow, so a code-flow
+    // approval may change it as much as a device one.
+    assert_eq!(owner_approval.count(), 1);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L497-L531"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 497–531</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--an_approver_holding_the_approval_scopes_approves_a_registered_app" class="item-anchor"></div>
+
+<p>A paired browser holding every approval scope approves a
+registered app within its own scopes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn an_approver_holding_the_approval_scopes_approves_a_registered_app() {
+    let (store, owner_approval) = resource_scope_code_store("system/Patient.r");
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["system/Patient.r"]),
+        &amp;approver_grant_with(&amp;["system/Patient.r"]),
+        || "the-code".to_owned(),
+    )
+    .unwrap();
+    assert!(matches!(outcome, ConsentOutcome::Approved { .. }));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1092-L1104"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1092–1104</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>A deny instead:</p>
+<div id="item-tests--approve_oauth_consent_with_nothing_granted_is_a_deny" class="item-anchor"></div>
+
+<p>An approval ticking no scope the request may grant is applied as a deny:
+the request is denied, the app hears <code>access_denied</code> with “The request
+was declined.”, and the Owner prompt is republished.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_with_nothing_granted_is_a_deny() {
+    let (store, owner_approval) = live_code_store();
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["write"]),
+        &amp;owner_grant(),
+        || panic!("must not mint a code on a deny"),
+    )
+    .unwrap();
+    assert_eq!(
+        outcome,
+        ConsentOutcome::Denied {
+            redirect: Some(
+                "https://example.com/cb?error=access_denied\
+                 &amp;error_description=The+request+was+declined.&amp;state=state"
+                    .to_owned()
+            ),
+        }
+    );
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .status(),
+        RequestStatus::Denied,
+    );
+    assert_eq!(owner_approval.count(), 1);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L537-L568"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 537–568</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_clamps_a_fixed_registration_to_itself" class="item-anchor"></div>
+
+<p>A fixed registration is exempt from trust-on-first-use in both
+directions: its clamp is its registered <code>allowed_scopes</code> alone, so a
+requested-but-unregistered scope is pruned — and with nothing left to
+grant the approval lands as a deny, leaving its row untouched.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_clamps_a_fixed_registration_to_itself() {
+    let store = FakeGrantStore::default();
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    let host = Client {
+        registration_source: RegistrationSource::ServerDefined,
+        ..client(crate::WILDFLOWER_HOST_APP_CLIENT_ID, &amp;["read"])
+    };
+    store.tx().upsert_client(&amp;host).unwrap();
+    let request = code_request_for(
+        "req-1",
+        crate::WILDFLOWER_HOST_APP_CLIENT_ID,
+        vec!["write".to_owned()],
+    );
+    store.tx().insert_code_request(&amp;request).unwrap();
+
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["write"]),
+        &amp;owner_grant(),
+        || panic!("nothing is grantable, so no code is minted"),
+    )
+    .unwrap();
+    assert!(matches!(outcome, ConsentOutcome::Denied { .. }));
+    assert_eq!(
+        store
+            .tx()
+            .client_by_id(crate::WILDFLOWER_HOST_APP_CLIENT_ID)
+            .unwrap()
+            .unwrap(),
+        host,
+        "the fixed registration is never widened",
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L853-L887"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 853–887</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--a_prompt_whose_client_was_disabled_is_denied_not_approved" class="item-anchor"></div>
+
+<p>A prompt whose client was disabled since it was made isn’t read, and
+approving it denies it instead, sending the app <code>access_denied</code> with the
+disabled-client sentence: no code, no grant, the Owner prompt
+republished.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn a_prompt_whose_client_was_disabled_is_denied_not_approved() {
+    let (store, owner_approval) = live_code_store();
+    assert!(store
+        .tx()
+        .set_client_disabled("client", Some(Utc::now()))
+        .unwrap());
+    let reader = ConsentReader::new(store.clone(), owner_grant());
+    assert!(matches!(
+        reader.oauth_consent("req-1", Utc::now()),
+        Err(AuthorizationServerError::OAuthConsentNotFound { .. })
+    ));
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;owner_grant(),
+        || panic!("a disabled client is issued no code"),
+    )
+    .unwrap();
+    assert_eq!(
+        outcome,
+        ConsentOutcome::Denied {
+            redirect: Some(build_client_error_redirect_url(
+                &amp;url::Url::parse("https://example.com/cb").unwrap(),
+                OAuthErrorCode::AccessDenied,
+                AuthorizeRefusal::DisabledClient.description(),
+                "state",
+            )),
+        }
+    );
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .map(|request| request.status()),
+        Some(RequestStatus::Denied)
+    );
+    assert!(store
+        .tx()
+        .grant_by_client_and_redirect(
+            "client",
+            &amp;url::Url::parse("https://example.com/cb").unwrap(),
+        )
+        .unwrap()
+        .is_none());
+    assert_eq!(owner_approval.count(), 1);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L443-L491"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 443–491</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The approval scopes:</p>
+<div id="item-tests--approve_oauth_consent_rejects_a_requested_resource_scope_the_approver_lacks" class="item-anchor"></div>
+
+<p>A code request’s resource scopes are among its approval scopes: an
+approver lacking one is refused whole, naming it, however it ticked.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_rejects_a_requested_resource_scope_the_approver_lacks() {
+    let (store, owner_approval) = resource_scope_code_store("system/Patient.r");
+    let approver_grant = approver_grant_with(&amp;["system/Observation.r"]);
+    let result = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["system/Patient.r"]),
+        &amp;approver_grant,
+        || panic!("must not mint a code when the approver lacks authority"),
+    );
+    assert_eq!(
+        result,
+        Err(AuthorizationServerError::InsufficientScope {
+            missing_scopes: vec!["system/Patient.r".to_owned()],
+        }),
+    );
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .status(),
+        RequestStatus::Pending,
+    );
+    assert_eq!(owner_approval.count(), 0);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L993-L1020"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 993–1020</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_requires_creating_the_grant" class="item-anchor"></div>
+
+<p>Without <code>wildflower/Grant.c</code> an approval of a code request is refused
+whole, naming it, and writes nothing.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_requires_creating_the_grant() {
+    let (store, owner_approval) = resource_scope_code_store("system/Patient.r");
+    let result = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["system/Patient.r"]),
+        &amp;Grant::parse([
+            "wildflower/AuthorizationRequest.u",
+            "wildflower/Client.cu",
+            "system/Patient.r",
+        ]),
+        || panic!("must not mint a code without the power to create the grant"),
+    );
+    assert_eq!(
+        result,
+        Err(AuthorizationServerError::InsufficientScope {
+            missing_scopes: vec!["wildflower/Grant.c".to_owned()],
+        }),
+    );
+    assert!(store
+        .tx()
+        .grant_by_client_and_redirect(
+            "client",
+            &amp;url::Url::parse("https://example.com/cb").unwrap(),
+        )
+        .unwrap()
+        .is_none());
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .status(),
+        RequestStatus::Pending,
+    );
+    assert_eq!(owner_approval.count(), 0);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1109-L1147"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1109–1147</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_requires_both_client_scopes_whatever_the_row" class="item-anchor"></div>
+
+<p>A code approval for a client trusted on first use writes its
+registration, so it takes both <code>wildflower/Client.c</code> and
+<code>wildflower/Client.u</code>, whether the row is missing, needs widening, or
+already matches: one alone is refused, naming the other, and no client
+row is written or changed.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_requires_both_client_scopes_whatever_the_row() {
+    let registered = client("client", &amp;["read"]);
+    for (maybe_registered_client, requested_scopes) in [
+        (None, &amp;["read"][..]),
+        (Some(&amp;registered), &amp;["read", "write"][..]),
+        (Some(&amp;registered), &amp;["read"][..]),
+    ] {
+        for (client_scope, missing) in [
+            ("wildflower/Client.c", "wildflower/Client.u"),
+            ("wildflower/Client.u", "wildflower/Client.c"),
+        ] {
+            let store = FakeGrantStore::default();
+            let owner_approval = Arc::new(RecordingOwnerApproval::default());
+            if let Some(registered_client) = maybe_registered_client {
+                store.tx().upsert_client(registered_client).unwrap();
+            }
+            let request = code_request_for("req-1", "client", owned_scopes(requested_scopes));
+            store.tx().insert_code_request(&amp;request).unwrap();
+
+            let result = approve_code(
+                &amp;store,
+                &amp;owner_approval,
+                "req-1",
+                approved(requested_scopes),
+                &amp;Grant::parse([
+                    "wildflower/AuthorizationRequest.u",
+                    "wildflower/Grant.c",
+                    client_scope,
+                ]),
+                || panic!("must not mint a code without the power to write the client"),
+            );
+            assert_eq!(
+                result,
+                Err(AuthorizationServerError::InsufficientScope {
+                    missing_scopes: vec![missing.to_owned()],
+                }),
+                "{maybe_registered_client:?} {requested_scopes:?} {client_scope}",
+            );
+            assert_eq!(
+                store.tx().client_by_id("client").unwrap().as_ref(),
+                maybe_registered_client,
+            );
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1155-L1199"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1155–1199</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_with_both_client_scopes_registers_a_new_client" class="item-anchor"></div>
+
+<p>With both client scopes the approval registers a new client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_with_both_client_scopes_registers_a_new_client() {
+    let store = FakeGrantStore::default();
+    seed_fixture_browser_session(&amp;store);
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-1",
+            RequestStatus::Pending,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;approver_grant_with(&amp;[]),
+        || "the-code".to_owned(),
+    )
+    .expect("the power to register the client approves");
+    assert!(store.tx().client_by_id("client").unwrap().is_some());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1203-L1225"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1203–1225</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approving_for_a_fixed_registration_takes_no_client_scope" class="item-anchor"></div>
+
+<p>The host app’s registration is fixed, so approving its changed
+request writes none and takes no client scope.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approving_for_a_fixed_registration_takes_no_client_scope() {
+    let store = FakeGrantStore::default();
+    seed_fixture_browser_session(&amp;store);
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    store
+        .tx()
+        .upsert_client(&amp;Client {
+            registration_source: RegistrationSource::ServerDefined,
+            ..client(crate::WILDFLOWER_HOST_APP_CLIENT_ID, &amp;["read"])
+        })
+        .unwrap();
+    let request = code_request_for(
+        "req-1",
+        crate::WILDFLOWER_HOST_APP_CLIENT_ID,
+        vec!["read".to_owned(), "write".to_owned()],
+    );
+    store.tx().insert_code_request(&amp;request).unwrap();
+
+    let outcome = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;Grant::parse(["wildflower/AuthorizationRequest.u", "wildflower/Grant.c"]),
+        || "the-code".to_owned(),
+    )
+    .expect("no client scope is needed");
+    assert!(matches!(outcome, ConsentOutcome::Approved { .. }));
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L1230-L1258"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 1230–1258</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The registration:</p>
+<div id="item-tests--approve_oauth_consent_rejects_an_unacknowledged_new_client" class="item-anchor"></div>
+
+<p>A client this authorization server has never seen reaches consent (nothing is
+registered at <code>/authorize</code>), and approving it <strong>without</strong> the Owner’s
+acknowledgement writes nothing at all: no client row, no grant, no code,
+and the prompt stays pending so they can decide again.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_rejects_an_unacknowledged_new_client() {
+    let store = FakeGrantStore::default();
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-1",
+            RequestStatus::Pending,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    let result = approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        ApproveOAuthConsentInput {
+            owner_approved_scopes: vec!["read".to_owned()],
+            patient: None,
+            acknowledged_registration_change: false,
+        },
+        &amp;owner_grant(),
+        || panic!("must not mint a code for an unacknowledged registration"),
+    );
+    assert_eq!(
+        result,
+        Err(AuthorizationServerError::RegistrationNotAcknowledged {
+            id: "req-1".to_owned()
+        }),
+    );
+    assert!(store.tx().client_by_id("client").unwrap().is_none());
+    assert!(store
+        .tx()
+        .grant_by_client_and_redirect(
+            "client",
+            &amp;url::Url::parse("https://example.com/cb").unwrap(),
+        )
+        .unwrap()
+        .is_none());
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .status(),
+        RequestStatus::Pending,
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L655-L702"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 655–702</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_registers_an_acknowledged_new_client" class="item-anchor"></div>
+
+<p>An acknowledged approval of a new client registers it: a public client
+named after its own <code>client_id</code>, holding the one redirect it used and
+exactly the granted scopes.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_registers_an_acknowledged_new_client() {
+    let store = FakeGrantStore::default();
+    seed_fixture_browser_session(&amp;store);
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    store
+        .tx()
+        .insert_code_request(&amp;code_request(
+            "req-1",
+            RequestStatus::Pending,
+            Utc::now() + Duration::minutes(5),
+        ))
+        .unwrap();
+    approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;owner_grant(),
+        || "the-code".to_owned(),
+    )
+    .unwrap();
+    let registered = store
+        .tx()
+        .client_by_id("client")
+        .unwrap()
+        .expect("client row");
+    assert_eq!(registered.name, "client");
+    assert_eq!(registered.kind, crate::domain::client::ClientKind::Public);
+    assert_eq!(
+        registered.redirect_uris,
+        vec![url::Url::parse("https://example.com/cb").unwrap()],
+    );
+    assert_eq!(registered.allowed_scopes, vec!["read".to_owned()]);
+    assert_eq!(
+        registered.allowed_grant_types,
+        crate::domain::client::AllowedGrantType::ALL.to_vec(),
+    );
+    assert!(registered.secret_hash.is_none());
+    assert!(registered.disabled_at.is_none());
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L708-L747"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 708–747</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_widens_a_changed_registration" class="item-anchor"></div>
+
+<p>Approving a known client’s changed request widens its row in place: the
+new redirect is appended to the existing allowlist and the <strong>granted</strong>
+scopes are unioned — a requested scope the Owner pruned is not added, and
+the row’s name and <code>registered_at</code> survive.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_widens_a_changed_registration() {
+    let store = FakeGrantStore::default();
+    seed_fixture_browser_session(&amp;store);
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    let elsewhere = url::Url::parse("https://other.example/cb").unwrap();
+    let registered_at = Utc::now() - Duration::days(30);
+    let mut existing = client("client", &amp;["read"]);
+    existing.redirect_uris = vec![elsewhere.clone()];
+    existing.registered_at = registered_at;
+    store.tx().upsert_client(&amp;existing).unwrap();
+    let request = code_request_for(
+        "req-1",
+        "client",
+        vec!["read".to_owned(), "write".to_owned()],
+    );
+    store.tx().insert_code_request(&amp;request).unwrap();
+
+    approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["read"]),
+        &amp;owner_grant(),
+        || "the-code".to_owned(),
+    )
+    .unwrap();
+
+    let widened = store
+        .tx()
+        .client_by_id("client")
+        .unwrap()
+        .expect("client row");
+    assert_eq!(
+        widened.redirect_uris,
+        vec![
+            elsewhere,
+            url::Url::parse("https://example.com/cb").unwrap(),
+        ],
+    );
+    // `write` was requested but pruned at consent, so it is NOT registered.
+    assert_eq!(widened.allowed_scopes, vec!["read".to_owned()]);
+    assert_eq!(widened.name, existing.name);
+    assert_eq!(widened.registered_at, registered_at);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L754-L797"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 754–797</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_may_grant_a_scope_outside_the_registration" class="item-anchor"></div>
+
+<p>The clamp for a client trusted on first use is <code>allowed_scopes ∪ requested_scopes</code>: a scope outside the registration can be granted (that
+is what the warning is for) and is then unioned into the row, so the next
+identical request is <code>NoChange</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_may_grant_a_scope_outside_the_registration() {
+    let store = FakeGrantStore::default();
+    seed_fixture_browser_session(&amp;store);
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    store
+        .tx()
+        .upsert_client(&amp;client("client", &amp;["read"]))
+        .unwrap();
+    let request = code_request_for("req-1", "client", vec!["write".to_owned()]);
+    store.tx().insert_code_request(&amp;request).unwrap();
+
+    approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        approved(&amp;["write"]),
+        &amp;owner_grant(),
+        || "the-code".to_owned(),
+    )
+    .unwrap();
+
+    assert_eq!(
+        store
+            .tx()
+            .grant_by_client_and_redirect(
+                "client",
+                &amp;url::Url::parse("https://example.com/cb").unwrap(),
+            )
+            .unwrap()
+            .expect("grant")
+            .scopes,
+        vec!["write".to_owned()],
+    );
+    assert_eq!(
+        store
+            .tx()
+            .client_by_id("client")
+            .unwrap()
+            .unwrap()
+            .allowed_scopes,
+        vec!["read".to_owned(), "write".to_owned()],
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L804-L846"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 804–846</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The launch’s patient, and a prompt that isn’t there:</p>
+<div id="item-tests--approve_oauth_consent_requires_the_launch_bound_patient" class="item-anchor"></div>
+
+<p>A request whose SMART launch bound a patient is approved only for that
+patient: another patient, or none, is refused and writes nothing (no
+code, no grant, still pending); the launch’s own patient goes through
+and is bound to the code.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_requires_the_launch_bound_patient() {
+    let (store, owner_approval) = live_code_store();
+    store
+        .tx()
+        .insert_code_request(&amp;CodeRequest::new(
+            NewCodeRequestArgs {
+                launch: Some("launch-1".to_owned()),
+                launch_bound_patient: Some("pat-1".to_owned()),
+                ..fixture_code_args("req-1", "client", owned_scopes(&amp;["read"]))
+            },
+            Utc::now(),
+        ))
+        .unwrap();
+    for patient in [Some("pat-2"), None] {
+        let result = approve_code(
+            &amp;store,
+            &amp;owner_approval,
+            "req-1",
+            ApproveOAuthConsentInput {
+                patient: patient.map(str::to_owned),
+                ..approved(&amp;["read"])
+            },
+            &amp;owner_grant(),
+            || panic!("must not mint a code for another patient"),
+        );
+        assert_eq!(
+            result,
+            Err(AuthorizationServerError::LaunchPatientMismatch {
+                id: "req-1".to_owned()
+            }),
+            "approving for {patient:?}",
+        );
+    }
+    assert!(store
+        .tx()
+        .grant_by_client_and_redirect(
+            "client",
+            &amp;url::Url::parse("https://example.com/cb").unwrap(),
+        )
+        .unwrap()
+        .is_none());
+    assert_eq!(
+        store
+            .tx()
+            .authorization_request_by_id("req-1")
+            .unwrap()
+            .unwrap()
+            .status(),
+        RequestStatus::Pending,
+    );
+
+    approve_code(
+        &amp;store,
+        &amp;owner_approval,
+        "req-1",
+        ApproveOAuthConsentInput {
+            patient: Some("pat-1".to_owned()),
+            ..approved(&amp;["read"])
+        },
+        &amp;owner_grant(),
+        || "the-code".to_owned(),
+    )
+    .expect("the launch's own patient is approved");
+    assert_eq!(
+        store
+            .tx()
+            .authorization_code_by_request_id("req-1")
+            .unwrap()
+            .expect("a code")
+            .patient
+            .as_deref(),
+        Some("pat-1"),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L575-L648"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 575–648</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<div id="item-tests--approve_oauth_consent_maps_a_missing_request_to_not_found" class="item-anchor"></div>
+
+<p>Approving an id that names no request is <code>OAuthConsentNotFound</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_consent_maps_a_missing_request_to_not_found() {
+    let store = FakeGrantStore::default();
+    let owner_approval = Arc::new(RecordingOwnerApproval::default());
+    assert_eq!(
+        approve_code(
+            &amp;store,
+            &amp;owner_approval,
+            "ghost",
+            approved(&amp;["read"]),
+            &amp;owner_grant(),
+            || "unused".to_owned(),
+        ),
+        Err(AuthorizationServerError::OAuthConsentNotFound {
+            id: "ghost".to_owned()
+        }),
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/mod.rs#L891-L907"><code>authorization-server-rust/src/domain/capabilities/access/consents/mod.rs</code> lines 891–907</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="approve_oauth_in"><a class="header" href="#approve_oauth_in"><code>approve_oauth_in</code></a></h4>
+<div id="item-ConsentDecider--approve_oauth_in" class="item-anchor"></div>
+
+<p><a href="#item-ConsentDecider--approve_oauth_consent"><code>approve_oauth_consent</code></a>’s flow, inside its write scope
+<code>tx</code>. The checks run in order: a disabled client’s prompt is denied;
+the <a href="../../authority/delegated-scopes.html#item-DelegatedScopes"><code>DelegatedScopes</code></a> proof comes first after that, so an approver
+lacking an approval scope is refused before anything else; then the
+acknowledgement of a registration change; then the launch’s patient.
+Each refusal is an error that writes nothing, and only then does a
+clamp that left nothing become a deny.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn approve_oauth_in(
+    &amp;self,
+    tx: &amp;mut impl GrantTx,
+    id: &amp;str,
+    input: ApproveOAuthConsentInput,
+    generate_code: impl FnOnce() -&gt; String,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;ConsentOutcome, AuthorizationServerError&gt; {
+    let pending_request = load_pending_code_request(tx, id, now)?;
+    let requested_redirect_uri = &amp;pending_request.redirect_uri;
+    let resolved = resolve(tx, &amp;pending_request)?;
+    // The client was disabled since the request was made: it can't be
+    // approved, so it ends here, and the app hears why.
+    if resolved.is_client_disabled() {
+        deny_pending_request(tx, &amp;pending_request, now, id)?;
+        return Ok(denial_outcome(
+            &amp;pending_request,
+            AuthorizeRefusal::DisabledClient.description(),
+        ));
+    }
+    // The proof every write below demands: the approver holds this prompt's
+    // approval scopes, and the Owner's approval is clamped to what this
+    // prompt may grant and covered by the approver's own grant. Taken
+    // first, so an approver lacking an approval scope is refused before
+    // anything else.
+    let maybe_delegated_scopes = DelegatedScopes::clamp(
+        &amp;self.approver_grant,
+        input.owner_approved_scopes,
+        resolved.approvable_scopes(),
+    )?;
+    if resolved
+        .presented_client_change()
+        .would_change_registration()
+        &amp;&amp; !input.acknowledged_registration_change
+    {
+        return Err(AuthorizationServerError::RegistrationNotAcknowledged {
+            id: id.to_owned(),
+        });
+    }
+    if !pending_request.admits_patient(input.patient.as_deref()) {
+        return Err(AuthorizationServerError::LaunchPatientMismatch { id: id.to_owned() });
+    }
+    let Some(delegated_scopes) = maybe_delegated_scopes else {
+        deny_pending_request(tx, &amp;pending_request, now, id)?;
+        return Ok(denial_outcome(
+            &amp;pending_request,
+            REQUEST_DECLINED_DESCRIPTION,
+        ));
+    };
+
+    let issued_code = match RequestApprover::within(tx).approve_for_code(
+        CodeAuthority::OwnerDelegated(&amp;delegated_scopes),
+        &amp;pending_request,
+        input.patient.as_deref(),
+        generate_code(),
+        now,
+    )? {
+        CodeApproval::Issued(issued_code) =&gt; issued_code,
+        CodeApproval::RequestNotPending =&gt; return Err(consent_not_found(id)),
+        // The approver denied the request instead: tell the client so.
+        CodeApproval::BrowserSessionEnded =&gt; {
+            return Ok(denial_outcome(
+                &amp;pending_request,
+                BROWSER_SIGNED_OUT_DESCRIPTION,
+            ));
+        }
+    };
+    GrantRecorder::within(tx).record_code_grant(
+        &amp;pending_request.client_id,
+        requested_redirect_uri,
+        &amp;delegated_scopes,
+        input.patient.as_deref(),
+        now,
+    )?;
+    Ok(ConsentOutcome::Approved {
+        redirect: Some(build_client_redirect_url(
+            requested_redirect_uri,
+            &amp;issued_code.code,
+            &amp;pending_request.client_state,
+        )),
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L175-L256"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 175–256</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h4 id="deny_oauth_consent"><a class="header" href="#deny_oauth_consent"><code>deny_oauth_consent</code></a></h4>
+<div id="item-ConsentDecider--deny_oauth_consent" class="item-anchor"></div>
+
+<p>Deny the authorization-code consent prompt <code>id</code>, republish the popup
+head, and return the client’s <code>error=access_denied</code> callback.</p>
+<h5 id="errors-3"><a class="header" href="#errors-3">Errors</a></h5>
+<p><a href="../../domain/errors.html#item-AuthorizationServerError"><code>AuthorizationServerError::OAuthConsentNotFound</code></a> when <code>id</code> names no
+live code-flow prompt.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub(crate) fn deny_oauth_consent(
+    &amp;self,
+    id: &amp;str,
+    now: DateTime&lt;Utc&gt;,
+) -&gt; Result&lt;ConsentOutcome, AuthorizationServerError&gt; {
+    self.decide_and_republish(|tx| {
+        let pending_request = load_pending_code_request(tx, id, now)?;
+        deny_pending_request(tx, &amp;pending_request, now, id)?;
+        Ok(denial_outcome(
+            &amp;pending_request,
+            REQUEST_DECLINED_DESCRIPTION,
+        ))
+    })
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L153-L166"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 153–166</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="deny_pending_request"><a class="header" href="#deny_pending_request"><code>deny_pending_request</code></a></h3>
+<p>The deny is the request’s own <a href="../../domain/authorization-request/code-request.html#item-CodeRequest--deny"><code>deny</code></a> transition, written through the <a href="../../domain/authorization-request.html#transitions-and-the-guarded-replace">guarded replace</a>.</p>
+<div id="item-deny_pending_request" class="item-anchor"></div>
+
+<p>Deny the prompt <code>id</code>, <code>pending_request</code> as read, at <code>now</code>, in the caller’s
+write scope <code>tx</code> — the shared tail of every deny path (an explicit deny,
+an approval that grants nothing, and one for a client disabled since).</p>
+<p>The deny lands only on a request still pending: when another surface
+decided it first (or it expired) since it was read, nothing changes and
+the prompt is not found, as an approval that loses the same race is.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn deny_pending_request(
+    tx: &amp;mut impl AuthorizationRequestsTx,
+    pending_request: &amp;CodeRequest,
+    now: DateTime&lt;Utc&gt;,
+    id: &amp;str,
+) -&gt; Result&lt;(), AuthorizationServerError&gt; {
+    let denied = pending_request
+        .deny(now)
+        .map_err(|_| consent_not_found(id))?;
+    if tx.replace_code_request(pending_request, &amp;denied)? {
+        Ok(())
+    } else {
+        Err(consent_not_found(id))
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L279-L293"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 279–293</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<h3 id="denial_outcome"><a class="header" href="#denial_outcome"><code>denial_outcome</code></a></h3>
+<div id="item-denial_outcome" class="item-anchor"></div>
+
+<p>The outcome of denying <code>pending_request</code>: the client callback carrying
+<code>error=access_denied</code>, <code>description</code> as its <code>error_description</code>, and the
+client’s <code>state</code> (RFC 6749 §4.1.2.1).</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn denial_outcome(pending_request: &amp;CodeRequest, description: &amp;str) -&gt; ConsentOutcome {
+    ConsentOutcome::Denied {
+        redirect: Some(build_client_error_redirect_url(
+            &amp;pending_request.redirect_uri,
+            OAuthErrorCode::AccessDenied,
+            description,
+            &amp;pending_request.client_state,
+        )),
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs#L318-L327"><code>authorization-server-rust/src/domain/capabilities/access/consents/oauth.rs</code> lines 318–327</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../authorization-server/capabilities/access/consents.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../authorization-server/capabilities/access/device-consents.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../authorization-server/capabilities/access/consents.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../authorization-server/capabilities/access/device-consents.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
