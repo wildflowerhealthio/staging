@@ -1,0 +1,717 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Revocation - Wildflower, Read in Order</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="The Wildflower code, read in domain order: chapters of prose with the source they explain.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../assets/book-fa5a599e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "navy";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-f16b3b8a.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-d2513672.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Wildflower, Read in Order</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/wildflowerhealthio/Wildflower" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <!-- markdownlint-disable-file first-line-heading -->
+<h1 id="revocation"><a class="header" href="#revocation">Revocation</a></h1>
+<p class="code-source">Covers <a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs"><code>authorization-server-rust/tests/integration/revocation.rs</code></a></p>
+
+<p>An <a href="../domain/access-token.html">access token</a> is a signed JWT that stays valid until it expires. Revocation is how the server stops one early. It keeps two records, in a revocation store shared with the FHIR server:</p>
+<ul>
+<li><strong>The <code>jti</code> denylist</strong> ends one token: the row lives until the token would have expired anyway.</li>
+<li><strong>The subject epoch</strong> ends a cohort: every token issued to a subject (its <code>sub</code>, the <code>client_id</code>) before the epoch is revoked.</li>
+</ul>
+<p>Every <code>/authorization</code> bearer gate checks both, and a revoked token is <code>401</code>, the same as no token. Revocation is written in three places: the Owner’s <code>POST /authorization/revocations</code>, logout, and revoking a <a href="../domain/grant.html">grant</a>. <a href="token-revocation.html">Token Revocation</a> covers an app revoking its own tokens.</p>
+<p>This file’s own helpers are on the <a href="test-fixtures.html#integrationrevocation">Test Fixtures</a> page, with the shared ones.</p>
+<h2 id="integrationrevocation"><a class="header" href="#integrationrevocation"><code>integration::revocation</code></a></h2>
+<h3 id="gate_allows_a_live_token_across_repeated_requests"><a class="header" href="#gate_allows_a_live_token_across_repeated_requests"><code>gate_allows_a_live_token_across_repeated_requests</code></a></h3>
+<div id="item-gate_allows_a_live_token_across_repeated_requests" class="item-anchor"></div>
+
+<p>A bearer is multi-use: the same live token authenticates again and again,
+and revocation doesn’t make it single-use.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn gate_allows_a_live_token_across_repeated_requests() {
+    let (g, owner_token, _db) = spin_up();
+    for _ in 0..3 {
+        let res = g
+            .router
+            .clone()
+            .oneshot(owner_grants_probe(&amp;owner_token))
+            .await
+            .expect("oneshot");
+        assert_eq!(
+            res.status(),
+            StatusCode::OK,
+            "a live token must keep passing"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L12-L27"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 12–27</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/access-token.html#item-AccessTokenClaims"><code>AccessTokenClaims</code></a>’s <code>jti</code>, a revocation handle and not a single-use nonce. Fixtures first used here: <a href="test-fixtures.html#item-spin_up"><code>spin_up</code></a> and <a href="test-fixtures.html#item-owner_grants_probe"><code>owner_grants_probe</code></a>.</p>
+<h3 id="gate_rejects_a_revoked_jti"><a class="header" href="#gate_rejects_a_revoked_jti"><code>gate_rejects_a_revoked_jti</code></a></h3>
+<div id="item-gate_rejects_a_revoked_jti" class="item-anchor"></div>
+
+<p>A live token whose <code>jti</code> is denylisted is rejected from then on.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn gate_rejects_a_revoked_jti() {
+    let (g, owner_token, db) = spin_up();
+    // Live first.
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_grants_probe(&amp;owner_token))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::OK);
+    // Denylist this token's jti; the same token is now rejected.
+    let jti = jti_of(&amp;owner_token);
+    revocation_store_handle(&amp;db)
+        .revoke_jti(&amp;jti, Utc::now() + Duration::hours(1), "test")
+        .expect("revoke");
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_grants_probe(&amp;owner_token))
+        .await
+        .expect("oneshot");
+    assert_eq!(
+        res.status(),
+        StatusCode::UNAUTHORIZED,
+        "a revoked jti must be rejected by the gate"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L31-L57"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 31–57</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/access-token.html#item-AccessTokenClaims"><code>AccessTokenClaims</code></a> and <a href="../capabilities/session/token-verifier.html#item-TokenVerifier--verify"><code>TokenVerifier::verify</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-jti_of"><code>jti_of</code></a> and <a href="test-fixtures.html#item-revocation_store_handle"><code>revocation_store_handle</code></a>.</p>
+<h3 id="gate_rejects_after_subject_epoch_bump"><a class="header" href="#gate_rejects_after_subject_epoch_bump"><code>gate_rejects_after_subject_epoch_bump</code></a></h3>
+<div id="item-gate_rejects_after_subject_epoch_bump" class="item-anchor"></div>
+
+<p>Bumping a subject’s revocation epoch rejects every token issued to that
+client before the epoch. The epoch is set a second ahead, because a
+token’s <code>iat</code> is whole seconds.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn gate_rejects_after_subject_epoch_bump() {
+    let (g, owner_token, db) = spin_up();
+    // Bulk-revoke the Owner token's client's cohort. JWT `iat` is second-precision, so
+    // advance the epoch one second past the mint second to unambiguously cover a
+    // token minted moments ago in this test.
+    revocation_store_handle(&amp;db)
+        .bump_subject_epoch(OWNER_TOKEN_CLIENT_ID, Utc::now() + Duration::seconds(1))
+        .expect("bump");
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_grants_probe(&amp;owner_token))
+        .await
+        .expect("oneshot");
+    assert_eq!(
+        res.status(),
+        StatusCode::UNAUTHORIZED,
+        "an epoch bump must revoke pre-epoch tokens"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L63-L82"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 63–82</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>The epoch is set a second ahead, because a token’s <code>iat</code> is whole seconds. Relies on <a href="../capabilities/session/token-verifier.html#item-TokenVerifier--verify"><code>TokenVerifier::verify</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-OWNER_TOKEN_CLIENT_ID"><code>OWNER_TOKEN_CLIENT_ID</code></a>.</p>
+<h3 id="logout_revokes_the_presented_jti"><a class="header" href="#logout_revokes_the_presented_jti"><code>logout_revokes_the_presented_jti</code></a></h3>
+<div id="item-logout_revokes_the_presented_jti" class="item-anchor"></div>
+
+<p>Logging out denylists the presented token’s <code>jti</code>, so the same token no
+longer authenticates.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn logout_revokes_the_presented_jti() {
+    let (g, owner_token, db) = spin_up();
+    let jti = jti_of(&amp;owner_token);
+    // Log out, presenting the token as a bearer.
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/authorization/logout")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::SEE_OTHER);
+    // The presented token's jti is now denylisted...
+    assert!(
+        revocation_store_handle(&amp;db)
+            .is_revoked_by_jti(&amp;jti)
+            .expect("query"),
+        "logout must denylist the presented token's jti"
+    );
+    // ...and the same token no longer authenticates.
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_grants_probe(&amp;owner_token))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::UNAUTHORIZED);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L87-L118"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 87–118</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/session-routes.html#item-handle_logout"><code>handle_logout</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-build_request"><code>build_request</code></a>.</p>
+<h3 id="revocations_endpoint_revokes_by_jti"><a class="header" href="#revocations_endpoint_revokes_by_jti"><code>revocations_endpoint_revokes_by_jti</code></a></h3>
+<div id="item-revocations_endpoint_revokes_by_jti" class="item-anchor"></div>
+
+<p><code>POST /authorization/revocations</code> with a <code>jti</code> and its <code>expiresAt</code>
+denylists that token, even when it is the caller’s own.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revocations_endpoint_revokes_by_jti() {
+    let (g, owner_token, _db) = spin_up();
+    let jti = jti_of(&amp;owner_token);
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_revocation_request(
+            &amp;owner_token,
+            serde_json::json!({
+                "jti": jti,
+                "expiresAt": (Utc::now() + Duration::hours(1)).to_rfc3339(),
+            }),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    // The token it just revoked (its own) no longer authenticates.
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_grants_probe(&amp;owner_token))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::UNAUTHORIZED);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L123-L147"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 123–147</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/session-routes.html#item-handle_create_revocation"><code>handle_create_revocation</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-owner_revocation_request"><code>owner_revocation_request</code></a>.</p>
+<h3 id="revocations_endpoint_bulk_revokes_by_subject"><a class="header" href="#revocations_endpoint_bulk_revokes_by_subject"><code>revocations_endpoint_bulk_revokes_by_subject</code></a></h3>
+<div id="item-revocations_endpoint_bulk_revokes_by_subject" class="item-anchor"></div>
+
+<p><code>POST /authorization/revocations</code> with a <code>subject</code> bumps that client’s
+epoch, revoking every token it was issued before now.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revocations_endpoint_bulk_revokes_by_subject() {
+    let (g, owner_token, db) = spin_up();
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_revocation_request(
+            &amp;owner_token,
+            serde_json::json!({ "subject": "some-client" }),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    // The subject's epoch was bumped to ~now: a token that subject holds issued
+    // an hour ago is revoked (checked directly, deterministically).
+    assert!(
+        revocation_store_handle(&amp;db)
+            .is_revoked(None, Some(Utc::now() - Duration::hours(1)), "some-client")
+            .expect("query"),
+        "subject-mode revoke must bump the subject epoch"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L152-L172"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 152–172</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/session-routes.html#item-handle_create_revocation"><code>handle_create_revocation</code></a>.</p>
+<h3 id="revocations_endpoint_rejects_invalid_bodies"><a class="header" href="#revocations_endpoint_rejects_invalid_bodies"><code>revocations_endpoint_rejects_invalid_bodies</code></a></h3>
+<div id="item-revocations_endpoint_rejects_invalid_bodies" class="item-anchor"></div>
+
+<p>A revocation body is one mode or the other: a <code>jti</code> without its
+<code>expiresAt</code>, both modes, neither, or an <code>expiresAt</code> already past is <code>400</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revocations_endpoint_rejects_invalid_bodies() {
+    let (g, owner_token, _db) = spin_up();
+    let bad_bodies = [
+        // jti without the required expiresAt
+        serde_json::json!({ "jti": "abc" }),
+        // both modes at once
+        serde_json::json!({ "jti": "abc", "expiresAt": Utc::now().to_rfc3339(), "subject": "c" }),
+        // neither mode
+        serde_json::json!({}),
+        // jti with an expiresAt already in the past (stale/mistyped)
+        serde_json::json!({
+            "jti": "abc",
+            "expiresAt": (Utc::now() - Duration::hours(1)).to_rfc3339(),
+        }),
+    ];
+    for body in bad_bodies {
+        let res = g
+            .router
+            .clone()
+            .oneshot(owner_revocation_request(&amp;owner_token, body.clone()))
+            .await
+            .expect("oneshot");
+        assert_eq!(
+            res.status(),
+            StatusCode::BAD_REQUEST,
+            "invalid revocation body must 400: {body}"
+        );
+    }
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L177-L205"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 177–205</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/session-routes.html#item-RevocationRequest--into_revocation"><code>RevocationRequest::into_revocation</code></a>.</p>
+<h3 id="revocations_endpoint_requires_owner_auth"><a class="header" href="#revocations_endpoint_requires_owner_auth"><code>revocations_endpoint_requires_owner_auth</code></a></h3>
+<div id="item-revocations_endpoint_requires_owner_auth" class="item-anchor"></div>
+
+<p>Revoking without a bearer is <code>401</code>.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revocations_endpoint_requires_owner_auth() {
+    let (g, _owner_token, _db) = spin_up();
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::post("/authorization/revocations")
+                .header("host", "127.0.0.1")
+                .header("content-type", "application/json"),
+            Body::from(serde_json::json!({ "subject": "c" }).to_string()),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::UNAUTHORIZED);
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L209-L223"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 209–223</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/middleware.html#item-require_valid_session"><code>require_valid_session</code></a>.</p>
+<h3 id="revoking_a_grant_bumps_the_client_revocation_epoch"><a class="header" href="#revoking_a_grant_bumps_the_client_revocation_epoch"><code>revoking_a_grant_bumps_the_client_revocation_epoch</code></a></h3>
+<div id="item-revoking_a_grant_bumps_the_client_revocation_epoch" class="item-anchor"></div>
+
+<p>Revoking an authorization-code grant bumps its client’s revocation epoch,
+so the client’s live access tokens end with the standing consent.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revoking_a_grant_bumps_the_client_revocation_epoch() {
+    let (g, owner_token, db) = spin_up();
+    // Seed a client + a grant for it.
+    seed_client_with_redirect(&amp;db, "granted-client", "https://app.example/cb", &amp;["read"]);
+    let store = store_handle(&amp;db);
+    store
+        .write(|tx| {
+            tx.create_authorization_code_grant(
+                &amp;wildflowerhealthio_authorization_server::domain::grant::AuthorizationCodeGrant {
+                    id: "grant-1".to_string(),
+                    client_id: "granted-client".to_string(),
+                    scopes: vec!["read".to_string()],
+                    granted_at: Utc::now(),
+                    last_used_at: None,
+                    patient: None,
+                    redirect_uri: Url::parse("https://app.example/cb").expect("url"),
+                },
+            )
+        })
+        .expect("create grant");
+    // Revoke it.
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::delete("/authorization/grants/grant-1")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    // The client's live access tokens are now revoked via the epoch — a token
+    // it holds issued an hour ago reads back revoked.
+    assert!(
+        revocation_store_handle(&amp;db)
+            .is_revoked(
+                None,
+                Some(Utc::now() - Duration::hours(1)),
+                "granted-client"
+            )
+            .expect("query"),
+        "grant revoke must bump the client's revocation epoch"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L228-L273"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 228–273</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/grant.html#item-AuthorizationCodeGrant"><code>AuthorizationCodeGrant</code></a> and <a href="../capabilities/access/grants.html#item-GrantsRevoker--revoke"><code>GrantsRevoker::revoke</code></a>. The grant’s refresh families end too (<a href="device-code.html#item-revoking_grant_revokes_refresh_tokens"><code>revoking_grant_revokes_refresh_tokens</code></a>). Fixtures first used here: <a href="test-fixtures.html#item-seed_client_with_redirect"><code>seed_client_with_redirect</code></a> and <a href="test-fixtures.html#item-store_handle"><code>store_handle</code></a>.</p>
+<h3 id="revoking_a_device_grant_bumps_the_client_revocation_epoch"><a class="header" href="#revoking_a_device_grant_bumps_the_client_revocation_epoch"><code>revoking_a_device_grant_bumps_the_client_revocation_epoch</code></a></h3>
+<div id="item-revoking_a_device_grant_bumps_the_client_revocation_epoch" class="item-anchor"></div>
+
+<p>The Owner’s list of authorized devices revokes a device through the same
+<code>DELETE /authorization/grants/{id}</code> route, so revoking a device grant bumps
+the client’s revocation epoch exactly as revoking an authorization-code
+grant does. The epoch is keyed on <code>sub = client_id</code>, so revoking one device
+grant revokes every live access token of that client.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revoking_a_device_grant_bumps_the_client_revocation_epoch() {
+    let (g, owner_token, db) = spin_up();
+    seed_client_with_redirect(&amp;db, "device-client", "https://app.example/cb", &amp;["read"]);
+    let store = store_handle(&amp;db);
+    store
+        .write(|tx| {
+            tx.create_device_grant(
+                &amp;wildflowerhealthio_authorization_server::domain::grant::DeviceGrant {
+                    id: "device-grant-1".to_string(),
+                    client_id: "device-client".to_string(),
+                    scopes: vec!["read".to_string()],
+                    granted_at: Utc::now(),
+                    last_used_at: None,
+                    patient: None,
+                    device_name: "Ada's laptop".to_string(),
+                },
+            )
+        })
+        .expect("create device grant");
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::delete("/authorization/grants/device-grant-1")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    assert!(
+        revocation_store_handle(&amp;db)
+            .is_revoked(None, Some(Utc::now() - Duration::hours(1)), "device-client")
+            .expect("query"),
+        "revoking a device grant must bump the client's revocation epoch"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L281-L318"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 281–318</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/grant.html#item-DeviceGrant"><code>DeviceGrant</code></a> and <a href="../capabilities/access/grants.html#item-GrantsRevoker--revoke"><code>GrantsRevoker::revoke</code></a>.</p>
+<h3 id="revoking_the_host_app_s_subject_revokes_its_tokens"><a class="header" href="#revoking_the_host_app_s_subject_revokes_its_tokens"><code>revoking_the_host_app_s_subject_revokes_its_tokens</code></a></h3>
+<div id="item-revoking_the_host_app_s_subject_revokes_its_tokens" class="item-anchor"></div>
+
+<p>Revoking the Wildflower host app’s subject revokes a token issued to it,
+like any other client’s: the gate that forbade it now rejects it outright.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revoking_the_host_app_s_subject_revokes_its_tokens() {
+    let (g, owner_token, db) = spin_up();
+    let host_app_token = mint_host_app_token(&amp;db);
+    assert_eq!(
+        gate_status(&amp;g, &amp;host_app_token).await,
+        StatusCode::FORBIDDEN
+    );
+    let res = g
+        .router
+        .clone()
+        .oneshot(owner_revocation_request(
+            &amp;owner_token,
+            serde_json::json!({ "subject": WILDFLOWER_HOST_APP_CLIENT_ID }),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    assert_eq!(
+        gate_status(&amp;g, &amp;host_app_token).await,
+        StatusCode::UNAUTHORIZED,
+        "the token issued to the host app is revoked"
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L339-L361"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 339–361</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../http/routes/session-routes.html#item-handle_create_revocation"><code>handle_create_revocation</code></a>. Fixtures first used here: <a href="test-fixtures.html#item-mint_host_app_token"><code>mint_host_app_token</code></a> and <a href="test-fixtures.html#item-gate_status"><code>gate_status</code></a>.</p>
+<h3 id="revoking_a_grant_of_the_host_app_s_client_bumps_its_epoch"><a class="header" href="#revoking_a_grant_of_the_host_app_s_client_bumps_its_epoch"><code>revoking_a_grant_of_the_host_app_s_client_bumps_its_epoch</code></a></h3>
+<div id="item-revoking_a_grant_of_the_host_app_s_client_bumps_its_epoch" class="item-anchor"></div>
+
+<p>Revoking a grant of the Wildflower host app’s client deletes it and bumps
+the host app’s epoch like any other client’s.</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn revoking_a_grant_of_the_host_app_s_client_bumps_its_epoch() {
+    let (g, owner_token, db) = spin_up();
+    let host_app_token = mint_host_app_token(&amp;db);
+    store_handle(&amp;db)
+        .write(|tx| {
+            tx.create_device_grant(
+                &amp;wildflowerhealthio_authorization_server::domain::grant::DeviceGrant {
+                    id: "host-app-grant".to_string(),
+                    client_id: WILDFLOWER_HOST_APP_CLIENT_ID.to_string(),
+                    scopes: wildflowerhealthio_authorization_server::default_host_app_client_scopes(
+                    ),
+                    granted_at: Utc::now(),
+                    last_used_at: None,
+                    patient: None,
+                    device_name: "The Owner's laptop".to_string(),
+                },
+            )
+        })
+        .expect("create the host app's grant");
+    let res = g
+        .router
+        .clone()
+        .oneshot(build_request(
+            Request::delete("/authorization/grants/host-app-grant")
+                .header("host", "127.0.0.1")
+                .header("authorization", format!("Bearer {owner_token}")),
+            Body::empty(),
+        ))
+        .await
+        .expect("oneshot");
+    assert_eq!(res.status(), StatusCode::NO_CONTENT);
+    assert!(store_handle(&amp;db)
+        .read(|tx| tx.grant_by_id("host-app-grant"))
+        .expect("query")
+        .is_none());
+    assert_eq!(
+        gate_status(&amp;g, &amp;host_app_token).await,
+        StatusCode::UNAUTHORIZED
+    );
+}
+<span class="boring">}</span></code></pre>
+<p class="code-source"><a href="https://github.com/wildflowerhealthio/Wildflower/blob/7ef972db5d3a04d54b8aa964edc26c68280e396a/apps/host/wildflower-server/authorization-server-rust/tests/integration/revocation.rs#L366-L405"><code>authorization-server-rust/tests/integration/revocation.rs</code> lines 366–405</a> · <a href="https://wildflowerhealth.io/code-index/authorization-server/">authorization-server in the code index</a></p>
+
+<p>Relies on <a href="../domain/grant.html#item-DeviceGrant"><code>DeviceGrant</code></a> and <a href="../capabilities/access/grants.html#item-GrantsRevoker--revoke"><code>GrantsRevoker::revoke</code></a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../authorization-server/integration-tests/request-caller.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../authorization-server/integration-tests/same-device-sign-in.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../authorization-server/integration-tests/request-caller.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../authorization-server/integration-tests/same-device-sign-in.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/mermaid-init-5ac7ee47.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
